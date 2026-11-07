@@ -1,5 +1,9 @@
 # currier-a-available-only-v1
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/currier-a-available-only-v1.md)
+<!-- plain-guide-end -->
+
 535 copied files; 0 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](currier-a-available-only-v1--001.md)

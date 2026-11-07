@@ -1,5 +1,9 @@
 # voynich-loop
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/voynich-loop.md)
+<!-- plain-guide-end -->
+
 589 copied files; 2 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](voynich-loop--001.md)

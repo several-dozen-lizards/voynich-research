@@ -1,5 +1,9 @@
 # context-tests-v8
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/context-tests-v8.md)
+<!-- plain-guide-end -->
+
 35226 copied files; 121 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](context-tests-v8--001.md)

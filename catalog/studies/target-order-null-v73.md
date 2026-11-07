@@ -1,5 +1,9 @@
 # target-order-null-v73
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/target-order-null-v73.md)
+<!-- plain-guide-end -->
+
 Historical paths and bytes are preserved. Compression is indicated by `.gz` or `.xz`; uncompressed SHA-256 values are in the file ledger.
 
 ## Reports and findings

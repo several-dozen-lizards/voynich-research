@@ -1,5 +1,9 @@
 # c16-kh
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/c16-kh.md)
+<!-- plain-guide-end -->
+
 1844 copied files; 194 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](c16-kh--001.md)

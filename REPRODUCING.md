@@ -2,6 +2,8 @@
 
 This snapshot did not rerun historical analyses, retrain models, consume a statistical budget, or open a held-out scoring gate. Existing verification receipts are historical evidence, not freshly passing tests for this export.
 
+The later plain-English guides have a separate editorial manifest. Run `python tools/verify_reading_guides.py` to check their coverage, hashes, evidence paths, and navigation without re-reading the complete research archive. `verify_archive.py` also recognizes those declared additions while continuing to verify the unchanged original artifacts.
+
 To restore copied artifacts to their original relative filenames, run `python tools/unpack_research.py <new-directory>`. It writes only to a separate new or empty directory, verifies restored SHA-256 values, and does not run research code. Restoration can require substantially more disk space than the stored archive. Excluded inputs remain excluded.
 
 Run `python tools/verify_archive.py` from the repository root to verify every copied research artifact against its manifest, including gzip/XZ integrity, original and published SHA-256, and Git blob identity. This uses Python's standard library and does not run research code.

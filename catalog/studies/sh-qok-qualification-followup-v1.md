@@ -1,5 +1,9 @@
 # sh-qok-qualification-followup-v1
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/sh-qok-qualification-followup-v1.md)
+<!-- plain-guide-end -->
+
 2810 copied files; 0 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](sh-qok-qualification-followup-v1--001.md)

@@ -1,5 +1,9 @@
 # system-types-v5
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/system-types-v5.md)
+<!-- plain-guide-end -->
+
 875 copied files; 357 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](system-types-v5--001.md)

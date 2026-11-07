@@ -1,5 +1,9 @@
 # continuation-v73-wrap-ratings-bc-2026-10-25
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/continuation-v73-wrap-ratings-bc-2026-10-25.md)
+<!-- plain-guide-end -->
+
 387 copied files; 329 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](continuation-v73-wrap-ratings-bc-2026-10-25--001.md)

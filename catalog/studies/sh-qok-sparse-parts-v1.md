@@ -1,5 +1,9 @@
 # sh-qok-sparse-parts-v1
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/sh-qok-sparse-parts-v1.md)
+<!-- plain-guide-end -->
+
 2440 copied files; 0 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](sh-qok-sparse-parts-v1--001.md)

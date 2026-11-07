@@ -2,6 +2,8 @@
 
 This is an inventory-backed snapshot of the local Voynich workspace. It is not a claim that all historical conversations and external attachments have been recovered.
 
+Plain-English reading guides were added after the initial archive commit. Their questions, findings, unresolved issues, and evidence links are recorded in `catalog/PLAIN-ENGLISH-GUIDES.json`; their file identities are recorded separately in `catalog/EDITORIAL-FILES.json`. New folder READMEs and `PLAIN-ENGLISH.md` companions are editorial additions, not original experiment receipts. Original research files and the original file ledger remain unchanged.
+
 Every file in the input inventory is assigned a disposition in `catalog/FILES.csv` and `catalog/FILES.json`. Published paths point to exact copies, or gzip/XZ streams retaining exact original bytes. Excluded entries retain their original path and byte count; no checksum is claimed for contents that were not read. The scanned-directory exclusions are listed in `catalog/SNAPSHOT.json`.
 
 ## Dispositions

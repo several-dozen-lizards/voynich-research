@@ -1,5 +1,9 @@
 # image-context-v4
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/image-context-v4.md)
+<!-- plain-guide-end -->
+
 2221 copied files; 891 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](image-context-v4--001.md)

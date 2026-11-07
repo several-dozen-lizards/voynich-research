@@ -1,5 +1,9 @@
 # sh-qok-weak-score-v2
 
+<!-- plain-guide-start -->
+[**Plain-English summary: what we tested, found, and still do not know**](../../guides/studies/sh-qok-weak-score-v2.md)
+<!-- plain-guide-end -->
+
 2732 copied files; 0 indexed exclusions. This catalogue is paginated for GitHub.
 
 - [Part 1](sh-qok-weak-score-v2--001.md)
