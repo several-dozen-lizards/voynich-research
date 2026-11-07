@@ -1,0 +1,30 @@
+# RD-C2 — circular-only continuation, 2026-11-06
+
+User authorization: preserve failed RD-v1; register and run remaining calibration gates for circular 41–80-word text only; hold radial text; stop at any failed gate. This is a scope-restricted follow-up after seeing RD-v1 direction results, **not a repair, replacement, independent replication or retrospective pass of RD-v1**. RD-v1 remains STOP_FAILED_GATE.
+
+## Frozen inheritance and scope
+
+Inherit RD-v1 paragraph eligibility, folio-family split, matched source windows, S-dir model, S-int units/model, S-pos features/model, tie handling, clustered intervals, support thresholds and gate order without tuning. The executable is imported from the immutable `ringdir_v1/registration_v1/rd_phase0.py` snapshot; its OUT binding is redirected in memory to this new run. Original files are never written. Registration hashes every file in the failed run (including its verification), all original registered inputs/instruments, the original frozen snapshots, and this protocol, wrapper and verification code. Check these hashes before and after execution.
+
+Scope: ZL calibration stimuli with kind=circular and actual length 41–80 inclusive, originally 200 trials from 200 distinct source windows and 19 held-out folio families. Direction qualification is inherited for this exact bin (83%, cluster 95% CI 72.6–89.6%); Latin circular 41–80 direction and its circular shuffle null passed in RD-v1. No new direction recovery gate is fitted or rescored, and no independence claim is made. The original circular shuffle null was pooled across circular lengths, not a new within-bin null qualification. Radial text and all other circular lengths are held. No real C/R text is loaded for scoring.
+
+RD-v1's key file was opened during its direction evaluation and included later-stage flags. Therefore it is **not treated as still sealed**. Reconstruct each selected original source window from its recorded transform, then draw a single fresh reversal and rotation with seed 2026110602. This changes only nuisance transforms; the windows, signals, thresholds and support are fixed. No alternative draws are tried. Reuse complete-single-line source windows only where their actual lengths are 41–80; if none exist, keep the unique-origin set empty and report that gate as unsupported when reached. Do not build long synthetic single lines or extrapolate from shorter lines.
+
+## Dedicated mirror calibration
+
+The old random 10% mirror subset is not reused: 10% of 200 scope-eligible cases cannot provide the required 30 distinct windows. Before any S-int score is computed, freeze a **dedicated 200-trial mirror set** over all selected source windows. Each gets a random 50% unit-reversal flag in addition to its nuisance sequence transform; compare normal-vs-unit-reversed word-internal scores using the unchanged model. Store units as lists so serialization cannot merge adjacent units. This is a declared calibration sample-size change in a new registration, not selection by observed S-int success. Threshold remains >=90% accuracy (ties wrong), >=30 distinct windows, >=8 families. Mirror checks only fixed transcription-unit reversal, not mirrored glyph shapes.
+
+## Gates, sequential stop
+
+1. **Unit mirror**: the unchanged rule above. Save scores and their hash before opening the new mirror key. If failed or unsupported, STOP, no boundary scoring.
+2. **Any-line-boundary localization**: unchanged RD-v1 isolated true-direction and end-to-end inferred-direction versions, any retained source line boundary, ±2 circular words, union-window chance. Require >=30 distinct informative windows, >=8 families, both hit rates >=.50, both lower 95% clustered excess CIs >0. Shuffled fixed-target null excess CI must lie inside [−.15,.15] and contain 0. Chance=1 cases are uninformative; missing support fails. Restrict bins to index 5 (41–80) only. If failed, STOP before unique-origin scoring.
+3. **Unique original line-origin**: complete held-out single lines only, 41–80 words, unchanged thresholds and ±2 chance=min(n,5)/n; no support means FAIL_UNSUPPORTED. Any-line-boundary success does not qualify unique origin. If failed, STOP before boundary-pairing null.
+4. **Boundary-feature pairing null**: unchanged first 100 eligible multiline trials, independently shuffled observed sequence, 199 null shuffles, tie-inclusive p=(1+#null>=observed)/200, false-positive rate<=.10 at p<=.05, require100 trials. This is feature-pairing calibration, not unique historical start identification. A failed null stops.
+
+All scoring, bootstrap and tie-selection algorithms/seeds within stages are inherited from RD-v1. The new seed applies only to regenerating nuisance transforms and mirror flags. Reusing source cases and earlier direction evidence is explicit. Models fit only the same training paragraphs; outcomes in remaining gates were not previously computed. Every stage writes its full trial/bin files; report all evaluated negatives, including support and null failures. No threshold/seed retry, no source-window replacement and no post-failure later-stage scoring.
+
+## Registration, provenance and outputs
+
+`registration/REGISTRATION.json` and snapshots are exclusive-create and precede generation, model fitting and scoring. `results/ringdir/circular_v2/` is a separate exclusive-create run. A fresh key is committed before any new score; saved-score and key-access receipts use the original event logger. Post-run verification checks registered inputs, original run preservation, chronology, trial restriction, independent mirror arithmetic and gate/stop receipts. S-pos training CV is diagnostic only and opens only if the mirror gate passes.
+
+No Phases 1–4, real-ring scores, physical-mark scoring or corrected-order file is authorized or generated. Re visual annotation remains pending. Source-family overlap and earlier transcription exposure are disclosed; this is not an investigator-blind or historically untouched validation. Scientific failure is preserved separately from verification of correct execution.

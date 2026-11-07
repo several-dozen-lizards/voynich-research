@@ -1,0 +1,20 @@
+{
+  "scope": "Retrospective structural qualification of exposed sh/ch and qok claims. Original Claude gap.py unavailable here; not an exact reproduction of its inline tests. No semantics assigned.",
+  "panels": "Balneological hand2/B/P and Starred paragraphs hand3/B/P, H/F separate on shared eligible source loci, all original pages incl f75. Match v75/v78 panels. Page means physical source page; numbered-folio counts also retained.",
+  "endings": [
+    "edy",
+    "eey",
+    "ey",
+    "y"
+  ],
+  "ending_rule": "Literal longest matching suffix among edy,eey,ey,y, disjoint with listed priority. Exact initial sh or ch; no glyph regrouping, prefix stripping beyond these characters, spelling repair or e-run normalization. Keep unknown slots as barriers.",
+  "outcome": "Immediate next readable source token starts qok. Origins at line end or followed by unknown excluded. No source-line or unknown crossing. Paragraphs not established sentences.",
+  "primary_statistic": "Within each physical page and suffix family, compute next-qok probability difference sh minus ch where both have >=1eligible origin. Weight these family differences by harmonic exposure ns*nc/(ns+nc). Compute equal-weight mean across eligible pages. Recompute strata/eligibility/weights in every permutation; no eligible page => statistic0. Save every excluded cell/page and permutation eligible-page counts.",
+  "exact_body": "Predeclared stricter diagnostic matches page and exact rest of word after initial ch/sh, e.g. shedy vs chedy, rather than broad ending family. Same statistic. It may have low support; a failure is not absence.",
+  "nulls": "Primary whole_line permutes complete word tokens within every contiguous readable run in each source line, including endpoints. Sensitivity fixed_endpoints uses unchanged v75/v78 source-first/source-last/unknown-barrier bucket policy. Both preserve each line multiset and unknown slots, never join gaps; exact interior ordinals and transitions not fixed.",
+  "permutations": 4999,
+  "seeds": "94000+panel index*100+mode index, fixed order bathH,bathF,starredH,starredF; whole_line then fixed_endpoints.",
+  "correction": "One-sided sh>ch Monte Carlo p=(1+#null T>=observed T)/(B+1). Bonferroni16 across4panels x2matching views x2nulls. This accounts only for declared audit comparisons, NOT the historical exploratory selection of endings, prefixes, panels or hypotheses. No fresh confirmatory p-values claimed. H/F are alternate readings of same manuscript, not independent replications.",
+  "qualification": "Before manuscript scoring, independently check optimized statistic against direct counting over all720 permutations of authored6word line, both views; exact-orbit upper-tail false-flag fraction at alpha.05 and alpha.05/16 must obey rank bound. Check line multisets, unknown slots and pinned endpoints for both nulls on authored damaged and multi-line fixtures. A24line authored positive matched-body fixture must have T>=.9 and correctedp<=.05 under both nulls, same4999permutations. A no-qok fixture must haveT0/p1. These qualify arithmetic/invariants and one planted effect only, not grammar or all alternatives. Any failure stops manuscript run.",
+  "interpretation": "Page-level use rates and within-page conditional differences can coexist. Broad suffix matching does not isolate sh itself from vocabulary/rest-of-word confounds. Exact-body test is stronger but still cannot distinguish grammar, collocation, spelling conditioned on context, sandhi/junction processes, copying or notation. Grammar can be adjacent; first-order local chains can produce gap effects. No thing/action assignments. Use existing v78 gap qualification/results; do not rerun or reinterpret corrected negatives as no effect."
+}

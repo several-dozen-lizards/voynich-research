@@ -1,0 +1,16 @@
+{
+  "provider": "zai",
+  "model": "glm-4.6v-flashx",
+  "url": "https://api.z.ai/api/paas/v4/chat/completions",
+  "manual": "You are an independent geometry registrar. You receive only the source image and the ordered inscription locators below. You have no transcription bodies, object classes, ratings, features or scientific analyses. Do not transcribe any writing or classify any drawing. Locate only the short inscriptions corresponding to the supplied locators, using native page coordinates, source position and source order. Ignore running paragraph text. Never accept a mapping merely because the counts match. If the exact locus identity or writing extent is uncertain, return bbox:null and explain why. Every rectangle must enclose the FULL writing for that one line. Do not include nearby drawing ink. Preserve multiline physical labels with a shared physical_label_id. Return JSON {\"rows\":[{\"task_id\":\"...\",\"bbox\":[x,y,width,height] or null,\"physical_label_id\":\"...\",\"single_line\":true or false,\"locus_identity_confirmed\":true or false,\"review_note\":\"geometric basis or abstention\"}]}. Coordinates are native pixels, not percentages.\nLOCATORS:\n{\"native_width\": 2753, \"native_height\": 3745, \"ordered_loci\": [{\"task_id\": \"V6-68ade82d470898bb\", \"locus\": \"f83r.W.1\", \"unit\": \"f83r.W\", \"line\": \"1\"}, {\"task_id\": \"V6-4ead802cc194b483\", \"locus\": \"f83r.W.2\", \"unit\": \"f83r.W\", \"line\": \"2\"}, {\"task_id\": \"V6-fb623ba846017f78\", \"locus\": \"f83r.X.32\", \"unit\": \"f83r.X\", \"line\": \"32\"}, {\"task_id\": \"V6-dcdff7e2225923c0\", \"locus\": \"f83r.X.33\", \"unit\": \"f83r.X\", \"line\": \"33\"}, {\"task_id\": \"V6-f82a9b93655641c5\", \"locus\": \"f83r.X.34\", \"unit\": \"f83r.X\", \"line\": \"34\"}, {\"task_id\": \"V6-a6d7bc9f08c6e176\", \"locus\": \"f83r.Y.6\", \"unit\": \"f83r.Y\", \"line\": \"6\"}, {\"task_id\": \"V6-dff7f01b4e95ccb6\", \"locus\": \"f83r.Y.7\", \"unit\": \"f83r.Y\", \"line\": \"7\"}, {\"task_id\": \"V6-cc159f85523b408f\", \"locus\": \"f83r.Z.41\", \"unit\": \"f83r.Z\", \"line\": \"41\"}, {\"task_id\": \"V6-ad5df5a78f27ab91\", \"locus\": \"f83r.Z.42\", \"unit\": \"f83r.Z\", \"line\": \"42\"}, {\"task_id\": \"V6-5f8ead419dc1d387\", \"locus\": \"f83r.Z.43\", \"unit\": \"f83r.Z\", \"line\": \"43\"}, {\"task_id\": \"V6-3376e099f507f956\", \"locus\": \"f83r.Z.44\", \"unit\": \"f83r.Z\", \"line\": \"44\"}], \"neutral_positions\": {\"f83r.W\": \"Labels on bottom left illustration - top labels\", \"f83r.X\": \"Bottom left illustration - text between top [drawing]\", \"f83r.Y\": \"Bottom left illustration - labels on bottom [drawing]\", \"f83r.Z\": \"Bottom left illustration - text at bottom\"}}",
+  "image_path": "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\image-context-v4\\registration\\registrar-only\\images\\I78b7d30dd4c4f5b7.jpg",
+  "image_sha256": "6c61992d3f9052d2893724d1e5ae7fbc393ee099f6aa72e7bd8277fe4e2ac491",
+  "request_sha256": "3784513e29567e3ca02ff1081560467ca72392fe14ec997a24169ab45aa66d3a",
+  "message_count": 1,
+  "tools_supplied": false,
+  "agent_harness": false,
+  "stateless": true,
+  "transcription_supplied": false,
+  "max_tokens": 4096,
+  "started_epoch": 1792896008.9302504
+}

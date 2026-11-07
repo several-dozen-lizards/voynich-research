@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "completed": {
+      "type": "boolean"
+    },
+    "pictures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "box": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "minItems": 4,
+            "maxItems": 4,
+            "description": "Normalized left,top,right,bottom CORNER fractions of the supplied image."
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "PL",
+              "VE",
+              "FG",
+              "CE",
+              "OT"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "box",
+          "category",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "completed",
+    "pictures"
+  ],
+  "additionalProperties": false
+}

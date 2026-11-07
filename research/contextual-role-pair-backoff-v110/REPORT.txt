@@ -1,0 +1,81 @@
+Rare-pair component backoff v110 — 25 October 2026
+
+RESULT
+This fixed singleton-pair backoff rule produces negligible recovery change and no coverage gain against the repaired v109 baseline. Across the four prespecified adequately supported panels, equal-panel mean balanced correct-credit72.522% ->72.586% (+0.064 percentage points). Strict balanced recall66.344% ->66.408% (+0.064points). Pooled decision coverage stays577/648=89.04%; equal-panel mean coverage stays87.38%. These are distinct aggregation conventions. No full supported comparison reaches80% all-case recovery.
+
+One additional correct decision accounts for the entire primary recovery gain. Across all eight panels, including the four under-supported ones, only3/808 decisions change: one wrong->correct, two correct->wrong. All126 zero-evidence cases remain abstentions. None of the paired recovery deltas exceeds its shuffled-control benchmark after the declared descriptive Bonferroni8 correction (all adjustedp=1). Keep v109 as the current development baseline; do not promote this backoff variant on these results.
+
+WHY LITERAL FALLBACK WOULD NOT CHANGE ANYTHING
+The existing representation already contains four component word-at-position features (-2,-1,+1,+2 around the target) and two same-side context-pair features (-2/-1 and+1/+2). The pairs are not target-neighbor bigrams. The repaired scorer already assigns zero contribution to globally unknown pairs. Adding the same component words again on fallback would duplicate their evidence and change their weights. Without duplication, fallback from an unseen pair is exactly the existing baseline. This identity was verified for every actual scored occurrence.
+
+THE ONE FROZEN NONTRIVIAL RULE
+Rare means pooled binary-role TRAINING count exactly1. Repeated support begins at2. Components always remain present once. Singleton pair features do not contribute extra evidence; pairs with count>=2 remain active. No threshold grid or after-result tuning was performed. Boundary tokens in original features remain subject to the same declared rule, not silently exempted.
+
+The unmodified v109 repaired score function is imported directly. Both arms share the exact baseline-fitted counts, vocabulary, class totals, smoothing denominators, equal priors and1e-12 tie tolerance. This is activation-only backoff: it isolates the contribution of singleton pairs without retraining a changed feature inventory that could alter unrelated word scores. It does not test all possible interpolated/backoff language models.
+
+Data, role definitions, the whole-block split, all four original component-word features, the four supported panel identities and supervised training labels stay fixed. No window expansion, cross-position sharing, new word form, lemma, morphology, dependency label, new classifier or clustering change was introduced. All v107/v109 saved artifacts retain their hashes.
+
+HOW MUCH DID THE RULE ACTUALLY TOUCH?
+63/808 test occurrences contain a recognized singleton pair (64 pair events). The other745 had no singleton term to remove. In the supported panels,49/648 occurrences are touched (50 events). Most sparse pair cases were already unseen and neutral. Removing pairs cannot create new recognized word evidence because their components were already included. Every original zero-evidence/support status is unchanged. Although a score tie could theoretically change decision coverage, no such tie transition occurred in this run.
+
+THE GAIN AND THE HARMS
+Gain: Cicero letters ut, ID train:76187:11, goldSCONJ. Removing singleton L:non|ita changes ADV ->SCONJ.
+Harms: Caesar ut, IDs train:53415:7 and train:54084:2, goldSCONJ. Removing R:in|ea and L:#edge|monet respectively changes SCONJ ->ADV. These two examples demonstrate that singleton pair evidence can be useful, so automatic suppression is not assumed safe. Caesar ut has only18 heldout ADV examples and remains under-supported; these harms are descriptive, not a newly qualified transfer result.
+ID prefixes denote the original UD source partition, not the current split; all three IDs are v107 test examples. Exact contexts, scores and activations are in PREDICTIONS.json. No example was relabelled or removed.
+
+CONFIDENCE AND UNCERTAINTY
+The supported-panel mean balanced log loss changes.512097 ->.508659, delta-.003438nats; two-class Brier.340379 ->.338198, delta-.002181. The descriptive paired block-bootstrap95% intervals include worsening: log loss[-.010071,+.002727], Brier[-.005853,+.000933]. Caesar cum gets slightly worse score measures with unchanged decisions; De officiis ut and both Cicero comparisons improve slightly. These mixed small changes are not broad calibration evidence.
+
+The supported mean recovery-delta bootstrap interval is[0,+.1744] percentage points. It reflects one favorable observed decision and a fixed trained model; it is not independent confirmation of a benefit. All16,000 declared panel bootstrap draws are retained, with missing-role draws recorded rather than repaired.
+
+CONTROLS
+All3,184 paired control trials completed:199 within-block context-column shuffles and199 within-block training-label shuffles for each of eight panels. Each trial fits one shared count model and evaluates baseline/backoff on the same shuffled data, recomputing pair support from training only. All paired changes, recovery ranks and negative outcomes are retained. These are structured nuisance checks on exposed development material, not a scientific qualification suite or evidence for language/meaning.
+
+ALL EIGHT COMPARISONS
+Commentarii belli Gallici|cum [adequately supported]
+  Balanced correct-credit 77.42% -> 77.42%; strict balanced recall 70.30% -> 70.30%; coverage 84.62% -> 84.62%.
+  9 instances contain 9 suppressed singleton pair events. Delta log loss 0.004840, delta Brier 0.002574.
+  Transitions {"wrong_to_wrong":16,"correct_to_correct":72,"abstain_to_abstain":16}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+Commentarii belli Gallici|ut [under-supported; descriptive]
+  Balanced correct-credit 67.67% -> 66.03%; strict balanced recall 53.51% -> 51.87%; coverage 68.35% -> 68.35%.
+  10 instances contain 10 suppressed singleton pair events. Delta log loss 0.012017, delta Brier 0.006302.
+  Transitions {"abstain_to_abstain":25,"correct_to_correct":37,"wrong_to_wrong":15,"correct_to_wrong":2}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+De officiis|cum [under-supported; descriptive]
+  Balanced correct-credit 70.60% -> 70.60%; strict balanced recall 55.77% -> 55.77%; coverage 70.37% -> 70.37%.
+  3 instances contain 3 suppressed singleton pair events. Delta log loss 0.007873, delta Brier 0.006191.
+  Transitions {"wrong_to_wrong":4,"abstain_to_abstain":8,"correct_to_correct":15}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+De officiis|ut [adequately supported]
+  Balanced correct-credit 69.64% -> 69.64%; strict balanced recall 59.89% -> 59.89%; coverage 82.14% -> 82.14%.
+  9 instances contain 9 suppressed singleton pair events. Delta log loss -0.006130, delta Brier -0.002363.
+  Transitions {"correct_to_correct":50,"abstain_to_abstain":15,"wrong_to_wrong":19}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+Epistulae ad Atticum|cum [adequately supported]
+  Balanced correct-credit 72.85% -> 72.85%; strict balanced recall 68.74% -> 68.74%; coverage 91.76% -> 91.76%.
+  9 instances contain 9 suppressed singleton pair events. Delta log loss -0.005960, delta Brier -0.003319.
+  Transitions {"correct_to_correct":125,"abstain_to_abstain":15,"wrong_to_wrong":42}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+Epistulae ad Atticum|ut [adequately supported]
+  Balanced correct-credit 70.17% -> 70.42%; strict balanced recall 66.44% -> 66.70%; coverage 91.01% -> 91.01%.
+  22 instances contain 23 suppressed singleton pair events. Delta log loss -0.006504, delta Brier -0.005616.
+  Transitions {"abstain_to_abstain":25,"correct_to_correct":184,"wrong_to_wrong":68,"wrong_to_correct":1}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+Opus agriculturae|cum [under-supported; descriptive]
+  Balanced correct-credit 72.92% -> 72.92%; strict balanced recall 56.94% -> 56.94%; coverage 66.67% -> 66.67%.
+  1 instances contain 1 suppressed singleton pair events. Delta log loss 0.001549, delta Brier 0.000358.
+  Transitions {"abstain_to_abstain":7,"correct_to_correct":12,"wrong_to_wrong":2}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+Opus agriculturae|ut [under-supported; descriptive]
+  Balanced correct-credit 67.46% -> 67.46%; strict balanced recall 38.36% -> 38.36%; coverage 54.55% -> 54.55%.
+  0 instances contain 0 suppressed singleton pair events. Delta log loss 0.000000, delta Brier 0.000000.
+  Transitions {"wrong_to_wrong":2,"abstain_to_abstain":15,"correct_to_correct":16}. Adjusted descriptive paired-delta p: context_shuffle=1; training_label_shuffle=1.
+
+INTERPRETATION AND NEXT DIRECTION
+This test does not support adopting singleton suppression. It also does not reject every pair-backoff or interpolation scheme. The specific obstacle remains that the component-word representation is already present and often unsupported: subtracting a pair cannot add lexical coverage. A future representation experiment should explicitly introduce a train-learned way to share component-word evidence, while preserving positional information separately and keeping the repaired scorer as the comparison baseline. That is a new prospective question; it was not fitted or scored here. An independently selected confirmation source is still needed before broad transfer claims. No sealed reserve from another branch was opened.
+
+VERIFICATION AND ARTIFACTS
+Seven pre-score engineering fixtures passed. A separate JavaScript verifier checked all808 exact baseline scores/predictions, four-component retention, singleton supports from frozen model counts, every removed-term score difference, unchanged126 zero-evidence cases, the one gain/two harms, all3,184 paired control records/ranks, all16,000 bootstrap draws/intervals and prior file hashes. Ten verification groups pass; this verifies the calculation, not scientific success.
+
+PROTOCOL.json/run.py and prior hashes were frozen before backoff scoring. RESULTS.json, PREDICTIONS.json, PAIR-ACTIVATION.json, BOOTSTRAP-DRAWS.json and CONTROL-TRIALS.jsonl preserve every outcome. FIXTURES.json and VERIFICATION.json record the engineering checks. verify.mjs checks saved results without fitting new models. Freeze/run are guarded one-time stages; preserve old receipts rather than overwriting them.

@@ -1,0 +1,50 @@
+{
+  "version": "T1-real-support-controls-1",
+  "utc": "2026-10-26T00:43:12.176Z",
+  "authority": "Current human asks real-support controls without real outcomes",
+  "input_support_sha256": "6ce7d2c0cc742c3c8c91d37a8b3fd14518e5bbc6784865cc6475864012fee978",
+  "input_rows_sha256": "d6c50235cee0903e148a67d58079d24309131b30c3496d002447ad4f96d9a307",
+  "label_freeze_sha256": "47911a096cb9cbfb8e7c2f68f0547edf0606c844b085e4fbb6d23dd3bf5ade9b",
+  "methods": "Unchanged priority-continuation-2026-10-25/T1-freeze/methods.py",
+  "replicates": 200,
+  "permutations": 10000,
+  "scenarios": [
+    "independent-null",
+    "wrap-null",
+    "position-null",
+    "folio-latent-null",
+    "positive-1.5x"
+  ],
+  "readings": [
+    "H",
+    "F"
+  ],
+  "baseline": "Synthetic maximum-ignorance opener probabilities1/13 each and ending-group probabilities1/4 each. No real class prevalence is read or estimated. Qualification, if any, is restricted to this declared synthetic frequency profile at real support.",
+  "generator": {
+    "independent": "Independent multinomial counts in every readable noninitial slot, line labels fixed.",
+    "wrap": "Opener log-weight slopes linspace(-log2,+log2,13) and ending slopes linspace(-log1.5,+log1.5,4), multiplied by short indicator. Normalize probability vectors. Label/wrap relationship is actual fixed geometry.",
+    "position": "Same slopes multiplied by (2*original noninitial word-slot fraction-1)+(2*original registered-block line fraction-1). Unknown slots retain positions and receive no draws.",
+    "folio_latent": "One shared standard-Normal z per physical folio/trial; opener and ending slopes multiplied by z/1.959963984540054, constant within folio. H/F share latent z but draw separate synthetic counts.",
+    "positive": "qok probability exactly1.5/13 in FG/VE,1/13 otherwise; other12 opener probabilities share remaining mass uniformly. Endings unchanged."
+  },
+  "seeds": {
+    "data_base": 8251701,
+    "permutation_H": 8251702,
+    "permutation_F": 8251703,
+    "derivation": "SHA256 colon-joined base,scenario,reading,trial; first8bytes big-endian; no tuning"
+  },
+  "permutation_bank": "One fixed10000-draw unrestricted within-folio label bank per reading, shared across independent synthetic datasets; exactly match frozen shuffle order. Report dependence conditional on fixed bank; H/F not independent replication.",
+  "decisions": {
+    "primary": "p<.05 only if unchanged engine estimable; no strata => NOT ESTIMABLE, never zero false-positive validation.",
+    "scan": "Full17 class counts, binary generalized-CMH quadratic perclass; unchanged support, all10000 label permutations or exact support-failure proof; Holm17 withinreading.",
+    "null": ">=200 independent datasets. Upper Wilson95 false-family-flag rate<=.05 AND complete estimability required for qualification; conditional defined-subset diagnostics never rescue it.",
+    "positive": "Unconditional detection>=.80 over all200 datasets for primary and qok Holm scan. Undefined results count as no detection and remain separately labelled.",
+    "equivalence": "All15 pair design gates already fail at real support; do not run unsupported bootstrap or declare invariance."
+  },
+  "execution": "NumPy/sparse exact algebra may precompute geometry and check support before statistics. Compare reference frozen engine on engineering fixtures and observed/failed-draw boundaries. No threshold, stratum, shuffle restriction or undefined-draw deletion changes.",
+  "real_outcomes": "NEVER READ/GENERATED; only synthetic counts joined with labels",
+  "closed": {
+    "outcome_join": true,
+    "vault": true
+  }
+}

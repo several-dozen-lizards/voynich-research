@@ -1,0 +1,76 @@
+{
+  "version": "T1-executable-freeze-1",
+  "status": "PRE_JOIN_METHODS_SEALED_AFTER_ENGINEERING_VERIFICATION; SCIENTIFIC QUALIFICATION PENDING",
+  "authority": "Human priority instruction 2026-10-25; operational resolutions D5 and D6 before ratings/text join",
+  "source": "context-tests-v8/SPEC-original.md",
+  "tier": "RETROSPECTIVE IN TEXT; T1 PROSPECTIVE IN IMAGE VARIABLE ONLY",
+  "readings": [
+    "H",
+    "F"
+  ],
+  "primary": {
+    "statistic": "log(sum_s aA*nB/(nA+nB) / sum_s aB*nA/(nA+nB))",
+    "groups": {
+      "A": [
+        "FG",
+        "VE"
+      ],
+      "B": [
+        "PL",
+        "NO"
+      ]
+    },
+    "strata": "folio x registered wrap short/normal; no inferred wrap",
+    "eligibility": "per folio >=30 readable noninitial slots on EACH side; positive common-stratum exposure; >=8 informative folios",
+    "weights": "sum_bin nA*nB/(nA+nB), normalized across eligible folios; maximum <=0.25",
+    "zeros": "Any nonpositive weighted event sum => NOT ESTIMABLE; no smoothing",
+    "permutations": 10000,
+    "shuffle": "whole line labels unrestricted within folio, including across length bins",
+    "selection": "Recompute eligibility and weights for EVERY permutation. Any undefined/support-failing draw blocks p; never delete, redraw or condition on passing draws.",
+    "p": "(1 + count(null >= observed - 1e-12))/(10000+1), upper tail"
+  },
+  "scan": {
+    "classes": 17,
+    "statistic": "Aggregate event-minus-expected 6-vector and hypergeometric covariance across folio x bin; d transpose pinv(V) d; quadratic upper-tail permutation",
+    "covariance": "n1*n0/(N*(N-1)) * (diag(label exposures) - outer(exposures,exposures)/N)",
+    "support": "Operational conservative extension: >=8 informative folios; trace-covariance weights <=0.25; no information => NOT ESTIMABLE",
+    "multiplicity": "Holm 17 per reading; missing p occupies family position but cannot pass"
+  },
+  "equivalence": {
+    "pairs": "all 15 unordered pairs of six declared labels, including absent pairs",
+    "statistic": "pairwise MH log rate ratios with same 30-slot/8-folio/25%-weight gates",
+    "bootstrap": "10000 full folio draws with replacement; each sampled copy is its own stratum/weight unit",
+    "interval": "Simultaneous max-absolute centered deviation q95 (higher order statistic); each theta +/- q95; maximum absolute bound <=0.25",
+    "missing": "Any unsupported pair or undefined draw => unresolved; never skip a pair/draw",
+    "classification": "sensitive iff Holm p<.05 in BOTH; invariant iff no Holm pass in EITHER and simultaneous equivalence succeeds in BOTH; otherwise unresolved"
+  },
+  "seeds": {
+    "permutation_base": 810251,
+    "bootstrap_base": 810252,
+    "required_derivation": "For production derive per reading/class from SHA256(base:reading:class) first 8 bytes big endian; never tune seeds"
+  },
+  "qualification": {
+    "status": "NOT RUN AT REAL GEOMETRY",
+    "minimum_trials": 200,
+    "scenarios": [
+      "independent null",
+      "wrap-correlated null",
+      "position null",
+      "folio-latent null",
+      "positive 1.5x FG/VE"
+    ],
+    "null": "Wilson 95 upper false-flag rate <= .05",
+    "positive": "power >= .80",
+    "failure": "UNDERPOWERED / NOT QUALIFIED, no outcomes"
+  },
+  "closed": {
+    "join": true,
+    "vault": true
+  },
+  "outstanding_D4": [
+    "full-population G6 receipt (G2 separately for PL-only route)",
+    "wrap flag owner and exact metadata hashes",
+    "reading/block registration pins",
+    "real-support control qualification"
+  ]
+}

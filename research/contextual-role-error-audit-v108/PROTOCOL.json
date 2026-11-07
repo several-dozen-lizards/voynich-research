@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-25",
+  "scope": "Retrospective descriptive error audit of completed v107. No new model fitting, selection, representation scoring, or Voynich access. Old results and freezes preserved.",
+  "unit": "All 2254 saved occurrences reconstructed from pinned source sentences. Compare saved fixed2 and supervised predictions on each previously evaluated binary-role test occurrence; third-category and unsupported examples remain visible.",
+  "diagnostics": [
+    "Train/test label and cluster composition, mapped-label collapse, per-role confusion; never substitute pooled accuracy for balanced recall.",
+    "Separate vocabulary/support coverage for blind clustering and supervised classifier; individual neighbor and pair-feature novelty, zero known-feature vectors, surface real-word novelty vs edge/barrier tokens.",
+    "Errors versus known-feature bins0-1,2-3,4-6; within-panel/role descriptive tables to avoid pooled confounding.",
+    "Full source sentence, two-word context, target-head distance, direction and whether annotated head lies within contiguous window; gold dependency/UPOS/morphology allowed for diagnosis only, never proposed as unknown-text model inputs.",
+    "Nearest training contexts by exact six-feature overlap, same-role versus other-role best overlap, ties and missing training patterns. No reclassification from test labels.",
+    "Identical four-neighbor contexts with conflicting gold labels: descriptive collision inventory and in-sample majority ceiling only, never an estimated predictive bound.",
+    "Inspect each cluster’s most common context features and deterministic source examples covering success/failure and short/long head distance.",
+    "Existing synthetic role-count error distribution and gap curves: overpartitioning, underpartitioning, abstention; no reruns."
+  ],
+  "examples": "Select up to2 examples per panel x gold role x supervised-correct/incorrect x head-visible/not-visible using fixed SHA256 ID ordering, not striking examples. All row-level diagnostics saved.",
+  "interpretation": "Associations with errors are not causal attribution. Unsupported panels remain descriptive. Reusing exposed test labels makes all audit-driven representation proposals development hypotheses requiring new confirmation data. Gold head distance is a proxy for missing syntactic context, not proof that observing the head would solve a token.",
+  "deliverables": [
+    "PROTOCOL.json and audit code frozen before diagnostic computation",
+    "per-occurrence source-linked diagnostics and exhaustive summary",
+    "deterministic source example packet",
+    "representation recommendations tied to audit observations; no revised accuracy claims"
+  ]
+}

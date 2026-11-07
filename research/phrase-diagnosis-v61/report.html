@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><title>Phrase diagnosis v61</title><style>body{font:17px system-ui;max-width:1100px;margin:40px auto;background:#f5f2e9;color:#193c39}pre{white-space:pre-wrap}p{line-height:1.6}</style><h1>Phrase-test diagnosis — v61</h1><p>Size and layout crossed on development text; correction variants computed from the same permutations. Raw p flags are diagnostic only. Revision selects five phrases on development, freezes them, then uses phrase-specific permutation tails with Bonferroni5 on herb-disjoint fresh samples. All failures retained.</p><pre>{
+  &quot;diagnostics&quot;: [
+    {
+      &quot;words&quot;: 2000,
+      &quot;width&quot;: 6,
+      &quot;uncorrected_flags&quot;: 39,
+      &quot;max_only_flags&quot;: 1,
+      &quot;max48_flags&quot;: 1
+    },
+    {
+      &quot;words&quot;: 2000,
+      &quot;width&quot;: 12,
+      &quot;uncorrected_flags&quot;: 130,
+      &quot;max_only_flags&quot;: 1,
+      &quot;max48_flags&quot;: 1
+    },
+    {
+      &quot;words&quot;: 4000,
+      &quot;width&quot;: 6,
+      &quot;uncorrected_flags&quot;: 89,
+      &quot;max_only_flags&quot;: 1,
+      &quot;max48_flags&quot;: 1
+    },
+    {
+      &quot;words&quot;: 4000,
+      &quot;width&quot;: 12,
+      &quot;uncorrected_flags&quot;: 310,
+      &quot;max_only_flags&quot;: 1,
+      &quot;max48_flags&quot;: 1
+    }
+  ],
+  &quot;fixed_phrases&quot;: [
+    &quot;of the&quot;,
+    &quot;is a&quot;,
+    &quot;the juice&quot;,
+    &quot;it is&quot;,
+    &quot;women s&quot;
+  ],
+  &quot;fresh_detections&quot;: [
+    3,
+    3
+  ],
+  &quot;sham_flags&quot;: 0,
+  &quot;shams&quot;: 20,
+  &quot;narrow_gate&quot;: &quot;pass&quot;,
+  &quot;limits&quot;: &quot;Only later herbal candidate prose; edited artificial lines; fresh to phrase testing, previously processed in slot work. 20shams and2fresh samples are finite engineering evidence, not broad qualification. No manuscript-transcription transfer. Voynich test unchanged.&quot;
+}</pre><p><a href="DIAGNOSTICS.json">DIAGNOSTICS.json</a></p><p><a href="FROZEN-CANDIDATES.json">FROZEN-CANDIDATES.json</a></p><p><a href="FRESH-RESULTS.json">FRESH-RESULTS.json</a></p><p><a href="SHAM-FAILURES.json">SHAM-FAILURES.json</a></p><p><a href="ALLOCATION.json">ALLOCATION.json</a></p><p><a href="PROTOCOL.json">PROTOCOL.json</a></p><h2>Interpretation and retained failures</h2><p>All four old-screen development arms retain only of the. Uncorrected counts are diagnostic, not valid discoveries. Both fresh folds recover of the, it is and the juice under the fixed-candidate revision. is a fails both. women s is an apostrophe-tokenization artifact; it fails both and remains retained. The narrow gate is passed by ordinary recurring prose, not verified technical recipe formulas. More data/layout do not rescue the old maximum-count screen here. New development sampling itself differs from v60; this does not isolate a unique cause of the original sample failure. No Voynich method has changed.</p>

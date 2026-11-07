@@ -1,0 +1,22 @@
+{
+  "scope": "Synthetic only; no manuscript reads or H/F pooling.",
+  "revision": "Fixed disjoint position pairs (j,j+4), j=0..3, corresponding to source indices(1,9),(3,11),(5,13),(7,15). Within page and exact length group all lines whose two bodies are the same literal body. Secondary uses correct ending family. Keep concordant prefix rows pinned. Among discordant rows enumerate every assignment preserving the number of sh in the left column. Each arrangement preserves each line prefix/body composition and each exact-position prefix/body margin. Other cells pinned.",
+  "selection": "Coordinates selected before outcomes. Bodies used for grouping; no qok or prefix-driven optimization of pairing. This is an expanded conditional subset, not all possible corpus rearrangements.",
+  "score": "Total sh*qok; exact integer dynamic programming of subset sums conditional on left-sh count, convolved across disjoint groups. Uniform conditional assignments; no Monte Carlo. One-sided Bonferroni8. Score-constant null=notestimable.",
+  "fresh_seeds": "984000+regime_index*1000+trial",
+  "trials": 200,
+  "regimes": [
+    "page",
+    "position",
+    "line",
+    "combined",
+    "body",
+    "positive_strong",
+    "positive_small",
+    "sparse_strong",
+    "no_overlap"
+  ],
+  "generators": "Reuse frozen previous generators without changes; fresh seeds. 12pages x24lines x8origins; sparse6lines and independently varying bodies. Effects .45 or .15. Run old rectangle engine on same generated data as descriptive paired comparison, not another tuning criterion.",
+  "gates": "Exact oracle and margin invariants required. Primary exact-body: each nuisance Wilson95 upper flag bound<=.05; strong, small and sparse positives lower power bound>=.80; nooverlap allnotestimable. Any failure prohibits manuscript scoring. Secondary reported separately. No revised thresholds after outcomes.",
+  "limits": "Synthetic event engine only. Additive-logit nuisance exchangeability, not arbitrary interactions. Four preset position-pairs may discard useful support. H/F remain separate in any future application. No manuscript rescore permitted even if pass."
+}

@@ -1,0 +1,109 @@
+{
+  "scorer_gates": {
+    "MATH": true,
+    "CORRUPTION": true,
+    "ORDER": false,
+    "NULL": false
+  },
+  "scorer_passed": false,
+  "decoder": {
+    "IV_accuracy": 0.8561314791403287,
+    "all_token_accuracy": 0.7750057221332113,
+    "IV_tokens": 3955,
+    "all_tokens": 4369,
+    "within_word_equal": true,
+    "passed": false
+  },
+  "corruption": {
+    "n": 320,
+    "original_beats_quarter": 318,
+    "original_beats_all": 320,
+    "UNKNOWN_top3": 0,
+    "UNKNOWN_docwins": 0,
+    "prefixes": {
+      "1_n": 320,
+      "1_beats_UNKNOWN": 252,
+      "2_n": 320,
+      "2_beats_UNKNOWN": 301,
+      "3_n": 320,
+      "3_beats_UNKNOWN": 314
+    }
+  },
+  "ordering": {
+    "wins": 26,
+    "losses": 13,
+    "ties": 1,
+    "half_tie_wins": 26.5,
+    "n": 40,
+    "exact_sign_tail": 0.026625957048963755,
+    "interval": [
+      0.5075689968810977,
+      0.7889539827297842
+    ],
+    "within_word_equal": true
+  },
+  "null_gate": [
+    {
+      "family": "word_shuffle",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 2,
+      "n": 40,
+      "false_positive_interval": [
+        0.013820667386148344,
+        0.16503877369140962
+      ],
+      "AUC": 0.6015625,
+      "passed": false
+    },
+    {
+      "family": "wrong_key",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 1.0,
+      "passed": false
+    },
+    {
+      "family": "quarter_UNKNOWN",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 2,
+      "n": 40,
+      "false_positive_interval": [
+        0.013820667386148344,
+        0.16503877369140962
+      ],
+      "AUC": 0.666875,
+      "passed": false
+    },
+    {
+      "family": "all_UNKNOWN",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 1.0,
+      "passed": false
+    }
+  ],
+  "calibration_thresholds": {
+    "word_shuffle": -4.267699477771402,
+    "wrong_key": -9.406241705335772,
+    "quarter_UNKNOWN": -4.483251190956101,
+    "all_UNKNOWN": -10.49798227256875
+  }
+}

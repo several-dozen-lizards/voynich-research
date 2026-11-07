@@ -1,0 +1,274 @@
+{
+  "arm": "medieval",
+  "scorer_gates": {
+    "MATH": true,
+    "CORRUPTION": true,
+    "ORDER": true,
+    "NULL": false
+  },
+  "SCORER": "FAIL",
+  "DECODER": "PASS",
+  "OBJECTIVE": "PASS",
+  "SEARCH": "FAIL",
+  "FRESH_C17": "UNAVAILABLE",
+  "full_qualification": false,
+  "ZL": "CLOSED",
+  "actual_C11": "CLOSED",
+  "math": {
+    "models": [
+      {
+        "model": "word",
+        "contexts": 100,
+        "ctx_exactly_outgoing": true,
+        "v2_nonterminal_counter_identity": true,
+        "observed_events_checked": 502235,
+        "max_v2_nonterminal_log_delta": 0.0,
+        "max_normalization_error": 1.1102230246251565e-16,
+        "min_probability": 7.686542816783347e-07,
+        "max_probability": 0.5476738581321587,
+        "passed": true
+      },
+      {
+        "model": "alphagram",
+        "contexts": 100,
+        "ctx_exactly_outgoing": true,
+        "v2_nonterminal_counter_identity": true,
+        "observed_events_checked": 500463,
+        "max_v2_nonterminal_log_delta": 0.0,
+        "max_normalization_error": 0.0,
+        "min_probability": 7.472084493352806e-07,
+        "max_probability": 0.5602939798619142,
+        "passed": true
+      }
+    ],
+    "exhaustive_Viterbi": true,
+    "traversal_conservation": true,
+    "passed": true
+  },
+  "corruption": {
+    "n": 320,
+    "original_beats_quarter": 320,
+    "original_beats_all": 320,
+    "UNKNOWN_top3": 0,
+    "UNKNOWN_docwins": 0,
+    "prefixes": {
+      "1_n": 320,
+      "1_beats_UNKNOWN": 223,
+      "2_n": 320,
+      "2_beats_UNKNOWN": 304,
+      "3_n": 320,
+      "3_beats_UNKNOWN": 315
+    }
+  },
+  "ordering": {
+    "wins": 39,
+    "losses": 1,
+    "ties": 0,
+    "half_tie_wins": 39.0,
+    "n": 40,
+    "exact_sign_tail": 3.728928277269006e-11,
+    "interval": [
+      0.8711863103652591,
+      0.9955731684973186
+    ],
+    "within_word_equal": true
+  },
+  "null_operating_point": [
+    {
+      "family": "word_shuffle",
+      "threshold": -6.40286010731586,
+      "positive_exceed": 12,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 0.940625,
+      "passed": false
+    },
+    {
+      "family": "wrong_key",
+      "threshold": -6.40286010731586,
+      "positive_exceed": 12,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 1.0,
+      "passed": false
+    },
+    {
+      "family": "quarter_UNKNOWN",
+      "threshold": -6.40286010731586,
+      "positive_exceed": 12,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 0.99625,
+      "passed": false
+    },
+    {
+      "family": "all_UNKNOWN",
+      "threshold": -6.40286010731586,
+      "positive_exceed": 12,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 1.0,
+      "passed": false
+    }
+  ],
+  "decoder": {
+    "IV_accuracy": 0.9070824524312896,
+    "all_token_accuracy": 0.8670304132565424,
+    "IV_tokens": 9460,
+    "all_tokens": 9897,
+    "within_word_equal": true,
+    "passed": true
+  },
+  "cipher_cases": [
+    {
+      "case": 0,
+      "document": "V3-medieval-040",
+      "alphagram_recovery": 0.792,
+      "character_recovery": 0.9374358974358974,
+      "tokens": 250,
+      "true_key_objective": -4.2249798388876885,
+      "fitted_key_objective": -4.883600378157844,
+      "true_minus_fit": 0.6586205392701556,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.864999590736148,
+        "objective": -4.883600378157844,
+        "rounds": 6,
+        "evaluations": 1876,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 211
+      }
+    },
+    {
+      "case": 1,
+      "document": "V3-medieval-041",
+      "alphagram_recovery": 0.9017857142857143,
+      "character_recovery": 0.9730679156908665,
+      "tokens": 224,
+      "true_key_objective": -4.2825812699955375,
+      "fitted_key_objective": -4.532539035391272,
+      "true_minus_fit": 0.24995776539573455,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.484034085373361,
+        "objective": -4.532539035391272,
+        "rounds": 3,
+        "evaluations": 1156,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 210
+      }
+    },
+    {
+      "case": 2,
+      "document": "V3-medieval-042",
+      "alphagram_recovery": 0.8125,
+      "character_recovery": 0.94375,
+      "tokens": 256,
+      "true_key_objective": -4.341800119793728,
+      "fitted_key_objective": -4.9760062500146205,
+      "true_minus_fit": 0.6342061302208926,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -7.049322282256587,
+        "objective": -4.9760062500146205,
+        "rounds": 6,
+        "evaluations": 2209,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 206
+      }
+    },
+    {
+      "case": 3,
+      "document": "V3-medieval-043",
+      "alphagram_recovery": 1.0,
+      "character_recovery": 1.0,
+      "tokens": 241,
+      "true_key_objective": -4.5725401884614705,
+      "fitted_key_objective": -4.5725401884614705,
+      "true_minus_fit": 0.0,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.916252740823083,
+        "objective": -4.5725401884614705,
+        "rounds": 6,
+        "evaluations": 2354,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 199
+      }
+    },
+    {
+      "case": 4,
+      "document": "V3-medieval-044",
+      "alphagram_recovery": 0.8089430894308943,
+      "character_recovery": 0.9479591836734694,
+      "tokens": 246,
+      "true_key_objective": -4.678848020779357,
+      "fitted_key_objective": -5.254633534628795,
+      "true_minus_fit": 0.5757855138494374,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.517408129192689,
+        "objective": -5.254633534628795,
+        "rounds": 4,
+        "evaluations": 1320,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 206
+      }
+    },
+    {
+      "case": 5,
+      "document": "V3-medieval-045",
+      "alphagram_recovery": 0.823045267489712,
+      "character_recovery": 0.9430719656283566,
+      "tokens": 243,
+      "true_key_objective": -4.106748715207916,
+      "fitted_key_objective": -4.698412892704547,
+      "true_minus_fit": 0.5916641774966314,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.8904122430682815,
+        "objective": -4.698412892704547,
+        "rounds": 5,
+        "evaluations": 1757,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 208
+      }
+    }
+  ],
+  "search_median": 0.817772633744856,
+  "search_minimum": 0.792,
+  "external_diagnostic_documents": 80,
+  "registration_sha256": "e0a2f90a35c4b57381fd1ef6ce7987adc79b294c9a7ec58bb0d91fd27e1f1db6"
+}

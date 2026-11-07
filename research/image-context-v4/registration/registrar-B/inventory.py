@@ -1,0 +1,22 @@
+import json
+from pathlib import Path
+from PIL import Image
+p=Path(r'C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\image-context-v4\registration\registrar-B')
+a=json.loads((p/'PAGES.json').read_text())
+# Rectangles manually observed on source contact sheets; y uses sheet coordinate, including 30px title strip.
+R={0:[(62,116,500,599)],1:[(108,65,450,701)],2:[(74,67,449,682),(0,53,22,688)],3:[(198,119,347,133)],4:[(65,61,425,670),(0,62,24,665)],5:[(95,69,465,683),(578,62,22,651)],6:[(94,72,469,653)],7:[(175,447,218,115),(425,449,110,94)],8:[(95,124,263,140),(94,549,257,139),(420,585,72,78)],9:[(175,151,235,225)],10:[(78,119,438,148),(80,280,235,104),(374,196,143,52)],11:[(302,118,263,181)],12:[(105,121,378,97),(109,226,375,66),(105,321,375,184),(103,511,380,137)],13:[(174,150,340,187)],14:[(78,116,358,115),(80,375,286,119),(380,386,85,95)],15:[(142,117,375,207)],16:[(83,108,363,113)],17:[(128,114,447,168)],18:[(84,126,229,161),(325,139,114,132)],19:[(165,125,370,85),(167,214,358,98),(169,308,185,49),(370,319,106,37)],20:[(55,119,347,241)],21:[(146,122,242,109),(430,129,77,79),(150,326,276,92),(440,326,93,65)],22:[(75,96,152,120),(225,96,273,140),(70,569,135,78),(228,562,266,92)],23:[(181,142,208,372)],24:[(78,142,357,221)],25:[(179,500,234,137),(433,502,89,104)],26:[(67,200,143,147),(246,204,227,144)],27:[(139,501,189,103),(357,530,182,80)],28:[(67,104,428,207)],29:[(189,113,347,203)],30:[(56,99,420,213)],31:[(168,110,292,132),(152,518,219,158),(395,568,107,68)],32:[(92,79,360,78),(98,317,213,146),(98,479,289,195)],33:[(152,116,261,110),(474,128,49,80),(153,238,284,146)],34:[(83,134,273,246)],35:[(177,104,278,109),(178,217,196,149)],36:[(71,109,187,87),(316,121,77,75),(68,499,270,145),(352,536,104,98)],37:[(174,110,164,81),(414,117,110,70),(168,527,171,79),(355,520,171,94)],38:[(69,70,428,174)],39:[(91,143,376,148)],40:[(179,112,370,203)],41:[(126,113,385,100),(124,215,187,279)],42:[(135,73,440,137),(143,214,426,96),(151,309,414,141),(169,451,398,247)],43:[(79,128,310,180),(79,307,190,143),(78,449,340,159),(79,606,197,104),(100,77,58,19),(374,95,43,23),(416,202,77,21),(425,264,47,23),(370,445,118,21),(426,599,40,20)],44:[(203,96,340,365),(207,461,337,140),(209,604,337,86),(578,129,22,584)],45:[(92,188,350,412)],46:[(193,149,365,207),(174,351,384,240),(171,78,41,20),(254,74,40,18),(405,95,42,20),(481,120,35,22),(158,362,36,19),(251,594,43,20),(247,626,44,18),(327,629,42,18),(407,607,28,17),(327,670,30,18),(527,597,52,26)],47:[(56,209,461,178),(56,469,455,135),(237,599,271,139),(97,111,35,20),(165,112,44,21),(241,112,42,21),(278,109,39,20),(316,114,50,20),(389,115,43,20),(493,112,42,20),(4,486,49,49),(28,586,41,24)],48:[(163,108,165,165),(382,120,172,139),(245,496,182,130),(465,511,99,103),(70,198,30,451),(64,113,30,52)],49:[(102,106,400,235),(105,567,147,140),(269,589,234,105),(468,775,49,41)],50:[(118,94,206,226),(407,104,113,53)]}
+res={'registrar_id':'blind_registrar_B','fresh_context':True,'outcome_blind':True,'picture_boxes_unseen':True,'pages':[],'unreviewed_pages':[]}
+for i,v in enumerate(a):
+ im=Image.open(p/v['image']);im.thumbnail((600,850));sw,sh=im.size
+ def native(b):
+  x,y,w,h=b;return [round(x/sw*v['native_width'],2),round((y-30)/sh*v['native_height'],2),round(w/sw*v['native_width'],2),round(h/sh*v['native_height'],2)]
+ blocks=[]
+ for k,r in enumerate(R[i]):
+  blocks.append({'block_id':'B%03d'%(k+1),'unit':None,'box':native(r),'lines':[],'decision':'UNREGISTERED','reason':'Observed source writing region. Complete physical row geometry and P-unit identity have not yet been independently resolved; no line rectangles fabricated.'})
+ res['pages'].append({'task_id':v['task_id'],'folio':v['folio'],'reviewed':True,'blocks':blocks,'notes':'Entire supplied source page visually inspected. Rectangular fields follow visible writing extent; separations follow blank space or drawing interruptions. No words read or picture categories assigned. Small foliation/marginal non-body marks are explicitly outside P registration.'})
+(p/'REVIEW.v01.json').write_text(json.dumps(res,indent=2))
+(p/'PROGRESS.txt').write_text('51/51 source pages visually inspected at page scale. Initial visible writing-region inventory saved. Line geometry and unit registration remain under review; v01 has no verified registrations.\n')
+(p/'regions.json').write_text(json.dumps(R))
+e=json.loads((p/'EVT-STRUCTURE.json').read_text())
+for v in a:
+ print(v['folio'],[(x['unit'],x['reading'],x['line_count']) for x in e if x['folio']==v['folio']])

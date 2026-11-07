@@ -1,0 +1,15 @@
+{
+  "status": "NOT FITTED",
+  "model": "ordinal logistic, ridge",
+  "features": "13 opener + 4 ending group rates, glyph 1–2 grams; exclude paragraph-first words",
+  "baseline": [
+    "scribe",
+    "words on page",
+    "mean line length",
+    "share wrapped lines"
+  ],
+  "outer": "leave-one-folio-out",
+  "inner": "leave-one-folio-out ridge tuning",
+  "required": "train-fold-only preprocessing; convergence and penalty grid freeze; agreed response/adjudication rule; image-only single-plant exclusions",
+  "joined": false
+}

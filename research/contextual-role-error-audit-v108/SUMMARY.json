@@ -1,0 +1,4358 @@
+{
+  "scope": "Retrospective descriptive diagnosis only; no new predictive scores or manuscript inference.",
+  "all_occurrences": 2254,
+  "binary_test_occurrences": 808,
+  "panels": [
+    {
+      "stratum": "Commentarii belli Gallici|cum",
+      "previous_status": "FAIL",
+      "n": 333,
+      "test_binary_n": 104,
+      "cluster": {
+        "n": 104,
+        "correct": 75,
+        "accuracy": 0.7211538461538461,
+        "by_role": {
+          "ADP": {
+            "n": 60,
+            "correct": 55,
+            "recall": 0.9166666666666666
+          },
+          "SCONJ": {
+            "n": 44,
+            "correct": 20,
+            "recall": 0.45454545454545453
+          }
+        },
+        "balanced_recall": 0.6856060606060606
+      },
+      "supervised": {
+        "n": 104,
+        "correct": 82,
+        "accuracy": 0.7884615384615384,
+        "by_role": {
+          "ADP": {
+            "n": 60,
+            "correct": 54,
+            "recall": 0.9
+          },
+          "SCONJ": {
+            "n": 44,
+            "correct": 28,
+            "recall": 0.6363636363636364
+          }
+        },
+        "balanced_recall": 0.7681818181818182
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 165,
+          "train_gold": {
+            "ADP": 86,
+            "SCONJ": 78,
+            "ADV": 1
+          },
+          "mapped_label": "ADP",
+          "test_gold": {
+            "ADP": 55,
+            "SCONJ": 24,
+            "ADV": 2
+          },
+          "most_common_features": [
+            [
+              "1:se",
+              8
+            ],
+            [
+              "1:quod",
+              6
+            ],
+            [
+              "3:in",
+              6
+            ],
+            [
+              "2:omnibus",
+              5
+            ],
+            [
+              "3:copiis",
+              5
+            ],
+            [
+              "2:iis",
+              5
+            ],
+            [
+              "2:legionibus",
+              5
+            ],
+            [
+              "1:quibus",
+              5
+            ],
+            [
+              "1:et",
+              5
+            ],
+            [
+              "3:et",
+              5
+            ],
+            [
+              "1:qui",
+              5
+            ],
+            [
+              "2:his",
+              4
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 61,
+          "train_gold": {
+            "SCONJ": 51,
+            "ADP": 9,
+            "ADV": 1
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 20,
+            "ADP": 5,
+            "ADV": 1
+          },
+          "most_common_features": [
+            [
+              "0:#edge",
+              61
+            ],
+            [
+              "1:#edge",
+              22
+            ],
+            [
+              "L:#edge|#edge",
+              22
+            ],
+            [
+              "3:in",
+              4
+            ],
+            [
+              "2:his",
+              4
+            ],
+            [
+              "1:ipse",
+              4
+            ],
+            [
+              "L:#edge|ipse",
+              4
+            ],
+            [
+              "1:haec",
+              3
+            ],
+            [
+              "L:#edge|haec",
+              3
+            ],
+            [
+              "1:qui",
+              3
+            ],
+            [
+              "L:#edge|qui",
+              3
+            ],
+            [
+              "2:ex",
+              3
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": false,
+      "test_zero_cluster_features": 16,
+      "test_zero_supervised_features": 16,
+      "unseen_supervised_feature_fraction": 0.6762820512820513,
+      "unseen_pair_feature_fraction": 0.8605769230769231,
+      "real_neighbor_unseen_fraction": 0.6377952755905512,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 48,
+          "correct": 37,
+          "accuracy": 0.7708333333333334,
+          "by_role": {
+            "ADP": {
+              "n": 33,
+              "correct": 33,
+              "recall": 1.0
+            },
+            "SCONJ": {
+              "n": 15,
+              "correct": 4,
+              "recall": 0.26666666666666666
+            }
+          },
+          "balanced_recall": 0.6333333333333333
+        },
+        "2-3": {
+          "n": 35,
+          "correct": 27,
+          "accuracy": 0.7714285714285715,
+          "by_role": {
+            "ADP": {
+              "n": 17,
+              "correct": 14,
+              "recall": 0.8235294117647058
+            },
+            "SCONJ": {
+              "n": 18,
+              "correct": 13,
+              "recall": 0.7222222222222222
+            }
+          },
+          "balanced_recall": 0.772875816993464
+        },
+        "4-6": {
+          "n": 21,
+          "correct": 18,
+          "accuracy": 0.8571428571428571,
+          "by_role": {
+            "SCONJ": {
+              "n": 11,
+              "correct": 11,
+              "recall": 1.0
+            },
+            "ADP": {
+              "n": 10,
+              "correct": 7,
+              "recall": 0.7
+            }
+          },
+          "balanced_recall": 0.85
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 37,
+          "correct": 24,
+          "accuracy": 0.6486486486486487,
+          "by_role": {
+            "SCONJ": {
+              "n": 35,
+              "correct": 22,
+              "recall": 0.6285714285714286
+            },
+            "ADP": {
+              "n": 2,
+              "correct": 2,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.8142857142857143
+        },
+        "True": {
+          "n": 67,
+          "correct": 58,
+          "accuracy": 0.8656716417910447,
+          "by_role": {
+            "ADP": {
+              "n": 58,
+              "correct": 52,
+              "recall": 0.896551724137931
+            },
+            "SCONJ": {
+              "n": 9,
+              "correct": 6,
+              "recall": 0.6666666666666666
+            }
+          },
+          "balanced_recall": 0.7816091954022988
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 37,
+          "correct": 17,
+          "accuracy": 0.4594594594594595,
+          "by_role": {
+            "SCONJ": {
+              "n": 35,
+              "correct": 15,
+              "recall": 0.42857142857142855
+            },
+            "ADP": {
+              "n": 2,
+              "correct": 2,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.7142857142857143
+        },
+        "True": {
+          "n": 67,
+          "correct": 58,
+          "accuracy": 0.8656716417910447,
+          "by_role": {
+            "ADP": {
+              "n": 58,
+              "correct": 53,
+              "recall": 0.9137931034482759
+            },
+            "SCONJ": {
+              "n": 9,
+              "correct": 5,
+              "recall": 0.5555555555555556
+            }
+          },
+          "balanced_recall": 0.7346743295019158
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 2,
+          "correct": 1,
+          "accuracy": 0.5,
+          "by_role": {
+            "SCONJ": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADP": {
+              "n": 1,
+              "correct": 1,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        },
+        "same_role_stronger": {
+          "n": 57,
+          "correct": 46,
+          "accuracy": 0.8070175438596491,
+          "by_role": {
+            "ADP": {
+              "n": 30,
+              "correct": 26,
+              "recall": 0.8666666666666667
+            },
+            "SCONJ": {
+              "n": 27,
+              "correct": 20,
+              "recall": 0.7407407407407407
+            }
+          },
+          "balanced_recall": 0.8037037037037037
+        },
+        "tied": {
+          "n": 45,
+          "correct": 35,
+          "accuracy": 0.7777777777777778,
+          "by_role": {
+            "ADP": {
+              "n": 29,
+              "correct": 27,
+              "recall": 0.9310344827586207
+            },
+            "SCONJ": {
+              "n": 16,
+              "correct": 8,
+              "recall": 0.5
+            }
+          },
+          "balanced_recall": 0.7155172413793103
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 78,
+          "correct": 61,
+          "accuracy": 0.782051282051282,
+          "by_role": {
+            "ADP": {
+              "n": 54,
+              "correct": 52,
+              "recall": 0.9629629629629629
+            },
+            "SCONJ": {
+              "n": 24,
+              "correct": 9,
+              "recall": 0.375
+            }
+          },
+          "balanced_recall": 0.6689814814814814
+        },
+        "True": {
+          "n": 26,
+          "correct": 21,
+          "accuracy": 0.8076923076923077,
+          "by_role": {
+            "SCONJ": {
+              "n": 20,
+              "correct": 19,
+              "recall": 0.95
+            },
+            "ADP": {
+              "n": 6,
+              "correct": 2,
+              "recall": 0.3333333333333333
+            }
+          },
+          "balanced_recall": 0.6416666666666666
+        }
+      },
+      "head_visibility_by_role": {
+        "ADP": {
+          "n": 60,
+          "visible": 58,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 44,
+          "visible": 9,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADP": {
+          "coverage": {
+            "0-1": {
+              "n": 33,
+              "correct": 33,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADP": {
+                  "n": 33,
+                  "correct": 33,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "2-3": {
+              "n": 17,
+              "correct": 14,
+              "accuracy": 0.8235294117647058,
+              "by_role": {
+                "ADP": {
+                  "n": 17,
+                  "correct": 14,
+                  "recall": 0.8235294117647058
+                }
+              },
+              "balanced_recall": 0.8235294117647058
+            },
+            "4-6": {
+              "n": 10,
+              "correct": 7,
+              "accuracy": 0.7,
+              "by_role": {
+                "ADP": {
+                  "n": 10,
+                  "correct": 7,
+                  "recall": 0.7
+                }
+              },
+              "balanced_recall": 0.7
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 2,
+              "correct": 2,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADP": {
+                  "n": 2,
+                  "correct": 2,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "True": {
+              "n": 58,
+              "correct": 52,
+              "accuracy": 0.896551724137931,
+              "by_role": {
+                "ADP": {
+                  "n": 58,
+                  "correct": 52,
+                  "recall": 0.896551724137931
+                }
+              },
+              "balanced_recall": 0.896551724137931
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 15,
+              "correct": 4,
+              "accuracy": 0.26666666666666666,
+              "by_role": {
+                "SCONJ": {
+                  "n": 15,
+                  "correct": 4,
+                  "recall": 0.26666666666666666
+                }
+              },
+              "balanced_recall": 0.26666666666666666
+            },
+            "2-3": {
+              "n": 18,
+              "correct": 13,
+              "accuracy": 0.7222222222222222,
+              "by_role": {
+                "SCONJ": {
+                  "n": 18,
+                  "correct": 13,
+                  "recall": 0.7222222222222222
+                }
+              },
+              "balanced_recall": 0.7222222222222222
+            },
+            "4-6": {
+              "n": 11,
+              "correct": 11,
+              "accuracy": 1.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 11,
+                  "correct": 11,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 35,
+              "correct": 22,
+              "accuracy": 0.6285714285714286,
+              "by_role": {
+                "SCONJ": {
+                  "n": 35,
+                  "correct": 22,
+                  "recall": 0.6285714285714286
+                }
+              },
+              "balanced_recall": 0.6285714285714286
+            },
+            "True": {
+              "n": 9,
+              "correct": 6,
+              "accuracy": 0.6666666666666666,
+              "by_role": {
+                "SCONJ": {
+                  "n": 9,
+                  "correct": 6,
+                  "recall": 0.6666666666666666
+                }
+              },
+              "balanced_recall": 0.6666666666666666
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "Commentarii belli Gallici|ut",
+      "previous_status": "NOT_ESTIMABLE",
+      "n": 229,
+      "test_binary_n": 79,
+      "cluster": {
+        "n": 79,
+        "correct": 59,
+        "accuracy": 0.7468354430379747,
+        "by_role": {
+          "SCONJ": {
+            "n": 61,
+            "correct": 59,
+            "recall": 0.9672131147540983
+          },
+          "ADV": {
+            "n": 18,
+            "correct": 0,
+            "recall": 0.0
+          }
+        },
+        "balanced_recall": 0.48360655737704916
+      },
+      "supervised": {
+        "n": 79,
+        "correct": 20,
+        "accuracy": 0.25316455696202533,
+        "by_role": {
+          "SCONJ": {
+            "n": 61,
+            "correct": 2,
+            "recall": 0.03278688524590164
+          },
+          "ADV": {
+            "n": 18,
+            "correct": 18,
+            "recall": 1.0
+          }
+        },
+        "balanced_recall": 0.5163934426229508
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 144,
+          "train_gold": {
+            "SCONJ": 114,
+            "ADV": 30
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 59,
+            "ADV": 18
+          },
+          "most_common_features": [
+            [
+              "2:in",
+              8
+            ],
+            [
+              "2:si",
+              8
+            ],
+            [
+              "0:#edge",
+              7
+            ],
+            [
+              "3:in",
+              5
+            ],
+            [
+              "0:atque",
+              4
+            ],
+            [
+              "2:erat",
+              4
+            ],
+            [
+              "2:non",
+              4
+            ],
+            [
+              "2:ante",
+              4
+            ],
+            [
+              "3:finibus",
+              3
+            ],
+            [
+              "1:erat",
+              3
+            ],
+            [
+              "1:ita",
+              3
+            ],
+            [
+              "2:ad",
+              3
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 6,
+          "train_gold": {
+            "ADV": 5,
+            "SCONJ": 1
+          },
+          "mapped_label": "ADV",
+          "test_gold": {
+            "SCONJ": 2
+          },
+          "most_common_features": [
+            [
+              "1:que",
+              5
+            ],
+            [
+              "2:rei",
+              2
+            ],
+            [
+              "3:militaris",
+              2
+            ],
+            [
+              "R:rei|militaris",
+              2
+            ],
+            [
+              "0:ne",
+              1
+            ],
+            [
+              "2:postea",
+              1
+            ],
+            [
+              "3:ex",
+              1
+            ],
+            [
+              "L:ne|que",
+              1
+            ],
+            [
+              "R:postea|ex",
+              1
+            ],
+            [
+              "0:temporis",
+              1
+            ],
+            [
+              "1:quam",
+              1
+            ],
+            [
+              "L:temporis|quam",
+              1
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": false,
+      "test_zero_cluster_features": 25,
+      "test_zero_supervised_features": 25,
+      "unseen_supervised_feature_fraction": 0.7890295358649789,
+      "unseen_pair_feature_fraction": 0.9367088607594937,
+      "real_neighbor_unseen_fraction": 0.7392739273927393,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 53,
+          "correct": 10,
+          "accuracy": 0.18867924528301888,
+          "by_role": {
+            "SCONJ": {
+              "n": 43,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 10,
+              "correct": 10,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        },
+        "2-3": {
+          "n": 21,
+          "correct": 7,
+          "accuracy": 0.3333333333333333,
+          "by_role": {
+            "SCONJ": {
+              "n": 16,
+              "correct": 2,
+              "recall": 0.125
+            },
+            "ADV": {
+              "n": 5,
+              "correct": 5,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5625
+        },
+        "4-6": {
+          "n": 5,
+          "correct": 3,
+          "accuracy": 0.6,
+          "by_role": {
+            "ADV": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            },
+            "SCONJ": {
+              "n": 2,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 59,
+          "correct": 7,
+          "accuracy": 0.11864406779661017,
+          "by_role": {
+            "SCONJ": {
+              "n": 53,
+              "correct": 1,
+              "recall": 0.018867924528301886
+            },
+            "ADV": {
+              "n": 6,
+              "correct": 6,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5094339622641509
+        },
+        "True": {
+          "n": 20,
+          "correct": 13,
+          "accuracy": 0.65,
+          "by_role": {
+            "SCONJ": {
+              "n": 8,
+              "correct": 1,
+              "recall": 0.125
+            },
+            "ADV": {
+              "n": 12,
+              "correct": 12,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5625
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 59,
+          "correct": 51,
+          "accuracy": 0.864406779661017,
+          "by_role": {
+            "SCONJ": {
+              "n": 53,
+              "correct": 51,
+              "recall": 0.9622641509433962
+            },
+            "ADV": {
+              "n": 6,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.4811320754716981
+        },
+        "True": {
+          "n": 20,
+          "correct": 8,
+          "accuracy": 0.4,
+          "by_role": {
+            "SCONJ": {
+              "n": 8,
+              "correct": 8,
+              "recall": 1.0
+            },
+            "ADV": {
+              "n": 12,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 6,
+          "correct": 3,
+          "accuracy": 0.5,
+          "by_role": {
+            "SCONJ": {
+              "n": 3,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        },
+        "same_role_stronger": {
+          "n": 28,
+          "correct": 9,
+          "accuracy": 0.32142857142857145,
+          "by_role": {
+            "SCONJ": {
+              "n": 21,
+              "correct": 2,
+              "recall": 0.09523809523809523
+            },
+            "ADV": {
+              "n": 7,
+              "correct": 7,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5476190476190477
+        },
+        "tied": {
+          "n": 45,
+          "correct": 8,
+          "accuracy": 0.17777777777777778,
+          "by_role": {
+            "SCONJ": {
+              "n": 37,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 8,
+              "correct": 8,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 68,
+          "correct": 13,
+          "accuracy": 0.19117647058823528,
+          "by_role": {
+            "SCONJ": {
+              "n": 57,
+              "correct": 2,
+              "recall": 0.03508771929824561
+            },
+            "ADV": {
+              "n": 11,
+              "correct": 11,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5175438596491229
+        },
+        "True": {
+          "n": 11,
+          "correct": 7,
+          "accuracy": 0.6363636363636364,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 7,
+              "correct": 7,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "head_visibility_by_role": {
+        "ADV": {
+          "n": 18,
+          "visible": 12,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 61,
+          "visible": 8,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADV": {
+          "coverage": {
+            "0-1": {
+              "n": 10,
+              "correct": 10,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 10,
+                  "correct": 10,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "2-3": {
+              "n": 5,
+              "correct": 5,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 5,
+                  "correct": 5,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "4-6": {
+              "n": 3,
+              "correct": 3,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 3,
+                  "correct": 3,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 6,
+              "correct": 6,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 6,
+                  "correct": 6,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "True": {
+              "n": 12,
+              "correct": 12,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 12,
+                  "correct": 12,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 43,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 43,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            },
+            "2-3": {
+              "n": 16,
+              "correct": 2,
+              "accuracy": 0.125,
+              "by_role": {
+                "SCONJ": {
+                  "n": 16,
+                  "correct": 2,
+                  "recall": 0.125
+                }
+              },
+              "balanced_recall": 0.125
+            },
+            "4-6": {
+              "n": 2,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 2,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 53,
+              "correct": 1,
+              "accuracy": 0.018867924528301886,
+              "by_role": {
+                "SCONJ": {
+                  "n": 53,
+                  "correct": 1,
+                  "recall": 0.018867924528301886
+                }
+              },
+              "balanced_recall": 0.018867924528301886
+            },
+            "True": {
+              "n": 8,
+              "correct": 1,
+              "accuracy": 0.125,
+              "by_role": {
+                "SCONJ": {
+                  "n": 8,
+                  "correct": 1,
+                  "recall": 0.125
+                }
+              },
+              "balanced_recall": 0.125
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "De officiis|cum",
+      "previous_status": "NOT_ESTIMABLE",
+      "n": 94,
+      "test_binary_n": 27,
+      "cluster": {
+        "n": 27,
+        "correct": 14,
+        "accuracy": 0.5185185185185185,
+        "by_role": {
+          "SCONJ": {
+            "n": 14,
+            "correct": 14,
+            "recall": 1.0
+          },
+          "ADP": {
+            "n": 13,
+            "correct": 0,
+            "recall": 0.0
+          }
+        },
+        "balanced_recall": 0.5
+      },
+      "supervised": {
+        "n": 27,
+        "correct": 17,
+        "accuracy": 0.6296296296296297,
+        "by_role": {
+          "SCONJ": {
+            "n": 14,
+            "correct": 5,
+            "recall": 0.35714285714285715
+          },
+          "ADP": {
+            "n": 13,
+            "correct": 12,
+            "recall": 0.9230769230769231
+          }
+        },
+        "balanced_recall": 0.6401098901098902
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 51,
+          "train_gold": {
+            "ADP": 20,
+            "ADV": 9,
+            "SCONJ": 22
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 11,
+            "ADP": 13,
+            "ADV": 4
+          },
+          "most_common_features": [
+            [
+              "1:qui",
+              4
+            ],
+            [
+              "0:que",
+              3
+            ],
+            [
+              "0:si",
+              2
+            ],
+            [
+              "2:virtute",
+              2
+            ],
+            [
+              "2:hoste",
+              2
+            ],
+            [
+              "2:ad",
+              2
+            ],
+            [
+              "1:tum",
+              2
+            ],
+            [
+              "1:que",
+              2
+            ],
+            [
+              "0:autem",
+              2
+            ],
+            [
+              "1:est",
+              2
+            ],
+            [
+              "3:et",
+              2
+            ],
+            [
+              "0:quae",
+              2
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 11,
+          "train_gold": {
+            "SCONJ": 11
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 3,
+            "ADV": 1
+          },
+          "most_common_features": [
+            [
+              "0:#edge",
+              11
+            ],
+            [
+              "1:sed",
+              4
+            ],
+            [
+              "L:#edge|sed",
+              4
+            ],
+            [
+              "1:nam",
+              2
+            ],
+            [
+              "L:#edge|nam",
+              2
+            ],
+            [
+              "2:statuissem",
+              1
+            ],
+            [
+              "3:scribere",
+              1
+            ],
+            [
+              "R:statuissem|scribere",
+              1
+            ],
+            [
+              "1:ea",
+              1
+            ],
+            [
+              "2:tempore",
+              1
+            ],
+            [
+              "3:commutantur",
+              1
+            ],
+            [
+              "L:#edge|ea",
+              1
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": true,
+      "test_zero_cluster_features": 7,
+      "test_zero_supervised_features": 8,
+      "unseen_supervised_feature_fraction": 0.7901234567901234,
+      "unseen_pair_feature_fraction": 0.9259259259259259,
+      "real_neighbor_unseen_fraction": 0.7549019607843137,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 18,
+          "correct": 9,
+          "accuracy": 0.5,
+          "by_role": {
+            "SCONJ": {
+              "n": 8,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADP": {
+              "n": 10,
+              "correct": 9,
+              "recall": 0.9
+            }
+          },
+          "balanced_recall": 0.45
+        },
+        "2-3": {
+          "n": 8,
+          "correct": 7,
+          "accuracy": 0.875,
+          "by_role": {
+            "SCONJ": {
+              "n": 5,
+              "correct": 4,
+              "recall": 0.8
+            },
+            "ADP": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.9
+        },
+        "4-6": {
+          "n": 1,
+          "correct": 1,
+          "accuracy": 1.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 1,
+              "correct": 1,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 1.0
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 10,
+          "correct": 4,
+          "accuracy": 0.4,
+          "by_role": {
+            "SCONJ": {
+              "n": 10,
+              "correct": 4,
+              "recall": 0.4
+            }
+          },
+          "balanced_recall": 0.4
+        },
+        "True": {
+          "n": 17,
+          "correct": 13,
+          "accuracy": 0.7647058823529411,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 1,
+              "recall": 0.25
+            },
+            "ADP": {
+              "n": 13,
+              "correct": 12,
+              "recall": 0.9230769230769231
+            }
+          },
+          "balanced_recall": 0.5865384615384616
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 10,
+          "correct": 10,
+          "accuracy": 1.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 10,
+              "correct": 10,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 1.0
+        },
+        "True": {
+          "n": 17,
+          "correct": 4,
+          "accuracy": 0.23529411764705882,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 4,
+              "recall": 1.0
+            },
+            "ADP": {
+              "n": 13,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 3,
+          "correct": 0,
+          "accuracy": 0.0,
+          "by_role": {
+            "ADP": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "SCONJ": {
+              "n": 2,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.0
+        },
+        "same_role_stronger": {
+          "n": 12,
+          "correct": 10,
+          "accuracy": 0.8333333333333334,
+          "by_role": {
+            "SCONJ": {
+              "n": 7,
+              "correct": 5,
+              "recall": 0.7142857142857143
+            },
+            "ADP": {
+              "n": 5,
+              "correct": 5,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.8571428571428572
+        },
+        "tied": {
+          "n": 12,
+          "correct": 7,
+          "accuracy": 0.5833333333333334,
+          "by_role": {
+            "SCONJ": {
+              "n": 5,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADP": {
+              "n": 7,
+              "correct": 7,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 23,
+          "correct": 13,
+          "accuracy": 0.5652173913043478,
+          "by_role": {
+            "SCONJ": {
+              "n": 11,
+              "correct": 2,
+              "recall": 0.18181818181818182
+            },
+            "ADP": {
+              "n": 12,
+              "correct": 11,
+              "recall": 0.9166666666666666
+            }
+          },
+          "balanced_recall": 0.5492424242424242
+        },
+        "True": {
+          "n": 4,
+          "correct": 4,
+          "accuracy": 1.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            },
+            "ADP": {
+              "n": 1,
+              "correct": 1,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 1.0
+        }
+      },
+      "head_visibility_by_role": {
+        "ADP": {
+          "n": 13,
+          "visible": 13,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 14,
+          "visible": 4,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADP": {
+          "coverage": {
+            "0-1": {
+              "n": 10,
+              "correct": 9,
+              "accuracy": 0.9,
+              "by_role": {
+                "ADP": {
+                  "n": 10,
+                  "correct": 9,
+                  "recall": 0.9
+                }
+              },
+              "balanced_recall": 0.9
+            },
+            "2-3": {
+              "n": 3,
+              "correct": 3,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADP": {
+                  "n": 3,
+                  "correct": 3,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "True": {
+              "n": 13,
+              "correct": 12,
+              "accuracy": 0.9230769230769231,
+              "by_role": {
+                "ADP": {
+                  "n": 13,
+                  "correct": 12,
+                  "recall": 0.9230769230769231
+                }
+              },
+              "balanced_recall": 0.9230769230769231
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 8,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 8,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            },
+            "2-3": {
+              "n": 5,
+              "correct": 4,
+              "accuracy": 0.8,
+              "by_role": {
+                "SCONJ": {
+                  "n": 5,
+                  "correct": 4,
+                  "recall": 0.8
+                }
+              },
+              "balanced_recall": 0.8
+            },
+            "4-6": {
+              "n": 1,
+              "correct": 1,
+              "accuracy": 1.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 1,
+                  "correct": 1,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 10,
+              "correct": 4,
+              "accuracy": 0.4,
+              "by_role": {
+                "SCONJ": {
+                  "n": 10,
+                  "correct": 4,
+                  "recall": 0.4
+                }
+              },
+              "balanced_recall": 0.4
+            },
+            "True": {
+              "n": 4,
+              "correct": 1,
+              "accuracy": 0.25,
+              "by_role": {
+                "SCONJ": {
+                  "n": 4,
+                  "correct": 1,
+                  "recall": 0.25
+                }
+              },
+              "balanced_recall": 0.25
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "De officiis|ut",
+      "previous_status": "FAIL",
+      "n": 197,
+      "test_binary_n": 84,
+      "cluster": {
+        "n": 84,
+        "correct": 58,
+        "accuracy": 0.6904761904761905,
+        "by_role": {
+          "SCONJ": {
+            "n": 53,
+            "correct": 50,
+            "recall": 0.9433962264150944
+          },
+          "ADV": {
+            "n": 31,
+            "correct": 8,
+            "recall": 0.25806451612903225
+          }
+        },
+        "balanced_recall": 0.6007303712720633
+      },
+      "supervised": {
+        "n": 84,
+        "correct": 49,
+        "accuracy": 0.5833333333333334,
+        "by_role": {
+          "SCONJ": {
+            "n": 53,
+            "correct": 20,
+            "recall": 0.37735849056603776
+          },
+          "ADV": {
+            "n": 31,
+            "correct": 29,
+            "recall": 0.9354838709677419
+          }
+        },
+        "balanced_recall": 0.6564211807668898
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 103,
+          "train_gold": {
+            "ADV": 37,
+            "SCONJ": 66
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 50,
+            "ADV": 23
+          },
+          "most_common_features": [
+            [
+              "0:ita",
+              6
+            ],
+            [
+              "0:sic",
+              5
+            ],
+            [
+              "0:que",
+              5
+            ],
+            [
+              "2:ne",
+              5
+            ],
+            [
+              "1:est",
+              5
+            ],
+            [
+              "2:non",
+              4
+            ],
+            [
+              "0:et",
+              4
+            ],
+            [
+              "2:si",
+              4
+            ],
+            [
+              "2:ad",
+              4
+            ],
+            [
+              "3:sit",
+              4
+            ],
+            [
+              "2:nihil",
+              3
+            ],
+            [
+              "2:in",
+              3
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 10,
+          "train_gold": {
+            "SCONJ": 2,
+            "ADV": 8
+          },
+          "mapped_label": "ADV",
+          "test_gold": {
+            "ADV": 8,
+            "SCONJ": 3
+          },
+          "most_common_features": [
+            [
+              "0:#edge",
+              10
+            ],
+            [
+              "1:#edge",
+              5
+            ],
+            [
+              "L:#edge|#edge",
+              5
+            ],
+            [
+              "2:enim",
+              3
+            ],
+            [
+              "3:ab",
+              1
+            ],
+            [
+              "R:enim|ab",
+              1
+            ],
+            [
+              "1:sed",
+              1
+            ],
+            [
+              "2:ne",
+              1
+            ],
+            [
+              "3:c",
+              1
+            ],
+            [
+              "L:#edge|sed",
+              1
+            ],
+            [
+              "R:ne|c",
+              1
+            ],
+            [
+              "3:apud",
+              1
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": false,
+      "test_zero_cluster_features": 15,
+      "test_zero_supervised_features": 15,
+      "unseen_supervised_feature_fraction": 0.7301587301587301,
+      "unseen_pair_feature_fraction": 0.8988095238095238,
+      "real_neighbor_unseen_fraction": 0.6867088607594937,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 49,
+          "correct": 22,
+          "accuracy": 0.4489795918367347,
+          "by_role": {
+            "SCONJ": {
+              "n": 33,
+              "correct": 8,
+              "recall": 0.24242424242424243
+            },
+            "ADV": {
+              "n": 16,
+              "correct": 14,
+              "recall": 0.875
+            }
+          },
+          "balanced_recall": 0.5587121212121212
+        },
+        "2-3": {
+          "n": 22,
+          "correct": 17,
+          "accuracy": 0.7727272727272727,
+          "by_role": {
+            "SCONJ": {
+              "n": 14,
+              "correct": 9,
+              "recall": 0.6428571428571429
+            },
+            "ADV": {
+              "n": 8,
+              "correct": 8,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.8214285714285714
+        },
+        "4-6": {
+          "n": 13,
+          "correct": 10,
+          "accuracy": 0.7692307692307693,
+          "by_role": {
+            "SCONJ": {
+              "n": 6,
+              "correct": 3,
+              "recall": 0.5
+            },
+            "ADV": {
+              "n": 7,
+              "correct": 7,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.75
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 57,
+          "correct": 32,
+          "accuracy": 0.5614035087719298,
+          "by_role": {
+            "SCONJ": {
+              "n": 41,
+              "correct": 16,
+              "recall": 0.3902439024390244
+            },
+            "ADV": {
+              "n": 16,
+              "correct": 16,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.6951219512195121
+        },
+        "True": {
+          "n": 27,
+          "correct": 17,
+          "accuracy": 0.6296296296296297,
+          "by_role": {
+            "ADV": {
+              "n": 15,
+              "correct": 13,
+              "recall": 0.8666666666666667
+            },
+            "SCONJ": {
+              "n": 12,
+              "correct": 4,
+              "recall": 0.3333333333333333
+            }
+          },
+          "balanced_recall": 0.6
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 57,
+          "correct": 45,
+          "accuracy": 0.7894736842105263,
+          "by_role": {
+            "SCONJ": {
+              "n": 41,
+              "correct": 39,
+              "recall": 0.9512195121951219
+            },
+            "ADV": {
+              "n": 16,
+              "correct": 6,
+              "recall": 0.375
+            }
+          },
+          "balanced_recall": 0.663109756097561
+        },
+        "True": {
+          "n": 27,
+          "correct": 13,
+          "accuracy": 0.48148148148148145,
+          "by_role": {
+            "ADV": {
+              "n": 15,
+              "correct": 2,
+              "recall": 0.13333333333333333
+            },
+            "SCONJ": {
+              "n": 12,
+              "correct": 11,
+              "recall": 0.9166666666666666
+            }
+          },
+          "balanced_recall": 0.525
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 4,
+          "correct": 0,
+          "accuracy": 0.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.0
+        },
+        "same_role_stronger": {
+          "n": 31,
+          "correct": 22,
+          "accuracy": 0.7096774193548387,
+          "by_role": {
+            "SCONJ": {
+              "n": 23,
+              "correct": 14,
+              "recall": 0.6086956521739131
+            },
+            "ADV": {
+              "n": 8,
+              "correct": 8,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.8043478260869565
+        },
+        "tied": {
+          "n": 49,
+          "correct": 27,
+          "accuracy": 0.5510204081632653,
+          "by_role": {
+            "SCONJ": {
+              "n": 26,
+              "correct": 6,
+              "recall": 0.23076923076923078
+            },
+            "ADV": {
+              "n": 23,
+              "correct": 21,
+              "recall": 0.9130434782608695
+            }
+          },
+          "balanced_recall": 0.5719063545150501
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 72,
+          "correct": 41,
+          "accuracy": 0.5694444444444444,
+          "by_role": {
+            "SCONJ": {
+              "n": 49,
+              "correct": 20,
+              "recall": 0.40816326530612246
+            },
+            "ADV": {
+              "n": 23,
+              "correct": 21,
+              "recall": 0.9130434782608695
+            }
+          },
+          "balanced_recall": 0.660603371783496
+        },
+        "True": {
+          "n": 12,
+          "correct": 8,
+          "accuracy": 0.6666666666666666,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 8,
+              "correct": 8,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "head_visibility_by_role": {
+        "ADV": {
+          "n": 31,
+          "visible": 15,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 53,
+          "visible": 12,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADV": {
+          "coverage": {
+            "0-1": {
+              "n": 16,
+              "correct": 14,
+              "accuracy": 0.875,
+              "by_role": {
+                "ADV": {
+                  "n": 16,
+                  "correct": 14,
+                  "recall": 0.875
+                }
+              },
+              "balanced_recall": 0.875
+            },
+            "2-3": {
+              "n": 8,
+              "correct": 8,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 8,
+                  "correct": 8,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "4-6": {
+              "n": 7,
+              "correct": 7,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 7,
+                  "correct": 7,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 16,
+              "correct": 16,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 16,
+                  "correct": 16,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "True": {
+              "n": 15,
+              "correct": 13,
+              "accuracy": 0.8666666666666667,
+              "by_role": {
+                "ADV": {
+                  "n": 15,
+                  "correct": 13,
+                  "recall": 0.8666666666666667
+                }
+              },
+              "balanced_recall": 0.8666666666666667
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 33,
+              "correct": 8,
+              "accuracy": 0.24242424242424243,
+              "by_role": {
+                "SCONJ": {
+                  "n": 33,
+                  "correct": 8,
+                  "recall": 0.24242424242424243
+                }
+              },
+              "balanced_recall": 0.24242424242424243
+            },
+            "2-3": {
+              "n": 14,
+              "correct": 9,
+              "accuracy": 0.6428571428571429,
+              "by_role": {
+                "SCONJ": {
+                  "n": 14,
+                  "correct": 9,
+                  "recall": 0.6428571428571429
+                }
+              },
+              "balanced_recall": 0.6428571428571429
+            },
+            "4-6": {
+              "n": 6,
+              "correct": 3,
+              "accuracy": 0.5,
+              "by_role": {
+                "SCONJ": {
+                  "n": 6,
+                  "correct": 3,
+                  "recall": 0.5
+                }
+              },
+              "balanced_recall": 0.5
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 41,
+              "correct": 16,
+              "accuracy": 0.3902439024390244,
+              "by_role": {
+                "SCONJ": {
+                  "n": 41,
+                  "correct": 16,
+                  "recall": 0.3902439024390244
+                }
+              },
+              "balanced_recall": 0.3902439024390244
+            },
+            "True": {
+              "n": 12,
+              "correct": 4,
+              "accuracy": 0.3333333333333333,
+              "by_role": {
+                "SCONJ": {
+                  "n": 12,
+                  "correct": 4,
+                  "recall": 0.3333333333333333
+                }
+              },
+              "balanced_recall": 0.3333333333333333
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "Epistulae ad Atticum|cum",
+      "previous_status": "FAIL",
+      "n": 515,
+      "test_binary_n": 182,
+      "cluster": {
+        "n": 182,
+        "correct": 100,
+        "accuracy": 0.5494505494505495,
+        "by_role": {
+          "SCONJ": {
+            "n": 94,
+            "correct": 93,
+            "recall": 0.9893617021276596
+          },
+          "ADP": {
+            "n": 88,
+            "correct": 7,
+            "recall": 0.07954545454545454
+          }
+        },
+        "balanced_recall": 0.534453578336557
+      },
+      "supervised": {
+        "n": 182,
+        "correct": 128,
+        "accuracy": 0.7032967032967034,
+        "by_role": {
+          "SCONJ": {
+            "n": 94,
+            "correct": 59,
+            "recall": 0.6276595744680851
+          },
+          "ADP": {
+            "n": 88,
+            "correct": 69,
+            "recall": 0.7840909090909091
+          }
+        },
+        "balanced_recall": 0.7058752417794971
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 299,
+          "train_gold": {
+            "SCONJ": 156,
+            "ADP": 120,
+            "ADV": 23
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 93,
+            "ADP": 81,
+            "ADV": 15
+          },
+          "most_common_features": [
+            [
+              "0:#edge",
+              59
+            ],
+            [
+              "1:#edge",
+              25
+            ],
+            [
+              "L:#edge|#edge",
+              25
+            ],
+            [
+              "1:te",
+              19
+            ],
+            [
+              "3:#edge",
+              13
+            ],
+            [
+              "3:in",
+              10
+            ],
+            [
+              "1:ut",
+              9
+            ],
+            [
+              "1:et",
+              8
+            ],
+            [
+              "1:praesertim",
+              8
+            ],
+            [
+              "2:ego",
+              7
+            ],
+            [
+              "0:cum",
+              7
+            ],
+            [
+              "2:ad",
+              7
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 19,
+          "train_gold": {
+            "SCONJ": 1,
+            "ADP": 18
+          },
+          "mapped_label": "ADP",
+          "test_gold": {
+            "ADP": 7,
+            "SCONJ": 1
+          },
+          "most_common_features": [
+            [
+              "1:me",
+              19
+            ],
+            [
+              "0:ad",
+              2
+            ],
+            [
+              "L:ad|me",
+              2
+            ],
+            [
+              "3:#edge",
+              2
+            ],
+            [
+              "2:et",
+              2
+            ],
+            [
+              "0:ex",
+              1
+            ],
+            [
+              "2:veneris",
+              1
+            ],
+            [
+              "3:cognosces",
+              1
+            ],
+            [
+              "L:ex|me",
+              1
+            ],
+            [
+              "R:veneris|cognosces",
+              1
+            ],
+            [
+              "0:maerori",
+              1
+            ],
+            [
+              "2:simul",
+              1
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": false,
+      "test_zero_cluster_features": 13,
+      "test_zero_supervised_features": 15,
+      "unseen_supervised_feature_fraction": 0.6904761904761905,
+      "unseen_pair_feature_fraction": 0.9175824175824175,
+      "real_neighbor_unseen_fraction": 0.6222222222222222,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 85,
+          "correct": 49,
+          "accuracy": 0.5764705882352941,
+          "by_role": {
+            "SCONJ": {
+              "n": 42,
+              "correct": 16,
+              "recall": 0.38095238095238093
+            },
+            "ADP": {
+              "n": 43,
+              "correct": 33,
+              "recall": 0.7674418604651163
+            }
+          },
+          "balanced_recall": 0.5741971207087486
+        },
+        "2-3": {
+          "n": 69,
+          "correct": 57,
+          "accuracy": 0.8260869565217391,
+          "by_role": {
+            "SCONJ": {
+              "n": 34,
+              "correct": 27,
+              "recall": 0.7941176470588235
+            },
+            "ADP": {
+              "n": 35,
+              "correct": 30,
+              "recall": 0.8571428571428571
+            }
+          },
+          "balanced_recall": 0.8256302521008403
+        },
+        "4-6": {
+          "n": 28,
+          "correct": 22,
+          "accuracy": 0.7857142857142857,
+          "by_role": {
+            "SCONJ": {
+              "n": 18,
+              "correct": 16,
+              "recall": 0.8888888888888888
+            },
+            "ADP": {
+              "n": 10,
+              "correct": 6,
+              "recall": 0.6
+            }
+          },
+          "balanced_recall": 0.7444444444444445
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 60,
+          "correct": 40,
+          "accuracy": 0.6666666666666666,
+          "by_role": {
+            "SCONJ": {
+              "n": 59,
+              "correct": 40,
+              "recall": 0.6779661016949152
+            },
+            "ADP": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.3389830508474576
+        },
+        "True": {
+          "n": 122,
+          "correct": 88,
+          "accuracy": 0.7213114754098361,
+          "by_role": {
+            "ADP": {
+              "n": 87,
+              "correct": 69,
+              "recall": 0.7931034482758621
+            },
+            "SCONJ": {
+              "n": 35,
+              "correct": 19,
+              "recall": 0.5428571428571428
+            }
+          },
+          "balanced_recall": 0.6679802955665024
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 60,
+          "correct": 58,
+          "accuracy": 0.9666666666666667,
+          "by_role": {
+            "SCONJ": {
+              "n": 59,
+              "correct": 58,
+              "recall": 0.9830508474576272
+            },
+            "ADP": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.4915254237288136
+        },
+        "True": {
+          "n": 122,
+          "correct": 42,
+          "accuracy": 0.3442622950819672,
+          "by_role": {
+            "ADP": {
+              "n": 87,
+              "correct": 7,
+              "recall": 0.08045977011494253
+            },
+            "SCONJ": {
+              "n": 35,
+              "correct": 35,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5402298850574713
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 22,
+          "correct": 1,
+          "accuracy": 0.045454545454545456,
+          "by_role": {
+            "SCONJ": {
+              "n": 8,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADP": {
+              "n": 14,
+              "correct": 1,
+              "recall": 0.07142857142857142
+            }
+          },
+          "balanced_recall": 0.03571428571428571
+        },
+        "same_role_stronger": {
+          "n": 54,
+          "correct": 52,
+          "accuracy": 0.9629629629629629,
+          "by_role": {
+            "SCONJ": {
+              "n": 25,
+              "correct": 24,
+              "recall": 0.96
+            },
+            "ADP": {
+              "n": 29,
+              "correct": 28,
+              "recall": 0.9655172413793104
+            }
+          },
+          "balanced_recall": 0.9627586206896552
+        },
+        "tied": {
+          "n": 106,
+          "correct": 75,
+          "accuracy": 0.7075471698113207,
+          "by_role": {
+            "SCONJ": {
+              "n": 61,
+              "correct": 35,
+              "recall": 0.5737704918032787
+            },
+            "ADP": {
+              "n": 45,
+              "correct": 40,
+              "recall": 0.8888888888888888
+            }
+          },
+          "balanced_recall": 0.7313296903460837
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 146,
+          "correct": 99,
+          "accuracy": 0.678082191780822,
+          "by_role": {
+            "SCONJ": {
+              "n": 69,
+              "correct": 36,
+              "recall": 0.5217391304347826
+            },
+            "ADP": {
+              "n": 77,
+              "correct": 63,
+              "recall": 0.8181818181818182
+            }
+          },
+          "balanced_recall": 0.6699604743083004
+        },
+        "True": {
+          "n": 36,
+          "correct": 29,
+          "accuracy": 0.8055555555555556,
+          "by_role": {
+            "SCONJ": {
+              "n": 25,
+              "correct": 23,
+              "recall": 0.92
+            },
+            "ADP": {
+              "n": 11,
+              "correct": 6,
+              "recall": 0.5454545454545454
+            }
+          },
+          "balanced_recall": 0.7327272727272727
+        }
+      },
+      "head_visibility_by_role": {
+        "ADP": {
+          "n": 88,
+          "visible": 87,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 94,
+          "visible": 35,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADP": {
+          "coverage": {
+            "0-1": {
+              "n": 43,
+              "correct": 33,
+              "accuracy": 0.7674418604651163,
+              "by_role": {
+                "ADP": {
+                  "n": 43,
+                  "correct": 33,
+                  "recall": 0.7674418604651163
+                }
+              },
+              "balanced_recall": 0.7674418604651163
+            },
+            "2-3": {
+              "n": 35,
+              "correct": 30,
+              "accuracy": 0.8571428571428571,
+              "by_role": {
+                "ADP": {
+                  "n": 35,
+                  "correct": 30,
+                  "recall": 0.8571428571428571
+                }
+              },
+              "balanced_recall": 0.8571428571428571
+            },
+            "4-6": {
+              "n": 10,
+              "correct": 6,
+              "accuracy": 0.6,
+              "by_role": {
+                "ADP": {
+                  "n": 10,
+                  "correct": 6,
+                  "recall": 0.6
+                }
+              },
+              "balanced_recall": 0.6
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 1,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "ADP": {
+                  "n": 1,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            },
+            "True": {
+              "n": 87,
+              "correct": 69,
+              "accuracy": 0.7931034482758621,
+              "by_role": {
+                "ADP": {
+                  "n": 87,
+                  "correct": 69,
+                  "recall": 0.7931034482758621
+                }
+              },
+              "balanced_recall": 0.7931034482758621
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 42,
+              "correct": 16,
+              "accuracy": 0.38095238095238093,
+              "by_role": {
+                "SCONJ": {
+                  "n": 42,
+                  "correct": 16,
+                  "recall": 0.38095238095238093
+                }
+              },
+              "balanced_recall": 0.38095238095238093
+            },
+            "2-3": {
+              "n": 34,
+              "correct": 27,
+              "accuracy": 0.7941176470588235,
+              "by_role": {
+                "SCONJ": {
+                  "n": 34,
+                  "correct": 27,
+                  "recall": 0.7941176470588235
+                }
+              },
+              "balanced_recall": 0.7941176470588235
+            },
+            "4-6": {
+              "n": 18,
+              "correct": 16,
+              "accuracy": 0.8888888888888888,
+              "by_role": {
+                "SCONJ": {
+                  "n": 18,
+                  "correct": 16,
+                  "recall": 0.8888888888888888
+                }
+              },
+              "balanced_recall": 0.8888888888888888
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 59,
+              "correct": 40,
+              "accuracy": 0.6779661016949152,
+              "by_role": {
+                "SCONJ": {
+                  "n": 59,
+                  "correct": 40,
+                  "recall": 0.6779661016949152
+                }
+              },
+              "balanced_recall": 0.6779661016949152
+            },
+            "True": {
+              "n": 35,
+              "correct": 19,
+              "accuracy": 0.5428571428571428,
+              "by_role": {
+                "SCONJ": {
+                  "n": 35,
+                  "correct": 19,
+                  "recall": 0.5428571428571428
+                }
+              },
+              "balanced_recall": 0.5428571428571428
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "Epistulae ad Atticum|ut",
+      "previous_status": "FAIL",
+      "n": 699,
+      "test_binary_n": 278,
+      "cluster": {
+        "n": 278,
+        "correct": 196,
+        "accuracy": 0.7050359712230215,
+        "by_role": {
+          "SCONJ": {
+            "n": 196,
+            "correct": 196,
+            "recall": 1.0
+          },
+          "ADV": {
+            "n": 82,
+            "correct": 0,
+            "recall": 0.0
+          }
+        },
+        "balanced_recall": 0.5
+      },
+      "supervised": {
+        "n": 278,
+        "correct": 140,
+        "accuracy": 0.5035971223021583,
+        "by_role": {
+          "SCONJ": {
+            "n": 196,
+            "correct": 63,
+            "recall": 0.32142857142857145
+          },
+          "ADV": {
+            "n": 82,
+            "correct": 77,
+            "recall": 0.9390243902439024
+          }
+        },
+        "balanced_recall": 0.6302264808362369
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 392,
+          "train_gold": {
+            "ADV": 118,
+            "SCONJ": 274
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 189,
+            "ADV": 78
+          },
+          "most_common_features": [
+            [
+              "0:#edge",
+              39
+            ],
+            [
+              "2:mihi",
+              13
+            ],
+            [
+              "0:ita",
+              13
+            ],
+            [
+              "0:me",
+              12
+            ],
+            [
+              "2:scribis",
+              11
+            ],
+            [
+              "3:ad",
+              11
+            ],
+            [
+              "0:et",
+              11
+            ],
+            [
+              "1:sed",
+              11
+            ],
+            [
+              "1:#edge",
+              10
+            ],
+            [
+              "L:#edge|#edge",
+              10
+            ],
+            [
+              "2:me",
+              9
+            ],
+            [
+              "1:et",
+              9
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 29,
+          "train_gold": {
+            "ADV": 10,
+            "SCONJ": 19
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "ADV": 4,
+            "SCONJ": 7
+          },
+          "most_common_features": [
+            [
+              "3:#edge",
+              29
+            ],
+            [
+              "0:#edge",
+              3
+            ],
+            [
+              "1:cura",
+              3
+            ],
+            [
+              "2:valeas",
+              2
+            ],
+            [
+              "R:valeas|#edge",
+              2
+            ],
+            [
+              "0:putes",
+              2
+            ],
+            [
+              "2:sciam",
+              2
+            ],
+            [
+              "R:sciam|#edge",
+              2
+            ],
+            [
+              "1:sed",
+              2
+            ],
+            [
+              "0:sic",
+              2
+            ],
+            [
+              "2:debeo",
+              2
+            ],
+            [
+              "R:debeo|#edge",
+              2
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": true,
+      "test_zero_cluster_features": 25,
+      "test_zero_supervised_features": 25,
+      "unseen_supervised_feature_fraction": 0.6534772182254197,
+      "unseen_pair_feature_fraction": 0.9046762589928058,
+      "real_neighbor_unseen_fraction": 0.5527306967984934,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 105,
+          "correct": 32,
+          "accuracy": 0.3047619047619048,
+          "by_role": {
+            "SCONJ": {
+              "n": 84,
+              "correct": 11,
+              "recall": 0.13095238095238096
+            },
+            "ADV": {
+              "n": 21,
+              "correct": 21,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5654761904761905
+        },
+        "2-3": {
+          "n": 129,
+          "correct": 76,
+          "accuracy": 0.5891472868217055,
+          "by_role": {
+            "ADV": {
+              "n": 45,
+              "correct": 43,
+              "recall": 0.9555555555555556
+            },
+            "SCONJ": {
+              "n": 84,
+              "correct": 33,
+              "recall": 0.39285714285714285
+            }
+          },
+          "balanced_recall": 0.6742063492063493
+        },
+        "4-6": {
+          "n": 44,
+          "correct": 32,
+          "accuracy": 0.7272727272727273,
+          "by_role": {
+            "SCONJ": {
+              "n": 28,
+              "correct": 19,
+              "recall": 0.6785714285714286
+            },
+            "ADV": {
+              "n": 16,
+              "correct": 13,
+              "recall": 0.8125
+            }
+          },
+          "balanced_recall": 0.7455357142857143
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 140,
+          "correct": 61,
+          "accuracy": 0.4357142857142857,
+          "by_role": {
+            "SCONJ": {
+              "n": 121,
+              "correct": 45,
+              "recall": 0.371900826446281
+            },
+            "ADV": {
+              "n": 19,
+              "correct": 16,
+              "recall": 0.8421052631578947
+            }
+          },
+          "balanced_recall": 0.6070030448020878
+        },
+        "True": {
+          "n": 138,
+          "correct": 79,
+          "accuracy": 0.572463768115942,
+          "by_role": {
+            "ADV": {
+              "n": 63,
+              "correct": 61,
+              "recall": 0.9682539682539683
+            },
+            "SCONJ": {
+              "n": 75,
+              "correct": 18,
+              "recall": 0.24
+            }
+          },
+          "balanced_recall": 0.6041269841269841
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 140,
+          "correct": 121,
+          "accuracy": 0.8642857142857143,
+          "by_role": {
+            "SCONJ": {
+              "n": 121,
+              "correct": 121,
+              "recall": 1.0
+            },
+            "ADV": {
+              "n": 19,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.5
+        },
+        "True": {
+          "n": 138,
+          "correct": 75,
+          "accuracy": 0.5434782608695652,
+          "by_role": {
+            "ADV": {
+              "n": 63,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "SCONJ": {
+              "n": 75,
+              "correct": 75,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 21,
+          "correct": 5,
+          "accuracy": 0.23809523809523808,
+          "by_role": {
+            "SCONJ": {
+              "n": 12,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 9,
+              "correct": 5,
+              "recall": 0.5555555555555556
+            }
+          },
+          "balanced_recall": 0.2777777777777778
+        },
+        "same_role_stronger": {
+          "n": 103,
+          "correct": 68,
+          "accuracy": 0.6601941747572816,
+          "by_role": {
+            "ADV": {
+              "n": 23,
+              "correct": 23,
+              "recall": 1.0
+            },
+            "SCONJ": {
+              "n": 80,
+              "correct": 45,
+              "recall": 0.5625
+            }
+          },
+          "balanced_recall": 0.78125
+        },
+        "tied": {
+          "n": 154,
+          "correct": 67,
+          "accuracy": 0.43506493506493504,
+          "by_role": {
+            "SCONJ": {
+              "n": 104,
+              "correct": 18,
+              "recall": 0.17307692307692307
+            },
+            "ADV": {
+              "n": 50,
+              "correct": 49,
+              "recall": 0.98
+            }
+          },
+          "balanced_recall": 0.5765384615384616
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 233,
+          "correct": 115,
+          "accuracy": 0.49356223175965663,
+          "by_role": {
+            "SCONJ": {
+              "n": 172,
+              "correct": 59,
+              "recall": 0.3430232558139535
+            },
+            "ADV": {
+              "n": 61,
+              "correct": 56,
+              "recall": 0.9180327868852459
+            }
+          },
+          "balanced_recall": 0.6305280213495997
+        },
+        "True": {
+          "n": 45,
+          "correct": 25,
+          "accuracy": 0.5555555555555556,
+          "by_role": {
+            "ADV": {
+              "n": 21,
+              "correct": 21,
+              "recall": 1.0
+            },
+            "SCONJ": {
+              "n": 24,
+              "correct": 4,
+              "recall": 0.16666666666666666
+            }
+          },
+          "balanced_recall": 0.5833333333333334
+        }
+      },
+      "head_visibility_by_role": {
+        "ADV": {
+          "n": 82,
+          "visible": 63,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 196,
+          "visible": 75,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADV": {
+          "coverage": {
+            "0-1": {
+              "n": 21,
+              "correct": 21,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 21,
+                  "correct": 21,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "2-3": {
+              "n": 45,
+              "correct": 43,
+              "accuracy": 0.9555555555555556,
+              "by_role": {
+                "ADV": {
+                  "n": 45,
+                  "correct": 43,
+                  "recall": 0.9555555555555556
+                }
+              },
+              "balanced_recall": 0.9555555555555556
+            },
+            "4-6": {
+              "n": 16,
+              "correct": 13,
+              "accuracy": 0.8125,
+              "by_role": {
+                "ADV": {
+                  "n": 16,
+                  "correct": 13,
+                  "recall": 0.8125
+                }
+              },
+              "balanced_recall": 0.8125
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 19,
+              "correct": 16,
+              "accuracy": 0.8421052631578947,
+              "by_role": {
+                "ADV": {
+                  "n": 19,
+                  "correct": 16,
+                  "recall": 0.8421052631578947
+                }
+              },
+              "balanced_recall": 0.8421052631578947
+            },
+            "True": {
+              "n": 63,
+              "correct": 61,
+              "accuracy": 0.9682539682539683,
+              "by_role": {
+                "ADV": {
+                  "n": 63,
+                  "correct": 61,
+                  "recall": 0.9682539682539683
+                }
+              },
+              "balanced_recall": 0.9682539682539683
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 84,
+              "correct": 11,
+              "accuracy": 0.13095238095238096,
+              "by_role": {
+                "SCONJ": {
+                  "n": 84,
+                  "correct": 11,
+                  "recall": 0.13095238095238096
+                }
+              },
+              "balanced_recall": 0.13095238095238096
+            },
+            "2-3": {
+              "n": 84,
+              "correct": 33,
+              "accuracy": 0.39285714285714285,
+              "by_role": {
+                "SCONJ": {
+                  "n": 84,
+                  "correct": 33,
+                  "recall": 0.39285714285714285
+                }
+              },
+              "balanced_recall": 0.39285714285714285
+            },
+            "4-6": {
+              "n": 28,
+              "correct": 19,
+              "accuracy": 0.6785714285714286,
+              "by_role": {
+                "SCONJ": {
+                  "n": 28,
+                  "correct": 19,
+                  "recall": 0.6785714285714286
+                }
+              },
+              "balanced_recall": 0.6785714285714286
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 121,
+              "correct": 45,
+              "accuracy": 0.371900826446281,
+              "by_role": {
+                "SCONJ": {
+                  "n": 121,
+                  "correct": 45,
+                  "recall": 0.371900826446281
+                }
+              },
+              "balanced_recall": 0.371900826446281
+            },
+            "True": {
+              "n": 75,
+              "correct": 18,
+              "accuracy": 0.24,
+              "by_role": {
+                "SCONJ": {
+                  "n": 75,
+                  "correct": 18,
+                  "recall": 0.24
+                }
+              },
+              "balanced_recall": 0.24
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "Opus agriculturae|cum",
+      "previous_status": "NOT_ESTIMABLE",
+      "n": 71,
+      "test_binary_n": 21,
+      "cluster": {
+        "n": 21,
+        "correct": 12,
+        "accuracy": 0.5714285714285714,
+        "by_role": {
+          "ADP": {
+            "n": 9,
+            "correct": 8,
+            "recall": 0.8888888888888888
+          },
+          "SCONJ": {
+            "n": 12,
+            "correct": 4,
+            "recall": 0.3333333333333333
+          }
+        },
+        "balanced_recall": 0.611111111111111
+      },
+      "supervised": {
+        "n": 21,
+        "correct": 14,
+        "accuracy": 0.6666666666666666,
+        "by_role": {
+          "ADP": {
+            "n": 9,
+            "correct": 7,
+            "recall": 0.7777777777777778
+          },
+          "SCONJ": {
+            "n": 12,
+            "correct": 7,
+            "recall": 0.5833333333333334
+          }
+        },
+        "balanced_recall": 0.6805555555555556
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 41,
+          "train_gold": {
+            "ADP": 21,
+            "SCONJ": 19,
+            "ADV": 1
+          },
+          "mapped_label": "ADP",
+          "test_gold": {
+            "ADP": 8,
+            "SCONJ": 8
+          },
+          "most_common_features": [
+            [
+              "1:est",
+              4
+            ],
+            [
+              "3:sunt",
+              3
+            ],
+            [
+              "1:et",
+              3
+            ],
+            [
+              "0:si",
+              2
+            ],
+            [
+              "2:fecunditate",
+              2
+            ],
+            [
+              "3:et",
+              2
+            ],
+            [
+              "0:et",
+              2
+            ],
+            [
+              "0:uel",
+              2
+            ],
+            [
+              "2:oleo",
+              2
+            ],
+            [
+              "0:sunt",
+              1
+            ],
+            [
+              "1:singula",
+              1
+            ],
+            [
+              "2:sua",
+              1
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 9,
+          "train_gold": {
+            "SCONJ": 8,
+            "ADP": 1
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 4,
+            "ADP": 1
+          },
+          "most_common_features": [
+            [
+              "0:#edge",
+              9
+            ],
+            [
+              "1:#edge",
+              6
+            ],
+            [
+              "L:#edge|#edge",
+              6
+            ],
+            [
+              "2:in",
+              2
+            ],
+            [
+              "3:seminario",
+              2
+            ],
+            [
+              "R:in|seminario",
+              2
+            ],
+            [
+              "2:siccari",
+              1
+            ],
+            [
+              "3:coeperit",
+              1
+            ],
+            [
+              "R:siccari|coeperit",
+              1
+            ],
+            [
+              "2:semel",
+              1
+            ],
+            [
+              "3:hoc",
+              1
+            ],
+            [
+              "R:semel|hoc",
+              1
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": false,
+      "test_zero_cluster_features": 7,
+      "test_zero_supervised_features": 7,
+      "unseen_supervised_feature_fraction": 0.8492063492063492,
+      "unseen_pair_feature_fraction": 0.9523809523809523,
+      "real_neighbor_unseen_fraction": 0.8701298701298701,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 18,
+          "correct": 11,
+          "accuracy": 0.6111111111111112,
+          "by_role": {
+            "ADP": {
+              "n": 9,
+              "correct": 7,
+              "recall": 0.7777777777777778
+            },
+            "SCONJ": {
+              "n": 9,
+              "correct": 4,
+              "recall": 0.4444444444444444
+            }
+          },
+          "balanced_recall": 0.6111111111111112
+        },
+        "2-3": {
+          "n": 3,
+          "correct": 3,
+          "accuracy": 1.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 1.0
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 4,
+          "correct": 3,
+          "accuracy": 0.75,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 3,
+              "recall": 0.75
+            }
+          },
+          "balanced_recall": 0.75
+        },
+        "True": {
+          "n": 17,
+          "correct": 11,
+          "accuracy": 0.6470588235294118,
+          "by_role": {
+            "ADP": {
+              "n": 9,
+              "correct": 7,
+              "recall": 0.7777777777777778
+            },
+            "SCONJ": {
+              "n": 8,
+              "correct": 4,
+              "recall": 0.5
+            }
+          },
+          "balanced_recall": 0.6388888888888888
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 4,
+          "correct": 3,
+          "accuracy": 0.75,
+          "by_role": {
+            "SCONJ": {
+              "n": 4,
+              "correct": 3,
+              "recall": 0.75
+            }
+          },
+          "balanced_recall": 0.75
+        },
+        "True": {
+          "n": 17,
+          "correct": 9,
+          "accuracy": 0.5294117647058824,
+          "by_role": {
+            "ADP": {
+              "n": 9,
+              "correct": 8,
+              "recall": 0.8888888888888888
+            },
+            "SCONJ": {
+              "n": 8,
+              "correct": 1,
+              "recall": 0.125
+            }
+          },
+          "balanced_recall": 0.5069444444444444
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 1,
+          "correct": 0,
+          "accuracy": 0.0,
+          "by_role": {
+            "ADP": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.0
+        },
+        "same_role_stronger": {
+          "n": 8,
+          "correct": 8,
+          "accuracy": 1.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 5,
+              "correct": 5,
+              "recall": 1.0
+            },
+            "ADP": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 1.0
+        },
+        "tied": {
+          "n": 12,
+          "correct": 6,
+          "accuracy": 0.5,
+          "by_role": {
+            "ADP": {
+              "n": 5,
+              "correct": 4,
+              "recall": 0.8
+            },
+            "SCONJ": {
+              "n": 7,
+              "correct": 2,
+              "recall": 0.2857142857142857
+            }
+          },
+          "balanced_recall": 0.5428571428571429
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 15,
+          "correct": 9,
+          "accuracy": 0.6,
+          "by_role": {
+            "ADP": {
+              "n": 8,
+              "correct": 7,
+              "recall": 0.875
+            },
+            "SCONJ": {
+              "n": 7,
+              "correct": 2,
+              "recall": 0.2857142857142857
+            }
+          },
+          "balanced_recall": 0.5803571428571428
+        },
+        "True": {
+          "n": 6,
+          "correct": 5,
+          "accuracy": 0.8333333333333334,
+          "by_role": {
+            "SCONJ": {
+              "n": 5,
+              "correct": 5,
+              "recall": 1.0
+            },
+            "ADP": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "head_visibility_by_role": {
+        "ADP": {
+          "n": 9,
+          "visible": 9,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 12,
+          "visible": 8,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADP": {
+          "coverage": {
+            "0-1": {
+              "n": 9,
+              "correct": 7,
+              "accuracy": 0.7777777777777778,
+              "by_role": {
+                "ADP": {
+                  "n": 9,
+                  "correct": 7,
+                  "recall": 0.7777777777777778
+                }
+              },
+              "balanced_recall": 0.7777777777777778
+            }
+          },
+          "head_visibility": {
+            "True": {
+              "n": 9,
+              "correct": 7,
+              "accuracy": 0.7777777777777778,
+              "by_role": {
+                "ADP": {
+                  "n": 9,
+                  "correct": 7,
+                  "recall": 0.7777777777777778
+                }
+              },
+              "balanced_recall": 0.7777777777777778
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 9,
+              "correct": 4,
+              "accuracy": 0.4444444444444444,
+              "by_role": {
+                "SCONJ": {
+                  "n": 9,
+                  "correct": 4,
+                  "recall": 0.4444444444444444
+                }
+              },
+              "balanced_recall": 0.4444444444444444
+            },
+            "2-3": {
+              "n": 3,
+              "correct": 3,
+              "accuracy": 1.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 3,
+                  "correct": 3,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 4,
+              "correct": 3,
+              "accuracy": 0.75,
+              "by_role": {
+                "SCONJ": {
+                  "n": 4,
+                  "correct": 3,
+                  "recall": 0.75
+                }
+              },
+              "balanced_recall": 0.75
+            },
+            "True": {
+              "n": 8,
+              "correct": 4,
+              "accuracy": 0.5,
+              "by_role": {
+                "SCONJ": {
+                  "n": 8,
+                  "correct": 4,
+                  "recall": 0.5
+                }
+              },
+              "balanced_recall": 0.5
+            }
+          }
+        }
+      }
+    },
+    {
+      "stratum": "Opus agriculturae|ut",
+      "previous_status": "NOT_ESTIMABLE",
+      "n": 116,
+      "test_binary_n": 33,
+      "cluster": {
+        "n": 33,
+        "correct": 29,
+        "accuracy": 0.8787878787878788,
+        "by_role": {
+          "SCONJ": {
+            "n": 29,
+            "correct": 29,
+            "recall": 1.0
+          },
+          "ADV": {
+            "n": 4,
+            "correct": 0,
+            "recall": 0.0
+          }
+        },
+        "balanced_recall": 0.5
+      },
+      "supervised": {
+        "n": 33,
+        "correct": 4,
+        "accuracy": 0.12121212121212122,
+        "by_role": {
+          "SCONJ": {
+            "n": 29,
+            "correct": 0,
+            "recall": 0.0
+          },
+          "ADV": {
+            "n": 4,
+            "correct": 4,
+            "recall": 1.0
+          }
+        },
+        "balanced_recall": 0.5
+      },
+      "cluster_profiles": [
+        {
+          "cluster": 0,
+          "train_n": 75,
+          "train_gold": {
+            "SCONJ": 69,
+            "ADV": 6
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 26,
+            "ADV": 4
+          },
+          "most_common_features": [
+            [
+              "1:sunt",
+              4
+            ],
+            [
+              "2:ad",
+              4
+            ],
+            [
+              "0:ita",
+              3
+            ],
+            [
+              "2:si",
+              3
+            ],
+            [
+              "3:et",
+              3
+            ],
+            [
+              "1:ita",
+              3
+            ],
+            [
+              "0:sic",
+              3
+            ],
+            [
+              "0:#edge",
+              3
+            ],
+            [
+              "2:eorum",
+              2
+            ],
+            [
+              "3:mense",
+              2
+            ],
+            [
+              "0:uel",
+              2
+            ],
+            [
+              "3:eius",
+              2
+            ]
+          ]
+        },
+        {
+          "cluster": 1,
+          "train_n": 8,
+          "train_gold": {
+            "SCONJ": 8
+          },
+          "mapped_label": "SCONJ",
+          "test_gold": {
+            "SCONJ": 3
+          },
+          "most_common_features": [
+            [
+              "1:est",
+              8
+            ],
+            [
+              "0:perducenda",
+              1
+            ],
+            [
+              "2:locis",
+              1
+            ],
+            [
+              "3:molestioribus",
+              1
+            ],
+            [
+              "L:perducenda|est",
+              1
+            ],
+            [
+              "R:locis|molestioribus",
+              1
+            ],
+            [
+              "0:prope",
+              1
+            ],
+            [
+              "2:liber",
+              1
+            ],
+            [
+              "3:sit",
+              1
+            ],
+            [
+              "L:prope|est",
+              1
+            ],
+            [
+              "R:liber|sit",
+              1
+            ],
+            [
+              "0:satis",
+              1
+            ]
+          ]
+        }
+      ],
+      "binary_mapping_collapsed": true,
+      "test_zero_cluster_features": 15,
+      "test_zero_supervised_features": 15,
+      "unseen_supervised_feature_fraction": 0.8686868686868687,
+      "unseen_pair_feature_fraction": 1.0,
+      "real_neighbor_unseen_fraction": 0.8153846153846154,
+      "supervised_by_coverage": {
+        "0-1": {
+          "n": 25,
+          "correct": 3,
+          "accuracy": 0.12,
+          "by_role": {
+            "SCONJ": {
+              "n": 22,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        },
+        "2-3": {
+          "n": 8,
+          "correct": 1,
+          "accuracy": 0.125,
+          "by_role": {
+            "SCONJ": {
+              "n": 7,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 1,
+              "correct": 1,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_head_visibility": {
+        "False": {
+          "n": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 20,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.0
+        },
+        "True": {
+          "n": 13,
+          "correct": 4,
+          "accuracy": 0.3076923076923077,
+          "by_role": {
+            "SCONJ": {
+              "n": 9,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 4,
+              "correct": 4,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "cluster_by_head_visibility": {
+        "False": {
+          "n": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 20,
+              "correct": 20,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 1.0
+        },
+        "True": {
+          "n": 13,
+          "correct": 9,
+          "accuracy": 0.6923076923076923,
+          "by_role": {
+            "SCONJ": {
+              "n": 9,
+              "correct": 9,
+              "recall": 1.0
+            },
+            "ADV": {
+              "n": 4,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_nearest_role": {
+        "other_role_stronger": {
+          "n": 1,
+          "correct": 0,
+          "accuracy": 0.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.0
+        },
+        "same_role_stronger": {
+          "n": 13,
+          "correct": 0,
+          "accuracy": 0.0,
+          "by_role": {
+            "SCONJ": {
+              "n": 13,
+              "correct": 0,
+              "recall": 0.0
+            }
+          },
+          "balanced_recall": 0.0
+        },
+        "tied": {
+          "n": 19,
+          "correct": 4,
+          "accuracy": 0.21052631578947367,
+          "by_role": {
+            "SCONJ": {
+              "n": 15,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 4,
+              "correct": 4,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "supervised_by_edge": {
+        "False": {
+          "n": 31,
+          "correct": 3,
+          "accuracy": 0.0967741935483871,
+          "by_role": {
+            "SCONJ": {
+              "n": 28,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 3,
+              "correct": 3,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        },
+        "True": {
+          "n": 2,
+          "correct": 1,
+          "accuracy": 0.5,
+          "by_role": {
+            "SCONJ": {
+              "n": 1,
+              "correct": 0,
+              "recall": 0.0
+            },
+            "ADV": {
+              "n": 1,
+              "correct": 1,
+              "recall": 1.0
+            }
+          },
+          "balanced_recall": 0.5
+        }
+      },
+      "head_visibility_by_role": {
+        "ADV": {
+          "n": 4,
+          "visible": 4,
+          "root_or_missing": 0
+        },
+        "SCONJ": {
+          "n": 29,
+          "visible": 9,
+          "root_or_missing": 0
+        }
+      },
+      "identical_context_mixed_groups": 0,
+      "identical_context_mixed_occurrences": 0,
+      "in_sample_context_majority_accuracy_not_predictive_bound": 1.0,
+      "role_conditioned": {
+        "ADV": {
+          "coverage": {
+            "0-1": {
+              "n": 3,
+              "correct": 3,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 3,
+                  "correct": 3,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            },
+            "2-3": {
+              "n": 1,
+              "correct": 1,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 1,
+                  "correct": 1,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          },
+          "head_visibility": {
+            "True": {
+              "n": 4,
+              "correct": 4,
+              "accuracy": 1.0,
+              "by_role": {
+                "ADV": {
+                  "n": 4,
+                  "correct": 4,
+                  "recall": 1.0
+                }
+              },
+              "balanced_recall": 1.0
+            }
+          }
+        },
+        "SCONJ": {
+          "coverage": {
+            "0-1": {
+              "n": 22,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 22,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            },
+            "2-3": {
+              "n": 7,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 7,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            }
+          },
+          "head_visibility": {
+            "False": {
+              "n": 20,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 20,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            },
+            "True": {
+              "n": 9,
+              "correct": 0,
+              "accuracy": 0.0,
+              "by_role": {
+                "SCONJ": {
+                  "n": 9,
+                  "correct": 0,
+                  "recall": 0.0
+                }
+              },
+              "balanced_recall": 0.0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "synthetic_error_directions": [
+    {
+      "regime": "clean2",
+      "n": 40,
+      "selected_k": {
+        "2": 27,
+        "4": 3,
+        "3": 10
+      },
+      "overpartitioned": 13,
+      "underpartitioned": 0,
+      "abstained": 0
+    },
+    {
+      "regime": "clean3",
+      "n": 40,
+      "selected_k": {
+        "3": 23,
+        "4": 12,
+        "None": 3,
+        "2": 2
+      },
+      "overpartitioned": 12,
+      "underpartitioned": 2,
+      "abstained": 3
+    },
+    {
+      "regime": "clean4",
+      "n": 40,
+      "selected_k": {
+        "None": 13,
+        "4": 20,
+        "3": 7
+      },
+      "overpartitioned": 0,
+      "underpartitioned": 7,
+      "abstained": 13
+    },
+    {
+      "regime": "iid",
+      "n": 40,
+      "selected_k": {
+        "1": 39,
+        "2": 1
+      },
+      "overpartitioned": 1,
+      "underpartitioned": 0,
+      "abstained": 0
+    },
+    {
+      "regime": "noisy2",
+      "n": 40,
+      "selected_k": {
+        "2": 30,
+        "3": 10
+      },
+      "overpartitioned": 10,
+      "underpartitioned": 0,
+      "abstained": 0
+    },
+    {
+      "regime": "page_nuisance",
+      "n": 40,
+      "selected_k": {
+        "1": 40
+      },
+      "overpartitioned": 0,
+      "underpartitioned": 0,
+      "abstained": 0
+    }
+  ]
+}

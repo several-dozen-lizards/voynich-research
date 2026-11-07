@@ -1,0 +1,161 @@
+<!doctype html><meta charset="utf-8"><title>sh/ch–qok context transfer</title>
+<style>body{font:17px/1.6 system-ui;max-width:1180px;margin:40px auto;padding:24px;background:#fafbf8;color:#203930}h1,h2{line-height:1.2}table{border-collapse:collapse;font-size:14px;width:100%;margin:22px 0}td,th{text-align:left;padding:9px;border-bottom:1px solid #ccd6cf}th{background:#e8eee8}a{color:#19604a}.note{padding:16px;background:#eef1e7}code{font-size:14px}</style>
+<h1>sh/ch–qok context transfer: attempt B</h1><p>Attempt A failed its unchanged adequacy/power gate and never fitted manuscript data. <a href="../sh-qok-context-transfer-v1/report.html">Preserved attempt A</a>. Attempt B changes prediction to training-only hierarchical backoff; feature maps and support, adequacy, inference, and qualification gates remain unchanged.</p>
+<p>Frozen retrospective predictive comparison. H/F and bathing/starred panels remain separate. No meanings assigned.</p>
+<p><b>Qualification: PASS_LIMITED</b>. Freeze time: 2026-10-24T22:25:14.327168+00:00. Frozen hashes remain unchanged.</p>
+<p class="note">A grammar-like rule and a variable-slot phrase template can generate identical observations. The saved equal-output control verifies this directly. A gain from distant context can reject the specified bounded local predictor; it cannot uniquely establish grammar. G also includes additive distant predictors, so G−L is not an isolated test of a qok-by-context interaction.</p>
+<p><a href="PROTOCOL.md">Frozen protocol</a> · <a href="FREEZE.json">Hashes</a> · <a href="PHASES.jsonl">Chronology</a> · <a href="IDENTIFIABILITY.json">Equal-output control</a> · <a href="QUALIFICATION.json">All qualification gates</a></p>
+<p class="note"><b>Outcome: mechanism unresolved.</b> None of 24 corrected comparisons passed. All support and comparator-adequacy gates passed. Junction features gave small descriptive gains; no local-word or extended-context increment earned a shared H/F result. F rejected the extended addition in all five training-validation folds. Zero gain there is selected fallback, not zero manuscript dependence. The small planted dependency was detected only8/60 times, so weak structure remains unresolved. The earlier sh-to-qok association is not rescored or overturned by these different prediction tests.</p><p><a href="OUTCOME.json">Outcome</a> · <a href="BACKOFF-AUDIT.json">Independent mixture/partition replay</a> · <a href="SOURCE-COVERAGE-AUDIT.json">Exact v94 event coverage replay</a></p><h2>Qualification before manuscript fitting</h2><p>Within each outer training partition, disjoint inner folios select convex backoff weights. Each model can fall back to its simpler predecessor, starting from the add-half constant. A fitted weight pays a one-parameter AIC-scale validation penalty. Raw models then refit on all outer-training folios; outer-test data never select weights. Saved predictions contain raw probabilities and every calibration allocation, weight, and validation gain.</p>
+<p>60 fresh datasets per regime, 16 synthetic folios ×48 events. The full fivefold fitting, scoring, and ×24 correction is reused. Controls are authored logistic mechanisms, not known historical grammar. Small-effect and novel-frame power are descriptive, not qualified. Dense controls cannot establish sensitivity on sparse manuscript support.</p>
+<table><tr><th>Regime</th><th>View</th><th>Supported</th><th>G−L flags /60</th><th>Wilson95</th><th>Mean bits</th><th>Required gate</th></tr>
+<tr><td>position</td><td>all</td><td>60</td><td>0</td><td>[0, 0.0602]</td><td>-0.00085</td><td>PASS</td></tr>
+<tr><td>position</td><td>novel</td><td>60</td><td>0</td><td>[0, 0.0602]</td><td>-0.00128</td><td>descriptive</td></tr>
+<tr><td>junction</td><td>all</td><td>60</td><td>0</td><td>[0, 0.0602]</td><td>-0.00030</td><td>PASS</td></tr>
+<tr><td>junction</td><td>novel</td><td>60</td><td>0</td><td>[0, 0.0602]</td><td>0.00016</td><td>descriptive</td></tr>
+<tr><td>phrase</td><td>all</td><td>60</td><td>0</td><td>[0, 0.0602]</td><td>-0.00011</td><td>PASS</td></tr>
+<tr><td>phrase</td><td>novel</td><td>60</td><td>0</td><td>[0, 0.0602]</td><td>-0.00019</td><td>descriptive</td></tr>
+<tr><td>distant_strong</td><td>all</td><td>60</td><td>60</td><td>[0.9398, 1.0]</td><td>0.43347</td><td>PASS</td></tr>
+<tr><td>distant_strong</td><td>novel</td><td>59</td><td>56</td><td>[0.8407, 0.9738]</td><td>0.43856</td><td>descriptive</td></tr>
+<tr><td>distant_small</td><td>all</td><td>60</td><td>8</td><td>[0.0691, 0.2417]</td><td>0.01520</td><td>descriptive</td></tr>
+<tr><td>distant_small</td><td>novel</td><td>59</td><td>1</td><td>[0.0029, 0.0886]</td><td>0.00976</td><td>descriptive</td></tr>
+</table>
+<p><a href="CONTROL-LADDER.json">All three model contrasts on every control regime</a>. Every synthetic prediction is retained in the synthetic/ directory with its fixed seed.</p>
+<h2>Held-out manuscript results</h2>
+<p>P = body/position; J adds written junctions; L adds exact local words and a masked five-word frame; G adds context at offsets ±3/±4. Positive gain favors the larger model. Novel means the immediate (left word, body, right word) frame was absent from that fold’s training data. All splits group numbered folios. These are new fitting holdouts on previously explored manuscript material.</p>
+<p>Sign-randomization p-values are model-comparison diagnostics with symmetry/folio-independence assumptions and overlapping CV training. ×24 correction covers only this frozen study. Baseline adequacy compares token-weighted loss with a training-rate constant; gains weight folios equally. Unsupported comparisons are retained without significance scores.</p>
+<table><tr><th>Panel</th><th>View</th><th>Contrast</th><th>Events / folios</th><th>Gain bits</th><th>Adjusted p</th><th>Baseline adequate</th><th>Screen</th></tr>
+<tr><td>bath-H</td><td>all</td><td>J-P</td><td>1017 / 10</td><td>0.00824</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-H</td><td>all</td><td>L-J</td><td>1017 / 10</td><td>0.00441</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-H</td><td>all</td><td>G-L</td><td>1017 / 10</td><td>0.00106</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-H</td><td>novel</td><td>J-P</td><td>966 / 10</td><td>0.00983</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-H</td><td>novel</td><td>L-J</td><td>966 / 10</td><td>0.00481</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-H</td><td>novel</td><td>G-L</td><td>966 / 10</td><td>0.00092</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-F</td><td>all</td><td>J-P</td><td>1013 / 10</td><td>0.00853</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-F</td><td>all</td><td>L-J</td><td>1013 / 10</td><td>0.00000</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-F</td><td>all</td><td>G-L</td><td>1013 / 10</td><td>0.00000</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-F</td><td>novel</td><td>J-P</td><td>960 / 10</td><td>0.01051</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-F</td><td>novel</td><td>L-J</td><td>960 / 10</td><td>0.00000</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>bath-F</td><td>novel</td><td>G-L</td><td>960 / 10</td><td>0.00000</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-H</td><td>all</td><td>J-P</td><td>1140 / 12</td><td>0.00742</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-H</td><td>all</td><td>L-J</td><td>1140 / 12</td><td>-0.00059</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-H</td><td>all</td><td>G-L</td><td>1140 / 12</td><td>0.00230</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-H</td><td>novel</td><td>J-P</td><td>1136 / 12</td><td>0.00740</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-H</td><td>novel</td><td>L-J</td><td>1136 / 12</td><td>-0.00022</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-H</td><td>novel</td><td>G-L</td><td>1136 / 12</td><td>0.00226</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-F</td><td>all</td><td>J-P</td><td>1141 / 12</td><td>0.01145</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-F</td><td>all</td><td>L-J</td><td>1141 / 12</td><td>-0.00448</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-F</td><td>all</td><td>G-L</td><td>1141 / 12</td><td>0.00000</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-F</td><td>novel</td><td>J-P</td><td>1135 / 12</td><td>0.01210</td><td>0.89648</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-F</td><td>novel</td><td>L-J</td><td>1135 / 12</td><td>-0.00371</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+<tr><td>starred-F</td><td>novel</td><td>G-L</td><td>1135 / 12</td><td>0.00000</td><td>1.00000</td><td>True</td><td>no pass</td></tr>
+</table>
+<h2>bath-H details</h2><p>1017 eligible origins, 10 numbered folios. Exclusions: <code>{&#x27;unknown_origin&#x27;: 131, &#x27;origin_at_end&#x27;: 62, &#x27;following_unknown&#x27;: 9}</code>. <a href="bath-H-events.json">Every event</a> · <a href="bath-H-source-lines.json">Source lines</a></p>
+<p><a href="bath-H-predictions.json">Every held-out probability and loss</a> · <a href="bath-H-folds.json">Folio split</a></p><pre>{
+  &quot;all&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 694,
+      &quot;gain_G_L&quot;: 0.0018233103960712284
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 323,
+      &quot;gain_G_L&quot;: -0.0004553855871450982
+    }
+  ],
+  &quot;novel&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 681,
+      &quot;gain_G_L&quot;: 0.0015721100902431904
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 285,
+      &quot;gain_G_L&quot;: -0.00048162925429072104
+    }
+  ]
+}</pre>
+<h2>bath-F details</h2><p>1013 eligible origins, 10 numbered folios. Exclusions: <code>{&#x27;unknown_origin&#x27;: 158, &#x27;origin_at_end&#x27;: 66, &#x27;following_unknown&#x27;: 15}</code>. <a href="bath-F-events.json">Every event</a> · <a href="bath-F-source-lines.json">Source lines</a></p>
+<p><a href="bath-F-predictions.json">Every held-out probability and loss</a> · <a href="bath-F-folds.json">Folio split</a></p><pre>{
+  &quot;all&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 685,
+      &quot;gain_G_L&quot;: 0.0
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 328,
+      &quot;gain_G_L&quot;: 0.0
+    }
+  ],
+  &quot;novel&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 670,
+      &quot;gain_G_L&quot;: 0.0
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 290,
+      &quot;gain_G_L&quot;: 0.0
+    }
+  ]
+}</pre>
+<h2>starred-H details</h2><p>1140 eligible origins, 12 numbered folios. Exclusions: <code>{&#x27;unknown_origin&#x27;: 18, &#x27;origin_at_end&#x27;: 88, &#x27;following_unknown&#x27;: 2}</code>. <a href="starred-H-events.json">Every event</a> · <a href="starred-H-source-lines.json">Source lines</a></p>
+<p><a href="starred-H-predictions.json">Every held-out probability and loss</a> · <a href="starred-H-folds.json">Folio split</a></p><pre>{
+  &quot;all&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 886,
+      &quot;gain_G_L&quot;: 0.00016553202278462266
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 254,
+      &quot;gain_G_L&quot;: 0.0024672306148200668
+    }
+  ],
+  &quot;novel&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 884,
+      &quot;gain_G_L&quot;: 0.000206099431202899
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 252,
+      &quot;gain_G_L&quot;: 0.002207528917861903
+    }
+  ]
+}</pre>
+<h2>starred-F details</h2><p>1141 eligible origins, 12 numbered folios. Exclusions: <code>{&#x27;unknown_origin&#x27;: 79, &#x27;origin_at_end&#x27;: 84, &#x27;following_unknown&#x27;: 2}</code>. <a href="starred-F-events.json">Every event</a> · <a href="starred-F-source-lines.json">Source lines</a></p>
+<p><a href="starred-F-predictions.json">Every held-out probability and loss</a> · <a href="starred-F-folds.json">Folio split</a></p><pre>{
+  &quot;all&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 888,
+      &quot;gain_G_L&quot;: 0.0
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 253,
+      &quot;gain_G_L&quot;: 0.0
+    }
+  ],
+  &quot;novel&quot;: [
+    {
+      &quot;next_qok&quot;: false,
+      &quot;n&quot;: 888,
+      &quot;gain_G_L&quot;: 0.0
+    },
+    {
+      &quot;next_qok&quot;: true,
+      &quot;n&quot;: 247,
+      &quot;gain_G_L&quot;: 0.0
+    }
+  ]
+}</pre>
+<p><a href="RESULTS.json">All scores, constant-baseline losses, per-folio gains, and failures</a> · <a href="REPORT-AUDIT.json">Independent saved-probability and novelty replay</a></p>
+<h2>Limits that remain</h2><p>These model classes do not exhaust position, junction spelling, copying, or phrases. Prediction of a supplied prefix from surrounding text is conditional analysis, not left-to-right text generation. Local-model failure can mean sparse vocabulary, missing interactions, or regularization error. Longer templates, latent registers, and context-sensitive orthography can mimic an extended relation. A negative extended-context result cannot establish absence of grammar, particularly where power or novel-frame coverage is weak. No reserved zodiac material was opened.</p>

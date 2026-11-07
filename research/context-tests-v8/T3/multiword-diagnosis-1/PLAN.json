@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-26T01:51:49.607Z",
+  "status": "POST-RESULT DESCRIPTIVE AUDIT; FROZEN BEFORE CRITERION DIAGNOSTICS",
+  "authority": "Diagnose frozen H-discovery eliminations by scribe, compare Latin positive, preserve negative; no threshold tuning or H/F confirmation",
+  "inputs": [
+    "../DISCOVERY-PARAGRAPHS.json (H discovery only)",
+    "../multiword-v2/latin/{G2-s1,G2-s2,G3-s1,G3-s2}/DISCOVERY.json",
+    "existing sealed candidate/discovery receipts only"
+  ],
+  "criteria": {
+    "panel_folios": 8,
+    "paragraph_presence": 0.5,
+    "concentration_defined": true,
+    "concentration_minimum": 2,
+    "minimum_frozen_types": 2,
+    "variant_cap": 16,
+    "minimum_frozen_coverage": 0.8,
+    "minimum_frozen_types_with_at_least_two_folios": 2,
+    "early_window": [
+      2,
+      15
+    ],
+    "gap_widths": [
+      1,
+      2,
+      3
+    ]
+  },
+  "analyses": [
+    "Full observed-early-frame ledger with exact counts, variant counts/folio recurrence, all frozen flags",
+    "Standalone failure/pass counts, failure-signature overlaps, counts passing all other criteria",
+    "Cumulative funnel in declared explanatory order: presence, concentration support/ratio, at least2 frozen types, coverage, recurrence",
+    "Maximum paragraph presence and the existing selected Latin frame metrics; no new selection or transfer",
+    "Original-slot readable/masked opportunity counts by width; paragraph support retained"
+  ],
+  "interpretation": "Sequential attribution is order-dependent; standalone failures overlap. Compare four transforms of one known Latin block, not four independent sources. Any descriptive maximum remains ineligible if frozen criteria fail.",
+  "preservation": "Original negative and qualification immutable; new files only here",
+  "forbidden": [
+    "threshold sweep or retune",
+    "new manuscript candidate selection",
+    "H or F confirmation tokenization/scoring",
+    "permutations or new p-values"
+  ],
+  "alpha_V": null
+}

@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-25T21:49:26.749Z",
+  "status": "FROZEN BEFORE G2/G3 OR EVA/T3 SCORING; SOURCE QA IN PROGRESS",
+  "authority": "User: find a suitable Latin prose herbal and run T3 positive control through G2/G3 and EVA; keep manuscript confirmation closed",
+  "source": {
+    "work": "Circa instans, appended to Dispensarium Nicolai Praepositi",
+    "edition": "Paris1582, BIU Sante Pharmacie RES12103",
+    "archive": "BIUSante_pharma_res012103",
+    "selection": "All36complete consecutive letter-A chapters, first Aloe through Apium cerfolium; no selection by T3 outcome",
+    "era_limit": "Later print of medieval prose herbal; not an unedited fifteenth-century manuscript",
+    "raw_djvu_txt_md5": "94ae7cc9f471dcefa9caa1c97fdce618",
+    "raw_djvu_xml_sha1": "e9d4415ce2b401abefb5ff0bf5b7e0f4c17dbf56",
+    "layout": "Reassemble body columns from OCR word boxes, left then right; exclude marginal glosses, running heads, catchwords and contents. Source-specific crop bounds saved before scoring; retain excluded geometry."
+  },
+  "split": {
+    "hash": "SHA256(\"v8-T3:\"+source_unit_id) mod2; evenDISCOVERY oddCONFIRMATION",
+    "unit": "whole complete chapter as control folio; never divide an entry",
+    "identifier": "CI1582:A:001 through CI1582:A:036",
+    "limit": "entry-unit split, not physical-printed-folio independence; sourceQA necessarily views known positive clauses in both arms; no prospective historical-validation claim"
+  },
+  "source_preprocessing": {
+    "headings": "excluded",
+    "firstword": "initial drop-cap + following fragment joined only where scan shows one source word; documented correction ledger",
+    "hyphenation": "join printed line-end continuation - or soft-hyphen only within same entry; retain raw boxes",
+    "normalization": "lowercase; long-s and typographic ligatures expanded by fixed representation; no f/s lexical repair; punctuation token boundaries; nonASCII/digit/OCR-uncertain original word slots None; & represents et",
+    "incipit": "visually transcribe complete first complexion sentence; retain raw OCR and token-level correction provenance; no edits chosen by model outcome",
+    "body": "remaining body is OCR, not a critical edition; errors and source-size/quality limits preserved"
+  },
+  "generators": {
+    "families": [
+      "G2",
+      "G3"
+    ],
+    "implementation": "unchanged system-types-v5/GENERATORS.generate",
+    "params": {
+      "abbreviation_probability": 0.5,
+      "symbol_probability": 0.5,
+      "context_variants": true,
+      "allow_source_wrap": false,
+      "source_start": 0
+    },
+    "geometry": "one complete chapter per paragraph, original Latin word-slot lengths; no wrapping, padding, window sampling or repeated entries",
+    "seeds": "848200 + familyIndex(G2:0,G3:100) + scribeIndex(1:1,2:2); confirmation transform seed +10000"
+  },
+  "mapping": {
+    "implementation": "unchanged core.group_inventory, group_rank_mapping, render_groups",
+    "fit": "G2/G3 discovery source-unit frequencies only; frozen mapping applied unchanged to confirmation",
+    "target": "cached v8 H-discovery readable words separately by scribe1/2 only; no v5 reserves or manuscript-confirmation inventories",
+    "seed": "848300 + familyIndex + scribeIndex",
+    "max_atoms": 3,
+    "unknown_transfer": "retain original slot None; newly unseen source units make full transfer NOT ESTIMABLE, never refit on confirmation"
+  },
+  "T3": {
+    "implementation": "sealed parent engine.mjs and permutation.mjs unchanged",
+    "windows": 105,
+    "criteria": "same presence>=.5, concentration>=2, >=4observed variants, top4..16cover>=.8",
+    "confirmation": "exact frozen candidate and variant types, discovery presence-.15, concentration>=1.5, coverage>=.7, <=4newtypes;10000shuffles if candidate exists",
+    "correction": "Holm2 over scribe-target inventories per generator, same as parent scribe family",
+    "formula_recovery": "Selected source-word forms must trace to attested quality/degree terms, rather than generic est/et or unrelated early vocabulary; retain candidate provenance and clause coverage. Structural pass alone cannot satisfy this gold requirement.",
+    "qualification": "G2/G3 both must recover actual complexion slot under both scribe inventories; any unsupported transfer/failure leaves manuscript gate CLOSED",
+    "look_budget": "one frozen pass per generator/inventory; failures retained; no outcome-driven repair"
+  },
+  "manuscript_confirmation": "CLOSED; user instruction overrides any automatic release"
+}

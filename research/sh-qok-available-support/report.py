@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,html
+R=Path(__file__).resolve().parent;s=json.loads((R/'SUMMARY.json').read_text())
+rows=''.join('<tr>'+''.join('<td>'+html.escape(str(v))+'</td>' for v in [r['architecture'],r['scenario'],round(r['W'],3),str(r['flags'])+'/200',f"{r['wilson95'][0]:.3f}–{r['wilson95'][1]:.3f}",r['pass_gate']])+'</tr>' for r in s['results'])
+doc='''<!doctype html><meta charset="utf-8"><title>Available-follower support qualification</title><style>body{font:17px/1.55 system-ui;max-width:1200px;margin:40px auto;padding:20px;background:#f8faf7;color:#173c30}td,th{padding:8px;border-bottom:1px solid #c5d4c9;text-align:left}table{border-collapse:collapse}</style><h1>Outcome-relevant support: '''+s['status']+'''</h1>
+<p>The proposed rule uses W=Σ[k(n−k)/n × number of available followers in the pattern]. A both-blocked stratum contributes0, one-available contributes V, two-available contributes2V. Require W≥160, at least8contributing pages and no page above25% of W. Neither qok outcomes nor observed effects enter support.</p>
+<p>All rules were frozen before600fresh synthetic group layouts and2,400outcomes. Each layout has12pages,fourbodies and additional fully blocked strata. Tests explicitly verify that those blocked strata cannot inflate W. Smaller support fixtures are rejected. Positive target:.20 versus.35 among available followers.</p>
+<table><tr><th>Availability architecture</th><th>Scenario</th><th>W</th><th>Flags</th><th>Wilson95</th><th>Gate</th></tr>'''+rows+'''</table>
+<p>Each positive lower confidence bound must reach.80; null upper bound must stay≤.05. Nulls use independent.2/.6 or additive page/line/position probabilities. Exact conditional subset-sum distributions preserve pattern-specific margins and were checked against exhaustive small examples. Constant-score factors cancel exactly; no Monte Carlo tails were used.</p>
+<h2>Scope of the proposed minimum</h2><p>These tests cover balanced constructed strata at W≈164.57,166.29,168. They do not establish sufficiency immediately above160, prove160minimal, or validate a threshold across arbitrary stratum imbalance. A strict boundary challenge at160–164 remains outstanding. Within each layout the four outcome scenarios share structure; they are paired, not independent layout replications.</p>
+<p>This is a group-level engine qualification. It does not pass through the earlier token extractor or a historical transcription pipeline. Pattern margins are given synthetically and cannot be assumed available or accurately inferred in Voynich. Sparse coverage, variable lengths and H/F alignment remain unqualified. No manuscript files were loaded or scored; H/F remain separate.</p>
+<p>Every false flag and missed positive remains saved. Historical failed methods are unchanged. No threshold was adjusted after outcomes.</p>
+<p><a href="PROTOCOL.json">Frozen rule</a> · <a href="FREEZE.json">Hashes</a> · <a href="SUMMARY.json">Results</a> · <a href="DESIGNS.json">All group layouts</a> · <a href="TRIALS.json">All outcomes</a> · <a href="VERIFICATION.json">Verification</a></p>'''
+(R/'report.html').write_text(doc,encoding='utf-8')
+assert all((R/f).exists() for f in ['PROTOCOL.json','FREEZE.json','SUMMARY.json','DESIGNS.json','TRIALS.json','VERIFICATION.json'])
+print(json.dumps(s,indent=2))

@@ -1,0 +1,38 @@
+{
+  "id": "v4.2-C2",
+  "status": "FROZEN BEFORE NEW PREDICTIVE FITTING",
+  "utc": "2026-10-25T17:15:11.204Z",
+  "authority": "User: Let's do that, accepting the proposed grouped common-vs-context-specific predictive comparison; leave the autonomous loop inactive and vault closed.",
+  "retrospective": true,
+  "descriptive_only": true,
+  "source": "Existing v4.2-C available-only stratum counts. Prior OR/RD results known. Exclude duplicated C6+C7 reference; H/F separate.",
+  "question": "Does a fixed context-varying log-OR predictor improve held-out conditional log-likelihood over a shared log-OR predictor?",
+  "likelihood": "Fisher noncentral hypergeometric allocation of qok across sh/ch within each source folio x ending stratum, conditional on ns,nc,total qok k. No held-out intercept fitting. This predicts conditional association, not unconditional qok frequency.",
+  "models": {
+    "common": "One beta; Normal(0,2.5^2) log-OR penalty.",
+    "varying": "beta_shared + delta_context; same Normal(0,2.5^2) shared penalty; independent Normal(0,1^2) context-deviation penalties. Fixed, no tuning. Unseen context has deviation zero and uses its training shared beta.",
+    "contexts": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8-4",
+      "C8-5"
+    ]
+  },
+  "grouping": "Physical numeric folio: recto/verso/all panels together. All f85/f86 source material conservatively one Rosettes foldout group. Same fold map H/F.",
+  "folds": "5 folds; sort unique groups by SHA256(seed+\":\"+group), round-robin assignment. Primary v4.2-C2-primary. Four fixed sensitivities v4.2-C2-partition-1..4; no replacement or selection by scores.",
+  "metric": "Primary: sum(varying conditional test LL - common conditional test LL) / all eligible origins, in nats/origin. Positive favors varying. Report total nats, informative-origin count and context contributions.",
+  "uncertainty": "4999 paired physical-group bootstrap draws of primary saved OOF score differences, seed4263600+H0/F1. Conditional on trained fits and partition; does not propagate training refit uncertainty. No selection p-value or equivalence claim.",
+  "controls": "Before real CV, qualify conditional PMFs against central hypergeometric and rational odds2 oracles, finite-difference gradients, independent scalar fit, physical grouping and unseen-context fallback. Then exactly20 synthetic datasets per4 scenarios perH/F, same primary folds: commonOR1, commonOR2, modest 1.5 botanical vs2.5 others, strong1 botanical vs4 others. Preserve observed stratum margins ns,nc,k. Record every result; no retuning or trial extension. Controls diagnostic, not nominal model-selection error calibration.",
+  "synthetic_seeds": "4262600 + reading_index*100000 + scenario_index*1000 + trial",
+  "classification": "No formal scale-artifact/equivalence classification; fuller v4.2-C section4.3/5 source remains missing. Only report predictive advantage and its limitations.",
+  "exclusions": "No raw EVT, images, ratings, reserved zodiac, live models, alpha-spending claim, or loop activation.",
+  "code_hashes": {
+    "predict.py": "0485e90f44d2cc5e25f1daf6bbd3f42fa12cb0861144a3c9a78dec3f28ccf046",
+    "verify.py": "4bdc006fb308532b8d40598419c242525b03add7186988293b0fdadce8cbe724"
+  }
+}

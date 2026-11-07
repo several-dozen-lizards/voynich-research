@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-25",
+  "scope": "One fixed supervised-scorer repair on exposed v107 development panels. No representation, split, role, source, vocabulary fitting rule, training frequency, smoothing denominator, or clustering change. No new manuscript input. No independent confirmation claim.",
+  "repair": {
+    "baseline": "Original sum over all six features log((count_class(f)+1)/(class_total+training_vocabulary_size+1)); equal class priors, lexical tie break, exactly reproduce saved predictions.",
+    "new": "Use the identical formula, counts and denominator, but sum only over features present in the pooled binary-role training vocabulary. A feature unseen in BOTH classes contributes zero to both scores. A feature present in the vocabulary but absent in ONE class retains ordinary add-one smoothing. No backoff, reweighting or broader context.",
+    "tie": "Absolute score difference <=1e-12 is unresolved: abstain in operational decisions; equal0.5/0.5 normalized score probabilities. No evidence gives exact0/0 scores and an abstention. Baseline retains its original literal tie convention."
+  },
+  "comparison": {
+    "all_panels": "All eight original panels retained. Four prior adequately supported panels are primary development comparisons; four insufficient-support panels stay descriptive. Training gold roles supplied, so this remains supervised recovery, not role discovery.",
+    "recovery": "Report balanced correct-credit on all test examples, assigning0.5 to a repaired tie (expected recovery under equal random tie decision). Also strict operational balanced recall counting abstentions as misses, coverage and role-specific abstentions. Never use accuracy among decided cases as headline. Separately report paired recovery on original evidence-bearing cases, so gains from abstention credit are distinguishable from recovery changes.",
+    "scores": "Class-balanced log loss and Brier score of normalized old/new score probabilities, plus uniform0.5 reference. These are evaluation measures, not calibrated-probability claims.",
+    "uncertainty": "2000 paired whole-test-block bootstrap resamples per panel, no refitting.95% percentile intervals are descriptive on exposed data, not confirmatory. Equal-weight mean delta across the four prespecified supported panels, with paired independently drawn panel blocks. Degenerate missing-role bootstrap draws retained/recorded as undefined.",
+    "nulls": "199 context-column shuffles within each train/test block, train and test shuffled independently, refit same scorer and keep original gold.199 training-label shuffles within training block, original test labels untouched. Evaluate repaired scorer under each control. Fixed seeds1091000/1092000; all controls retained. Descriptive plus-one upper-tail null p across full balanced correct-credit, and Bonferroni8; no gate rescues or qualification promotion.",
+    "attribution": "Save corrected errors, damaged correct predictions, abstention transitions and net per-role changes. No selecting favorable panel or abstention policy after scoring."
+  },
+  "fixtures": [
+    "All unknown features yield equal scores and abstention despite unequal class sizes.",
+    "Adding globally unknown features cannot change a repaired known-evidence margin.",
+    "Features absent in only one class remain evidence.",
+    "All in-vocabulary contexts give exactly the original score and decision except original exact ties become explicit abstentions.",
+    "Role renaming/class-size swap cannot create zero-evidence preference.",
+    "Order of features cannot change score beyond numerical tolerance."
+  ],
+  "limits": "v107 is development data now. This comparison estimates the change on these exposed panels only; it does not establish fresh-source transfer, blind clustering, count selection or Voynich function recovery. A positive result needs a separately sealed independent confirmation before broader claims."
+}

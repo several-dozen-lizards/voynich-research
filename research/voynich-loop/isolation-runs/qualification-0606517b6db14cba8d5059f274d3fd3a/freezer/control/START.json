@@ -1,0 +1,51 @@
+{
+  "status": "STARTING",
+  "utc_started": "2026-10-25T02:44:07.932557+00:00",
+  "command": [
+    "C:\\Users\\lewis\\AppData\\Local\\OpenAI\\Codex\\bin\\2993767bd1dfb009\\codex.exe",
+    "sandbox",
+    "-c",
+    "default_permissions=\"worker\"",
+    "-c",
+    "windows.sandbox=\"mxc\"",
+    "-c",
+    "permissions.worker.filesystem={\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-0606517b6db14cba8d5059f274d3fd3a\\\\freezer\\\\input\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-0606517b6db14cba8d5059f274d3fd3a\\\\freezer\\\\output\"=\"write\"}",
+    "-c",
+    "permissions.worker.network.enabled=false",
+    "-P",
+    "worker",
+    "-C",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\voynich-loop\\isolation-runs\\qualification-0606517b6db14cba8d5059f274d3fd3a\\freezer\\input",
+    "--",
+    "C:\\Users\\lewis\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "-I",
+    "-S",
+    "-u",
+    "-c",
+    "\nimport json, os, sys, runpy\nallowed = {\"SystemRoot\", \"WINDIR\", \"COMSPEC\", \"PATHEXT\", \"PROCESSOR_ARCHITECTURE\", \"NUMBER_OF_PROCESSORS\", \"PATH\", \"TEMP\", \"TMP\", \"PYTHONIOENCODING\"}\nallowed = {k.upper() for k in allowed}\nfor key in list(os.environ):\n    if key.upper() not in allowed:\n        del os.environ[key]\nguards = {}\nfor name, path in json.loads(sys.argv[2]).items():\n    try:\n        with open(path, \"rb\"): pass\n        guards[name] = False\n    except PermissionError: guards[name] = True\n    except Exception: guards[name] = False\ntry:\n    fd = os.open(sys.argv[1], os.O_WRONLY); os.close(fd); guards[\"input_immutable\"] = False\nexcept PermissionError: guards[\"input_immutable\"] = True\nexcept Exception: guards[\"input_immutable\"] = False\nprint(json.dumps({\"boundary_ready_pid\":os.getpid(), \"boundary_guards\":guards}), flush=True)\nif sys.stdin.readline().strip() != \"RUN\":\n    raise SystemExit(90)\nsys.argv = [sys.argv[1]]\nrunpy.run_path(sys.argv[0], run_name=\"__main__\")\n",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\voynich-loop\\isolation-runs\\qualification-0606517b6db14cba8d5059f274d3fd3a\\freezer\\input\\main.py",
+    "{}"
+  ],
+  "profile": {
+    "default_permissions": "\"worker\"",
+    "windows.sandbox": "\"mxc\"",
+    "permissions.worker.filesystem": "{\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-0606517b6db14cba8d5059f274d3fd3a\\\\freezer\\\\input\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-0606517b6db14cba8d5059f274d3fd3a\\\\freezer\\\\output\"=\"write\"}",
+    "permissions.worker.network.enabled": "false"
+  },
+  "input_files": {
+    "ALLOWED.txt": "6facb1fe00500c278d5fe85225fa4abac21a6353633829f98647514143418da5",
+    "canaries.json": "6012e2c0f957a82d474dd249abec4e6a644888922ac84453cbf60df7cab64d5e",
+    "main.py": "2c7dad0d416d0047a28b3ac033dc67f29529b0ae17d93d39b5644688a0c66580"
+  },
+  "codex_sha256": "1103e9e09c71fa2cd0afd6d8f3b9a2d63174fe8efd7cb5bd09f1cb14ef58a098",
+  "python_sha256": "32ce1d2650ea8b9d394f5b8f94677d27888dccdc3713365bf903a8c465c9d776",
+  "boundary_code_sha256": "473d01da893acd4250ade3951fdfe467bfd45c323bfbf7fc59989e8496de696c",
+  "limits": {
+    "wall_seconds": 30,
+    "cpu_seconds": 10,
+    "memory_mb": 384,
+    "max_output_bytes": 1048576
+  },
+  "model_calls": 0,
+  "child_contained": false
+}

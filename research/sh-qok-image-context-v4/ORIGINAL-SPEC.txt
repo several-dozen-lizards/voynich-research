@@ -1,0 +1,174 @@
+# Voynich spec v4: image-defined context for sh→qok (blind rater, prospective)
+
+**For:** a fresh session, plus the rater(s). Running alongside the main thread.
+**Written:** 24 Oct 2026 (Reed, for Re).
+**Status:** frozen design. **PROSPECTIVE in the image variable only.** The text events are exposed (v100/v102). What's new is a line-level image-context label, collected blind. The report's first line must say this.
+
+---
+
+## 0. Context you won't have
+
+- **The lead.** A paragraph word opening ***sh-*** is directly followed by a word opening ***qok-*** more often than a ***ch-***-opening word is. This holds within the same page and the same ending family.
+- **Status by 24 Oct:**
+  - attempt C passed in scribe 2 outside bath (both readings, Holm p = .041);
+  - v3.1 showed the effect is **not** explained by follower availability (the share surviving conditioning is 1.16–1.32);
+  - starred passed in both readings.
+- **The motivating pattern (exploratory, v3 context map, descriptive only):**
+
+  | Scribe | Pages with plant drawings | Other pages |
+  |---|---|---|
+  | 1 (Currier A) | Botanical: **+1.8 / +1.4** (94 pages) | Recipes: **+7.2 / +8.0** |
+  | 2 | Botanical: **+5.0 / +5.7** | Bath: **+9.8 / +8.7**; Rose obverse: **+7.4 / +7.9** |
+  | 3 | Botanical: +10.3 / +4.3 (small) | Starred: +10.5 / +9.9 |
+
+  The effect looks weakest on plant pages. But section, page layout and imagery are all tangled together there.
+- **What this spec adds.** Image context recorded **line by line** by a rater who has never seen the text results. That lets image context vary **within a page**, which section labels can't do. It's the only genuinely new evidence left (v102: there is no untouched text reserve).
+
+## 1. House rules
+
+1. **Phase order is binding:** protocol → coding manual → blind rating → agreement gate → registration → outcome-blind support → controls → join → test. Hash each phase before the next starts.
+2. **Rater blinding:** raters never see the transcription, EVA, any results, this spec's §0 table, or any project chat. They see page images and the coding manual only.
+3. Keep every failure, abstention, disagreement and not-estimable cell.
+4. **H and F are alternate readings.** Score them separately and never pool them.
+5. No meanings, no plant IDs, no sound values. Reserved zodiac folios (Virgo, Libra, Scorpio, Sagittarius) stay closed: don't rate them or show them to raters.
+
+## 2. Raters
+
+- **Two independent raters**, chosen from:
+  - **a human** who has not seen the project, the chat or the doc (Re's earlier "uninformed rater" plan);
+  - **a vision model** in a *fresh session* with no project memory, no file access beyond the page images and the manual, and no transcription. Each page is rated in its own isolated call, and the prompt contains only the manual.
+- **Re is not a rater**, because she has seen all the results. A model rater may know general Voynich literature from training. That's acceptable: the categories are visual, and no model has seen these sh→qok numbers. Record which model and version was used.
+- **Agreement gate:** Cohen's κ ≥ 0.60 on the 5-way category (§3) across all rated lines.
+  - If the gate fails, adjudicate by a **third** rater under the same blinding, never by Re or the analyst.
+  - If κ is still below 0.60, the image variable is **NOT RELIABLE**. Stop there and report it. That counts as a full result.
+
+## 3. Coding manual (give the raters this section and nothing else)
+
+You'll be shown pages from an illustrated manuscript. You don't need to read the writing.
+
+**For each page:**
+1. Draw a box around every **picture element** and give it one category:
+
+   | Code | Category | Includes |
+   |---|---|---|
+   | **PL** | Plant | roots, stems, leaves, flowers, seeds, whole plants, plant fragments |
+   | **VE** | Vessel | jars, containers, pots, flasks |
+   | **FG** | Figure / water | human figures, tubs, pools, pipes, tubes |
+   | **CE** | Celestial / round | stars, sun, moon, rosettes, wheels, circular diagrams |
+   | **OT** | Other | anything else drawn |
+
+2. Draw a box around every **block of writing** and around **each line of writing** inside it. Number the lines top to bottom within each block.
+3. **Don't** judge what anything means. If you're unsure of a category, use OT and add a note.
+
+Return one row per picture element (page, box, category, note) and one row per writing line (page, block, line number, box).
+
+## 4. Registration (a separate step, blind to outcomes)
+
+- Map each rated writing line to its EVT locus (folio + P-unit + line number), using line order within each block. Use the project's existing source-registration tool.
+- **Registration uses geometry and line order only**, never qok outcomes or sh/ch counts.
+- If a block's line count doesn't match the EVT unit's line count, mark that block **UNREGISTERED** and drop it. List every dropped block.
+
+**Line-level image context**, computed automatically after registration:
+
+- **nearest category:** the category of the picture element with the smallest edge-to-edge distance from the line's box;
+- **distance:** in line heights;
+- **context label:** the nearest category if the distance is ≤ 2 line heights; otherwise **NO** (no picture nearby).
+- **wrap flag:** the line is ≥ 15% shorter than its block's median line width (it wraps around a drawing).
+- **line length bin:** short or normal, from the wrap flag.
+
+Final context labels: **PL, VE, FG, CE, OT, NO**. OT gets merged into NO if it covers fewer than 5% of lines. This rule is outcome-blind and declared now.
+
+## 5. Events
+
+Use attempt C / v3.1's tokeniser and event definitions **unchanged**:
+
+- **Origin:** a P-unit word opening sh or ch, excluding cth/ckh/cph/cfh. It must not be line-final, and its follower must not be unknown.
+- **Follower:** the next word on the same line.
+- **Outcome:** the follower opens `qok`.
+- **Primary population:** available followers only (v3.1 A.1 rule). That's the estimand that has survived so far.
+- Each event inherits its **line's** context label, wrap flag and length bin.
+- **Stratum:** folio × ending family × length bin. The length bin is here because lines that wrap around pictures are shorter, and line length/position is the most dangerous confound for this question.
+
+## 6. Hypotheses (frozen)
+
+### H-IMG (primary): does image context change the effect within a page?
+
+> Within folio × ending × length bin, the sh−ch → qok difference **differs across image-context labels**.
+
+- **Statistic:** a weighted between-label heterogeneity Q, computed from label-specific MH risk differences, with within-stratum weights.
+- **Null:** permute **context labels among lines within each folio**. Each line keeps its events together, and the folio's label counts are preserved. Use at least 10,000 permutations.
+- Two-sided omnibus.
+- **Scope:** all folios with at least 2 distinct context labels that carry support (§7). Run each scribe separately: scribe 1, 2 and 3 cells × H/F. **Holm over the estimable scribe cells per reading.**
+- **The headline needs both readings** to pass in the same scribe cell.
+
+### H-PLANT (secondary, directional): plant-adjacent lines vs others
+
+> The sh−ch → qok effect is **smaller in PL-labelled lines than in non-PL lines** on the same folios.
+
+- One-sided (PL < non-PL).
+- Same strata and permutation scheme as H-IMG, with the statistic being the PL minus non-PL difference.
+- **This was derived from the exploratory section pattern in §0**, but here it's tested **within pages**. Section can't explain a within-page difference, so the same-section confound is removed by design.
+- Holm over the estimable scribe cells per reading, as a separate family from H-IMG.
+
+### Descriptive only
+
+- The between-folio PL vs non-PL contrast (this largely re-encodes section);
+- the effect by context label, per scribe, with folio-bootstrap CIs;
+- **Rosettes:** the context labels of f85r1/f86v5/f86v6 vs f85r2/f86v3/f86v4. That's the post-hoc hook from the leave-out grids, and it gets **no test**.
+
+## 7. Support gate (outcome-blind; computed after registration, before join)
+
+For each scribe cell × reading:
+
+- the number of folios with at least 2 supported labels;
+- per label: available events, discordant strata and V (attempt C's measure);
+- the largest folio share.
+
+**Gate per label:** V ≥ 20 and at least 4 folios. Labels failing the gate are dropped from that cell (rule declared now).
+
+**Gate per cell:** at least 2 labels pass, total V ≥ 80, at least 8 folios, no folio over 25%. Otherwise the cell is **NOT ESTIMABLE**.
+
+**Expected outcome:** within-page variation in image context may be thin. **NOT ESTIMABLE is a valid result**: it says pages don't vary enough internally to answer the question at this resolution. Report it. Don't rescue it by widening the distance threshold or merging labels after the fact.
+
+## 8. Controls at real support (before join)
+
+Use synthetic outcomes on the **real** registered geometry, label layout and strata. 200 trials per scenario.
+
+| Scenario | What it is | Gate |
+|---|---|---|
+| null | sh/ch effect constant across labels | upper Wilson-95 ≤ .05 |
+| **wrap/position null** | effect depends **only** on line length bin and position, and labels correlate with wrap as in the real data | upper ≤ .05 |
+| folio-latent null | a folio-level factor drives both qok rate and label mix | upper ≤ .05 |
+| availability-only null (v3.1) | sh and ch differ only in blocked-follower rate | upper ≤ .05 |
+| positive H-IMG | +12 points in one label, 0 in the others | lower ≥ .80, else UNDERPOWERED (run it and label it) |
+| positive H-PLANT | PL +2, non-PL +10 | lower ≥ .80, else UNDERPOWERED |
+
+If a cell fails a null gate, it's **BLOCKED** (as in v3), and adding trials to rescue it is not allowed.
+
+## 9. Deliverables
+
+- `PROTOCOL.json` (hashed)
+- `MANUAL.md` (exactly what raters saw)
+- `RATER-A.csv`, `RATER-B.csv` (+ `RATER-C.csv` if adjudicated)
+- `AGREEMENT.json` (κ, confusion matrix)
+- `REGISTRATION.json` (line ↔ locus, every dropped block)
+- `LINE-CONTEXT.csv`
+- `SUPPORT.json` (outcome-blind)
+- `QUALIFICATION.json`
+- `EVENTS.csv` (every event + line label, wrap, bin, availability)
+- `H-IMG.json`, `H-PLANT.json`, `DESCRIPTIVE.json`
+- `REPORT.md`
+- `VERIFICATION.json`
+
+**`REPORT.md` line 1:** `PROSPECTIVE IN IMAGE VARIABLE ONLY — text events exposed (v100/v102).`
+
+**Then one line per cell:**
+`H-IMG scribe2-H: PASS / NO PASS / NOT ESTIMABLE / UNDERPOWERED / BLOCKED / NOT RELIABLE — Q, Holm p`
+
+## 10. What this can and cannot say
+
+- **H-IMG pass:** what is drawn next to a line predicts how strongly sh pulls toward qok in that line, within a page, beyond line length, position, folio and availability. That's a text–image link with the image side measured blind, and the project's first one.
+- **H-PLANT pass:** the "weaker on plant pages" pattern holds *within* pages, so it isn't just section or scribe habit by section.
+- **No pass at adequate power:** image context at this resolution doesn't modulate the effect. The section pattern may come from text genre instead.
+- **NOT ESTIMABLE or NOT RELIABLE:** the manuscript can't answer this at line resolution, or the raters can't agree on categories. Both are informative. Neither is a negative.
+- **Nothing here** assigns meaning to sh, ch or qok, identifies plants, or separates grammar from junction spelling.

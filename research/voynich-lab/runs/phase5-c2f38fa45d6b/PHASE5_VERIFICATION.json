@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "main_model_runs": 1680,
+  "crossfit_models": 285,
+  "sweep_models": 360,
+  "confirmation_models": 280,
+  "total_neural_fits": 2605,
+  "source_loci_covered": 5385,
+  "source_words_scored": 39026,
+  "model_parameter_cap": 5000000,
+  "checks": [
+    "complete unique five-seed matrix",
+    "all CUDA and <=5M parameters",
+    "seed-1729 checkpoints present",
+    "C12 corrected before its training and BPE receipts consistent",
+    "all cross-fit test leaves disjoint from training/validation",
+    "reference word scores cover every source word exactly once",
+    "all nonempty ZL loci covered, no duplicate word scores",
+    "per-token losses reconcile with per-word losses",
+    "top50 list complete",
+    "ZL-only restricted probes",
+    "control probe labels explicitly fake",
+    "40 geometry seed/architecture rows",
+    "36 sweep points, 360 fits",
+    "280 changed-seed control/transcription confirmation fits",
+    "all clean/noise classifier chunks share source-line boundaries",
+    "C13 authentic line/page/word coverage and raw hash",
+    "required figures present",
+    "leaf sides never split across main partitions",
+    "all post-freeze analysis revisions explicitly hashed",
+    "80 original-setting sweep/main scores reproduce exactly"
+  ]
+}

@@ -1,0 +1,1 @@
+Preflight run omitted noisy positive controls and could normalize unsupported UNK away in the identity null. Preserve these outputs; they are superseded by the complete, strict-UNK run. No manuscript dictionary scoring or interpretation used this preflight.

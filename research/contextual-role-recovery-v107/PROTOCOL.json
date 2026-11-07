@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-25",
+  "scope": "Known-control continuation only; no Voynich input or scoring. v47 and all old files preserved.",
+  "question": [
+    "Can a reference-null gap selector recover 1–4 context clusters without a supplied role count?",
+    "Does the predeclared fixed-two-role method transfer to independently annotated Latin homographs?"
+  ],
+  "method_source": "https://doi.org/10.1111/1467-9868.00293",
+  "adaptation": "Gap statistic with categorical within-block independent context-column permutation reference, not uniform Euclidean null. Six v47 opaque context features unchanged; training-only vocabulary and normalization. k1..5 fitted, smallest k1..4 satisfying gap(k)>=gap(k+1)-s(k+1); no qualifying k means abstain. 19 reference banks, 3 fixed starts, 60 iterations. Method-specific qualification required.",
+  "synthetic": {
+    "regimes": [
+      "iid",
+      "page_nuisance",
+      "clean2",
+      "clean3",
+      "clean4",
+      "noisy2"
+    ],
+    "trials_each": 40,
+    "seed": 1070000,
+    "geometry": "20 blocks of12 occurrences; first12 blocks train,last8 test; balanced roles within blocks; clean signal columns95% role-specific among four aliases, noisy85%; iid/page nuisance do not have target roles.",
+    "gates": "Every signal regime >=32/40 exact k; iid and page nuisance each >=38/40 choose1. Report recovery and failures, Wilson intervals. No added trials or tuned thresholds. Strong synthetic controls are not historical realism."
+  },
+  "historical": {
+    "source": "Existing pinned UD_Latin-PROIEL ae7c7c5bd92e2ab9d2c58cf8184dd72028ca54eb. External annotation gold, not new human labels. Archived source seen in prior grammar project, but that project scored MARK/LUKE/ROM, not these panels. No untouched-corpus claim.",
+    "works": [
+      "Opus agriculturae",
+      "Epistulae ad Atticum",
+      "Commentarii belli Gallici",
+      "De officiis"
+    ],
+    "targets": {
+      "cum": [
+        "ADP",
+        "SCONJ"
+      ],
+      "ut": [
+        "ADV",
+        "SCONJ"
+      ]
+    },
+    "all_occurrences": "All exact lowercase target occurrences enter blind fitting; other gold categories retained and separately counted, not relabelled. No morphology, POS, lemma, dependency or expansion enters features.",
+    "split": "Recombine original UD partitions; whole source+Ref book/chapter blocks assigned by sha256(v107:block) mod5 <2 test,otherwise train. Exact complete surface-sentence duplicates removed globally before target extraction; training/test blocks never overlap. No Gospel source loaded into model. No tuning on heldout.",
+    "arms": "Primary transfer: v47 fixed k2, original10 starts/seeds/60iterations. Secondary automatic gap arm only if synthetic suite passes every gate; otherwise diagnostic old-source automatic fit allowed but never qualified transfer. Context null refit after within-block independent column permutations with fixed1074701 seed. Save and hash assignments before reading gold answer-key file.",
+    "gate": "Each role >=20 labelled train and >=20 test; >=5 test blocks; balanced recall>=.80,ARI>=.50,199 label permutations p<=.05 and >=.10 recall advantage over context null. Bonferroni8 across four works x2targets for positive transfer claim. Keep unsupported panels and every third-category example.",
+    "limitations": "Grammatical homographs are a transfer challenge, not validation of automatic semantic discovery, medieval notation, or Voynich roles. No manuscript access automatically follows any pass."
+  },
+  "stop": "If selector qualification fails preserve failure; do not retune. Fixed2 historical transfer remains an independently declared question and runs regardless. If transfer fails do not fit manuscript."
+}

@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN PROPOSAL — NOT EXECUTED; NO NEW MANUSCRIPT OUTCOMES",
+  "written_user_date": "2026-10-24 America/New_York",
+  "frozen_utc": "2026-10-25T01:39:01.967510+00:00",
+  "objective": "Distinguish inadequate 200-trial certification precision from practical rejection-rate inflation; diagnose nominal size separately. Preserve v3.1.",
+  "preservation": "All v3.1 source, controls, reports and statuses remain byte-identical per PRESERVED-ATTEMPT.json. Fresh outcomes only; old 200 are a separate historical benchmark, never pooled, and failed-only cells are never selected for rerun.",
+  "primary": {
+    "cells": "All six Part A cells and both B-Q1 readings, not just failed cells. H/F remain separate.",
+    "geometry": "Only existing MASKED-v3.1.json, existing declared P1 list and masked support; no raw EVT, zodiac or manuscript outcome files.",
+    "engine": "Existing attempt C exact convolution unchanged; existing primary available filter unchanged; exact per-trial p, no inner permutation Monte Carlo.",
+    "scenarios": "JOBS.json, 38 required null scenarios and 8 positives. A availability_only is acknowledged as an independently seeded duplicate marginal law of null_low; never claimed as a distinct stress mechanism. B-Q1 availability-only is not a required null because equal available rates produce a nonzero unconditioned effect.",
+    "N": "Exactly 10000 fresh draws per required-null cell/scenario and exactly 2000 per positive; total396000. No extension, early pass, seed replacement, adaptive batches or optional stopping.",
+    "randomness": "np.random.default_rng receives the coordinate seed sequence [913260,reading_index,cell_index,scenario_index,trial]. These are different from old scalar seeds. All coordinates enumerated in JOBS.json. Worker scheduling must not affect draws.",
+    "controls": "Replay old e.synthetic for null_low/high, additive, junction_only and positive on the frozen cell events. A availability_only uses e.synthetic(null_low) on available events, exactly as v3.1. This is a calibration replication of that candidate, not an expanded token-level qualification."
+  },
+  "decision": {
+    "intervals": "46 simultaneous two-sided exact binomial Clopper-Pearson intervals at family coverage at least95%, Bonferroni over38null+8power cells. Report old pointwise Wilson95 as a descriptive bridge only.",
+    "practical_null": "U<=.05: CERTIFIED BELOW TOLERANCE. L>.05: EVIDENCE ABOVE TOLERANCE. Otherwise INCONCLUSIVE. Pass a cell only if every required null is certified.",
+    "nominal": "Separately flag L>test nominal alpha (.05/3 A, .025 BQ1) as EVIDENCE OF NOMINAL-SIZE EXCESS. L<=alpha means no detected excess, not a proof of exact nominal size. Nominal excess in exchangeable null_low/high/junction/available-only blocks nominal-calibration qualification even if U<=.05, pending arithmetic/generator investigation. Additive is a nonexchangeable robustness stress, not guaranteed exact.",
+    "power": "L>=.80: POWER QUALIFIED. U<.80: EVIDENCE UNDERPOWERED. Otherwise POWER INCONCLUSIVE; no passing headline. Do not enlarge effect.",
+    "combination": "A cell is qualified only when all practical null gates and positive power gate pass and no exchangeable-null nominal-size alarm occurs. No H/F pooling. Qualification is finite to these geometries and generators."
+  },
+  "audit": {
+    "before_run": "Verify preservation and freeze hashes, verify no outcomes in masked file, recompute support against frozen support; regenerate a fixed sample of old seeds/outcome hashes. Check independent combinatorial oracle and production exact test on exhaustive small fixtures.",
+    "during_run": "Record every trial coordinate, seed tuple, p, flag, degeneracy and outcome hash. Chunk/checkpoint order deterministic; resume only missing fixed coordinates. Degenerate draws remain nondetections in denominator and separately counted.",
+    "after_run": "Recompute all false flags and fixed trial0 per46 cells with independent combinatorial oracle. On exact floating near-alpha discrepancies use rational/integer oracle; unresolved arithmetic prevents qualification. Retain all failures."
+  },
+  "BQ1_boundary": "Existing abstract B-Q1 nulls/positive permit successes on blocked followers, so qualification does not certify a physically constrained generative model. Availability-only yields expected aggregate RD +1.284H/+1.166F points and is an alternative to aggregate independence, not an extra null. A separate available-only Currier-A question requires a new manuscript protocol; it is outside this proposal.",
+  "BQ2": {
+    "status": "SEPARATE DIAGNOSTIC ONLY; NOT RESCUED BY PRIMARY RUN",
+    "reason": "Outer n200 uncertainty, inner finite-permutation sampling and zero-variance geometry must be separated. H homogeneous-positive10/200 all have pointwise inner-tail upper bounds below .025. Four F homogeneous-positive trials each have one undefined permutation, with observed Q defined.",
+    "frozen_diagnostic": "Reconstruct every one of the existing800 homogeneous trials (2readings x2nulls x200), not only flags. Keep the original10000-shuffle bank as baseline; add two independently seeded10000-shuffle banks per trial. Fresh banks use SeedSequence [913261,reading_index,scenario_index,trial,bank_index_1_or2]. Outcome seeds remain the old saved ones. No new manuscript outcomes, no new heterogeneity method and no zero-variance smoothing.",
+    "receipts": "Report per-bank p, exceedances, flags, undefined counts, context sizes and which variance vanishes. Recompute each undefined context by direct centered-residual sums and high-precision arithmetic to distinguish genuine zero variance from cancellation. Report both all800 denominator and defined-only descriptives; undefined cases cannot disappear.",
+    "interpretation": "Flag changes across banks diagnose inner Monte Carlo sensitivity only. Stable flag excess with a still-wide outer binomial interval is unresolved outer precision. Genuine zero-variance cases are a structural method limitation: more shuffles make discovering rare undefined assignments more likely. Any repair is a separately frozen candidate requiring fresh qualification. No heterogeneity qualification decision or manuscript claim is permitted by this diagnostic."
+  },
+  "release": "No v3.1 status changes. A later manuscript re-adjudication must be separately labeled retrospective and freeze its scoring/multiplicity/qualification linkage before any new scoring. This proposal authorizes no automatic promotion of old blocked cells.",
+  "sources": [
+    {
+      "title": "NIST exact binomial limits",
+      "url": "https://itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbino.htm"
+    },
+    {
+      "title": "R official Fisher exact conditional distribution",
+      "url": "https://search.r-project.org/R/refmans/stats/html/fisher.test.html"
+    }
+  ]
+}

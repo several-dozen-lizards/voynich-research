@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-25T02:08:19.945447+00:00",
+  "roles": [
+    {
+      "role": "registrar",
+      "status": "PASS",
+      "mxc_canaries": {
+        "allowed_read": true,
+        "other_role_read_denied": true,
+        "outside_read_denied": true
+      },
+      "permission_profile": {
+        "default_permissions": "\"blind\"",
+        "permissions.blind.filesystem": "{\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\25\\\\01a170b3-70b1-7a93-ae85-265320a37745\\\\isolated-cli\\\\registrar\\\\page-001\"=\"read\"}",
+        "permissions.blind.network.enabled": "false"
+      },
+      "rendered_input_sha256": "cc18e0c7ea8593557bead2f5303b5627dc0c333e7f5464b06c1871bb5a84f514",
+      "prompt_sha256": "213b77ffd62483569183ceafc6367fd62761f404661d1e40e991709f7c4a680a",
+      "supplied_files": {
+        "LOCUS-HEADERS.json": "7a232c063a3850a0951f172a3f510a5a7ec38b809cad45c6536b044469bde102",
+        "PAGE.jpg": "6ed53d6ad2f8a31fd867be5051c3f4cc35877e85fd66a96685d2f004704727ae"
+      },
+      "runtime_home": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\25\\01a170b3-70b1-7a93-ae85-265320a37745\\isolated-cli\\control\\runtime-registrar",
+      "memory_use": false,
+      "memory_generation": false,
+      "filesystem_access": "Root deny; minimal system runtime read; this role folder read-only; other role and neutral outside reads tested denied.",
+      "limitation": "Empirical filesystem tests cover these native paths; minimal system runtime access remains for execution. Training knowledge cannot be erased. No task-result exposure is supplied."
+    },
+    {
+      "role": "rater-A",
+      "status": "PASS",
+      "mxc_canaries": {
+        "allowed_read": true,
+        "other_role_read_denied": true,
+        "outside_read_denied": true
+      },
+      "permission_profile": {
+        "default_permissions": "\"blind\"",
+        "permissions.blind.filesystem": "{\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\25\\\\01a170b3-70b1-7a93-ae85-265320a37745\\\\isolated-cli\\\\rater-A\\\\page-001\"=\"read\"}",
+        "permissions.blind.network.enabled": "false"
+      },
+      "rendered_input_sha256": "720b0c8edeca7d42d0c83959cb739b191d9120adce726009d69b3b9639de431d",
+      "prompt_sha256": "58eccca7fa54fda168d8c067d481be6e2b1b01cc356effc19dbb2da19a55df59",
+      "supplied_files": {
+        "MANUAL.md": "650c8ed28838128d5462d852ddf925121f7ea36068f8046cdc890b9f227393d1",
+        "PAGE.jpg": "6ed53d6ad2f8a31fd867be5051c3f4cc35877e85fd66a96685d2f004704727ae"
+      },
+      "runtime_home": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\25\\01a170b3-70b1-7a93-ae85-265320a37745\\isolated-cli\\control\\runtime-rater-A",
+      "memory_use": false,
+      "memory_generation": false,
+      "filesystem_access": "Root deny; minimal system runtime read; this role folder read-only; other role and neutral outside reads tested denied.",
+      "limitation": "Empirical filesystem tests cover these native paths; minimal system runtime access remains for execution. Training knowledge cannot be erased. No task-result exposure is supplied."
+    },
+    {
+      "role": "rater-B",
+      "status": "PASS",
+      "mxc_canaries": {
+        "allowed_read": true,
+        "other_role_read_denied": true,
+        "outside_read_denied": true
+      },
+      "permission_profile": {
+        "default_permissions": "\"blind\"",
+        "permissions.blind.filesystem": "{\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\25\\\\01a170b3-70b1-7a93-ae85-265320a37745\\\\isolated-cli\\\\rater-B\\\\page-001\"=\"read\"}",
+        "permissions.blind.network.enabled": "false"
+      },
+      "rendered_input_sha256": "d8528abe91c1d36e2fef6d8c55af5ec9ba9c9d2d1b8849e27e504154ad87136d",
+      "prompt_sha256": "58eccca7fa54fda168d8c067d481be6e2b1b01cc356effc19dbb2da19a55df59",
+      "supplied_files": {
+        "MANUAL.md": "650c8ed28838128d5462d852ddf925121f7ea36068f8046cdc890b9f227393d1",
+        "PAGE.jpg": "6ed53d6ad2f8a31fd867be5051c3f4cc35877e85fd66a96685d2f004704727ae"
+      },
+      "runtime_home": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\25\\01a170b3-70b1-7a93-ae85-265320a37745\\isolated-cli\\control\\runtime-rater-B",
+      "memory_use": false,
+      "memory_generation": false,
+      "filesystem_access": "Root deny; minimal system runtime read; this role folder read-only; other role and neutral outside reads tested denied.",
+      "limitation": "Empirical filesystem tests cover these native paths; minimal system runtime access remains for execution. Training knowledge cannot be erased. No task-result exposure is supplied."
+    }
+  ],
+  "no_inference_yet": true,
+  "model_can_use_shell": false,
+  "local_image_tool": false,
+  "apps": false,
+  "plugins": false,
+  "mcp_servers": {},
+  "generic_tools": "Remaining native declarations constrained by named filesystem profile; no global filesystem-read grant.",
+  "cross_role_receipts": "Independent native process and process-specific Codex home for each role. No input includes another role response."
+}

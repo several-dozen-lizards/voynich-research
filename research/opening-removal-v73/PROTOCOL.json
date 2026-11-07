@@ -1,0 +1,12 @@
+{
+  "scope": "Paragraph P only, shared H/F loci with agreeing definite paragraph-start flags. Separate hand, section, Currier variety, format and transcription. Use v65 whole-numbered-folio allocation unchanged: training vocabulary independent of application folios; retrospective, previously inspected corpus.",
+  "paragraph_starts": "Read EVT structure only: locus line1 or previous P source line ending =. Continuation only after - in same page/locus series. Otherwise ambiguous. H/F structure disagreement and unknown first token retained but excluded; never promote next readable token.",
+  "units": [
+    "one EVA character",
+    "one longest-match cth|ckh|cph|cfh|ch|sh|[a-z] group"
+  ],
+  "vocabulary": "All readable training tokens except first token of paragraph openings; ambiguous/disagreeing lines excluded. Same stratum only. Original-word training frequency uses all readable eligible training tokens. >=3 training folios/100 vocabulary tokens; otherwise unsupported.",
+  "comparisons": "Held-out paragraph-first words vs (1) first words of definite continuation lines, primary position-matched control, (2) interior words, secondary. Match within same numbered folio, exact original length in chosen units and exact original-word training count. No unmatched controls or adaptive bins. Equal cell weight within folio; equal folio weight. Preserve unmatched openers.",
+  "outcomes": "A: opening minus control difference in probability that first-unit removal leaves exact nonempty vocabulary word. B: difference-in-differences: first-removal minus final-removal advantage in openings vs controls. Raw identity lookup also retained. >=5 matched test folios; folio sign-flip one-sided/exact<=16 else9999. Bonferroni across all estimated outcomes/panels/units/control-types. Support for opening-specific addition requires both A/B corrected<=.05 and positive. H/F agreement requires same stratum/unit/control passes both readings.",
+  "limits": "Vocab membership is written-form recurrence not meaning. Signs/characters are operational definitions. Position flags are transcription conventions, not independent image registration. Sign-flip symmetry assumed; sparse matches not absence of phenomenon. No alphabetic/syllabic decoding."
+}

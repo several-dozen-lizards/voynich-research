@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-25",
+  "scope": "One untuned support-weighted combination on exposed v107 supervised development panels. Compare repaired v109, additive v111, hard fallback v112 and a fixed equal-mixture attribution control. No new source, model selection, outside-word input, Voynich scoring or independent qualification.",
+  "support_rule": {
+    "counts": "For a real word at position i, n_local=sum over training roles count(i:word), n_pool=sum count(W:word), n_other=n_pool-n_local. These are nonnegative feature-event counts, not independently sampled observations or proven reliability estimates. Three other offsets provide more count opportunities; that is explicit in this candidate, not normalized away after outcomes.",
+    "weights": "If n_pool>0, w_local=n_local/n_pool and w_shared=n_other/n_pool. Otherwise both0. All supported real-word slots have total weight1. Counts are pooled across roles; test frequencies, test gold and which role is favored cannot enter weights. No free alpha or tuned cutoff.",
+    "likelihood": "Weighted sum w_local*old_log_likelihood(i:word)+w_shared*old_log_likelihood(W:word), with exact v111 shared-model counts/vocabulary/denominators and v109 repaired unknown neutrality. The shared likelihood is pooled over ALL offsets, while its weight uses only n_other to avoid recounting local support in weight calculation. Likelihood channels still overlap statistically; no independence claim.",
+    "boundaries_pairs": "Boundary markers remain positional only, weight1 if recognized else0; never pooled. Original two exact pair features retain their original score contributions; no singleton suppression. A word absent in one role but globally present remains evidence with existing add-one smoothing.",
+    "corners": "n_local0/n_otherpositive reproduces shared fallback; n_other0/n_localpositive uses positional evidence only; totalzero remains neutral. Repeated surface words at different offsets retain separate occurrence budgets."
+  },
+  "arms": {
+    "baseline": "Exact v109 six-event model and scorer.",
+    "additive": "Exact v111 ten-event shared model, all original and shared contributions.",
+    "fallback": "Exact v112 positional-first selection, six active slots under v111 shared-model parameterization.",
+    "weighted": "New support-weighted convex per-word combination, shared-model parameters fixed; original pairs unchanged.",
+    "equal_mix": "If local and shared real-word evidence both exist, weights.5/.5. If only one exists, use that channel at1. If neither, both0. Boundaries and pairs same as weighted. Diagnostic control isolates count-derived weights from normalization; not a competing winner selected after results."
+  },
+  "parameters": "Only two model forms fit per panel/control: unchanged v109 six-event counts and unchanged v111 ten-event counts. Baseline/additive/fallback actual predictions must reproduce saved results. Weighted combiner is the sole new scoring step; original likelihood terms, prior, smoothing and1e-12 tie/abstention policy stay fixed. Normalized score probabilities are not certified confidence.",
+  "evaluation": {
+    "panels": "Original four adequately supported primary panels, all eight retained. Identical808 binary-role test IDs, gold, whole-block split and training membership.",
+    "measures": "All-case balanced correct-credit(.5 abstention), strict balanced recall(abstentionsmisses), pooled/equal-panel decision coverage, balanced log loss and two-class Brier. Per-role counts, new support and every gain/loss retained. No headline based only on decided cases.",
+    "goal": "Report simultaneous observed recovery/coverage improvements and confidence-score change versus repaired baseline. Also report additive/fallback/equal-mixture differences; no post-result success tolerance. Improved expected recovery with worse confidence or harms must be explicit.",
+    "uncertainty": "2000pairedwhole-test-block bootstrap draws per panel/comparator:weightedminusbaseline/additive/fallback/equal_mix;64000paneldraws.95% intervals descriptive on exposed data, no training/model-selection uncertainty.",
+    "controls": "199within-blockcontext-column shuffles plus199within-blocktraining-label shuffles per panel. Refit both model forms and recompute support weights from each control training set. Evaluate allfivearms on same data;3184fivearmtrials. Seeds1131000/1132000,bootstrap1133000..1136000. Save paired deltas and descriptiveBonf8 ranks; no qualification promotion."
+  },
+  "fixtures": [
+    "Local and other-position weights derive only from training counts, sum1 and stay nonnegative.",
+    "No overlapping local observations counted again in n_other.",
+    "Only-local,only-shared and no-evidence corners behave as specified.",
+    "Boundary markers never use shared evidence.",
+    "Pairs retain unchanged contributions.",
+    "Role renaming cannot change support weights.",
+    "At fixed total support, increasing local support increases local weight.",
+    "Weighted term lies between its two component likelihood terms; no doubled vote.",
+    "Original baseline,additive and fallback outputs reproduce exactly."
+  ],
+  "limits": "Relative event count is a concrete support heuristic, not a measured posterior reliability. The pooled likelihood includes local examples and component/pair features remain correlated. This tests one formula and does not qualify every interpolation or claim semantic role recovery. Existing source panels are exposed development material."
+}

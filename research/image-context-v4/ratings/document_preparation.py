@@ -1,0 +1,22 @@
+from pathlib import Path
+import json,hashlib
+R=Path(__file__).resolve().parent
+def iou(a,b):
+ ax,ay,aw,ah=a;bx,by,bw,bh=b;area=max(0,min(ax+aw,bx+bw)-max(ax,bx))*max(0,min(ay+ah,by+bh)-max(ay,by));return area/(aw*ah+bw*bh-area)
+def main():
+ target=[.2,.2,.202,.202];controls=[]
+ for name in ['claude-probe-events.jsonl','claude-probe-opus-events.jsonl','claude-probe-claude-sonnet-4-5-20250929-events.jsonl']:
+  path=R/name
+  if not path.exists():continue
+  events=[json.loads(s) for s in path.read_text(encoding='utf-8').splitlines() if s.strip()];init=next(e for e in events if e.get('type')=='system' and e.get('subtype')=='init');final=next(e for e in reversed(events) if e.get('type')=='result');rating=final.get('structured_output');box=rating['pictures'][0]['box'] if rating and rating['pictures'] else None
+  controls.append(dict(source_file=name,model=init['model'],category=rating['pictures'][0]['category'] if box else None,reported_box=box,expected_ink_box=target,intersection_over_union=iou(target,box) if box else None,interpretation='Synthetic descriptive coordinate check; not a qualified manuscript-accuracy estimate. No boxes edited or corrected.'))
+ (R/'SYNTHETIC-COORDINATE-RECEIPTS.json').write_text(json.dumps(controls,indent=2)+'\n',encoding='utf-8')
+ status=dict(status='PREPARED; MANUSCRIPT COLLECTION HELD FOR USER QUALITY DIRECTION',planned_pages=168,planned_calls=336,manuscript_picture_ratings=0,G6='NOT RUN',G2='NOT RUN',adjudication='NOT RUN',geometry='UNCHANGED; 1145 frozen physical lines',synthetic_controls='All retained; classifications OT but coordinates imprecise. No new accuracy threshold invented.',clean_call_route='Claude CLI new UUID/process/page; manual plus one image only, no environment tools/settings/MCP/project instructions.',rejected_route='Codex CLI/app-server isolation preview loaded global AGENTS; no manuscript data sent through that route.',timing_exception='v4.2 pre-registration timing requirement NOT satisfied; retained exception persists.',v103='PARKED')
+ (R/'STATUS.json').write_text(json.dumps(status,indent=2)+'\n',encoding='utf-8')
+ rows=['PROSPECTIVE IN IMAGE VARIABLE ONLY — text events exposed (v100/v102).','Picture-rating preparation only. No manuscript ratings collected; G6/G2 not computed.','','A clean single-page route is available through the installed Claude CLI with tools/settings/MCP disabled, no applicable CLAUDE instruction files, random neutral working directories and fresh UUIDs. Rater A is pinned Sonnet4.5; B is pinned Opus4.5. Their shared provider/training remains a limitation on interpreting agreement.','', 'Synthetic control: one black outlined square on a500x500 white image. Expected ink bounding rectangle [0.2,0.2,0.202,0.202].']
+ for c in controls:rows.append(f"{c['source_file']}: {c['model']} reported {c['reported_box']}; OT; IoU {c['intersection_over_union']:.4f}")
+ rows+=['','These are observed coordinate failures, retained without repair. They do not estimate manuscript accuracy from a representative sample. A kappa pass would demonstrate agreement, not external validity or accurate geometry.','', 'Frozen plan:336 single-page calls; normalized picture boxes; no rater access to1145 shared line boxes, EVT text/results, other pages or other rater output. Apply category-neutral rectangle-distance rules at2 line heights. G6 uses six categories before OT merge; G2 uses PL/not-PL; both thresholds exact kappa>=0.60, before adjudication. Missing required line-pair ratings cause abstention, not invented NO. Undefined single-class kappa is not a pass.','', 'Engineering tests passed for response schema, native-distance conversion/ties and kappa. They do not qualify model coordinate accuracy.','', 'The user preference question on proceeding despite coordinate failures versus requiring another box-rater route is pending. Collection authorization is not yet released in AUTHORIZATION.json. No scientific data or result has been fabricated.','', 'v4.2 timing exception remains explicit. Geometry unchanged; v103 parked. Support, controls, outcome joins, hypothesis tests and adjudication remain held.']
+ (R/'PREPARATION-REPORT.txt').write_text('\n'.join(rows)+'\n',encoding='utf-8')
+ (R/'PREPARATION-HASHES.json').write_text(json.dumps({p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in R.iterdir() if p.is_file() and p.name!='PREPARATION-HASHES.json'},indent=2)+'\n',encoding='utf-8')
+ print(json.dumps(status,indent=2))
+if __name__=='__main__':main()

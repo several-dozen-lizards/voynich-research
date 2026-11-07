@@ -1,0 +1,64 @@
+{
+  "corpus": "LSI_H_running",
+  "tokenization": "T2",
+  "architecture": "transformer",
+  "with_position": false,
+  "seed": 1741,
+  "parameter_count": 3188007,
+  "validation_bpt": 2.2786738872528076,
+  "test_bpt": 2.4496471881866455,
+  "test_tokens": 14427,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.182048258619168,
+  "test_bpc_with_escape": 2.321556853706151,
+  "training_tokens_seen": 189566,
+  "effective_token_epochs": 1.4333154388803617,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 3.271489799997653,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 2.7015282452547225,
+      "validation_bpt": 2.5156166553497314
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.5503807765959903,
+      "validation_bpt": 2.411708116531372
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.568426744168374,
+      "validation_bpt": 2.314345121383667
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.437651136452294,
+      "validation_bpt": 2.2786738872528076
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "runs\\phase4-de886963575d\\LSI_H_running-T2-transformer-p0-s1741",
+  "currier_test": {
+    "A": {
+      "bits": 21088.145470255986,
+      "tokens": 7991,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8772,
+      "bpt": 2.638987044206731,
+      "bpc_with_escape": 2.4040293513743713
+    },
+    "B": {
+      "bits": 13482.925312807783,
+      "tokens": 5874,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6235,
+      "bpt": 2.2953567097051044,
+      "bpc_with_escape": 2.1624579491271505
+    }
+  }
+}

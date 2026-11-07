@@ -1,0 +1,64 @@
+{
+  "corpus": "LSI_H_running",
+  "tokenization": "T1",
+  "architecture": "lstm",
+  "with_position": false,
+  "seed": 1729,
+  "parameter_count": 3818266,
+  "validation_bpt": 1.9977611303329468,
+  "test_bpt": 2.198643922805786,
+  "test_tokens": 30356,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.391553409627761,
+  "test_bpc_with_escape": 2.639590070029363,
+  "training_tokens_seen": 190944,
+  "effective_token_epochs": 1.1994723286638609,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 1.9439329000015277,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 3.891647501294755,
+      "validation_bpt": 3.855698585510254
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.8135850892682432,
+      "validation_bpt": 2.644994020462036
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.174871448945022,
+      "validation_bpt": 2.1344857215881348
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.066411278108995,
+      "validation_bpt": 1.9977611303329468
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "runs\\phase5-c2f38fa45d6b\\crossfit\\LSI_H_running-T1-lstm-p0-fold3",
+  "currier_test": {
+    "A": {
+      "bits": 36119.65340582095,
+      "tokens": 15910,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 13518,
+      "bpt": 2.2702484855952827,
+      "bpc_with_escape": 2.6719672589007954
+    },
+    "B": {
+      "bits": 27834.902927627787,
+      "tokens": 12899,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 10922,
+      "bpt": 2.1579116929706013,
+      "bpc_with_escape": 2.5485170232217347
+    }
+  }
+}

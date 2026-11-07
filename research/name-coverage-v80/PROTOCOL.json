@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-23",
+  "scope": "Fresh synthetic botanical-name string benchmark. Curated genus-style labels, not a dated medieval lexicon, expert identifications or phonetic ground truth. Taxonomic synonyms/families may be related; counts are strings, not independent species evidence.",
+  "freshness": "Exclude all24 v79 strings. Fixed disjoint30 development and30 confirmation names; all remaining names training only. Seed80001. f9v/fochor and every Voynich token excluded. No Voynich name pairings fitted.",
+  "models": "Exactly the five transformations from v79, copied unchanged. Written syllable surrogate is not historical phonology. Vowelless recovery is transformed-string recovery, not unique full-name recovery.",
+  "sizes": [
+    10,
+    15,
+    18,
+    24,
+    36,
+    48,
+    64,
+    80,
+    100,
+    120,
+    150,
+    180,
+    200
+  ],
+  "replicates": "100 nested random training orders, seeds80100..80199. Include full training pool as final size; omit requested sizes exceeding pool. These repetitions measure selection sensitivity, not independent sampling or confidence intervals.",
+  "learning": "Known pairings and target boundaries supplied. Opaque group labels assigned injectively by encoder; learner sees only sampled training pairs. Fixed group-to-unit dictionary; unknowns ?. Same best-case learner as v79. No guessing, backoff or language-model expansion.",
+  "criterion": "At least90/100 training selections recover at least27/30 development transformed strings exactly AND >=90% group coverage. Wrong-pair cyclic shifts must pass at most5/100. Select smallest tested passing size; also require all larger tested sizes pass. Numeric threshold fixed before outcomes, not estimated evidence.",
+  "confirmation": "Evaluate selected size once as a predeclared100-selection batch on the separate30 names. Same90/100 and27/30 and90%coverage thresholds. No alternate size chosen if confirmation fails. If none passes development, confirmation stays unscored.",
+  "diagnosis": "For development only report missing group types even with whole training pool, per-name errors and exact transformed-string ceiling. Do not open confirmation outputs for failed models.",
+  "limits": "No universal number of plants follows from this finite name pool. Synonyms, languages, segmentation uncertainty, pronunciation and wrong plant identities remain unqualified. A passing control does not open Voynich automatically.",
+  "preservation": "v79 freeze must verify. Preserve every key, error, unknown and wrong-pair trial. H/F inherited unchanged; f9v remains excluded from fitting and method selection, and is already exposed historically."
+}

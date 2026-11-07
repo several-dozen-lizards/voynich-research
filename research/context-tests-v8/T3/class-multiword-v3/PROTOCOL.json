@@ -1,0 +1,90 @@
+{
+  "utc": "2026-10-26T01:59:24.132Z",
+  "version": "T3-class-multiword-v3-attempt1",
+  "status": "FROZEN BEFORE ANY CLASS-BASED SOURCE OR FRESH CONTROL SCORE",
+  "authority": "User requested class-based multiword qualification; preserve exact-word negative; H/F closed until qualification passes",
+  "exposure": [
+    "Exact-word negative and its full diagnostic known",
+    "Latin discovery/confirmation incipits, source degree gold and prior selected exact frame known",
+    "Prior G5/G6 exact-word bank known; not qualification data for this revision"
+  ],
+  "representation": {
+    "word_class": "Fixed v8 opener category x ending family,52 classes; CLASS-CODEBOOK.json; no learned mapping",
+    "opener_categories": [
+      "qok",
+      "qo",
+      "ot",
+      "ok",
+      "d",
+      "ch",
+      "sh",
+      "other-gallows",
+      "y",
+      "o",
+      "a",
+      "s",
+      "other"
+    ],
+    "ending_families": [
+      "a-family",
+      "y-family",
+      "ol-or",
+      "other"
+    ],
+    "implementation": "Existing v8 literal segmenter, longest prefix then longest nonoverlapping residual suffix; category/endgroup only; class identifiers are arbitrary collision-free codes",
+    "frame": "one exact anchor CLASS + d contiguous variable CLASSES + one exact anchor CLASS, d1..3",
+    "variant": "ordered tuple of gap classes, not source word spellings",
+    "window": [
+      2,
+      15
+    ],
+    "positions": "original word slots; first word excluded; unknowns are barriers; overlapping occurrences count; all paragraphs retained",
+    "discovery_thresholds": "Unchanged from qualified v2: >=8folios, presence>=.5, concentration>=2, freeze allvariants<=16 else top16 count/lex,coverage>=.8,>=2frozen variants each>=2folios",
+    "selection": "Unchanged: presence desc,concentration desc,gap asc,lex[class left,class right,gap]; one scheme, no alternatives"
+  },
+  "confirmation": {
+    "thresholds": "Unchanged: >=8folios,presence>=.5,concentration>=1.5,coverage>=.7,newvariants<=4,>=2frozenvariants each>=2folios",
+    "selection_transfer": "Exact discovery class frame and class variants unchanged; never refit",
+    "stage_gate": "NO CANDIDATE terminal. For selected candidate measure frozen predictions; failed predictions full failure with pnull and no shuffles. If predictions hold run exactly10000 first-word-fixed withinparagraph shuffles including unknown slots.",
+    "p": "literal joint-pass fraction, add-one sensitivity; only predictions hold and p<.05 passes",
+    "correction": "Latin Holm2 acrossscribes perG2/G3; inactive/unscoreable internalp1, not measuredp; controls raw decisions and pairedscribeHolm2"
+  },
+  "Latin": {
+    "source": "Same exposed36Circa1582Achapters,17/19hashsplit and oldG2/G3 EVA maps unchanged;4transforms ofonework",
+    "discovery": "Copy old mapped discovery inputs unchanged; class selection frozen before any class confirmation processing",
+    "confirmation": "Copy existing mapped Latin confirmation only after classcandidate freezes; source transformations/maps not regenerated/refitted",
+    "gold": "Corrected prior GOLD-AUDIT: >=80%early frame matches have a quality/degree-value source gold position INSIDE gap in discovery and confirmation; exclude generic gradu/gra/principio/medio; gold not supplied to discovery",
+    "gate": "All4supported structural/permutation/gold passes; fail or no candidate in any blocks qualification",
+    "seeds": "866600 + family(G2:0/G3:100) + scribe1or2",
+    "independent_source": false,
+    "power_estimate": false
+  },
+  "controls": {
+    "families": [
+      "G5",
+      "G6"
+    ],
+    "fresh_trials": 1200,
+    "trials_per_family_geometry": 200,
+    "geometries": "Exact copied v2 Latin17/19,s1discovery-derived54/43,s2discovery-derived12/8; no real confirmation geometry/text",
+    "generation": "Pinned published native G5 Java curveline; seedline excluded; fixed ceil(totaloriginalslots/4)+2 lines; tail retained; G6 unchanged v5 defaults; no retry/wrap/padding",
+    "seed_rule": "862600000+family(G5:0/G6:1000000)+geometry(Latin:0/scribe1:10000/scribe2:20000)+trial0..199",
+    "pseudo_folio_prefix": "CMW3; fixed arms salted to existing SHA parity before generation",
+    "permutation_seed": "generationseed+3000000",
+    "gates": "Each6cell two-sided95%Wilsonupper full-pass proportion<=.05, plus2paired either-scribeHolm2 Wilsonupper<=.05; any invalid blocks; percell intervals not simultaneous",
+    "scope": "These default mechanisms/geometries only; no matched marginal/parameter grid; controls completed even if Latin fails"
+  },
+  "release": {
+    "passes_required": [
+      "all4Latin",
+      "all6mechanismcellgates",
+      "bothpairedscribegates",
+      "implementation/source/preservation verification"
+    ],
+    "manuscript": "No new manuscript discovery/confirmation in qualification-only request; H/F confirmation CLOSED through this run",
+    "prior_negative": "Preserve exact-word null selections and all prior failures byte for byte",
+    "alpha": 0.05,
+    "alpha_V": null
+  },
+  "amendment": "Class tuples replace literal words only. Staged confirmation computes no permutation p for already-failed predictions; decision-equivalent gate, frozen before new outcomes. No other threshold/window/variant-cap/rank tuning."
+}

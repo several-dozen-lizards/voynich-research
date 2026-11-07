@@ -1,0 +1,6 @@
+import assert from'node:assert/strict';import * as E from'./engine.mjs';
+let c={left:'left',right:'right',gap:1,variants:[['va'],['vb']]},checks=[];
+for(let n=0;n<=16;n++){let pp=Array.from({length:16},(_,i)=>({folio:'f'+i,tokens:i<n?['initial','left',i%2?'va':'vb','right',...Array(30).fill('tail')]:['initial',...Array(16).fill('tail'),'left',i%2?'va':'vb','right',...Array(14).fill('tail')]}));let direct=E.measure(pp,c),encoded=E.encodedPass(E.compile(pp,c));assert.equal(encoded,direct.pass);checks.push({early_paragraphs:n,direct:direct.pass,encoded,presence:direct.presence,concentration:direct.concentration});}
+assert(checks.some(r=>r.direct)&&checks.some(r=>!r.direct));
+let recurrence=[];for(let variantSplit=0;variantSplit<=16;variantSplit++){let pp=Array.from({length:16},(_,i)=>({folio:'f'+i,tokens:['initial','left',i<variantSplit?'va':'vb','right',...Array(30).fill('tail')]}));let m=E.measure(pp,c);assert.equal(E.encodedPass(E.compile(pp,c)),m.pass);assert.equal(m.pass,variantSplit>=2&&variantSplit<=14);recurrence.push({variantSplit,pass:m.pass});}
+export const result={status:'PASS',presence_concentration_boundaries:checks,variant_recurrence_boundaries:recurrence,tests:34,role:'post-freeze engineering audit; no scoring code or threshold changes'};

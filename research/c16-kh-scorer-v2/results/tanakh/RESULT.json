@@ -1,0 +1,330 @@
+{
+  "arm": "tanakh",
+  "gates": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false,
+    "G5": false
+  },
+  "details": {
+    "mechanics": {
+      "contexts": 100,
+      "max_normalization_error": 0.18023262402774265,
+      "min_probability": 1.983057032391138e-06,
+      "max_probability": 0.5118328333933059,
+      "UNKNOWN_count": 1,
+      "OOV_canonical_equal": true,
+      "one_word_rank_excludes_EOS": true,
+      "exhaustive_Viterbi": true,
+      "slot_conservation": true,
+      "passed": false
+    },
+    "G2": {
+      "confirmation_lines": 320,
+      "original_beats_quarter": 313,
+      "original_beats_all": 320,
+      "IV_accuracy": 0.8769351876147993,
+      "all_token_accuracy": 0.7880216929969347,
+      "IV_tokens": 3811,
+      "all_tokens": 4241,
+      "all_UNKNOWN_envelope_selected": 0,
+      "all_UNKNOWN_document_wins": 0,
+      "prefix_audit": {
+        "1_n": 320,
+        "1_positive_beats_UNKNOWN": 244,
+        "2_n": 320,
+        "2_positive_beats_UNKNOWN": 296,
+        "3_n": 320,
+        "3_positive_beats_UNKNOWN": 314
+      }
+    },
+    "G3": {
+      "paired_document_wins": 24.5,
+      "n": 40,
+      "within_word_invariance": true,
+      "sign_tail": 0.07692997208141605,
+      "win_interval": [
+        0.4580963546328445,
+        0.7471887850977661
+      ]
+    },
+    "G4": [
+      {
+        "version": "clean",
+        "family": "C1",
+        "size_mismatch": false,
+        "threshold": -3.572260809364067,
+        "calibration_thresholds": {
+          "C1": -6.929292466456467,
+          "C9": -7.777440397515606,
+          "C17": -3.572260809364067
+        },
+        "positive_exceed": 0,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0,
+          0.08762160119728664
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 0.9975,
+        "passed": false
+      },
+      {
+        "version": "clean",
+        "family": "C9",
+        "size_mismatch": false,
+        "threshold": -3.572260809364067,
+        "calibration_thresholds": {
+          "C1": -6.929292466456467,
+          "C9": -7.777440397515606,
+          "C17": -3.572260809364067
+        },
+        "positive_exceed": 0,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0,
+          0.08762160119728664
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 1.0,
+        "passed": false
+      },
+      {
+        "version": "clean",
+        "family": "C17",
+        "size_mismatch": true,
+        "threshold": -3.572260809364067,
+        "calibration_thresholds": {
+          "C1": -6.929292466456467,
+          "C9": -7.777440397515606,
+          "C17": -3.572260809364067
+        },
+        "positive_exceed": 0,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0,
+          0.08762160119728664
+        ],
+        "false_positive": 0,
+        "null_n": 19,
+        "false_positive_interval": [
+          0.0,
+          0.16817922405261626
+        ],
+        "AUC": 0.9828947368421053,
+        "passed": false
+      },
+      {
+        "version": "noise",
+        "family": "C1",
+        "size_mismatch": false,
+        "threshold": -3.572260809364067,
+        "calibration_thresholds": {
+          "C1": -7.513540173996063,
+          "C9": -7.94141412559171,
+          "C17": -3.572260809364067
+        },
+        "positive_exceed": 0,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0,
+          0.08762160119728664
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 0.9975,
+        "passed": false
+      },
+      {
+        "version": "noise",
+        "family": "C9",
+        "size_mismatch": false,
+        "threshold": -3.572260809364067,
+        "calibration_thresholds": {
+          "C1": -7.513540173996063,
+          "C9": -7.94141412559171,
+          "C17": -3.572260809364067
+        },
+        "positive_exceed": 0,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0,
+          0.08762160119728664
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 1.0,
+        "passed": false
+      },
+      {
+        "version": "noise",
+        "family": "C17",
+        "size_mismatch": true,
+        "threshold": -3.572260809364067,
+        "calibration_thresholds": {
+          "C1": -7.513540173996063,
+          "C9": -7.94141412559171,
+          "C17": -3.572260809364067
+        },
+        "positive_exceed": 0,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0,
+          0.08762160119728664
+        ],
+        "false_positive": 0,
+        "null_n": 19,
+        "false_positive_interval": [
+          0.0,
+          0.16817922405261626
+        ],
+        "AUC": 0.9855263157894737,
+        "passed": false
+      }
+    ],
+    "G5": [
+      {
+        "arm": "tanakh",
+        "case": 0,
+        "document": "HEB-040",
+        "tokens": 89,
+        "alphagram_recovery": 0.43820224719101125,
+        "character_recovery": 0.7780898876404494,
+        "true_key_objective": -4.666896919400282,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.236992186387522,
+          "objective": -5.334259876216477,
+          "rounds": 4,
+          "evaluations": 1238,
+          "alphabet": 21,
+          "dummy_targets": 0,
+          "constraints": 194
+        }
+      },
+      {
+        "arm": "tanakh",
+        "case": 1,
+        "document": "HEB-041",
+        "tokens": 97,
+        "alphagram_recovery": 0.3402061855670103,
+        "character_recovery": 0.7168367346938775,
+        "true_key_objective": -4.536516689868942,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.2623312249174585,
+          "objective": -5.361343929311249,
+          "rounds": 4,
+          "evaluations": 1383,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 194
+        }
+      },
+      {
+        "arm": "tanakh",
+        "case": 2,
+        "document": "HEB-042",
+        "tokens": 115,
+        "alphagram_recovery": 0.9217391304347826,
+        "character_recovery": 0.9800884955752213,
+        "true_key_objective": -3.9328406114283,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.460625529381446,
+          "objective": -4.11054264755087,
+          "rounds": 3,
+          "evaluations": 1130,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 209
+        }
+      },
+      {
+        "arm": "tanakh",
+        "case": 3,
+        "document": "HEB-043",
+        "tokens": 81,
+        "alphagram_recovery": 0.19753086419753085,
+        "character_recovery": 0.6273291925465838,
+        "true_key_objective": -4.934044754800788,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.45242051977714,
+          "objective": -5.822537184235514,
+          "rounds": 4,
+          "evaluations": 1384,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 199
+        }
+      },
+      {
+        "arm": "tanakh",
+        "case": 4,
+        "document": "HEB-044",
+        "tokens": 104,
+        "alphagram_recovery": 0.3173076923076923,
+        "character_recovery": 0.7616822429906542,
+        "true_key_objective": -4.651278661549467,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.244617183454844,
+          "objective": -5.636166254828627,
+          "rounds": 7,
+          "evaluations": 2176,
+          "alphabet": 21,
+          "dummy_targets": 0,
+          "constraints": 169
+        }
+      },
+      {
+        "arm": "tanakh",
+        "case": 5,
+        "document": "HEB-045",
+        "tokens": 113,
+        "alphagram_recovery": 0.5221238938053098,
+        "character_recovery": 0.8470066518847007,
+        "true_key_objective": -4.692157422961866,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.60667197757094,
+          "objective": -5.676547136490306,
+          "rounds": 3,
+          "evaluations": 1184,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 194
+        }
+      }
+    ]
+  },
+  "passed": false,
+  "ZL": "CLOSED",
+  "registration_sha256": "addb03bd64fc563c11fd24277e607c5f04b6cf3f9c61044a3363feb5061434e5"
+}

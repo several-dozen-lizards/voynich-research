@@ -1,0 +1,1 @@
+print("NATIVE_FIXTURE_OK", flush=True)

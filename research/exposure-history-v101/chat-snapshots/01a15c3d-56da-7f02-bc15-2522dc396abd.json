@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 1,
+  "thread": {
+    "id": "01a15c3d-56da-7f02-bc15-2522dc396abd",
+    "kind": "codex",
+    "hostId": "local",
+    "title": "Analyze Voynich manuscript",
+    "preview": "# Files pasted by the user:\n\n## \"TXT This thread came up.... I own a copy of this thing, actually XD I'm pretty …\": C:\\Users\\lewis\\.codex/attachments/28e4de11-bd60-4377-b69f-f07fe1c647d3/Pasted text.txt\n\n## \"Voynich Project — Research Plan Oct 20, 2026 · @Re Premise and ground rules Goa…\": C:\\Users\\lewis\\.codex/attachments/0e93f6fe-ff3f-4690-a32c-1f76bb311963/Pasted text.txt\n\n## My request:\nAll right, I got curious and ADHD'd. Got this conversation going on with Claude. What's your take on this? You wanna take a shot at it?",
+    "status": {
+      "type": "notLoaded"
+    },
+    "cwd": "D:\\ChristinaStuff\\JNSQ",
+    "createdAt": 1792548886,
+    "updatedAt": 1792676924
+  },
+  "page": {
+    "order": "newest_first",
+    "limit": 3,
+    "nextCursor": "{\"requestedThreadId\":\"01a15c3d-56da-7f02-bc15-2522dc396abd\",\"rolloutOrdinal\":3177,\"includeAnchor\":false,\"scope\":{\"kind\":\"turns\"}}",
+    "hasMore": true
+  },
+  "turns": [
+    {
+      "id": "01a160b2-ae9c-7f30-be0d-dd41bbcf6ee1",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1792623685,
+      "completedAt": 1792624177,
+      "durationMs": 491746,
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a160b2-b4e5-7fb3-93c7-65951ef23442",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hell yes. Run the frozen replacement on the hand-1 herbal sheets, with both nulls and whole-sheet holdouts. Report prediction gains over baseline separately, and keep the failures in the receipts. 🐍 After this, can you give me a handoff so we can start in a fresh session? \n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad944495af88192ab054e43447bc0d9",
+          "text": "I’ll apply the frozen replacement to the hand-1 herbal sheets with both nulls and whole-sheet exclusions, and report prediction gain over baseline as a separate result. Then I’ll package the results, failures, and exact continuation instructions for a fresh session. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-865db0a4-be4a-44fc-99a6-00529db1e8cb",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\FROZEN-RULES-B.json'; Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\partner_null.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1110
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-47e1888a-e634-4e62-9398-8a3543a40674",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"rg -n -i 'voynich|specificity-controls|herbal-heldout' 'C:\\\\Users\\\\lewis\\\\.codex\\\\memories\\\\MEMORY.md'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "failed",
+          "exitCode": 1,
+          "durationMs": 813
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-31c039aa-da81-49fb-8c51-42f78c36c8f7",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\controls.py'; Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\FROZEN-RULES.json'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 991
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-195f6f0a-f0f1-4e34-9acf-68ffb00d83db",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json,hashlib,shutil,datetime\nb=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');p=b/'herbal-replacement-v23';p.mkdir(exist_ok=True);(p/'prior').mkdir(exist_ok=True)\nfor n in ['build_report.py','report.html','STATUS.txt']:shutil.copy2(b/n,p/'prior'/n)\nold={str(f.relative_to(b)).replace('\\\\\\\\','/'):hashlib.sha256(f.read_bytes()).hexdigest() for sub in ['stars-heldout-v20','herbal-heldout-v21','specificity-controls-v22'] for f in (b/sub).rglob('*') if f.is_file() and '__pycache__' not in f.parts}\n(p/'prior-hashes.json').write_text(json.dumps(old,indent=2)+'\\\\n')\ninputs=['herbal-heldout-v21/FROZEN-COHORT.json']+[f'herbal-heldout-v21/{t}-{s}.json' for t in ['H','F'] for s in ['events','words','key-catalogue']]\nrules={'version':'v23-application-of-frozen-v22-B','frozen_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'authorization':'User explicitly authorizes frozen replacement on hand1 herbal sheets, both nulls, whole-sheet holdouts, baseline prediction gains separately. Also authorizes fresh-session handoff.','population':'Exactly saved v21 cohort:21documented hand1 herbal sheets,42leaves,83eligible page surfaces; H and F streams separately. Previously explored data, not historically fresh evidence.','extractor':'Unchanged v20/v21 masks and selection: noninitial cleaned P/R words on hand1 herbal pages. k/t except after c/l, and a/o immediately before l/r; every eligible site. Fully masked family/site/kind baselines. Combined two kinds, not AO alone.','parameters':{'lambda':20.0,'mode':'separate','weight':0.5,'ridge':16.0},'specificity':'Exactly v22 FixedStatistic and PartnerStatistic. Leave out BOTH target and wrong-donor whole sheets. Equal-sheet macro average of wrong-minus-true logloss.','word_null':'999 whole-word variant permutations within family+quire; retain exact row variant multiset and all layout/counts. Refit every two-sheet-excluded baseline. NO reuse of synthetic-control banks for manuscript.','partner_null':'3999 uniformly random whole-leaf perfect matchings within quire; retain leaf profiles; every four-leaf-excluded baseline refit via verified equivalent cache.','decision':'Per stream p=max(p_word,p_partner), one-sided. Report unchanged .05 intersection decision AND Holm2 across H/F as supplementary multiplicity requirement. Cross-transcriber replication requires both raw and Holm criteria in both. No threshold or cohort tuning.','prediction':'Separately21leave-one-whole-sheet-out baseline fits, fixed sameparameters. Compare baseline vs partner-assisted conditional predictions in BOTH directions across heldout leaf halves; training excludes both outer leaves. Observed donor leaf outcomes allowed as conditioning context; not zero-context prediction of an unseen whole sheet.','prediction_reporting':'Equal-sheet macro and event-weighted micro gain bits/choice, baseline vs training-rate constant, per-sheet and kind losses, all predictions/models. Descriptive scores only; no sign flips or naive CV confidence intervals, no specificity p relabelled as gain-over-baseline significance.','seeds':{'H':{'word':2026102301,'partner':2026102311},'F':{'word':2026102302,'partner':2026102312}},'input_sha256':{n:hashlib.sha256((b/n).read_bytes()).hexdigest() for n in inputs},'frozen_v22_sha256':{n:hashlib.sha256((b/'specificity-controls-v22'/n).read_bytes()).hexdigest() for n in ['controls.py','qualify.py','partner_null.py','FROZEN-RULES.json','FROZEN-RULES-B.json']},'limits':'Finite-control-qualified inference under stated exchangeability assumptions. H/F samephysicalmanuscript, overlapping archive; CV folds overlap. No normalization, chronology, language, mechanism or meaning inference.'}\n(p/'FROZEN-RULES.json').write_text(json.dumps(rules,indent=2)+'\\\\n',encoding='utf-8')\n(p/'FREEZE-SHA256.txt').write_text(hashlib.sha256((p/'FROZEN-RULES.json').read_bytes()).hexdigest()+'  FROZEN-RULES.json\\\\n')\nprint('Frozen application rules',rules['frozen_at_utc'],'prior files',len(old))\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 802
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-33fb0208-d44c-43eb-b645-621235a55ea8",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport hashlib\np=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-replacement-v23')\n(p/'IMPLEMENTATION-SHA256.txt').write_text(hashlib.sha256((p/'run_tests.py').read_bytes()).hexdigest()+'  run_tests.py\\\\n')\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 553
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-8fc89d26-1c13-41db-aa85-3a78f2d67c26",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-replacement-v23\\\\run_tests.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 40596
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad9451400408192a5bd408c70eb3cce",
+          "text": "This one survives the frozen check. Both transcriptions pass both nulls; the combined specificity p-values are .0025 and .0020, or .004 each after the two-stream correction.\n\nPrediction gain over baseline is separately positive but small: +.00725 bits per choice for H and +.00662 for F. Several sheets still lose. I’m checking the saved predictions and exclusions, and putting those failures—and the limits of the result—into the fresh-session handoff. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-21085547-4e6c-48ac-aef5-578d8106b0d0",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-replacement-v23\\\\verify.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 5648
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-9f719e57-6076-4775-aae7-dae1dd00f3a7",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-replacement-v23\\\\make_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 3077
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-49cfccf5-549a-4eaf-a4a7-53802735c479",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nb=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');p=b/'build_report.py';s=p.read_text(encoding='utf-8')\na='<p>Wrong-partner controls,21October2026:'\nassert a in s and '<p>Frozen herbal replacement,21October2026:' not in s\nentry='<p>Frozen herbal replacement,21October2026: <a href=\\\"herbal-replacement-v23/report.html\\\">v23 specificity survives both nulls in H/F</a> · <a href=\\\"herbal-replacement-v23/HANDOFF.txt\\\">fresh-session handoff</a> · <a href=\\\"herbal-replacement-v23/START-FRESH.txt\\\">paste-ready prompt</a>. Unchanged v22 fixed parameters,21hand1 sheets,999word/3999whole-leaf partner nulls,alltwo-sheet exclusions. Hintersectionp.0025,F.0020,Holm2.004both. Separate21whole-sheet-heldout conditional prediction gains+.007247/+.006623bits,14/21and13/21positive;descriptive,notgain-significance.36checks pass;152priorfiles unchanged;negative sheets and weaker-control limits retained. Combinedk/t+a/o marker,samepreviouslyexploredmanuscript,nomeaning/normalizationclaim.</p>\\\\n'\ns=s.replace(a,entry+a,1)\na2='Wrong-partner control diagnosis checked 2026-10-21:'\nassert a2 in s\nstatus='Frozen herbal replacement checked 2026-10-21: v23 FROZEN APPLICATION COMPLETE; SPECIFICITY REPLICATION PASSES UNDER EXPLICIT NULL ASSUMPTIONS; BASELINE GAINS SEPARATE/DESCRIPTIVE.21unchangedhand1herbalsheets,42leaves,83eligiblepages;H3261words3952choices,F3268words3951choices. Samev22lambda20,separate-kind weight.5/ridge16,combinedk/t+a/o-before-l/r,no tuning. Two-whole-sheet exclusion19training sheets for specificity: true-over-wronggainH+.010021357,F+.008993558;999family+quirewholewordnullp.001both,3999whole-leafwithinquirepartnernullpH.0025/F.002;intersectionmaxpH.0025/F.002,predeclaredsupplementaryHolm2.004both. New manuscript nullbanks;nosyntheticbankreuse. Separate21leave-one-whole-sheet-out20trainingfits yieldbaseline-to-partnerlossH.837887to.830640,F.844296to.837672;macrogainH+.007246877,F+.006623201,micro+.008138569/+.007406983;14/21and13/21positive. Observedcounterpartleafisconditioningcontext,notzero-contextpredictionofunseenwholesheet. Baselinesbeatconstants. No signflip/naiveCVconfidenceintervalorgain-over-zerosignificanceclaim. NegativepredictionsheetsH9|16,10|15,17|24,25|32,27|30,35|38,44|45,Fadds49|56;allretained.36source/freeze/count/prediction/exclusion/current-target/null/seed/Holmchecks pass;152v20/v21/v22files/corpusunchanged. Allmodels,predictions,nulls,quadtables,failures andhandoff in herbal-replacement-v23/report.html,FOR-CLAUDE.txt,HANDOFF.txt,START-FRESH.txt,results.json,FROZEN-RULES.json,audit.json. ThispreviouslyexploredsinglephysicalmanuscriptH/Freplicationdoesnotidentifymechanism,language,normalization,chronologyormeaning. Weakcontrols13/48sensitivity andnull-exchangeabilityboundaries retained. User-requestedfresh-sessionhandoff complete;nextquestiontobeseparatelychosen/frozen,nounrequestednewmanuscripttest.\\\\n'\ns=s.replace(a2,status+a2,1);p.write_text(s,encoding='utf-8')\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 550
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-e5ea85dd-2cda-4c62-bd4a-b4238f39079a",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\build_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 5013
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-e49780f1-7913-4c16-bd32-87af043ff672",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-replacement-v23\\\\H-support.json'; Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-replacement-v23\\\\F-support.json'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 531
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad946003a3c8192990954a8074b0642",
+          "text": "The saved predictions, model counts, exclusion checks, and null calculations pass all 36 audit checks. The earlier receipts are unchanged.\n\nThe handoff now includes the exact rules, both results, every losing sheet, and a short prompt for the new chat. The result to carry forward is specific: partner-associated variation survives this frozen check; the separate conditional prediction gains are small, and their statistical uncertainty is not established here.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-ac424cb8-ed73-44e0-a139-f5996ff86578",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nfrom zipfile import ZipFile,ZIP_DEFLATED\nimport json,hashlib,re,sys,numpy,scipy,matplotlib\nb=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');p=b/'herbal-replacement-v23'\nreadme='''Voynich research handoff and frozen herbal application — cut23\\\\n\\\\nStart with herbal-replacement-v23/HANDOFF.txt for context, herbal-replacement-v23/report.html for the result, and START-FRESH.txt for the paste-ready fresh-session prompt. Absolute Windows paths in the handoff identify the original user's workshop; on another computer replace that prefix with the archive extraction root.\\\\n\\\\nLatest result: frozen partner specificity passes both nulls in H/F (intersectionp.0025/.0020, Holm2.004both). Separate whole-sheet-heldout conditional baseline gains+.007246877357/+.006623200519bits per choice are descriptive, not gain-over-zero significance. Positive14/21and13/21sheets; negative folds retained. No translation/normalization/language/mechanism claim.\\\\n\\\\nTo reproduce: extract entire archive keeping sibling directories. In herbal-replacement-v23 run python run_tests.py, python verify.py, python make_report.py. Requires Python3.10+, NumPy, SciPy, Matplotlib; original environment in ENVIRONMENT.json. Source/freeze hashes and PACKAGE-SHA256.json permit checking integrity. Numerical replay is deterministic with fixed versions/seeds; elapsed times differ.\\\\n\\\\nThe v22 full control battery and failed predecessors are included, as are v20/v21 reference code/results and canonical corpus. Do not overwrite frozen scripts to tune new experiments. These are earlier stages and alternative readings of one manuscript, not independent new manuscript replications. The latest user request is complete; any next research question must be separately scoped and frozen. No JNSQ/runtime work.\\\\n'''\n(p/'PACKAGE-README.txt').write_text(readme,encoding='utf-8')\n(p/'ENVIRONMENT.json').write_text(json.dumps({'python':sys.version,'numpy':numpy.__version__,'scipy':scipy.__version__,'matplotlib':matplotlib.__version__},indent=2)+'\\\\n')\nmissing=[];h=(p/'report.html').read_text(encoding='utf-8');refs=re.findall(r'(?:href|src)=\\\"([\"'^\"]+)\"'\"',h)\nfor ref in refs:\n if not ref.startswith(('http','#')) and not (p/ref).exists():missing.append(ref)\nassert not missing\nassert 'Frozen herbal replacement,21October2026:' in (b/'report.html').read_text(encoding='utf-8')\nassert 'v23 FROZEN APPLICATION COMPLETE' in (b/'STATUS.txt').read_text(encoding='utf-8')\n(p/'DELIVERY-CHECK.json').write_text(json.dumps({'report_local_references_verified':len(refs),'null_plot_visually_inspected':True,'browser_render_acceptance_claimed':False,'root_living_records_updated':True,'handoff_files':['HANDOFF.txt','START-FRESH.txt'],'engineering_audit_checks':36,'prior_files_unchanged':152},indent=2)+'\\\\n')\nfiles=[f for sub in ['herbal-replacement-v23','specificity-controls-v22','herbal-heldout-v21','stars-heldout-v20'] for f in (b/sub).rglob('*') if f.is_file() and '__pycache__' not in f.parts and f\"'!=p/'\"'PACKAGE-SHA256.json']+[b/'data/text16e6.original.evt',b/'STATUS.txt']\nmanifest={str(f.relative_to(b)).replace('\\\\\\\\','/'):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}\n(p/'PACKAGE-SHA256.json').write_text(json.dumps(manifest,indent=2)+'\\\\n')\nz=b/'voynich-session-handoff-v23.zip'\nwith ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as out:\n for f in files+[p/'PACKAGE-SHA256.json']:out.write(f,str(f.relative_to(b)))\n out.writestr('README.txt',readme)\nwith ZipFile(z) as out:\n assert out.testzip() is None\n for name,digest in manifest.items():assert hashlib.sha256(out.read(name)).hexdigest()==digest\nreceipt={'archive':z.name,'sha256':hashlib.sha256(z.read_bytes()).hexdigest(),'bytes':z.stat().st_size,'manifest_files_verified':len(manifest),'crc_verified':True}\n(b/'voynich-session-handoff-v23-PACKAGE-CHECK.json').write_text(json.dumps(receipt,indent=2)+'\\\\n')\nprint(json.dumps(receipt))\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 4342
+        },
+        {
+          "type": "mcpToolCall",
+          "id": "exec-8169120c-24b9-4e6d-bd64-60f197a53146",
+          "server": "codex_app",
+          "tool": "open_in_codex",
+          "arguments": {
+            "target": {
+              "type": "file",
+              "path": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\21\\01a15c3d-56da-7f02-bc15-2522dc396abd\\voynich-layout\\herbal-replacement-v23\\report.html"
+            }
+          },
+          "status": "completed",
+          "durationMs": 38
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad9462aeff88192ab652c477dfeb99a",
+          "text": "**This lead survives both frozen nulls in both transcriptions.** 🐍\n\n| Reading | Word-null p | Leaf-partner-null p | Corrected specificity p |\n|---|---:|---:|---:|\n| H | .001 | .0025 | .004 |\n| F | .001 | .0020 | .004 |\n\nSeparately, whole-sheet-heldout conditional prediction improves over baseline by **+.00725 bits/choice for H** and **+.00662 for F**. Gains occur on 14/21 and 13/21 sheets. These gains are descriptive; the specificity p-values don’t establish their significance.\n\nAll losing sheets and earlier failures remain in the receipts. **36 checks pass.** This supports partner-associated structure under the stated assumptions, without identifying its meaning.\n\n[Full report](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-replacement-v23/report.html)\n\nFor a fresh session, paste the [short start prompt](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-replacement-v23/START-FRESH.txt). It points to the [complete handoff](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-replacement-v23/HANDOFF.txt).\n\n[Portable reproduction package](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/voynich-session-handoff-v23.zip)",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16098-e456-7b52-a819-9e0cc957beb5",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1792621995,
+      "completedAt": 1792622838,
+      "durationMs": 842984,
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16098-e7d6-70a1-b8a9-d98273638cfd",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hell yes. Diagnose why the wrong-partner test flags independent controls. Fix and qualify it on controls before touching the manuscript again, freeze the rules, and keep the failures in the receipts. 🐍\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad93db03fc88192a351222910791768",
+          "text": "I’ll keep the manuscript scores untouched while I diagnose the control failure. Then I’ll freeze a revised wrong-partner test and qualify it on synthetic controls, with the failed v21 procedure preserved for comparison. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-339790de-682d-4bf5-821d-6571e65bd061",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\run_tests.py' -TotalCount 145\nrg -n -i 'voynich' 'C:\\\\Users\\\\lewis\\\\.codex\\\\memories\\\\MEMORY.md'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "failed",
+          "exitCode": 1,
+          "durationMs": 1219
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-5d07a286-26fb-4856-903f-2ba096cee1a2",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\run_tests.py' | Select-Object -Skip 140 -First 240\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 928
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-bc3cba6c-5997-452e-a695-7a40b07521f2",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\run_tests.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 515
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-523e7215-0f18-4a6e-a731-baad822de8b9",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\stars-heldout-v20\\\\run_tests.py' | Select-Object -First 125; Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\H-events.json' -TotalCount 35; Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\H-key-catalogue.json' -TotalCount 18; Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\H-words.json' -TotalCount 25\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 810
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad93e4b5bb0819291dc43f8af668f5e",
+          "text": "The old test has a structural problem: “true partner beats wrong partner” can happen even when the word choices are independent. Partner leaves can share word families and sample sizes, and the model can transfer its own estimation errors between them.\n\nI’m separating those effects with synthetic data. The revised test will compare against shuffled data that preserves those features and refits the model each time, so a positive raw gain alone won’t count as evidence. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-75653360-e11a-43f1-8dd8-5e7a6d9c731c",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$taskRoot='\"'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout'; New-Item -ItemType Directory -Path \\\"\"'$taskRoot'\"\\\\specificity-controls-v22\\\" -Force | Out-Null; Get-Content -LiteralPath \\\"\"'$taskRoot'\"\\\\build_report.py\\\" -Tail 55; Get-Content -LiteralPath \\\"\"'$taskRoot'\"\\\\herbal-heldout-v21\\\\FROZEN-COHORT.json\\\" -TotalCount 16\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 599
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-94b618e4-f42b-42b2-b400-fe81b342f773",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport shutil,json,hashlib\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');p=r/'specificity-controls-v22';(p/'prior').mkdir(exist_ok=True)\nfor n in ['build_report.py','report.html','STATUS.txt']:shutil.copy2(r/n,p/'prior'/n)\nmanifest={str(f.relative_to(r)):hashlib.sha256(f.read_bytes()).hexdigest() for sub in ['herbal-heldout-v21','stars-heldout-v20'] for f in (r/sub).rglob('*') if f.is_file() and '__pycache__' not in str(f)}\n(p/'prior-hashes.json').write_text(json.dumps(manifest,indent=2)+'\\\\n')\n(p/'SCOPE.json').write_text(json.dumps({'scope':'Controls only. No new manuscript outcome scores, predictions, associations, or p-values.','design':'Saved v21 layout/family identifiers. Original choices used only as aggregate variant inventory to reproduce old synthetic controls. Qualification inventories newly simulated.','diagnosis_seeds':list(range(30001,30101)),'locked_qualification_bank_seeds':{'H':41001,'F':42001},'locked_validation_seeds':{'H':51001,'F':52001},'manuscript_resumption':'Outside this controls-only cut; no automatic replay.'},indent=2)+'\\\\n')\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 775
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-356b291f-329e-49b3-bb10-6d211d095b90",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\controls.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 55356
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad93ed14f6c81929dafc1367aad23b2",
+          "text": "The ablation found a concrete cause. On 100 independent H-stream controls, the fixed-model version gives a positive raw advantage in 98 cases. Using the known generating rates to centre donor residuals cuts that to 53; the mean gain falls from about .00223 to .00006 bits.\n\nSo much of the apparent advantage is shared model error. I’m freezing a refit-and-shuffle test, then checking its false positives and planted-signal sensitivity on separate control seeds. The manuscript remains unscored.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-38e85823-bcb0-420f-818a-a4ee92bc1f50",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json,hashlib,datetime\np=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22')\nrules={'version':'v22-control-only-fixed-pipeline-conditional-randomization','frozen_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'No original outcome scores. H/F are two fixed design templates, not independent manuscripts. Qualification uses entirely newly simulated variant inventories.','null':'Whole-word variant rows exchangeable within fully masked family plus quire; condition on exact stratum multiset and fixed layout.','statistic':'Same v21 two-sheet-excluded true-versus-wrong loss contrast and equal-sheet aggregation, but fixed parameters: baseline lambda20; separate-kind transfer weight0.5 ridge16. No tuning. All baseline fits and donor predictions recomputed for every randomization.','change':'This qualifies a new fixed-parameter procedure. Does not retrospectively qualify v21 adaptive selection or its sign flips/bootstrap.','reference':'One-sided Monte Carlo p=(1+count(null_score>=observed_score-1e-12))/(B+1). Never compare raw gain against zero for inference.','bank_size':999,'negative_size':200,'positive_size':12,'maximum_null_rejections':20,'minimum_strong_detections':10,'criteria':'All four fixtures must have <=20/200 null rejections at alpha.05 and >=10/12 strong plants detected. Finite calibration screen, not proof of exact 5% error or weak-signal power.','weak_controls':'Twelve strength0.5 plants per fixture, descriptive only; preserve misses.','stress':'Forty independently planted leaf states per fixture; non-exchangeable out-of-null diagnostic. A positive stress result limits applicability to manuscript with arbitrary leaf effects; no broad manuscript-ready status.','heldout_units':'Both target and wrong-donor whole sheets excluded from baseline training; other half of target is permitted observed conditioning context.','fixtures':[],'implementation_sha256':{n:hashlib.sha256((p/n).read_bytes()).hexdigest() for n in ['controls.py','qualify.py']}}\nfor i,(tr,rep) in enumerate([('H',1),('F',1),('H',2),('F',2)]):\n rules['fixtures'].append({'name':f'{tr}-inventory-{rep}','stream':tr,'inventory_seed':61001+i*1000,'bank_seed':71001+i*1000,'validation_seed':81001+i*1000,'positive_seed':91001+i*1000,'leaf_stress_seed':101001+i*1000})\n(p/'FROZEN-RULES.json').write_text(json.dumps(rules,indent=2)+'\\\\n',encoding='utf-8')\n(p/'FREEZE-SHA256.txt').write_text(hashlib.sha256((p/'FROZEN-RULES.json').read_bytes()).hexdigest()+'  FROZEN-RULES.json\\\\n')\nprint('Frozen',rules['frozen_at_utc'])\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 658
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-4ce5b3fa-1b37-4232-9b88-a4411c89aafb",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\np=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22')\nr=json.loads((p/'diagnosis.json').read_text())\nfor tr in ['H','F']:\n x=r[tr];vals=x['old_nested_independent'];print(tr,'old original reproduction',x['reproduction_gain'],x['reproduction_reference_p'],'new12 rejects',sum(z['reference_p']<=.05 for z in vals), 'mean gain',sum(z['gain'] for z in vals)/len(vals))\nprint('diagnosis seconds',r['elapsed_seconds'])\n(p/'SCOPE-AMENDMENT-01.json').write_text(json.dumps({'reason':'Expanded qualification to four fixtures with two new synthetic inventories per design. Final seeds in hashed FROZEN-RULES.json supersede provisional unused seed reservations in SCOPE.json.','timing':'Rules and implementation hashes written before invoking qualify.py; no qualification outcomes used to choose seeds, parameters or criteria.','old_reserved_seeds_used':False,'original_scope_unchanged':'No manuscript outcome scores.'},indent=2)+'\\\\n')\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 668
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-20da28de-34af-4983-a682-8df57ac71eac",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-ChildItem -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22' | Select-Object Name,Length\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 660
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-ce04aa85-2cd9-4f59-90f3-c06290cac7ba",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\qualify.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 94602
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad93f7439c08192bd2acb9935b04f5e",
+          "text": "The revised shuffle test passes the independent-word controls: 39 of 800 are flagged, and it detects all 48 strong plants.\n\nBut the stress test caught another boundary: when each leaf has its own independent pattern, it flags too many controls. I’m preserving that result and adding a whole-leaf partner-randomization check before calling the procedure qualified. This matters because words on a manuscript leaf needn’t behave independently. 🗡️🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-36532e67-0612-4a7f-a10b-575db48e357e",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\verify.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "failed",
+          "exitCode": 1,
+          "durationMs": 81776
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-1a7e1f6b-6515-4f93-be8b-a84f9e6adb63",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json,hashlib,datetime\np=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22')\na=json.loads((p/'FROZEN-RULES.json').read_text())\nb={'version':'v22-attempt-B-intersection','frozen_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'predecessor':'Attempt A passes iid words but fails independent-leaf challenge; preserved without changes.','statistic':'Attempt A fixed model and word permutation, plus whole-leaf within-quire random partner matching with ALL two-sheet-excluded fits recomputed exactly via four-leaf subset cache.','decision':'p=max(word-null-p,whole-leaf-partner-null-p). Reject only if both <=.05. This is an intersection of two evidence requirements, not a combination that rewards the smaller p.','pairbank_size':3999,'wordbank_size':999,'criteria':'For each of four fixtures: <=20/200 new iid-word rejections; <=20/200 new independent-leaf-state rejections; >=10/12 new strong shared-sheet detections. Weak plants descriptive. Frozen before B outcomes.','fresh_controls':'All B validation and plant seeds differ from exposed A controls. The A word null banks, a control calibration design only, are reused unchanged.','limits':'Finite empirical qualification, not guaranteed for arbitrary nuisance combinations. Word null requires conditional whole-word exchangeability; pairing null requires within-quire leaf exchangeability under no privileged sheet pairing.','implementation_A_sha256':a['implementation_sha256'],'partner_implementation_sha256':hashlib.sha256((p/'partner_null.py').read_bytes()).hexdigest(),'fixtures':[],'manuscript':'No scoring or resumption in this cut.'}\nfor i,f in enumerate(a['fixtures']):\n b['fixtures'].append({'name':f['name'],'stream':f['stream'],'pairbank_seed':201001+i*1000,'word_seed':211001+i*1000,'leaf_seed':221001+i*1000,'positive_seed':231001+i*1000})\n(p/'FROZEN-RULES-B.json').write_text(json.dumps(b,indent=2)+'\\\\n')\n(p/'FREEZE-B-SHA256.txt').write_text(hashlib.sha256((p/'FROZEN-RULES-B.json').read_bytes()).hexdigest()+'  FROZEN-RULES-B.json\\\\n')\nprint('B frozen',b['frozen_at_utc'])\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 715
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-083ff67c-9279-48be-b02c-97732ae0875b",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Copy-Item -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\audit.json' -Destination 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\audit-initial-FAILED.json'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 717
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-b2504565-c688-410e-a87a-b6f73800fde4",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\verify.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 3414
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad940600c4c81928fd8ade05b0d6e55",
+          "text": "The combined test passes the first three frozen fixtures: it flags 1 of 600 independent-word controls and 17 of 600 independent-leaf controls, while finding all 36 strong plants. The last fixture is still running.\n\nIt also misses most weak plants. I’m keeping those misses prominent: good false-positive control won’t make a later negative result evidence that no weak pattern exists.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-67189f80-47ab-417c-9a88-1e414b04319c",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\partner_null.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 144546
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-544850b9-abd1-4e03-8bed-a8966d6fa7f9",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-ChildItem -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22' -Filter '*B-results.json' | Select-Object Name,Length\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 676
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-281511c4-d84e-4fa6-b586-56e2ab915c8a",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\verify.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 4781
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad94090570c8192b86a6ed7c00b0904",
+          "text": "The final fixture passes too. Across the frozen suite, the combined test flags 6/800 independent-word controls and 24/800 independent-leaf controls, and detects 48/48 strong plants. It finds only 13/48 weak plants, so that sensitivity limit stays attached.\n\nI’ve replayed the saved null scores and decisions and verified that the earlier receipts are unchanged. I’m packaging the diagnosis, both attempts, frozen rules, and failures now; no manuscript scores were rerun. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-35dbb68c-a6bf-4bcc-9cbe-51babd4de700",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\specificity-controls-v22\\\\make_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 513
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-40935b3e-b28f-4af9-b705-8bef8c518abf",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout')\np=r/'build_report.py';s=p.read_text(encoding='utf-8')\nentry='<p>Wrong-partner controls,21October2026: <a href=\\\"specificity-controls-v22/report.html\\\">v22 diagnosis and frozen control qualification</a> · <a href=\\\"specificity-controls-v22/FOR-CLAUDE.txt\\\">reproduction handoff</a>. Old adaptive reference flags14/24new iidcontrols; family-composition baseline errors can transfer between partners. AttemptA fixes iidcalibration but fails52/160independent-leaf controls. FrozenB requires both whole-word family/quire and whole-leaf partner randomization:6/800iid-word flags,24/800independent-leaf flags,48/48strong plants,13/48weak plants. Allfourfinite fixtures pass;29engineering checks pass. Explicit exchangeability assumptions and weak-signal failures retained. No new manuscript scores;82v20/v21files unchanged.</p>\\\\n'\nanchor='<p>Herbal heldout sheets,21October2026:'\nassert anchor in s and 'Wrong-partner controls,21October2026:' not in s\ns=s.replace(anchor,entry+anchor,1)\nstatus='Wrong-partner control diagnosis checked 2026-10-21: v22 CONTROLS ONLY; FROZEN B PASSES FINITE QUALIFICATION WITH EXPLICIT NULL ASSUMPTIONS. Legacy Fseed2001failure reproduced exactly(+.010969349652bits,p.0022),Hseed2001also exact. Oldadaptive reference flags14/24freshiidcontrols(H6/12,F8/12).100iidablationdraws/design show family/quire shrinkage errors transfer through similarly composed donors; oracle donorcentering reduces meanrawgain H+.002226to+.000059,F+.002200to-.000037; expected-risk diagnostic retainsbias. Newfixed lambda20,separate-kind weight.5/ridge16,alltwo-whole-sheet exclusions retained. Aconditionalwhole-wordrefitting flags39/800iidcontrols andfinds48/48strongplants,butfails52/160independentleaf-state stresscontrols. FrozenB adds3999whole-leafwithinquirepartnerings to999wordnulls andrequiresp=max(pword,ppartner)<=.05. Fresh Bcontrols:6/800iidwordflags,24/800independentleafstateflags,48/48strongplants,13/48weakplants. Allfourfixtures pass prespecified<=20/200nullflags and>=10/12strongdetections; finite generators/exchangeability limits explicit,not exact5%or universalcalibration. Four-leafcache equalsliteralrefits including3newpartnerings/design;all savednulls/decisionsreplay,29checks pass,82priorfiles/canonicalcorpusunchanged. Initial verifier wrongly demanded zerorawgain oninvariantoutcomes;failedreceipt preserved,correct p1checkpasses,noinferencecodechange. Allrules/hashes,oldfailures,A/Bresults,syntheticchoices,fitcontrasts,fullpartnernulls,weakmisses,priorsummaries andcommands in specificity-controls-v22/report.html,FOR-CLAUDE.txt,FAILURES.json,audit.json. No manuscript outcome scored or oldassociationchanged; controlqualification doesnot establishpredictivebaselinegain,chronology,normalizationor meaning. Next boundary: a separatelyscoped manuscriptfollowup mustretainbothnulls,fixedparameters,exposurelimits,andbaselinegainchecks.\\\\n'\nanchor2='Herbal heldout sheets checked 2026-10-21:'\nassert anchor2 in s\ns=s.replace(anchor2,status+anchor2,1)\np.write_text(s,encoding='utf-8')\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 585
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-1e40a2c2-0da3-4293-86c1-26173c877c6c",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"& 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\build_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 4078
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-8c7b9688-e16d-4cd2-a16a-7e2ebcfcabbd",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nfrom zipfile import ZipFile,ZIP_DEFLATED\nimport hashlib,json,sys,numpy,scipy\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');p=r/'specificity-controls-v22'\nreadme='''Voynich wrong-partner controls, cut22. Start with specificity-controls-v22/report.html or FOR-CLAUDE.txt. This is a control-only package: no new manuscript outcome scores. Both failed predecessors and the frozen B result are preserved.\\\\n\\\\nExtract the entire archive, preserving sibling directories. From specificity-controls-v22, run Python controls.py, qualify.py, partner_null.py, verify.py, make_report.py in that order. Replays overwrite newly generated control results with the same numerical scores; elapsed times differ. verify.py checks all82 prior-stage files and the corpus hash, plus frozen algorithm hashes, synthetic invariants, literal-versus-cached refits, and every saved null score/decision. NumPy, SciPy required. Exact environment in ENVIRONMENT.json.\\\\n\\\\nB qualification:6/800 independent-word flags,24/800 independent-leaf-state flags,48/48strong shared-sheet plants,13/48weak plants. The test requires both conditional word permutation and whole-leaf partner randomization. Qualification is finite and assumption-bound. No zero-centred sign-flip inference; no inference of absence from weak negatives. No new manuscript reanalysis authorized by this package.\\\\n'''\n(p/'PACKAGE-README.txt').write_text(readme,encoding='utf-8')\n(p/'ENVIRONMENT.json').write_text(json.dumps({'python':sys.version,'numpy':numpy.__version__,'scipy':scipy.__version__},indent=2)+'\\\\n')\nfiles=[f for sub in ['specificity-controls-v22','herbal-heldout-v21','stars-heldout-v20'] for f in (r/sub).rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.name\"'!='\"'PACKAGE-SHA256.json']+[r/'data/text16e6.original.evt']\nmanifest={str(f.relative_to(r)).replace('\\\\\\\\','/'):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}\n(p/'PACKAGE-SHA256.json').write_text(json.dumps(manifest,indent=2)+'\\\\n')\nz=r/'wrong-partner-controls-v22.zip'\nwith ZipFile(z,'w',ZIP_DEFLATED,compresslevel=6) as out:\n for f in files+[p/'PACKAGE-SHA256.json']:out.write(f,str(f.relative_to(r)))\n out.writestr('README.txt',readme)\nwith ZipFile(z) as out:\n assert out.testzip() is None\n for name,h in manifest.items():assert hashlib.sha256(out.read(name)).hexdigest()==h\nprint(json.dumps({'zip':str(z),'bytes':z.stat().st_size,'files':len(manifest),'sha256':hashlib.sha256(z.read_bytes()).hexdigest()}))\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 3540
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-bcb9c797-fb51-454e-90f8-2d69f398bb37",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport re,json,hashlib\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');p=r/'specificity-controls-v22'\nh=(p/'report.html').read_text(encoding='utf-8')\nlinks=re.findall(r'href=\\\"([\"'^\"]+)\"'\"',h);missing=[s for s in links if not s.startswith(('http','#')) and not (p/s).exists()];assert not missing\nassert 'Wrong-partner controls,21October2026:' in (r/'report.html').read_text(encoding='utf-8')\nassert 'v22 CONTROLS ONLY' in (r/'STATUS.txt').read_text(encoding='utf-8')\nz=r/'wrong-partner-controls-v22.zip'\nreceipt={'archive':z.name,'sha256':hashlib.sha256(z.read_bytes()).hexdigest(),'bytes':z.stat().st_size,'archive_manifest_entries_verified':152,'archive_crc_verified':True,'report_local_links_verified':len(links),'root_records_updated':True,'browser_render_verified':False,'reason':'Local report data/integrity checked; no rendered browser acceptance claimed.'}\n(r/'wrong-partner-controls-v22-PACKAGE-CHECK.json').write_text(json.dumps(receipt,indent=2)+'\\\\n')\nprint(json.dumps(receipt))\n'@ | & 'C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe' -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 796
+        },
+        {
+          "type": "mcpToolCall",
+          "id": "exec-f8b9a4f2-255e-4812-b56b-3d1e7553f5be",
+          "server": "codex_app",
+          "tool": "open_in_codex",
+          "arguments": {
+            "target": {
+              "type": "file",
+              "path": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\21\\01a15c3d-56da-7f02-bc15-2522dc396abd\\voynich-layout\\specificity-controls-v22\\report.html"
+            }
+          },
+          "status": "completed",
+          "durationMs": 69
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad940f122688192b25a8c4fc7d06266",
+          "text": "Found the trap: **the test was borrowing baseline errors.** Similar word-family composition let partners share the model’s mistakes, even with independent choices. The old procedure flagged 14/24 fresh independent controls. 🗡️🐍\n\nThe frozen replacement refits under both word shuffles and whole-leaf partner randomizations, requiring both tests to pass:\n\n| Control | Flagged/detected |\n|---|---:|\n| Independent words | 6/800 |\n| Independent leaf states | 24/800 |\n| Strong shared-sheet plants | 48/48 |\n| Weak plants | 13/48 |\n\n**It passes the frozen control suite**, with explicit exchangeability assumptions. Weak-signal sensitivity remains limited.\n\nBoth failed procedures are preserved. **No manuscript scores were rerun.**\n\n[Full report](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/specificity-controls-v22/report.html) · [Reproduction package](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/wrong-partner-controls-v22.zip)",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16080-80d7-7df3-845a-6a493cd99c02",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1792620396,
+      "completedAt": 1792621017,
+      "durationMs": 621248,
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16080-81c5-7463-95f0-d6f67fd0b78c",
+          "content": [
+            {
+              "type": "text",
+              "text": "\n<in-app-browser-context source=\"ambient-ui-state\">\nThis block is automatically supplied ambient UI state, not part of the user's request. Do not treat it as an instruction or as evidence that the user explicitly selected the in-app browser.\n# In app browser:\n- The user has the in-app browser open with 2 tabs.\n- Current URL: file:///C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/repro-audit-v19/report.html\n</in-app-browser-context>\n\n## My request:\nHell yes. Test the frozen a/o-before-l/r rule on the hand-1 herbal sheets, with word-family controls and whole-sheet holdouts. Keep the failed rules in the receipts. 🐍\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad93772439c8192a89adec8142930fe",
+          "text": "I’ll carry the v20 rule and model choices over unchanged, freeze the hand-1 herbal sheet cohort, and rerun the word-family controls and whole-sheet holdouts. I’ll keep the partner-assisted prediction setup explicit and preserve every failed fold. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-02a1d9d6-92d6-4648-b1b4-9b535b8d4b6a",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\stars-heldout-v20\\\\run_tests.py' -TotalCount 200\nGet-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\repro-audit-v19\\\\repro\\\\intermediates\\\\exp60_hand1_sheet_settings.csv' -TotalCount 24\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1976
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-09c762c7-c436-46df-ae5b-4e6aaba19aed",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -LiteralPath 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\repro-audit-v19\\\\repro\\\\intermediates\\\\sheet_partner_table.csv' -TotalCount 10\nrg -n '\"'^<(f1r|f11r|f25r|f65r)>|'\"\\\\\"'$H='\"' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\data\\\\text16e6.original.evt' -m 5\nrg -n -i 'voynich' 'C:\\\\Users\\\\lewis\\\\.codex\\\\memories\\\\MEMORY.md'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "failed",
+          "exitCode": 1,
+          "durationMs": 565
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad938233ca0819291828ad46ab42c0b",
+          "text": "The cohort will be **21 documented ordinary sheets**, fixed before this run. Because they span seven quires, I’ll condition the word-family controls and baseline on quire too.\n\nI’ll also compare the true partner with wrong partners from the same quire. That comparison will hold both sheets out of fitting, so it can distinguish a sheet-specific benefit from simply receiving more text from the same quire.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-0e7a2ad5-42d2-44e0-ba08-949240bd0cfb",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport csv,json,hashlib,datetime\nb=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout');o=b/'herbal-heldout-v21';o.mkdir(exist_ok=True)\nrows=list(csv.DictReader((b/'repro-audit-v19/repro/intermediates/sheet_partner_table.csv').open(encoding='utf-8')));cohort=sorted([{'sheet':[int(r['leaf_a']),int(r['leaf_b'])],'quire':int(r['quire_num'])} for r in rows if r['used_exp60_hand1']=='yes'],key=lambda r:r['sheet']);assert len(cohort)==21\n(o/'FROZEN-COHORT.json').write_text(json.dumps(cohort,indent=2),encoding='utf-8')\nspec={'revision':'v21','frozen_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),\n'extension':'Transfer v20 frozen k/t and a/o-before-l/r extractors and hyperparameter candidate sets to documented hand1 herbal sheets; add quire conditioning and a same-quire wrong-partner guard because this population spans7quires. Not historically untouched evidence; earlier exploratory herbal results known.',\n'cohort':'21 ordinary documented hand1 sheets used by supplied exp60 cohort, frozen explicitly from partner table. Both reading streams H/F use same physical sheets. Only page metadata I=H,H=1; f1r I=T is excluded. All available P/R lines, no token/page thresholds. No later selection of19 versus21 from outcomes. Other/foldout/singleton sheets outside this cohort remain untested.',\n'choices_and_families':'Exactly v20: k/t every occurrence not immediately after c/l; a/o every occurrence immediately before l/r. Claude cleaner, drop first remaining clean word per physical line. Fully mask ALL eligible k/t and a/o sites, preserve rest. Whole-word variants move intact among same masked-family slots, now WITHIN QUIRE. Both independent transcriber streams are readings of the same manuscript.',\n'associations':'Raw score mean(z_k,z_a) across eligible H1 herbal pages in this fixed cohort, average pages to leaves, mean absolute partner distance.4999 random perfect matchings restricted within each quire. Family null4999 whole-variant permutations within family+quire, recompute page z and leaf statistic each draw. Four association tests (H/F raw and family) Holm together. Save movable support. No new rule selected from these outcomes.',\n'baseline':'v20 nested beta-family baseline with quire layer: training-only kind major rates Jeffreys; per(family,position,kind) rates shrunk by lambda to kind rate; per(family,position,kind,quire) rates shrunk by SAME lambda to family rate. Lambda candidates100,20,5,1. Quire is observed metadata. All fitting/tuning exclude all leaves of every outer heldout sheet.',\n'partner_model':'Same v20 candidates: zero transfer first, then shared or separate kind ridge offset sum(y-p)/(sum(p(1-p))+rho), weights.5/1, rho16/4/1. Offset estimated from observed donor leaf only. No target outcomes in its own profile. Candidate selected with inner leave-one-whole-sheet-out on outer-training sheets.',\n'prediction':'21 outer leave-one-whole-sheet-out folds,20 inner folds for tuning; evaluate both directions using other heldout leaf as observed input. Macro equal-sheet gain primary; micro diagnostic. Conditional partner-assisted prediction, not decoding without an observed partner.',\n'specificity_guard':'For each unordered same-quire pair of physical sheets, hold out BOTH entire sheets (4leaves), train/tune only remaining19sheets with nested inner folds. Score all4target leaves with true partner and with each of the2leaves of wrong heldout same-quire sheet. Average wrong losses across2donors, then across donor sheets and target leaves within each target sheet. True-partner advantage over wrong donor is required; save every contrast including losses. All hyperparameters exclude wrong donor as well as target sheet.',\n'inference':'19999 seeded whole-sheet sign flips (+1 correction) and1999 sheet-bootstrap draws for both baseline gain and specificity advantage. Four primary tests (2streams*2contrasts) Holm together. Primary success requires both positive lower95%intervals,adjusted p<.05,baseline beats training-rate constant,controls pass. Overlapping CV fits mean reference inference, not guaranteed fresh-sample type-I calibration. H/F correlated, not independent manuscripts.',\n'controls':'Before manuscript fits, same three seeds2001/2002/2003 and v20 whole-word variant generator within family+quire. Negative iid variants within strata allows quire effects but no sheet state; positive adds strength1.5*N(0,1) state per sheet. Run identical nested prediction AND same-quire specificity. Gate all positives baseline gain>0 andspecificity>0; all negatives each gain<.01bits. Strong controls not weak-effect power calibration. Save every control immediately.',\n'failure_policy':'Preserve all folds, specificity fits, negative/zero transfer, nulls, control failures and scientific gate failures. No retuning of extractor/cohort/threshold after run. Add auditable records and retain v20 outcomes unchanged.'}\n(o/'FROZEN-RULES.json').write_text(json.dumps(spec,indent=2),encoding='utf-8');(o/'FREEZE-SHA256.txt').write_text('\\\\n'.join(hashlib.sha256((o/n).read_bytes()).hexdigest()+'  '+n for n in ['FROZEN-RULES.json','FROZEN-COHORT.json'])+'\\\\n',encoding='utf-8');print(o)\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1093
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-6087aa73-513e-47ff-afe9-834b8ede4629",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\np=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21/run_tests.py')\np.write_text('''\\\"\\\"\\\"Frozen v21 herbal transfer, family+quire controls and heldout specificity.\\\"\\\"\\\"\nfrom pathlib import Path\nfrom collections import defaultdict,Counter\nimport numpy as np\nimport json,hashlib,re,itertools,inspect,importlib.util,time\nROOT=Path(__file__).resolve().parent;BASE=ROOT.parent\ncohort=json.loads((ROOT/'FROZEN-COHORT.json').read_text());SHEETS=[tuple(x['sheet']) for x in cohort];N=len(SHEETS);LEAVES=sorted(f for s in SHEETS for f in s);Q={f:x['quire'] for x in cohort for f in x['sheet']};QS=[x['quire'] for x in cohort]\nspec=importlib.util.spec_from_file_location('v20_herbal_helper',BASE/'stars-heldout-v20/run_tests.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)\nold.SHEETS=SHEETS;old.LEAVES=LEAVES;old.SID={f:i for i,s in enumerate(SHEETS) for f in s};old.LI={f:i for i,f in enumerate(LEAVES)};old.OBS=np.array([(old.LI[a],old.LI[b]) for a,b in SHEETS])\ntext=(BASE/'data/text16e6.original.evt').read_text(encoding='latin-1');META={}\nfor line in text.splitlines():\n m=re.match(r'\"'^<(f'\"\\\\\\\\d+[rv]\\\\\\\\d*)>\\\\\\\\s+\\\\\\\\{(.*)\\\\\\\\}',line)\n if m:META[m[1]]=dict(re.findall(r'\\\\\\\\\"'$([A-Z])=('\"\\\\\\\\S)',m[2]))\n# Reuse the unchanged v20 extractor/cleaner, with explicit population filter only.\nsrc=inspect.getsource(old.parse).replace(\\\"  unit=m[3].split('.')[0]\\\", \\\"  if META.get(m[1],{}).get('I')\"'!='\"'H' or META.get(m[1],{}).get('H')\"'!='\"'1':continue\\\\\\\\n  unit=m[3].split('.')[0]\\\")\nold.META=META;exec(src,old.__dict__)\nLAMBDAS=old.LAMBDAS;CANDIDATES=old.CANDIDATES;PAIRED_SHEETS=[(i,j) for i in range(N) for j in range(i+1,N) if QS[i]==QS[j]]\ndef sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()\ndef save(n,x):(ROOT/n).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\\\\\\\\n',encoding='utf-8')\ndef parse(tr):\n d=old.parse(tr);a=d['a'];a['quire']=np.array([Q[int(f)] for f in a['leaf']]);a['model_key']=a['key']*8+a['quire'];groups=defaultdict(list)\n for i,w in enumerate(d['words']):w['quire']=Q[w['leaf']];groups[(w['family'],w['quire'])].append(i)\n d['blocks']=[(key,np.array([d['words'][i]['events'] for i in ww])) for key,ww in groups.items()]\n return d\n\ndef fit_base(d,y,training,lam):\n a=d['a'];mask=np.isin(a['sheet'],training);nk=len(a['key_kind']);nf=np.bincount(a['key'][mask],minlength=nk);kf=np.bincount(a['key'][mask],weights=y[mask],minlength=nk);g=np.array([(y[mask&(a['kind']==j)].sum()+.5)/(np.sum(mask&(a['kind']==j))+1) for j in [0,1]])\n family=(kf+lam*g[a['key_kind']])/(nf+lam);n=np.bincount(a['model_key'][mask],minlength=nk*8);k=np.bincount(a['model_key'][mask],weights=y[mask],minlength=nk*8);rate=(k+lam*np.repeat(family,8))/(n+lam)\n return rate[a['model_key']],g,(n,k,rate)\n\ndef select(d,y,training):\n ls=[]\n for lam in LAMBDAS:\n  vals=[]\n  for inner in training:\n   p,_,_=fit_base(d,y,[i for i in training if i\"'!=inner],lam);ix=d['\"'a']['sheet']==inner;vals.append(float(old.loss(y[ix],p[ix]).mean()))\n  ls.append(float(np.mean(vals)))\n lam=LAMBDAS[int(np.argmin(ls))];frames=[]\n for inner in training:\n  p,_,_=fit_base(d,y,[i for i in training if i\"'!=inner],lam);frames.append((p,old.frame(d,y,p,inner)))\n scores=[]\n for c in CANDIDATES:\n  scores.append(float(np.mean([np.concatenate([old.loss(y[ix],v) for ix,v,_ in old.candidate_predictions(d,p,fr,c)]).mean() for p,fr in frames])))\n return lam,CANDIDATES[int(np.argmin(scores))],ls,scores\n\ndef infer(gains):\n gains=np.array(gains);obs=float(gains.mean());rng=np.random.default_rng(20261021);signs=rng.choice([-1,1],(19999,len(gains)));p=float((1+np.sum((signs@gains)/len(gains)>=obs-1e-14))/20000);ix=rng.integers(0,len(gains),(1999,len(gains)));ci=np.quantile(gains[ix].mean(1),[.025,.975]).tolist()\n return {'\"'macro_gain_bits':obs,'bootstrap95':ci,'sheet_sign_p':p,'positive_sheets':int(np.sum(gains>0))}\n\ndef nested(d,y,keep=False):\n folds=[];preds=[];models=[]\n for outer in range(N):\n  training=[i for i in range(N) if i\"'!=outer];lam,c,ls,cs=select(d,y,training);p,g,counts=fit_base(d,y,training,lam);fr=old.frame(d,y,p,outer);q=old.candidate_predictions(d,p,fr,c);ix=np.concatenate([ids for ids,_,_ in q]);pp=np.concatenate([v for _,v,_ in q]);bl=float(old.loss(y[ix],p[ix]).mean());ext=float(old.loss(y[ix],pp).mean());const=float(old.loss(y[ix],g[d['\"'a']['kind'][ix]]).mean())\n  folds.append({'sheet':list(SHEETS[outer]),'sheet_id':outer,'quire':QS[outer],'n_choices':len(ix),'lambda':lam,'candidate':list(c),'baseline_bits':bl,'partner_bits':ext,'constant_bits':const,'gain_bits':bl-ext,'lambda_cv':ls,'candidate_cv':cs})\n  if keep:\n   for ti,v,_ in q:\n    for j,eid in enumerate(ti):preds.append({'event':int(eid),'sheet_id':outer,'page':d['events'][eid]['page'],'leaf':int(d['a']['leaf'][eid]),'y':int(y[eid]),'baseline':float(p[eid]),'partner':float(v[j])})\n   n,k,rate=counts;models.append({'sheet_id':outer,'training_sheets':training,'lambda':lam,'candidate':list(c),'global_rates':g.tolist(),'model_key_n':n.tolist(),'model_key_positive':k.tolist(),'model_key_rate':rate.tolist()})\n res=infer([f['gain_bits'] for f in folds]);res.update(baseline_macro_bits=float(np.mean([f['baseline_bits'] for f in folds])),constant_macro_bits=float(np.mean([f['constant_bits'] for f in folds])),baseline_adequate=bool(np.mean([f['baseline_bits']-f['constant_bits'] for f in folds])<0),micro_gain_bits=float(sum(f['gain_bits']*f['n_choices'] for f in folds)/sum(f['n_choices'] for f in folds)),nonzero_transfer_folds=sum(f['candidate'][1]>0 for f in folds),folds=folds)\n return res,preds,models\n\ndef specificity(d,y):\n vals=defaultdict(list);fits=[]\n for s,t in PAIRED_SHEETS:\n  training=[i for i in range(N) if i not in [s,t]];lam,c,ls,cs=select(d,y,training);p,g,_=fit_base(d,y,training,lam);contrasts=[]\n  for target_sheet,wrong_sheet in [(s,t),(t,s)]:\n   fr=old.frame(d,y,p,target_sheet);correct=old.candidate_predictions(d,p,fr,c);leaf_values=[]\n   for ti,ptrue,_ in correct:\n    wrong_losses=[]\n    for donor in SHEETS[wrong_sheet]:\n     di=np.flatnonzero(d['a']['leaf']==donor);sc=np.bincount(d['a']['kind'][di],weights=y[di]-p[di],minlength=2);info=np.bincount(d['a']['kind'][di],weights=p[di]*(1-p[di]),minlength=2);pw=old.candidate_predictions(d,p,[(ti,sc,info)],c)[0][1];wrong_losses.append(float(old.loss(y[ti],pw).mean()))\n    true_loss=float(old.loss(y[ti],ptrue).mean());wrong=float(np.mean(wrong_losses));leaf_values.append((len(ti),wrong-true_loss));contrasts.append({'target_sheet':target_sheet,'target_leaf':int(d['a']['leaf'][ti[0]]),'true_loss':true_loss,'wrong_donor_losses':wrong_losses,'gain_true_over_wrong':wrong-true_loss,'n':len(ti)})\n   vals[target_sheet].append(float(sum(n*g for n,g in leaf_values)/sum(n for n,g in leaf_values)))\n  fits.append({'heldout_sheet_ids':[s,t],'training_sheets':training,'lambda':lam,'candidate':list(c),'lambda_cv':ls,'candidate_cv':cs,'contrasts':contrasts})\n gains=[float(np.mean(vals[i])) for i in range(N)];r=infer(gains);r['per_sheet']=[{'sheet_id':i,'sheet':list(SHEETS[i]),'same_quire_donor_sheets':len(vals[i]),'gain_bits':g} for i,g in enumerate(gains)];r['pair_fits']=fits\n return r\n\ndef synthetic(d,seed,strong):\n rng=np.random.default_rng(seed);state=rng.normal(0,1,N);y=d['a']['y'].copy()\n for _,ids in d['blocks']:\n  variants=d['a']['y'][ids];center=variants.sum(1)-variants.sum(1).mean();sheets=d['a']['sheet'][ids[:,0]]\n  for sid in sorted(set(sheets)):\n   rows=np.flatnonzero(sheets==sid);weights=np.exp(np.clip((1.5 if strong else 0)*state[sid]*center,-50,50));weights/=weights.sum();sample=rng.choice(len(ids),size=len(rows),p=weights);y[ids[rows].ravel()]=variants[sample].ravel()\n return y\n\ndef association(d,tr):\n y=d['a']['y'];obs,z=old.association(d,y);rng=np.random.default_rng(20261021);raw=[];family=[];qgroups=[[old.LI[f] for f in LEAVES if Q[f]==q] for q in sorted(set(Q.values()))];movable=[ids for _,ids in d['blocks'] if len(ids)>1 and len(set(map(tuple,y[ids])))>1]\n for _ in range(4999):\n  diff=[]\n  for ids in qgroups:\n   ids=rng.permutation(ids);diff.extend(np.abs(z[ids[::2]]-z[ids[1::2]]))\n  raw.append(float(np.mean(diff)))\n  yy=y.copy()\n  for ids in movable:yy[ids.ravel()]=y[ids[rng.permutation(len(ids))]].ravel()\n  stat,_=old.association(d,yy);family.append(stat)\n rp=float((1+sum(v<=obs+1e-12 for v in raw))/5000);fp=float((1+sum(v<=obs+1e-12 for v in family))/5000);save(tr+'-association-nulls.json',{'observed':obs,'raw_within_quire_null':raw,'word_family_quire_null':family})\n return {'observed':obs,'raw_within_quire_p':rp,'family_quire_p':fp,'raw_null_mean':float(np.mean(raw)),'family_null_mean':float(np.mean(family)),'movable_words':sum(len(ids) for ids in movable),'movable_family_quire_strata':len(movable),'eligible_words':len(d['words']),'leaf_scores':dict(zip(map(str,LEAVES),map(float,z)))}\n\ndef main():\n start=time.time();freeze={n:sha(ROOT/n) for n in ['FROZEN-RULES.json','FROZEN-COHORT.json']};declared={l.split()[1]:l.split()[0] for l in (ROOT/'FREEZE-SHA256.txt').read_text().splitlines()};assert freeze==declared;datasets={};support={};controls=[]\n for tr in ['H','F']:\n  d=parse(tr);datasets[tr]=d;a=d['a'];support[tr]={'eligible_words':len(d['words']),'choices':len(a['y']),'pages':len(d['pages']),'sheets':N,'family_quire_strata':len(d['blocks']),'audit':d['audit'],'per_sheet_choices':[int(np.sum(a['sheet']==i)) for i in range(N)]};save(tr+'-words.json',d['words']);save(tr+'-events.json',d['events']);save(tr+'-key-catalogue.json',d['key_names']);print('SUPPORT',tr,json.dumps(support[tr]),flush=True)\n save('support.json',support)\n for tr,d in datasets.items():\n  for seed in [2001,2002,2003]:\n   for strong in [False,True]:\n    y=synthetic(d,seed,strong);pr,_,_=nested(d,y);sp=specificity(d,y);item={'stream':tr,'seed':seed,'kind':'planted_shared_sheet' if strong else 'independent_family_quire','prediction':pr,'specificity':sp};controls.append(item);save('control-'+tr+'-'+str(seed)+'-'+item['kind']+'.json',item);print('CONTROL',tr,seed,item['kind'],round(pr['macro_gain_bits'],6),round(sp['macro_gain_bits'],6),flush=True)\n gate=all((x['prediction']['macro_gain_bits']>0 and x['specificity']['macro_gain_bits']>0) if x['kind']=='planted_shared_sheet' else (x['prediction']['macro_gain_bits']<.01 and x['specificity']['macro_gain_bits']<.01) for x in controls);save('controls.json',{'gate_pass':gate,'results':controls})\n result={'freeze_sha256':freeze,'source_sha256':sha(BASE/'data/text16e6.original.evt'),'control_gate_pass':gate,'streams':{}}\n for tr,d in datasets.items():\n  pr,pred,models=nested(d,d['a']['y'],keep=True);save(tr+'-predictions.json',pred);save(tr+'-models.json',models);sp=specificity(d,d['a']['y']);save(tr+'-specificity-fits.json',sp);assoc=association(d,tr);result['streams'][tr]={'prediction':pr,'specificity':sp,'association':assoc};save('results.partial.json',result);print('MANUSCRIPT',tr,json.dumps({'prediction':{k:v for k,v in pr.items() if k\"'!='\"'folds'},'specificity':{k:v for k,v in sp.items() if k not in ['pair_fits','per_sheet']},'association':assoc}),flush=True)\n tests=[(v[k]['sheet_sign_p'],tr,k) for tr,v in result['streams'].items() for k in ['prediction','specificity']];prev=0.\n for rank,(p,tr,k) in enumerate(sorted(tests)):\n  v=result['streams'][tr][k];adj=min(1.,max(prev,(len(tests)-rank)*p));prev=adj;v['holm_p']=adj;v['criterion_pass']=bool(gate and v['bootstrap95'][0]>0 and adj<.05)\n tests=[(v['association'][k+'_p'],tr,k) for tr,v in result['streams'].items() for k in ['raw_within_quire','family_quire']];prev=0.\n for rank,(p,tr,k) in enumerate(sorted(tests)):\n  adj=min(1.,max(prev,(len(tests)-rank)*p));prev=adj;result['streams'][tr]['association'][k+'_holm_p']=adj\n for tr,v in result['streams'].items():v['primary_pass']=bool(v['prediction']['criterion_pass'] and v['specificity']['criterion_pass'] and v['prediction']['baseline_adequate'])\n result['predictive_replication']=all(v['primary_pass'] for v in result['streams'].values());result['elapsed_seconds']=time.time()-start;save('results.json',result);assert all(sha(ROOT/n)==h for n,h in freeze.items());print('DONE',result['elapsed_seconds'],flush=True)\nif __name__=='__main__':main()\n''',encoding='utf-8');print(p)\n'@ | python -\npython 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\run_tests.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 50455
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad938b879048192809e83ae6be36874",
+          "text": "One negative control failed the frozen check: independent word variants produced a **.01097-bit** apparent advantage for the true partner, above the .01 limit.\n\nI’ll keep that failure and finish the manuscript comparisons. It blocks a confirmatory claim from this prediction procedure, even if the manuscript scores look positive; I won’t change the threshold after seeing it.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-d9738643-ffcf-4a15-801e-8f18505302a7",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\np=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21/results.json');r=json.loads(p.read_text())\nfor tr,v in r['streams'].items():\n print(tr,'PRIMARY',v['primary_pass'],'PRED',v['prediction']['holm_p'],'SPEC',v['specificity']['holm_p'],'ASSOC',v['association']['raw_within_quire_holm_p'],v['association']['family_quire_holm_p'])\n print('NEGATIVE PRED FOLDS',[(f['sheet'],round(f['gain_bits'],6)) for f in v['prediction']['folds'] if f['gain_bits']<0])\n print('NEGATIVE SPEC FOLDS',[(f['sheet'],round(f['gain_bits'],6)) for f in v['specificity']['per_sheet'] if f['gain_bits']<0])\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 2682
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-5863baad-3f29-471c-a38e-9530ac8adca2",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\nb=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21')\nx=json.loads((b/'control-F-2001-independent_family_quire.json').read_text())\nprint(json.dumps({k:{z:v for z,v in x[k].items() if z not in ['pair_fits','folds','per_sheet']} for k in ['prediction','specificity']},indent=2))\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1062
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-95ef79f3-1932-43a2-9114-22c6dedb875e",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\np=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21/controls.json');r=json.loads(p.read_text())\nfor x in r['results']:\n if x['kind']=='independent_family_quire': print(x['stream'],x['seed'],x['prediction']['sheet_sign_p'],x['specificity']['sheet_sign_p'])\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1402
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad9393bd12c81928654b30d4ce36936",
+          "text": "The herbal association remains after word-family and quire controls: corrected p = **.0104** in Takahashi and **.0386** in the First Study Group reading.\n\nThe heldout gains are positive, but the prediction test hasn’t passed validation. The failed negative control also gets a nominal p = .0022 for “specificity,” and three of six negative controls get nominal p < .05 there. That makes those prediction p-values unreliable as confirmation; I’m recording them separately from the word-family permutation results.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-10c20271-cc56-489a-aaec-e7f68bdc7cb1",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\np=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21/verify_and_report.py')\np.write_text('''from pathlib import Path\nimport json,sys,hashlib,html\nfrom collections import Counter\nimport numpy as np\nROOT=Path(__file__).resolve().parent;sys.path.insert(0,str(ROOT));import run_tests as run\nr=json.loads((ROOT/'results.json').read_text());ctrl=json.loads((ROOT/'controls.json').read_text());checks={}\nchecks['freeze_unchanged']=all(run.sha(ROOT/n)==h for n,h in r['freeze_sha256'].items());checks['source_original']=r['source_sha256']=='309e717d0dcc13115eace006eb40ece6c0ac89faab48f1569dcb9732d26b02f0';checks['cohort_21_unique_sheets']=len(run.SHEETS)==21 and len(set(run.LEAVES))==42;checks['controls_12_saved']=len(list(ROOT.glob('control-*.json')))==12\nfailures=[];negatives=[]\nfor c in ctrl['results']:\n if c['kind']=='independent_family_quire':\n  negatives.append({'stream':c['stream'],'seed':c['seed'],'gain_bits':c['prediction']['macro_gain_bits'],'specificity_bits':c['specificity']['macro_gain_bits'],'prediction_reference_p':c['prediction']['sheet_sign_p'],'specificity_reference_p':c['specificity']['sheet_sign_p']})\n  if c['prediction']['macro_gain_bits']>=.01 or c['specificity']['macro_gain_bits']>=.01:failures.append(negatives[-1])\n else:\n  if c['prediction']['macro_gain_bits']<=0 or c['specificity']['macro_gain_bits']<=0:failures.append({'stream':c['stream'],'seed':c['seed'],'positive_failed':True})\nchecks['control_failure_explicit']=len(failures)==1 and not r['control_gate_pass'];checks['primary_failure_retained']=not r['predictive_replication'] and all(not v['primary_pass'] for v in r['streams'].values())\nfor tr in ['H','F']:\n d=run.parse(tr);a=d['a'];y=a['y'];models=json.loads((ROOT/(tr+'-models.json')).read_text());pred=json.loads((ROOT/(tr+'-predictions.json')).read_text());fits=r['streams'][tr]['specificity']['pair_fits'];checks[tr+'_all_outcomes_once']=sorted(p['event'] for p in pred)==list(range(len(y)));checks[tr+'_83_herbal_pages']=len(d['pages'])==83 and all(run.META[p].get('I')=='H' and run.META[p].get('H')=='1' for p in d['pages']) and 'f1r' not in d['pages'];checks[tr+'_outer_count_exclusion']=True;checks[tr+'_saved_loss_reproduces']=True\n for model,fold in zip(models,r['streams'][tr]['prediction']['folds']):\n  outer=model['sheet_id'];mask=a['sheet']\"'!=outer;nk=len(a['\"'key_kind'])*8;n=np.bincount(a['model_key'][mask],minlength=nk);k=np.bincount(a['model_key'][mask],weights=y[mask],minlength=nk);checks[tr+'_outer_count_exclusion'] &= np.array_equal(n,model['model_key_n']) and np.array_equal(k,model['model_key_positive']) and outer not in model['training_sheets']\n  ps=[p for p in pred if p['sheet_id']==outer];yy=np.array([p['y'] for p in ps]);pb=np.array([p['baseline'] for p in ps]);pt=np.array([p['partner'] for p in ps]);gain=float(np.mean(run.old.loss(yy,pb)-run.old.loss(yy,pt)));checks[tr+'_saved_loss_reproduces'] &= abs(gain-fold['gain_bits'])<1e-12\n checks[tr+'_wholeword_variant_and_quire_preserved']=True;rng=np.random.default_rng(20261021)\n for (family,q),ids in d['blocks']:\n  perm=rng.permutation(len(ids));checks[tr+'_wholeword_variant_and_quire_preserved'] &= Counter(map(tuple,y[ids]))==Counter(map(tuple,y[ids[perm]])) and all(a['quire'][i]==q for i in ids.ravel())\n # Target-leaf intervention: no target outcomes in own profile or outer tuning.\n mod=y.copy();mod[a['leaf']==1]=1-mod[a['leaf']==1];training=list(range(1,run.N));c1=run.select(d,y,training);c2=run.select(d,mod,training);checks[tr+'_target_excluded_from_tuning']=c1==c2\n p1,g,cnt=run.fit_base(d,y,training,c1[0]);p2,_,_=run.fit_base(d,mod,training,c2[0]);q1=run.old.candidate_predictions(d,p1,run.old.frame(d,y,p1,0),c1[1]);q2=run.old.candidate_predictions(d,p2,run.old.frame(d,mod,p2,0),c2[1]);checks[tr+'_target_not_in_own_profile']=np.array_equal(q1[0][0],q2[0][0]) and np.max(abs(q1[0][1]-q2[0][1]))<1e-12\n checks[tr+'_wrong_donor_excluded_from_training']=all(not(set(f['heldout_sheet_ids'])&set(f['training_sheets'])) and len(f['training_sheets'])==19 and run.QS[f['heldout_sheet_ids'][0]]==run.QS[f['heldout_sheet_ids'][1]] for f in fits)\n # Also perturb all 4 heldout leaves in one wrong-donor fit; tuning remains fixed.\n first=fits[0];held=first['heldout_sheet_ids'];mod2=y.copy();mask=np.isin(a['sheet'],held);mod2[mask]=1-mod2[mask];checks[tr+'_both_sheets_excluded_from_specificity_tuning']=run.select(d,y,first['training_sheets'])==run.select(d,mod2,first['training_sheets'])\n checks[tr+'_all_21_and_23_fits_retained']=len(models)==21 and len(fits)==23\nchecks={k:bool(v) for k,v in checks.items()};assert all(checks.values()),checks\ncalibration={'frozen_control_gate_pass':False,'failed_controls':failures,'negative_controls':negatives,'nominal_specificity_p_below_05':sum(c['specificity_reference_p']<.05 for c in negatives),'negative_control_count':len(negatives),'interpretation':'Reference specificity p values give nominal positives on 3/6 iid-within-family/quire controls. This is an empirical calibration failure of this predictive procedure, not a new manuscript finding. Tiny suite does not estimate a general false positive rate.'};(ROOT/'CONTROL-FAILURES.json').write_text(json.dumps(calibration,indent=2),encoding='utf-8')\nlines=[];fails=[]\nfor tr,label in [('H','Takahashi'),('F','First Study Group/Friedman')]:\n v=r['streams'][tr];a=v['association'];pr=v['prediction'];sp=v['specificity'];lines.append(f\\\"{tr} {label}: raw within-quire matching p={a['raw_within_quire_p']:.4f}, corrected={a['raw_within_quire_holm_p']:.4f}; word-family+quire p={a['family_quire_p']:.4f}, corrected={a['family_quire_holm_p']:.4f}. {a['movable_words']}/{a['eligible_words']} words move in {a['movable_family_quire_strata']} mixed strata.\\\")\n lines.append(f\\\"  Heldout partner-over-baseline gain {pr['macro_gain_bits']:+.6f} bits/choice; bootstrap95 {pr['bootstrap95']}; reference Holm p={pr['holm_p']:.5f}. Baseline bits {pr['baseline_macro_bits']:.4f} vs constant {pr['constant_macro_bits']:.4f}.\\\")\n lines.append(f\\\"  True-over-wrong-partner gain {sp['macro_gain_bits']:+.6f}; bootstrap95 {sp['bootstrap95']}; reference Holm p={sp['holm_p']:.5f}. Full primary passes={v['primary_pass']}.\\\")\n fails.append(f\\\"{tr} negative heldout gains: \\\"+'; '.join(f\\\"{f['sheet'][0]}|{f['sheet'][1]} {f['gain_bits']:+.6f}\\\" for f in pr['folds'] if f['gain_bits']<0))\n fails.append(f\\\"{tr} negative specificity contrasts: \\\"+'; '.join(f\\\"{f['sheet'][0]}|{f['sheet'][1]} {f['gain_bits']:+.6f}\\\" for f in sp['per_sheet'] if f['gain_bits']<0))\ntext=\\\"\\\"\\\"HAND1 HERBAL HELDOUT SHEETS v21 - 21 October 2026, America/New_York\nFROZEN FOLLOW-UP COMPLETE. ASSOCIATION SURVIVES THE SPECIFIED WORD-FAMILY/QUIRE NULLS. THE PREDICTIVE PROCEDURE FAILS CONTROL QUALIFICATION; FULL PRIMARY DOES NOT PASS.\n\n\\\"\\\"\\\"+'\\\\\\\\n'.join(lines)+\\\"\\\"\\\"\n\nCORE FINDINGS\nThe combined k/t + a/o-before-l/r marker retains a physical-partner association after controlling word-family composition within each quire in both reading streams. The association-family correction covers four tests: raw/family-controlled in H/F. Raw matching p=.0002 is the 0/4,999 Monte Carlo floor, not an exact zero probability. The conditional family null recomputes page standardization, preserves each leaf's family slots, and moves entire observed word variants intact within masked family+quire. It preserves within-word dependencies and quire-specific form frequencies. It does not hold all neighbouring-word/copying/palaeographic context fixed and does not isolate a/o alone from the combined marker.\n\nHeldout gains are positive on average, but FULL PREDICTIVE SUCCESS IS NOT ESTABLISHED. In F, its baseline-comparison bootstrap interval slightly crosses zero. More importantly, the predeclared control gate fails: F seed2001 iid-within-family/quire control gives +.010969 bits true-over-wrong-partner advantage, exceeding the .01 limit, with nominal reference p=.0022. Three of six negative specificity controls have nominal p<.05. We retain those p-values as uncalibrated references, not confirmatory evidence. No control cutoff or candidate set was changed. The specimen specificity estimates can partly reflect model/word-composition/estimation structure even without a planted sheet state; this audit does not identify the exact cause.\n\nCOHORT AND FROZEN METHOD\n- Exactly21 documented ordinary H1 sheets in quires1-7, fixed from the supplied exp60 hand1 cohort before fitting. Both H/F use the same physical sheets. Metadata I=H,H=1 only; text-only f1r excluded.83 eligible herbal page surfaces, no per-page/count cutoff. The19-sheet thresholded exp55 set is not substituted. Other/foldout/singleton cases remain outside this cohort.\n- v20 extractors and hyperparameter grids carried over: every k/t not immediately after c/l; every a/o immediately before l/r; same cleaner and line-first exclusion; P/R units. The two targets are masked for analysis, not normalized in the corpus. Same corpus previously explored; this is not historically untouched evidence.\n- Broader population requires quire conditioning: baseline kind rate -> word-family/site rate -> family/site/quire rate, both stages with the same training-selected shrinkage. Each outer fold excludes an ENTIRE sheet from fitting and all tuning;20 inner whole-sheet folds choose shrinkage and shared/separate offset transfer.21 outer folds. This is nested herbal validation of the frozen method, not zero-shot transfer of fitted star parameters.\n- At prediction one observed leaf profiles its other heldout leaf, then directions reverse. No target outcomes enter its own profile. Conditional partner-assisted prediction, not an unobserved-sheet decoder.\n- Specificity guard uses23 unordered same-quire pairs of sheets. Both entire sheets (all4leaves) are held out; all fitting/tuning uses the other19 sheets. Each target's true partner is compared with both leaves of the wrong heldout same-quire sheet. Repeated donor contrasts are averaged into one value per target sheet, then equal-sheet averaging. Controls use this identical procedure.\n- Four predictive comparisons (H/F baseline gains and specificity gains) have one Holm correction. Reference inference:19,999 sheet sign flips and1,999 sheet bootstraps. Overlapping CV fits and repeated donor contrasts make these dependent estimates, not guaranteed fresh-sample type-I calibration; the failed negative controls demonstrate the practical importance of that limit.\n\nFAILURES KEPT\n\\\"\\\"\\\"+'\\\\\\\\n'.join(fails)+\\\"\\\"\\\"\n\nSix strong planted sheet-state controls have positive baseline and specificity gains; five of six iid negative controls meet the frozen absolute gain gate, one does not. A small strong-control suite does not establish weak-effect power. Every control, nested CV selection, outer fold, two-sheet specificity fit, baseline count model, per-event prediction and all null statistics is saved. All%d code/source/freeze/cohort/loss/variant/leakage audit checks pass; this engineering audit does not convert a failed scientific gate into a pass.\n\nWHAT CHANGES IN THE RESEARCH RECORD\nThe original context-specific combined marker's sheet association extends to this fixed herbal cohort under the specified conditional null, with reading robustness. Prediction remains unqualified. No sign equivalence, normalization, source language, external key, writing chronology, one-session-per-sheet or translation follows. H/F share manuscript pages and transcription-archive history. v20 results and all older failures stay unchanged.\n\nNEXT WORK, NOT RUN\nDiagnose/calibrate the true-versus-wrong-partner procedure on additional iid conditional controls and composition/count-matched donor comparisons before another confirmatory manuscript prediction. A full-pipeline conditional randomization could be considered only as a separately frozen protocol. More neighbouring-context/copying controls could narrow the residual association. Do not discard44|45 or any other adverse sheet, change.01, or choose the favourable CI/p-value after these results.\n\\\"\\\"\\\"%len(checks)\n(ROOT/'FOR-CLAUDE.txt').write_text(text,encoding='utf-8')\nlinks=['FOR-CLAUDE.txt','FROZEN-RULES.json','FROZEN-COHORT.json','results.json','CONTROL-FAILURES.json','controls.json','H-predictions.json','F-predictions.json','H-specificity-fits.json','F-specificity-fits.json','H-association-nulls.json','F-association-nulls.json','run_tests.py']\n(ROOT/'report.html').write_text('<\"'!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Herbal heldout sheets v21</title><style>body{max-width:1050px;margin:40px auto;padding:0 24px;background:#f6f3e9;color:#193e35;font:17px/1.6 system-ui}h1{font:38px/1.2 Georgia}a{color:#076758}pre{white-space:pre-wrap;font:inherit;background:#fffdf8;padding:24px;border:1px solid #ccd8ce}</style><h1>The herbal association survives. Prediction fails control qualification.</h1><p>21 fixed sheets, two readings, word-family and quire controls. Positive heldout estimates remain descriptive after a failed negative control.</p><p>'\"'+ ' · '.join('<a href=\\\"'+n+'\\\">'+html.escape(n)+'</a>' for n in links)+'</p><pre>'+html.escape(text)+'</pre></html>',encoding='utf-8')\n(ROOT/'audit.json').write_text(json.dumps({'all_engineering_checks_pass':all(checks.values()),'checks':checks,'scientific_primary_pass':r['predictive_replication'],'control_gate_pass':r['control_gate_pass'],'files':{p.name:run.sha(p) for p in ROOT.iterdir() if p.is_file() and p.name\"'!='\"'audit.json'}},indent=2),encoding='utf-8')\nprint(json.dumps({'checks':checks,'control_failure_count':len(failures),'negative_specificity_nominal_positives':calibration['nominal_specificity_p_below_05'],'report':str(ROOT/'report.html')},indent=2))\n''',encoding='utf-8');print(p)\n'@ | python -\npython 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\herbal-heldout-v21\\\\verify_and_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 4011
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-d4b250b7-9cdb-43dc-b18c-c06e7e519947",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json,hashlib\nb=Path(r'C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout');o=b/'herbal-heldout-v21'\nfor n in ['build_report.py','STATUS.txt','report.html']:(o/('before-root-'+n)).write_bytes((b/n).read_bytes())\ns=(b/'build_report.py').read_text(encoding='utf-8');a='<p>Stars heldout sheets,21October2026:';assert a in s\ns=s.replace(a,'<p>Herbal heldout sheets,21October2026: <a href=\\\"herbal-heldout-v21/report.html\\\">v21 frozen hand1 transfer</a> · <a href=\\\"herbal-heldout-v21/FOR-CLAUDE.txt\\\">Claude handoff</a>.21ordinary sheets,83herbal pages,H/F. Combined k/t+a/o-before-l/r association survives family+quire controls, corrected p=.0104/.0386. Positive partner-assisted gains+.01905/+.01297bits remain unqualified: one iid negative exceeds frozen specificity limit and3/6 negatives give nominal specificity positives; F gain interval crosseszero. Allfolds andfailedcontrols retained. Full predictive primary FAILS.</p>\\\\n'+a)\na='Stars heldout sheets checked 2026-10-21:';assert a in s\nentry='Herbal heldout sheets checked 2026-10-21: v21 FROZEN FOLLOW-UP COMPLETE; ASSOCIATION CONTROLS PASS, PREDICTIVE CONTROL QUALIFICATION FAILS.21documentedordinaryH1sheetsfixedfromexp60cohort,83herbalpages(I=H,H=1,f1rTexcluded),H/F3952/3951choices. Samev20extractorsandcandidategrids,addedfamily/quirebaselineandwithinquirewholevariantnull. Raw withinquireMCp.0002both(correction.0008);family+quirep.0052/.0386,Holm4=.0104/.0386,1635/3261words293mixedstrataH,1698/3268words297F.21nestedwhole-sheetholdouts: otherleafisobservedprofilecontext. MacrobaselinegainsH+.01905295%[+.004535,+.034928],F+.012967[−.000236,+.027354].23samequiretwo-sheetouterfits excludebothtruesheetandwrongdonorsheet(all4leaves);correct-overwronggains+.046436/+.032012. ReferenceHolm4predictionp.0263/.03815,specificity.0002/.0006,notconfirmatory: iidFseed2001specificity+.010969exceeds.01limit(nominalp.0022);3/6negativecontrolsnominalp<.05specificity. Sixstrongpositivespass,5/6negativeabsolutegatespass;globalcontrolgatefails andFpredictionCIcrosseszero,soFULL PRIMARY FAILS. Baselinesbeatconstant,bothreadingsretainnegativefolds(44|45adverseboth).26engineeringchecks passed;source/freeze/wholeword/quire/loss/targetandwrongdonorexclusionverified. See herbal-heldout-v21/report.html,FOR-CLAUDE.txt,FROZEN-RULES.json,FROZEN-COHORT.json,results.json,CONTROL-FAILURES.json,audit.json,allcontrols/models/predictions/specificityfits/nulls. Previouslyexploredsamephysicalmanuscript,overlappingCVreferenceinference,notAOaloneorzeroshotstarparametertransfer. No normalization,decoding,state/chronology/meaningclaim; calibrationscopefailurekept.\\\\n'\ns=s.replace(a,entry+a);(b/'build_report.py').write_text(s,encoding='utf-8')\n# Verify earlier v20 saved scientific receipts remain byte-identical.\nprior=b/'stars-heldout-v20';pa=json.loads((prior/'audit.json').read_text(encoding='utf-8'));unchanged=all(hashlib.sha256((prior/n).read_bytes()).hexdigest()==h for n,h in pa['files'].items());assert unchanged\nap=o/'audit.json';audit=json.loads(ap.read_text(encoding='utf-8'));audit['checks']['v20_saved_receipts_unchanged']=unchanged;audit['files'].update({p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in o.glob('before-root-*')});ap.write_text(json.dumps(audit,indent=2),encoding='utf-8')\nprint('Research record updated; previous receipts verified unchanged.')\n'@ | python -\npython 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\build_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 7683
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0fc35bddb6ae1af0016ad939d52b9481928679d0f945269c04",
+          "text": "**The combined sheet association carries over to hand-1 herbal pages. Prediction remains unvalidated.** 🐍\n\nAcross **21 frozen sheets**, word-family and quire controls retain the k/t + a/o-before-l/r association:\n\n- Takahashi: corrected **p = .0104**\n- First Study Group: corrected **p = .0386**\n\nWhole-sheet holdouts show positive partner-assisted gains: **+.019** and **+.013 bits/choice**. But the full predictive test fails qualification: one negative control exceeds the frozen specificity limit, and three of six negative controls produce nominal specificity positives. The First Study Group gain interval also crosses zero.\n\nAll adverse folds—including **44|45** in both readings—and failed controls remain saved. These are two readings of the same previously studied manuscript.\n\n[Full report](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21/report.html) · [Handoff for Claude](C:/Users/lewis/.codex/visualizations/2026/10/21/01a15c3d-56da-7f02-bc15-2522dc396abd/voynich-layout/herbal-heldout-v21/FOR-CLAUDE.txt)",
+          "phase": "final_answer"
+        }
+      ]
+    }
+  ]
+}

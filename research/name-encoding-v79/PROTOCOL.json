@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-23",
+  "scope": "Known-name synthetic coverage and consistency screen; not blind name identification, phonological validation, or decipherment qualification.",
+  "names": "24 familiar botanical name strings used only as known experimental labels. This is not a new dated medieval-name lexicon. Do not infer historical usage, exact species, or pronunciations from this list.",
+  "normalization": "Lowercase ASCII letters; vowels a e i o u y. No historical u/v or i/j normalization. No name selected for similarity to a Voynich token.",
+  "models": {
+    "full_letters": "One opaque group per written letter; retain every vowel.",
+    "internal_vowels_omitted": "Delete vowels except at first and last character positions; remaining letters each get a group.",
+    "consonants_only": "Delete all a/e/i/o/u/y; remaining letters each get a group.",
+    "written_syllable_groups": "One group per deterministic written chunk: contiguous vowel run is one nucleus; split inter-nucleus consonants before the last consonant; leading/trailing consonants attach to nearest nucleus. This is a syllable-like orthographic surrogate, not verified historical phonology.",
+    "vowelless_syllable_groups": "Same written chunks, then remove all vowels; discard empty chunks and merge equal remaining chunk types. Different full syllables can collide."
+  },
+  "design": "Seeds 79000..79099. For each seed shuffle 24 distinct names. Last six are held out. First 2, 6, 10, 15 or 18 are training. Nested training sizes, same split across models. No replacement or tuning after results. Repeated splits are dependent; no p-values.",
+  "encoding": "Independent injective opaque labels G000... for each model unit inventory, randomly assigned per seed. Test inventory is used by the synthetic encoder only. Learner receives only training pairs; target group boundaries and correct name identities supplied. Learner never receives encoder key or test name.",
+  "fit": "Align training cipher groups with supplied target units. Every label must map consistently; contradictory training rejects the fit. Unseen groups become ?. Freeze each learned key before held-out decoding. This favourable alignment tests coverage, not segmentation discovery.",
+  "negative": "Cyclically shift training name assignments by one, including their target units. Contradictory counts or mappings reject; otherwise score held-out outputs identically. Preserve every control.",
+  "scores": "Exact transformed-name recovery, resolved group coverage, contradictions, and ambiguity: number of benchmark full names with same transformed string. Vowelless output is never silently expanded back to a name.",
+  "engineering_gate": "For each model and training size: at least 90/100 splits recover >=5/6 held-out transformed names exactly with >=90% group coverage, and at most 5/100 wrong-pair controls reach the same threshold. This is a declared engineering target, not a statistical significance claim.",
+  "application_gate": "Even engineering pass is insufficient: no Voynich fitting until independent plant/name pairing, historical-language/phonology decisions, segmentation and synonym-search controls qualify. Current small disputed inventory fails this application gate.",
+  "f9v": "Excluded from any future key training or choice of segmentation/omission rules. Already exposed in conversation, so a prediction check, not pristine confirmation. Compare to all frozen eligible names, not a tuned viola-like similarity. H/F fochor retained.",
+  "HF": "Preserve all v76/v77 records and v78 alternatives; f6v koar/koary remains distinct. No manuscript tokens enter the synthetic learner."
+}

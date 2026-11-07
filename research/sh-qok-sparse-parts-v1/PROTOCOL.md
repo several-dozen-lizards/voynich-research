@@ -1,0 +1,37 @@
+# Frozen sparse-vocabulary and nuisance repair for starred H/F
+
+Earlier failures remain load-bearing and unchanged. Weak-score v2 passed its authored controls but starred H had zero admitted distant whole words and an inadequate nuisance predictor (+.01314bits versus constant; tolerance+.01). F had only one distant whole-word feature. This repair is frozen before fresh synthetic outcomes or a new application.
+
+## Covariate-matched controls, not another four-body approximation
+
+COVARIATES.json is copied from the already exposed v2 starred event inventories. It retains EXACT folio/page/locator, source ordinal/length, body/ending, immediate-qok covariate, all context strings and EDGE/UNKNOWN markers. Central y and whole origin word are removed. It has1140H and1141F events; the unchanged honest split has252/257 learning and888/884 testing events. The inputs retain rare words, uneven folio sizes and existing contextual correlations. No fitted values or original central sh/ch outcomes enter synthetic generation. Predictor strings can include other sh/ch words because they are fixed conditioning variables; these are event-design controls, not a physically coherent resynthesized manuscript.
+
+Matched positive cues are selected using learning covariates ONLY, before labels: from supported binary distant written-part columns choose the one with greatest learning residual variance after the same ridge projection onto nuisance features. Both presence/absence must have at least8learning examples. Save the selected column, residual variance and its testing prevalence. This is a favorable supported planted alternative, not a guarantee for all meanings, dependencies or rare cues. Select a supported immediate-neighbor part most correlated with this cue for the local-proxy null. No testing labels exist at selection time.
+
+## Representation repair
+
+Raw EVA codepoints are operational written characters, not established graphemes, morphemes or sounds. No boundaries, e-runs, words or transcriptions are normalized. In addition to supported exact identities, use prefix1/prefix2/suffix1/suffix2 and log(1+word length). Unknown/edge markers stay distinct. No feature receives a semantic label.
+
+For nuisance P/J/L/F, retain the prior structural feature maps and add these body/local/distant parts, fixed local part-pairs and normalized ordinal x,x². Fit-only categorical features must occur in at least8 fit events; numeric features remain. Filtering/vectorization is refitted inside each learning-folio validation fold. F includes distant parts additively, never their qok interactions.
+
+For the interaction direction, retain exact distant words and add those four part families at offsets-4,-3,+3,+4. Each family uses the unchanged8-count admission and top12 cap per offset; no cutoff is lowered. Add standardized log length where learning variance is nonzero; all means/scales come from learning events. Missing distant words have zero interaction values and distinct nuisance indicators. All dimensions, descriptors and coefficients are retained.
+
+## Nuisance selection repair
+
+Keep learning-folio OOF raw fits, C=.25, one blend with constant and the existing penalty [.5log(n_learning)+log(4)]/n_learning. For each candidate blend compute its natural-log score gain separately in every learning folio. Replace pooled-gain admission with the one-sided95% Student lower bound of the equal-folio gains minus that SAME penalty. Admit only a positive penalized lower bound; otherwise constant. Select the best admitted bound in P/J/L/F order, refit on all learning events, and apply its frozen blend. This is a more conservative internal selection rule; it is not a relaxed qualification/adequacy threshold or proof against domain shift. Save all OOF values, gains, lower bounds and rejected candidates.
+
+The honest learning/testing folio split, qok-specific ridge score, lambda=sqrt(n_learning), Student testing-folio statistic, original count support, one-sided direction, factor4 and factor24, and adequacy rule loss<=learning-rate constant+.01bits ALL remain unchanged. Testing labels never select features, weights or directions. A zero direction is uninformative, not a negative finding.
+
+## Fresh qualification: every original design plus H/F sparse designs
+
+Five designs: original(16x48),(10x100),(12x96), and exact starred H/F covariate templates. All nine original regime names and100fresh trials/cell are retained:4500datasets. Seeds2110000+design_index*100000+regime_index*1000+trial, disjoint from earlier runs.
+
+Original uniform controls use the unchanged generator. Matched controls preserve all predictor records and redraw ONLY synthetic central prefixes. Position/body logits use indicators based on learning medians of body length and normalized ordinal, coefficients.5. Junction adds1.3*(2qok-1). Local phrase adds1.8 times a seed-hashed exact immediate-flank class; repeated frames keep the same class. Proxy phrase adds1.8 times the fixed learning-selected local-part class, with natural distant/local correlation preserved. Position-proxy uses position coefficient1.3 and no qok effect. Additive far adds.65 times the binary far cue without interaction. Weak/strong/tiny add.65/2.5/.35*(2cue-1)*(2qok-1). Coefficients do not increase to compensate for low qok prevalence. An intercept is solved from learning covariates so expected learning prefix share=.5, WITHOUT original labels; testing rates can shift naturally. Save the intercept and cue support. This is a conditional-event benchmark, not a full generative writing mechanism.
+
+Unchanged required gates in EVERY design: null-regime Wilson95 upper false-flag<=.10; weak/strong Wilson95 lower detection>=.80; unsupported/inadequate positives count as nondetections. Tiny remains descriptive. No sparse cell is exempted. Keep the original exact paired factor24 improvement gate p<=.01 against context-transfer v2 on the first uniform weak cell. All original controls and failures remain; no successful dense design substitutes for a failing sparse design.
+
+Engineering must verify template central-label removal, original event counts and masks, learning-only admission/scaling, no central-label feature leak, no test-label influence on nuisance predictions, dual/primal projection and independent scalar-score replay, unchanged thresholds, OOF separation and actual zero-direction behavior. All code/profile/source hashes must match. Any implementation error remains recorded; no within-freeze repair. Every required statistical or engineering failure blocks ALL manuscript reruns in this attempt.
+
+Only on a full pass and independent replay may the unchanged frozen repair be applied to starred H/F. Keep factor4 despite only these two application panels. Save every supported/unsupported/inadequate outcome, probabilities, features and scores. Existing material is exposed and correlated; results are retrospective, not independent discovery. Written-part sharing is not semantic evidence. Neither a positive nor a null score uniquely distinguishes grammar, templates, contextual spelling or latent registers.
+
+Freeze this protocol, core/run, the covariate-only templates and prepared profiles, their provenance, all imported earlier sources/protocols/failures, atlas/manifest and prior event inventories. Keep complete phases, all4500trial records and independent audits. Do not change sample sizes, gates, feature rules, seeds or scope after fresh outcomes.

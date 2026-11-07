@@ -1,0 +1,28 @@
+Amendment v4.1: what the agreement gate compares (before any rating)
+For: the v4 session. Freeze and hash this before the manual goes to any rater. It supersedes v4 §2 (agreement gate), §3 step 2 and §4 where they conflict.
+Problem
+- v4 §3 has raters box picture elements, which carry 5 categories.
+- The §2 gate says "5-way category across lines".
+- §4 derives line labels with 6 values (adding NO).
+- Each rater draws their own boxes, so elements don't line up between raters, and lines would carry rater-specific geometry.
+Fix
+1. One shared line geometry. Raters no longer box writing lines; delete §3 step 2. Line boxes come only from the registration step (§4), carried out by someone blind to outcomes and independent of the raters. The registrar never sees anyone's picture boxes.
+2. The unit of agreement is the registered line. Apply each rater's picture boxes separately to the shared line geometry, using §4's rule (nearest element within 2 line heights, otherwise NO). That gives each rater a label for every registered line. Agreement is measured on exactly what the analysis uses.
+3. Two gates, one per hypothesis:
+Gate Labels compared Threshold Governs     G6 6-way per-line label: PL / VE / FG / CE / OT / NO, before the OT→NO merge Cohen's κ ≥ 0.60 H-IMG   G2 Binary per-line label: PL vs not-PL (NO counts as not-PL) Cohen's κ ≥ 0.60 H-PLANT
+  - If G6 fails and G2 passes, run H-PLANT and report H-IMG as NOT RELIABLE.
+  - If both fail after adjudication, both are NOT RELIABLE. Stop and report.
+  - κ is computed over all registered lines on rated folios, H/F-independent (the image doesn't depend on the reading).
+4. Disagreements. Any line where the raters' labels differ (on the 6-way label) goes to a third rater, blinded the same way, who labels only those lines' pages.
+  - Final label = the majority of the three.
+  - A three-way split = UNRESOLVED. Exclude the line from H-IMG and count it.
+  - For H-PLANT, use a binary majority. Every line resolves.
+  - κ is reported before adjudication. The gate is judged on the two-rater κ, so adjudication can't rescue a failed gate.
+5. The OT→NO merge (v4 §4: merge if OT covers fewer than 5% of lines) is applied after final labels exist, using final-label frequencies. It's outcome-blind and declared here.
+Supplementary (reported, not a gate)
+- Element agreement: match the two raters' picture boxes by IoU ≥ 0.5 (greedy, highest IoU first). Report the share of matched elements, κ on matched pairs, and per-category confusion. This shows why line labels disagree: different boxes, or different categories.
+- Distance sensitivity: G6 and G2 κ at 1 and 3 line heights, alongside 2. Descriptive only; the analysis stays at 2.
+Manual change (§3, as shown to raters)
+Replace step 2 with:
+"You don't need to mark the writing."
+Step 3 stays. Nothing else in the manual changes.

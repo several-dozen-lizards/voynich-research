@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-25",
+  "scope": "One frozen shared-word representation on exposed v107 supervised development panels; compare to v109 repaired baseline. No new control corpus, confirmation, Voynich input, blind clustering, count selection, broader window or singleton suppression.",
+  "arms": {
+    "baseline": "Exact v109: four position-specific word features0..3 and two same-side exact pair features L/R, six feature events per row.",
+    "shared": "Retain the exact four positional word features and two pair features; add four component identity features. For each real surface c[i], add W:c[i], pooled across all four positions. For #edge/#barrier add W{i}:marker, never a shared boundary identity. Ten feature events; repeats preserve occurrence multiplicity. This keeps explicit joint word-position and pair-order information, alongside shared identity.",
+    "duplicate_control": "Same ten-event structure, but every added feature is W{i}:c[i], including real words. Thus it duplicates position-specific evidence without sharing across positions. Diagnostic attribution control, never an alternative selected after outcomes."
+  },
+  "scorer": "Import unmodified v109 score(...,repair=True), equal priors, same add-one formula and1e-12 tie/abstention rule. Fit each representation using the identical binary-role training rows. Counts, class totals and vocabulary sizes necessarily differ with representation; these changes must be reported, not described as frozen v109 model parameters. Candidate and duplicate each have ten events per training occurrence. All vocabulary fitting is training-only.",
+  "invariants": [
+    "Same808 scored binary-role test instances, same labels, same whole-block split, same original eight panels/four primary supported panels.",
+    "Original six features retained exactly, with exact pair evidence as v109; do not adopt v110 singleton suppression.",
+    "Shared word strings are literal lowercase surfaces already stored in v107, with no stemming, lemma, POS, morphology, gold syntax, embedding or normalization.",
+    "Never merge #edge/#barrier across positions or add a position-only constant feature.",
+    "Original neighborhood stays -2,-1,+1,+2; no outside words are read for modeling.",
+    "New sharing can change smoothing normalizers and duplicate correlated word information; report score quality and duplicate control, not only accuracy."
+  ],
+  "evaluation": {
+    "metrics": "Same v109 all-case balanced correct-credit (.5 tie), strict balanced recall (abstention missed), coverage, balanced log loss and two-class Brier. Report pooled coverage and equal-panel means distinctly. Preserve unsupported panels.",
+    "attribution": "Save old/no-evidence->shared-evidence cases separately; distinguish feature support from actual decisions. For newly supported and newly decided cases report per-role correct/wrong/abstain counts. Compare original evidence-bearing subset and every transition. Compare shared arm to duplicate control as well as baseline.",
+    "uncertainty": "2000 paired whole-test-block bootstrap draws per panel for shared-minus-baseline and shared-minus-duplicate using unchanged v109 bootstrap engine.95% intervals descriptive only; fixed trained model, exposed data.",
+    "controls": "199 within-block independent context-column shuffles and199 within-block training-label shuffles per panel. Each control refits all three arms with the same training rows and compares same test rows. Training-shared vocabularies recomputed per control; paired metrics stored for baseline/shared/duplicate. Seeds1111000/1112000; bootstrap1113000 and1114000.3184 paired three-arm trials,32000panel bootstrap draws.",
+    "decision": "Evaluate gain, coverage, harms and duplicate-control attribution jointly. An increase in decisions alone is not success. No tuning feature weights or vocabulary after outcomes. No original80% gate rescue, independent transfer or automatic role claims."
+  },
+  "fixtures": [
+    "Swapping a real word across positions preserves its shared W identity and changes its positional feature.",
+    "Same unseen positional word can get a W match only when seen at another training position.",
+    "Boundary markers remain position-specific.",
+    "All original six features retained exactly in both ten-event arms.",
+    "Repeated words keep event multiplicity.",
+    "Duplicate control cannot turn an entirely unknown position-word context into lexical support.",
+    "Completely unseen real surfaces/boundaries keep neutral no-evidence behavior.",
+    "Scorer source hash unchanged and v109 baseline reproduced."
+  ],
+  "limits": "Additive shared features are correlated with existing word-position features and may overstate confidence; duplication control and proper scores are necessary. This is one candidate, not a general test of every sharing scheme; exposed panels are development only."
+}

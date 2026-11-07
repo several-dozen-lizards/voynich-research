@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "utc_started": "2026-10-25T02:39:09.043520+00:00",
+  "command": [
+    "C:\\Users\\lewis\\AppData\\Local\\OpenAI\\Codex\\bin\\2993767bd1dfb009\\codex.exe",
+    "sandbox",
+    "-c",
+    "default_permissions=\"worker\"",
+    "-c",
+    "windows.sandbox=\"mxc\"",
+    "-c",
+    "permissions.worker.filesystem={\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-6609026ff4c440b8bf7bdc6988519a30\\\\freezer\\\\input\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-6609026ff4c440b8bf7bdc6988519a30\\\\freezer\\\\output\"=\"write\"}",
+    "-c",
+    "permissions.worker.network.enabled=false",
+    "-P",
+    "worker",
+    "-C",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\voynich-loop\\isolation-runs\\qualification-6609026ff4c440b8bf7bdc6988519a30\\freezer\\input",
+    "--",
+    "C:\\Users\\lewis\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "-I",
+    "-S",
+    "-u",
+    "-c",
+    "\nimport json, os, sys, runpy\nallowed = {\"SystemRoot\", \"WINDIR\", \"COMSPEC\", \"PATHEXT\", \"PROCESSOR_ARCHITECTURE\", \"NUMBER_OF_PROCESSORS\", \"PATH\", \"TEMP\", \"TMP\", \"PYTHONIOENCODING\"}\nallowed = {k.upper() for k in allowed}\nfor key in list(os.environ):\n    if key.upper() not in allowed:\n        del os.environ[key]\nprint(json.dumps({\"boundary_ready_pid\":os.getpid()}), flush=True)\nif sys.stdin.readline().strip() != \"RUN\":\n    raise SystemExit(90)\nsys.argv = [sys.argv[1]] + sys.argv[2:]\nrunpy.run_path(sys.argv[0], run_name=\"__main__\")\n",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\voynich-loop\\isolation-runs\\qualification-6609026ff4c440b8bf7bdc6988519a30\\freezer\\input\\main.py"
+  ],
+  "profile": {
+    "default_permissions": "\"worker\"",
+    "windows.sandbox": "\"mxc\"",
+    "permissions.worker.filesystem": "{\":root\"=\"deny\",\":minimal\"=\"read\",\"C:\\\\Users\\\\lewis\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-6609026ff4c440b8bf7bdc6988519a30\\\\freezer\\\\input\"=\"read\",\"C:\\\\Users\\\\lewis\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Voynich\\\\voynich-loop\\\\isolation-runs\\\\qualification-6609026ff4c440b8bf7bdc6988519a30\\\\freezer\\\\output\"=\"write\"}",
+    "permissions.worker.network.enabled": "false"
+  },
+  "input_files": {
+    "ALLOWED.txt": "6facb1fe00500c278d5fe85225fa4abac21a6353633829f98647514143418da5",
+    "canaries.json": "69b77acb114829432019ebd1d86562dff3d3c317ae5eb78d90604d642e0c2f29",
+    "main.py": "2c7dad0d416d0047a28b3ac033dc67f29529b0ae17d93d39b5644688a0c66580"
+  },
+  "codex_sha256": "1103e9e09c71fa2cd0afd6d8f3b9a2d63174fe8efd7cb5bd09f1cb14ef58a098",
+  "python_sha256": "32ce1d2650ea8b9d394f5b8f94677d27888dccdc3713365bf903a8c465c9d776",
+  "boundary_code_sha256": "0cee9981b9fc13458f59920c0a8ec59488469b2da1ff508f711b6b2de0cce480",
+  "limits": {
+    "wall_seconds": 30,
+    "cpu_seconds": 10,
+    "memory_mb": 384,
+    "max_output_bytes": 1048576
+  },
+  "model_calls": 0,
+  "child_contained": true,
+  "child_pid": 25372,
+  "failure": null,
+  "returncode": 0,
+  "elapsed_seconds": 0.5160000000032596,
+  "utc_finished": "2026-10-25T02:39:09.957893+00:00",
+  "input_unchanged": true,
+  "output_files": {
+    "OWN.txt": "dbf32d5791cb570c6e4c0eb58b36bdee0b5fef48ab9b592de623db78468b3b3e"
+  },
+  "stdout_sha256": "435f3a818b94b87682dea97d7d47d008c1ca58fb7506cb83dffddccc095c8d51",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,29 @@
+{
+  "phase": 3,
+  "seed": 1729,
+  "stop_after": 3,
+  "running_types": ["P0", "P1", "Pc", "Pr", "Pt"],
+  "alternate_transcriber": "H",
+  "exclude_unknown_currier_from_AB": true,
+  "scribe_and_paragraph_probes": "ZL-only; not run before Phase 5",
+  "size_match": "word_count",
+  "word_count_tolerance": 0.05,
+  "clusters": ["ch", "sh", "cth", "ckh", "cph", "cfh", "ii", "iii", "in", "iin", "aiin", "qo", "ee"],
+  "control_bpe_merges": 13,
+  "train_fraction_for_BPE": 0.8,
+  "alphabet_policy": "injective sorted-symbol relabeling to shared inventory; report actual cardinality, never merge distinct symbols",
+  "encoder_aggressiveness": 0.65,
+  "shorthand_sigla_count": 8,
+  "copy_window": 100,
+  "copy_mutation_probability": 0.8,
+  "grille_stride": 7,
+  "source_word_start": 0,
+  "source_slices": {
+    "C1": {"filename": "hildegard_1903_ocr.txt", "start_marker": "De mundi creatione.", "end_marker": null},
+    "C2": {"filename": "mattioli_1568_ocr.txt", "start_marker": "Proemio  di  Diofcoride .", "end_marker": null},
+    "C3": {"filename": "bock_1595_ocr.txt", "start_marker": "Von den Nesseln. Cap. j.", "end_marker": null}
+  },
+  "normalization": "lowercase; NFKD accents removed; long-s to s; ae/oe ligatures expanded; sharp-s to ss; join line-break hyphens; alphabetic words only, no OCR spelling corrections",
+  "entropy": "h0=H(X); h1=H(X_t|X_t-1); h2=H(X_t|X_t-2,X_t-1), empirical plug-in bits/token within locus only",
+  "noise": "symmetric minimal-edit rates reconstructed from Phase 0 eligible LSI pairs; IID single-pass per existing character including spaces; uniform substituted/inserted symbol; no newline edits; same fixed rates every control"
+}

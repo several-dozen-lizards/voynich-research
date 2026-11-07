@@ -1,0 +1,1308 @@
+{
+  "qualification_status": "PASS before manuscript matrix access",
+  "method": {
+    "purpose": "Resolve v75 finite pooled-tail-rank precision failure without narrowing its search family. Qualify numeric correction before any manuscript score matrix is opened for rescoring.",
+    "method": "For every contrast j use pooled observed+permutation mean mu_j and scale sqrt(pooled variance_j + 1 count^2), z=(D-mu)/scale. Each row maximum is max_j abs(z). Selected target family p=(1+#null row maxima>=abs(z_observed))/(B+1). All transforms symmetric in rows; no Gaussian p approximation. Zero-variance columns retained with scale1. One count^2 regularizer fixed to native integer D resolution, not tuned.",
+    "family": "Unchanged v75 per-panel candidate openings, pair columns, both signs and 14 separate reading/hand/section/variety/rawP panels. Same saved4999permutations after qualification only; no new candidate selection, no pooling hands/HF, no extra shuffles to force a pass. Bonferroni x14 retained.",
+    "qualification_geometry": "Only panel_index and comparison-count metadata read from v75 precision ledger. No manuscript scores or word tokens used in stress banks. Eight independently seeded synthetic joint-score banks; each14panels of4096exchangeable integer rows with the actual family dimensions. Correlated columns, variable count scales, arbitrary position-only mean bias, rare +/-1-count columns and constants included. These are numerical joint-score controls, not independent historical texts or semantic qualification.",
+    "null_gate": "Within each bank all4096rows are exhaustively treated as pseudo-observations after a symmetric transform. Global false flags after per-panel maxT and Bonf14 must be<=floor(.05*4096). This checks the finite-row global-null rank bound; rotations are dependent, not4096 independent experiments or an external empirical error-rate estimate.",
+    "precision_gate": "Per-panel empirical smallest row-maximum rank p after x14 must be<=.01 in every synthetic panel. The theoretical strict minimum14/4096=.00341796875 is below.01 independent of number of pair columns. Ties may make empirical precision worse; keep them.",
+    "power_controls": "For each bank/panel,64 fixed distinct pseudo-observation rows receive a signed positive injection into one designated anonymous contrast of 2,4,6,8 times its unregularized null SD. Other family contrasts unchanged, all means/scales/maxima recomputed symmetrically. Record every dose; do not gate moderate-dose power. Require>=90% detection at8SD in EVERY bank and EVERY panel. Report same-bank reuse/dependence, not independent-trial precision.",
+    "paired_reading_control": "On the same64pseudo-observation positions inject8SD in H-shaped panel only, leave corresponding F panel null. Requiring both readings to pass must not exceed5% false paired flags per bank/panel-pair. Shapes/labels here are metadata, not real transcription replicas.",
+    "end_to_end_checks": "Import unchanged frozen v75 encoder/counting code on authored toy lines only. Enumerate a small exact within-line permutation orbit with unknown barriers and endpoints, verify every count against direct membership comparison and maxT tail ranks against brute force. Orbit resolution can be too coarse and is not a power gate. No real words loaded. Independently check shift, scale, constant-column and row-permutation invariance of numeric transform as applicable (count-unit regularizer intentionally prevents exact scale invariance).",
+    "failure_policy": "Freeze all scripts/protocol before controls. Any failed gate stops without manuscript rescoring. Preserve all banks, failures, dose results and diagnostic limits. No tuning after outcomes.",
+    "interpretation": "A passing qualification establishes numerical precision/calibration properties and planted sensitivity under these generators, not validity of all possible linguistic nulls or meanings. Original v75 failures remain. Existing rawP within-line null does not fix every interior ordinal or eliminate all word-boundary mechanisms."
+  },
+  "panels": [
+    {
+      "panel_index": 0,
+      "reading": "H",
+      "section": "Balneological",
+      "hand": "2",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 718,
+      "folios": 10,
+      "class_pairs": 4005,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 211,
+          "reverse": 130,
+          "observed_D": 81,
+          "null_mean": -2.5133026605321063,
+          "null_95": [
+            -27.0,
+            21.0
+          ],
+          "center": -2.4966,
+          "scale": 12.387719259008092,
+          "observed_Z": 6.74027222075468,
+          "max_tail_exceedances": 0,
+          "permutations": 4999,
+          "p_family": 0.0002,
+          "p_all_panels": 0.0028
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 40,
+          "reverse": 7,
+          "observed_D": 33,
+          "null_mean": 6.005801160232046,
+          "null_95": [
+            -8.0,
+            20.0
+          ],
+          "center": 6.0112,
+          "scale": 7.1202720846888825,
+          "observed_Z": 3.7904169502223826,
+          "max_tail_exceedances": 270,
+          "permutations": 4999,
+          "p_family": 0.0542,
+          "p_all_panels": 0.7587999999999999
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 63,
+          "reverse": 38,
+          "observed_D": 25,
+          "null_mean": 1.6019203840768155,
+          "null_95": [
+            -15.0,
+            18.0
+          ],
+          "center": 1.6066,
+          "scale": 8.515247291770157,
+          "observed_Z": 2.7472367153223285,
+          "max_tail_exceedances": 4783,
+          "permutations": 4999,
+          "p_family": 0.9568,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 28,
+          "reverse": 16,
+          "observed_D": 12,
+          "null_mean": 7.07001400280056,
+          "null_95": [
+            -3.0,
+            18.0
+          ],
+          "center": 7.071,
+          "scale": 5.385569514916703,
+          "observed_Z": 0.9152235406762241,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "2d5864e6b7a7ebf194acb759df365b693e574c0b4fb1f0e989fcd0f75a6867ae",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 1,
+      "reading": "F",
+      "section": "Balneological",
+      "hand": "2",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 718,
+      "folios": 10,
+      "class_pairs": 4371,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 212,
+          "reverse": 130,
+          "observed_D": 82,
+          "null_mean": -1.933986797359472,
+          "null_95": [
+            -27.0,
+            22.0
+          ],
+          "center": -1.9172,
+          "scale": 12.654894079367075,
+          "observed_Z": 6.631205245472671,
+          "max_tail_exceedances": 0,
+          "permutations": 4999,
+          "p_family": 0.0002,
+          "p_all_panels": 0.0028
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 33,
+          "reverse": 7,
+          "observed_D": 26,
+          "null_mean": 5.820564112822565,
+          "null_95": [
+            -7.0,
+            19.0
+          ],
+          "center": 5.8246,
+          "scale": 6.578467514550707,
+          "observed_Z": 3.066884491771779,
+          "max_tail_exceedances": 3132,
+          "permutations": 4999,
+          "p_family": 0.6266,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 64,
+          "reverse": 42,
+          "observed_D": 22,
+          "null_mean": 1.0102020404080816,
+          "null_95": [
+            -16.0,
+            18.0
+          ],
+          "center": 1.0144,
+          "scale": 8.590680569081709,
+          "observed_Z": 2.442833234368908,
+          "max_tail_exceedances": 4997,
+          "permutations": 4999,
+          "p_family": 0.9996,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 25,
+          "reverse": 15,
+          "observed_D": 10,
+          "null_mean": 7.073414682936587,
+          "null_95": [
+            -4.0,
+            18.0
+          ],
+          "center": 7.074,
+          "scale": 5.5436561942458225,
+          "observed_Z": 0.5278105094318648,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "4c2300d3b19b0c0a7f2ef72aa28864409a0731ba56fe9f4986b5e5f6049a93cf",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 2,
+      "reading": "H",
+      "section": "Botanical",
+      "hand": "1",
+      "variety": "A",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 1231,
+      "folios": 47,
+      "class_pairs": 7021,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 30,
+          "reverse": 15,
+          "observed_D": 15,
+          "null_mean": 0.5989197839567914,
+          "null_95": [
+            -9.0,
+            11.0
+          ],
+          "center": 0.6018,
+          "scale": 5.245916198339429,
+          "observed_Z": 2.7446492577517128,
+          "max_tail_exceedances": 4810,
+          "permutations": 4999,
+          "p_family": 0.9622,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 1,
+          "reverse": 1,
+          "observed_D": 0,
+          "null_mean": -0.07701540308061612,
+          "null_95": [
+            -5.0,
+            5.0
+          ],
+          "center": -0.077,
+          "scale": 2.758889450485492,
+          "observed_Z": 0.02790978086724353,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 62,
+          "reverse": 64,
+          "observed_D": -2,
+          "null_mean": -12.911982396479296,
+          "null_95": [
+            -32.0,
+            6.0
+          ],
+          "center": -12.9098,
+          "scale": 9.78345869107647,
+          "observed_Z": 1.1151271083661722,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 20,
+          "reverse": 6,
+          "observed_D": 14,
+          "null_mean": 3.821764352870574,
+          "null_95": [
+            -3.0,
+            11.0
+          ],
+          "center": 3.8238,
+          "scale": 3.7778239186071203,
+          "observed_Z": 2.6936671002263,
+          "max_tail_exceedances": 4899,
+          "permutations": 4999,
+          "p_family": 0.98,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "db6500e6ff0dbf61c1c50cd48a834adc1c2e784c2a96324119199a80c8918063",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 3,
+      "reading": "F",
+      "section": "Botanical",
+      "hand": "1",
+      "variety": "A",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 1231,
+      "folios": 47,
+      "class_pairs": 6903,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 26,
+          "reverse": 13,
+          "observed_D": 13,
+          "null_mean": 1.5687137427485498,
+          "null_95": [
+            -8.0,
+            12.0
+          ],
+          "center": 1.571,
+          "scale": 5.245699095449518,
+          "observed_Z": 2.178737245892412,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 0,
+          "reverse": 1,
+          "observed_D": -1,
+          "null_mean": -0.5293058611722344,
+          "null_95": [
+            -4.0,
+            3.0
+          ],
+          "center": -0.5294,
+          "scale": 2.2828788053683287,
+          "observed_Z": -0.20614322534045848,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 65,
+          "reverse": 69,
+          "observed_D": -4,
+          "null_mean": -15.430286057211442,
+          "null_95": [
+            -35.0,
+            3.0
+          ],
+          "center": -15.428,
+          "scale": 9.856775131857374,
+          "observed_Z": 1.1594055710030742,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 13,
+          "reverse": 5,
+          "observed_D": 8,
+          "null_mean": 2.988397679535907,
+          "null_95": [
+            -3.0,
+            9.0
+          ],
+          "center": 2.9894,
+          "scale": 3.3651876084402685,
+          "observed_Z": 1.4889511620192741,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "d7801d74005b2bf42b306b25f2c7873e39e80c4a1ae6af0257c16ffa4c0dd7f7",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 4,
+      "reading": "H",
+      "section": "Botanical",
+      "hand": "2",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 250,
+      "folios": 10,
+      "class_pairs": 1431,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 20,
+          "reverse": 10,
+          "observed_D": 10,
+          "null_mean": 0.9575915183036607,
+          "null_95": [
+            -7.0,
+            9.0
+          ],
+          "center": 0.9594,
+          "scale": 4.036948307818685,
+          "observed_Z": 2.2394638996219833,
+          "max_tail_exceedances": 4998,
+          "permutations": 4999,
+          "p_family": 0.9998,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 6,
+          "reverse": 0,
+          "observed_D": 6,
+          "null_mean": 0.4422884576915383,
+          "null_95": [
+            -4.0,
+            5.0
+          ],
+          "center": 0.4434,
+          "scale": 2.6062993765107096,
+          "observed_Z": 2.1319883855549726,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 24,
+          "reverse": 9,
+          "observed_D": 15,
+          "null_mean": -0.4408881776355271,
+          "null_95": [
+            -10.0,
+            9.0
+          ],
+          "center": -0.4378,
+          "scale": 4.947416614759596,
+          "observed_Z": 3.120375986518805,
+          "max_tail_exceedances": 1528,
+          "permutations": 4999,
+          "p_family": 0.3058,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 21,
+          "reverse": 16,
+          "observed_D": 5,
+          "null_mean": 2.195839167833567,
+          "null_95": [
+            -7.0,
+            11.0
+          ],
+          "center": 2.1964,
+          "scale": 4.8191106067406375,
+          "observed_Z": 0.581767099530465,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "b181e04f9eef8a9c99e572392e0bc74e12291f5c19bd4ad8113e8b7cd527f119",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 5,
+      "reading": "F",
+      "section": "Botanical",
+      "hand": "2",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 250,
+      "folios": 10,
+      "class_pairs": 1540,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 22,
+          "reverse": 10,
+          "observed_D": 12,
+          "null_mean": 1.7505501100220044,
+          "null_95": [
+            -6.0,
+            10.0
+          ],
+          "center": 1.7526,
+          "scale": 4.100755203618052,
+          "observed_Z": 2.49890556523804,
+          "max_tail_exceedances": 4796,
+          "permutations": 4999,
+          "p_family": 0.9594,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 4,
+          "reverse": 0,
+          "observed_D": 4,
+          "null_mean": 0.040008001600320066,
+          "null_95": [
+            -4.0,
+            5.0
+          ],
+          "center": 0.0408,
+          "scale": 2.523714595591196,
+          "observed_Z": 1.568798629970491,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 26,
+          "reverse": 10,
+          "observed_D": 16,
+          "null_mean": 0.029205841168233646,
+          "null_95": [
+            -9.0,
+            10.0
+          ],
+          "center": 0.0324,
+          "scale": 4.993330575878141,
+          "observed_Z": 3.1977854775200605,
+          "max_tail_exceedances": 1075,
+          "permutations": 4999,
+          "p_family": 0.2152,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 9,
+          "reverse": 9,
+          "observed_D": 0,
+          "null_mean": 2.0232046409281854,
+          "null_95": [
+            -5.0,
+            9.0
+          ],
+          "center": 2.0228,
+          "scale": 3.8834881434092545,
+          "observed_Z": -0.5208719391696701,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "0bab287afee1a92f4b692dc8c901119c951e7883ead31d20bd0248accabb044f",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 6,
+      "reading": "H",
+      "section": "Botanical",
+      "hand": "3",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 101,
+      "folios": 3,
+      "class_pairs": 435,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 8,
+          "reverse": 6,
+          "observed_D": 2,
+          "null_mean": 0.664132826565313,
+          "null_95": [
+            -4.0,
+            6.0
+          ],
+          "center": 0.6644,
+          "scale": 2.7325761910695054,
+          "observed_Z": 0.4887695371001744,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 2,
+          "reverse": 0,
+          "observed_D": 2,
+          "null_mean": -0.33166633326665335,
+          "null_95": [
+            -4.0,
+            4.0
+          ],
+          "center": -0.3312,
+          "scale": 2.2126695550849917,
+          "observed_Z": 1.0535689771853236,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 10,
+          "reverse": 6,
+          "observed_D": 4,
+          "null_mean": 1.4410882176435287,
+          "null_95": [
+            -4.0,
+            7.0
+          ],
+          "center": 1.4416,
+          "scale": 3.0767823192419925,
+          "observed_Z": 0.8315180388290507,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 9,
+          "reverse": 9,
+          "observed_D": 0,
+          "null_mean": -0.5905181036207241,
+          "null_95": [
+            -7.0,
+            6.0
+          ],
+          "center": -0.5904,
+          "scale": 3.2647554027828747,
+          "observed_Z": 0.18084050017858722,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "8ad88aec3e86fc888a1cc7159045e25aae6c0458dc4dc299a8a58fcbe9fc78c6",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 7,
+      "reading": "F",
+      "section": "Botanical",
+      "hand": "3",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 101,
+      "folios": 3,
+      "class_pairs": 435,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 7,
+          "reverse": 6,
+          "observed_D": 1,
+          "null_mean": 0.6851370274054811,
+          "null_95": [
+            -4.0,
+            6.0
+          ],
+          "center": 0.6852,
+          "scale": 2.781528529424015,
+          "observed_Z": 0.11317518287874155,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 2,
+          "reverse": 0,
+          "observed_D": 2,
+          "null_mean": -0.588117623524705,
+          "null_95": [
+            -5.0,
+            3.0
+          ],
+          "center": -0.5876,
+          "scale": 2.2814745757952175,
+          "observed_Z": 1.1341787576563642,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 12,
+          "reverse": 6,
+          "observed_D": 6,
+          "null_mean": 1.4600920184036807,
+          "null_95": [
+            -5.0,
+            7.0
+          ],
+          "center": 1.461,
+          "scale": 3.2407528446334806,
+          "observed_Z": 1.4006004831612968,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 6,
+          "reverse": 6,
+          "observed_D": 0,
+          "null_mean": 0.9017803560712142,
+          "null_95": [
+            -4.0,
+            6.0
+          ],
+          "center": 0.9016,
+          "scale": 2.8653651495053944,
+          "observed_Z": -0.31465448658633605,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "3ab8578727688b0e9800c0b8d8f47fa6a5d188cabaa0949343ecdbdd17bf555e",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 8,
+      "reading": "H",
+      "section": "Botanical",
+      "hand": "5",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 62,
+      "folios": 4,
+      "class_pairs": 210,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 4,
+          "reverse": 4,
+          "observed_D": 0,
+          "null_mean": -0.08121624324864973,
+          "null_95": [
+            -4.0,
+            3.0
+          ],
+          "center": -0.0812,
+          "scale": 2.070508768394878,
+          "observed_Z": 0.039217414212135274,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 1,
+          "reverse": 0,
+          "observed_D": 1,
+          "null_mean": -0.0018003600720144029,
+          "null_95": [
+            -2.0,
+            2.0
+          ],
+          "center": -0.0016,
+          "scale": 1.665532179214826,
+          "observed_Z": 0.6013693475872556,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 4,
+          "reverse": 5,
+          "observed_D": -1,
+          "null_mean": -1.4670934186837368,
+          "null_95": [
+            -6.0,
+            3.0
+          ],
+          "center": -1.467,
+          "scale": 2.755596305702287,
+          "observed_Z": 0.16947330021948956,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 6,
+          "reverse": 4,
+          "observed_D": 2,
+          "null_mean": -0.19903980796159232,
+          "null_95": [
+            -4.0,
+            4.0
+          ],
+          "center": -0.1986,
+          "scale": 2.277094209733106,
+          "observed_Z": 0.965528782516949,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "fa9bfaad1df80f5314ad56df5c59d909ab5d2c751873753d5dcf9c2f21885f95",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 9,
+      "reading": "F",
+      "section": "Botanical",
+      "hand": "5",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 62,
+      "folios": 4,
+      "class_pairs": 190,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 3,
+          "reverse": 3,
+          "observed_D": 0,
+          "null_mean": -1.0316063212642528,
+          "null_95": [
+            -4.0,
+            2.0
+          ],
+          "center": -1.0314,
+          "scale": 1.9900789029583676,
+          "observed_Z": 0.5182709079859921,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 1,
+          "reverse": 0,
+          "observed_D": 1,
+          "null_mean": -0.009801960392078415,
+          "null_95": [
+            -2.0,
+            2.0
+          ],
+          "center": -0.0096,
+          "scale": 1.574518288239296,
+          "observed_Z": 0.6412119868921844,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 5,
+          "reverse": 4,
+          "observed_D": 1,
+          "null_mean": -0.98999799959992,
+          "null_95": [
+            -6.0,
+            4.0
+          ],
+          "center": -0.9896,
+          "scale": 2.751634394319133,
+          "observed_Z": 0.7230611756080729,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 4,
+          "reverse": 3,
+          "observed_D": 1,
+          "null_mean": -0.20144028805761152,
+          "null_95": [
+            -4.0,
+            4.0
+          ],
+          "center": -0.2012,
+          "scale": 2.1858450448282016,
+          "observed_Z": 0.5495357517872038,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "41994af58a47dbd84941222454312f6d8465c9cca70575ed2ba0947deb00ea72",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 10,
+      "reading": "H",
+      "section": "Starred paragraphs",
+      "hand": "2, 3",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": true,
+      "lines": 45,
+      "folios": 1,
+      "class_pairs": 15,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 5,
+          "reverse": 2,
+          "observed_D": 3,
+          "null_mean": 0.26605321064212845,
+          "null_95": [
+            -4.0,
+            4.0
+          ],
+          "center": 0.2666,
+          "scale": 2.317050806521084,
+          "observed_Z": 1.1796892810063322,
+          "max_tail_exceedances": 4413,
+          "permutations": 4999,
+          "p_family": 0.8828,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 1,
+          "reverse": 0,
+          "observed_D": 1,
+          "null_mean": -0.029805961192238446,
+          "null_95": [
+            -2.0,
+            2.0
+          ],
+          "center": -0.0296,
+          "scale": 1.3753268120705058,
+          "observed_Z": 0.748622066379971,
+          "max_tail_exceedances": 4983,
+          "permutations": 4999,
+          "p_family": 0.9968,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 5,
+          "reverse": 1,
+          "observed_D": 4,
+          "null_mean": 0.5069013802760552,
+          "null_95": [
+            -3.0,
+            4.0
+          ],
+          "center": 0.5076,
+          "scale": 1.8928133135626164,
+          "observed_Z": 1.8450842325420211,
+          "max_tail_exceedances": 1433,
+          "permutations": 4999,
+          "p_family": 0.2868,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 5,
+          "reverse": 1,
+          "observed_D": 4,
+          "null_mean": 0.8475695139027806,
+          "null_95": [
+            -4.0,
+            6.0
+          ],
+          "center": 0.8482,
+          "scale": 2.902887658866592,
+          "observed_Z": 1.0857464602094156,
+          "max_tail_exceedances": 4666,
+          "permutations": 4999,
+          "p_family": 0.9334,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "5e904003e582696fb8dae9220ce59c65c0d7cf4fb060b65dde688b98953c22d0",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 11,
+      "reading": "F",
+      "section": "Starred paragraphs",
+      "hand": "2, 3",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": true,
+      "lines": 45,
+      "folios": 1,
+      "class_pairs": 15,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 5,
+          "reverse": 2,
+          "observed_D": 3,
+          "null_mean": 0.17263452690538109,
+          "null_95": [
+            -4.0,
+            4.0
+          ],
+          "center": 0.1732,
+          "scale": 2.26247690816945,
+          "observed_Z": 1.249427116711277,
+          "max_tail_exceedances": 4330,
+          "permutations": 4999,
+          "p_family": 0.8662,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 1,
+          "reverse": 0,
+          "observed_D": 1,
+          "null_mean": 0.04480896179235847,
+          "null_95": [
+            -2.0,
+            2.0
+          ],
+          "center": 0.045,
+          "scale": 1.4329602227556557,
+          "observed_Z": 0.6664525538353648,
+          "max_tail_exceedances": 4995,
+          "permutations": 4999,
+          "p_family": 0.9992,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 5,
+          "reverse": 1,
+          "observed_D": 4,
+          "null_mean": 0.6823364672934586,
+          "null_95": [
+            -2.0,
+            4.0
+          ],
+          "center": 0.683,
+          "scale": 1.8769419277111985,
+          "observed_Z": 1.7672363492059946,
+          "max_tail_exceedances": 1881,
+          "permutations": 4999,
+          "p_family": 0.3764,
+          "p_all_panels": 1
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 6,
+          "reverse": 1,
+          "observed_D": 5,
+          "null_mean": 0.74374874974995,
+          "null_95": [
+            -4.0,
+            6.0
+          ],
+          "center": 0.7446,
+          "scale": 2.836859326790917,
+          "observed_Z": 1.5000391312366377,
+          "max_tail_exceedances": 3034,
+          "permutations": 4999,
+          "p_family": 0.607,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "35a866116423a3e65dad7dac26351255aa776c77eac1bce39afb0d4ebf35cb74",
+      "maxT_minimum_possible_panel_p": 0.0056
+    },
+    {
+      "panel_index": 12,
+      "reading": "H",
+      "section": "Starred paragraphs",
+      "hand": "3",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 1015,
+      "folios": 12,
+      "class_pairs": 9730,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 167,
+          "reverse": 86,
+          "observed_D": 81,
+          "null_mean": 3.7605521104220845,
+          "null_95": [
+            -17.0,
+            26.0
+          ],
+          "center": 3.776,
+          "scale": 11.174928366660753,
+          "observed_Z": 6.910469353019733,
+          "max_tail_exceedances": 0,
+          "permutations": 4999,
+          "p_family": 0.0002,
+          "p_all_panels": 0.0028
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 10,
+          "reverse": 1,
+          "observed_D": 9,
+          "null_mean": -1.2324464892978595,
+          "null_95": [
+            -11.0,
+            8.050000000000182
+          ],
+          "center": -1.2304,
+          "scale": 5.071855266073687,
+          "observed_Z": 2.0170922597954446,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 53,
+          "reverse": 13,
+          "observed_D": 40,
+          "null_mean": 11.134826965393078,
+          "null_95": [
+            -1.0,
+            23.0
+          ],
+          "center": 11.1406,
+          "scale": 6.214179884747444,
+          "observed_Z": 4.644120468870672,
+          "max_tail_exceedances": 19,
+          "permutations": 4999,
+          "p_family": 0.004,
+          "p_all_panels": 0.056
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 121,
+          "reverse": 73,
+          "observed_D": 48,
+          "null_mean": 30.32366473294659,
+          "null_95": [
+            5.0,
+            55.0
+          ],
+          "center": 30.3272,
+          "scale": 12.676550799014594,
+          "observed_Z": 1.3941331739366978,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "8997a8300e7f26655bcd1281ca6a6e82bd475724db04086f7fb7c0e30d288679",
+      "maxT_minimum_possible_panel_p": 0.0028
+    },
+    {
+      "panel_index": 13,
+      "reading": "F",
+      "section": "Starred paragraphs",
+      "hand": "3",
+      "variety": "B",
+      "format": "P",
+      "hand_ambiguous": false,
+      "lines": 1015,
+      "folios": 12,
+      "class_pairs": 9316,
+      "rules": [
+        {
+          "A": "prefix:sh",
+          "B": "prefix:qok",
+          "forward": 166,
+          "reverse": 86,
+          "observed_D": 80,
+          "null_mean": 4.039407881576316,
+          "null_95": [
+            -18.0,
+            26.0
+          ],
+          "center": 4.0546,
+          "scale": 11.260000836589668,
+          "observed_Z": 6.744706426061128,
+          "max_tail_exceedances": 0,
+          "permutations": 4999,
+          "p_family": 0.0002,
+          "p_all_panels": 0.0028
+        },
+        {
+          "A": "prefix:qok",
+          "B": "exact:ol/or",
+          "forward": 6,
+          "reverse": 1,
+          "observed_D": 5,
+          "null_mean": -1.4100820164032806,
+          "null_95": [
+            -10.0,
+            7.0
+          ],
+          "center": -1.4088,
+          "scale": 4.540229351035053,
+          "observed_Z": 1.4115586470403665,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        },
+        {
+          "A": "prefix:d",
+          "B": "prefix:sh",
+          "forward": 58,
+          "reverse": 18,
+          "observed_D": 40,
+          "null_mean": 11.981796359271854,
+          "null_95": [
+            0.0,
+            24.0
+          ],
+          "center": 11.9874,
+          "scale": 6.4389472151897635,
+          "observed_Z": 4.350493809596237,
+          "max_tail_exceedances": 56,
+          "permutations": 4999,
+          "p_family": 0.0114,
+          "p_all_panels": 0.15960000000000002
+        },
+        {
+          "A": "union:l/s",
+          "B": "prefix:a",
+          "forward": 111,
+          "reverse": 71,
+          "observed_D": 40,
+          "null_mean": 31.92018403680736,
+          "null_95": [
+            8.0,
+            55.0
+          ],
+          "center": 31.9218,
+          "scale": 12.057416172630026,
+          "observed_Z": 0.6699777037087988,
+          "max_tail_exceedances": 4999,
+          "permutations": 4999,
+          "p_family": 1.0,
+          "p_all_panels": 1
+        }
+      ],
+      "source_matrix_sha256": "746aefe047fb6c579700a2a687357023a871b682af735ae48f9d440f43b47c03",
+      "maxT_minimum_possible_panel_p": 0.0028
+    }
+  ],
+  "source_events_reference": "../opening-order-audit-v75/RESULTS.json",
+  "original_failures_reference": "../opening-order-audit-v75/FAMILY-PRECISION.json"
+}

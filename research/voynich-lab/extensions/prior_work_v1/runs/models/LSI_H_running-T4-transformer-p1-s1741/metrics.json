@@ -1,0 +1,64 @@
+{
+  "corpus": "LSI_H_running",
+  "tokenization": "T4",
+  "architecture": "transformer",
+  "with_position": true,
+  "seed": 1741,
+  "parameter_count": 3193147,
+  "validation_bpt": 2.085369825363159,
+  "test_bpt": 2.288459539413452,
+  "test_tokens": 15819,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.1940265908848375,
+  "test_bpc_with_escape": 2.3780556693149446,
+  "training_tokens_seen": 189900,
+  "effective_token_epochs": 1.313159951041746,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 2.4183763999972143,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 2.4794984710081853,
+      "validation_bpt": 2.355498790740967
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.3602716702801945,
+      "validation_bpt": 2.137392520904541
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.336818568164684,
+      "validation_bpt": 2.095775842666626
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.1974672175459813,
+      "validation_bpt": 2.085369825363159
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "extensions\\prior_work_v1\\runs\\models\\LSI_H_running-T4-transformer-p1-s1741",
+  "currier_test": {
+    "A": {
+      "bits": 21799.25433578901,
+      "tokens": 8829,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8772,
+      "bpt": 2.4690513462214305,
+      "bpc_with_escape": 2.485095113519039
+    },
+    "B": {
+      "bits": 13622.366896512918,
+      "tokens": 6411,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6235,
+      "bpt": 2.12484275409654,
+      "bpc_with_escape": 2.184822276906643
+    }
+  }
+}

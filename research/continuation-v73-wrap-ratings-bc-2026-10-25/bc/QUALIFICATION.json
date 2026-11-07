@@ -1,0 +1,86 @@
+{
+  "status": "SOURCE_FIRST_E2_BRIDGE_QUALIFIED_ON_DECLARED_SCOPE",
+  "gates": {
+    "known_positive": true,
+    "negative_original": true,
+    "negative_role": true,
+    "raw_projection_regressions": true,
+    "source_first_all_datasets": true,
+    "frozen_list_profiles": true
+  },
+  "positive": {
+    "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+    "verdict": "PASS",
+    "shared_above99": [
+      "E1",
+      "E4"
+    ],
+    "shared_above998": [
+      "E1",
+      "E4"
+    ],
+    "original_verdict": "PASS",
+    "role_verdict": "PASS",
+    "admission_active": true
+  },
+  "negative": {
+    "original": {
+      "n": 200,
+      "PASS": 0,
+      "CP95upper": 0.014867039231272056,
+      "gate": true
+    },
+    "role": {
+      "n": 200,
+      "PASS": 0,
+      "CP95upper": 0.014867039231272056,
+      "gate": true
+    }
+  },
+  "paired_spans": 18,
+  "raw_projection_regressions": 12,
+  "e2_reference_checks": 57,
+  "source_datasets": [
+    "real",
+    "C1-word",
+    "C1-glyph",
+    "C2:G1",
+    "C2:G2",
+    "C2:G3",
+    "C2:G4",
+    "C2:G5",
+    "C2:G6"
+  ],
+  "list_profiles": 9,
+  "list_positions": 179,
+  "input_reads": [
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\KNOWN-DATA.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\KNOWN-KEY.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\CLEAN-C1-word-INPUT.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\CLEAN-C1-glyph-INPUT.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\controls\\CLEAN-G1.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\controls\\CLEAN-G2.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\controls\\CLEAN-G3.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\controls\\CLEAN-G4.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\controls\\CLEAN-G5.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\controls\\CLEAN-G6.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\banks\\CLEAN-original-real.json",
+    "ordered-name-lists-v7c\\attempt-2-v7.1\\banks\\CLEAN-real.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\banks\\CLEAN-original-C1-word.json",
+    "ordered-name-lists-v7c\\attempt-2-v7.1\\banks\\CLEAN-C1-word.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\banks\\CLEAN-original-C1-glyph.json",
+    "ordered-name-lists-v7c\\attempt-2-v7.1\\banks\\CLEAN-C1-glyph.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\banks\\CLEAN-role-real.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\banks\\CLEAN-role-C1-word.json",
+    "ordered-name-lists-v7c\\attempt-3-v7.2\\banks\\CLEAN-role-C1-glyph.json",
+    "ordered-name-lists-v7c\\C1-source-freeze-v1\\LISTS.json"
+  ],
+  "vault": "CLOSED",
+  "baseline_modified": false,
+  "full_B_C_admission": false,
+  "limits": [
+    "E2 identity matching alone is not key evidence",
+    "C NED/list-arm/fake-refit qualification not run",
+    "No actual B/C manuscript labels or real geometry read"
+  ]
+}

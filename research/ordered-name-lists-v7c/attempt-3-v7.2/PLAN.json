@@ -1,0 +1,53 @@
+{
+  "status": "FROZEN_BEFORE_INPUT_SELECTION_OR_SCORING",
+  "utc": "2026-10-25T21:41:46.508Z",
+  "amendment_sha256": "f7ea4e3215967bf6e281207692426ba2ddb07ab3837394a8ba5f7da17c2b1ad2",
+  "banks": {
+    "original": {
+      "size": 1000,
+      "seeds": {
+        "clean": 714,
+        "corrupt": 715,
+        "trap": 719
+      },
+      "algorithm": "unchanged original random_key; preserved old banks reused only on byte-equivalent scoring projection"
+    },
+    "role": {
+      "size": 1000,
+      "seeds": {
+        "clean": 3714,
+        "corrupt": 3715,
+        "trap": 3719
+      },
+      "algorithm": "declared-condition role strata, no held source values; preserve all global/per-role value multisets and K"
+    }
+  },
+  "controls": "source-first C1a/C1b and all6 saved qualified v5 C2 outputs; same unchanged KEY tokenizer; C3/C3-R control distributions separate; no new generator fitting",
+  "known_data": "same exposed edited Latin training/held fixture, key and20%corrupt map; no claim of new historical holdout",
+  "noise": {
+    "rate_source": "attempt2 HF-DISAGREEMENT.json",
+    "seed": 3712,
+    "method": "raw character substitutions at disjoint H/F sites, exact roundedrate; retokenize each reading with fixed key tokenizer; clean training stays same"
+  },
+  "negative": {
+    "cohorts": 2,
+    "proposals_each": 200,
+    "original_seed": 4711,
+    "role_seed": 4712,
+    "gate_each": ">=99%notPASS and one-sided95%exact CPupperPASS<=3%; PARTIAL reported"
+  },
+  "trap": {
+    "pages": "same preregistered8training and8held pages from attempt2; no f67–f73",
+    "cohort": "jointly present native-readable H/F wholeP lines; sharedlocusHfileorder; first40eligible train and first40eligible held; insufficient support aborts, all exclusions ledgered",
+    "key": "same deterministic training-only wholeworddictionaryfit, characterfallback, explicitsectionrules, lexicon nearestlengthtiealphabetical; no held tuning",
+    "qualification": "literalFAIL bothreadings with finite E3/E4 and complete matched controls in bothbanks"
+  },
+  "order": [
+    "clean",
+    "corrupt and noisy dual",
+    "two cohorts200negative",
+    "actual natively-readable H/Ftrap",
+    "final v5 C2 controls andqualification"
+  ],
+  "no_change_to": "E1–E6 raw scores/K/oldbanks/reservedrejection/PartB-C rules; no alpha allocation or vault run"
+}

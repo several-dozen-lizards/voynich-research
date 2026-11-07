@@ -1,0 +1,64 @@
+{
+  "corpus": "LSI_H_running",
+  "tokenization": "T4",
+  "architecture": "lstm",
+  "with_position": true,
+  "seed": 1777,
+  "parameter_count": 3826747,
+  "validation_bpt": 2.4246723651885986,
+  "test_bpt": 2.715026617050171,
+  "test_tokens": 15819,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.5510082570035246,
+  "test_bpc_with_escape": 2.82132339585605,
+  "training_tokens_seen": 190256,
+  "effective_token_epochs": 1.3156216937619716,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 1.8875961999947322,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 4.483734237211956,
+      "validation_bpt": 4.390946865081787
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 3.4006793408135483,
+      "validation_bpt": 3.2627406120300293
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 3.0150880462037004,
+      "validation_bpt": 2.7331326007843018
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.6164678619124384,
+      "validation_bpt": 2.4246723651885986
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "extensions\\prior_work_v1\\runs\\models\\LSI_H_running-T4-lstm-p1-s1777",
+  "currier_test": {
+    "A": {
+      "bits": 26012.87279754039,
+      "tokens": 8829,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8772,
+      "bpt": 2.9462988784166257,
+      "bpc_with_escape": 2.965443775369401
+    },
+    "B": {
+      "bits": 15985.097307320684,
+      "tokens": 6411,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6235,
+      "bpt": 2.493385947172155,
+      "bpc_with_escape": 2.563768613844536
+    }
+  }
+}

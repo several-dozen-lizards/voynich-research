@@ -1,0 +1,64 @@
+{
+  "corpus": "ZL_running",
+  "tokenization": "T1",
+  "architecture": "lstm",
+  "with_position": false,
+  "seed": 1753,
+  "parameter_count": 3819294,
+  "validation_bpt": 1.8738746643066406,
+  "test_bpt": 2.014038562774658,
+  "test_tokens": 18353,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.236780963484175,
+  "test_bpc_with_escape": 2.426869525481144,
+  "training_tokens_seen": 189957,
+  "effective_token_epochs": 1.1464464186563021,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 1.9063328000047477,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 3.8788949877332772,
+      "validation_bpt": 3.8388121128082275
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.668100493354471,
+      "validation_bpt": 2.3775274753570557
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.0987851203247594,
+      "validation_bpt": 1.9570680856704712
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.0787302234076472,
+      "validation_bpt": 1.8738746643066406
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "runs\\phase4-de886963575d\\ZL_running-T1-lstm-p0-s1753",
+  "currier_test": {
+    "A": {
+      "bits": 22243.29509156989,
+      "tokens": 10375,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8791,
+      "bpt": 2.1439320570187843,
+      "bpc_with_escape": 2.5302349097451815
+    },
+    "B": {
+      "bits": 13893.115590249421,
+      "tokens": 7370,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6224,
+      "bpt": 1.8850903107529744,
+      "bpc_with_escape": 2.2321843814668094
+    }
+  }
+}

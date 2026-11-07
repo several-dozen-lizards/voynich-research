@@ -1,0 +1,15 @@
+{
+  "scope": "Descriptive audit of exposed oal and seam hypotheses, no semantic assignment, phonetic fitting or confirmatory p-value.",
+  "queries": [
+    "exact oal",
+    "proper initial oal (token longer than3)",
+    "strict internal oal (start index>0, including word-final)",
+    "any oal substring",
+    "initial oalch"
+  ],
+  "counting": "All fully readable atlas tokens, reading codes separate, same combined Astronomy/Astrology metadata as v90. Counts are token events, with per-reading section denominators and unique loci. Internal search excludes initial occurrences but can overlap a token with initial oal if it has a further occurrence. Anywhere is a union, not a sum of potentially overlapping classes. Preserve all unknown readings at selected loci.",
+  "seam": "At first literal alch per token, split into left=everything before alch + al, right=ch + everything after alch. This is a candidate split, never an adopted boundary. Save full forms, left/right frequencies as exact standalone tokens in each same reading, before/after string frequencies. Every alch token stays intact in source.",
+  "similarity": "User’s0.68 metric unspecified. Compute explicitly overlap=sum(min(p_tail,q_tail)) over tail token-frequency distributions, equivalent to1-total variation. Candidate tails are after alch, ordinary tails after initial ch in complete words; include empty tails. Also descriptive section+hand reweighting of ordinary ch words to candidate alch event strata. Missing ordinary-ch strata retained; do not silently extrapolate. No g/m merging.",
+  "boundaries": "Retrieve same-source-row adjacent complete tokens where left ends al and right starts ch. Preserve reading, locator, position. Separately record alternate reading rows at each joined-alch locus containing an adjacent exact left,right candidate split; repeated positions or changed context prevent automatic alignment. These are source-row split candidates, not adjudicated token alignments or independent witnesses.",
+  "interpretation": "Broad oal distribution would refute astronomy-exclusive oal under those readings; it would not by itself show the three oalch hits are chance. Seam-compatible inventories/tails do not prove spaces, syntax or functions. Astronomy-specific combination can coexist with common components. No historic Pleiades/mansion assignment from this test. Frozen old experiments unchanged."
+}

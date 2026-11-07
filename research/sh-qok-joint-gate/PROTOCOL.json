@@ -1,0 +1,8 @@
+{
+  "scope": "Synthetic joint-rule qualification only. No manuscript reads; H/F separate.",
+  "rule": "Allinterior exactbody matched support V>=80, >=8pageswithV, maxpage share<=.25 AND matched availability f_ch>=.10,f_sh>=.25. Outcomes not used. Boundarychallenge80<=V<84. Feasibility may vary across conditional orientations: empirically test selected nulls, do not assume selection innocuous.",
+  "design": "Two independent synthetic layouts:1body,22..30lines/page;4bodies,60..110lines/page.12pages,length12,originprob.70,2%unknown. Prefixp=.5. First100accepted nearthreshold layouts perdesign,max1500attempts; preserve every rejected support/feasibility record. Seeds1110000+design*100000+attempt. All matched positive rates target.10/.25 using previous frozen weighted calibration.",
+  "outcomes": "After acceptance, draw independent null outcomes with available-nonoriginqokprob.2 and.6; positive assigns matched availablefollowers .10/f_ch or.25/f_sh, unmatchedprob.2. Exact unchanged nullBonferroni8. No outcome-driven rejection. Nulls are NOT prefixcalibrated.",
+  "gates": "Eachdesign needs100accepted layouts. PositiveWilson95 lowerpower>=.80; eachnullupperfalseflag<=.10. Missingquota or anyfailedgate=FAIL. Keep realized matched effects, failures and all attempts. No repair afteroutcomes. No manuscript application evenifpass.",
+  "limits": "Only this80..84band and these architectures; no evidence of universal minimum or actual manuscript availability. Feasibilityscreen conditions on prefixarrangement and can bias nulls. Constant-score nulls retained. Fourbodycontrol is more diverse, not historical realism."
+}

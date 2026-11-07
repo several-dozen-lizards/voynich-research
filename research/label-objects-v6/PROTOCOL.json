@@ -1,0 +1,178 @@
+{
+  "version": "v6.1",
+  "date": "2026-10-24",
+  "tier": "CLAIM_PROTOCOL_FROZEN_BEFORE_GEOMETRY_RATINGS_JOIN",
+  "claim_freeze_status": "FROZEN",
+  "outcome_join": "CLOSED",
+  "unresolved": [],
+  "units": {
+    "source_sha256": "309e717d0dcc13115eace006eb40ece6c0ac89faab48f1569dcb9732d26b02f0",
+    "reserved": [
+      "f72v1",
+      "f72v2",
+      "f73r",
+      "f73v"
+    ],
+    "included_units_sha256": "855d430c4ab7e7ef90aa7195cb502cd20e0dd20484048088db02e4d0ed7636b3",
+    "policy": "Source descriptions, not object votes. Include labels, titles, captions, letters and radial inscriptions; exclude paragraph and continuous circular text. No length-based selection.",
+    "H_F": "Separate alternate readings, never independent object observations.",
+    "multiline": "Registrar records a physical_label_id. A multi-line physical label is excluded from T1 primary until all rows and reading boundaries can be consolidated under a versioned rule; never count its lines as independent labels."
+  },
+  "registration": {
+    "independent": true,
+    "accepted_geometry": 0,
+    "automatic_proposals": "Never accepted by counts alone",
+    "prior_v4": "Paragraph geometry is not reused as label geometry",
+    "unregistered": "Drop/list; no invented coordinates",
+    "blind_process": "Fresh plain API call with only native image, neutral registrar manual and header/order locators. No category manual, source word bodies, feature files, matches, section/scribe metadata or analysis.",
+    "acceptance": "Two independent source-only visual passes, no counts-only acceptance. First proposes boxes and physical_label_id; second sees image and proposed boxes/locators and can reject. Accept only explicit unique locator identity and adequate IoU; preserve both raw outputs.",
+    "overlap_gate": "Second reviewer must confirm full writing coverage and exact locus identity; proposed/review bbox IoU>=.70, no overlapping duplicate writing boxes. A disagreement remains UNREGISTERED.",
+    "pilot": "Complete all label loci on the first two image-ready pages in deterministic hash order, never select by object class, words or anticipated effect. Engineering pilot is not study-wide agreement."
+  },
+  "agreement": {
+    "threshold": 0.6,
+    "full": [
+      "STAR",
+      "SUN-MOON",
+      "PL-WHOLE",
+      "PL-ROOT",
+      "PL-UPPER",
+      "VESSEL",
+      "FIGURE",
+      "WATER",
+      "ROSETTE",
+      "ANIMAL",
+      "OTHER",
+      "NONE",
+      "UNCLEAR"
+    ],
+    "collapse": {
+      "STAR": "CELESTIAL",
+      "SUN-MOON": "CELESTIAL",
+      "PL-WHOLE": "PLANT",
+      "PL-ROOT": "PLANT",
+      "PL-UPPER": "PLANT",
+      "VESSEL": "VESSEL",
+      "FIGURE": "FIGURE-WATER",
+      "WATER": "FIGURE-WATER"
+    },
+    "collapse_unmapped": [
+      "ROSETTE",
+      "ANIMAL",
+      "OTHER",
+      "NONE",
+      "UNCLEAR"
+    ],
+    "collapsed_denominator": "Only loci where both A and B votes map to the four named groups; list exclusions and full-class confusion matrix.",
+    "selection": "Use full classes if full kappa passes; otherwise collapse if collapsed kappa passes; both fail means NOT_RELIABLE. Undefined kappa never passes.",
+    "provenance": "Different model families or human raters; fresh plain API call with manual + one composite image only; no tools or agent harness."
+  },
+  "features": {
+    "length": "Concatenated readable EVA code-character count; no phonetic length claim",
+    "opener_order": [
+      "qo",
+      "q",
+      "ch",
+      "sh",
+      "ot",
+      "ok",
+      "d",
+      "other"
+    ],
+    "q_and_qo_merged": true,
+    "ending_order": [
+      "aiin",
+      "ain",
+      "iin",
+      "in",
+      "eedy",
+      "edy",
+      "eey",
+      "ey",
+      "dy",
+      "y",
+      "ol",
+      "or",
+      "ar",
+      "al",
+      "am",
+      "om",
+      "m",
+      "n",
+      "r",
+      "l",
+      "other"
+    ],
+    "glyph": "Both literal EVA code-character and v70 longest-group presence; operational proxies, not asserted physical glyph boundaries.",
+    "ngrams": "Binary unbounded-vocabulary code-character 1–3-grams",
+    "multiword": "Concatenate readable tokens, retain word count in ledger. Mixed uncertain loci excluded from T1.",
+    "template": "New operational scaffold: longest grouped EVA segmentation from v70; k/t/p/f and benched variants -> G; ch/sh -> B; maximal e and i runs -> E and I; other symbols literal. Feature is one-hot full scaffold. Not a recovered historical class inventory."
+  },
+  "T1": {
+    "min_labels_per_class": 30,
+    "min_physical_folios_per_class": 6,
+    "min_classes": 2,
+    "class_policy": "All full-set classes except NONE and UNCLEAR are eligible when they meet support; OTHER is retained as specified full-set category. Four-way outside-domain votes excluded and reported.",
+    "cv": "5 outer and 4 inner folds, reduced only to number of physical folios. Hash-sorted physical folios, all sides and foldout panels together; identical folds for observed and null.",
+    "model": "L2 logistic regression; C grid [.01,.1,1,10]; smaller C wins ties; inner pooled held-out log-loss; no class weighting.",
+    "preprocessing": "Training-only dictionary vocabulary and sparse standardisation inside every inner and outer fit.",
+    "baseline": "Leave-one-label-out true page class mix with add-half smoothing; peer outcomes from held-out page explicitly allowed only for this conditional baseline. Never feed peer outcomes to model.",
+    "primary": "Pooled outer log-loss gain relative to page prior",
+    "secondary": "Balanced accuracy, descriptive; no alternate route to a pass",
+    "permutations": 5000,
+    "null": "Within each exact page/panel, permute classes; rerun all nested tuning and outer fitting.",
+    "p": "(1 + null gains >= observed gain)/(5001); one-sided; Holm over estimable sections in each reading.",
+    "headline": "Positive gain and Holm p <= .05 in H and F in the same section",
+    "failures": "Missing training classes or nonconvergence => not estimable, never silently omit a fold",
+    "support_failures": "Support assessed before all fits; per-class minimum 30 complete physical labels and 6 physical folios. Invalid folds and fit failures preserved as not estimable."
+  },
+  "T2": {
+    "matching": "All exact word matches; edit distance <=1 only when both words have >=5 EVA code characters; readings separate; all candidate page pairs listed before image judgment.",
+    "previous_nine": "Nine prior word records expand to eleven supplied page pairs; exact source retained.",
+    "distractor": "Unmatched herbal plant from same scribe; writing fully masked on all three images; randomised left/right.",
+    "test": "Share of matched choices among fresh decided trials; one-sided exact binomial p; minimum 15 decided pairs.",
+    "claim_limit": "A similarity preference supports visual correspondence under this choice design; it does not establish identical species or word meaning.",
+    "primary_reading": "H primary; F separate sensitivity, no pooling or substitution. Any future F primary claim requires separate prospective amendment.",
+    "freshness": "Fresh means no earlier source/target image-pair exposure found in specified paired-image ledgers, not previously unseen text. Exclude all source-page × target-page combinations shown in legacy pilot choices plus nine-record pairs; retain previously seen strata.",
+    "independent_unit": "One single-word label, one unique EVA word, one distinct registered pharma drawing, one herbal plant/distractor pair per trial; none reused within a reading. Shared-folio dependence is reported and checked by a folio-cluster sensitivity; no binomial result alone establishes identity.",
+    "schedule": "Hash-sort all exact candidates before edit1 candidates (seed v61-T2). Greedily retain nonreused pharma physical-label/word/drawing and herbal page IDs. Draw one same-scribe distractor with no exact/edit1 match to the source word; both target/distractor pages cannot be reused. No replacement if a frozen eligible trial abstains. Registration/mask failure is recorded and excludes before ratings.",
+    "matching_length": "Both strings >=5 EVA code characters for edit1. Single fully readable word labels only for primary; multiword titles and letter columns remain infrastructure but are excluded from T2 primary.",
+    "choice": "Two independent plain-API raters. Primary trial decided only when both choose the same herbal drawing; discordant or neither/unclear => abstain. No C adjudication of T2 primary. Report each rater separately.",
+    "randomisation": "Hash bit of trial ID assigns matched plant left/right. Choice files contain no keys or text. Shuffled-match schedule uses independent hash seed, same scribe/exposure/nonreuse rules.",
+    "masked_images": "All writing on each full drawing crop must have an independently verified exhaustive mask; masks and crop geometry frozen before choices. If uncertain, trial excluded.",
+    "gate": "At least 15 fresh consensus-decided H trials; exact one-sided binomial p<=.05; shuffled-match image control must not pass; report folio-cluster uncertainty. Otherwise not estimable or failed control."
+  },
+  "controls": {
+    "status": "PLAN_FROZEN_NOT_RUN",
+    "trials_per_regime": 100,
+    "permutations": 5000,
+    "seeds": "protocol seed 610241; exact per-bank/per-trial seeds in CONTROL-PLAN.json",
+    "T1": [
+      "Two-class and three-class positives at 144 and 180 rows; 12 physical folios; 12% within-page label swaps preserve class margins.",
+      "Two-/three-class page-only classes on 12/18 physical folios with six folios per class: within-page orbit is a singleton; exact p=1.",
+      "Two synthetic sections with different fixed page class mixes and no lexical association; independent within-page null assignments; Holm across both sections per reading."
+    ],
+    "reuse": "Each 5000-assignment conditional null bank is evaluated through every nested fit and reused only for identical X, folds, class set and page margins. Each control trial has independently generated observed outcomes. Bank-conditional rates and uncertainty are explicit.",
+    "acceleration": "Finite-prototype sufficient-count Newton solver; same scaled feature geometry, L2 objective, C grid, nested tuning and CV. Numerical parity against original sklearn engine must pass before qualification.",
+    "gates": {
+      "power": "H/F joint pass rate >=.80, separately for two and three classes",
+      "false_positive": "Per-reading section-Holm familywise rate and H/F headline rate <=.05; page singleton null must always p=1",
+      "parity": "All checked gain differences <=2e-5; exact selected C except inner gaps <=2e-5; fit probabilities <=2e-5"
+    },
+    "intervals": "Wilson 95% intervals; gates apply to point estimates as original spec, intervals always reported. Shared-bank simulation limitation explicit.",
+    "T2": "Exact binomial type-I calibration against known chance, plus actual shuffled-match image control before T2 inference. Statistical calibration cannot replace image controls."
+  },
+  "claims": {
+    "T1": "Conditional form/object-class association; compatible with referential information, not proof of naming or a unique semantic mechanism.",
+    "T2": "Visual similarity over same-scribe distractors under a frozen pair design; identity and linguistic meaning need additional evidence.",
+    "fail": "A qualified, adequately powered failure concerns this feature/class resolution; it does not reject all naming-label systems. Not estimable is not negative."
+  },
+  "authority": "User: resolve remaining protocol details, qualify controls, work toward independent registration and ratings; H/F separate and pharma limit preserved.",
+  "pharma_coverage_limit": {
+    "H_rows": 230,
+    "F_rows": 2,
+    "F_fully_readable": 1,
+    "headline": "NOT_ESTIMABLE_FROM_CURRENT_EVT",
+    "no_substitution": true
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "status": "PREPARED ONLY; NO THIRD RATINGS OR ADJUDICATION RUN",
+  "created_utc": "2026-10-25T05:23:24.788316+00:00",
+  "authority": "User requested preparation of blind adjudication for disagreements and 233 unpaired lines.",
+  "target_lines": 427,
+  "reason_counts": {
+    "DISAGREEMENT": 194,
+    "MISSING_A": 222,
+    "MISSING_B": 11
+  },
+  "G2_disagreements": 118,
+  "full_pages": 49,
+  "registered_physical_lines": 1145,
+  "selection": "Union of six-way disagreements and missing A/B pairs. Whole source pages; all pictures independently annotated. No target-line cues.",
+  "rater": "Fresh uninformed human or isolated model; never Re, analyst, initial rater context or registrar context.",
+  "model_route": "One isolated call per page, only that image and MANUAL-MODEL.md; no tools, file/project access, previous responses or memory. Record model version and session provenance. No calls made by preparation.",
+  "registration": "Frozen geometry and original assign/validate_response functions in ratings/agreement.py, unchanged. Apply separately after C collection; never expose geometry to rater.",
+  "proposed_resolution_policy": {
+    "status": "DRAFT; NOT APPLIED. Explicitly preserve unresolved cases.",
+    "initial_agreement": "Retain A/B label. C observations on same page kept separately.",
+    "initial_disagreement": "C matching A or B gives two-of-three consensus; three distinct valid labels remains unresolved.",
+    "one_initial_missing": "If C agrees with sole original, mark two-observation agreement; otherwise unresolved. Original missing slot stays missing.",
+    "both_initial_missing": "C-only supplemental observation, not consensus or repaired A/B pair.",
+    "missing_invalid_C": "Unresolved; never replace with NO.",
+    "initial_checks": "Never recompute/replace initial G6/G2 as post-adjudication gates or claim accuracy qualification."
+  },
+  "original_agreement": {
+    "paired_physical_lines": 912,
+    "G6": {
+      "governs": "H-IMG",
+      "n": 912,
+      "kappa": 0.7005823251374582,
+      "exact_kappa": "137993/196969",
+      "observed_agreement": 0.7872807017543859,
+      "expected_agreement": 0.28955664242843954,
+      "categories": [
+        "PL",
+        "VE",
+        "FG",
+        "CE",
+        "OT",
+        "NO"
+      ],
+      "confusion_matrix": [
+        [
+          330,
+          2,
+          5,
+          0,
+          0,
+          37
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          96,
+          0,
+          0,
+          63
+        ],
+        [
+          12,
+          0,
+          0,
+          144,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          0,
+          0,
+          9
+        ],
+        [
+          45,
+          0,
+          0,
+          0,
+          4,
+          148
+        ]
+      ],
+      "status": "DEFINED",
+      "pass_gate": false,
+      "gate_status": "NOT ESTIMABLE: MISSING REGISTERED-LINE RATINGS"
+    },
+    "G2": {
+      "governs": "H-PLANT",
+      "n": 912,
+      "kappa": 0.7358105188734828,
+      "exact_kappa": "18733/25459",
+      "observed_agreement": 0.8706140350877193,
+      "expected_agreement": 0.5102531548168667,
+      "categories": [
+        "PL",
+        "not-PL"
+      ],
+      "confusion_matrix": [
+        [
+          330,
+          44
+        ],
+        [
+          74,
+          464
+        ]
+      ],
+      "status": "DEFINED",
+      "pass_gate": false,
+      "gate_status": "NOT ESTIMABLE: MISSING REGISTERED-LINE RATINGS"
+    }
+  },
+  "timing_exception": "v4.2 was NOT frozen before initial registration. Retained45 and source registration timing exception persist. This rating freeze occurs before manuscript picture responses.",
+  "coordinate_control_limit": "Synthetic outlined-square tests identified OT correctly but returned imprecise coordinates. These failures are retained; engineering schema tests do NOT qualify coordinate accuracy. Agreement between two models is not external annotation truth or a semantic result.",
+  "retained": "Original responses, invalid boxes, runtime failures, recovery provenance, G6/G2 and all dropped registration blocks remain in their original sealed records.",
+  "held": [
+    "third-rater execution",
+    "adjudication application",
+    "OT merge",
+    "support",
+    "scientific controls",
+    "outcome joins",
+    "H-IMG/H-PLANT tests",
+    "geometry changes"
+  ],
+  "v103": "PARKED"
+}

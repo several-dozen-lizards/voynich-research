@@ -1,0 +1,19 @@
+{
+  "scope": "Fresh synthetic qualification only. No Voynich reads permitted by this script.",
+  "revision": "Permute sh/ch labels among eligible origins within exact page, source-line token length, zero-based origin index, and exact remaining word body. Keep qok outcomes fixed. Secondary ending-family matching reported separately.",
+  "eligibility": "Literal sh/ch initial with longest disjoint suffix edy,eey,ey,y. Next token must be readable within same line. Unknown slots retained in length and index, never bridged. Only strata containing both prefixes contribute. No smoothing or pooling sparse strata.",
+  "statistic": "Within each page sum observed sh-qok successes minus conditional expectation; divide by sum ns*nc/n; equal mean across eligible pages. Conditional null draws hypergeometric successes independently per stratum, preserving sh/ch and qok margins. One-sided; 1999 draws, Bonferroni8 for future 2 panels x H/F x 2 views. No manuscript run here.",
+  "seeds": "Fresh 961000+1000*regime+trial; null seed +100000",
+  "trials": 200,
+  "regimes": [
+    "page_only",
+    "position_only",
+    "body_mix",
+    "line_environment",
+    "local_positive",
+    "no_overlap"
+  ],
+  "generators": "12 pages x 30 lines x 10 tokens. Eligible origins slots1,3,5,7; three exact bodies edy/eey/ey. Page-only correlates prefix and outcome rates across pages. Position-only correlates rates across interior slots. Body-mix correlates rates across bodies. Line-environment correlates both through a random per-line state. All four have independent prefix and outcome given the generator state, with probabilities .15/.85. Local-positive adds outcome probability .45 for sh (baseline .2) atop page prefix preference. No-overlap fixes sh at slot1/3 and ch at5/7 with matching position-specific outcomes.",
+  "gates": "Primary exact-body only: each of four nuisance regimes Wilson95 upper false-flag bound <=.05 over200 trials; local-positive Wilson95 lower detection bound >=.80; no-overlap all200 not estimable. Arithmetic must agree with independent direct weighted differences. Every failure stops manuscript scoring. Ending-family secondary failures retained, not used to repair primary after outcomes.",
+  "limits": "Conditional exchangeability across lines is an assumption. Line-environment adversary tests it explicitly. Qualification is finite, not evidence of grammar. No-overlap is missing support, not evidence against association. H/F must remain separate on shared readable loci in any later authorized retrospective manuscript run; previously exposed pages cannot be called fresh holdouts."
+}

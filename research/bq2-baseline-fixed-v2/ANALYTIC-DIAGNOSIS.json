@@ -1,0 +1,73 @@
+{
+  "status": "DETERMINISTIC ANALYTIC CONFIRMATION OF OLD-CONTROL DIAGNOSIS; NO NEW OUTCOMES",
+  "formula": "For Y~Binomial(n,p), E[((Y+.5)/(n+1))*(1-(Y+.5)/(n+1))] = [n(n-1)p(1-p)+n/2+1/4]/(n+1)^2.",
+  "singleton": "n1 gives.1875 regardless of p: lower than true variance near p.5, higher for rare baselines. R1 pools many such margin-level terms, producing context-dependent variance bias when baselines differ.",
+  "readings": {
+    "H": {
+      "C1": {
+        "exact_expected_R1_working_variance": 0.0004439265003299782,
+        "exact_true_variance": 0.0003878796599959093,
+        "expected_ratio": 1.14449543534884,
+        "observed_R1_ratio": 1.144967196001577
+      },
+      "C2": {
+        "exact_expected_R1_working_variance": 0.0023554715966862903,
+        "exact_true_variance": 0.002791413487551521,
+        "expected_ratio": 0.8438275472948239,
+        "observed_R1_ratio": 0.8434683978485097
+      },
+      "C3": {
+        "exact_expected_R1_working_variance": 0.0035081381042364923,
+        "exact_true_variance": 0.0035714342422283702,
+        "expected_ratio": 0.9822771095031041,
+        "observed_R1_ratio": 0.9810615658203901
+      },
+      "C4": {
+        "exact_expected_R1_working_variance": 0.0003804445242133678,
+        "exact_true_variance": 0.00037431810733113937,
+        "expected_ratio": 1.0163668728876338,
+        "observed_R1_ratio": 1.0159695878448851
+      },
+      "C5": {
+        "exact_expected_R1_working_variance": 0.004434876230375625,
+        "exact_true_variance": 0.005017538043264856,
+        "expected_ratio": 0.8838749586221174,
+        "observed_R1_ratio": 0.883800480754888
+      }
+    },
+    "F": {
+      "C1": {
+        "exact_expected_R1_working_variance": 0.0004483547778821451,
+        "exact_true_variance": 0.00039127771736874865,
+        "expected_ratio": 1.1458735266020932,
+        "observed_R1_ratio": 1.1454582890750562
+      },
+      "C2": {
+        "exact_expected_R1_working_variance": 0.002300124127189441,
+        "exact_true_variance": 0.0027245119309189493,
+        "expected_ratio": 0.8442334574081433,
+        "observed_R1_ratio": 0.8442211110392047
+      },
+      "C3": {
+        "exact_expected_R1_working_variance": 0.004176941757638653,
+        "exact_true_variance": 0.004266994162690318,
+        "expected_ratio": 0.9788955874748871,
+        "observed_R1_ratio": 0.9792304231356057
+      },
+      "C4": {
+        "exact_expected_R1_working_variance": 0.000377085623593211,
+        "exact_true_variance": 0.0003709550036456041,
+        "expected_ratio": 1.016526586479108,
+        "observed_R1_ratio": 1.0159461644832666
+      },
+      "C5": {
+        "exact_expected_R1_working_variance": 0.006613632874694741,
+        "exact_true_variance": 0.007459078919728508,
+        "expected_ratio": 0.8866554363974286,
+        "observed_R1_ratio": 0.8865056191269748
+      }
+    }
+  },
+  "new_random_draws": 0,
+  "protocol_or_gate_changes": 0
+}

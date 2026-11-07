@@ -1,0 +1,94 @@
+# JX Phase0 spacing
+
+**FAIL_REFERENCE_ORDERING**
+
+```json
+{
+  "corpora": {
+    "C-lat": {
+      "JSD": 0.45112028861841247,
+      "ci": [
+        0.44944847323323855,
+        0.4663471055854005
+      ],
+      "families": 26,
+      "words": 13299,
+      "cross_pairs": 13273,
+      "within_pairs": 55375,
+      "pair_support": 512
+    },
+    "C-sandhi": {
+      "JSD": 0.41424162835865935,
+      "ci": [
+        0.41235195287550264,
+        0.42953618094179574
+      ],
+      "families": 26,
+      "words": 13299,
+      "cross_pairs": 13273,
+      "within_pairs": 54375,
+      "pair_support": 513
+    },
+    "C-respace": {
+      "JSD": 0.03690614248531987,
+      "ci": [
+        0.03816656119684203,
+        0.04478130932061769
+      ],
+      "families": 26,
+      "words": 46192,
+      "cross_pairs": 46166,
+      "within_pairs": 23439,
+      "pair_support": 533
+    },
+    "C-naibbe": {
+      "JSD": 0.8086763056228728,
+      "ci": [
+        0.8066238464591151,
+        0.8121847808456661
+      ],
+      "families": 26,
+      "words": 46232,
+      "cross_pairs": 46206,
+      "within_pairs": 139511,
+      "pair_support": 537
+    }
+  },
+  "contrasts": [
+    {
+      "contrast": "C-lat minus C-respace",
+      "ci": [
+        0.408344051268399,
+        0.42475899165734615
+      ],
+      "passed": true
+    },
+    {
+      "contrast": "C-lat minus C-naibbe",
+      "ci": [
+        -0.35917617045525907,
+        -0.34396625003873005
+      ],
+      "passed": false
+    },
+    {
+      "contrast": "C-sandhi minus C-respace",
+      "ci": [
+        0.37150828124703994,
+        0.38786206901982573
+      ],
+      "passed": true
+    },
+    {
+      "contrast": "C-sandhi minus C-naibbe",
+      "ci": [
+        -0.3964842746199807,
+        -0.380111377174865
+      ],
+      "passed": false
+    }
+  ],
+  "cross_language_plaintext_space_classification": "NOT_QUALIFIED",
+  "target_readout": "NOT_RUN"
+}
+```

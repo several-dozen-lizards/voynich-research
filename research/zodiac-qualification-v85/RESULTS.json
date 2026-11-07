@@ -1,0 +1,121 @@
+{
+  "qualification": "PASS within frozen synthetic suite",
+  "regimes": [
+    {
+      "regime": "iid",
+      "n": 40,
+      "flags": 2,
+      "wilson95": [
+        0.0138,
+        0.165
+      ],
+      "pass_gate": true,
+      "gate": "<=4"
+    },
+    {
+      "regime": "ring_rates",
+      "n": 40,
+      "flags": 1,
+      "wilson95": [
+        0.0044,
+        0.1288
+      ],
+      "pass_gate": true,
+      "gate": "<=4"
+    },
+    {
+      "regime": "clustered",
+      "n": 40,
+      "flags": 1,
+      "wilson95": [
+        0.0044,
+        0.1288
+      ],
+      "pass_gate": true,
+      "gate": "<=4"
+    },
+    {
+      "regime": "common_layout",
+      "n": 40,
+      "flags": 0,
+      "wilson95": [
+        -0.0,
+        0.0876
+      ],
+      "pass_gate": true,
+      "gate": "<=4"
+    },
+    {
+      "regime": "structured_missing",
+      "n": 40,
+      "flags": 3,
+      "wilson95": [
+        0.0258,
+        0.1986
+      ],
+      "pass_gate": true,
+      "gate": "<=4"
+    },
+    {
+      "regime": "clean_signal",
+      "n": 40,
+      "flags": 39,
+      "wilson95": [
+        0.8712,
+        0.9956
+      ],
+      "pass_gate": true,
+      "gate": ">=36"
+    },
+    {
+      "regime": "noisy_masked_signal",
+      "n": 40,
+      "flags": 37,
+      "wilson95": [
+        0.8014,
+        0.9742
+      ],
+      "pass_gate": true,
+      "gate": ">=32"
+    }
+  ],
+  "voynich_alignment_scored": false,
+  "heldout_signs_scored": false,
+  "heldout_signs": [
+    "Virgo",
+    "Libra",
+    "Scorpio",
+    "Sagittarius"
+  ],
+  "source_verified": "Two visual readbacks of one Wright1934 scan, not independent textual witness",
+  "transcribed_rows": 24,
+  "each_row_degrees": 30,
+  "raw_candidates": 30720,
+  "unique_candidates": 18424,
+  "planted_table_coverage": [
+    {
+      "regime": "clean_signal",
+      "table": "457",
+      "n": 3,
+      "detected": 3
+    },
+    {
+      "regime": "clean_signal",
+      "table": "458",
+      "n": 37,
+      "detected": 36
+    },
+    {
+      "regime": "noisy_masked_signal",
+      "table": "457",
+      "n": 4,
+      "detected": 4
+    },
+    {
+      "regime": "noisy_masked_signal",
+      "table": "458",
+      "n": 36,
+      "detected": 33
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "status": "FROZEN BEFORE V2 SUPPORT AND FRESH QUALIFICATION; RETROSPECTIVE",
+  "utc": "2026-10-25T03:19:25.408562+00:00",
+  "authority": "User requested diagnosis followed by separately frozen qualification addressing unequal baselines; score heterogeneity only if qualification passes.",
+  "diagnosis": "DIAGNOSIS.json uses old R1 section-baseline controls only. R1 working variances underestimate true uncertainty by~16% C2/~11-12% C5, overestimate C1~15%. Oracle-variance chi-square flags122/5000H,108/5000F; old working-variance chi-square189/169 versus old relabel182/166. Thus changing reference alone does not solve variance bias. This diagnosis is exposed exploratory engineering, not qualification.",
+  "target": "Same aggregate MH sh/ch->qok risk differences C1-C5, heterogeneity centered separately within scribe2 C1-C3 and scribe3 C4-C5. H/F separate. No contexts, folios, transcriptions, endings or pooling added.",
+  "design": "Reuse R1 supported-folio geometry, dropping only zero-D folios outcome-blind. Keep contexts/folios fixed; never relabel outcomes/baselines across sections. No raw EVT or reserved zodiac. Score support before fresh controls.",
+  "variance": {
+    "coefficients": "For each supported folio x ending stratum, raw MH context RD is sum_i a_i*y_i: a_sh=(nc/n)/Dc, a_ch=-(ns/n)/Dc. Unsupported stratum coefficients0. Point estimates remain unshrunk.",
+    "pooling": "Pool uncertainty only within each original context x prefix. u_i=a_i^2, A=sumu, b_i=u_i/A, N_eff=A^2/sum(u_i^2)>1, r=sum(u_i*y_i)/A. Half-count m=(N_eff*r+.5)/(N_eff+1). Variance-product estimate min(.25,m*(1-m)/(1-1/N_eff)); sum A*product over sh/ch. The finite-weight correction targets the ordinary weighted sampling-variance bias; after regularization/capping this is a working estimator, not an exactly unbiased estimator or an exact Bayesian posterior for weighted data.",
+    "rationale": "Under independent Bernoulli outcomes, the true squared-coefficient-weighted baseline gives a Jensen upper bound A*pbar*(1-pbar) on that prefix variance. Estimating pbar does not make the plug-in a guaranteed bound. Separate context/prefix pooling avoids R1 tiny-margin shrinkage bias across unequal baselines; qualification must test remaining approximation.",
+    "folio_protection": "Also compute HC3-style folio variance: sum_p[(Np-Dp*RDc)/(1-Dp/Dc)]^2 / Dc^2 within each context. Use max(pooled_binomial_variance, HC3_folio_variance). This protects against a too-small event model estimate and preserves within-folio dependence at the score level. Max is a candidate safeguard, not a proof of finite-sample coverage.",
+    "zero": "Pooled half-count product is strictly positive when A>0 and N_eff>1, so empirical HC3 zero never creates a zero denominator. No epsilon floor, observation edits or dropped failures."
+  },
+  "statistic": "T=sum_c (RDc-mu_scribe)^2/vc, where mu_scribe is inverse-v weighted mean within each scribe and vc=max(pool,HC3). Fixed-design Gaussian working-model reference chi-square with df=(3-1)+(2-1)=3; p=sf(T,3). Approximate for binary/clustered data, never called exact. No inner permutations or bootstrap MC. A uniform informative outcome configuration is NOT ESTIMABLE rather than negative evidence.",
+  "support": "Same positive-D folios as R1. Each context>=2 supported folios; leverage Dp/Dc<1; every context-prefix N_eff>1; availability-control target probabilities .20/.28/.32 feasible. Failure blocks reading without adding material.",
+  "controls": {
+    "scenarios": [
+      "homogeneous_null",
+      "homogeneous_positive",
+      "scribe_baseline_homogeneous",
+      "section_baseline_homogeneous",
+      "available_homogeneous",
+      "folio_baseline_homogeneous",
+      "stratum_baseline_homogeneous",
+      "folio_effect_homogeneous",
+      "heterogeneous_positive",
+      "available_heterogeneous_positive",
+      "section_baseline_heterogeneous_positive"
+    ],
+    "null_count": 8,
+    "positive_count": 3,
+    "nulls": "Original five R1 nulls retained unchanged, plus common+.08 with random folio baseline(.10/.40), common+.08 with random folio×ending baseline(.08/.42), and common population+.08 with independent folio effects .08±.04 at base.20. The last tests within-folio dependence/effect variation under equal context expectations.",
+    "positives": "Retain abstract+.12 C1 only and availability-preserving+.12 C1 only; add+.12 C1 only with section baselines .10,.40,.20,.15,.45. Power descriptive, no80% gate, retaining B-Q2 rule.",
+    "N": "Exactly10000 fresh trials per required null per supported reading and2000 per positive:172000 total if both support. No old/new pooling, sample extension, optional stopping, seed replacement, effect enlargement or retuning.",
+    "seed": "[918260,reading_index H0/F1,scenario_index in engine.SCENES,trial]. No resampling-bank seed exists.",
+    "intervals": "22 simultaneous two-sided exact Clopper-Pearson intervals; per-interval error.05/22;16 null rates+6 descriptive power rates. Keep full denominators and uniform/invalid cases.",
+    "gates": "Raw p<=.025 is calibration flag. Every required-null upper bound<=.05, no lower bound>.025 nominal-size alarm, no numeric failure. Upper/lower spanning5% INCONCLUSIVE; lower>5% EVIDENCE ABOVE TOLERANCE. Nominal alarm blocks even if below5% practical tolerance. No alarm is not proof of exact nominal size. All positives and their power intervals retained without altering gates."
+  },
+  "scoring": "Only after qualification, trial receipts and independent audit hashes frozen: attach actual original EVENTS.csv y to the exact masked supported events, and score each qualified reading. Failed/inconclusive readings BLOCKED with no new manuscript T,p,tau or I2.",
+  "multiplicity": "Fixed conservative Holm2 factor per reading [new BQ2-V2, inactive historical BQ1 internalp1]. Prior B-Q1 scores/statuses/families remain unchanged. H/F not pooled or independent replicates. No global research-history correction claim.",
+  "decision": "Qualified, nonuniform reading: DETECTED HETEROGENEITY if min(1,2*p)<=.05, otherwise NO DETECTION. Both readings must detect for both-reading headline. No detection plus weak power or broad tau CI leaves strength variation unresolved; never interpret as proof of constant strength.",
+  "diagnostics": "Only qualified readings: unchanged raw context MH effects and carried-forward original descriptive CIs; pooled/HC3/used context variances and effective sample sizes; descriptive within-scribe common-tau REML with separate scribe means, Q-profile95 df3 and I2. No new unqualified scribe2-only sensitivity tests.",
+  "engineering": "Coefficient reconstruction and direct raw MH check; independent scalar variance/T calculation; Gaussian projection symmetry/idempotence/rank3; all-zero/all-one/perfect-prefix/checkerboard fixtures; shift invariance; variance-enlargement cannot increase minimized quadratic; replay six old undefined synthetic assignments with finite V2 moments. Fixed first3 trial coordinates per reading/scenario verify production vs scalar and remain in fixed qualification run, not extra draws.",
+  "postrun_audit": "Regenerate every fresh null false flag and trial0 per scenario, verify outcome hash, T and p, independent scalar arithmetic; numerical boundary disagreement blocks qualification. Verify prior hashes and phase hashes before/after. Preserve all trials and failures.",
+  "limits": "Finite authored-control qualification at actual geometry, not universal asymptotic correctness or a decoding claim. Old context selection C1/C4 and all material exposure remain. Original B-Q2 and R1 remain unqualified and untouched; no real manuscript scoring used to select V2.",
+  "sources": [
+    "https://www.statsmodels.org/v0.13.5/generated/statsmodels.regression.linear_model.RegressionResults.HC3_se.html",
+    "https://stat.ethz.ch/CRAN/doc/manuals/r-patched/packages/stats/refman/stats.html",
+    "https://statistics.stanford.edu/technical-reports/exact-and-asymptotically-robust-permutation-tests",
+    "https://itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbino.htm"
+  ]
+}

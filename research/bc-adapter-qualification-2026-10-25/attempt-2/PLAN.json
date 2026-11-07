@@ -1,0 +1,90 @@
+{
+  "version": "BC-adapter-qualification-attempt-2",
+  "utc": "2026-10-25T23:10:49.466Z",
+  "authority": "Human asks known-text/numeral positive and null controls; vault closed and v7.2 unchanged",
+  "scope": "Adapter control qualification only; no real B/C claim, marker selection, C1 historical audit, or reserved dataset access",
+  "inputs": {
+    "known_text": "ordered-name-lists-v7c/HARNESS/latin-development-only.json",
+    "adapters": "priority-continuation-2026-10-25/adapters/adapters.py",
+    "baseline": "ordered-name-lists-v7c/attempt-3-v7.2; read-only"
+  },
+  "frozen_before_outcomes": true,
+  "trials_per_cell": 200,
+  "permutations": 1000,
+  "alpha": 0.01,
+  "seeds": {
+    "codebook": 82501,
+    "known_text": 82502,
+    "key_original": 82503,
+    "key_role": 82504,
+    "wrongkeys_original": 82505,
+    "wrongkeys_role": 82506,
+    "order": 82507,
+    "verification": 82508
+  },
+  "known_text": {
+    "source": "Existing Macer development-only source; no new claim about a historical ordered name list",
+    "units": "Two distinct prefix-free two-letter cipher alphabets with identical known Latin values; initial-position identity rules on first alphabet create declared role structure",
+    "pair_spans": "24 unique nonoverlapping three-word phrases from held source chapters; distinct records/slots, no identity self-pair",
+    "train": "First half of chapter units, for fake-list token pools only; known cipher key is fixed independently of text",
+    "held": "Second half of chapter units; no map fit",
+    "noise": "whole source-word erasure independently by reading/side; H=.10 F=.20 declared stress envelope, not an observed manuscript noise estimate",
+    "positive": "True known-text pairs, both independent encodings",
+    "nulls": [
+      "independent shuffled partner labels, same label multisets",
+      "source-first within-span word shuffle independently each side",
+      "source-first within-word internal glyph shuffle independently each side",
+      "same-length fake pairs from training word pool"
+    ],
+    "banks": "1000 unchanged harness.random_key and 1000 unchanged v7.2 random_role_key; separate seeds; fixed single control panel, plus 200 fresh wrong proposals from EACH bank",
+    "decisions": "Exact E2 span match fraction; Monte Carlo upper-tail p with +1 correction. Paired-text detection p<=.01 against each frozen null family; correct key must also exceed BOTH random-key banks on fixed panel. This is not a full v7 verdict or E1-E6 coherence qualification."
+  },
+  "numerals_and_order": {
+    "geometries": [
+      [
+        12
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        4,
+        4,
+        4
+      ]
+    ],
+    "source": "synthetic figure IDs on a permitted open-page identifier; no real label text or geometry read",
+    "templates": "fixed exact sequence 1..N and independent known-text phrase sequence; every per-band rotation/direction and band order charged, including aliases",
+    "numerals": "Fixed two-letter digit codes, exact Fraction comparisons, including multi-digit values; no learned number assignment or rounding",
+    "noise": "H=.10 F=.20 label erasure; paired but separately scored, dependent alternate readings",
+    "positive": "Generate source at one randomly selected legal geometry alignment, then independently corrupt readings",
+    "nulls": [
+      "within-band source permutation preserving multisets",
+      "layout-only regular phase/category covariate with independent random labels",
+      "same-length morphology-like fake known-text lists",
+      "wrong-unit cyclic templates with incompatible inventory"
+    ],
+    "search": "Observed and every null maximize identical full alignment space; no truncation. Precompile adapter alignment IDs then vectorize exact same integer match sum, with exhaustive reference checks before outcomes.",
+    "decisions": "Per-route p<=.01 vs 1000 within-band permutations; every outer trial independently regenerates data and null. No resampling failed trials."
+  },
+  "gates": {
+    "positive": "At least 0.80 detection in 200 trials for each H/F cell; also report Wilson bounds",
+    "negative": "At most .05 empirical flag rate AND Wilson 95 upper <=.05 in each 200-trial null cell",
+    "wrong_key": "At least .99 fail AND exact one-sided 95 CP upper PASS <=.03 per 200 fresh-proposal bank",
+    "integrity": "Full baseline tree hash equality; original adapter hash equality; fast/reference equality; read allowlist audit; vault remains closed"
+  },
+  "failures": "Keep every failed cell. No change to plan, scorer, seeds, noise or thresholds after outcomes. A failed cell limits qualification; repairs require separate attempt.",
+  "not_qualified_here": [
+    "real reserved geometry and observed H/F noise",
+    "B N1-N4 candidate selection and candidate-specific power",
+    "historical C list/variant/arm search and fake-list fitted-key trap at maximum complexity",
+    "v7.2 whole-key admission/coherence extension",
+    "vault release or budget spend"
+  ],
+  "repair": {
+    "from": "../FAILURE.json",
+    "scope": "Native Python int for callback return only; root path adjusted for nested folder",
+    "outcomes_seen": 0
+  }
+}

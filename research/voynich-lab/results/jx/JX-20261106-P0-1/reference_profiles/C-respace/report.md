@@ -1,0 +1,31 @@
+# JX Phase0 reference_profiles/C-respace
+
+**DESCRIPTIVE_ONLY**
+
+```json
+{
+  "J_specificity_predicate": true,
+  "shuffle_equivalence": true,
+  "word_bins": [
+    {
+      "bin": 3,
+      "accuracy": 0.92,
+      "ci": [
+        0.8770053475935828,
+        0.9587628865979382
+      ],
+      "passed": true
+    },
+    {
+      "bin": 4,
+      "accuracy": 1.0,
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "passed": true
+    }
+  ],
+  "not_a_known_zero_reference": true
+}
+```

@@ -1,0 +1,46 @@
+PROSPECTIVE IN IMAGE VARIABLE ONLY — text events exposed (v100/v102).
+Two independent model picture-rating sets; initial agreement before adjudication/OT merge.
+
+Original calls:336; accepted page responses A128/168, B164/168.
+Paired frozen physical lines: 912 / 1145. H/F are not duplicated observations.
+G6 (H-IMG): kappa=0.7005823251374582 (137993/196969); NOT ESTIMABLE: MISSING REGISTERED-LINE RATINGS.
+G2 (H-PLANT): kappa=0.7358105188734828 (18733/25459); NOT ESTIMABLE: MISSING REGISTERED-LINE RATINGS.
+
+The displayed kappas describe complete pairs only. They are diagnostic and cannot pass either primary gate because some frozen registered lines lack paired valid ratings. Missing responses are never converted into NO.
+
+G6 is six-way PL/VE/FG/CE/OT/NO before OT merge. G2 is PL/not-PL. Both use exact unweighted Cohen kappa>=0.60 on the initial two raters; no adjudication may rescue initial gates.
+
+Models:
+  A: claude-sonnet-4-5-20250929
+  B: claude-opus-4-5-20251101
+
+Each call used a new process, random neutral workspace and session UUID; identical picture-only manual plus exactly one native source image. Settings/MCP/filesystem/command tools were disabled. StructuredOutput was the only available tool. Raters received no source identifiers, text/EVT, geometry, results, other page context or other rater response. A shared vendor/training distribution can still correlate errors; this is model agreement, not external ground truth.
+
+Original failure reasons:
+  A: Normalized box outside image or degenerate: 32
+  A: TRANSPORT_OR_PROCESS_FAILURE: 9
+  B: TRANSPORT_OR_PROCESS_FAILURE: 9
+  B: MODEL_CALL_FAILURE: 1
+
+Separately documented technical recovery: 7 no-annotation native failures, 7 accepted first semantic annotations. Original failures remain unchanged. This supplement was frozen during collection, before label derivation/kappa, not misrepresented as part of the original pre-collection freeze. No completed/invalid semantic response was repeated or repaired.
+
+COORDINATE LIMITATION: synthetic outlined-square checks identified OT but produced inaccurate boxes. All those failures are preserved in SYNTHETIC-COORDINATE-RECEIPTS.json. Schema/provenance checks do not qualify coordinate accuracy, and agreement does not establish truthful image context. The user explicitly authorized proceeding with this limitation.
+
+TIMING EXCEPTION: v4.2 was not frozen before initial registration. The retained45 source lines and subsequent source review were kept with that exception; this collection did not alter the1145-line geometry.
+
+Nearest context: native edge-to-edge rectangle distance divided by frozen line-box height; nearest category within2 heights, otherwise NO. Edge-distance ties use center distance, area and geometry only, never category priority. Exact coincident boxes with conflicting categories invalidate a page. Normalized bounds are checked without clipping or analyst repair. No pictures on a complete page is a legitimate NO context.
+
+Confusion matrices:
+G6 categories: PL, VE, FG, CE, OT, NO
+  [330, 2, 5, 0, 0, 37]
+  [0, 0, 0, 0, 0, 0]
+  [5, 0, 96, 0, 0, 63]
+  [12, 0, 0, 144, 0, 0]
+  [12, 0, 0, 0, 0, 9]
+  [45, 0, 0, 0, 4, 148]
+G2 categories: PL, not-PL
+  [330, 44]
+  [74, 464]
+
+Raw responses, original failures and model/session/hash receipts retained. Agreement.json and LINE-CONTEXT-A/B.csv contain the category/line crosswalk; no text outcomes are joined.
+Adjudication, OT merge, support, scientific controls, H-IMG/H-PLANT tests and outcome joins were NOT RUN. v103 remains parked; no Rosettes leave-out grids.

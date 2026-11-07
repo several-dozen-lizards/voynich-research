@@ -1,0 +1,1873 @@
+## <f0.A> {}
+# Last edited on 1998-12-05 11:22:03 by stolfi
+#
+# AN INTERLINEAR ARCHIVE OF VOYNICH MANUSCRIPT TRANSCRIPTIONS IN EVA
+# ==================================================================
+#
+# OVERVIEW
+#
+# Edited by J. Stolfi
+# Release 1.6e6 - ?? Dec 1998
+#
+# This file was derived mainly from
+#
+#   INTERLN.EVT file version 1.6, by Gabriel Landini (27 Sep 1996)
+#
+#   Partial transcriptions by John Grove, posted to the Voynich mailing list.
+#
+#   Partial transcriptions by Jorge Stolfi.
+#
+#   A COMPLETE transcription by Takeshi Takahashi (25 Nov 1998).
+#
+# The bulk of the text taken from INTERLN.EVT consisted of the
+# historical (punchcard) transcriptions by W. Friedman, M. D'Imperio,
+# C. Currier, and others, re-typed, edited and published by Jim Reeds,
+# Jim Guillogly and Jacques Guy. See sections <f0.I> and <f0.J> for more
+# details.
+#
+# The version by T. Takahashi was fetched from his site on 25 Nov
+# 1998. It is the first complete transcription of the VMS, and the
+# only one in this file that uses the full EVA encoding (including
+# "weirdos").
+#
+# Extensive edits were made to the above files by J. Stolfi, mostly
+# affecting comments, line and paragraph breaks, and line numbering.
+# Here is a quick summary:
+#
+#   Split into separate files (one per textual unit).
+#
+#   Added "text unit" codes (usually ".P") to main text lines.
+#
+#   Mapped to the EVA encoding.
+#
+#   Unfolded  '[|]' choices into separate lines.
+#
+#   Added many new transcriptions and comments.
+#
+#   Corrected many line-breaking errors in the interlinear file.
+#
+#   Abolished the "astro"/"cosmo" distinction; it is all "cosmo" now.
+#
+#   Added unit header lines "<fNNN.UU> {...}" besides page headers.
+#
+# On the other hand, no text characters or word breaks were
+# (consciously) changed. More details about the edits can be found in
+# the other parts of this introduction (sections <f0.*>).
+#
+## <f0.I> {}
+# Last edited on 1998-12-19 23:29:34 by stolfi
+#
+# FILE INTERLN.EVT VERSION 1.6
+# Original description by by Gabriel Landini, 27 Sep 1996.
+#
+# [ Amendments/additions by J. Stolfi in "[]" ]
+#
+# This file [ INTERLN.EVT ] is an interlinear version of the Voynich
+# manuscript transcriptions from:
+#
+# a) P. Currier + new additions by the VMS list members (Jim Gillogly,
+#    Jim Reeds, Mike Roe 1990-1994)
+# b) the First Study Group (W. Friedman 1945-1949)
+# c) other pages transcriptions (Don Latham 1996, Mike Roe 1996,
+#    John H. Tiltman 1951, Karl Kluge 1992, Jim Reeds 1996)
+#
+# Please report any problems to: G.Landini@bham.ac.uk or to the Voynich
+# list: Voynich@rand.org
+#
+# To join the Voynich list, send e-mail to Voynich-request@rand.org
+#
+# I will be responsible for keeping this file corrected and updated,
+# so if you find any corrections, please contact me so they can be
+# included in the next version of this file. All credits and thanks to
+# the members of the Voynich list who made the original transcriptions
+# available on line.
+#
+# This file was produced for the EVMT project (European Voynich
+# Manuscript Transcription) by G. Landini and R. Zandbergen. We intend
+# to transcribe the whole manuscript from T. C. Petersen's hand
+# transcription of a set of photostats (1931) and from previous
+# transcriptions available in machine readable format. The
+# transcription will use the EVA alphabet that will allow translation
+# of the document into the three most common alphabets associated with
+# the manuscript: FSG alphabet, Currier's alphabet and Frogguy (by
+# Jacques Guy).
+#
+# INTERLN17.EVT is based on the files: voynich.now, FSG.NEW and
+# tiltman.txt with some small corrections. The Currier version was
+# originally coded in Currier's alphabet. I translated it to FSG
+# "enhanced" alphabet using Jacques Guy's BITRANS program and a set of
+# rules CUR2FSG2 based on a message by Jim Reeds to the Voynich
+# mailing list.
+#
+# The FSG alphabet does not contain the Currier characters 6 and 7. To
+# preserve these, characters 6 and 7 were kept unchanged in the resulting
+# FSG version. Currier 6 usually corresponds to K in FSG, while 7 was
+# transcribed as K or 8 by the FSG team.
+#
+# I added a few "end of line" - and "end of paragraph" = marks where missing
+# to keep line lengths equal between versions.
+# All double spaces ",," were replaced with single spaces.
+#
+# FORMAT OF THIS FILE
+# -------------------
+#
+# Logical divisions
+# -----------------
+#
+# The file is divided into logical "pages", which are subdivided into
+# "units", so that each unit contains only one type of text (paragraphs,
+# labels, circular lines, etc; see section <f0.S> for more details.
+#
+#
+# Locators
+# --------
+#
+# [ Locators are constructs used to identify a page, a logical text
+# unit, or a line of the VMS. Locators usually ] appear in angle brackets <>.
+#
+# The format of a [ page locator ] is: "f" plus the folio number, plus
+# "r" for "recto" or "v" for "verso", and sometimes a further number
+# for complex folios, [ all within <> ]. Ex: <f1v> indicates folio 1
+# verso; [ <f101r2> indicates the second page of the fold-out folio 101,
+# recto. See Jim Reeds site for a complete list of folios and
+# their division into pages. ]
+#
+# [ A unit locator has the form <fNNN.UU> where <fNNN> is the page
+# locator and UU is a tag that identifies the unit within the page:
+# typically "P" or "P1", "P2",... for paragraph-formatted blocks,
+# "L1", "L2", ... for labels, and so on. ]
+#
+# [ A line locator has the form <fNNN.UU.LL;T> where <fNNN.UU> is
+# the unit locator; LL is the line number; and T is the transcriber's
+# code.
+#
+# The line number is a non-negative integer, optionally followed by a
+# lowercase letter { a ... e }. The transcriber code is an uppercase
+# letter. ]
+#
+# In a few places there was a "first" line not present in one of the
+# other versions. These lines were numbered [ "0", or "0a", "0b",
+# etc... Examples: <f41v.T.0;C>, <f84v.P.0a;C>, <f84v.P.0b;F>. ]
+#
+# The unit tags and line numbers for labels and other non-paragraph
+# text were standardized across versions, in all cases where there
+# were conflicts. The original locators were usually retained as '{}'
+# comments at the end of the line. ]
+#
+#
+# Line format
+# -----------
+#
+# [ Each line in the file can be
+#
+#   (a) a /line comment/, identified by a "#" in column 1.
+#
+#   (b) a /page header/ or /unit header/, containing a page or unit locator
+#       in column 1, followed by "parsable information";
+#
+#   (c) a /data line/, with a line locator in columns 1-19 plus one line of
+#       Voynich text starting on column 20 (which may contain in-line comments).
+#
+# To simplify parsing by Unix tools, the page/unit header lines (b)
+# were "passivated" by inserting "## " in front of them. These are the
+# only lines that begin with "##". ]
+#
+# As in the original transcription files, text limited by curly brackets {}
+# is a comment.
+#
+#
+# Transcriber codes
+# -----------------
+#
+# [ The following transcriber codes were inherited from INTERLN.EVT: ]
+#
+#   C: Currier's transcription plus new additions from members of the
+#      voynich list as found in the file voynich.now.
+#   F: First study group's (Friedman's) transcription including various
+#      items as found in the file FSG.NEW.
+#   T: John Tiltman's transcription of some pages.
+#   L: Don Latham's recent transcription of some pages.
+#   R: Mike Roe's recent transcription of some pages.
+#   K: Karl Kluge's transcription of some labels from Petersen's copies.
+#   J: Jim Reed's transcription of some previously unreadable characters.
+#
+# [ The following codes were added by J. Stolfi after 05 Nov 1997,
+# in the unfolding of "[|]" groups:
+#
+#   D: second choice from [|] in "C" lines.
+#   G: second choice from [|] in "F" lines, mostly from [1609|16xx].
+#   I: second choice from [|] in "J" lines.
+#   Q: second choice from [|] in "K" lines.
+#   M: second choice from [|] in "L" lines.
+#
+# The following codes were assigned by J. Stolfi for use in
+# "new" transcriptions:
+#
+#   H: Takeshi Takahashi's full transcription (see f0.K).
+#   N: Gabriel Landini.
+#   U: Jorge Stolfi.
+#   V: John Grove.
+#   P: Father Th. Petersen (a few readings reported by K. Kluge).
+#   X: Denis V. Mardle.
+#   Z: Rene Zandbergen.
+# ]
+#
+#
+# Parsable information
+# --------------------
+#
+# Rene Zandbergen has added the Parsable Information to this file:
+#
+# A special type of in-line comment appears after the [ page/unit
+# locator in page/unit header lines (type b1) ]. We call this
+# "parsable information". The information is coded in "variables" set
+# to values specific for that [ page/unit ], to facilitate the parsing
+# and filtering using VTT. The variable names are single characters
+# preceded by the $ symbol and they take as value a single character:
+#
+#      $I = illustration type  (T,H,A,Z,B,C,P,S)
+#           Text, Herbal, Astronomical, Zodiac, Biological, Cosmological,
+#           Pharmaceutical or Stars.
+#      $Q = Quire              (A-T)
+#      $P = page in quire      (A-X)
+#      $L = Currier's language (A,B)
+#      $H = Currier's hand     (1,2,3,4,5,X,Y)
+#      $N = has non-Voynich text   (Y)
+#      $K = has key-like sequence  (Y)
+#      $X = has extraneous writing (Y)
+#
+#    Ex:  <f5r> {$I=H $Q=A $P=I $L=A $H=1 $N=Y} indicates a Herbal page
+#    in quire A, page I, Currier Language A, hand 1 and has non-Voynich
+#    text. Refer to the VTT documentation for details on how to use the
+#    parsable information.
+#
+#
+# Filler characters
+# -----------------
+#
+# [ The filler characters "!" and "%" are used to align the various
+# version of the same line, with slightly different meanings.
+#
+# The "%" filler is used for relatively long stretches (at least one
+# full word, usually next to or across a line break) that were
+# obviously skipped or lost in one particular transcription of a line.
+# A "%" can be interpreted as "this transcription contains no
+# information about this part of the VMS text." Thus a line that is
+# omitted from a particular version is equivalent to a line full of
+# "%"s.
+#
+# The "!" filler is used for all other purposes. It denotes a
+# character or word break that was either skipped or lost, or that
+# (according to the transcriber) does not exist. In particular "!" is
+# generally used where other versions have {}-comments.
+#
+# It is always OK to insert a "!" anywhere in the Voynich text. It is
+# also OK to use "!" instead of "%", although the latter is more
+# informative, and can be handled differently when computing
+# "majority" and "consensus" versions. That is, "%" means "no vote on
+# this character" while "!" means "one vote for there being no
+# character here".
+#
+# Note that the original INTERLN file used "%" and "!" as fillers
+# with somewhat different meanings. ]
+#
+#
+# Alternative versions
+# --------------------
+#
+# The Friedman version (FSG.NEW) is composed of various items and
+# therefore there are variations within FSG.NEW. [ In INTERLN.EVT,
+# this variation was ] indicated as [A|B], meaning that one item has a
+# character transcribed as an "A" and the other a "B". [ These '[|]'
+# constructs were later unfolded into separate lines, identified by
+# distinctive transcriber codes; see the table above. ]
+#
+# Because the brackets and the "or" symbol | also break the
+# synchronism but do not indicate any Voynich characters in the
+# sequence, the exclamation mark "!" was used to indicate that the
+# other version has extra characters that do not code Voynich text. ]
+#
+#
+# Breaks and spaces
+# -----------------
+#
+# [ Breaksin the text are indicated according to the EVA conventions:
+#
+#     ","  A dubious word break.
+#
+#     "."  A definite word break.
+#
+#     "-"  In line-final position: a line break within a paragraph.
+#          Elsewhere: a major break in the text---an extra-wide
+#          gap, an intruding figure, a vellum defect, etc..
+#
+#     "="  Always in line-final position: a paragraph break
+#          (defined by extra interline space, use of <p> and <f> gallows,
+#          incomplete previous line, end of page, etc.
+#
+# The word breaks ("." and ",") are taken from the transcription. The
+# figure, line, and paragraph breaks ("-" and "=") were inserted by
+# the editord of the interlinear, by looking at the reproductions of
+# the VMS, without regard for the transcriber's opinion. This should
+# not matter much, since the line breaks are hardly in question, and
+# most paragraph breaks are fairly obvious too.
+#
+# Every line must end with either "-" or "=", or, in the case of
+# circular lines, with "." or ",". There should be at least one normal
+# letter between two succesive break characters (",", ".", "-", or
+# "=").
+#
+# ... ]
+#
+## <f0.J> {}
+# Last edited on 1998-12-05 11:19:20 by stolfi
+#
+# FILE FSG.NEW
+# Original description by Jim Reeds, 18 Jun 1994
+#
+# [ Amendments/additions by J. Stolfi in "[]" ]
+#
+# [ The file fsg.new is a ] combined version of all First Study Group
+# transcriptions found in William F. Friedman Collection, Marshall
+# Library, Lexington, Virginia.
+#
+# These are:
+#
+#   Item 1609, an almost complete transcription of all of the VMS
+#
+#   A transcription found in folder 1613, of f111v through f114r
+#
+#   An unnumbered item, seemingly a partial draft of 1609, of f41r - f58r
+#
+# Comments in item 1609 have not been transfered to this file.
+#
+# These have been edited together, with points of difference indicated
+# thus:  toma[y|h]to, meaning the one version reads tomayto and the other
+# reads tomahto.
+#
+# Line ends have been marked with - and paragraph ends with =
+#
+# Line ends have been ruthlessly supplied from other partial transcriptions
+# of the VMS and in some cases from inspection of photocopies.
+#
+# Since much of the the FSG transcription was unchecked, there are numerous
+# transcription blunders, caused by eye skip, line omission, and possibly
+# by IBM card loss.  In some cases these mistakes were so severe that it
+# was impossible to insert line ends correctly.
+#
+# [ Many additional line breaking and ordering errors in the FSG
+# transcriptions were fixed by J. Stolfi, after conversion to EVA.
+# Most (but probably not all) of these fixes are listed in section
+# <f0.W>. ]
+#
+## <f0.K> {}
+# Last edited on 1998-12-19 18:38:45 by stolfi
+#
+# TAKESHI TAKAHASHI'S FULL TRANSCRIPTION
+#
+# Takeshi Takahashi announced on 25 Nov 1998 the first
+# complete, single-handed transcription of the VMS:
+#
+#   http://www3.justnet.ne.jp/~ttakahashike/voynich/pages/index.htm
+#
+# In his words, it was "hard work and took me half a year to
+# transcribe". We can believe that.  He adds:
+#
+#   ------------------------------------------------------------
+#   I transcribed in EVA solely by referencing the VMs. I did not
+#   cross-reference with either FSG or the Currier transcriptions.
+#
+#   I tried to transcribe as the text appeared, so I sometimes ignored
+#   apparent spaces between words.
+#
+#   Maybe this is not a good analysis. (I mean, originally two words, maybe,
+#   at some case, I recognized one word. It is very difficult to distinguish
+#   a space.)
+#
+#   I had difficulty in distinguishing <a> from <o>, <r> from <s> and <g>
+#   from <m>.
+#
+#   When I couldn't make out a tail on an <a>, I transcribed <o>.
+#
+#   I distinguished <cs> from <Sh>, but I have no idea whether this
+#   distinction is necessary or not.
+#  ------------------------------------------------------------------
+#
+# Takeshi's transcription was published in HTML format, with word breaks
+# encoded as " ". Merging with the other transcriptions required
+# extensive edits to that file, affecting mainly line breaks,
+# paragraph marks, and label ordering.  The main changes were:
+#
+#   Removed HTML formatting.
+#
+#   Split, merged and rearranged some lines.
+#
+#   Added or removed "#"-comments, "{}"-comments and "!" fillers.
+#
+#   Changed some spacers (".", "-", "=").
+#
+#   Changed HTML-style weirdo notation "&nnn;" to 8-bit chars and vice-versa.
+#
+# On the other hand, the text characters and word division were not changed,
+# so all the edits can be considered "cosmetic surgery".
+#
+## <f0.M> {}
+# Last edited on 1998-12-12 04:15:23 by stolfi
+#
+# DIFFERENCES BETWEEN INTERLN.EVT AND THE PRESENT FILE
+# By Jorge Stolfi since Sep 1997
+#
+# I made many changes to the format and comments
+# of Gabriel's INTERLN.EVT, after fetching it on Sep/Oct 1997.
+#
+# * I converted the file to the EVA alphabet.  This step is
+#   described in more detail in section <f0.V>.
+#
+# * I expanded lines with the "[|]" notation into line pairs
+#   with different transcriber codes.  This step is described
+#   in section <f0.U>.
+#
+# * I split the interlinear into many separate files: one file
+#   for each page, containing only comments, and one file for each
+#   "text unit" or "locus" (block of homogeneous-looking text) within
+#   the page. This step is detailed in section <f0.S>.
+#
+# * I replaced some non-FSG characters found in INTERLN.EVT by "*" or by
+#   valid EVA characters, as it seemed appropriate, usually leaving the
+#   original as an {}-comment.
+#
+# * I fixed many missing or bogus "-" and "=".
+#
+# * I fixed several line-breaking errors in INTERLN.EVT,
+#   mostly cases where the last character of a line was omitted and
+#   entered as a separate word on the following line. I tried to
+#   record all these fixes in section <f0.W>.
+#
+# * I reassigned the text unit codes  in a more consistent
+#   manner across the manuscript.  Specifically, to each *set* of
+#   labels in a text unit (e.g. all the stars, or all the spokes) I
+#   assigned a single text unit code, e.g. "L1", "L2", etc..
+#
+# * I assigned also to the "anonymous" units (paragraph-formatted text)
+#   an explicit "P" code, or "P1", "P2", ... on pages where the
+#   paragraphed text was broken by labels or other kinds of text.
+#   (There are a few exceptions; for instance, on f66r (the three-way
+#   table), I used "R" for the anonymous locus (the right-hand
+#   column).
+#
+# * I added various new transcriptions, mainly by John Grove
+#   and myself, plus some items by R. Zandbergen and R. Firth.
+#
+# * I merged Takeshi Takahashi's complete transcription with the
+#   interlinear.   See seection <f0.K>.
+#
+# * I moved all comments relating to a specific text unit to the
+#   beginning of that unit. Sometimes this required splitting,
+#   rearranging, or otherwise editing the comments.
+#
+# * I removed all comments of the form "# page NNN"  since that
+#   numbering was inconsistent with the binding order. (For one thing,
+#   the last page f116v, which should be even, was numbered 235).
+#
+# * I replaced the word "folio" in comments by "panel" or "page",
+#   whenever it meant only one face of a folio (or one part of a
+#   multi-part fold-out).
+#
+# * I added many descriptive comments, and merged into the file
+#   several scattered databases (such as Jim Reeds's color usage
+#   tables, Petersen's plant names, etc.)
+#
+# * I fixed the line locators <...> of labels so that all
+#   transcriptions of the same label now have the same line locator.
+#   I retained the original locators as {}-comments at the
+#   end of each line.
+#
+# * I split multiline labels so that each line of each label
+#   is now entered in a separate line of the file, with a distinct
+#   line locator. (Embedded "-"s should now be used only for intrusions of
+#   a figure or a vellum defect in a single line of the manuscript.)
+#
+# * I appended a "=" to the end of each label and isolated text line.
+#   For multiline labels, I used "-" to terminate each line but the
+#   last one.
+#
+# * I regularized the transcription of circular text, sometimes
+#   shifting the starting point. I used an "=" terminator where the
+#   starting poing is clearly marked, "-" where it is merely a
+#   larger-than-normal gap, and "." where it is an arbitrarily chosen
+#   word gap.
+#
+# * I replaced all page header lines (containing only a page locator
+#   <...> and no Voynich text) by special "#" comments, compatible
+#   with R. Zandbergen's VTX tool. These comments have the form
+#
+#       ## <fNNN>        {$I=i $Q=q $P=p $L=l $H=h $X=x}
+#
+#   where
+#
+#       "NNN" is a page f-number (folio, side, and division, e.g f86v3)
+#       "i"   is the section code ("T" for text, "H" for herbal, etc.);
+#       "q"   is the quire code, a letter in [A-T];
+#       "p"   is a letter in [A-Z] identifying the panel within the quire;
+#       "l"   is the "language" in Currier's sense, "A" or "B";
+#       "h"   is the calligraphic "hand", a character in [1-5XY];
+#       "x"   is a miscellaneous attribute (a letter).
+#
+#   The "$L" and "$H" attributes are omitted when unknown. The "$X"
+#   attribute is present only for page f17r, which is marked "$X=U"
+#   (for the extraneous writing?).
+#
+#   Be warned that there are some discrepancies between these "$I"
+#   attributes and the section recorded in Stolfi's UNITS file. The
+#   UNITS file is more conservative, and assigns section "?" to some
+#   text-only pages whose "$I"-codes were apparently assigned by
+#   analogy with adjacent pages.  Moreover, the UNITS file does
+#   not distinguish between "astro" and "cosmo" pages.
+#
+# * I also added "unit header lines", similar to the page headers above,
+#   at the start of each text unit within a page.  The format of
+#   these unit headers is
+#
+#       ## <fNNN.UU>     {}
+#
+#   where <fNNN> is the page locator, and "UU" is the tag identifying
+#   the unit ("locus") within the page. Note that unit headers are
+#   distinguished from page headers by the "." in the locator. The
+#   empty attribute list "{}" was added for uniformity and future
+#   expansion.
+#
+# * I replaced purely alphabetic line numbers "a" and "b" by "0a"
+#   and "0b".  Now the line number always begins with digit, and the
+#   unit code always begins with a letter.
+#
+# * I created dummy files for all the missing pages (as deduced from
+#   the folio numbers in the VMs itself).  For that purpose, I assumed
+#   each missing folio had only two panels (recto and verso), and
+#   arbitrarily assigned them "$P"-codes higher than the "non-missing"
+#   panels, and section "$I"-code "M" (for "missing").
+#
+# * I hereby apologize for using so many "I"s in this section.
+#
+## <f0.S> {}
+# Last edited on 1998-12-12 04:14:45 by stolfi
+#
+# SPLITTING LANDINI'S INTERLINEAR INTO TEXT UNITS
+# J. Stolfi 12 Oct 1997
+#
+# Overview
+#
+#   To simplify(?) the handling and editing of the interlinear
+#   file, I split each page into what I called "textual units".
+#
+#   I defined a textual unit as a maximal subset of a page that
+#   is contiguous in "normal" reading order, and has
+#   homogeneous "text type"; which is one of:
+#
+#     "parags"
+#
+#       Apparently prose, in multi-line paragraphs. The last line in
+#       each paragraph ends with "=", other lines end with "-".
+#       Paragraph boundaries are guessed from line spacing,
+#       right-margin justification, and presence of <p> and <f>
+#       gallows.
+#
+#     "starred-parags"
+#
+#       Like parags, but with a star-like symbol in front of each
+#       paragraph.
+#
+#     "itemized-parags"
+#
+#       Like parags, but with a single Voynich letter or symbol
+#       in front of each paragraph.  Here the letters are indicated in
+#       "{}" comments; they are also listed separately as a "letters" unit.
+#
+#     "circular-lines"
+#
+#       Text where each line is written around a circle in some
+#       diagram.  The lines are terminated by "=", "-", or "."
+#       depending on how well is the starting point marked.
+#
+#     "radial-lines"
+#
+#       Text where each line is written along a ray in some diagram.
+#       Each line is terminated by "=".
+#
+#     "titles"
+#
+#       Text where each line is a title for a page or figure.
+#       This type includes John Grove's "titles" or "signatures",
+#       non-justified lines found below some paragraphs.
+#       Each title is terminated by "=".
+#
+#     "itemized-lines"
+#
+#       The right-hand column of an itemized list ("key-like
+#       sequence").  Here each line of text is an "item" of the list,
+#       and is terminated by "=".
+#
+#     "labels"
+#
+#       List of labels attached to parts of figures.
+#       Also the column of words from the table in f66r (page 117).
+#       Here each label is terminated by "=", and multiple
+#       lines of the same label are separated by "-".
+#
+#     "letters"
+#
+#       The single-letter labels in itemized lists. Also the column of
+#       single letters in f66r (page 117). Letter sequences written
+#       horizontally are transcribed all on the same line, with "-"
+#       separators. Other sequences are transcribed one letter per
+#       line, with "=" terminators.
+#
+#     "-"
+#
+#       This "text type" is used for files or units that contain
+#       no Voynich text, only comments.
+#
+#     "?"
+#
+#       This text type is used for units that (presumably) contain
+#       Voynich text of unknown type (e.g. missing pages).
+#
+# Unit numbering and file names
+#
+#   Each unit is stored as a separate file named "fNNN.UU", where
+#   "NNN" is the folio-based page number (folio, side, and division,
+#   e.g. f85r2), and UU is the unit code within the page.
+#
+#   Descriptive comments that apply to a whole panel are stored in a
+#   separate file named "fNNN" (without location code). General
+#   comments about the VMS were moved to files <f0.*>.
+#
+#   Note that it was sometimes necessary to split a page with N
+#   distinct text types into *more* than N units, in order to preserve
+#   the "natural" ordering of the text. For example, the transcribed
+#   "pharma" pages have blocks of normal text alternating with rows of
+#   labels; each block of text and each row of labels have therefore
+#   been made into a separate unit.
+#
+#   Note that any logical page or textual unit that spans multiple panels
+#   gets its page number from its first full-size panel, in "normal" reading
+#   order.  So a page that spans panels f101r1 and f101r2 would be numbered
+#   <f101r1>; whereas one that spans f101v1 and f101v2 would be numbered
+#   <f101v2>.
+#
+# Detailed description of files
+#
+#   A detailed description of the splitting can be found in
+#   the "UNITS" file. Each line of UNITS describes one of the
+#   textual units above; it contains 8 fields separated by ":"
+#
+#     [1] a 4-digit sequence number, which can be used to sort the
+#         units in their "natural" reading order.
+#
+#     [2] the file name (fNNN or fNNN.UU).
+#
+#     [3] the "section", or apparent subject matter: "herbal", "bio", "cosmo",
+#         "pharma", "stars", "?" if unknown, or "-" if the file
+#         contains no text.
+#
+#     [4] the "language" in Currier's sense ("A", "B", "?" if unknown, "-" if no text).
+#
+#     [5] the "hand" ("1..5", "X", "Y", "?", or "-")
+#
+#     [6] the type of text ("parags", "labels", etc.; see list above)
+#
+#     [7] a sequential page number ("p001".. "p234"), in binding order;
+#         or "-" for files that are place-holders for missing folios.
+#
+#     [8] other comments
+#
+#   Any field may be followed by "?" denoting uncertainty.
+#
+## <f0.U> {}
+# Unfolding "[|]" alternatives
+# Last edited on 1998-12-19 18:39:27 by stolfi
+#
+# NOTES ON THE UNFOLDING OF "[|]" ALTERNATIVES
+# Jorge Stolfi 05 Nov 1997
+#
+# To simplify processing of the text, I expanded the "[|]" notation
+# used in Gabriel Landini's interlinear file v1.6. Each line that
+# included one or more such alternations was replaced by a pair lines,
+# one using only the first choice of every alternation, the other
+# using only the second choice out of every alternation.
+#
+# For the extra lines resulting from the unfolding of '[|]' constructs,
+# I used these codes:
+#
+#   D: second choice from "C" lines
+#   G: second choice from "F" lines
+#   I: second choice from "J" lines
+#   Q: second choice from "K" lines
+#   M: second choice from "L" lines
+#
+# Unfortunately I had to remove the "!" and "%" padding characters in
+# the unfolding process, since they no longer provided the proper
+# alignment between the unfolded versions and un-unfolded versions.
+# Fixing this problem would have required processing all versions of
+# of one line at once, and effectively computing a consensus for it.
+#
+## <f0.V> {}
+# Last edited on 1998-12-05 11:25:59 by stolfi
+#
+# CONVERSION OF INTERLN.EVT TO THE EVA ENCODING
+# Jorge Stolfi 05 Nov 1997 (Corrected 31 Mar 1998)
+#
+# This step was done with "fsg2eva", an AWK
+# script. The main part of the script follows:
+#
+#   function fsg_to_eva(txt)
+#   {
+#     # Converts a chunk of comment-free FSG text to EVA
+#
+#     # We discard  "%" and "!" since the conversion
+#     # will destroy synchronism anyway.
+#     gsub(/[% !]/, "", txt);
+#
+#     # Now convert
+#     gsub(/IIIE/, "iiil",  txt);
+#     gsub(/IIIK/, "iiim",  txt);
+#     gsub(/IIIL/, "iiin",  txt);
+#     gsub(/IIIR/, "iiir",  txt);
+#     gsub(/IIE/,  "iil",   txt);
+#     gsub(/IIK/,  "iim",   txt);
+#     gsub(/IIL/,  "iin",   txt);
+#     gsub(/IIR/,  "iir",   txt);
+#     gsub(/IE/,   "il",    txt);
+#     gsub(/IK/,   "im",    txt);
+#     gsub(/IL/,   "in",    txt);
+#     gsub(/IR/,   "ir",    txt);
+#     gsub(/HZ/,   "cth",   txt);
+#     gsub(/PZ/,   "cph",   txt);
+#     gsub(/DZ/,   "ckh",   txt);
+#     gsub(/FZ/,   "cfh",   txt);
+#     gsub(/2/,    "s",     txt);
+#     gsub(/4/,    "q",     txt);
+#     gsub(/6/,    "g",     txt);
+#     gsub(/7/,    "j",     txt);
+#     gsub(/8/,    "d",     txt);
+#     gsub(/A/,    "a",     txt);
+#     gsub(/C/,    "e",     txt);
+#     gsub(/D/,    "k",     txt);
+#     gsub(/E/,    "l",     txt);
+#     gsub(/F/,    "f",     txt);
+#     gsub(/G/,    "y",     txt);
+#     gsub(/H/,    "t",     txt);
+#     gsub(/I/,    "i",     txt);
+#     gsub(/K/,    "m",     txt);
+#     gsub(/L/,    "n",     txt);
+#     gsub(/M/,    "iin",   txt);
+#     gsub(/N/,    "in",    txt);
+#     gsub(/O/,    "o",     txt);
+#     gsub(/P/,    "p",     txt);
+#     gsub(/R/,    "r",     txt);
+#     gsub(/S/,    "sh",    txt);
+#     gsub(/T/,    "ch",    txt);
+#     gsub(/V/,    "v",     txt);
+#     gsub(/Y/,    "x",     txt);
+#
+#     return txt
+#   }
+#
+# This procedure was applied to the Voynich text proper, preserving
+# the '#' and '{}' comments as well as the location codes.
+#
+# I had to edit manually some '{}' comments that contained Voynich
+# characters in FSG or Currier notation.  The units affected by this bug
+# were
+#
+#   f100r.P1  f100r.m  f100v.M  f103r.P  f104r.P  f49v.P  f65v.P
+#   f66r.R    f76r.R   f89r1.b  f89r2.b
+#
+# Note: The 05 Nov 1997 version of this script incorrectly mapped "IK"
+# to "ik" instead of "im". This error affected 79 lines of INTERLN.EVT
+# representing about 50 distinct words. The error was corrected on 31
+# Mar 1998, by manually editing the EVA translation of those lines.
+# The endings "IIIK", "IIK", and "K" were not affected by this error.
+#
+## <f0.W> {}
+# Last edited on 1998-12-12 14:22:43 by stolfi
+#
+# LINE BREAKING AND OTHER TRANSCRIPTION BUGS IN INTERLN.EVT
+# by Jorge Stolfi
+#
+# The following is a cumulative list of various transcription bugs
+# that were fixed by hand in the INTERLN.EVT file, after conversion to
+# the EVA encoding.
+#
+# These bug fixes affected mostly line breaking and formatting.
+# The main exception is a large number of "IIIR"s in some
+# transcriptions, which should have been "O"s.  Presumably they
+# were caused by a coding table error somewhere.
+#
+# Omitted from this list are hundreds of replacements of "." by "-"
+# where the text was interrupted by figures, and several dozen
+# replacements of "-" by "=" (or vice-versa).
+#
+# The locators given here assume that the "[|]" groups were
+# unfolded as explained in section <f0.U>.
+#
+# <f1r.17;C>      replaced "IIIR" by "O".
+# <f1r.18;C>      deleted "." at end of line.
+#
+# <f3v.4;C>       replaced "IIIR" by "O".
+# <f3v.13;C>      replaced "IIIR" by "O".
+#
+# <f6v.4;C>       replaced "IIIR" by "O".
+# <f6v.4;D>       replaced "IIIR" by "O".
+#
+# <f8r.10;F>      added "K" at end of line.
+# <f8r.11;F>      deleted "K." at beginning of line.
+# <f8r.13;F>      added "K" at end of line.
+# <f8r.14;F>      deleted "K." at beginning of line.
+# <f8r.17;F>      deleted whole line.
+# <f8r.18;F>      added "ODAR." at beginning of line.
+#
+# <f9r.3;F>       added "AK" at end of line.
+# <f9r.4;F>       deleted "AK." at beginning of line.
+#
+# <f11v.4;F>      added "OL" at end of line.
+# <f11v.5;F>      deleted "OL." from beginning of line.
+# <f11v.5;F>      added "K" at end of line.
+# <f11v.6;F>      deleted "K." from beginning of line.
+#
+# <f13r.1;F>      added "K" at end of line.
+# <f13r.2;F>      deleted "K." at beginning of line.
+#
+# <f13v.4;F>      added "DZG" at end of line.
+# <f13v.5;F>      deleted "DZG." from beginning of line.
+#
+# <f14r.2;C>      replaced "IIIL" by "O".
+# <f14r.12;F>     added "K" at end of line.
+# <f14r.13;F>     deleted "K" at beginning of line.
+#
+#
+# <f15r.9;F>      deleted ".G" at end of line.
+# <f15r.10;F>     added "G" at beginning of line.
+#
+# <f15v.7;F>      added "2" at end of line.
+# <f15v.8;F>      deleted "2." at beginning of line.
+#
+# <f17r.9;C>      replaced "IIIR" by "O".
+#
+# <f17v.16;F>     added "K" at end of line.
+# <f17v.17;F>     deleted "K." at beginning of line.
+#
+# <f18r.2;F>      added "IIIL" at end of line.
+# <f18r.3;F>      deleted "IIIL." at beginning of line.
+# <f18r.3;F>      added "K" at end of line.
+# <f18r.4;F>      deleted "K." at beginning of line.
+#
+# <f18v.4;F>      added "R" at end of line.
+# <f18v.5;F>      deleted "R." from beginning of line.
+#
+# <f19v.6;C>      replaced by "!!!!!!...!!!".
+# <f19v.6;F>      truncated after "TOHZG.2".
+# <f19v.6a;C>     new line, same as old <f19v.6;C>.
+# <f19v.6a;F>     new line, with the part of old <f19v.6;F> after "TOHZG.2".
+#
+# <f20v.10;F>     deleted "*." at beginning of line.
+#
+# <f23r.7;F>      added "K" at end of line.
+# <f23r.8;F>      deleted "K." at beginning of line.
+#
+# <f24r.4;F>      added "A" at end of line.
+# <f24r.5;F>      deleted "A." at beginning of line.
+#
+# <f24v.4;F>      deleted "G." at beginning of line.
+# <f24v.4;F>      deleted ".OCOR" at end of line.
+# <f24v.5;F>      added "OCOR." at beginning of line.
+#
+# <f25r.3;F>      added "N" at end of line.
+# <f25r.4;F>      deleted "N." at beginning of line.
+#
+# <f26r.2;F>      added "R" at end of line.
+# <f26r.3;F>      deleted "R." at beginning of line.
+#
+# <f26r.8;C>      replaced "IIIL" by "O".
+#
+# <f27r.9;F>      added "K" at end of line.
+# <f27r.10;F>     deleted "K." at beginning of line.
+#
+# <f27v.4;F>      bogus "=" in middle of line; replaced by ".".
+# <f27v.5;C>      replaced by "!!!!!...!!!!!".
+# <f27v.5;F>      truncated after "HZO.8OE".
+# <f27v.6;C>      added old <f27v.5;C> at beginning of line.
+# <f27v.6;F>      added the truncated part of old <f27v.5;F> at beginning of line.
+#
+# <f28v.1;C>      replaced "PZ" by "IIIL" (twice).
+#
+# <f29v.1;C>      replaced "IIIL" by "T".
+# <f29v.4;F>      deleted "-" between words 7 and 8.
+# <f29v.7;C>      deleted extra "-" between words 5 and 6.
+# <f29v.7;F>      deleted "--" between words 5 and 6.
+# <f29v.10;F>     inserted "-" in word 4 between "HZ" and "TG8".
+# <f29v.12;C>     replaced "IIIL" by "T".
+#
+# <f30r.3;F>      added "IK" at end of line.
+# <f30r.4;F>      deleted "IK." from beginning of line.
+# <f30r.12;F>     added "M" at end of line.
+# <f30r.13;F>     deleted "M." at beginning of line.
+#
+# <f30v.7;C>      replaced "IIIR" by "O".
+#
+# <f31r.15;F>     added "R" at end of line.
+# <f31r.16;F>     deleted "R." at beginning of line.
+#
+# <f31v.2;F>      deleted starting from "GDCCO"
+# <f31v.3;F>      created from parts of lines 2 and 4.
+# <f31v.4;F>      deleted up to "EDC8G".
+# <f31v.4;F>      added "K" at end of line.
+# <f31v.5;F>      deleted "K." at beginning of line.
+#
+# <f32r.2;F>      added "F" at end of line.
+# <f32r.3;F>      deleted "F." at beginning of line.
+#
+# <f32v.11;C>     replaced "IIIL" by "T".
+#
+# <f33r.5;C>      replaced "IIR" by "O".
+#
+# <f33v.1;F>      added ".C2" at end of line.
+# <f33v.2;F>      deleted "C2." from beginning of line.
+# <f33v.4;F>      added "M" at end of line.
+# <f33v.5;F>      deleted "M." at beginning of line.
+# <f33v.9;C>      replaced ".-" by "-".
+# <f33v.9;F>      replaced ".-" by "-".
+#
+# <f34r.7;F>      moved "IIR.AKK." to end of line.
+# <f34r.9;F>      "TZH" replaced by "THZ" (from ";C>" version).
+#
+# <f34r.4;C>      deleted right half after plant.
+# <f34r.4;C>      appended right half of <f34r.5;C>.
+# <f34r.4;F>      deleted right half after plant.
+# <f34r.4;F>      appended right half of <f34r.5;F>.
+# <f34r.5;C>      deleted right half after plant.
+# <f34r.5;C>      appended right half of <f34r.6;C>.
+# <f34r.5;F>      deleted right half after plant.
+# <f34r.5;F>      appended right half of <f34r.6;F>.
+# <f34r.6;C>      deleted right half after plant.
+# <f34r.6;C>      appended right half of <f34r.7;C>.
+# <f34r.6;F>      deleted right half after plant.
+# <f34r.6;F>      appended right half of <f34r.7;F>.
+# <f34r.7;C>      deleted right half after plant.
+# <f34r.7;C>      appended right half of <f34r.8;C>.
+# <f34r.7;F>      deleted right half after plant.
+# <f34r.7;F>      appended right half of <f34r.8;F>.
+# <f34r.8;C>      deleted right half after plant.
+# <f34r.8;C>      appended right half of <f34r.9;C>.
+# <f34r.8;F>      deleted right half after plant.
+# <f34r.8;F>      appended right half of <f34r.9;F>.
+# <f34r.9;C>      deleted right half after plant.
+# <f34r.9;C>      appended <f34r.10;C>.
+# <f34r.9;F>      deleted right half after plant.
+# <f34r.9;F>      appended <f34r.10;F>.
+# <f34r.10;C>     deleted line.
+# <f34r.10;F>     deleted line.
+#
+# <f34v.6;F>      deleted ".OET8AM" at end of line.
+# <f34v.7;F>      added "OET8AM." at beginning of line.
+#
+# <f35r.10;C>     replaced "IIIL" by "T".
+# <f36r.4;C>      replaced "IIR" by "K".
+#
+# <f36v.7;C>      replaced "IIIR" by "O".
+#
+# <f37r.10;F>     added "IIR" at end of line.
+# <f37r.11;F>     deleted "IIR." at beginning of line.
+# <f37r.5;C>      replaced "IIIL" by "O".
+# <f37r.6;C>      replaced "IIIL" by "O".
+#
+# <f37v.15;F>     added "N" at end of line.
+# <f37v.16;F>     deleted "N." at beginning of line.
+# <f37v.19;F>     truncated line after "4ODOIIIL.GDCCOE2".
+# <f37v.19a;F>    created line with part of <f37v.19;F>.
+# <f37v.19b;F>    created line with part of <f37v.19;F>.
+# <f37v.19;C>     renumbered <f37v.19b;C>.
+#
+# <f39r.4;F>      added "K" at end of line.
+# <f39r.5;F>      deleted "K." at beginning of line.
+# <f39r.14;C>     replaced "IIR" by "O".
+#
+# <f39v.6;C>      replaced "IIIR" by "O".
+# <f39v.10;F>     added "P" at end of line.
+# <f39v.11;F>     deleted "P." at beginning of line.
+# <f39v.12;F>     deleted from "8AN.ODZC8G.OHC8G." onwards.
+# <f39v.12;C>     deleted from "8AN.ODZC8G.OHC8G." onwards.
+# <f39v.P.13;F>   created from right half of <f39v.12;F>.
+# <f39v.P.13;C>   created from right half of <f39v.12;C>.
+#
+# <f40r.8;F>      added "K" at end of line.
+# <f40r.9;F>      deleted "K." from beginning of line.
+#
+# <f40v.7;F>      added "R" at end of line.
+# <f40v.8;F>      deleted "R." at beginning of line.
+#
+# <f41r.8;G>      deleted line.
+# <f41r.9;G>      added "4ODCC8G.ODC8G." at beginning of line, from <f41r.8;G>.
+# <f41r.10;C>     replaced "IIIR" by ".".
+#
+# <f41v.3;C>      replaced "IIIR" by "O" (twice).
+#
+# <f42r.9;C>      renamed <f42r.P2.9a;C>.
+# <f42r.9;F>      truncated line after "SOE.CHG.TARG".
+# <f42r.9;G>      deleted, tail became <f42r.9a;G>.
+# <f42r.9a;F>     created from tail of line <f42r.9;F>.
+# <f42r.9a;G>     created from tail of line <f42r.9;G>.
+# <f42r.14;F>     added "-{plant}8AIK" at end of line.
+# <f42r.15;F>     deleted "8AIK=" at beginning of line.
+#
+# <f42v.4;F>      added "K" at end of line.
+# <f42v.4;G>      added "K" at end of line.
+# <f42v.5;F>      deleted "K." at beginning of line.
+# <f42v.5;G>      deleted "K." at beginning of line.
+# <f42v.5;C>      replaced "IIIL" by "T".
+# <f42v.12;C>     replaced "IIIL" by "T".
+#
+# <f43r.4;G>      leading ".", deleted.
+# <f43r.8;F>      replaced "-8.8SC8G" on by "8-".
+# <f43r.8;G>      deleted from "-8.8SC8G" on.
+# <f43r.9;C>      replaced by <f43v.1;C>.
+# <f43r.9;F>      replaced by part of line 8 from "8SC8G" on.
+# <f43r.10;C>     replaced "IIR" by "O".
+# <f43r.12;C>     replaced "IIR" by "O".
+# <f43r.12;F>     added "M" at end of line.
+# <f43r.13;F>     deleted "M." at beginning of line.
+# <f43r.13;G>     deleted "M." at beginning of line.
+#
+# <f43v.1;C>      replaced by <f43r.9;C>.
+# <f43v.1;F>      added "G" at end of line.
+# <f43v.1;G>      added "G" at end of line.
+# <f43v.2;F>      deleted "G." at beginning of line.
+# <f43v.3;C>      replaced "IIIL" by "O".
+# <f43v.5;C>      replaced "IIIL" by "O".
+#
+# <f44v.5;F>      added "N" at end of line.
+# <f44v.5;G>      added "N" at end of line.
+# <f44v.6;F>      deleted "N." at beginning of line.
+# <f44v.6;G>      deleted "N." at beginning of line.
+# <f44v.10;C>     replaced "IIIR" by "*".
+#
+# <f45r.8;F>      added ".K" at end of line.
+# <f45r.8;G>      added ".K" at end of line.
+# <f45r.9;F>      deleted "K." at beginning of line.
+# <f45r.9;G>      deleted "K." at beginning of line.
+#
+# <f45v.6;F>      added "K" at end of line.
+# <f45v.6;G>      added "K" at end of line.
+# <f45v.7;F>      deleted "K." at beginning of line.
+#
+# <f46r.3;C>      replaced "IIIL" by "O".
+#
+# <f46v.7;G>      duplicate ".", replaced by single ".".
+# <f46v.7;C>      replaced "-ODCC8T2G....-" by "=".
+# <f46v.7;G>      replaced "-ODCC8T2G....-" by "=".
+# <f46v.7;F>      replaced "-ODCC8T2G....-" by "=".
+# <f46v.7a;C>     created from deleted part of <f46v.7;C>
+# <f46v.7a;G>     created from deleted part of <f46v.7;G>
+# <f46v.7a;F>     created from deleted part of <f46v.7;F>
+#
+# <f47r.9;C>      replaced "IIIL" by "O".
+#
+# <f47v.9;F>      added "M" at end of line.
+# <f47v.10;F>     deleted "M." at beginning of line.
+# <f47v.10;G>     deleted "M." at beginning of line.
+# <f47v.12;F>     duplicate ".", replaced by single ".".
+# <f47v.12;G>     leading ".", deleted.
+#
+# <f48r.3;C>      replaced "IIIL" by "O".
+#
+# <f48v.7;F>      bogus "=" in middle of line; replaced by ".".
+# <f48v.7;F>      added "G" at end of line.
+# <f48v.8;F>      deleted "G." at beginning of line.
+# <f48v.8;G>      deleted "G." at beginning of line.
+# <f48v.10;C>     replaced "=" by "-" at end of line.
+# <f48v.10;F>     deleted ".GDCC8AE.TDZG.....8ARG=" at end of line.
+# <f48v.10;F>     added "-" at end of line.
+# <f48v.10;G>     deleted ".GDCC8AE.*DZG.....8ARG=" at end of line.
+# <f48v.10;G>     added "-" at end of line.
+# <f48v.11;C>     created line with "!!!!...!!!!".
+# <f48v.11;F>     created line with "GDCC8AE.TDZG.....8ARG=" from <f48v.10;F>.
+# <f48v.11;G>     created line with "GDCC8AE.*DZG.....8ARG=" from <f48v.10;G>.
+#
+# <f49r.20;F>     added "M" at end of line.
+# <f49r.21;F>     deleted "M." at beginning of line.
+# <f49r.21;G>     deleted "M." at beginning of line.
+#
+# <f49v.16;F>     added "K" at end of line.
+# <f49v.16;G>     added "K" at end of line.
+# <f49v.17;F>     deleted "K." from beginning of line.
+# <f49v.17;G>     deleted "K." from beginning of line.
+# <f49v.19;F>     added "K" at end of line.
+# <f49v.19;G>     added "K" at end of line.
+# <f49v.20;F>     deleted "K." from beginning of line.
+# <f49v.20;G>     deleted "K." from beginning of line.
+# <f49v.23;F>     added ".R" at end of line.
+# <f49v.23;G>     added ".R" at end of line.
+# <f49v.24;F>     deleted "R." from beginning of line.
+# <f49v.24;G>     deleted "R." from beginning of line.
+#
+# <f50r.2;F>      added "AR.ODAK" at end of line.
+# <f50r.3;C>      replaced "IIIL" by "O".
+# <f50r.3;F>      deleted "AR.ODAK." from beginning of line.
+# <f50r.3;G>      deleted "AR.ODAK." from beginning of line.
+#
+# <f50r.2;C>      deleted ".OEAM.TCFT8G" from end of line (dupl above).
+# <f50r.4;C>      replaced "IIIL" by "O".
+# <f50r.4;F>      deleted ".2" from end of line.
+# <f50r.4;G>      deleted ".2" from end of line.
+# <f50r.5;F>      added "2" at beginning of line.
+# <f50r.5;G>      added "2" at beginning of line.
+# <f50r.7;C>      replaced "IIK" by "O".
+#
+# <f51r.7;C>      renamed <f51r.P.7a;C>.
+# <f51r.7;F>      truncated line after "8AM.GDAE8".
+# <f51r.7;G>      deleted; part of it became <f51r.7a;G>.
+# <f51r.7a;F>     created from second half of <f51r.7;F>.
+# <f51r.7a;F>     added "E" at end of line.
+# <f51r.7a;G>     created from second half of <f51r.7;G>.
+# <f51r.7a;G>     added "E" at end of line.
+# <f51r.8;F>      deleted "E." from beginning of line.
+#
+# <f51v.4;F>      added "K" at end of line.
+# <f51v.4;F>      added "K" at end of line.
+# <f51v.5;F>      deleted "K." from beginning of line.
+#
+# <f52r.7;F>      added "E" at end of line.
+# <f52r.7;G>      added "E" at end of line.
+# <f52r.8;F>      deleted "E." from beginning of line.
+# <f52r.8;G>      deleted "E." from beginning of line.
+#
+# <f52v.5;F>      added "K" at end of line.
+# <f52v.6;F>      deleted "K." at beginning of line.
+#
+# <f53v.2;F>      added "G" at end of line.
+# <f53v.3;F>      deleted "G." at beginning of line.
+#
+# <f54r.6;F>      added "AR" at end of line.
+# <f54r.7;F>      deleted "AR." at beginning of line.
+#
+# <f54v.8;C>      deleted bogus text after "ODAE.OK-".
+# <f54v.8;F>      deleted "G-" at end of line.
+# <f54v.9;F>      added "G" at beginning of line.
+#
+# <f55r.11;F>     added "M" at end of line.
+# <f55r.12;F>     deleted "M." at beginning of line.
+#
+# <f55v.5;C>      replaced "IIIL" by "O".
+# <f55v.11;F>     added "M" at end of line.
+# <f55v.12;F>     deleted "M." at beginning of line.
+#
+# <f56v.4;F>      added "M" at end of line.
+# <f56v.5;F>      deleted "M." at beginning of line.
+# <f56v.12;F>     added "M" at end of line.
+# <f56v.13;F>     deleted "M." at beginning of line.
+#
+# <f57r.7;F>      added "K" at end of line.
+# <f57r.8;F>      deleted "K." at beginning of line.
+#
+# <f58r.7;F>      added ".OHTG" at end of line.
+# <f58r.8;F>      deleted "OHTG." from beginning of line.
+# <f58r.24;F>     deleted ".OAR" at end of line.
+# <f58r.25;F>     added "OAR." at beginning of line.
+# <f58r.32;F>     truncated after "4ODAE8G", moved to <f58r.32a;F>.
+# <f58r.32a;F>    created from right 2/3 of <f58r.32;F>.
+#
+# <f66r.L.14;F>   bogus FSG "Z", replaced by "*".
+#
+# <f66r.3;C>      duplicate ".", replaced by single ".".
+# <f66r.24;C>     replaced "IIIR" by "O".
+#
+# <f66r.W.1;C>    replaced "IIE" by "H" (twice).
+# <f66r.W.1;C>    replaced "IR" by "T" (four times).
+# <f66r.W.1;C>    replaced "IE" by "G" (twice).
+#
+# <f66v.7;F>      bogus FSG "J", replaced by "*".
+#
+# <f68r1.3;C>     added "ODCCG.RAR.CDZCAR.8ARA7-" at end of line.
+# <f68r1.3;F>     added "ODCG.ROR.TDZAR.8ARAK-" at end of line.
+# <f68r1.4;C>     deleted "ODCCG.RAR.CDZCAR.8ARA7-" from end of line.
+# <f68r1.4;F>     deleted "ODCG.ROR.TDZAR.8ARAK-" from end of line.
+#
+# <f68r2.S18.1;R> added ".TOE" at end of line, from <f68r2.S19;R>.
+# <f68r2.S18.1;V> added ".TOE" at end of line, from <f68r2.S19;V>.
+#
+# <f68r2.S19;R>   deleted, merged into <f68r2.S18.1;R>
+# <f68r2.S19;V>   deleted, merged into <f68r2.S18.1;V>
+#
+# <f68v3.1;C>     duplicate line number, renumbered <f68v3.0;C>.
+# <f68v3.1;F>     duplicate line number, renumbered <f68v3.0;F>.
+# <f68v3.0;F>     deleted ".2SCG" from end of line.
+# <f68v3.1;F>     added "2SCG." at beginning of line.
+#
+# <f68v2.C.1;C>   replaced by join of C.1 thru C.4, with new break at 10:30.
+# <f68v2.C.1;D>   replaced by join of D.1 and C2 thru C.4, with new break at 10:30.
+# <f68v2.C.1;C>   replaced "IIIR" by "O".
+# <f68v2.C.1;D>   replaced "IIIR" by "O".
+# <f68v2.C.2;C>   deleted line.
+# <f68v2.C.3;C>   deleted line.
+# <f68v2.C.4;C>   deleted line.
+#
+# <f68v2.R.12;C>  replaced "IIIR" by "O".
+# <f68v2.R.4;C>   replaced "IIIR" by "O".
+#
+# <f70r2.4;F>     bogus FSG "Z", replaced by "*".
+# <f70r2.9;F>     deleted "4ODAE.TOE...TCCG.ODAE-" from end of line.
+# <f70r2.9a;F>    created line with "{crease}4ODAE.TOE...TCCG.ODAE-".
+# <f70r2.10;F>    deleted "4ODAE.SDAE...4ODAE.T8G-" from end of line.
+# <f70r2.10a;F>   created line "4ODAE.SDAE...4ODAE.T8G-".
+# <f70r2.11;F>    deleted "ODAM.THZCG.2.OR.ARG=" frm end of line.
+# <f70r2.11a;F>   created line with "ODAM.THZCG.2.OR.ARG=".
+#
+# <f75r.7;F>      added right half of <f75r.8;F>.
+# <f75r.8;F>      replaced right half by right half of <f75r.9;F>.
+# <f75r.9;F>      deleted right half.
+#
+# <f75v.28;C>     leading ".", deleted.
+#
+# <f76r.5;F>      added "R" at end of line.
+#
+# <f76r.L.6;F>    deleted "R." at beginning of line.
+# <f76r.L.13;F>   deleted "IR." at beginning of line.
+# <f76r.L.14;F>   added "O" label.
+# <f76r.L.15;F>   deleted "O" label.
+# <f76r.L.26;F>   deleted "R" label.
+# <f76r.L.38;F>   deleted "M" label.
+#
+# <f76r.12;F>     added "IR" at end of line.
+# <f76r.14;F>     added "8TC8G.4OETCG.4ODCFG" from line <f76r.15;F>.
+# <f76r.15;F>     deleted "8TC8G.4OETCG.4ODCFG" from beginning of line.
+# <f76r.25;F>     added "R" at end of line.
+# <f76r.33;F>     added ".ETC8G.4OEAN....OHAEAK" at end of line.
+# <f76r.34;F>     deleted "ETC8G.4OEAN....OHAEAK." at beginning of line.
+# <f76r.37;F>     added "M" at end of line.
+#
+# <f77v.28;F>     added "M" at end of line.
+# <f77v.29;F>     deleted "M." at beginning of line.
+#
+# <f78r.7;F>      deleted ".8AR.AEOFZG" at end of line.
+# <f78r.11;F>     deleted ".8TC8AEG" at end of line.
+# <f78r.24;F>     deleted ".OHARO8E.SG.ORORG" at end of line.
+#
+# <f78r.X.3;F>    created line with "8AR.AEOFZG=" from <f78r.7;F>.
+# <f78r.X.4;F>    created line with "8TC8AEG=" from <f78r.11;F>.
+# <f78r.X.5;F>    created line with "OHARO8E.SG.ORORG=" from <f78r.24;F>.
+#
+# <f78v.3;F>      added "K" at end of line.
+# <f78v.4;F>      deleted "K." at beginning of line.
+# <f78v.8;G>      replaced "IIIK" by "N".
+# <f78v.8;F>      added "M" at end of line.
+# <f78v.9;F>      deleted "M." at beginning of line.
+# <f78v.12;F>     added "M" at end of line.
+# <f78v.13;F>     deleted "M." at beginning of line.
+# <f78v.15;F>     added "2" at end of line.
+# <f78v.16;F>     deleted "2." at beginning of line.
+# <f78v.19;F>     deleted bogus "-" near end of line.
+#
+# <f79r.9;F>      added "K" at end of line.
+# <f79r.10;F>     deleted "K." at beginning of line.
+# <f79r.14;F>     added ".TCCG.TCG.8AM.TC8G.4OE" at end of line.
+# <f79r.15;F>     deleted "TCCG.TCG.8AM.TC8G.4OE." at beginning of line.
+# <f79r.16;F>     added "K" at end of line.
+# <f79r.17;F>     deleted "K." at beginning of line.
+# <f79r.30;F>     deleted bogus "-" in "OEOL".
+#
+# <f79v.8;F>      added "E" at end of line.
+# <f79v.9;F>      deleted "E" at beginning of line.
+# <f79v.13;F>     added "K" at end of line.
+# <f79v.14;F>     deleted "K." at beginning of line.
+# <f79v.15;F>     added "M" at end of line.
+# <f79v.16;F>     deleted "M." at beginning of line.
+# <f79v.18;F>     deleted ".G" from linendof line.
+# <f79v.19;F>     added "G" at beginning of line.
+# <f79v.26;F>     added "*" at end of line.
+# <f79v.27;F>     deleted "*." at beginning of line.
+# <f79v.31;F>     added "M" at end of line.
+# <f79v.32;F>     deleted "M." at beginning of line.
+# <f79v.38;F>     added "K" at end of line.
+# <f79v.39;F>     deleted ""m."" at beginning of line.
+# <f79v.41;F>     added "M" at end of line.
+# <f79v.42;F>     deleted "M." at beginning of line.
+#
+# <f80r.2;F>      added "2" at end of line.
+# <f80r.3;F>      deleted "2." at beginning of line.
+# <f80r.3;F>      added "K" at end of line.
+# <f80r.4;F>      deleted "K." at beginning of line.
+# <f80r.7;F>      added "K" at end of line.
+# <f80r.8;F>      deleted "K." at beginning of line.
+# <f80r.10;F>     added "K" at end of line.
+# <f80r.11;F>     deleted "K." at beginning of line.
+# <f80r.16;F>     deleted whole line.
+# <f80r.17;F>     added "4OE." in front from pev line.
+# <f80r.38;F>     added "K" at end of line.
+# <f80r.39;F>     deleted "K." at beginning of line.
+#
+# <f80v.14;F>     added "R" at end of line.
+# <f80v.15;F>     deleted "R." at beginning of line.
+# <f80v.18;F>     deleted "-" near end of line.
+# <f80v.21;F>     added "K" at end of line.
+# <f80v.22;F>     deleted "K." at beginning of line.
+# <f80v.33;F>     added "K" at end of line.
+# <f80v.34;F>     deleted "K." at beginning of line.
+# <f80v.31;F>     added "M" at end of line.
+# <f80v.32;F>     deleted "M." at beginning of line.
+#
+# <f81r.5;F>      added "M" at end of line.
+# <f81r.6;F>      deleted "M." at beginning of line.
+# <f81r.7;F>      added "M" at end of line.
+# <f81r.8;F>      deleted "M." at beginning of line.
+#
+# <f81v.4;F>      added "G" at end of line.
+# <f81v.5;F>      deleted "G." at beginning of line.
+#
+# <f81v.5;F>      added ".DAR.8AM.ODAR" at end of line.
+# <f81v.6;F>      deleted "DAR.8AM.ODAR." at beginning of line.
+#
+# <f81v.15;F>     added "!!!...!!!!" after ".TC8G.O"
+# <f81v.15;F>     deleted ".4OR." at end of line.
+# <f81v.16;F>     added "4OR." at beginning of line.
+#
+# <f82r.31;F>     added "M" at end of line.
+# <f82r.32;F>     deleted "M." at beginning of line.
+#
+# <f82v.30;F>     added "M" at end of line.
+# <f82v.31;F>     deleted "M." at beginning of line.
+#
+# <f83r.11;F>     added "O" at end of line.
+# <f83r.12;F>     deleted "O." at beginning of line.
+# <f83r.25;F>     added "E" at end of line.
+# <f83r.26;F>     deleted "E." at beginning of line.
+# <f83r.30;F>     added "M" at end of line.
+# <f83r.31;F>     deleted "M." at beginning of line.
+# <f83r.33;F>     added "M" at end of line.
+# <f83r.34;F>     deleted "M." at beginning of line.
+# <f83r.32;F>     split part to "SC8AE" as line <f83r.X.3;F>
+# <f83r.33;F>     split part to "T8AEAM" as line <f83r.X.4;F>
+# <f83r.34;F>     split part to "TC8G" as line <f83r.X.5;F>
+# <f83r.41;C>     split part to "RAEG.OE" as line <f83r.Z.8;F>
+# <f83r.41;F>     split part to "RAEG.OE" as line <f83r.Z.8;F>
+# <f83r.42;C>     split part to "4OHAR.OE" as line <f83r.Z.9;F>
+# <f83r.42;F>     split part to "4OHAR.OE" as line <f83r.Z.9;F>
+# <f83r.43;C>     split part to "E8AEOR" as line <f83r.Z.10;F>
+# <f83r.43;F>     split part to "E8AEOR" as line <f83r.Z.10;F>
+# <f83r.44;C>     split part to "HZCIE" as line <f83r.Z.11;F>
+# <f83r.44;F>     split part to "HZOE" as line <f83r.Z.11;F>
+#
+# <f83v.14;F>     deleted "4ODAN.TCCAE" (nothing left on the line).
+# <f83v.15;F>     added "4ODAN.TCCAE." at beginning of line.
+# <f83v.16;F>     deleted ".TC8G.4OE" at end of line.
+# <f83v.17;F>     added "TC8G.4OE" at beginning of line.
+# <f83v.20;F>     added "2" at end of line.
+# <f83v.20;F>     deleted "ODT8G." at beginning of line, moved to <f83v.Y.8;F>.
+# <f83v.21;F>     deleted "2." at beginning of line.
+# <f83v.25;F>     added "2" at end of line.
+# <f83v.26;F>     deleted "2." at beginning of line.
+#
+# <f83v.Y.8;F>    created with "ODT8G=" from <f83v.P.20;F>.
+#
+# <f84r.24;C>     deleted to "OROE.", moved to <f84r.Z.24;C>.
+# <f84r.24;F>     deleted to "OROE.", moved to <f84r.Z.24;C>.
+#
+# <f84r.16;F>     added "M" at end of line.
+# <f84r.17;F>     deleted "M." at beginning of line.
+# <f84r.18;F>     deleted "OHAEG." at beginning of line.
+# <f84r.30;F>     deleted up to first "SC8G.2AM.".
+#
+# <f84r.Y.13;F>   added "OHAEG=" from <f84r.18;F>.
+#
+# <f84v.12;F>     added "M" at end of line.
+# <f84v.13;F>     deleted "M." at beginning of line.
+# <f84v.21;F>     deleted "ODAR." at beginning of line.
+# <f84v.22;F>     deleted "G8AIROE." at beginning of line.
+# <f84v.23;F>     deleted "GTDZG." at beginning of line.
+# <f84v.24;F>     deleted "8SC8G." at beginning of line.
+# <f84v.31;F>     deleted "ODT8G." at beginning of line.
+# <f84v.32;F>     deleted "2OETCG." at beginning of line.
+# <f84v.33;F>     deleted "8AIROE8G." at beginning of line.
+# <f84v.34;F>     deleted "8ORTG." at beginning of line.
+# <f84v.35;F>     added "2" at end of line.
+# <f84v.35;F>     deleted "4DZG." at beginning of line.
+# <f84v.36;F>     deleted "OTC8G." at beginning of line.
+# <f84v.36;F>     deleted "2." at beginning of line.
+# <f84v.X.20;F>   created with "ODAR" from <f84v.21;F>.
+# <f84v.X.21;F>   created with "G8AIROE" from <f84v.22;F>.
+# <f84v.X.22;F>   created with "GTDZG" from <f84v.23;F>.
+# <f84v.X.23;F>   created with "8SC8G" from <f84v.24;F>.
+# <f84v.Y.30;F>   created with "ODT8G" from <f84v.31;F>.
+# <f84v.Y.31;F>   created with "2OETCG" from <f84v.32;F>.
+# <f84v.Y.32;F>   created with "8AIROE8G" from <f84v.33;F>.
+# <f84v.Y.33;F>   created with "8ORTG" from <f84v.34;F>.
+# <f84v.Y.34;F>   created with "4DZG" from <f84v.35;F>.
+# <f84v.Y.35;F>   created with "OTC8G" from <f84v.36;F>.
+#
+# <f85r1.29;F>    split off after "4ODT8G." as separate line.
+# <f85r1.29a;F>   created from second half of <f85r1.29;F>.
+#
+# <f86v4.4;F>     deleted ".8AR.OECCG.OEGG" at end of line.
+# <f86v4.5;F>     created new line with "{centered -- "title"?}8AR.OECCG.OEGG=".
+#
+# <f86v6.22;F>    bogus FSG "X", replaced by "*".
+#
+# <f86v5.7;F>     deleted ".OHZAE" at end of line.
+# <f86v5.8;F>     added "OHZAE." at beginning of line.
+# <f86v5.9;F>     truncated line after "AE.GDAN".
+# <f86v5.9a;F>    created line from right half of <f86v5.9;F>.
+# <f86v5.18;F>    truncated line after "TCG.SDZG".
+# <f86v5.18a;F>   created line from right half of <f86v5.18;F>.
+# <f86v5.22;F>    deleted ".2AIR" at end of line.
+# <f86v5.23;F>    added "2AIR." at beginning of line.
+#
+# <f86v3.4;F>     added "GDAM!!!...!!!!K" at beginning of line
+# <f86v3.5;F>     deleted "GDAMK." from beginning of line.
+#
+# <f87v.3;F>      truncated from "GTCODZG.ODCG" onwards.
+# <f87v.3a;F>     created from right half of <f87v.3;F>.
+# <f87v.4;F>      truncated from "8TCO2.SCG" onwards.
+# <f87v.4a;F>     created from right half of <f87v.4;F>.
+# <f87v.6;F>      truncated from "HCTOE.4OSTCO8G" onwards.
+# <f87v.6a;F>     created from right half of <f87v.6;F>.
+#
+# <f88r.b.3;L>    replaced "IIIR" by "O".
+#
+# <f88v.3;L>      replaced "IIIR" by "O".
+# <f88v.4;L>      replaced "IIIR" by "O" (twice).
+#
+# <f88v.7;L>      replaced "IIIR" by "O".
+# <f88v.8;L>      replaced "IIIR" by "O" (twice).
+# <f88v.9;L>      replaced "IIIR" by "O".
+# <f88v.14;L>     replaced "IIIR" by "O".
+#
+# <f89r1.1;L>     replaced "IIIR" by "O".
+# <f89r1.2;L>     replaced "IIIR" by "O".
+# <f89r1.3;L>     replaced "IIIR" by "O" (twice).
+# <f89r1.4;L>     replaced "IIIR" by "O".
+#
+# <f89r1.8;L>     replaced "IIIR" by "O".
+# <f89r1.9;L>     replaced "IIIR" by "O".
+#
+# <f89r1.9;F>     replaced ".2SCGR.4ODAIR.G8AK.8AEG=" at end of line by "=".
+# <f89r1.10;F>    added "2SCGR.4ODAIR.G8AK.8AEG" at end of line.
+#
+# <f89r.32A;K>    replaced "IIIR" by "O".
+#
+# <f89r2.m2.6;K>  created with "ODS8TA2=" from <f89r2.45A;K>.
+# <f89r2.b.0a;L>  created with "ODAL." from <f89r2.b.1;L>.
+#
+# <f89v.45A;K>    deleted "ODS8TA2." at beginning of line.
+#
+# <f89r2.b.1;L>   deleted "ODAL." from beginning of line.
+#
+# <f89r2.2;L>     replaced "IIIR" by "O" (twice).
+#
+# <f89r2.4;F>     deleted garbled part "OE8A4.6H6E...*C6E.6H6EF*G.HAR".
+# <f89r2.4;F>     inserted guessed fix "OE8AM.OHOE....*COE.OHOEF*G.8AR" after "4OHCOE".
+# <f89r2.4;L>     replaced "IIIR" by "O".
+# <f89r2.5;L>     replaced "IIIR" by "O".
+# <f89r2.10;L>    replaced "IIIR" by "O".
+# <f89r2.11;L>    replaced "IIIR" by "O".
+# <f89r2.12;L>    replaced "IIIR" by "O".
+# <f89r2.14;L>    replaced "IIIR" by "O".
+#
+# <f89v2.9;F>     deleted "P*G.8AIRG.SCO2."
+# <f89v2.9;F>     deleted "{lost synch}" at end of line.
+# <f89v2.9;F>     inserted ".4ODOR.ODCOR.OHOE.SCCG.8AE.8AM" from <f89v2.10;F> at end of line.
+# <f89v2.9;L>     deleted bogus text ".O8OR.SCO2...EHTCO8G.OHAE" at end of line.
+# <f89v2.9;L>     inserted "{skipped rest of line}" at end of line.
+# <f89v2.9;L>     replaced "IIIR" by "O".
+# <f89v2.10;F>    deleted "4ODOR.ODCOR...8AM." at beginning of line, moved to <f89v2.10;F>.
+# <f89v2.10;L>    replaced "IIIR" by "O".
+# <f89v2.12;L>    replaced "IIIR" by "O" (twice).
+# <f89v2.13;L>    replaced "IIIR" by "O".
+# <f89v2.10;F>    inserted ".O8OR.SCO2.AM...EHTCO8G.OHAE" from <f89v2.11;F> at end of line.
+# <f89v2.10;F>    deleted "{lost synch}" at end of line.
+# <f89v2.11;F>    deleted line, joined to <f89v2.10;F>.
+# <f89v2.11;L>    deleted blank line.
+#
+# <f89v1.7;F>     truncated from "" onwards.
+# <f89v1.7a;F>    created from right half of <f89v1.7;F>.
+# <f89v1.7;L>     truncated from "" onwards.
+# <f89v1.7a;L>    created from right half of <f89v1.7;L>.
+# <f89v1.7;L>     replaced "IIIR" by "O".
+# <f89v1.11;F>    deleted "4ODAM" at end of line.
+# <f89v1.12;F>    added "4ODAM." at beginning of line.
+# <f89v1.13;F>    added ".ODCOE.8AE.TG" at end of line.
+# <f89v1.14;F>    deleted "ODCOE.8AE.TG." at beginning of line.
+# <f89v1.15;F>    added "HZG" at end of line.
+# <f89v1.16;F>    deleted "HZG." at beginning of line.
+#
+# <f89v1.b.2;L>   deleted bogus "-2IIIR" at end of line.
+# <f89v1.b.3;L>   deleted bogus "-2IIIR" at end of line.
+# <f89v1.b.4;L>   deleted, bogus copy of <f89v1.t.4;L>.
+# <f89v1.b.4;V>   deleted, bogus copy of <f89v1.t.4;V>.
+#
+# <f90r2.4;L>     replaced "IIIR" by "O".
+# <f90r2.5;L>     truncated from "8AM.4ODOR." onwards.
+# <f90r2.5a;L>    created from right half of <f90r2.5;L>.
+# <f90r2.5;F>     truncated from "8AM.4ODOR." onwards.
+# <f90r2.5a;F>    created from right half of <f90r2.5;F>.
+#
+# <f90v1.5;L>     replaced "IIIR" by "O".
+#
+# <f93r.4;C>      deelted "-TO8AN" at end of line.
+# <f93r.5;C>      replaced "IIIR" by "O".
+#
+# <f95v2.2;F>     truncated from "CDAM.ODAR.OR." onwards.
+# <f95v2.2a;F>    created from right half of <f95v2.2;F>.
+#
+# <f99v.11;F>     truncated from "OE.OEAE.ODCOE" onwards.
+# <f99v.11a;F>    created with "!!!...!!!!".
+# <f99v.11b;F>    created with "!!!...!!!!".
+# <f99v.11c;F>    created with "!!!...!!!!".
+# <f99v.11d;F>    created with "!!!...!!!!".
+# <f99v.14;F>     deleted "GTOE.OEDCCOE8G-" at end of line.
+# <f99v.14a;F>    created from "GTOE.OEDCCOE8G" of line <f99v.14;F>.
+#
+# <f100v.T.1;C>   deleted, mislabeled copy of <f100v2.R1.5;C>.
+# <f100v.T.2;C>   deleted, mislabeled copy of <f100v2.R1.7;C>.
+# <f100v.T.2;V>   added, was <f100v.B.2;V>.
+# <f100v.T.3;C>   deleted, moved to <f100v.T.3;D>.
+# <f100v.T.3;D>   added, was <f100v.T.3;C>.
+# <f100v.T.3;V>   added, was <f100v.B.3;V>.
+# <f100v.T.4;C>   deleted, moved to <f100v.T.4;D>.
+# <f100v.T.4;D>   added, was <f100v.T.4;C>.
+# <f100v.T.4;V>   added, was <f100v.B.4;V>.
+#
+# <f100v.M.1;C>   deleted, moved to <f100v.M.1;D>.
+# <f100v.M.1;D>   added, was <f100v.M.1;C>.
+# <f100v.M.1;V>   added, was <f100v.B.5;V>.
+# <f100v.M.2;C>   deleted, mislabeled copy of <f100v.M.2;C>.
+# <f100v.M.2;V>   added, was <f100v.B.6;V>.
+# <f100v.M.3;C>   deleted, moved to <f100v.M.3;D>.
+# <f100v.M.3;D>   added, was <f100v.M.3;C>.
+# <f100v.M.3;V>   added, was <f100v.B.7;V>.
+# <f100v.M.4;C>   deleted, mislabeled copy of <f100v.M.5;C>.
+# <f100v.M.4;V>   added, was <f100v.B.8;V>.
+# <f100v.M.5;C>   deleted, moved to <f100v.M.5;D>.
+# <f100v.M.5;V>   added, was <f100v.B.9;V>.
+# <f100v.M.5;D>   added, was <f100v.M.5;C>.
+#
+# <f100v.B.1;V>   deleted, moved to <f100v.T.1;V>.
+# <f100v.B.1;V>   added, was <f100v.B.10;V>.
+# <f100v.B.2;V>   deleted, moved to <f100v.T.2;V>.
+# <f100v.B.2;V>   added, was <f100v.B.11;V>.
+# <f100v.B.3;V>   deleted, moved to <f100v.T.3;V>.
+# <f100v.B.3;V>   added, was <f100v.B.12;V>.
+# <f100v.B.4;V>   deleted, moved to <f100v.T.4;V>.
+# <f100v.B.4;V>   added, was <f100v.B.13;V>.
+# <f100v.B.5;V>   deleted, moved to <f100v.M.1;V>.
+# <f100v.B.6;V>   deleted, moved to <f100v.M.2;V>.
+# <f100v.B.7;V>   deleted, moved to <f100v.M.3;V>.
+# <f100v.B.8;V>   deleted, moved to <f100v.M.4;V>.
+# <f100v.B.9;V>   deleted, moved to <f100v.M.5;V>.
+# <f100v.B.10;V>  deleted, moved to <f100v.B.1;V>.
+# <f100v.B.11;V>  deleted, moved to <f100v.B.2;V>.
+# <f100v.B.12;V>  deleted, moved to <f100v.B.3;V>.
+# <f100v.B.13;V>  deleted, moved to <f100v.B.4;V>.
+#
+#
+# <f101v2.1;F>    deleted "OE-" at end of line.
+# <f101v2.1;F>    added "!!...!!!.ORAR...O8AMG-" at end of line, from <f101v1.1;F>.
+# <f101v2.1a;F>   created missing line with "!!...!!!!".
+# <f101v2.1a;F>   added "OE...ODO8G.8AR" at end of line, from <f101v1.2;F>.
+# <f101v2.2;F>    added "HZG.8AM.T*8O.8G8G" at end of line, from <f101v1.3;F>.
+# <f101v2.3;F>    added "COE.....2O8AM.8G" at end of line, from <f101v1.4;F>.
+# <f101v2.4;F>    added ".4ODCOE.....8G.8AR" at end of line, from <f101v1.5;F>.
+# <f101v2.5;F>    deleted "8A*" at end of line.
+# <f101v2.5;F>    added "8AM.TCCO8G.....TCC8G" at end of line, from <f101v1.6;F>.
+# <f101v2.6;F>    added ".ODCCG.DZCO.....OETOR" at end of line, from <f101v1.7;F>.
+# <f101v2.7;F>    added ".TCCG.HCG.....ARG" at end of line, from <f101v1.8;F>.
+# <f101v2.8;F>    deleted "S*" at end of line.
+# <f101v2.8;F>    added "TCCCO.***.!!!!!!!!!.TCOE...TCO8AK" at end of line, from <f101v1.9;F>.
+#
+# <f101v2.9;F>    deleted "O" at end of line.
+# <f101v2.9;F>    added "*4OR.TCOE....4DAR" at end of line, from <f101v1.10;F>.
+#
+# <f101v1.1;F>    deleted line, joined to <f101v2.1;F>.
+# <f101v1.2;F>    deleted line, joined to <f101v2.1a;F>.
+# <f101v1.3;F>    deleted line, joined to <f101v2.2;F>.
+# <f101v1.4;F>    deleted line, joined to <f101v2.3;F>.
+# <f101v1.5;F>    deleted line, joined to <f101v2.4;F>.
+# <f101v1.6;F>    deleted line, joined to <f101v2.5;F>.
+# <f101v1.7;F>    deleted line, joined to <f101v2.6;F>.
+# <f101v1.8;F>    deleted line, joined to <f101v2.7;F>.
+# <f101v1.9;F>    deleted line, joined to <f101v2.8;F>.
+#
+# <f101v1.10;F>   deleted line, joined to <f101v2.9;F>.
+#
+# <f102v1.6;F>    deleted ".HOM.OE.8AM-" at end of line.
+# <f102v1.6;F>    added "=" at end of line.
+# <f102v1.7;F>    added "HOM.OE.8AM." at beginning of line.
+#
+# <f103r.1;J>     leading ".", deleted.
+# <f103r.2;J>     leading ".", deleted.
+# <f103r.2;I>     leading ".", deleted.
+# <f103r.3;J>     leading ".", deleted.
+# <f103r.5;F>     deleted comment "{'yt----rkar,otai' where?}".
+# <f103r.5;F>     added ".RDAR,OHAI" at end of line, from comment.
+# <f103r.14;F>    deleted ".4OHC8G" from end of line.
+# <f103r.15;F>    added "4OHC8G." at beginning of line.
+# <f103r.15;F>    deleted duplicate text ".4ODG.4OHC8G.4ODCCG.SOE.4OHCG.S".
+# <f103r.15;G>    created line from duplicate text removed from <f103r.15;F>.
+#
+# <f103v.1;J>     added ".OEPTCG.4ODG.....4OHCAR.SC8G.8AE" at end of line.
+# <f103v.4;J>     added "EDCC2.OE.4OHCC8G.ODCC8G" at end of line.
+# <f103v.5;J>     added "4ODS8G.4ODAM.ODCT8G.4OPT8G.4OHC8G.4ODAM.OEG" at end of line.
+# <f103v.6;J>     added "TCOE.4OCCOR.ESOR.4ODG.SC8G.4ODAM.TC8G.4ODA" at end of line.
+# <f103v.38;F>    deleted ".8AM" at end of line.
+# <f103v.39;F>    addded "8AM." at beginning of line.
+#
+# <f104r.4;F>     leading ".", deleted.
+# <f104r.7;J>     added "8TO8CC2.SCOR.....4O8AM.ODAR" at beginning of line.
+# <f104r.8;J>     added "OESCC8G.EDCC8G.....O8AR.4ODAE" at beginning of line.
+# <f104r.44;F>    replaced ".E.2AM.OHAM....OHAM.OHAM=" by "-" at end of line.
+# <f104r.45;F>    created with ".E.2AM.....OHAM=" from line <f104r.44;F>.
+#
+# <f105r.16;F>    leading ".", deleted.
+#
+# <f105v.15;F>    added ".R" at end of line.
+# <f105v.16;F>    deleted "R." at beginning of line.
+#
+# <f106r.30;T>    deleted (empty) line.
+# <f106r.30;F>    deleted line "2AM.TAE....TAR.AMG-".
+#
+# <f106v.20;F>    deleted ".GTCOE.DAM" at end of line.
+# <f106v.21;F>    added "GTCOE.DAM." at beginning of line.
+#
+# <f107r.33;T>    duplicate ".", replaced by single ".".
+#
+# <f107r.8;F>     replaced "IIIR" by "O".
+# <f107r.24;F>    replaced "IIIR" by "O".
+# <f107r.27;F>    replaced "IIIR" by "O".
+# <f107r.33;F>    replaced "IIIR" by "O" (twice).
+# <f107v.32;F>    replaced "IIIR" by "O".
+# <f107v.46;F>    replaced "IIIR" by "O".
+#
+# <f108v.17;F>    replaced "IIIR" by "O".
+# <f108v.52;F>    replaced "IIIRFN" by ".OE".
+#
+# <f111r.1;F>     replaced "IIIR" by "II".
+# <f111r.16;F>    replaced "IIIR" by "**".
+# <f111r.18;F>    replaced "IIIRIIIR" by "**".
+# <f111r.20;F>    replaced "IIIR" by "IK".
+# <f111r.21;F>    replaced "EIIIR" by "**".
+# <f111r.24;F>    replaced "IIIRIIIR" by "IK".
+# <f111r.25;F>    replaced "IIIR" by "O".
+# <f111r.29;F>    replaced "IIIRIIIR" by "TR".
+# <f111r.34;F>    deleted "8AE" at end of line.
+# <f111r.36;F>    inserted "!!!...!!8AE." at beginning of line.
+# <f111r.50;F>    replaced "IIIR" by "*".
+#
+# <f112v.42;F>    added ".OHARAG.SAM.4ODC8G" at end of line.
+# <f112v.42;G>    added ".OHARAG.SAN.4ODC8G" at end of line.
+# <f112v.43;F>    deleted "OHARAG.SAM.4ODC8G." from beginning of line.
+# <f112v.43;F>    added ".AK" at end of line.
+# <f112v.43;G>    deleted "OHARAG.SAN.4ODC8G." from beginning of line.
+# <f112v.43;G>    added ".AK" at end of line.
+# <f112v.44;F>    deleted "AK." at beginning of line.
+# <f112v.44;G>    deleted ".AK." at beginning of line.
+# <f112v.45;F>    deleted ".*EHAR.AIK" at end of line.
+# <f112v.45;G>    deleted ".C.OHAR.AIK" at end of line.
+# <f112v.47;F>    added "*EHAR.AIK." at beginning of line.
+# <f112v.47;G>    added "C.OHAR.AIK." at beginning of line.
+#
+# <f114v.38;F>    deleted ".4OECCTC8G" at end of line.
+# <f114v.39;F>    added "4OECCTC8G." at beginning of line.
+#
+# <f115r.36;F>    replaced "2OROE2.TCO2....PTAR-" by "=".
+# <f115r.36a;F>   created from right half of <f115r.36;F>.
+#
+# <f116r.43;F>    deleted ".2AGDCC8G.....TCG.4OE.ODAK" at end of line.
+# <f116r.43a;F>   created with "2AGDCC8G.....TCG.4OE.ODAK-" from <f116r.43;F>.
+#
+# <f116r.28;F>    bogus FSG "Z", replaced by "*".
+## <f0.Z> {}
+# Last edited on 1998-12-26 11:04:13 by stolfi
+#
+# GLOSSARY OF TERMS USED IN PAGE DESCRIPTIONS
+# By Jorge Stolfi 05 Dec 1998
+#
+# /crease/
+#   An *accidental* crease in the vellum (cf. /fold/).
+#
+# /fold/
+#   An *intentional* fold in the vellum, namely between
+#   panels of a fold-out.
+#
+# /gutter/
+#   The fold where a /bifolio/ is sewed to the book.
+#
+# /quire/
+#   A stack of /bifolios/ that was folded and bound as a unit. The
+#   quires of the book are identified with letters `A' to to `T',
+#   front to back, which may be written `qA' thru `qT' for clarity.
+#   Rene Zandbergen has a detailed description of all quires and
+#   bifolios.
+#
+# /bifolio/
+#   A connected piece of vellum, usually consisting of two /folios/
+#   joined across the /gutter/. The notation bQK will be used to
+#   denote the Kth bifolio of quire Q, counting from 1 (the outermost
+#   one).
+#
+# /folio/
+#   A piece of vellum defined on one side by the gutter and three free
+#   edges. In the big fold-out, the two folios (85 and 86) are
+#   separated by the gutter and the vertical fold that is collinear
+#   with it.
+#
+# /f-number/
+#   The standard folio number, usually written fNN where NN is the
+#   original number written in the manuscript, usually at the top of
+#   the /recto/ side.
+#
+# /side/
+#   One of the two surfaces of a /folio/ or /bifolio/. The sides of folio
+#   fNN are denoted fNNr and fNNv, for /recto/ and /verso/, respectively.
+#
+# /recto/
+#   The /side/ of a /folio/ that you see when the /gutter/ is on the
+#   left, the book is in its normal orientation, and the folio is
+#   completely unfolded.
+#
+# /verso/
+#   The /side/ of a /folio/ opposite to the /recto/ side, i.e. the one
+#   that you see when the /gutter/ is at right.
+#
+# /free edge/
+#   A straight section of the physical boundary of a /bifolio/.
+#
+# /edge/
+#   Either a /free edge/ or a /fold/.
+#
+# /panel/
+#   A rectangular partition of one side of a /folio/, delimited by
+#   four /edges/. Thus a simple folio has two panels, recto and verso,
+#   denoted by fNNr and fNNv where fNN is the folio number. In
+#   fold-outs, panels are numbered fNNrK or fNNvK, starting from the
+#   innermost panel (adjacent to to the gutter, K=1) and increasing
+#   outwards (towards the vertical free edge of the folio). Jim Reeds
+#   has a very detailed description of how the complex folios are
+#   folded, including panel numbers.
+#
+# /page/
+#   One or more adjacent panels that are to be read as a unit, e.g.
+#   because the contents is laid out without regards for the
+#   separating edges. A page is identified by the number of its
+#   innermost panel (the one that is closest to the gutter).
+#
+# /contents/
+#   Of a page, the text and drawings in it.
+#
+# /margin/
+#   Each of the four imaginary straight lines (top, bottom, left,
+#   right; or North, South, West, East) that seem to bound the normal
+#   text in a page. They usually lie a couple of centimeters inwards
+#   relative to the panel's edges. Note that drawings and labels may
+#   extend beyond the margins.
+#
+# /word/
+#   A sequence of characters (Voynichese by default) not broken by
+#   /word spaces/ or graphical material.
+#
+# /word space/
+#   A space between two character that is noticebly wider than the
+#   average spacing.
+#
+# /text line/
+#   A linear arrangement of characters, mostly straight or circular,
+#   with their `up' directions perpendicular to the overall line
+#   direction, and that (presumably) must be read consecutively. Note
+#   that a text line may be /interrupted/ by graphical elements,
+#   folds, vellum defects, etc.
+#
+# /text ring/
+#   A circular text line that covers almost one full circle.
+#
+# /text block/
+#   A set of two or more consecutive lines of text, stacked
+#   perpendicularly to the reading direction not more than a couple of
+#   character heights apart, and which presumably are to be read in
+#   sequence. Note that a text block may consist of concentric
+#   circular lines, and may comprise one or more /paragraphs/.
+#
+# /text edge/
+#   The two imaginary lines, not necessarily straight, that connect
+#   the left end right endpoints of successive lines in a text block.
+#
+# /paragraph/
+#   A text block where the spacing between /text lines/ is uniform and
+#   close to the minimum, and which presumably is a single sequence of
+#   words arbitrarily broken into lines to fit the available space.
+#   Typically, at least one of the text edges is straight or follows
+#   the outline of an adjacent figure. The number of lines of a
+#   paragraph is usually given as M.N, where M is the number of whole
+#   lines, and N/10 is the width of the last line, relative to the
+#   total width available for it (not counting any space taken up by
+#   figures, folds, creases).
+#
+# /left justified/
+#   (Of a text block) whose left text edge is straight and vertical.
+#
+# /right justified/
+#   (Of a text block) whose right text edge is straight and vertical,
+#   except possibly for the last lines of paragraphs.
+#
+# /label/
+#   A short text line, containing only a couple of words, that is
+#   placed next to a figure or in a cell of a diagram.
+#
+# /title/
+#   A text line that is placed next to a figure or in a cell of a
+#   diagram, and is longer than a couple of words; or is placed above
+#   or below a paragraph, but cannot be assumed to be part of it.
+#
+# /star/
+#   A star-shaped figure with straight sharp-pointed rays, possibly
+#   with interior detail.
+#
+# /tail/
+#   (Of a star) a single curved line attached to the star's outline.
+#
+# /notched square/
+#   A design often found in circular bands around diagrams. It
+#   consists of a squarish sector of the band, containg four small
+#   "u"s, each connected to one side by both arms. The radial sides of
+#   the square are often doubled or tripled. Sometimes there are also
+#   dots in the center and/or near the four corners. This design seems
+#   to be used as a decoration in some diagrams (e.g. on f67v1, the
+#   "happy sun" page) and as a start-of-text marker in others (e.g
+#   f71r, the "Aries light" page.)
+#
+# /nymph/
+#   A human figure of female or indeterminate sex, with full or
+#   partial body which may have merely a decorative or exemplary
+#   purpose. E.g. the figures in the biological section, or around the
+#   zodiac diagrams; but not the figures in the zodiac signs
+#   themselves, or the sun/moon faces.
+#
+# /breasts/
+#   Visible female breasts, bare or clothed.
+#
+# /mechanically drawn/
+#   The opposite of freehand. Said of straight lines that seem to have
+#   been traced with ruler. Also said of circles that seem to have
+#   been drawn with compass, or by tracing some round object.
+#   (Jim Reeds, reporting on his Beinecke visit [13 Jul 94], says that
+#   "there were no pricks or pounce marks, no rulings except
+#   on the circular diagrams.")
+#
+# /scales/
+#   A common decoration motif consisting of close-packed scales with
+#   rounded edge. When the fore edge of the scale-packed region is
+#   visible, each scale is usually seen to have a tongue-like shape,
+#   with parallel sides narrowing slightly towards the basal edge,
+#   which is attached to the substrate.
+#
+#   This motif could represent closely-packed leaves, feathers, roof
+#   tiles, flaps of fabric, etc. On one diagrams, some nymphs are
+#   buried waist-deep in a field of scales, so it could be clouds,
+#   grass, bushes, or a planted field. Another compelling
+#   interpretation in some contexts is a layer of closely-packed seeds
+#   or florets, as in corn, pomegranate, sunflower, etc.

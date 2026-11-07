@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN BEFORE POWER-STUDY SUPPORT AND NEW OUTCOMES",
+  "utc": "2026-10-25T03:59:56.339938+00:00",
+  "authority": "User explicitly requested freeze and run real-support V2 power curve; preserve prior attempts, H/F separate, retain inconclusive results.",
+  "scope": "Simulation power study only. Unchanged V2 engine/statistic/working variances/chi-square3 reference and conservative Holm2 detection threshold rawp<=.025. No new manuscript scores, model fitting, altered correction or old/new pooling.",
+  "geometry": "Same original V2 supported folios and masked events for H/F. Verify support exactly, including context pages76H/72F total and sparse contexts; no added folios or raw EVT/zodiac access.",
+  "effect": "Common aggregate sh-ch risk difference b in every context, plus additional positive difference delta in one target context at a time C1-C5. Delta is a percentage-point difference of section effects, not a relative percentage or an event rate shared by all sections. Other contexts have effect b. Primary statistic still tests within-scribe heterogeneity.",
+  "grid": {
+    "targets": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "common_effects_points": [
+      0,
+      8
+    ],
+    "positive_differences_points": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      40,
+      48
+    ],
+    "architecture": [
+      "uniform: ch probability.20, sh=.20+b+delta_in_target",
+      "unequal: ch probabilities C1..C5=.10,.40,.20,.15,.45, sh=ch+b+delta_in_target",
+      "available: blocked followers0, availablepch=.20/fch,c, availablepsh=(.20+b+delta_in_target)/fsh,c. f from unchanged masked MH-weighted available fractions. Aggregate effects exactly b+delta_target."
+    ],
+    "zero": "One shared zero-difference guard cell per reading/architecture/common b, not five duplicate controls. Twelve zero cells;600 positive cells before feasibility. Zero estimates appear in all matching target plots as the same guard, never independent replications.",
+    "feasibility": "Before outcomes, compute every event probability and expected MH effects for every cell. Out-of-[0,1] probabilities mark INFEASIBLE, retain cell with no trials/CI. Never clip probabilities, replace baseline, reduce target or add effect points. Infeasible cells still occupy simultaneous-interval family slots."
+  },
+  "simulation": {
+    "N_positive": 2000,
+    "N_zero_guard": 10000,
+    "potential_total": 1320000,
+    "planned": "Run every feasible frozen coordinate once; actual total fixed by outcome-blind feasibility. No extension, optional stopping, seed replacement, adaptive grid or model retuning.",
+    "seed": "[919260,reading_index H0/F1,architecture_index uniform0/unequal1/available2,common_index0/1,target_index0..4 or5 for zero guard,grid_index1..10 or0 for zero,trial]. Independent fresh streams by coordinate, not pooled across H/F or cells.",
+    "records": "Every hit and miss retains job/trial/seed,T,p,flag,uniform status and outcome SHA256. Compact sufficient receipts; all details reproducible from masked geometry and frozen engine. Fixed500-trial checkpoint chunks, missing coordinates only on resume."
+  },
+  "uncertainty": {
+    "family": 612,
+    "interval": "612 simultaneous two-sided exact Clopper-Pearson intervals, per-interval error.05/612. Includes12 guards+600 positive slots, even infeasible slots, so confidence remains conservative. No pointwise-CI threshold picking.",
+    "reliability": "Power>=80% is the fixed target: LOWER>=.80 RELIABLY DETECTABLE; UPPER<.80 BELOW80% TARGET; otherwise INCONCLUSIVE. Retain the interval and label; do not add trials.",
+    "guards": "For each reading/architecture/common level, zero-difference guard must have U<=.05 and L<=.025; L>.025 NOMINAL ALARM, L>.05 ABOVE PRACTICAL TOLERANCE, otherwise failed bound INCONCLUSIVE. Failed/inconclusive guard blocks reliability certification of its curves, but measured power and every trial remain. This does not retroactively alter V2 qualification or manuscript results."
+  },
+  "summaries": "Report all cells and60 individual curves(reading xarchitecture xcommon xtarget). First reliable tested point and first sustained reliable tested point through all larger feasible tested grid points, with no monotonic fit, smoothing or interpolation. Keep infeasible boundaries and gaps. A ten-row cross-reading/architecture summary requires reliability in each of six H/Fxarchitecture cells at a grid point, separately for each target/common. This means80% marginal power in each reading, not80% joint detection probability; do not pool or multiply H/F power.",
+  "verification": "Freeze before support and outcomes; reproduce V2 support exactly; analytic expected context effects for every feasible generator. Production generator bitwise-equals V2 original positive generators for targetC1,b0,delta.12 and matching zero guards. First/middle/last planned trial of every feasible cell and every zero-guard false flag independently regenerated and scalar-audited. Trial counts/coordinate uniqueness and simultaneous bounds recalculated; preserve all previous non-cache file hashes.",
+  "plots": "Static scientific PNG and SVG per reading, six panels(common level xbaseline architecture), five target-context curves. Display simultaneous intervals,80% line and infeasible cells/gaps. Lines are visual guides, not interpolated detection thresholds.",
+  "interpretation": "Conditional simulation operating characteristics at actual support and specified generators. No continuous minimum detectable effect, general mechanism claim or bound on actual manuscript heterogeneity. Limited support, baseline assumptions, and original selected/exposed contexts remain. No detection in the prior manuscript test is not proof of equal strength.",
+  "preservation": "Write only this new directory. Prior non-cache source, data, controls, failed attempts, qualified V2 and manuscript scores stay unchanged; no new manuscript data are opened or scored."
+}

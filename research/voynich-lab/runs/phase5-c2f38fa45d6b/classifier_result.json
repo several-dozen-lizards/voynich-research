@@ -1,0 +1,43 @@
+{
+  "leave_out_unit": "source word block index shared across C1 derivatives, clean/noise, and other corpora",
+  "classifier_features": [
+    "h0",
+    "h1",
+    "h2",
+    "zipf_slope",
+    "zipf_r2",
+    "word_hapax_ratio",
+    "word_length_mean",
+    "word_length_variance",
+    "word_length_skewness",
+    "word_length_excess_kurtosis",
+    "mi_glyph_line_word_edge",
+    "mi_glyph_word_edge",
+    "consecutive_identical_rate",
+    "consecutive_edit1_rate",
+    "crossfit_lexical_bpc",
+    "crossfit_position_gain_bpc"
+  ],
+  "model_features": "one-seed five-fold leaf-cross-fitted LSTM T1 lexical BPC and causal-position gain",
+  "accuracy": 0.9066985645933014,
+  "balanced_accuracy": 0.9009049773755655,
+  "majority_baseline": 0.08133971291866028,
+  "test_chunks": 418,
+  "final_C": 0.01,
+  "classes": [
+    "C1",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9"
+  ],
+  "confidence_warning": "uncalibrated conditional control-class probabilities, not historical-generator probabilities"
+}

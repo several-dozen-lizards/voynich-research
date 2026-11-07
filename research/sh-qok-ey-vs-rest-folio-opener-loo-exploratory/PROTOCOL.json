@@ -1,0 +1,49 @@
+{
+  "classification": "EXPLORATORY (E), retrospective posthoc leave-one-physical-folio-out sensitivity",
+  "utc": "2026-10-25T01:55:53.521258+00:00",
+  "folios": {
+    "C2": [
+      "f26r",
+      "f26v",
+      "f31r",
+      "f31v",
+      "f33r",
+      "f33v",
+      "f34r",
+      "f34v",
+      "f39r",
+      "f39v",
+      "f40r",
+      "f40v",
+      "f43r",
+      "f43v",
+      "f46r",
+      "f46v",
+      "f50r",
+      "f50v",
+      "f55r",
+      "f55v"
+    ],
+    "C3": [
+      "f85r1",
+      "f85r2",
+      "f86v3",
+      "f86v4",
+      "f86v5",
+      "f86v6"
+    ]
+  },
+  "plan": "Each recorded physical folio in C2/C3 is omitted once, including folios with zero comparison weight. Same omission list across H/F and views. C2 has20 nominal omissions; C3 has6. Recompute matched ey-vs-edy/y/other effects in remaining folio x opener strata; no reference-family change.",
+  "estimand": "Original matched ending-group contrast:100*sum_s[w_s*(qok_ey/ne-qok_ref/nr)]/sum_s(w_s),w=ne*nr/(ne+nr),s=physical folio x sh/ch opener. Reference pools edy,y,other within stratum. Eey excluded from both groups, using longest-first family labels. Also describe each opener separately without pooling H/F.",
+  "views": "All eligible events, and unchanged v3.1 available-only events (followers opening sh/ch/cth/ckh/cph/cfh excluded). Recompute overlap after omission; zero-overlap strata weight0.",
+  "report": "Every omission and baseline, change, exact descriptive direction, remaining weight/matched strata/contributing folios, covered/unmatched counts, excluded folio weight, and opener-specific components. Preserve ties, reversals and unavailable values; no p-values, confidence intervals, power, inferential decisions, model fits or gates.",
+  "limits": "Post-outcome selection of C2/C3 because their matched effects were lower after ey. Omissions overlap and are not independent evidence. Their range measures influence, not uncertainty or statistical robustness. H/F are alternate readings, not replications.",
+  "hashes": {
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-folio-opener-loo-exploratory\\describe_loo.py": "6f1610bbcba0ab1a023d95c4d564501cf714c51d6988cd682ef63b090942f626",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-folio-opener-exploratory\\compare_matched.py": "d25a29371caccbff893902f849731eda784837cf20fabb4c3a91298cbeea3fe5",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-folio-opener-exploratory\\MATCHED-COMPARISONS.json": "08076447caa28d13255010e45e48fb239cc6f89f3ebea66ba82efe8951815dd6",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-folio-opener-exploratory\\STRATA.csv": "49586d55c324d7222125c0d16bfc7f85b9f40b55d578b872cabb3903a88f4f56",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-folio-opener-exploratory\\PROTOCOL.json": "1ac9d058b9829242555edc04b70ddd18200a9218397c95a087fa1c98ce956f0e",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-context-map-v3\\EVENTS.csv": "bde53db9b17b36f11f986628fadae6ed597c517af60e4d9057b9419bd511c85b"
+  }
+}

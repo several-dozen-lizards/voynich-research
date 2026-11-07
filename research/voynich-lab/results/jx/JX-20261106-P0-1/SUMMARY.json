@@ -1,0 +1,270 @@
+[
+  {
+    "chain": "engineering",
+    "status": "PASS_ENGINEERING_ONLY",
+    "fixture_checks": 5,
+    "K2_target_qualification": "NOT_RUN",
+    "ancestry_ledger": "binding/transcription_inventory.csv; unresolved readers not certified independent",
+    "K3_target": "NOT_RUN"
+  },
+  {
+    "chain": "specificity",
+    "status": "PASS",
+    "outcomes": [
+      {
+        "corpus": "C-junc",
+        "expected_pair": "J",
+        "passed": true,
+        "shuffle_null": true
+      },
+      {
+        "corpus": "C-SS",
+        "expected_pair": "SS",
+        "passed": true,
+        "shuffle_null": true
+      },
+      {
+        "corpus": "C-EE",
+        "expected_pair": "EE",
+        "passed": true,
+        "shuffle_null": true
+      },
+      {
+        "corpus": "C-order",
+        "expected_pair": null,
+        "passed": true,
+        "shuffle_null": true
+      }
+    ],
+    "false_specificity_rate": 0.0
+  },
+  {
+    "chain": "conditioning",
+    "status": "PASS",
+    "false_rejection_rate": 0.01,
+    "positive_gates": {
+      "reg": {
+        "correct": 20,
+        "n": 20,
+        "median_gain": 1.58502000127744,
+        "passed": true
+      },
+      "prog": {
+        "correct": 20,
+        "n": 20,
+        "median_gain": 1.5847508514935584,
+        "passed": true
+      }
+    },
+    "regressive_source_transfer": {
+      "passed": true,
+      "paired_gain": 0.11999468465020312,
+      "paired_ci": [
+        0.10154391853311898,
+        0.13756435096494585
+      ],
+      "treatment_p": 0.000999000999000999,
+      "Holm_regressive_reject": true
+    },
+    "progressive_qualified": true,
+    "regressive_toy_qualified": true
+  },
+  {
+    "chain": "spacing",
+    "status": "FAIL_REFERENCE_ORDERING",
+    "corpora": {
+      "C-lat": {
+        "JSD": 0.45112028861841247,
+        "ci": [
+          0.44944847323323855,
+          0.4663471055854005
+        ],
+        "families": 26,
+        "words": 13299,
+        "cross_pairs": 13273,
+        "within_pairs": 55375,
+        "pair_support": 512
+      },
+      "C-sandhi": {
+        "JSD": 0.41424162835865935,
+        "ci": [
+          0.41235195287550264,
+          0.42953618094179574
+        ],
+        "families": 26,
+        "words": 13299,
+        "cross_pairs": 13273,
+        "within_pairs": 54375,
+        "pair_support": 513
+      },
+      "C-respace": {
+        "JSD": 0.03690614248531987,
+        "ci": [
+          0.03816656119684203,
+          0.04478130932061769
+        ],
+        "families": 26,
+        "words": 46192,
+        "cross_pairs": 46166,
+        "within_pairs": 23439,
+        "pair_support": 533
+      },
+      "C-naibbe": {
+        "JSD": 0.8086763056228728,
+        "ci": [
+          0.8066238464591151,
+          0.8121847808456661
+        ],
+        "families": 26,
+        "words": 46232,
+        "cross_pairs": 46206,
+        "within_pairs": 139511,
+        "pair_support": 537
+      }
+    },
+    "contrasts": [
+      {
+        "contrast": "C-lat minus C-respace",
+        "ci": [
+          0.408344051268399,
+          0.42475899165734615
+        ],
+        "passed": true
+      },
+      {
+        "contrast": "C-lat minus C-naibbe",
+        "ci": [
+          -0.35917617045525907,
+          -0.34396625003873005
+        ],
+        "passed": false
+      },
+      {
+        "contrast": "C-sandhi minus C-respace",
+        "ci": [
+          0.37150828124703994,
+          0.38786206901982573
+        ],
+        "passed": true
+      },
+      {
+        "contrast": "C-sandhi minus C-naibbe",
+        "ci": [
+          -0.3964842746199807,
+          -0.380111377174865
+        ],
+        "passed": false
+      }
+    ],
+    "cross_language_plaintext_space_classification": "NOT_QUALIFIED",
+    "target_readout": "NOT_RUN"
+  },
+  {
+    "chain": "reference_profiles/C-lat",
+    "status": "DESCRIPTIVE_ONLY",
+    "J_specificity_predicate": false,
+    "shuffle_equivalence": true,
+    "word_bins": [
+      {
+        "bin": 3,
+        "accuracy": 0.815,
+        "ci": [
+          0.7643979057591623,
+          0.8629441624365483
+        ],
+        "passed": true
+      },
+      {
+        "bin": 4,
+        "accuracy": 0.985,
+        "ci": [
+          0.9665071770334929,
+          1.0
+        ],
+        "passed": true
+      }
+    ],
+    "not_a_known_zero_reference": true
+  },
+  {
+    "chain": "reference_profiles/C-sandhi",
+    "status": "DESCRIPTIVE_ONLY",
+    "J_specificity_predicate": false,
+    "shuffle_equivalence": true,
+    "word_bins": [
+      {
+        "bin": 3,
+        "accuracy": 0.81,
+        "ci": [
+          0.7473118279569892,
+          0.865979381443299
+        ],
+        "passed": true
+      },
+      {
+        "bin": 4,
+        "accuracy": 0.965,
+        "ci": [
+          0.936046511627907,
+          0.9891891891891892
+        ],
+        "passed": true
+      }
+    ],
+    "not_a_known_zero_reference": true
+  },
+  {
+    "chain": "reference_profiles/C-respace",
+    "status": "DESCRIPTIVE_ONLY",
+    "J_specificity_predicate": true,
+    "shuffle_equivalence": true,
+    "word_bins": [
+      {
+        "bin": 3,
+        "accuracy": 0.92,
+        "ci": [
+          0.8770053475935828,
+          0.9587628865979382
+        ],
+        "passed": true
+      },
+      {
+        "bin": 4,
+        "accuracy": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "passed": true
+      }
+    ],
+    "not_a_known_zero_reference": true
+  },
+  {
+    "chain": "reference_profiles/C-naibbe",
+    "status": "DESCRIPTIVE_ONLY",
+    "J_specificity_predicate": false,
+    "shuffle_equivalence": true,
+    "word_bins": [
+      {
+        "bin": 3,
+        "accuracy": 0.505,
+        "ci": [
+          0.42127659574468085,
+          0.5857142857142857
+        ],
+        "passed": false
+      },
+      {
+        "bin": 4,
+        "accuracy": 0.67,
+        "ci": [
+          0.6130434782608696,
+          0.725
+        ],
+        "passed": false
+      }
+    ],
+    "not_a_known_zero_reference": true
+  }
+]

@@ -1,0 +1,3 @@
+# Reporting-only audit log
+
+The strict checker first stopped at FROZEN_INPUT_DRIFT. Comparison found RUN_STATE.json alone. The initial reconstructed before-state used LF bytes and did not match the original Windows CRLF hash; that reconstruction was not written or accepted. A subsequent audit attempt stopped because the before-state copy was absent. Reconstructing the exact CRLF serialization matched the original registered SHA256. The current RUN_STATE.json and REGISTRATION.json were never changed. The completed audit validates immutable registered inputs and saved-result arithmetic while retaining the strict manifest failure. No fitting, candidate changes, gate changes or new registration occurred.

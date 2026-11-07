@@ -1,0 +1,91 @@
+# RD-v2 P\Latin\word
+
+**PASS**
+
+```json
+{
+  "null_failure_flag": false,
+  "passing_bins": [
+    4
+  ],
+  "bins": [
+    {
+      "bin": 1,
+      "n_sets": 300,
+      "n_members": 1,
+      "source_families": 26,
+      "rates": {
+        "unweighted_0": 0.0,
+        "weighted_0": 0.0,
+        "unweighted_1": 0.0,
+        "weighted_1": 0.0,
+        "unweighted_2": 1.0,
+        "weighted_2": 1.0
+      },
+      "passed": false
+    },
+    {
+      "bin": 2,
+      "n_sets": 300,
+      "n_members": 4,
+      "source_families": 27,
+      "rates": {
+        "unweighted_0": 0.0,
+        "weighted_0": 0.0,
+        "unweighted_1": 0.0,
+        "weighted_1": 0.0,
+        "unweighted_2": 1.0,
+        "weighted_2": 1.0
+      },
+      "passed": false
+    },
+    {
+      "bin": 3,
+      "n_sets": 300,
+      "n_members": 6,
+      "source_families": 27,
+      "rates": {
+        "unweighted_0": 0.0,
+        "weighted_0": 0.0,
+        "unweighted_1": 0.0,
+        "weighted_1": 0.0,
+        "unweighted_2": 1.0,
+        "weighted_2": 1.0
+      },
+      "passed": false
+    },
+    {
+      "bin": 4,
+      "n_sets": 300,
+      "n_members": 13,
+      "source_families": 27,
+      "rates": {
+        "unweighted_0": 1.0,
+        "weighted_0": 1.0,
+        "unweighted_1": 1.0,
+        "weighted_1": 1.0,
+        "unweighted_2": 1.0,
+        "weighted_2": 1.0
+      },
+      "passed": true
+    },
+    {
+      "bin": 5,
+      "n_sets": 300,
+      "n_members": 3,
+      "source_families": 27,
+      "rates": {
+        "unweighted_0": 0.0,
+        "weighted_0": 0.0,
+        "unweighted_1": 0.0,
+        "weighted_1": 0.0,
+        "unweighted_2": 1.0,
+        "weighted_2": 1.0
+      },
+      "passed": false
+    }
+  ]
+}
+```
+
+Calibration only. No real-ring scores, radial arm or corrected-order export. Repeated windows/sets are conditional on the frozen source pool; source families are not multiplied into independent manuscript replications.

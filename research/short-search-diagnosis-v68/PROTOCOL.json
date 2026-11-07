@@ -1,0 +1,9 @@
+{
+  "question": "Search optimization versus short sample/context under fixed substitution controls; Voynich closed.",
+  "revision": "Unchanged quadgram objective and v41 solver; four independent full searches (16 internal restarts total), choose greatest training score. Baseline is first search. Seeds predeclared; no heldout selection.",
+  "old_diagnosis": "Replay all9 v67 controls with four new seeds; retain every attempt. Compare training likelihood to true plaintext score and heldout recovery. If wrong output scores above truth, objective ambiguity/mismatch is demonstrated; if below truth, optimization failure is demonstrated. Both may coexist.",
+  "fresh": "Same3 source works, fresh source positions from60-80% interval excluded from model training(first60%), v41qualification(last20%) and v67(last20%). Not new independent works or genres.3 disjoint120-word consecutive blocks per language at offsets0,500,1000 inside interval. First100 fitting, next20 heldout. Same cipher per block and same heldout across arms.",
+  "arms": "20consecutive(first20),20shuffled(same tokens permuted),100consecutive. Comparing20 vs100 combines extra data and context; shuffle20 isolates order at fixed token identity. Both baseline and revised evaluated from same fitted runs.",
+  "gate": "For each language/arm/method all3 cases >=90% heldout letter recovery. Report exact words and unseen-letter coverage; no language pooling to conceal failures. Candidate keys frozen before fresh heldout application. Passing long arm does not authorize short Voynich decoding.",
+  "limits": "Finite engineering controls; simple alphabet substitution only. No semantic qualification, no syllabic/rebus claim. Prior outputs preserved."
+}

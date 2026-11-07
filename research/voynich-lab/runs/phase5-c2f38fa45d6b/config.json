@@ -1,0 +1,105 @@
+{
+  "phase4": {
+    "phase": 4,
+    "protocol_revision": 1,
+    "seeds": [
+      1729,
+      1733,
+      1741,
+      1753,
+      1777
+    ],
+    "steps": 96,
+    "validation_steps": [
+      24,
+      48,
+      72,
+      96
+    ],
+    "batch_size": 32,
+    "context_length": 64,
+    "embedding_dim": 256,
+    "lstm_hidden": 512,
+    "heads": 4,
+    "ff_dim": 1024,
+    "dropout": 0.1,
+    "learning_rate": 0.002,
+    "warmup_steps": 8,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "word_vocab_cap": 4096,
+    "symbol_vocab_cap": 512,
+    "parameter_cap": 5000000,
+    "optimizer": "AdamW, fused CUDA, fixed warmup/cosine schedule",
+    "precision": "BF16 CUDA autocast; FP32 parameters/loss accounting",
+    "selection": "minimum validation BPT among the four registered checkpoints; test never selects",
+    "budget_interpretation": "fixed-compute instrument; report effective corpus epochs and continuing validation improvement; no convergence claim",
+    "position_events": "known SOL / previous EOL / explicit paragraph start before target; never future EOL",
+    "hardware_benchmark": "report/HARDWARE_BENCHMARK.json"
+  },
+  "phase5": {
+    "phase": 5,
+    "stop_after": 5,
+    "seed": 1729,
+    "cross_validation_folds": 5,
+    "chunk_words": 2000,
+    "minimum_chunk_words": 1600,
+    "classifier_C_candidates": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "probe_C_candidates": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "classifier_grouping": "leave one source-word block index out across all corpora, keeping clean/noise and C1 derivatives together",
+    "shorthand_aggressiveness": [
+      0.25,
+      0.65,
+      1.0
+    ],
+    "C12_sequence_lengths": [
+      2,
+      3,
+      4
+    ],
+    "C12_slot_rigidities": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "sweep_instrument": {
+      "architecture": "lstm",
+      "tokenization": "T1"
+    },
+    "sweep_versions": [
+      "clean",
+      "noise"
+    ],
+    "equivalence_bands": "empirical ZL/LSI-H difference in each matching metric, widened by pooled model seed SD for position gain; not a formal equivalence test",
+    "word_length_distance": "1-Wasserstein distance of empirical word-length distributions",
+    "surprise_model_selection": "lowest mean validation bits/nonspace source character across all architectures/tokenizations/position variants, with explicit OOV literal escape cost (32-bit UTF-8 byte length plus bytes); test data never selects model",
+    "surprise_cv": "all manuscript leaf sides/panels stay in a single fold; refit vocabulary and control BPE within training fold; held-out labels never train the running model",
+    "probes": "single-line baseline-model representations, no metadata inputs; section and Currier plus independent fake-label floors on controls; hand and paragraph start ZL only",
+    "geometry_corpora": [
+      "ZL_running",
+      "C1_clean",
+      "C5_clean",
+      "C8_clean"
+    ],
+    "geometry_top_words": 500,
+    "geometry_neighbors": 5,
+    "geometry_stem_rule": "longest common prefix >=3 and >= half the shorter word; descriptive string family, not linguistic morphology",
+    "dramatic_result_confirmation_seeds": [
+      1783,
+      1787,
+      1789,
+      1801,
+      1811
+    ]
+  }
+}

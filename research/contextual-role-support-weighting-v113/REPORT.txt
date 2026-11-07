@@ -1,0 +1,114 @@
+Training-support-weighted component evidence v113 — 25 October 2026
+
+ANSWER
+This specific count-weighting rule does not improve expected recovery or probability-score quality against the repaired v109 baseline. It retains sharing's decision coverage, but underperforms an equal-weight mixture on recovery in all four adequately supported development panels. It is preserved as a failed rule, with no after-result reweighting or adoption of a different arm.
+
+PRIMARY COMPARISON (FOUR ORIGINAL ADEQUATELY SUPPORTED PANELS)
+Equal-panel mean balanced correct-credit (ties receive0.5): baseline72.52%, count-weighted72.37% (delta-.15percentage points; descriptive paired block-bootstrap95%[-3.26,+3.11]). An abstention's half-credit is expected random tie correctness, not a recovered role.
+Strict balanced recall (abstentions counted as misses): baseline66.34%, weighted69.77% (delta+3.42points; descriptive95%[-.01,+7.11]). This gain accompanies more decisions, while the all-case expected balanced measure does not improve. Neither metric should be silently substituted for the other.
+Pooled decision coverage:577/648=89.04% ->616/648=95.06%, equal to additive sharing, hard fallback and equal mixture. Equal-panel coverage:87.38% ->94.59%. There are no gains beyond sharing's previously available support.
+Balanced log loss (nats, lower is better):.512097 ->.545339, delta+.033242 (descriptive95%[+.004503,+.063884]). Two-class Brier:.340379 ->.360800, delta+.020421 (95%[-.001130,+.042931]). Probability scores worsen in aggregate. This is not a formal calibrated-probability or fresh-source inferential claim.
+
+THE ONE FROZEN SUPPORT FORMULA
+For each real context word at position i:
+  n_local = pooled training occurrence count of i:word
+  n_pool = pooled training occurrence count of W:word at all four offsets
+  n_other = n_pool - n_local
+  w_local = n_local/n_pool; w_shared = n_other/n_pool, when n_pool>0
+  both weights0 when total support is absent
+Each recognized word occurrence has a unit total weight. Its evidence is w_local*log_likelihood(i:word) + w_shared*log_likelihood(W:word). The support counts are pooled over roles; the weight calculation never inspects heldout labels, test frequencies, or which role a feature favors. Local counts are not included a second time in n_other.
+
+The shared likelihood itself still pools all four offsets, including local occurrences; its weight alone uses the disjoint other-position count. The channels remain statistically overlapping, and three other positions provide more count opportunities than one local position. Support is a feature-event count, not an independently sampled effective size or proven estimate of predictive reliability. These limitations were declared before scores. No opportunity correction, alpha, strength threshold or fitted weight was added after this result.
+
+Boundary markers use positional evidence only, at weight1 if recognized and0 otherwise. Original two pair features retain their original contributions, including singleton pairs. Repeated words in separate slots preserve separate unit budgets. A feature absent in one class but present globally keeps ordinary add-one smoothing; globally unknown terms remain neutral. Completely unsupported contexts abstain at equal scores.
+
+MODELS AND COMPARATORS
+The same original v109 six-event model and v111 ten-event shared model are fitted on the same original binary-role training rows. Counts, vocabulary and denominators reproduce previous models. New count weighting and the diagnostic equal mixture both use the shared-model parameters; the weighted combiner is the new operation. Its component likelihood terms exactly reproduce the repaired scorer's terms, priors and1e-12 tie tolerance. No new words, window, normalization, lemma, morphology, dependency gold, embeddings or classifier training objective were introduced.
+
+The fixed equal-mixture control gives.5/.5 to local/shared likelihoods when both exist and uses the sole supported channel at1 otherwise. It also normalizes each occurrence to one vote. This separates count-derived weights from the effect of simply averaging correlated channels. It is not a replacement arm selected after looking at the results.
+
+FIVE-ARM PRIMARY SUMMARY
+                           baseline  additive  hard fallback  count-weighted  equal mixture
+Balanced correct-credit       72.52%    76.34%        73.49%          72.37%         75.35%
+Strict balanced recall        66.34%    73.74%        70.89%          69.77%         72.75%
+Pooled decision coverage      89.04%    95.06%        95.06%          95.06%         95.06%
+Mean balanced log loss         .51210    .58461        .52653          .54534         .53661
+Mean two-class Brier           .34038    .35291        .34711          .36080         .35161
+
+Count-weighted recovery is2.98points below equal mixture (descriptive95%[-4.71,-1.32]), and mean log loss is.008726 worse (95%[+.002065,+.015256]). Every primary panel loses recovery versus equal mixture. The equal mixture itself still worsens probability scores versus baseline, so a favorable recovery value does not make it a full solution. No arm was promoted on that basis.
+
+GAIN AND HARM ACCOUNTING
+Across648 supported-panel instances, the same39 original no-evidence cases receive decisions:29correct,10wrong, just as the preceding sharing experiments.32 original abstentions remain. On previously decided cases, count weighting corrects31 wrong baseline decisions but damages42 correct ones. Against additive it corrects11 and damages34; against hard fallback22 and28; against equal mixture6 and23. Every changed decision is saved, including per-role denominators and score terms.
+
+Across all eight panels,71 occurrences gain feature support and55 remain entirely unsupported. Four under-supported panels retain their original status and are descriptive only; they include failures and one strong-looking Opus-ut result that cannot substitute for the original four supported comparisons. No ambiguous role was relabelled or excluded to improve a score.
+
+CONTROLS AND UNCERTAINTY
+All3,184 declared five-arm control trials completed:199within-block independent context-column shuffles plus199within-block training-label shuffles per panel. Every trial refits the same two model forms, recomputes support weights on its training data, and scores all five arms on the same control test rows. No primary panel's recovery gain over baseline passes the corrected descriptive shuffled-delta comparisons; all primary paired-delta corrected p-values are1 across the four comparators. No trial count or seed was changed after results.
+
+All64,000 paired whole-test-block bootstrap draws across four comparators are retained. They are conditional on fixed fits and exposed development panels, without training-sample or representation-selection uncertainty. Existing panels have been inspected across the prior development experiments. No independent transfer, blind role discovery, general linguistic semantics or Voynich scoring is claimed.
+
+ALL EIGHT COMPARISONS
+Commentarii belli Gallici|cum [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 77.42 / 82.95 / 81.52 / 79.24 / 82.65%.
+  Strict balanced recall baseline/weighted: 70.30 -> 76.74%; coverage 84.62 -> 94.23%.
+  Balanced log loss baseline/weighted/equal: 0.395985 / 0.425000 / 0.416287; Brier 0.262572 / 0.274825 / 0.263348.
+  Weighted-minus-baseline: recovery 1.818pp; log loss 0.029015. Transitions {"wrong_to_wrong":11,"correct_to_correct":69,"abstain_to_wrong":5,"abstain_to_correct":5,"abstain_to_abstain":6,"correct_to_wrong":3,"wrong_to_correct":5}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+Commentarii belli Gallici|ut [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 67.67 / 64.07 / 64.89 / 64.89 / 64.89%.
+  Strict balanced recall baseline/weighted: 53.51 -> 62.84%; coverage 68.35 -> 93.67%.
+  Balanced log loss baseline/weighted/equal: 0.530427 / 0.555486 / 0.543694; Brier 0.368474 / 0.392474 / 0.383994.
+  Weighted-minus-baseline: recovery -2.778pp; log loss 0.025059. Transitions {"abstain_to_correct":11,"abstain_to_abstain":5,"correct_to_correct":37,"wrong_to_wrong":15,"abstain_to_wrong":9,"correct_to_wrong":2}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+De officiis|cum [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 70.60 / 63.19 / 63.19 / 59.34 / 59.34%.
+  Strict balanced recall baseline/weighted: 55.77 -> 51.92%; coverage 70.37 -> 85.19%.
+  Balanced log loss baseline/weighted/equal: 0.565355 / 0.568905 / 0.569039; Brier 0.385247 / 0.403408 / 0.401173.
+  Weighted-minus-baseline: recovery -11.264pp; log loss 0.003550. Transitions {"wrong_to_wrong":4,"abstain_to_wrong":4,"correct_to_correct":14,"abstain_to_abstain":4,"correct_to_wrong":1}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+De officiis|ut [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 69.64 / 76.51 / 69.51 / 72.06 / 74.89%.
+  Strict balanced recall baseline/weighted: 59.89 -> 68.23%; coverage 82.14 -> 92.86%.
+  Balanced log loss baseline/weighted/equal: 0.556129 / 0.546583 / 0.547946; Brier 0.368813 / 0.360952 / 0.359834.
+  Weighted-minus-baseline: recovery 2.419pp; log loss -0.009546. Transitions {"correct_to_correct":45,"abstain_to_wrong":2,"wrong_to_wrong":15,"correct_to_wrong":5,"abstain_to_correct":7,"abstain_to_abstain":6,"wrong_to_correct":4}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+Epistulae ad Atticum|cum [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 72.85 / 74.72 / 75.25 / 72.52 / 74.64%.
+  Strict balanced recall baseline/weighted: 68.74 -> 70.33%; coverage 91.76 -> 95.60%.
+  Balanced log loss baseline/weighted/equal: 0.562460 / 0.568838 / 0.570382; Brier 0.369131 / 0.365122 / 0.364733.
+  Weighted-minus-baseline: recovery -0.338pp; log loss 0.006379. Transitions {"correct_to_correct":116,"abstain_to_wrong":1,"wrong_to_wrong":36,"abstain_to_abstain":8,"correct_to_wrong":9,"abstain_to_correct":6,"wrong_to_correct":6}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+Epistulae ad Atticum|ut [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 70.17 / 71.19 / 67.68 / 65.65 / 69.21%.
+  Strict balanced recall baseline/weighted: 66.44 -> 63.76%; coverage 91.01 -> 95.68%.
+  Balanced log loss baseline/weighted/equal: 0.533815 / 0.640936 / 0.611840; Brier 0.361001 / 0.442300 / 0.418521.
+  Weighted-minus-baseline: recovery -4.517pp; log loss 0.107121. Transitions {"abstain_to_abstain":12,"correct_to_correct":159,"wrong_to_correct":16,"correct_to_wrong":25,"abstain_to_wrong":2,"wrong_to_wrong":53,"abstain_to_correct":11}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+Opus agriculturae|cum [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 72.92 / 72.22 / 68.06 / 68.06 / 68.06%.
+  Strict balanced recall baseline/weighted: 56.94 -> 61.11%; coverage 66.67 -> 85.71%.
+  Balanced log loss baseline/weighted/equal: 0.580888 / 0.524886 / 0.529203; Brier 0.402368 / 0.360026 / 0.363846.
+  Weighted-minus-baseline: recovery -4.861pp; log loss -0.056003. Transitions {"abstain_to_wrong":2,"correct_to_wrong":1,"correct_to_correct":11,"abstain_to_abstain":3,"wrong_to_wrong":2,"abstain_to_correct":2}.
+  Corrected descriptive delta p: context_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":1,"additive":1,"fallback":1,"equal_mix":1}.
+
+Opus agriculturae|ut [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/weighted/equal: 67.46 / 79.96 / 81.68 / 79.96 / 79.96%.
+  Strict balanced recall baseline/weighted: 38.36 -> 65.09%; coverage 54.55 -> 66.67%.
+  Balanced log loss baseline/weighted/equal: 0.583048 / 0.493924 / 0.499512; Brier 0.397796 / 0.317972 / 0.323203.
+  Weighted-minus-baseline: recovery 12.500pp; log loss -0.089124. Transitions {"wrong_to_wrong":2,"abstain_to_correct":4,"correct_to_correct":15,"abstain_to_abstain":11,"correct_to_wrong":1}.
+  Corrected descriptive delta p: context_shuffle {"baseline":0.16,"additive":1,"fallback":1,"equal_mix":1}; training_label_shuffle {"baseline":0.12,"additive":1,"fallback":1,"equal_mix":1}.
+
+DECISION AND IMPLICATION
+Retain v109 as the conservative reference and preserve v113 as a failed count-weighting candidate. Do not treat raw recurrence counts as established evidence of reliability for this task. This result does not reject every support-weighting or interpolation scheme: it rejects adoption of this one untuned ratio on these outcomes.
+A further combiner would need a new design that measures training-only predictive reliability, with a separate independent confirmation source sealed before selecting a rule. Neither the equal-mixture control nor another count formula was adopted or tuned after seeing these results. Other branches' sealed reserves remain untouched.
+
+VERIFICATION AND ARTIFACTS
+Nine pre-score fixtures pass: disjoint-count arithmetic, normalized nonnegative budgets, support corners, boundary handling, pair retention, unchanged likelihood terms, role-renaming invariance, monotonic local weight at fixed total and convex evidence contribution. An independent JavaScript verifier checks all16 model parameter sets against prior models;4,040 five-arm score records; exact baseline/additive/fallback reproduction; every training support count and weight; no-evidence neutrality; metrics and role accounting;3,184 control banks/ranks;64,000 bootstrap draws/intervals; and preservation of prior hashes.12verification groups pass. Computation checks do not override the scientific failure.
+
+PROTOCOL.json and run.py were frozen before scores. MODELS.json, PREDICTIONS.json, RESULTS.json, BOOTSTRAP-DRAWS.json and CONTROL-TRIALS.jsonl preserve all outcomes and support ledgers. verify.mjs verifies saved artifacts without fitting new models. All earlier code, sources, freezes, failed trials and reports remain unchanged.

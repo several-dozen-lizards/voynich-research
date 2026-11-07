@@ -1,0 +1,160 @@
+[
+  {
+    "id": "layout_star_is_not_a_certified_paragraph_start",
+    "mandatory": true,
+    "records": [
+      {
+        "locus_code": "@P0",
+        "is_para_end": false,
+        "folio": "f1r"
+      },
+      {
+        "locus_code": "=Pt",
+        "is_para_end": false,
+        "folio": "f1r"
+      },
+      {
+        "locus_code": "*P0",
+        "is_para_end": false,
+        "folio": "f1r"
+      }
+    ],
+    "expected_last": {
+      "start": false,
+      "paragraph_group": 0
+    },
+    "rationale": "Author-created single paragraph: title-like same-line item followed by a left-margin next line. A layout locator alone cannot certify a new paragraph.",
+    "actual_states": [
+      {
+        "index": 0,
+        "paragraph_group": 0,
+        "start": true,
+        "folio": "f1r"
+      },
+      {
+        "index": 1,
+        "paragraph_group": 0,
+        "start": false,
+        "folio": "f1r"
+      },
+      {
+        "index": 0,
+        "paragraph_group": 1,
+        "start": true,
+        "folio": "f1r"
+      }
+    ],
+    "extraction_matches_mirror": true,
+    "passed": false
+  },
+  {
+    "id": "layout_at_is_not_a_certified_paragraph_start",
+    "mandatory": true,
+    "records": [
+      {
+        "locus_code": "@P0",
+        "is_para_end": false,
+        "folio": "f1r"
+      },
+      {
+        "locus_code": "@P0",
+        "is_para_end": false,
+        "folio": "f1r"
+      }
+    ],
+    "expected_last": {
+      "start": false,
+      "paragraph_group": 0
+    },
+    "rationale": "Known continuing authored paragraph with second locus of unspecified relative position. @ supplies layout uncertainty, not an explicit paragraph-start marker.",
+    "actual_states": [
+      {
+        "index": 0,
+        "paragraph_group": 0,
+        "start": true,
+        "folio": "f1r"
+      },
+      {
+        "index": 0,
+        "paragraph_group": 1,
+        "start": true,
+        "folio": "f1r"
+      }
+    ],
+    "extraction_matches_mirror": true,
+    "passed": false
+  },
+  {
+    "id": "explicit_end_followed_by_plus_context_loss",
+    "mandatory": false,
+    "records": [
+      {
+        "locus_code": "@P0",
+        "is_para_end": true,
+        "folio": "f1r"
+      },
+      {
+        "locus_code": "+P0",
+        "is_para_end": false,
+        "folio": "f1r"
+      }
+    ],
+    "expected_last": {
+      "index": null,
+      "start": false
+    },
+    "rationale": "Characterizes the original conservative exclusion. It is not a requirement to infer or repair a subsequent paragraph start.",
+    "actual_states": [
+      {
+        "index": 0,
+        "paragraph_group": 0,
+        "start": true,
+        "folio": "f1r"
+      },
+      {
+        "index": null,
+        "paragraph_group": 0,
+        "start": false,
+        "folio": "f1r"
+      }
+    ],
+    "extraction_matches_mirror": true,
+    "passed": true
+  },
+  {
+    "id": "page_change_does_not_continue_context",
+    "mandatory": false,
+    "records": [
+      {
+        "locus_code": "@P0",
+        "is_para_end": false,
+        "folio": "f1r"
+      },
+      {
+        "locus_code": "+P0",
+        "is_para_end": false,
+        "folio": "f1v"
+      }
+    ],
+    "expected_last": {
+      "index": null
+    },
+    "rationale": "Retain unknown context after page transition without an asserted start.",
+    "actual_states": [
+      {
+        "index": 0,
+        "paragraph_group": 0,
+        "start": true,
+        "folio": "f1r"
+      },
+      {
+        "index": null,
+        "paragraph_group": -1,
+        "start": false,
+        "folio": "f1v"
+      }
+    ],
+    "extraction_matches_mirror": true,
+    "passed": true
+  }
+]

@@ -1,0 +1,13 @@
+import urllib.request,json,hashlib,datetime,concurrent.futures
+from pathlib import Path
+P=Path(__file__).parent
+jobs=[["FOL-0003R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0003R.jpg/full/full/0/default.jpg"],["FOL-0003V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0003V.jpg/full/full/0/default.jpg"],["FOL-0004R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0004R.jpg/full/full/0/default.jpg"],["FOL-0004V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0004V.jpg/full/full/0/default.jpg"],["FOL-0005R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0005R.jpg/full/full/0/default.jpg"],["FOL-0005V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0005V.jpg/full/full/0/default.jpg"],["FOL-0006R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0006R.jpg/full/full/0/default.jpg"],["FOL-0006V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0006V.jpg/full/full/0/default.jpg"],["FOL-0007R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0007R.jpg/full/full/0/default.jpg"],["FOL-0007V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0007V.jpg/full/full/0/default.jpg"],["FOL-0008R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0008R.jpg/full/full/0/default.jpg"],["FOL-0008V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0008V.jpg/full/full/0/default.jpg"],["FOL-0009R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0009R.jpg/full/full/0/default.jpg"],["FOL-0009V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0009V.jpg/full/full/0/default.jpg"],["FOL-0010R.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0010R.jpg/full/full/0/default.jpg"],["FOL-0010V.jpg","https://imagenes.patrimonionacional.es/iiif/2/h-I-15%2FFOL-0010V.jpg/full/full/0/default.jpg"],["riemann-0137.jpg","https://www.persee.fr/renderPage/bch_0007-4217_1878_num_2_1_4446/bch_0007-4217_1878_num_2_1_T1_0137_0000_710.jpg"]]
+def fetch(item):
+ name,url=item
+ try:
+  req=urllib.request.Request(url,headers={'User-Agent':'VoynichSourceCollation/1.0 (research; public primary sources)'})
+  data=urllib.request.urlopen(req,timeout=45).read();(P/'sources'/name).write_bytes(data)
+  return dict(file=name,url=url,status='OK',bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),utc=datetime.datetime.now(datetime.timezone.utc).isoformat())
+ except Exception as e:return dict(file=name,url=url,status='FAILED',error=str(e))
+with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:res=list(ex.map(fetch,jobs))
+(P/'ACQUISITION-5.json').write_text(json.dumps(res,indent=2)+'\n');print(json.dumps(res))

@@ -1,0 +1,1 @@
+Pre-test engineering failure: Baths is a display name; canonical source label is Balneological. Empty panel detected before test scoring. Original code and freeze retained; corrected label and refroze training. No held-out scores inspected.

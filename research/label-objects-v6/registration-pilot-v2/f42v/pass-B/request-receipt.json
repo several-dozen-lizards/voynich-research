@@ -1,0 +1,18 @@
+{
+  "provider": "zai",
+  "model": "glm-4.6v-flashx",
+  "url": "https://api.z.ai/api/paas/v4/chat/completions",
+  "manual": "Locate the marked target inscription locators on this manuscript image using source position and reading order. This is geometry only: do not transcribe text or identify/classify drawings. The complete source HEADER STRUCTURE includes paragraph and nonparagraph locators so you can distinguish the short target lines from running paragraph text. Header numbers are identifiers, not coordinates. Count agreement alone is insufficient. Only return a box when the exact target identity AND full writing extent can be verified visually. Otherwise abstain. Return JSON only: {\"rows\":[{\"task_id\":\"...\",\"box_1000\":[left,top,right,bottom] or null,\"physical_label_id\":\"stable page-local label identifier\" or null,\"single_line\":true or false,\"locus_identity_confirmed\":true or false,\"review_note\":\"geometric basis, no word transcription\"}]}. Coordinates are NORMALISED 0..1000 across the supplied full native page, with right>left and bottom>top. Include exactly one row per target. Adjacent lines of a single physical label must share physical_label_id.\n{\"targets\": [{\"task_id\": \"V6-c28793830b33f18f\", \"locus\": \"f42v.T.15\", \"unit\": \"f42v.T\", \"line\": \"15\"}], \"neutral_positions\": {\"f42v.T\": \"title? right-justified, right of [drawing]\"}, \"complete_header_structure\": [{\"unit\": \"f42v.P\", \"reading_headers\": {\"H\": [\"f42v.P.1\", \"f42v.P.2\", \"f42v.P.3\", \"f42v.P.4\", \"f42v.P.5\", \"f42v.P.6\", \"f42v.P.7\", \"f42v.P.8\", \"f42v.P.9\", \"f42v.P.10\", \"f42v.P.11\", \"f42v.P.12\", \"f42v.P.13\", \"f42v.P.14\", \"f42v.P.15\"], \"F\": [\"f42v.P.1\", \"f42v.P.2\", \"f42v.P.3\", \"f42v.P.4\", \"f42v.P.5\", \"f42v.P.6\", \"f42v.P.7\", \"f42v.P.8\", \"f42v.P.9\", \"f42v.P.10\", \"f42v.P.11\", \"f42v.P.12\", \"f42v.P.13\", \"f42v.P.14\", \"f42v.P.15\"]}}, {\"unit\": \"f42v.T\", \"reading_headers\": {\"H\": [\"f42v.T.15\"], \"F\": [\"f42v.T.15\"]}}]}",
+  "image_path": "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\image-context-v4\\registration\\registrar-only\\images\\I6a40e73bd565f73b.jpg",
+  "image_sha256": "98c67b238fd7e90f5cda7c8c8cc12dab2e2bf42b83402610e0cb32da9f09fed7",
+  "request_sha256": "029bdc89022940fb9132de646881951ab02c66701b81ac7102d8688f62f8ca31",
+  "message_count": 1,
+  "tools_supplied": false,
+  "agent_harness": false,
+  "stateless": true,
+  "transcription_supplied": false,
+  "max_tokens": 4096,
+  "runtime_options": null,
+  "client_sha256": "dee3d0bd1b5f65737631a0d558e97f6d5861f5352682b2cccbfe157fac0bedbc",
+  "started_epoch": 1792896580.0927823
+}

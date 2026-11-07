@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-26T02:39:43.550Z",
+  "status": "FROZEN BEFORE FRESH BANK GENERATION OR SCORES",
+  "authority": "User requested fresh1200trialbank withisolatedworkers andunchangedclassrules; preservefailedbank; H/Fclosed",
+  "method": "T3-class-multiword-v3-attempt1 unchanged; PROTOCOL.json exactcopy; this receipt overrides only bank seeds, pseudo IDs and execution model",
+  "native_trials": 1200,
+  "trials_per_cell": 200,
+  "families": [
+    "G5",
+    "G6"
+  ],
+  "geometries": [
+    "Latin",
+    "scribe1",
+    "scribe2"
+  ],
+  "seed_rule": "872600000+family(G5:0/G6:1000000)+geometry(Latin:0/scribe1:10000/scribe2:20000)+trial0..199",
+  "permutation_seed": "generationseed+3000000",
+  "pseudo_folio_prefix": "CMW3B2:",
+  "execution": "ExactlyoneisolatedPythonworkerpertrial; G5nativeJava subprocess-Xmx64m. Serialworkers forboundedmemory. No retries,replacementseeds,tailwrap,padding or earlystopping basedonoutcomes.",
+  "gates": "Sameall4Latin,6clean200-trialcellsWilson95upper<=.05and2pairedscribeHolmgates;anyinvalidblocksqualification",
+  "positive": "ReapplyunchangedLatinpipeline andoriginalLatinpermutationseeds onexactoldtransforms; notnewsourceorindependentreplication",
+  "known_exposure": "Previousfailedbank1190valid/10invalid;4candidatefailures;allpriorclasspositive/exactnegative/diagnosisknown",
+  "prior_bank": "../class-multiword-v3 remainsFAIL andunchanged; nevercombineorpoolbanks",
+  "new_manuscript_scores": 0,
+  "manuscript_confirmation": "CLOSED throughoutthisqualification-onlyrun",
+  "alpha_V": null
+}

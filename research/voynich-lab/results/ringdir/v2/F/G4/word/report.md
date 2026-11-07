@@ -1,0 +1,106 @@
+# RD-v2 F\G4\word
+
+**PASS**
+
+```json
+{
+  "L_min": 21,
+  "passing_bins": [
+    4,
+    5
+  ],
+  "null": {
+    "passed": true,
+    "n_non_ties": 590,
+    "accuracy": 0.4661016949152542,
+    "cluster_ci": [
+      0.4265486725663717,
+      0.5108303249097473
+    ]
+  },
+  "bins": [
+    {
+      "bin": 1,
+      "length_min": 3,
+      "length_max": 5,
+      "n": 200,
+      "distinct_windows": 52,
+      "families": 26,
+      "accuracy": 0.18,
+      "cluster_ci": [
+        0.050761421319796954,
+        0.3401015228426396
+      ],
+      "ties": 149,
+      "mean_pair_coverage": 0.08033333333333333,
+      "passed": false
+    },
+    {
+      "bin": 2,
+      "length_min": 6,
+      "length_max": 10,
+      "n": 200,
+      "distinct_windows": 104,
+      "families": 26,
+      "accuracy": 0.49,
+      "cluster_ci": [
+        0.3118811881188119,
+        0.6565656565656566
+      ],
+      "ties": 94,
+      "mean_pair_coverage": 0.08392857142857142,
+      "passed": false
+    },
+    {
+      "bin": 3,
+      "length_min": 11,
+      "length_max": 20,
+      "n": 200,
+      "distinct_windows": 121,
+      "families": 26,
+      "accuracy": 0.73,
+      "cluster_ci": [
+        0.5714285714285714,
+        0.8808290155440415
+      ],
+      "ties": 47,
+      "mean_pair_coverage": 0.09824664918414917,
+      "passed": false
+    },
+    {
+      "bin": 4,
+      "length_min": 21,
+      "length_max": 40,
+      "n": 200,
+      "distinct_windows": 197,
+      "families": 26,
+      "accuracy": 0.875,
+      "cluster_ci": [
+        0.7336683417085427,
+        0.9845360824742269
+      ],
+      "ties": 17,
+      "mean_pair_coverage": 0.08423573005994012,
+      "passed": true
+    },
+    {
+      "bin": 5,
+      "length_min": 41,
+      "length_max": 80,
+      "n": 200,
+      "distinct_windows": 127,
+      "families": 26,
+      "accuracy": 0.935,
+      "cluster_ci": [
+        0.8282828282828283,
+        1.0
+      ],
+      "ties": 5,
+      "mean_pair_coverage": 0.08145611799904078,
+      "passed": true
+    }
+  ]
+}
+```
+
+Calibration only. No real-ring scores, radial arm or corrected-order export. Repeated windows/sets are conditional on the frozen source pool; source families are not multiplied into independent manuscript replications.

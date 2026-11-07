@@ -1,0 +1,11 @@
+{
+  "status": "INPUT CONTRACT; NO REGISTRATION SUPPLIED",
+  "role_separation": "Registrar is independent of picture raters, blind to outcomes, and never receives picture boxes or derived labels.",
+  "permitted_inputs": ["Unannotated source images", "EVT locus headers and reading-specific block line counts"],
+  "forbidden_inputs": ["Picture annotations", "sh/ch event counts", "Follower identities", "qok outcomes", "Text-effect results"],
+  "coordinates": "Native canvas pixels, x/y/width/height; record actual displayed raster dimensions and transformation to native canvas.",
+  "block_fields": ["folio", "canvas_id", "block_id", "block_box", "EVT_P_unit", "visible_line_count", "H_source_line_count", "F_source_line_count", "registration_status", "reason", "registrar_id", "provenance"],
+  "line_fields": ["physical_line_id", "folio", "block_id", "top_to_bottom_ordinal", "line_box", "H_locus", "F_locus", "registration_status", "reason"],
+  "count_rule": "Do not force a match: a block whose visible count does not match the EVT unit is UNREGISTERED and dropped under the spec. Preserve every dropped block and H/F discrepancy.",
+  "release_rule": "This contract does not establish blinding. Record registrar identity, exposure declaration and exact inputs actually received. Hash the completed geometry before deriving labels."
+}

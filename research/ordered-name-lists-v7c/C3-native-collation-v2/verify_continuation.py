@@ -1,0 +1,66 @@
+"""Source-only integrity checks. Does not score historical lists against Voynich."""
+from pathlib import Path
+import json,hashlib
+from PIL import Image
+P=Path(__file__).parent;B=P.parent;V1=B/'C3-native-collation-v1';checks=[]
+def read(p):return json.loads(Path(p).read_text(encoding='utf8'))
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ck(n,v):checks.append(dict(check=n,pass_check=bool(v)))
+scope=read(P/'SCOPE.json')
+for path,digest in scope['inputs'].items():ck('pinned prior artifact '+path,sha(B/path)==digest)
+for folder,manifest,ext in [('C1-source-freeze-v1','FREEZE.json','external_source_dependencies'),('C2-open-v1','DELIVERY-FREEZE.json','none'),('amendment-v7.3','DELIVERY-FREEZE.json','external_policy_outputs'),('C3-revised-plan-v1','DELIVERY-FREEZE.json','dependencies'),('C3-native-collation-v1','DELIVERY-FREEZE.json','dependencies')]:
+ d=B/folder;m=read(d/manifest)
+ for x in m['files']:ck('preserved '+folder+'/'+x['path'],sha(d/x['path'])==x['sha256'])
+ for x in m.get(ext,[]):ck('preserved dependency '+x['path'],sha(d/x['path'])==x['sha256'])
+acq=read(P/'ACQUISITION.json')
+ck('19 acquisitions recorded, none failed',len(acq)==19 and all(x['status']=='OK' for x in acq))
+for x in acq:ck('download intact '+x['file'],sha(P/'sources'/x['file'])==x['sha256'])
+info=read(P/'sources/native-image-info.json')
+ck('source resolution really899x1348',info['width']==899 and info['height']==1348)
+ck('IIIF advertised sizes add no higher-resolution source',max(x['width'] for x in info['sizes'])==899)
+images=sorted((P/'sources').glob('FOL-*.jpg'))
+ck('eighteen expected historical folios only',{x.name for x in images}=={f'FOL-{n:04}{side}.jpg' for n in range(21,30) for side in ('R','V')})
+ck('Gemini dimensions match downloaded native frames',all(Image.open(x).size==(899,1348) for x in images))
+n=read(P/'GEMINI-NATIVE-FIRST-PASS.json');c=read(P/'GEMINI-SPELLING-COLLATION.json');rows=c['rows']
+ck('Gemini exact ordered30 slots',[r['degree'] for r in rows]==list(range(1,31)) and len({(r['sign'],r['degree']) for r in rows})==30)
+ck('native record exact same ordered30 slots',[r['degree'] for r in n['rows']]==list(range(1,31)))
+for r in rows:
+ ck('source image exists degree'+str(r['degree']),(P/r['native']['native_image']).is_file())
+ ck('no scoring admission degree'+str(r['degree']),r['scientific_admission'] is False and r['native']['scientific_admission'] is False)
+ck('native uncertainties exact',[r['degree'] for r in rows if r['native']['uncertain']]==[3,7,15,20,23,25,26])
+ck('three duplicate-name degree slots retained',[rows[i-1]['native']['reading'] for i in (9,10,11)]==['bezahar']*3 and [rows[i-1]['edition1881']['heading_name'] for i in (9,10,11)]==['Bezahar']*3)
+ck('second/third source qualifiers retained',rows[9]['native']['qualifier'] is not None and rows[10]['native']['qualifier'] is not None)
+ck('explicit source order10 before11 retained',rows[9]['native']['folio']=='24r' and rows[9]['native']['column']=='b' and rows[10]['native']['folio']=='24v' and rows[10]['native']['column']=='a')
+ck('degree30 not dropped on next-sign page',rows[-1]['degree']==30 and rows[-1]['edition1881']['pdf_page']==323 and rows[-1]['native']['folio']=='29v')
+ck('rubric/body15 distinct',rows[14]['edition1881']['heading_name']=='Quedoritoz' and rows[14]['body_variants']==['Kedoritoz'])
+ck('all printed pages inspected',all(r['edition1881']['visual_checked'] for r in rows) and {r['edition1881']['pdf_page'] for r in rows}==set(range(317,324)))
+ck('no alias completeness or independence invented',all(r['alias_completeness']=='NOT_EXHAUSTIVE' for r in rows) and c['complete_native_paleographic_collation'] is False and c['independent_review'] is False)
+over=read(P/'PRIOR-READING-REINSPECTION.json')
+expected={('Aries',d) for d in (1,5,20,21,23,26)}|{('Taurus',d) for d in (5,6,9,10,13,17,18,28)}
+ck('all14 prior uncertainty records reinspected',{(r['sign'],r['degree']) for r in over['rows']}==expected and len(over['rows'])==14)
+ck('no uncertainty silently cleared',all(r['still_uncertain'] and r['independent_review'] is False and r['new_witness'] is False for r in over['rows']) and over['uncertainties_resolved_for_scoring']==0)
+ck('four revisions explicit',len(over['provisional_revisions'])==4 and sum(r['disposition']=='PROVISIONAL_WORKING_NOTE_REVISION' for r in over['rows'])==4)
+for r in over['rows']:ck('reinspection crop exists '+r['sign']+str(r['degree']),(P/r['crop']).is_file())
+ck('Aries21 working correction recorded',next(r for r in over['rows'] if (r['sign'],r['degree'])==('Aries',21))['working_reading']=='tuminon')
+ck('Taurus10 rubric/body clarified',next(r for r in over['rows'] if (r['sign'],r['degree'])==('Taurus',10))['working_reading']=='zamorat' and next(r for r in over['rows'] if (r['sign'],r['degree'])==('Taurus',10))['body_reading']=='zamoricaz')
+# Original hypotheses and uncertainty records are not edited to look like prior successes.
+ck('original Aries21 retained',read(V1/'ARIES-NATIVE-FIRST-PASS.json')['rows'][20]['reading']=='cuminon')
+ck('original Taurus9 retained',read(V1/'TAURUS-NATIVE-FIRST-PASS.json')['rows'][8]['reading']=='zumberie')
+crops=read(P/'qa/PRIOR-REVIEW-CROP-LOCATORS.json')
+ck('all crops same pixels not independent data',len(crops)==14 and all(r['new_native_information'] is False for r in crops))
+agg=read(P/'CUMULATIVE-NATIVE-90.json');a=agg['rows']
+ck('90 distinct cumulative source positions',len(a)==90 and len({(r['sign'],r['degree']) for r in a})==90)
+ck('three whole source blocks retained',all(len([r for r in a if r['sign']==s])==30 for s in ('Aries','Taurus','Gemini')))
+ck('21 uncertain excerpts remain',sum(r['uncertain'] for r in a)==21 and agg['uncertain_entries']==21)
+ck('aggregate no source admission',agg['new_source_profiles_admitted']==0 and all(r['scientific_admission'] is False for r in a))
+ck('original and overlay coexist in cumulative index',next(r for r in a if (r['sign'],r['degree'])==('Aries',21))['original_native_excerpt']=='cuminon' and next(r for r in a if (r['sign'],r['degree'])==('Aries',21))['working_native_excerpt']=='tuminon')
+previous=read(P/'PREVIOUS-STATUS-POINTER.json')
+ck('previous continuation pointer retained',previous['delivery_sha256']==scope['inputs']['C3-native-collation-v1/DELIVERY-FREEZE.json'])
+s=read(P/'STATUS.json')
+ck('no claim/fit/look/vault change',s['C3_fits']==0 and s['new_scoring_profiles_admitted']==0 and s['C2_looks_used']==6 and s['C2_look_cap']==10 and s['vault_open'] is False and scope['new_C2_looks']==0 and scope['new_C3_fits']==0 and scope['vault_open'] is False)
+ck('unchanged source gaps reported',s['source_unrepresented_degree_slots']==59)
+failed=[x for x in checks if not x['pass_check']]
+out=dict(status='SOURCE_INTEGRITY_AND_PRESERVATION_PASS' if not failed else 'FAIL',checks_run=len(checks),failed=failed,checks=checks,scientific_qualification=False,scoring_admission=False,vault_open=False)
+(P/'VERIFICATION.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+print(json.dumps(dict(status=out['status'],checks_run=len(checks),failed=failed)))
+raise SystemExit(1 if failed else 0)

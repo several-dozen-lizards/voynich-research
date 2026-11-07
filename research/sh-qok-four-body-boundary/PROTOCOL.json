@@ -1,0 +1,9 @@
+{
+  "scope": "Constructive four-body synthetic boundary qualification only. No manuscript/HF data loaded.",
+  "generator": "200fresh layouts.12pages,4exactbodies aedy,beey,cey,dy;7lines/body/page. Eachpage randomly selects2positions from1,3,5,7 in length10 lines. Eachline has thatbody at both positions, remaining tokens dar. For eachbody randomly choose3of7lines sh-left/ch-right; remaining4ch-left/sh-right. Randomize lineorder. Expected V=12*4*(3*4/7)=576/7=82.285714; all12pages equalshare. All followers available: f_ch=f_sh=1. No rejection sampling or outcome-based design.",
+  "joint_rule": "Unchanged V>=80,>=8pages,maxshare<=.25,f_ch>=.10,f_sh>=.25; boundary80<=V<84. Gate evaluated by frozen actualextractor, not assumed from construction. Any design failure retained and not replaced.",
+  "fresh_seeds": "1250000+trial for structure;2250000+trial for outcomes.",
+  "scenarios": "Independent draws per accepted layout: null_low probability.2;null_high.6;null_line logistic(randompage\u00b1.7+randomline\u00b1.7+position\u00b1.7) on available nonorigins, independent of variants;positive matched chfollowers.1,shfollowers.25,others.2. Exact score unchanged Bonferroni8. No null prefix calibration.",
+  "gates": "Require all200layouts supportverified; positive lowerWilson95power>=.80;eachnullupperfalseflag<=.05. Anyfailedcell failsqualification. Check support,pages,shares,availability,all4bodies,matching unchanged afteroutcomes; preserve everylayout seed and outcome. No reruns.",
+  "limits": "Deliberately constructed balanced overlap, not sparse historical coverage. Feasibilityalways1: tests joint rule in feasible interiors, not close to feasibilityboundary. Vonlyone value near82.29; not all80..84. Finite controls, no universal sufficiency or claim manuscriptcanpass."
+}

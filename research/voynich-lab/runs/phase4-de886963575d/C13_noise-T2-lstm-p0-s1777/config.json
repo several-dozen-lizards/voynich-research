@@ -1,0 +1,195 @@
+{
+  "corpus": "C13_noise",
+  "tokenization": "T2",
+  "architecture": "lstm",
+  "with_position": false,
+  "seed": 1777,
+  "training": {
+    "phase": 4,
+    "protocol_revision": 1,
+    "seeds": [
+      1729,
+      1733,
+      1741,
+      1753,
+      1777
+    ],
+    "steps": 96,
+    "validation_steps": [
+      24,
+      48,
+      72,
+      96
+    ],
+    "batch_size": 32,
+    "context_length": 64,
+    "embedding_dim": 256,
+    "lstm_hidden": 512,
+    "heads": 4,
+    "ff_dim": 1024,
+    "dropout": 0.1,
+    "learning_rate": 0.002,
+    "warmup_steps": 8,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "word_vocab_cap": 4096,
+    "symbol_vocab_cap": 512,
+    "parameter_cap": 5000000,
+    "optimizer": "AdamW, fused CUDA, fixed warmup/cosine schedule",
+    "precision": "BF16 CUDA autocast; FP32 parameters/loss accounting",
+    "selection": "minimum validation BPT among the four registered checkpoints; test never selects",
+    "budget_interpretation": "fixed-compute instrument; report effective corpus epochs and continuing validation improvement; no convergence claim",
+    "position_events": "known SOL / previous EOL / explicit paragraph start before target; never future EOL",
+    "hardware_benchmark": "report/HARDWARE_BENCHMARK.json"
+  },
+  "page_split": {
+    "SBB_PK_Mgf516_047v": "train",
+    "SBB_PK_Mgf516_119v": "train",
+    "SBB_PK_Mgf516_104v": "train",
+    "SBB_PK_Mgf516_072v": "train",
+    "SBB_PK_Mgf516_220v": "train",
+    "SBB_PK_Mgf516_014r": "train",
+    "SBB_PK_Mgf516_105r": "train",
+    "SBB_PK_Mgf516_012v": "train",
+    "SBB_PK_Mgf516_103v": "train",
+    "SBB_PK_Mgf516_024r": "validation",
+    "SBB_PK_Mgf516_103r": "train",
+    "SBB_PK_Mgf516_072r": "train",
+    "SBB_PK_Mgf516_221r": "train",
+    "SBB_PK_Mgf516_221v": "train",
+    "SBB_PK_Mgf516_024v": "validation",
+    "SBB_PK_Mgf516_121r": "train",
+    "SBB_PK_Mgf516_073v": "train",
+    "SBB_PK_Mgf516_014v": "train",
+    "SBB_PK_Mgf516_120v": "test",
+    "SBB_PK_Mgf516_023v": "validation",
+    "SBB_PK_Mgf516_049r": "train",
+    "SBB_PK_Mgf516_071v": "test",
+    "SBB_PK_Mgf516_048r": "train",
+    "SBB_PK_Mgf516_013r": "train",
+    "SBB_PK_Mgf516_222v": "train",
+    "SBB_PK_Mgf516_071r": "test",
+    "SBB_PK_Mgf516_013v": "train",
+    "SBB_PK_Mgf516_120r": "test",
+    "SBB_PK_Mgf516_104r": "train",
+    "SBB_PK_Mgf516_119r": "train",
+    "SBB_PK_Mgf516_025r": "train",
+    "SBB_PK_Mgf516_070v": "test",
+    "SBB_PK_Mgf516_048v": "train",
+    "SBB_PK_Mgf516_025v": "train",
+    "SBB_PK_Mgf516_047r": "train",
+    "SBB_PK_Mgf516_074r": "train"
+  },
+  "vocabulary": [
+    "<PAD>",
+    "<UNK>",
+    "<BOS>",
+    " ",
+    "g",
+    "u",
+    "k",
+    "v",
+    "c",
+    "p",
+    "t",
+    "q",
+    "f",
+    "\ue200",
+    "o",
+    "gp",
+    "n",
+    "fg",
+    "j",
+    "x",
+    "ej",
+    "z",
+    "\ue200p",
+    "y",
+    "pf",
+    "fc",
+    "d",
+    "ig",
+    "l",
+    "gt",
+    "h",
+    "r",
+    "fgt",
+    "e",
+    "m",
+    "i",
+    "cp",
+    "g\ue200",
+    "qg",
+    "uv",
+    "\ue208",
+    "\ue201",
+    "\ue204",
+    "s",
+    "\ue20a",
+    "\ue203",
+    "\ufffd",
+    "\ue20b",
+    "\ue207",
+    "a",
+    "\ue20c",
+    "\ue202",
+    "\ue205",
+    "b",
+    "\ue206",
+    "\ue209"
+  ],
+  "bpe_merges": [
+    [
+      "f",
+      "g"
+    ],
+    [
+      "g",
+      "p"
+    ],
+    [
+      "e",
+      "j"
+    ],
+    [
+      "\ue200",
+      "p"
+    ],
+    [
+      "p",
+      "f"
+    ],
+    [
+      "f",
+      "c"
+    ],
+    [
+      "i",
+      "g"
+    ],
+    [
+      "g",
+      "t"
+    ],
+    [
+      "fg",
+      "t"
+    ],
+    [
+      "c",
+      "p"
+    ],
+    [
+      "g",
+      "\ue200"
+    ],
+    [
+      "q",
+      "g"
+    ],
+    [
+      "u",
+      "v"
+    ]
+  ]
+}

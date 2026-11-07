@@ -1,0 +1,56 @@
+Contextual-role error audit v108 — 25 October 2026
+
+MAIN FINDING
+The completed failures do not justify treating the original context representation as exhausted. The audit identifies three separable problems: sparse exact word/position features, context clusters capturing boundaries or local collocations instead of the full annotated role distinction, and a concrete unknown-feature scoring bias in the supervised diagnostic. Wider context is a plausible later experiment, but the audit does not show that width alone is the principal repair.
+
+SCOPE AND STATUS
+Retrospective descriptive audit of v107, not a new qualification or improved model result. All2,254 occurrences are source-linked;808 heldout binary-role occurrences have saved supervised and clustering predictions. All eight panels are retained, including the four with insufficient support for the original transfer claim. No model refitting, new predictions, changed role labels, Voynich access, or heldout zodiac access occurred. All prior v107 delivery hashes and source hashes remain unchanged.
+
+1. EXACT CONTEXT FEATURES ARE VERY SPARSE
+Each representation uses four position-specific surface identities and two exact same-side neighbor pairs. For Caesar cum,67.6% of supervised test-feature slots have no training-vocabulary match;86.1% of pair-feature slots are unseen. Sixteen of104 scored occurrences have no recognized feature at all. Across all eight panels,126 of808 occurrences have no recognized supervised feature. Unseen individual-word figures in SUMMARY are position-specific: a familiar word at another position is still unseen by that feature.
+
+No full four-neighbor test context occurs in binary-role training in ANY panel. The absence of mixed-gold identical contexts therefore is not evidence for perfect separability: nearly every full context is a singleton. The recorded in-sample majority accuracy is descriptive and must not be called a predictive ceiling.
+
+Some coverage loss is due to rigid position identity. In Caesar cum,50 of243 unseen real word-at-position occurrences had the same surface word elsewhere in the training neighborhood;193 were unseen at every training-neighbor position. Sharing across positions could cover some gaps but cannot solve all lexical sparsity. This is a coverage calculation, not a performance estimate.
+
+2. THE SUPERVISED DIAGNOSTIC HAS AN UNKNOWN-FEATURE BIAS
+The original score adds log((class_feature_count+1)/(class_total+vocabulary_size+1)) for every feature, including completely unseen ones. For an unseen feature, its count is zero for both roles; the class-dependent denominator remains. Consequently, a context with no recognized features always favors the role with FEWER training occurrences, despite the declared equal role priors. It is not a neutral no-information decision.
+
+Exact decomposition of every saved supervised score confirmed this effect without modifying any prediction. Across eight panels, unknown-feature contributions overturned an otherwise correct known-feature margin in130 of354 errors. This aggregate includes sparse unsupported panels and has no inferential status. On the four supported panels, the corresponding counts are Caesar cum6, De officiis ut11, Cicero letters cum4, Cicero letters ut66. Known-feature term margins and unknown-feature term margins are saved for every scored example.
+
+These are algebraic attributions inside the old classifier, NOT130 demonstrated recoverable wins for a repaired classifier. A new rule can also damage existing correct predictions. The original76.82% diagnostic is therefore neither a representation ceiling nor a general upper bound. The old failures and accuracy figures remain valid for the actual old implementation.
+
+3. CLUSTERS CAPTURE REAL LOCAL STRUCTURE, BUT NOT NECESSARILY ROLES
+Caesar cum cluster1 contains61 training occurrences, all in the first two sentence positions. It includes51 SCONJ,9 ADP and1 ADV; it is not a pure function class. Cicero letters cum cluster1 contains19 training occurrences, all immediately preceded by me (18ADP,1SCONJ). Cicero letters ut cluster1 contains29 occurrences, all in the last two positions; both its clusters map to SCONJ. Three of eight panels map both clusters to the same gold role. Forcing k=2 did not force recovery of two different annotated functions.
+
+Boundary information may be relevant and should not simply be deleted. The repair question is whether lexical and boundary channels can be represented separately, with frozen controls that detect boundary-only or collocation-only solutions. Inspecting an attractive cluster and naming it a role would repeat the original problem.
+
+4. THE WINDOW DOES MISS SOME ANNOTATED RELATIONSHIPS, BUT WIDTH IS NOT THE WHOLE DIAGNOSIS
+Using external annotations only as diagnostic references: in heldout Caesar cum, the annotated head lies inside the contiguous two-word window for58/60 ADP occurrences but only9/44 SCONJ occurrences. Wider surface context could expose information absent from the old window. This head-distance difference is strongly confounded with gold role and does NOT establish that distant heads cause the errors. Within-role comparisons do not show a consistent advantage for head visibility across works. Gold heads, POS, morphology and dependency labels must remain forbidden as unknown-text model inputs.
+
+Two source-linked failures illustrate different problems:
+- test:52857:2, Caesar1.42.5: uterque [cum] equitatu veniret. GoldADP, head equitatu at+1; both old models predictSCONJ. A wider window is not needed to contain the annotated head here.
+- train:52636:7, Caesar1.13.4: immediate context adortus / esset / ii / qui. GoldSCONJ; annotated head possent is+9 away. Both old models predictADP.
+The ID prefix is the original UD source partition, not v107's split; both examples are v107 heldout-test occurrences. EXAMPLES.txt/JSON contains94 deterministically hash-selected successes and failures with full sentences and source references, including competing nearest training contexts. No striking-example selection was used.
+
+5. ROLE-COUNT FAILURES MOSTLY OVERPARTITION
+The previously saved clean two-role controls chose3 or4 clusters in13/40 trials; none chose1. Clean three-role controls overpartitioned12 times, underpartitioned2, abstained3. Clean four-role controls underpartitioned7 and abstained13. These are not new runs. They support separating cluster-number estimation from representation qualification; changing the selector alone cannot repair missing lexical coverage or the supervised scoring bias.
+
+ALL PANEL COVERAGE AND SCORE DIAGNOSTICS
+Commentarii belli Gallici|cum [FAIL]: 104 evaluated; unseen six-feature share 67.6%; unseen pair share 86.1%; zero-known-feature occurrences 16; unknown-term margin overrides 6.
+Commentarii belli Gallici|ut [NOT_ESTIMABLE]: 79 evaluated; unseen six-feature share 78.9%; unseen pair share 93.7%; zero-known-feature occurrences 25; unknown-term margin overrides 26.
+De officiis|cum [NOT_ESTIMABLE]: 27 evaluated; unseen six-feature share 79.0%; unseen pair share 92.6%; zero-known-feature occurrences 8; unknown-term margin overrides 2.
+De officiis|ut [FAIL]: 84 evaluated; unseen six-feature share 73.0%; unseen pair share 89.9%; zero-known-feature occurrences 15; unknown-term margin overrides 11.
+Epistulae ad Atticum|cum [FAIL]: 182 evaluated; unseen six-feature share 69.0%; unseen pair share 91.8%; zero-known-feature occurrences 15; unknown-term margin overrides 4.
+Epistulae ad Atticum|ut [FAIL]: 278 evaluated; unseen six-feature share 65.3%; unseen pair share 90.5%; zero-known-feature occurrences 25; unknown-term margin overrides 66.
+Opus agriculturae|cum [NOT_ESTIMABLE]: 21 evaluated; unseen six-feature share 84.9%; unseen pair share 95.2%; zero-known-feature occurrences 7; unknown-term margin overrides 0.
+Opus agriculturae|ut [NOT_ESTIMABLE]: 33 evaluated; unseen six-feature share 86.9%; unseen pair share 100.0%; zero-known-feature occurrences 15; unknown-term margin overrides 15.
+
+RECOMMENDED NEXT DEVELOPMENT EXPERIMENT — DESIGN ONLY, NOT RUN OR FROZEN
+A. First isolate scorer handling from representation. Keep the original features and frozen baseline; compare an explicitly defined unknown-feature/backoff rule. Under equal priors, an entirely unsupported context should produce a tie/abstention rather than a class-size preference. Specify that behavior and calibration controls before any new confirmation scoring. Treat this as a scorer change, not evidence for a better representation.
+B. Then test surface-only sharing to reduce fragmentation: separate position/boundary indicators from word identity; share information across neighboring positions while retaining relative order; use a declared backoff from rare exact pairs to their components. Candidate character-substring or distributional sharing can be investigated on development sources, but no Latin lemma/POS/dependency gold may enter the features. Include misleading shared-ending and boundary-only controls.
+C. Only after these checks, compare a broader distance-weighted surface context with the local window under a bounded, predeclared design. Keep sentence/unknown barriers; do not use annotated syntactic heads to select context in the model. A larger exact-word window alone can add more unsupported features; it has not been shown to repair these errors.
+D. Use v107 panels as exposed development material. Choose and seal an independent confirmation source before comparing candidate representations; do not repurpose other projects' sealed reserves. First qualify role recovery with k supplied, then revisit role-number discovery. All proposals remain hypotheses, not achieved improvements.
+
+VERIFICATION AND ARTIFACTS
+11 saved consistency checks pass: source joins and heads, feature coverage, original balanced recalls, deterministic94-example selection, all808 saved score decompositions and the126/130 diagnostic counts. Earlier code/results/sources verified unchanged. Initial score-audit encoding failure was retained under history/score-audit-encoding-failure; the correction only specifiedUTF-8 decoding. PROTOCOL.json/run.py and supplementary score plan/code have separate freezes. OCCURRENCE-AUDIT.jsonl is exhaustive, SUMMARY.json stores per-role/per-panel tables, CONTEXT-SUPPORT.json stores positional versus lexical coverage, SCORE-DECOMPOSITION.json stores term-level margins, and VERIFICATION.json records the checks.

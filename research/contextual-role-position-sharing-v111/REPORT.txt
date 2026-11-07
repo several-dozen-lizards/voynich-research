@@ -1,0 +1,112 @@
+Component-word identity sharing with explicit positions v111 — 25 October 2026
+
+OUTCOME
+The shared-word representation improves observed decision recovery and coverage across all four adequately supported development panels. However, probability-score quality worsens, several under-supported panels lose recovery, and the paired improvement does not clear the declared corrected shuffled-delta comparisons. This is a promising development candidate for further controlled work, not an independently confirmed or fully qualified replacement for v109.
+
+PRIMARY COMPARISON (FOUR PREDECLARED ADEQUATELY SUPPORTED PANELS)
+Equal-panel mean balanced correct-credit72.52% ->76.34% (+3.82percentage points; descriptive paired whole-block bootstrap95%[+1.35,+6.38]). Ties receive half-credit here; abstained cases are not counted as recovered roles.
+Strict balanced recall, counting abstentions as misses,66.34% ->73.74% (+7.40points; descriptive95%[+4.57,+10.27]). Thus the gain is not only an abstention-credit convention.
+Pooled decision coverage577/648=89.04% ->616/648=95.06%. Equal-panel mean coverage is87.38% ->94.59%; these are different aggregation conventions and should not be mixed.
+The candidate adds feature support to39 previously unsupported test occurrences, all newly decided:29correct,10wrong. These raw counts are not role-balanced evidence. For example, the13 newly supported Cicero-ut cases include12SCONJ and1ADV:11SCONJ are correct but the soleADV is wrong. Its newly supported subset balanced recall is45.83%, despite11/13 raw correctness. The complete per-role denominators are retained.
+
+On cases already decided by the baseline,26 wrong decisions become correct while14 correct ones become wrong across the four supported panels.32 original abstentions remain. Caesar cum reaches82.95% all-case correct-credit and80.45% strict balanced recall, but crossing80% on already exposed development material does not recreate an independent qualification.
+
+THE FROZEN REPRESENTATION
+Baseline has six feature events: four exact word-at-position features for offsets-2,-1,+1,+2, plus exact left and right same-side pair features.
+Shared retains those SIX unchanged and adds four events: W:surface_word pooled across all four positions. Repeated occurrences preserve multiplicity. For boundary markers, the added event remains position-specific, W{i}:#edge or W{i}:#barrier. No position-only constant is added. This retains explicit word-position and pair-order information while allowing literal component identity to contribute at a previously unseen position.
+The duplicate control also has ten events, but its added features are W{i}:surface_word at every position. It duplicates existing position-specific information without sharing identities. It is a diagnostic control, not a winner selected after scoring. No singleton suppression from v110 was adopted.
+
+SCORER AND TRAINING
+The exact v109 repaired score function is imported unchanged: globally unseen features contribute zero, class-specific absence retains add-one smoothing, equal priors and1e-12 tie tolerance remain. Each representation learns counts/vocabulary from the same original binary-role training rows. Baseline totals are6events per training occurrence; shared and duplicate totals are10. The representation therefore changes vocabulary and smoothing normalizers as well as available evidence; model parameters were not falsely described as fixed. All24 models and their counts are saved.
+
+No gold POS, dependency, lemma, morphology, target-head information, semantic embedding, new source word, wider window, normalization or stemming enters any representation. All original808 binary-role test IDs, gold labels, whole-block split and panel support statuses are preserved. No Voynich data or other branches' sealed reserves were accessed.
+
+DUPLICATION CONTROL
+Equal-panel balanced correct-credit: baseline72.52%, duplicate72.43%, shared76.34%. Strict recall:66.34%,66.26%,73.74%. Duplication alone cannot create support for an entirely unknown positional context and leaves pooled coverage at89.04%. Shared identity adds real cross-position lexical matches. The candidate improves observed recovery over duplicate by3.91points (descriptive95%[+1.34,+6.85]), and all four primary panels improve versus duplicate. These are exposed-data comparisons, not causal proof of a universal sharing mechanism.
+
+IMPORTANT FAILURE: PROBABILITY SCORES GET WORSE
+Supported-panel mean balanced log loss rises.512097 ->.584608 (+.072510nats; descriptive95%[+.027866,+.116694]; lower is better). ALL FOUR supported panels worsen in log loss. Two-class Brier rises.340379 ->.352914; its mean delta+.012535 has descriptive95%[-.009551,+.034394]. The representation makes more correct decisions, but its normalized scores should not be treated as reliable confidence estimates.
+
+The saved-score error audit confirms the concern: on120 examples misclassified by both baseline and shared models, mean probability assigned to the correct role falls.2831 ->.1784 and mean log loss rises1.4371 ->2.3128. The new model is more confident in these retained errors. Correct predictions also become more confident. Correlation between local and shared feature channels was a declared risk; duplication control also worsens average log loss versus baseline. This is consistent with double-counting risk, but the experiment does not identify it as the sole cause. No confidence correction or feature reweighting was fitted after observing this failure.
+
+CONTROLS AND LIMITATIONS
+All3,184 predeclared paired three-arm control trials completed:199 within-block context-column shuffles and199 within-block training-label shuffles per panel. Every control refits all three representations on identical control training rows and scores identical control test rows. No favorable control or trial count was selected.
+No primary panel's paired recovery improvement over baseline or duplication reaches the declared descriptive Bonferroni8 threshold against either control family. Some absolute recovery comparisons exceed the structured nulls, but absolute signal and incremental representation benefit are different questions. The positive observed recovery changes therefore remain development findings and must not be promoted to a new qualified role-discovery result.
+
+All32,000 panel bootstrap draws are retained, covering both baseline and duplication comparisons. Intervals are conditional on the fixed training fits and do not include representation-selection or training-sample uncertainty. The underlying development panels have already been inspected across several experiments. No untouched-source transfer or independent confirmation is claimed. Three under-supported panels lose all-case recovery while Opus-ut improves; all four remain descriptive and are not pooled into the primary support-qualified headline.
+
+ALL EIGHT PANELS
+Commentarii belli Gallici|cum [adequately supported primary panel]
+  Balanced correct-credit baseline/shared/duplicate: 77.42 / 82.95 / 77.42%.
+  Strict balanced recall baseline/shared: 70.30 -> 80.45%; coverage 84.62 -> 94.23%.
+  Newly supported 10: {"correct":5,"wrong":5,"abstained":0}.
+  Delta log loss 0.015268, delta Brier -0.016695.
+  Transitions: {"wrong_to_wrong":10,"correct_to_correct":71,"abstain_to_wrong":5,"abstain_to_correct":5,"abstain_to_abstain":6,"wrong_to_correct":6,"correct_to_wrong":1}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=0.68, delta-v-duplicate=0.8; training_label_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=0.24, delta-v-duplicate=0.2.
+
+Commentarii belli Gallici|ut [under-supported; descriptive]
+  Balanced correct-credit baseline/shared/duplicate: 67.67 / 64.07 / 66.85%.
+  Strict balanced recall baseline/shared: 53.51 -> 62.02%; coverage 68.35 -> 93.67%.
+  Newly supported 20: {"correct":11,"wrong":9,"abstained":0}.
+  Delta log loss 0.047303, delta Brier 0.047091.
+  Transitions: {"abstain_to_correct":11,"abstain_to_abstain":5,"correct_to_correct":36,"wrong_to_wrong":15,"abstain_to_wrong":9,"correct_to_wrong":3}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.2, delta-v-baseline=1, delta-v-duplicate=1; training_label_shuffle corrected descriptive p recovery=1, delta-v-baseline=1, delta-v-duplicate=1.
+
+De officiis|cum [under-supported; descriptive]
+  Balanced correct-credit baseline/shared/duplicate: 70.60 / 63.19 / 70.60%.
+  Strict balanced recall baseline/shared: 55.77 -> 55.77%; coverage 70.37 -> 85.19%.
+  Newly supported 4: {"correct":0,"wrong":4,"abstained":0}.
+  Delta log loss 0.058556, delta Brier 0.036291.
+  Transitions: {"wrong_to_wrong":4,"abstain_to_wrong":4,"correct_to_correct":15,"abstain_to_abstain":4}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.28, delta-v-baseline=1, delta-v-duplicate=1; training_label_shuffle corrected descriptive p recovery=1, delta-v-baseline=1, delta-v-duplicate=1.
+
+De officiis|ut [adequately supported primary panel]
+  Balanced correct-credit baseline/shared/duplicate: 69.64 / 76.51 / 69.64%.
+  Strict balanced recall baseline/shared: 59.89 -> 72.67%; coverage 82.14 -> 92.86%.
+  Newly supported 9: {"correct":7,"wrong":2,"abstained":0}.
+  Delta log loss 0.028986, delta Brier -0.018722.
+  Transitions: {"correct_to_correct":47,"abstain_to_wrong":2,"wrong_to_wrong":13,"correct_to_wrong":3,"abstain_to_correct":7,"abstain_to_abstain":6,"wrong_to_correct":6}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=0.6, delta-v-duplicate=0.56; training_label_shuffle corrected descriptive p recovery=0.28, delta-v-baseline=0.72, delta-v-duplicate=0.44.
+
+Epistulae ad Atticum|cum [adequately supported primary panel]
+  Balanced correct-credit baseline/shared/duplicate: 72.85 / 74.72 / 72.85%.
+  Strict balanced recall baseline/shared: 68.74 -> 72.53%; coverage 91.76 -> 95.60%.
+  Newly supported 7: {"correct":6,"wrong":1,"abstained":0}.
+  Delta log loss 0.104305, delta Brier 0.016663.
+  Transitions: {"correct_to_correct":122,"abstain_to_wrong":1,"wrong_to_wrong":38,"abstain_to_abstain":8,"abstain_to_correct":6,"wrong_to_correct":4,"correct_to_wrong":3}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=1, delta-v-duplicate=1; training_label_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=1, delta-v-duplicate=1.
+
+Epistulae ad Atticum|ut [adequately supported primary panel]
+  Balanced correct-credit baseline/shared/duplicate: 70.17 / 71.19 / 69.81%.
+  Strict balanced recall baseline/shared: 66.44 -> 69.31%; coverage 91.01 -> 95.68%.
+  Newly supported 13: {"correct":11,"wrong":2,"abstained":0}.
+  Delta log loss 0.141482, delta Brier 0.068892.
+  Transitions: {"abstain_to_abstain":12,"correct_to_correct":177,"wrong_to_wrong":59,"abstain_to_wrong":2,"abstain_to_correct":11,"correct_to_wrong":7,"wrong_to_correct":10}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=1, delta-v-duplicate=1; training_label_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=1, delta-v-duplicate=1.
+
+Opus agriculturae|cum [under-supported; descriptive]
+  Balanced correct-credit baseline/shared/duplicate: 72.92 / 72.22 / 72.92%.
+  Strict balanced recall baseline/shared: 56.94 -> 65.28%; coverage 66.67 -> 85.71%.
+  Newly supported 4: {"correct":2,"wrong":2,"abstained":0}.
+  Delta log loss -0.008529, delta Brier -0.013049.
+  Transitions: {"abstain_to_wrong":2,"correct_to_correct":12,"abstain_to_abstain":3,"wrong_to_wrong":2,"abstain_to_correct":2}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.28, delta-v-baseline=1, delta-v-duplicate=1; training_label_shuffle corrected descriptive p recovery=1, delta-v-baseline=1, delta-v-duplicate=1.
+
+Opus agriculturae|ut [under-supported; descriptive]
+  Balanced correct-credit baseline/shared/duplicate: 67.46 / 79.96 / 67.46%.
+  Strict balanced recall baseline/shared: 38.36 -> 65.09%; coverage 54.55 -> 66.67%.
+  Newly supported 4: {"correct":4,"wrong":0,"abstained":0}.
+  Delta log loss -0.118409, delta Brier -0.092954.
+  Transitions: {"wrong_to_wrong":2,"abstain_to_correct":4,"correct_to_correct":15,"abstain_to_abstain":11,"correct_to_wrong":1}.
+  Shuffled comparisons: context_shuffle corrected descriptive p recovery=0.04, delta-v-baseline=0.16, delta-v-duplicate=0.16; training_label_shuffle corrected descriptive p recovery=0.24, delta-v-baseline=0.24, delta-v-duplicate=0.24.
+
+ALL-PANEL ACCOUNTING
+Across all808 cases,71 gain feature support and decisions (46correct,25wrong);55 remain no-evidence abstentions.26 old wrong decisions become correct and18 correct ones become wrong. The duplicate control cannot gain zero-evidence support, confirmed for every case. Every loss and role imbalance is preserved in PREDICTIONS.json and RESULTS.json.
+
+DECISION AND NEXT QUESTION
+Keep v109 as the conservative reference and preserve v111 as a decision/coverage candidate. Do not adopt its raw normalized probabilities as trusted confidence, and do not call this independent qualification. The next focused question is whether shared-word fallback can retain the new coverage without counting the same recognized word through both local and shared channels. That would require a separately frozen representation test; it was not implemented or tuned here. Independent-source confirmation remains necessary before broader transfer claims.
+
+VERIFICATION AND ARTIFACTS
+Eight pre-score fixtures passed. A separate JavaScript verifier rebuilt all24 training models from the unchanged source rows and gold training membership; checked2,424 three-arm score records, all808 exact baseline decisions and scores, preservation of all original positional/pair features, real-word-only pooling, boundary separation, newly supported outcomes, all metrics,3,184 control ranks and32,000 bootstrap draws/intervals.12verification groups passed. Prior v107/v109 delivery hashes are intact. These checks verify computation, not scientific qualification.
+
+PROTOCOL.json and run.py were frozen before scoring. MODELS.json, PREDICTIONS.json, RESULTS.json, BOOTSTRAP-DRAWS.json, CONTROL-TRIALS.jsonl and ERROR-CONFIDENCE-AUDIT.json preserve all findings. verify.mjs checks saved artifacts without fitting new models. No earlier report, failure, source, freeze or score was overwritten.

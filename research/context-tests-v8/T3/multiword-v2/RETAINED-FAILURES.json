@@ -1,0 +1,15 @@
+{
+  "failures": [
+    {
+      "stage": "authored engineering before any control scoring",
+      "issue": "Wilson lower endpoint at k0 differed from zero by1.7347e-18 floating roundoff",
+      "repair": "test uses1e-15arithmetic tolerance; estimator/gate unchanged"
+    },
+    {
+      "stage": "independent audit after scoring",
+      "issue": "Native G6 draw coordinates use Python tuples; JSON receipt uses arrays, so direct object comparison rejected identical draws.",
+      "repair": "JSON-normalize replay coordinates before comparing; table, generated words, seeds and frozen scoring unchanged.",
+      "retained": "history/independent_audit-initial.py and independent-audit-initial.log"
+    }
+  ]
+}

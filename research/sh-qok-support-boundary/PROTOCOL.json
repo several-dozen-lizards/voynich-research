@@ -1,0 +1,9 @@
+{
+  "scope": "Fresh synthetic boundary qualification; no manuscript/H/F data loaded.",
+  "support": "Unchanged body-selected matching and support rule, restricted to80<=V<84, >=8supported pages and <=.25 maximum page share. Selection uses only bodies/prefixes/positions. Outcomes generated after acceptance.",
+  "sampling": "For each aligned/fragmented body layout and iid/additive prefix design accept first200 qualifying independent datasets, cap20000attempts.12pages8positions. Uniform random line count14..26 aligned,56..112 fragmented. iid prefixes p=.5; additive logit page+line+position amplitudes.5. Body layout as previous diagnostic. All attempted support records retained. Fresh seed1030000+layout_index*10000+design_index*1000+attempt; separate outcome rng seed+500000.",
+  "outcomes": "For each accepted iid dataset independent qok draws in four scenarios: null baseline.2, null baseline.6, positive baseline.2 plus.15*sh, positive baseline.6 plus.15*sh. Additive accepted datasets receive independent qok with same nuisance probabilities as prefixes, no direct association. Reused prefix design across scenarios is paired, not independent replication.",
+  "test": "Unchanged exact conditional engine, body-selected matching, one-sided Bonferroni8. Exactbody only. V80not changed. No postoutcome filtering.",
+  "gates": "Each of10layout/scenario cells requires200accepted datasets. Each positive Wilson95 lower power>=.80; each null Wilson95 upper falseflag<=.05 (stricter than previous .10). Any failure or missingquota fails boundary qualification. Record notestimable, pvalues, support and rejected attempts. Never rescore manuscript.",
+  "limits": "Tests narrow support band under these two architectures and effects only; not proof of universal sufficiency. No claim that80 is smallest sufficient threshold. Parsing and actual coverage untested."
+}

@@ -1,0 +1,22 @@
+is_p = r['locus_code'][1:] in TYPES
+if r['folio'] != current:
+    idx = None
+    current = r['folio']
+    para = -1
+    previous_p = False
+if code != 'ZL':
+    if is_p and r['locus_code'][0] in '@*':
+        idx = 0
+        para += 1
+    elif is_p and idx is not None and previous_p:
+        idx += 1
+    else:
+        idx = None
+    index = idx
+else:
+    if is_p and r['is_para_start']:
+        para += 1
+    index = r['line_index_in_paragraph']
+previous_p = is_p
+if code != 'ZL' and r['is_para_end']:
+    idx = None

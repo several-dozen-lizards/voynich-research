@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-25T21:12:46.849Z",
+  "authority": "Direct human reply: Use the proposed amendment",
+  "status": "ADOPTED BEFORE DISCOVERY; source spec preserved",
+  "segmenter": "v8-literal-segmentation-1",
+  "selection_reading": "H",
+  "scribe_panels": [
+    "1",
+    "2"
+  ],
+  "confirmation_readings": [
+    "H",
+    "F"
+  ],
+  "candidate_transfer": "exact selected opener/core and window from H; no F retuning",
+  "multiplicity": "Holm2 over scribes within each reading; inactive/unscoreable slots internal p=1; headline same scribe passes H and F",
+  "opener": "longest literal prefix among qok,qo,ot,ok,d,ch,sh,k,t,p,f,y,o,a,s; other has empty prefix",
+  "ending": "longest suffix among aiin,ain,air,ar,al,edy,eey,ey,y,ol,or, applied only to residual after opener; no overlap",
+  "core": "literal residual after opener and suffix; empty allowed; operational spelling segment, no morphology",
+  "variant": "ending literal including empty; if class has exactly one whole-word type on H discovery, use that whole word and freeze this rule",
+  "windows": "all 105 inclusive contiguous intervals [lo,hi], 2<=lo<=hi<=15",
+  "closed_set": "at least 4 observed variant types; minimal leading 4..16 by count desc/spelling asc covering 80% of inside tokens; no padding with unseen types",
+  "tie_order": "presence*concentration desc; presence desc; concentration desc; window width asc; start asc; class spelling asc",
+  "zero_elsewhere": "infinite concentration if inside positive and readable outside slots positive but zero class tokens; if no readable outside slots NOT ESTIMABLE",
+  "unknowns": "retain original slots for positions; exclude unknowns from rate denominators, count them; do not compact",
+  "paragraphs": "use explicit EVT paragraph terminator =; incomplete or uncertain paragraph boundaries excluded and logged",
+  "confirmation_rule": "same variants cover >=70%; <=4 new observed types; presence>=discovery-.15; concentration>=1.5",
+  "qualification_lock": "No confirmation body parsing until real Latin prose positive passes and generator controls completed"
+}

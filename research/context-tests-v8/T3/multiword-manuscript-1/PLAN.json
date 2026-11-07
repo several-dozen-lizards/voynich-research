@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-26T01:41:41.912Z",
+  "authority": "User: run revised T3 on H discovery by scribe, freeze frames and variants, apply unchanged to H/F confirmation; preserve all failures",
+  "status": "FROZEN BEFORE REVISED MANUSCRIPT DISCOVERY",
+  "method": "T3-multiword-v2-attempt1; unchanged qualified engine and thresholds",
+  "selection": {
+    "reading": "H",
+    "scribes": [
+      "1",
+      "2"
+    ],
+    "input": "../DISCOVERY-PARAGRAPHS.json; previously sealed original-slot extraction",
+    "one_batch": true,
+    "refinements": 0
+  },
+  "confirmation": {
+    "readings": [
+      "H",
+      "F"
+    ],
+    "scribes": [
+      "1",
+      "2"
+    ],
+    "selection": "exact H-discovery left/right/gap/window/variants, never refit",
+    "when": "only after both candidate freeze files and hashes saved",
+    "no_candidate": "terminal; do not parse that scribe confirmation bodies or run shuffles",
+    "support": ">=8 represented folios per cell; absent or incomplete P paragraphs excluded and logged; never force cross-reading alignment",
+    "paragraphs": "original frozen v8 tokenizer; group folio/place in source order, close on explicit =, discard unterminated tails; original unknown slots remain barriers",
+    "shuffles": 10000,
+    "seeds": {
+      "H": {
+        "1": 856601,
+        "2": 856602
+      },
+      "F": {
+        "1": 856701,
+        "2": 856702
+      }
+    },
+    "correction": "Holm2 over scribes within H and within F, inactive/unscoreable slots internal p1; report no measured p for inactive cells",
+    "headline": "same scribe meets frozen predictions and Holm p<.05 in H and F"
+  },
+  "budget": {
+    "family_alpha": 0.05,
+    "alpha_V": null,
+    "global_error_control": false,
+    "source": "../..//BUDGET.json; existing T3 family"
+  },
+  "custody": {
+    "preserve_prior_files": true,
+    "qualification": "limited pass only; exposed Latin, native default controls, discovery-derived geometries; no independent manuscript-sized positive power estimate",
+    "known_exposure": "Prior single-word H discovery and source context already known; v8 is retrospective in text with an internal fixed folio split",
+    "confirmation_before_discovery_freeze": false
+  },
+  "discovery_looks": {
+    "prior_single_word": 1,
+    "this_revised_batch": 1,
+    "total_if_completed": 2,
+    "original_maximum": 20
+  }
+}

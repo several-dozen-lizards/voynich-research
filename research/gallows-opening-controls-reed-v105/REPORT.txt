@@ -1,0 +1,41 @@
+Gallows and opening lines: exact-frame controls, v105
+Result: the descriptive plume-class opening-line preference survives stricter local matching; p supplies most support. f has matching examples, but the reused test subset is too sparse to validate an f-specific rule.
+
+METHOD
+H/F strict readable P-locus events from v102; unknown and comma-marked slots never promoted. Words with exactly one k/t/f/p and no cth/ckh/cph/cfh compound only. Mask that one character and hold every other character fixed.
+Match exact page, hand, Currier classification, section, masked word frame and original word index. First words compare paragraph opening versus continuation starts. Other words compare the same nonzero word index between opening and continuation lines. Also require exact original line length in the frozen sensitivity. Complete source lines and alternate H/F readings saved.
+The original v1 numbered-folio allocation is reused. All training panel directions were frozen before calculating test panels. These pages were historically exposed: this is retrospective consistency, not untouched prediction. No f57v model is fitted.
+Each informative cell has both positions and both classes. Within-page gaps use harmonic exposure weights; eligible pages receive equal weight. Sparse, often one-token cells can have 100 percentage-point differences. Such numbers are conditional on eligibility and are not all-word probabilities, calibrated effect sizes, statistical significance or predictive accuracy.
+
+NON-FIRST WORDS: SAME WORD POSITION, OPENING LINE VERSUS CONTINUATION
+Reading / contrast | training | reused test
+H fp vs kt | 25/25 pages positive; 0 reverse; 36 informative cells | 3/4 pages positive; 1 reverse; 4 informative cells
+H f vs kt | 5/5 pages positive; 0 reverse; 6 informative cells | 0/0 pages positive; 0 reverse; 0 informative cells
+H p vs kt | 22/22 pages positive; 0 reverse; 30 informative cells | 3/4 pages positive; 1 reverse; 4 informative cells
+F fp vs kt | 23/25 pages positive; 2 reverse; 42 informative cells | 3/3 pages positive; 0 reverse; 5 informative cells
+F f vs kt | 6/6 pages positive; 0 reverse; 7 informative cells | 1/1 pages positive; 0 reverse; 1 informative cells
+F p vs kt | 20/22 pages positive; 2 reverse; 35 informative cells | 3/3 pages positive; 0 reverse; 4 informative cells
+
+SENSITIVITIES
+With exact line length added, pooled fp/kt remains positive on 10/10 H training pages (11 cells), 12/12 F (18 cells); reused test H 1/1 page and F 3/3 pages. This stronger control sharply reduces support. f/kt alone has 2 eligible training pages per reading and zero test pages. Requiring agreeing H/F structural opening flags also preserves the pooled direction. H/F are dependent readings, not replications.
+The word-first analysis is much sparser: pooled fp/kt training H 6/7 pages positive and F 7/10; test H zero informative cells, F one. f/kt has zero H training cells, and only one F training cell, which is reversed. Thus this audit supports a line-wide association more clearly than a separate exact-first-word rule.
+
+CONCRETE f EXAMPLES
+H and F, f95r1, word 3: opening f95r1.P.1 ofaiin versus continuation f95r1.P.10 okaiin. Identical page and remaining word aiin with leading o; internal f/k substitution.
+H, f50r, word 3: opening f50r.P.1 olfchedy versus continuation f50r.P.6 olkchedy. F separates the latter as ol.kchedy, so F does not supply the same frame at the same word index. Do not count this as shared evidence.
+H/F, f108r, word 8: opening ofal and okal versus continuation otal twice. Mixed opening forms retained; no deterministic rewrite claim.
+The only f-specific test cell is F f113v, word 10: opening ofar plus okar versus continuation otar/okar/otar. H reads the focal opening word ofchr rather than F ofar; H has no eligible test cell. This is reading-sensitive, not confirmed transfer.
+
+REVERSE CASES
+H test f94v, word 4: opening f94v.P.5 okchdy versus continuation f94v.P.6 opchdy. F reads onchdy on the continuation line; no matched gallows contrast there. The H reversal stays in the result.
+F training pooled non-first reversals: f105v and f79v. First-word reversals include H f75r and F f114r/f75r/f82v. All cells, missing-position cases, single-class cases and source passages remain saved.
+
+WHAT THIS ADDS
+Raw opening enrichment is not only a difference in which entire words appear. In some same-page, same-index, otherwise identical written forms, the gallows class changes with opening-line context. Both f and p have such examples. Different meaning or syntax could still influence the variants; identical frames do not establish equivalent words or allographs.
+A candidate line-context writing convention is a better-supported description than a generic first-sign-after-boundary rule. It may extend well into the opening line; exact word index is matched. This audit does not estimate a distance-decay curve or establish a causal mechanism.
+The distinction between plumed and unplumed forms and the choice f versus p are separate questions. Pooling f+p cannot explain f57v slot9 f/f/p/p, because all four copies remain in the same plumed class. No diagram transfer or new ring divider is established.
+
+VALIDATION AND RECEIPTS
+Nine arithmetic/frame checks passed. Independent bounded-memory replay recounted all 389,925 cells and recomputed all 192 train/test panels, including controls and unsupported cells. Exact counts, frames, positions and page gaps agree. Input hash and training-freeze checks pass. These are engineering checks, not statistical-null qualification.
+Files: PROTOCOL.json; INPUT-FREEZE.json; TRAINING-FREEZE.json; SUMMARY.json; PAGE-RESULTS.json; INFORMATIVE-EXAMPLES.json; SOURCE-EXCERPTS.json; TRAINING-RESULTS.json; TEST-RESULTS.json; INDEPENDENT-VERIFICATION.json. The two full result arrays are large: extract.py reads them one panel at a time; do not load the training array in the 32-bit Python process.
+Reproduce: python run.py, python extract.py, python verify.py, python publish.py. All scripts resolve their own folder. No prior experiment files modified.

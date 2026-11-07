@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath}from'node:url';import assert from'node:assert/strict';
+const R=path.dirname(fileURLToPath(import.meta.url));const load=async p=>JSON.parse(await fs.readFile(path.join(R,p),'utf8'));
+export async function verifySource(){
+ const layout=await load('OCR-LAYOUT.json'),old=await load('REFLOWED-A-INSPECTION.json');let rows=[];
+ for(let p of layout.filter(p=>old.bounds.some(b=>b.scan===p.scan))){let b=old.bounds.find(b=>b.scan===p.scan);for(let col of [0,1]){let ll=[];for(let line of p.lines){let words=line.words.filter(w=>{let x=(w.coords[0]+w.coords[2])/2;return w.coords[3]>155&&w.coords[1]<3250&&x>=b.start&&x<b.end&&(x<b.start+870?0:1)===col;}).sort((a,b)=>a.coords[0]-b.coords[0]);if(words.length)ll.push({scan:p.scan,col,y:Math.min(...words.map(w=>w.coords[3])),text:words.map(w=>w.text).join(' '),words});}ll.sort((a,b)=>a.y-b.y);rows.push(...ll);}}
+ assert.deepEqual(rows,old.lines);let boundaries=(await load('ENTRY-BOUNDARIES.json')).entries,entries=(await load('SOURCE-ENTRIES.json')).entries,ledger=(await load('SOURCE-CORRECTIONS.json')).entries,split=(await load('SPLIT.json')).entries;
+ let sourceSlots=0,unknownSlots=0;
+ for(let e of entries){let b=boundaries.find(b=>b.chapter===e.chapter),c=ledger.find(c=>c.chapter===e.chapter);let raw=rows.slice(b.body_line,b.end_line_exclusive).filter(l=>!(l.y>3000&&/^[a-z]{1,3}\s*(?:i{1,3}|ij|j)?\s*$/i.test(l.text))).map(l=>l.text).join('\n');assert.equal(raw,e.raw_text);assert.equal(raw.slice(0,c.cut_character),c.raw_prefix);let prepared=(c.transcribed_prefix+' '+raw.slice(c.cut_character)).replace(/([a-zA-Z])[\-¬]\s*\n\s*([a-zA-Z])/g,'$1$2').replace(/\n/g,' ');assert.equal(prepared,e.prepared_text);let tokens=prepared.replaceAll('<?>','¤').replace(/ſ/g,'s').replace(/æ/g,'ae').replace(/œ/g,'oe').replace(/&/g,' et ').toLowerCase().split(/[\s.,;:!?()\[\]"'“”‘’]+/).filter(Boolean).map(w=>/^[a-z]+$/.test(w)?w:null);assert.deepEqual(tokens,e.tokens);assert.equal(e.arm,split.find(x=>x.chapter===e.chapter).arm);sourceSlots+=tokens.length;unknownSlots+=tokens.filter(w=>w===null).length;
+ }
+ return{reflow_rows:rows.length,chapters:entries.length,sourceSlots,unknownSlots};
+}

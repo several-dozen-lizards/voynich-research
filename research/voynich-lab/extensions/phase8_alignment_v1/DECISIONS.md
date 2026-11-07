@@ -1,0 +1,11 @@
+# Decisions before registration
+
+- New user-authorized Phase8, not a rescue of failed Phase7 counting/physical-label tests. Preserve all old files/gates. No table fitting: actual fixed alpha/beta1 keys remain distinct in every two-key arm, with both orientations tested.
+- User chose mapped graph similarity for conjugacy rather than inferred cluster/A-B labels. Learn physical mappings outside the entire tested quire, so conjugate profiles do not share a special cross-validation coordinate artifact. Retire quire coherence and book-wide conjugacy completely.
+- Mere page-order shuffling cannot change an aggregated within-line graph. Use whole-leaf A/B reassignment within fixed fold/side-count strata, refitting the complete learner in every null. This tests partition dependence and is not automatically a content-free cipher test.
+- Fixed keys cannot resolve deterministic bigram collisions by repeatedly redrawing the same table. Use the author's rejection-off option consistently; preserve collisions, add no markers, and expose this limitation to calibration.
+- Development learns only a fixed nearest-centroid classifier on two declared scores; disjoint source spans and new seeds qualify that separator. No label-guided mapping, latent plaintext dictionary or target tuning. Control classification is an operational three-class check, not historical mechanism identification.
+- Full main factorial includes same/different plaintext and one/two keys, both source directions and both orientations. Same-key/different-plaintext cases belong to DIFFERENT, avoiding overlapping classifier categories. Physical cloned-content fixtures are explicitly artificial and separate from main control separation.
+- Any qualification failure keeps all target graph/physical inference closed; finish fixed supported bank for diagnostics without rescue. A development score failure prevents classifier freezing and stops before qualification scoring. No score-family/threshold/node-cap/key/optimizer changes after outcomes.
+
+- Pre-registration support check rejected an unstratified sheet split with an empty A/B test half. No control or target scores existed. Preserve that attempt; use deterministic A/B-composition-stratified sheet folds with the original seed namespace, no seed search or text-driven balancing.

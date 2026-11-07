@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "thread": {
+    "id": "01a16601-47fd-7c73-aa74-e1137076d1d5",
+    "kind": "codex",
+    "hostId": "local",
+    "title": "Create a Voynich-style cataloguing",
+    "preview": "I'm wondering.... Could you take the voynich stuff we've been working on - see the previous conversations - and try to create, using the same symbols and as close to the same grammar as you can, a system of cataloguing astrology, herbs under astrology, and time/locational data, using something as close as you can get to the grammar we've been noodling through?",
+    "status": {
+      "type": "notLoaded"
+    },
+    "cwd": "D:\\ChristinaStuff\\JNSQ",
+    "createdAt": 1792712722,
+    "updatedAt": 1792719830
+  },
+  "page": {
+    "order": "newest_first",
+    "limit": 3,
+    "nextCursor": "{\"requestedThreadId\":\"01a16601-47fd-7c73-aa74-e1137076d1d5\",\"rolloutOrdinal\":428,\"includeAnchor\":false,\"scope\":{\"kind\":\"turns\"}}",
+    "hasMore": true
+  },
+  "turns": [
+    {
+      "id": "01a16662-4640-77d1-9f32-46deeb83198a",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1792719079,
+      "completedAt": 1792719830,
+      "durationMs": 750916,
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16662-4adc-7271-83a7-c9a4332a0504",
+          "content": [
+            {
+              "type": "text",
+              "text": "Can we run those two tests directly on the manuscript—shared beginnings and substitution groups—with the controls you described, keeping the transcriptions separate and the failures in the receipts? 🐍\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adab8ea48b88193b9724ebf712cd7dd",
+          "text": "Yes. I’ll freeze the two tests and their controls before scoring the manuscript, keep each transcription separate, and save failed checks alongside any positive findings. The aim is to find written grouping constraints—not assign the groups meanings such as “planets.” 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-c44e907b-090b-42e9-b4dc-941648ff1991",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"rg -n -i 'voynich' C:\\\\Users\\\\lewis\\\\.codex\\\\memories\\\\MEMORY.md | Select-Object -First 5; Get-ChildItem -Name 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a160c2-56f0-7303-b3bf-ed8594c6ec40' | Select-Object -Last 18; Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\SPECIFICATION.md' -TotalCount 6\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 5430
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-430ea0b9-a163-40b0-9f25-1af5b1436276",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a160c2-56f0-7303-b3bf-ed8594c6ec40\\\\voynich-role-v44\\\\STATUS.txt' -TotalCount 65; Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a160c2-56f0-7303-b3bf-ed8594c6ec40\\\\voynich-grammar-v36\\\\STATUS.txt' -TotalCount 45; rg -n 'def.*unit|cth|cph|ch\\\\|sh|tokeniz' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a160c2-56f0-7303-b3bf-ed8594c6ec40\\\\voynich-layout-v30' -g '*.py' | Select-Object -First 12; Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\run_layout.py' -TotalCount 73\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 951
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-b340699c-77f5-494e-bf3d-ae1b420aca50",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout\\\\repro-audit-v19\\\\repro\\\\intermediates\\\\sheet_partner_table.csv' -TotalCount 7; Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a160c2-56f0-7303-b3bf-ed8594c6ec40\\\\voynich-layout-v30\\\\protocol.json' -TotalCount 5; rg -n 'cth|cph|ckh|re.findall|token' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a160c2-56f0-7303-b3bf-ed8594c6ec40\\\\voynich-encoding-v27' -g '*.py' | Select-Object -First 8\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1268
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-ddfc5ce5-6cf3-4e41-b66e-1fc004beb4b1",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json,collections\nb=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\21\\\\01a15c3d-56da-7f02-bc15-2522dc396abd\\\\voynich-layout');d=json.loads((b/'tokens.json').read_text());print(collections.Counter((r['section'],r['scribe']) for r in d))\nimport numpy;print('numpy',numpy.__version__)\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1278
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adab97bf7c081939b083e362a7dba27",
+          "text": "The earlier grammar and role detectors failed important controls, so I won’t reuse them as semantic classifiers.\n\nThis run will ask narrower questions: whether neighbouring forms share beginnings beyond local spelling and frequency effects, and whether groups found in training contexts predict contexts on other physical sheets. I’ll keep copying controls, uncertain boundaries and sparse groups explicit; none will be treated as a successful grammar result.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-d5b253d7-aa61-402a-9514-299e4ce75cf6",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python -u 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\manuscript-sets-v1\\\\run.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 39414
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adaba693f9c81939c62a6ef03c6d689",
+          "text": "The shared-beginning test is complete. Under both local controls, neither transcription shows the predicted excess of shared beginnings relative to endings. Excluding identical and one-edit neighbours does not change that conclusion.\n\nThe substitution test has reached a support failure: its strict training rule has produced no held-out group predictions. I’m checking whether that comes from missing sheet assignments, sparse repeated contexts or an implementation issue before reporting it as a result.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-44c42b5f-23b5-498f-a9d4-90d45bd8ce40",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\manuscript-sets-v1');d=json.loads((r/'results.json').read_text())\nfor name,v in d['results'].items():\n print(name,'prefix',v['prefix']['observed'],'controls',v['prefix']['controls'])\n if 'substitution' in v:\n  g=v['substitution'];print('GROUPS', {k:g[k] for k in ['train_triples','heldout_triples','exclusions','eligible_training_types','training_edges','observed']},'sizes',[x['size'] for x in g['groups']])\nfor name,s in d['synthetic_summary'].items():\n if name.startswith('groups'):print(name,{k:s[k] for k in ['eligible_training_types','training_edges','observed','controls']},'sizes',[x['size'] for x in s['groups']])\n else:print(name,'observed',s['observed'],'controls',s['controls'])\nsp=json.loads((r/'sheet-splits.json').read_text());print('SPLITS',{n:{'pages':len(ss),'sheets':len(set(x['sheet'] for x in ss.values())),'test_sheets':len(set(x['sheet'] for x in ss.values() if x['heldout']))} for n,ss in sp.items()})\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1043
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adaba8a9b088193b09c2a835e75fa1c",
+          "text": "The audit found two different failures. The herbal cohort had held-out sheets, but no word pair met the frozen requirement of sharing two distinct training frames. Stars and bathing text did yield candidate groups—but the fixed hash split put all their sheets into training.\n\nI should have caught that coverage problem before scoring. I’ll preserve the failed run and make a separately frozen coverage-only retry, guaranteeing held-out sheets in each cohort. The discovery rules and support thresholds will stay unchanged.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-87791913-8bd2-4171-a53e-29a448331aa1",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python -u 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\manuscript-sets-v1\\\\retry_coverage.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 2048
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-69cdb4d2-7a06-4848-8f95-b67be1a2f62a",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\manuscript-sets-v1');a=json.loads((r/'results.json').read_text());b=json.loads((r/'coverage-retry/results.json').read_text())\nfor n,v in b['results'].items():\n print(n,'groups',[(g['members'],g['training_counts'],g['near_edit_pairs']) for g in v['groups']], 'counts',v['train_triples'],v['heldout_triples'],'sheets',v['train_sheets'],v['test_sheets'],'audit',v['exclusions'])\nprint('diagram',a['diagram_descriptive'])\nfor n in ['F_bath2','H_bath2','F_stars3']:\n p=json.loads((r/'coverage-retry'/(n+'-predictions.json')).read_text());print(n,'hits',[x for x in p if x['peer_transfer']])\nfor n,v in a['results'].items():\n print(n,'primarycorrected',v['prefix'].get('nonidentical_primary_two_reading_bonferroni'),v['prefix'].get('far_edit_primary_two_reading_bonferroni'))\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1251
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adabafe46908193b988ec39984c35be",
+          "text": "The coverage-only retry is complete, and it did not establish transfer. It found small candidate pairs—including `chol / qokaiin` in starred text and `qokaiin / qokedy` in bathing text—but every cohort fell below the frozen five-group support minimum.\n\nThere were zero novel-context transfers in five cohort/readings and three in F bathing text; those three did not beat the controls. The receipts will distinguish the negative shared-beginning result from this sparse, inconclusive substitution result.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-018901cd-2a51-444e-a313-1b6156b8d30f",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\manuscript-sets-v1\\\\make_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 826
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-33c8f317-bd1f-42d9-9c14-66641deb0174",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\manuscript-sets-v1\\\\verify.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1291
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-342c39c9-fe0f-4a8d-b307-81365c56a3e9",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\SPECIFICATION.md' -TotalCount 7\n@'\nfrom pathlib import Path\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5')\np=r/'manuscript-sets-v1/STATUS.md';s=p.read_text(encoding='utf-8')\nfor a,b in [('H6.81','H 6.81'),('F6.56','F 6.56'),('null6.95','null 6.95'),('H.945','H .945'),('F.945','F .945'),('values1.0','values 1.0'),('H0/1/3','H 0/1/3'),('F2/3/3','F 2/3/3'),('minimum5','minimum 5'),('H0/0','H 0/0'),('F0/196','F 0/196')]:s=s.replace(a,b)\np.write_text(s,encoding='utf-8')\np=r/'voynich-catalogue/SPECIFICATION.md';s=p.read_text(encoding='utf-8');anchor='\\\\n## Purpose\\\\n';assert anchor in s\ns=s.replace(anchor,'\\\\nSeparate direct-manuscript branch: [shared-beginning/substitution report](../manuscript-sets-v1/REPORT.md) and [current state](../manuscript-sets-v1/STATUS.md). Both tests executed, with a negative controlled adjacent-beginning result and support-insufficient substitution transfer; original split failure and separately frozen coverage retry retained. This does not change v4’s construction or numeric meanings.\\\\n'+anchor,1)\ns+='''\n\n## Direct manuscript tests — 22 October 2026\n\nUser authorized shared-beginnings and substitution-group tests with separate transcriptions, local/frequency/shape/copy controls and failures preserved. New owner ../manuscript-sets-v1/{PROTOCOL.md,STATUS.md,REPORT.md,results.json,FINAL-FAILURES.json,verification.json}; coverage-only retry plan and independent results also linked there. No catalogue version was fitted or altered.\n\nTest1: original P-line adjacency, declared EVA units, whole-word shuffles preserving page or line composition, exact unit lengths and first/interior/last role. H/F mean shared beginnings 6.81/6.56% of shorter form versus within-line expected 6.95/6.76%; beginning-minus-ending primary is not positive under both nulls; corrected primary ranks1.0. One-edit exclusion does not rescue it. Synthetic planted signal detected; copy/tweak also mimics raw structure and is retained as a limitation.\n\nTest2: exact two-sided training frames, complete-link groups, deduplicated triples, documented-sheet heldout prediction and frequency/shape label controls. First hash split had zero test sheets for stars/bath, retained as a design failure; should have been detected before scoring. Separate coverage-only retry froze rank-based sheet assignment before fitting, leaving discovery/support rules unchanged. All six retry cells have too few groups for the frozen minimum; novel peer-context hits H0/0,0/28,0/222 and F0/196,0/257,3/315. F bath's few hits do not exceed controls. Candidate pairs remain distributional leads, not semantic classes. No lowered threshold or third split.\n\nVerification: canonical H replay exact; protected canonical sources and earlier outputs unchanged; 169 independent edit-distance checks, 32 null-array replays, 12 sheet-split checks, 72 complete-link pair checks and 1,018 heldout prediction checks passed. H/F never pooled; their split metadata agree. All original and retry failures, context inventories, predictions and synthetic controls saved. No grammar-specific detector qualification or fresh untouched data claim. Next decision remains open; no looser representation selected after outcomes.\n'''\np.write_text(s,encoding='utf-8');print('Branch status and cross-reference updated; prior constructions preserved.')\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1065
+        },
+        {
+          "type": "mcpToolCall",
+          "id": "exec-82731357-4f27-431c-b22e-08f80dfedf99",
+          "server": "codex_app",
+          "tool": "open_in_codex",
+          "arguments": {
+            "target": {
+              "type": "file",
+              "path": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\22\\01a16601-47fd-7c73-aa74-e1137076d1d5\\manuscript-sets-v1\\REPORT.md"
+            }
+          },
+          "status": "completed",
+          "durationMs": 54
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adabbca79888193bfc321f239fa395e",
+          "text": "**Both tests ran, with transcriptions separate and failures preserved. Neither established a grouping rule that survived the full controls.** 🐍\n\n[Full report and receipts](C:/Users/lewis/.codex/visualizations/2026/10/22/01a16601-47fd-7c73-aa74-e1137076d1d5/manuscript-sets-v1/REPORT.md)\n\n**Shared beginnings:** neighbours do share beginnings, but no more than expected once each line’s vocabulary, word lengths and positions are controlled.\n\n| Reading | Observed shared-beginning fraction¹ | Within-line expectation |\n|---|---:|---:|\n| Takahashi H | 6.81% | 6.95% |\n| First Study Group F | 6.56% | 6.76% |\n\n¹Mean fraction of the shorter written form—not the percentage of pairs sharing a beginning.\n\nRemoving identical and one-edit neighbours did not rescue the result. The synthetic positive control worked; copy-and-tweak text also fooled the raw statistic, demonstrating why the copying control matters.\n\n**Substitution groups:** some candidate pairs appeared, including `chol / qokaiin` in starred text and `qokaiin / qokedy` in bathing text, in both readings. **Their novel-context transfer was unsupported.**\n\nThe first split accidentally left no held-out sheets for stars and bathing text. I preserved that design failure and ran one separately frozen coverage-only retry. Afterward:\n\n- Five cohort/readings produced zero novel-context transfers.\n- F bathing text produced **3/315**, without exceeding its controls.\n- Every cohort remained below the frozen minimum number of groups.\n\nThese are different outcomes: **a negative controlled shared-beginning result, and a sparse, inconclusive substitution test.** Neither rules out meaningful sets more broadly—especially groups expressed through looser contexts or components inside words. I did not loosen the criteria after seeing the results.\n\n",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a16646-bd8c-7d72-8ce4-2e070ebbeb8c",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1792717274,
+      "completedAt": 1792717324,
+      "durationMs": 50188,
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a16646-beb2-7c41-bbc7-a776aeef67c8",
+          "content": [
+            {
+              "type": "text",
+              "text": "We got this back: This is a careful piece of work that mostly tells us what *not* to spend more time on.\n\n**What ChatGPT did.** It took astrology records whose content we know (an older sample plus a sample modelled on your journal) and wrote them out in real Voynich words. Numbers went to the 144 most common Voynich words in frequency order, so *daiin* = 0, *chol* = 5, *dar* = 12, and so on. Then it asked whether the result looks like the manuscript statistically. The setup was disciplined: the mapping was locked in before any scoring, and the shuffled backup mapping wasn't promoted even where it scored better.\n\n**What it doesn't show.** The headline successes are true by construction:\n\n- **Reversibility:** all 5,094 facts can be read back, because a codebook always decodes.\n- **Real words:** every word is attested in the Voynich, because only attested words were allowed.\n\nNeither says anything about the manuscript. The decisive line is that the shuffled mapping also decodes perfectly and also uses only real words, yet scores differently. So these measures can't tell a right assignment from a wrong one. ChatGPT says this itself.\n\n**Where it actually fails** (these are the useful parts):\n\n- **Neighbouring words:** word pairs barely match the manuscript better than shuffled text does, and in the body rows they match *worse*. Real Voynich words strongly constrain their neighbours; the handoff calls this the junction rule. A flat codebook, where any word can sit next to any other, can't reproduce that.\n- **Line openings:** about 50% of lines start with a q-word, against about 13% in the manuscript. The format's line headers are wrong, whatever the numbers are.\n- **Endings and length:** y-endings inside lines are too rare, and words are too short.\n\n**How this connects to your \"sets\" idea.** The simulation treats the vocabulary as one flat list where any word can mean anything. Your idea predicts the opposite: closed groups (planets, signs, aspects, quantities) with rules about which group can sit next to which. The neighbouring-word failure is the likely result of leaving that structure out. A grammar of the kind \"♃ only △s something from the planet set\" is exactly what would make neighbours depend on each other.\n\n**My take.** I'd stop tuning this kind of simulation. Matching surface statistics is a low bar: several known copy-and-tweak methods for producing meaningless text also match many of them. Better to measure the manuscript directly for the structure your idea predicts:\n\n1. **The shared-opening test:** when neighbouring words are similar, is the shared part at the start, as in your ♃△♆, ♃☍♇?\n2. **Groups by substitution:** which words fill the same blanks, how big those groups are, and whether a group's company changes by section.\n\nBoth need the transcription file (`text16e6.evt`). ChatGPT is clearly working from it on your computer, since it reports 31,917 words for the Takahashi transcription. If you add that folder with \"Add folder\" in the desktop app, or attach the file, I'll run test 1 straight away.\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adab1e086ec8193952209a7a3250fcd",
+          "text": "I agree with much of that assessment, but one point needs checking: our catalogue already had typed sets and rules about which sets could occupy each slot. I’ll check the implementation so we can distinguish that limitation from the parts of the critique that are well supported.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-46621f1e-cd5b-46f0-a0cf-a773e1de1364",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\PROTOCOL.md'; Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v2\\\\PROTOCOL.md' -TotalCount 25; rg -n 'junction|starts|neigh|word formation|P text|no independent' 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\REPORT.md'; rg -n -i 'voynich' C:\\\\Users\\\\lewis\\\\.codex\\\\memories\\\\MEMORY.md | Select-Object -First 3\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1269
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adab1fbe1c4819392439fb086c99526",
+          "text": "**I agree with the recommendation to stop iterating arbitrary codebooks. Two corrections matter, though.** 🐍\n\n**Our simulation already had sets and adjacency rules.** It restricted entries to constructions such as:\n\n`PLANET → SIGN → POSITION`\n\n`ASPECT → OTHER PLANET`\n\n`HERB → RULER → ELEMENT → PART`\n\nIt also generated journal relationships from the fictional planets’ angular separations. So “any word could sit next to any other” misdescribes the implementation. The numeric codebook overlapped those vocabularies, but typed positions constrained its use. [Frozen v2 grammar](C:/Users/lewis/.codex/visualizations/2026/10/22/01a16601-47fd-7c73-aa74-e1137076d1d5/voynich-catalogue/v2/PROTOCOL.md)\n\n**What we lacked was a demonstrated connection between those semantic sets and Voynich’s written structure.** We assigned whole words to categories without showing why particular spellings, components, or transitions should express those categories. Adding sets alone therefore isn’t the missing repair—we already tried a particular set-based construction.\n\nThe critique is right about the principal limits:\n\n- Attestation was guaranteed by selection.\n- Recovery verified that our implementation preserved information; it supplied no evidence for manuscript meanings.\n- Headers, neighbouring pairs and positional distributions remained mismatched.\n- Different reversible assignments produced different surface scores.\n\nOne further qualification: our pair-overlap measurement **doesn’t directly establish a manuscript “junction rule.”** It measures whether generated pairs occur in the retained text. Its failure doesn’t isolate the cause as missing semantic categories.\n\n**The proposed direct tests are useful next questions.** I’d frame them as:\n\n1. **Shared components:** do neighbouring or similarly situated forms share beginnings more than appropriate comparisons predict, after accounting for existing word shapes and local repetition?\n2. **Substitution groups:** which forms occupy comparable contexts, and do those groups predict additional contexts on other pages?\n\nBoth need controls for copying, formulaic writing, word frequency and page/section differences. A discovered group would initially be a **distributional class**, without an assigned meaning such as “planets.”\n\nAlso, **31,917 is our retained Takahashi paragraph-token population**, not the entire transcription. Labels, rings and spokes need separate extraction.\n\nMy judgment: preserve v1–v4 as constructions showing possibilities and limits, then investigate the manuscript’s own grouping constraints. Your sets idea remains worth testing; this particular encoding hasn’t identified its written realization.\n\n",
+          "phase": "final_answer"
+        }
+      ]
+    },
+    {
+      "id": "01a1663d-6a74-7172-ba6c-614b6a09a4c2",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1792716663,
+      "completedAt": 1792716984,
+      "durationMs": 321428,
+      "items": [
+        {
+          "type": "userMessage",
+          "id": "01a1663d-6c6d-7973-85ac-db3bf3661bb0",
+          "content": [
+            {
+              "type": "text",
+              "text": "Can we try a fourth version that keeps numbers compact but uses only attested Voynich forms, freezing the mapping before comparing it and keeping the recovery checks and mismatches? 🐍\n"
+            }
+          ]
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adaaf7a8ab88193b1aceec90859791d",
+          "text": "Yes. I’ll keep v3’s one-token numeric fields and build a deterministic codebook from attested forms. I’ll freeze the selection rule and mapping before scoring it, then check exact recovery and keep any regressions alongside the improvements. 🐍\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-ba28fcfb-3f8e-4991-81b0-0bfc02ac6efa",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v3\\\\PROTOCOL.md'; Get-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\SPECIFICATION.md' -TotalCount 8; rg -n -i 'voynich' C:\\\\Users\\\\lewis\\\\.codex\\\\memories\\\\MEMORY.md | Select-Object -First 3\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 943
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adaaf9c0d908193acf9317f0e8c01e7",
+          "text": "There’s a capacity constraint worth preserving: the retained corpus has fewer distinct forms than the 20,736 values our numeral codec supports. I’ll use one attested word for small fields and two for years, with a fixed 144-form codebook. That keeps the full numeric capacity.\n\nI’ll select those forms by their frequency in both transcriptions, using no neighbouring-word or positional scores. Their attestation will therefore be guaranteed by construction—not evidence that Voynich uses them as numbers.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-a830f678-7102-44fb-9e75-797923bebfb1",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\freeze_mapping.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1195
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-fa2c9fb5-5c43-4b34-8023-9f673c0d6d45",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\run.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 3112
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-d63ba0d1-a43d-4ef2-9722-01e51826d70e",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\nimport json\nr=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue');d=json.loads((r/'v4/results.json').read_text());old=json.loads((r/'v3/results.json').read_text());m=d['metrics'];mp=json.loads((r/'v4/mapping.json').read_text())\nprint('MAPPING',[(n,mp['primary'][n]) for n in [0,1,5,10,12,14,23,29]],'2026',[mp['primary'][2026//144],mp['primary'][2026%144]])\nfor n in ['legacy_primary','legacy_control','journal_primary','journal_control','journal_primary_heading','journal_primary_body','H_all_P','F_all_P']:\n x=m[n];print(n,'types',x['word_types'],'cv',x['line_cv'],'lengths',x['line_length_distribution'],'pos',x['positions'])\nfor name in ['legacy','journal']:\n for ref in ['v2','v3']:\n  a,b=old['metrics'][name+'_'+ref],m[name+'_primary'];print(name,ref,'saving_tokens',1-b['readable_noncomma_tokens']/a['readable_noncomma_tokens'],'saving_chars',1-b['total_ascii_characters_excluding_spaces']/a['total_ascii_characters_excluding_spaces'])\nprint('CROSS',json.dumps(d['bigram_attestation']))\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 530
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adab02920088193b3c3767474707398",
+          "text": "The frozen codebook passes recovery checks, and every generated form is attested in both retained transcriptions. It keeps a **25% token saving on the legacy sample and 17% on the journal versus v2**, though two-word years make it slightly larger than v3.\n\nNeighbour-pair overlap improves over v3, but remains below v2. Journal repetition moves closer to Voynich; legacy repetition moves farther away. The separately frozen, permuted codebook also produces some close-looking measurements, so those matches don’t support the assigned numeric meanings.\n",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-593d8344-19c0-4c28-b6c7-4b6194de6060",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\make_report.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 746
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-d45d7810-785e-4fb3-afb9-68fa1e85e0e6",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\np=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\make_report.py');s=p.read_text(encoding='utf-8')\nfor a,b in [('top144','top 144'),('same144','same 144'),('and20,736','and 20,736'),('all144','all 144'),('seed20261026','seed 20261026'),('seed20261027','seed 20261027'),('and7.57','and 7.57'),('and2.87','and 2.87'),('and0.43','and 0.43'),('and1.98','and 1.98'),(\\\"v3's0.30\\\",\\\"v3's 0.30\\\"),('to0.83','to 0.83'),('manuscript0.96','manuscript 0.96'),('from0.95','from 0.95'),('to1.45','to 1.45'),('from4.76','from 4.76'),('to4.55','to 4.55'),('manuscript5.07','manuscript 5.07'),('from4.42','from 4.42'),('to4.47','to 4.47'),('gives4.70','gives 4.70'),(\\\"v3's0.80\\\",\\\"v3's 0.80\\\"),('to15.17','to 15.17'),('manuscript16.96','manuscript 16.96'),('from0%','from 0%'),('to7.16','to 7.16'),('exactly50.53','exactly 50.53'),('and47.77','and 47.77'),('about13','about 13'),('becomes39.89','becomes 39.89'),('manuscript38.87','manuscript 38.87'),('at40.22','at 40.22'),('become43.27','become 43.27'),('control48.62','control 48.62'),('low:32.12','low: 32.12'),('and29.04','and 29.04'),('manuscript42.61','manuscript 42.61'),('is0.435','is 0.435'),('about0.310','about 0.310'),('only0.37','only 0.37'),('is1.95','is 1.95'),('length4.47','length 4.47'),('roughly4.86','roughly 4.86'),(\\\"f68r3's5.66\\\",\\\"f68r3's 5.66\\\")]:s=s.replace(a,b)\np.write_text(s,encoding='utf-8')\n'@ | python -\npython 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\make_report.py'\nGet-Content -Encoding UTF8 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\SPECIFICATION.md' -TotalCount 5\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 1041
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-769b3193-cc91-4b49-96ea-d030692d542e",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python 'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\v4\\\\verify_final.py'\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 728
+        },
+        {
+          "type": "commandExecution",
+          "id": "exec-a1e2fd74-32ad-467b-ac5b-5e4a3c64090c",
+          "command": "\"C:\\\\Users\\\\lewis\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\nfrom pathlib import Path\np=Path(r'C:\\\\Users\\\\lewis\\\\.codex\\\\visualizations\\\\2026\\\\10\\\\22\\\\01a16601-47fd-7c73-aa74-e1137076d1d5\\\\voynich-catalogue\\\\SPECIFICATION.md');s=p.read_text(encoding='utf-8');a=s.index('Current state:');b=s.index('\\\\n',a)\ns=s[:a]+'''Current state: **v4 attested-form numeric codebook implemented, frozen before scoring, offline verified and descriptively compared**. V1–v3 and earlier receipts remain intact. See [v4 report](v4/REPORT.md), [mapping and counts](v4/mapping.json), [freeze receipt](v4/freeze-receipt.json), [protocol](v4/PROTOCOL.md) and [glyph edition](v4/catalogue-v4.html). All 5,094 facts and exact v2 documents recover under primary and permuted-control maps. Whole-form attestation is guaranteed by selection; grammatical improvements/regressions coexist. No manuscript numeric meaning is recovered. Original v1 specification follows.'''+s[b:]\ns+='''\n\n## V4 change record — 22 October 2026\n\nUser authorized compact numbers using only attested forms, frozen before comparison. Added v4/PROTOCOL.md first, then freeze_mapping.py → mapping.json/freeze-receipt.json before run.py was invoked. Codebook is the first 144 H/F-intersection forms ranked by descending minimum count, ASCII tie break; counts only, no transition/position/length or catalogue-score selection. Mapping hash 5911c9cdf618c9af52a99eb05624f5acaaa0066b0c38b765abed0e488eed569f. One permuted mapping, seed 20261026, frozen alongside the primary; never promoted after scoring.\n\nCapacity: small old two-digit fields use one codeword (0–143), years use two base-144 words (raw 0–20735). This preserves the prior numeric capacity with 144 attested whole forms; the retained H/F intersection has only 4,920 forms, insufficient for a universal one-word capacity of 20,736 values. All nonnumeric fields, source facts, layout and grouping retained. Numeric meanings remain invented.\n\nValidation: 41,760 numeric round trips across both maps; 18 malformed/domain rejection checks; both maps reconstruct exact v2 documents and all 5,094 facts, retaining duplicates and 78 aspectless journal positions. All eleven manuscript populations replayed unchanged. Additional final checks reject invalid month, degree and heading; sample HTML has 32 glyph lines, embedded font and no external active elements; appearance unverified. Main runner passed first execution. All protected v1–v3 assets, scores, source facts, mapping and canonical manuscript files remain byte-identical. Added report, sample, primary/control written data, readbacks, final-integrity receipt and reproducible final checker.\n\nOutcomes: all generated whole forms attested in retained H/F by construction. Primary legacy 20,595 tokens / 93,736 ASCII characters; journal 9,030 / 40,348. Relative v2 savings 25.30% tokens and 7.57% characters legacy, 16.99% / 2.87% journal. Relative v3 costs rise 5.10% tokens / 0.43% characters legacy, 0.94% / 1.98% journal. Legacy repeats 1.45% worsen from v3 0.95%; journal 0.83% improves from 0.30% toward manuscript 0.96–0.98%. Legacy mean length 4.55 regresses from 4.76; journal 4.47 slightly improves from 4.42. Pair attestation improves over v3 to about 44% legacy and 42% journal in H/F, below v2; body rows still lose to within-line shuffles. q openings remain about 48–51% versus manuscript about 13%. The differently assigned control also produces some close measurements; numeric values are not thereby validated.\n\nCurrent conclusion: compact, recoverable, fully attested vocabulary; mixed grammatical resemblance and non-independent attestation gains. No map tuning, p-values, fresh holdout, astrology-specific claim or next version selected. A further request needs a distinct functional question rather than selecting a codebook that wins exposed scores.\n'''\np.write_text(s,encoding='utf-8');print('Living record updated; v1–v3 preserved.')\n'@ | python -\"",
+          "cwd": "D:\\ChristinaStuff\\JNSQ",
+          "status": "completed",
+          "exitCode": 0,
+          "durationMs": 659
+        },
+        {
+          "type": "mcpToolCall",
+          "id": "exec-4db887c8-32eb-4b77-8dcc-18c81df60f36",
+          "server": "codex_app",
+          "tool": "open_in_codex",
+          "arguments": {
+            "target": {
+              "type": "file",
+              "path": "C:\\Users\\lewis\\.codex\\visualizations\\2026\\10\\22\\01a16601-47fd-7c73-aa74-e1137076d1d5\\voynich-catalogue\\v4\\REPORT.md"
+            }
+          },
+          "status": "completed",
+          "durationMs": 52
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_046043e6fa0ea1df016adab0afd79481938ac9cd9bff4a5f8e",
+          "text": "**V4 is built, frozen and compared. Every generated word form is attested in both retained transcriptions.** 🐍\n\n[View v4](C:/Users/lewis/.codex/visualizations/2026/10/22/01a16601-47fd-7c73-aa74-e1137076d1d5/voynich-catalogue/v4/catalogue-v4.html) · [Full comparison](C:/Users/lewis/.codex/visualizations/2026/10/22/01a16601-47fd-7c73-aa74-e1137076d1d5/voynich-catalogue/v4/REPORT.md)\n\nThe 144-form codebook was saved **before scoring**. Small numbers use one word; years use two, preserving the previous numeric capacity. Both the primary map and a separately frozen permutation recover **all 5,094 facts and the exact v2 documents**. Numeric tests passed 41,760 round trips.\n\nThe results remain mixed:\n\n- **Neighbour-pair overlap improves over v3**, to about 44% on the legacy sample and 42% on the journal, but remains below v2.\n- **Journal repetition improves:** 0.30% → 0.83%, toward Voynich’s 0.96–0.98%.\n- **Legacy repetition worsens:** 0.95% → 1.45%.\n- **Compactness survives:** 25% fewer tokens on legacy and 17% fewer on the journal versus v2, though slightly larger than v3.\n- Excessive `q` openings and other positional mismatches persist.\n\nThe key distinction: **attestation is now guaranteed by construction; numeric meaning is still invented.** Frequent-form selection explains some resemblance, and the permuted map also produces attractive measurements. Neither map was retuned after scoring. V1–v3 remain preserved.\n\n",
+          "phase": "final_answer"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+from pathlib import Path
+import json,html
+R=Path(__file__).resolve().parent;s=json.loads((R/'SUMMARY.json').read_text())
+rows=''.join('<tr>'+''.join('<td>'+html.escape(str(v))+'</td>' for v in [r['scenario'],str(r['flags'])+'/'+str(r['n']),f"{r['wilson95'][0]:.3f}–{r['wilson95'][1]:.3f}",r['pass_gate']])+'</tr>' for r in s['results'])
+doc='''<!doctype html><meta charset="utf-8"><title>Constructive four-body boundary test</title><style>body{font:17px/1.55 system-ui;max-width:1050px;margin:40px auto;padding:20px;background:#f8faf7;color:#173c30}td,th{padding:9px;border-bottom:1px solid #c5d4c9;text-align:left}table{border-collapse:collapse}</style><h1>Four-body boundary control: '''+s['status']+'''</h1>
+<p>The generator supplied200/200 fresh layouts without rejection sampling. Rules and source hashes were frozen before outcomes. Every layout has four literal bodies,12pages and V=576/7≈82.286, checked by the existing extractor. Each page contributes1/12 of support. Outcomes were drawn only after the layout was fixed.</p>
+<p>Construction: each page randomly chooses two nonadjacent interior positions; each of four bodies appears on seven lines at both positions. Three lines use sh/ch orientation and four use ch/sh. Body assignment, line order and orientation selection vary randomly. The resulting conditional margins are fixed by construction, not fitted to qok outcomes.</p>
+<table><tr><th>Scenario</th><th>Flags</th><th>Wilson95</th><th>Frozen gate</th></tr>'''+rows+'''</table>
+<p>The positive targets matched qok probabilities.10 after ch and.25 after sh. Its mean realized difference was about.145. Nulls use independent qok outcomes at.2,.6,or additive page/line/position rates. Exact conditional scoring and Bonferroni8 are unchanged. All scenarios reuse each layout with independently drawn outcomes; they are paired controls, not four independent layout samples.</p>
+<p>The positive lower confidence bound exceeds.80; each null upper bound is below.05. All frozen gates pass. Every missed positive and false flag remains in TRIALS.json; full synthetic layouts are retained in DESIGNS.json.</p>
+<h2>What this does and does not qualify</h2><p>This removes the previous four-body sampling bottleneck and supports the rule in a deliberately balanced, fully feasible architecture near the support threshold. Every matched follower is available, so f_ch=f_sh=1. It does not test near the feasibility boundary, and it does not establish validity of a feasibility filter that rejects some orientations.</p>
+<p>All layouts have the same V≈82.29; this is not a sweep across80–84 or proof that80 is minimal. Four target bodies with plentiful repeated overlap are not a realistic sparse manuscript vocabulary. Variable lengths, uncertain transcription, parsing and H/F alignment are not qualified here. The earlier sparse and sampling failures remain unchanged.</p>
+<p>No manuscript files were read or scored. H/F remain separate. These finite synthetic results do not establish that bath or starred panels can satisfy the joint rule.</p>
+<p><a href="PROTOCOL.json">Frozen rules</a> · <a href="FREEZE.json">Hashes</a> · <a href="SUMMARY.json">Results</a> · <a href="DESIGNS.json">All synthetic layouts</a> · <a href="TRIALS.json">All800 outcomes</a> · <a href="VERIFICATION.json">Verification</a></p>'''
+(R/'report.html').write_text(doc,encoding='utf-8')
+assert all((R/f).exists() for f in ['PROTOCOL.json','FREEZE.json','SUMMARY.json','DESIGNS.json','TRIALS.json','VERIFICATION.json'])
+print('Report saved; links checked. Rendering not inspected.')

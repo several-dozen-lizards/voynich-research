@@ -1,0 +1,88 @@
+{
+  "status": "STOP_FAILED_GATE",
+  "registered": "RD-C2",
+  "stopped_at": "unique_origin",
+  "gates": [
+    {
+      "name": "unit_mirror",
+      "n": 200,
+      "distinct_windows": 200,
+      "families": 19,
+      "accuracy": 1.0,
+      "passed": true
+    },
+    {
+      "name": "any_boundary",
+      "passed": true,
+      "bins": [
+        {
+          "name": "any_boundary",
+          "bin": 5,
+          "n": 200,
+          "distinct_windows": 200,
+          "families": 19,
+          "hit_rate": 0.935,
+          "end_to_end_hit_rate": 0.875,
+          "excess_ci": [
+            0.41038494596218233,
+            0.5252937417292205
+          ],
+          "end_to_end_excess_ci": [
+            0.32341721845192356,
+            0.4665554074750275
+          ],
+          "null_excess_ci": [
+            -0.0859492637971467,
+            0.0370801162444551
+          ],
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "unique_origin",
+      "passed": false,
+      "bins": [
+        {
+          "name": "unique_origin",
+          "bin": 5,
+          "n": 0,
+          "distinct_windows": 0,
+          "families": 0,
+          "hit_rate": 0,
+          "end_to_end_hit_rate": 0,
+          "excess_ci": [
+            null,
+            null
+          ],
+          "end_to_end_excess_ci": [
+            null,
+            null
+          ],
+          "null_excess_ci": [
+            null,
+            null
+          ],
+          "passed": false
+        }
+      ]
+    }
+  ],
+  "phase_stages": {
+    "unit_mirror": "EVALUATED",
+    "any_boundary": "EVALUATED",
+    "unique_origin": "EVALUATED",
+    "boundary_pairing_null": "NOT_RUN"
+  },
+  "scope": {
+    "type": "circular",
+    "min_words": 41,
+    "max_words": 80
+  },
+  "radial": "HELD",
+  "prior_run": "PRESERVED_STOP_FAILED_GATE",
+  "prior_run_hashes_unchanged": true,
+  "real_ring_scores_computed": false,
+  "phases_1_to_4_run": false,
+  "corrected_order_generated": false
+}

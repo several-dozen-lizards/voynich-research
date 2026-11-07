@@ -1,0 +1,5 @@
+# Execution record
+
+Pre-metric engineering attempt1 stopped on the first full-endpoint equality assertion. The new implementation omitted the old encoder's initial shuffle of the stroke alphabet, changing RNG state before slot permutations. No metric or neural job had run; no registered scientific result existed. Preserve attempt1 data/code under preflight-attempt1. Correct the missing shuffle and regenerate BEFORE registration. Original lab/C12/C5 data and phase matrices were not modified.
+
+Cache-admission replays both PASS exactly. The first model-free table assembly then failed with duplicate `words` kwargs in dict merging. No grid neural job ran; no model-free output table was written. Preserve run-before-table-fix.py.txt and REGISTRATION-before-table-fix.json. Replace only the bookkeeping dict merge with dictionary unpacking; metric functions, inputs, subsets, codebooks, comparisons, seeds, model configuration and job plan are unchanged. The active registration records this implementation-only repair and its parent hash; do not rerun or replace the completed cache replays.

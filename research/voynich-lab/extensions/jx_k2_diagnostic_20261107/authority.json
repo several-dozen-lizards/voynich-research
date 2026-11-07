@@ -1,0 +1,29 @@
+{
+  "reviewed_date": "2026-11-07",
+  "evidence_type": "Human-readable primary-source findings, not a claim that these are original downloaded PDF bytes",
+  "sources": [
+    {
+      "url": "https://www.voynich.nu/data/previous/IVTFF_format_1_7.pdf",
+      "author": "R. Zandbergen",
+      "version": "File format 1.7, document issue 1.7, 10 April 2020",
+      "locations": "Printed pages 4-5 change history; page20 Table7; pages23-24 Table10",
+      "findings": [
+        "The change history dates introduction of the dedicated paragraph-start marker <%> to version1.6, 21 November2019.",
+        "Table7 gives @, + and * relative-layout meanings. None is specified as a paragraph-start assertion.",
+        "The <$> dedicated comment denotes paragraph end. The later <%> marker denotes paragraph start. Drawing interruption remains distinct."
+      ],
+      "applicability_limit": "This is a historical specification with a 1.5-to-1.7 change history, not a byte-identical version1.5 manual. It cannot independently certify every detail of the beta1.5 conversion."
+    },
+    {
+      "url": "https://www.voynich.nu/data/beta/000_README.txt",
+      "version": "Latest update08/11/2023, retrieved2026-11-07",
+      "locations": "LSI_ivtff_0d.txt entry",
+      "findings": [
+        "The publisher describes the directory as beta-testing material.",
+        "The LSI conversion still needs comparison with its input, and the publisher reports a possible issue in the included Takahashi reading."
+      ],
+      "applicability_limit": "This identifies an unresolved source qualification issue; it does not prove the specific cause or extent of any text error."
+    }
+  ],
+  "known_before_registration": "Source-document review exposes a plausible semantic failure of the old adapter. The validation is a registered audit of an anticipated issue, not a blinded discovery. No new manuscript performance scores have been computed."
+}

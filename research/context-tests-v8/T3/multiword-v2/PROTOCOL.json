@@ -1,0 +1,106 @@
+{
+  "utc": "2026-10-26T00:38:49.058Z",
+  "version": "T3-multiword-v2-attempt1",
+  "status": "FROZEN BEFORE REVISED SCORING OR FRESH MECHANISM OUTCOMES",
+  "authority": "User requested revised multiword T3 qualification on Latin prose and G5/G6; prior failed attempt preserved",
+  "tier": "Retrospective method development on exposed Latin source and prior diagnosis; fresh G5/G6 bank prospective conditional on frozen generators/geometries",
+  "known_exposure": [
+    "Old single-word T3 failed all4 Latin cells",
+    "36A-entry source,17/19split and all Latin incipits known",
+    "Old80G5/G6results known; not qualification data for revision",
+    "Previously frozen Voynich single-word discovery candidates known"
+  ],
+  "representation": {
+    "frame": "one exact left word + d contiguous variable words + one exact right word; d in1,2,3; anchors may coincide",
+    "variant": "entire ordered d-word tuple; no opener/core/ending segmentation",
+    "scope": "Readable spans wholly after paragraph-first word; unknowns are barriers; overlapping occurrences counted",
+    "early_window": [
+      2,
+      15
+    ],
+    "window_search": false,
+    "denominators": "For each fixed frame width, all fully readable span-start opportunities after first word; early only if entire span ends<=15, all other starts outside",
+    "presence": "paragraph fraction with >=1 early frame occurrence",
+    "concentration": "(early occurrences/early opportunities)/(outside occurrences/outside opportunities); infinity only if early>0 and outside count0 with positive outside opportunity support"
+  },
+  "discovery": {
+    "minimum_folios": 8,
+    "presence": 0.5,
+    "concentration": 2,
+    "variants": "Freeze all observed early variants if<=16, else top16 by count desc/lexical tuple asc; frozen set covers>=80% early occurrences; never pad",
+    "recurrence": "At least2 distinct frozen variants each seen in>=2 distinct folios",
+    "selection": "highest paragraph presence; then highest concentration; then smaller gap width; then lexical [left,right,d] key; no adaptive window or seed search",
+    "no_candidate": "terminal full result, no transformed confirmation or shuffles"
+  },
+  "confirmation": {
+    "minimum_folios": 8,
+    "presence": 0.5,
+    "concentration": 1.5,
+    "frozen_variant_coverage": 0.7,
+    "maximum_new_early_variants": 4,
+    "recurrence": "At least2 distinct frozen variants each on>=2 confirmation folios",
+    "all_predictions_required": true,
+    "permutations": 10000,
+    "null": "shuffle all noninitial original word/unknown slots within each paragraph, first word fixed; recompute opportunities, early hits, variants and folio recurrence",
+    "p": "literal fraction meeting joint frozen predictions; add-one sensitivity retained; no resampling extension",
+    "decision": "predictions hold and p<.05; Latin Holm2 over scribe inventories per G2/G3; native mechanism cells rawp<.05 conservatively; paired scribe Holm2 also checked"
+  },
+  "changes_from_failed_rule": [
+    "Multiword anchors/gaps replace literal opener+core+ending classes",
+    "One broad frozen early region replaces105 optimized windows",
+    "At least2 recurrent variants, rather than4observed types; keep<=16closed set and80%coverage",
+    "Freeze entire observed/top16 variant set, rather than smallest set covering80%",
+    "Confirmation presence fixed>=50%, rather than discoveryminus15points",
+    "Selection favors cross-entry presence before concentration to prevent rare infinite-ratio frames winning"
+  ],
+  "rationale": "Tests an early repeated relational frame with a small variable phrase set; exposure-informed revision, not independent discovery. Generality checked against fresh mechanisms, not rescued after their outcomes.",
+  "positive": {
+    "inputs": "same36completeCirca1582Aentries and17/19hashsplit, old4discoverytransforms/maps reused unchanged",
+    "cells": [
+      "G2-s1",
+      "G2-s2",
+      "G3-s1",
+      "G3-s2"
+    ],
+    "confirmation": "new control confirmation generated only after revised candidate/model file hashes frozen; exact old generator params and seeds+10000; no refit",
+    "transfer": "v5newlyunseenunit full-transferNOT_ESTIMABLE retained; baseline masks preserved",
+    "gold": "corrected old GOLD-AUDIT source positions; >=80%early occurrences intersect a quality/degree-value gold slot in the gap, not just an anchor/generic word; both arms; source formula clause tags never supplied to discovery",
+    "gate": "all4supported structural+permutation+goldpasses; no positive power estimate from one work"
+  },
+  "mechanism_controls": {
+    "families": [
+      "G5",
+      "G6"
+    ],
+    "geometries": [
+      "Latin36completeentry17/19",
+      "scribe1discovery-derived97folio54/43",
+      "scribe2discovery-derived20folio12/8"
+    ],
+    "fresh_trials_per_family_per_geometry": 200,
+    "total": 1200,
+    "seed_rule": "852600000 + familyIndex(G5:0,G6:1000000) + geometryIndex(Latin:0,scribe1:10000,scribe2:20000) + trial0..199",
+    "source": "G5unmodifiedpublishednativeJava; initialseedlineexcluded;G6unchangedv5defaults",
+    "geometry": "Latin uses all36entry lengths and frozen source arms. Manuscript-sized controls repeat discovery-only whole-folio paragraph-length/mask profiles in source order to required54/43or12/8groups; no confirmation text/lengths parsed. Fixed-arm opaqueIDs chosen by deterministic SHA256parity before word generation.",
+    "support": "Exact armfolio counts fixed; unknown masks copied from discovery-only geometry and applied after allocation; no generated-word count adaptation",
+    "G5": "ceil(requiredoriginalslots/4)+2native lines; flatten nonseed native output into fixed pseudo-paragraphs; preserve unusedtail; shortage/invalid output fails without retry/wrap",
+    "G6": "native generated token count per fixed paragraph; allsourceparametersdefault",
+    "gates": "Each of6cell families Wilson two-sided95%upper full-pass proportion<=.05; also either-scribe Holm2 family Wilsonupper<=.05 for each mechanism across paired200trials; failed/unsupported/numeric trials cannot count as clean negatives and block qualification",
+    "interpretation": "Empirical discrimination against these two default mechanisms at these fixed geometries only; not all mechanical generators or language mechanisms"
+  },
+  "release": {
+    "manuscript_confirmation": "CLOSED THROUGH QUALIFICATION; no manuscript scoring by qualification runners",
+    "passes_required": [
+      "all4Latinpositivecells",
+      "all6mechanismcellgates",
+      "bothpairedscribe-familygates",
+      "source/implementation/preservationverification"
+    ],
+    "scope": "Even a pass is limited control qualification, not meaning, degree/numeral identification, independent-source replication or globalalpha control"
+  },
+  "alpha": {
+    "family": 0.05,
+    "alpha_V": null,
+    "allocation": "none; qualification only"
+  }
+}

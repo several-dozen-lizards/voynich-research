@@ -1,0 +1,35 @@
+# JX Phase0 conditioning
+
+**PASS**
+
+```json
+{
+  "false_rejection_rate": 0.01,
+  "positive_gates": {
+    "reg": {
+      "correct": 20,
+      "n": 20,
+      "median_gain": 1.58502000127744,
+      "passed": true
+    },
+    "prog": {
+      "correct": 20,
+      "n": 20,
+      "median_gain": 1.5847508514935584,
+      "passed": true
+    }
+  },
+  "regressive_source_transfer": {
+    "passed": true,
+    "paired_gain": 0.11999468465020312,
+    "paired_ci": [
+      0.10154391853311898,
+      0.13756435096494585
+    ],
+    "treatment_p": 0.000999000999000999,
+    "Holm_regressive_reject": true
+  },
+  "progressive_qualified": true,
+  "regressive_toy_qualified": true
+}
+```

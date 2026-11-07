@@ -1,0 +1,42 @@
+{
+  "id": "v4.3-qok-rate-descriptive",
+  "status": "DESIGN_FROZEN_ANALYSIS_JOIN_BLOCKED",
+  "frozen_utc": "2026-10-25T17:22:13.662Z",
+  "authority": "Re accepted the proposed separate descriptive qok-rate-by-image model with section adjustment. Existing H-IMG/H-PLANT tests remain unchanged; autonomous loop inactive.",
+  "scope": "A new endpoint, not a replacement or retuning of v4.2 H-IMG/H-PLANT. Descriptive only; no p-values, claim-tier alpha, semantic class or sound assignments.",
+  "timing": "Frozen before this analyst inspected any rater output or computed image/text joins. Ratings already began in the separate source cohort. Project-wide pre-join timing is NOT certified; source-owner hashed receipt is required before new endpoint join.",
+  "denominator": "ALL word tokens judged readable by the UNCHANGED attempt-C tokenizer in eligible registered H/F P-unit lines. Numerator literal qok prefix. Partial/nonalphabetic pieces excluded and counted as unknown. Commas delimit tokens as in the original tokenizer; no new comma-adjacency exclusion. Includes line-first/final words; NOT restricted to sh/ch followers.",
+  "population": "Entire independently registered, rated cohort; preserve all existing exclusions, first-page transport failure, count mismatches and timing exceptions. No new pages, reserved zodiac, rescored registrations, extra ratings, or outcome-based support filtering.",
+  "labels": "Inherit geometry nearest picture category within <=2 line heights; otherwise NO. Original outcome-blind OT<5% merge rule unchanged. Registrar stays blind to picture boxes; no new rationale delivered to raters.",
+  "primary_model": "Binary PL vs non-PL on lines satisfying the existing pre-adjudication G2 agreement rule. Binomial working model logit Pr(qok word)=baseline(hand x section)+beta_PL*I(PL). Report common label OR estimated by Mantel-Haenszel aggregation of qok/nonqok x PL/nonPL word counts within hand x section; report raw rates and denominators by stratum. No directional expectation imposed.",
+  "secondary_model": "For the G6-qualified cohort, report each of the six fixed image labels versus the remaining labels using the same hand x section adjustment, plus raw label rates. All predefined contrasts stay descriptive; no winner selection or image-class claim. Applied OT/NO merge is reported explicitly.",
+  "wrap_sensitivity": "Same PL contrast additionally stratified by inherited wrap/length bin. Diagnostic only; never substitutes for primary.",
+  "identifiability": "No label variation within hand x section provides no adjusted information. Report overlap strata and missing labels; zero/zero MH ratio NOT ESTIMABLE; zero/infinite OR retained. No pseudocount, smoothing, dropped zero-qok label, or pooling hands/readings to rescue a fit.",
+  "uncertainty": "4999 paired physical-folio bootstrap refits per reading/contrast. Numeric folio groups recto/verso/panels; whole f85/f86 foldout together if eligible. Seed 4272600+1000*reading_index+100*model_index+contrast_index. Retain zero/infinite draws; any undefined 0/0 draw withholds interval. Pointwise descriptive intervals.",
+  "existing_primary_protection": "H-IMG/H-PLANT eligibility, effects, OR controls, thresholds and multiplicity remain unchanged. Their qok-count abstain-only gate is not repurposed as an eligibility rule for this frequency endpoint.",
+  "sources": {
+    "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-image-context-v4/PROTOCOL.json": "00977f05c77b609dec080c829499929ce0a0c1d723a21e57cdff79422e9e2a2b",
+    "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-image-context-v4/AMENDMENT-v4.1.txt": "7af589371ebc1b044cd785beaf486d4ac6b268687319576d86e3175f0013742a",
+    "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-image-context-v4/AMENDMENT-v4.2-effect-scale.md": "9f43ca33c39496d1c4a02b4743983170d40fe46457d091bca798d062ee2478d1",
+    "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-image-context-v4/MANUAL-CORRECTION.json": "9adf37085901f47325bfda8edaa909acf7d3978be64554f545435d26f9bc55d9",
+    "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-image-context-v4/COHORT-V2-FREEZE.json": "fa9884b433ac61612afa440bbd39b3a04a8c462ec09c54a1305de847a104fef8",
+    "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-single-target-attempt-c/engine.py": "daeeb2c6e9e0fa1453684e9cc314560aec6106eed82e273addd5f47eca93bbee"
+  },
+  "phase_log_prefix": {
+    "path": "C:/Users/lewis/OneDrive/Documents/ChatGPT/Voynich/sh-qok-image-context-v4/PHASES.jsonl",
+    "bytes": 406936,
+    "sha256": "62f7e712226765ad3dc4f10362a729d3e40e30a598bbeb4d14c0da4cdccf1958"
+  },
+  "before_join_requirements": [
+    "Source-owner receipt certifying whether any relevant image/qok-rate join or result was examined before this freeze; no retrospective backdating.",
+    "Hash eligible cohort, shared registration, label agreement/adjudication/merge and all drops before text join.",
+    "Freeze implementation and qualify arithmetic, unknown-token handling, identifiability and cluster bootstrap on synthetic controls before manuscript scoring.",
+    "Use a source-only token parser that filters headers before bodies; do not open reserved zodiac or rater-private folders."
+  ],
+  "no_real_rating_values_read": true,
+  "no_analysis_executed": true,
+  "version": "v4.3-r1-prejoin",
+  "revised_utc": "2026-10-25T17:30:04.171Z",
+  "implementation": "rate_model.py: isolated AST extraction of original tokenizer; hand x section MH label contrasts; physical-folio bootstrap reaggregates stratum counts per draw. Model fitting uses saved counts only after source-owner timing receipt.",
+  "correction_history": "Before any real ratings/text join in this endpoint, code inspection showed the original tokenizer SPLITS commas rather than treating adjacent readable pieces as barriers. Initial unexecuted design retained in revisions/before-tokenizer-audit. No manuscript values examined or endpoints retuned."
+}

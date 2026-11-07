@@ -1,0 +1,98 @@
+{
+  "H3": {
+    "policy": "Original ending_lm v2 must be recovered and exactly specified; no replacement, no omission, no zero-filled result, no reduced-H run.",
+    "status": "UNRESOLVED"
+  },
+  "controls": [
+    "Identity/no-op G1\u2192G2p0\u2192G3p0 and G4 boundary representations.",
+    "Unit-label permutation and family-label permutation negatives; chance classification is expected under exchangeable/null labels.",
+    "Duplicate/near-duplicate source works stay in one partition; repeated seed/text leakage audit.",
+    "Real abbreviated-Latin reserve never fits abbreviation rates or rule vocabulary; all unseen-sign abstentions retained.",
+    "Source genre/date/orthography contrasts reported separately; no Italian literary or Gascon legal result relabelled as a medical-genre test.",
+    "Known text controls also pass representation/unknown-unit gates before attempting survival scoring."
+  ],
+  "current_state": {
+    "H1_H8_computed": false,
+    "claim_freeze_created": false,
+    "recovery_executed": false,
+    "source_control": "SOURCE-CONTROL-RESULTS.json is ingestion/representation only; real G2 survival NOT_RUN."
+  },
+  "deliverables": [
+    "RECOVERY-TRUTH.jsonl",
+    "RECOVERY-FITS.jsonl",
+    "RECOVERY-CONFUSION.json",
+    "RECOVERY-PARAMETERS.csv",
+    "RECOVERY-BOUNDARIES.json",
+    "REAL-LATIN-CONTROL.json",
+    "RECOVERY-FAILURES.json",
+    "RECOVERY-VERIFICATION.json"
+  ],
+  "execution": "LOCKED",
+  "fitting": {
+    "budget": "Maximum250000 simulator calls per family/cell/trial, including all SMC stages/ESS escalation; checkpoint all attempts. Set wall-time caps from a separate S_fit-only runtime benchmark before release. Budget exhaustion or mapping failure must not be relabelled cannot mimic basics. A completed predeclared prior-predictive search may report CANNOT_MIMIC_BASICS only with its fit-distance evidence and explicitly bounded search scope, not proof about all possible parameters.",
+    "distance": "Euclidean on registered S_fit blocks, standardized using each pseudo-target whole-page bootstrap SD; zero-SD mismatch remains infinity.",
+    "final_weight_ESS_minimum": 1000,
+    "method": "ABC-SMC on S_fit only for every candidate family, including the true family",
+    "minimum_final_accepted_particles_all_recovery_cells": 72000000,
+    "note": "This is an expensive full protocol, not a job launched by this design. Three2000-particle generations alone imply at least216million accepted particles before proposal rejections.",
+    "particle_escalation": "Allowed2000->4000->8000 only to meet final ESS, with unchanged priors/tolerances; record all stages and failures.",
+    "particles_minimum": 2000,
+    "simulator_calls_maximum_per_fit": 250000,
+    "tolerance_calibration": "Using S_fit only before claim freeze: final epsilon from the95th percentile of predeclared whole-page bootstrap standardized distances; fixed SMC schedule4\u00d7,2\u00d7,1\u00d7 epsilon. Preserve full calibration draw table; do not choose on H1\u2013H8 or classification performance."
+  },
+  "gates": {
+    "boundaries": "No correct-label selection requirement where families overlap. Shared mechanisms should co-survive. Report empirical equivalence sets and false exclusion of each shared representation.",
+    "correct_family_survival": "At least80/100 per true-family\u00d7reading-cell, with95% binomial intervals reported. This keeps the stated80% empirical gate; uncertainty is not hidden.",
+    "failure_terminal": "Any required survival/discrimination/control gate fails => report PIPELINE_CANNOT_DISCRIMINATE for that scope, do not interpret manuscript model probabilities or elimination. No threshold repair in this cut.",
+    "incomplete": "Every scheduled record must have a terminal auditable status. Mapping/unknown/source-size support or computation failures are not negative manuscript evidence. Unsupported recovery cells cannot qualify corresponding manuscript claims.",
+    "interior_discrimination": "In at least64/80 interior trials, true family survives and at least3 of5 wrong families are rejected. Report basic-fit rejection separately from H-specific elimination.",
+    "pairwise": "Every family pair gets its own false-exclusion and survival/co-survival table. Do not infer that two families are distinguishable merely because the global majority gate passes.",
+    "parameter_recovery": "For every preregistered identifiable numeric parameter: true value inside90% interval in>=80% of eligible interior trials; median absolute posterior-median error<=.20 prior-range; median interval width<=.60 prior-range. Seeds, offsets and label-permuted keys are nuisance, not identifiable targets. Categorical identifiable parameters: true category posterior mass>=.8 in>=80% eligible interior trials. Declare every exemption before scoring; retain failures."
+  },
+  "geometry": {
+    "H_F": "Separate fits and confusion matrices. H/F are alternative coverage/templates, not independent manuscript replications. Both reading-specific gates must pass for a Currier\u00d7scribe headline; do not multiply p-values or pretend separately generated pseudo-texts are paired transcriptions.",
+    "layout": "One declared conditioning contract for all families before freeze; preserve published G5 native character-count generation. Match target sample size by stopping/censoring at declared boundaries, never forcing outcomes. Do not include an exactly conditioned line statistic again as independent evidence.",
+    "primary": "Existing ten Currier\u00d7Davis-scribe\u00d7reading cells; exact retained page/line/unknown-mask geometry; reserved zodiac never loaded.",
+    "real_known_text": "Additional primary real abbreviated-Latin control at its own five-page native size, not padded/repeated to match larger manuscript cells.15th-century scholastic and earlier medical sources are separate sensitivity strata.",
+    "recovery_units": "100 independent pseudo-manuscripts per true family per reading-cell; six families \u00d7ten cells =6000 datasets.",
+    "source_length": "No cyclic source wrapping for primary claim/recovery. Source segments stay contiguous within a work, with every page/word boundary and unknown retained. Insufficient disjoint source material is UNSUPPORTED_AT_SIZE, not a family rejection."
+  },
+  "predictive": {
+    "ESS_minimum_per_vector_envelope_half": 400,
+    "H2": "Availability-strengthening targets must be recomputed on approved log-OR scale; legacy RD ratios are not numeric log-OR targets.",
+    "draws_minimum": 2000,
+    "elimination": "At least two failed H-families among H1,H2,H3,H6. Missing/unsupported makes overall elimination NOT_ESTIMABLE if it could change the decision; cannot count as passing. H4/H5/H7/H8 diagnostics do not add votes.",
+    "intervals": "Report every component percentile and interval as descriptive alongside the one-family flag. One H3 context subcomponent is not interchangeable with the whole H3 test. An infinite calibrated vector threshold or inadequate predictive ESS is NOT_ESTIMABLE, not an automatic pass.",
+    "scalar_rule": "Weighted central95% posterior predictive interval, endpoints inclusive; outside gives one failed H-family.",
+    "vector_rule": "H3/H6 vector components jointly count as at most one failed H-family. Predeclare component names. Deterministically split predictive draws into location/scale and calibration halves. Weighted median and MAD from first half; max absolute standardized component departure calibrated at weighted95th percentile on second half gives a simultaneous envelope. Zero spread: exact equality contributes0, otherwise infinity. Unsupported components invalidate that H-family; never drop components post hoc.",
+    "weighting": "Use ABC importance weights; do not treat weighted accepted particles as equally likely."
+  },
+  "pseudo_truth": {
+    "labels": "Truth parameters/source IDs remain in sealed receipt, never predictor features or fitting inputs. Arbitrary code-unit names, mapping IDs, file names, seeds and family names must not enter summary vectors.",
+    "mapping": "Rebuild the candidate mapping and bootstrap standardization against each pseudo-target exactly as for the manuscript. Never provide the true mapping/key to the inference code. Treat deterministic tie/label conventions as nuisance; relabeling negative controls must prevent artificial family recognition.",
+    "nested_cases": [
+      "G2 abbreviation probability0 reduces to G1 source representation.",
+      "G3 symbol probability0 reduces to G2.",
+      "G4 no nulls/no position variants overlaps G1 up to codebook representation."
+    ],
+    "parameters": "Draw from frozen priors with stratified quantiles; interior numeric probabilities in[.1,.9] of their permitted range, categorical factors balanced; all source/codebook nuisance draws recorded. Boundary20 exercise literal shared submodels, not expected identifications.",
+    "regimes": {
+      "boundary": 20,
+      "interior": 80
+    }
+  },
+  "random_forest": {
+    "probability": "Pudlo-style selected-model probability from out-of-bag allocation-error regression; forest vote fractions are descriptive. Do not invent probabilities for all families.",
+    "reference_table": "At least5000 independent prior-predictive records per family per supported geometry, disjoint truth/test seeds and source partitions. Group duplicate latent texts/source blocks in folds. No held-statistic reference table may be generated before claim freeze.",
+    "role": "Descriptive only after all required discrimination gates pass; not used to change elimination thresholds."
+  },
+  "release_requirements": [
+    "All H1\u2013H8 adapters and component names defined and hashed, including original H3.",
+    "Complete claim FREEZE.json hashes code, sources, priors, mapping, layout, budgets, target/statistic adapters and this protocol.",
+    "Source-support, unknown-unit, layout and negative-control policies settled before any held scores."
+  ],
+  "scope": "Qualify this finite implementation/prior/source set at supported sizes; no mechanism-wide historical exclusion.",
+  "tier": "DESIGN_ONLY_NOT_CLAIM_FROZEN",
+  "uncertainty": "Binomial intervals quantify seed/draw variation conditional on the fixed corpus/geometry; they are not independent-language or independent-manuscript population intervals.",
+  "version": "recovery-discrimination-v1"
+}

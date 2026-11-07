@@ -1,0 +1,5 @@
+from retrieve import *
+commit=json.loads((S/'c17-tree.json').read_text())['sha']
+jobs=[(f'https://raw.githubusercontent.com/danielgaskell/voynich/{commit}/data/gibberish_transcriptions.zip','gibberish_transcriptions.zip'),(f'https://raw.githubusercontent.com/danielgaskell/voynich/{commit}/results/metadata.csv','c17-metadata.csv'),('https://storage.googleapis.com/storage/v1/b/sefaria-export/o?prefix=json%2FHalakhah%2FMishneh%20Torah%2F&maxResults=1000','mishneh-list.json'),('https://storage.googleapis.com/storage/v1/b/sefaria-export/o?prefix=json%2FTanakh%2F&maxResults=1000','tanakh-list.json'),('https://webdocs.cs.ualberta.ca/~kondrak/anagram.zip','anagram.zip'),('https://webdocs.cs.ualberta.ca/~kondrak/decipher.zip','decipher.zip'),('https://web.archive.org/cdx/search/cdx?url=webdocs.cs.ualberta.ca/~kondrak/*&output=json&filter=statuscode:200&filter=mimetype:application/zip&collapse=urlkey','author-archive-index.json')]
+with concurrent.futures.ThreadPoolExecutor(max_workers=7) as ex: rows=list(ex.map(lambda x:get(*x),jobs))
+(S/'retrieval-more.json').write_text(json.dumps(rows,indent=2)); print(json.dumps(rows,indent=2))

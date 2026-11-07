@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-26T02:59:35.024Z",
+  "status": "FROZEN BEFORE CLASS-BASED H-DISCOVERY",
+  "authority": "User requested qualified class-based Hdiscovery byscribe,freeze,unchangedH/Fconfirmation;preserveallfailures",
+  "method": "T3-class-multiword-v3-attempt1;exactqualifiedengine/codebook/thresholds",
+  "qualification": "../class-multiword-v3-bank2/QUALIFICATION.json;limitedpass;originalfailedbankpreserved",
+  "source": "SamecachedoriginalHdiscoveryparagraphs;fixedoriginalSHA256folio split/cohort/reservedexclusions",
+  "selection": {
+    "reading": "H",
+    "scribes": [
+      "1",
+      "2"
+    ],
+    "one_batch": true,
+    "refinements": 0
+  },
+  "confirmation": {
+    "readings": [
+      "H",
+      "F"
+    ],
+    "minimum_folios": 8,
+    "presence": 0.5,
+    "concentration": 1.5,
+    "frozen_coverage": 0.7,
+    "max_new_types": 4,
+    "recurrent_frozen_types": 2,
+    "candidate": "ExactselectedHclassanchors,gap,positions2–15andclassvariants;noFrefit",
+    "when": "Afterbothscribe-freezefilesandPOST-DISCOVERY-SEALsaved",
+    "no_candidate": "Terminalwithinthat scribe; do not tokenize H/Fconfirmation for it",
+    "paragraphs": "Existingv8tokenize;folio/placegroups,originalorder,explicit=terminator;unterminatedtailslogged/excluded;unknownslotsretained;readingsnotforcedtoalign",
+    "tests": "Failedpredictionsfullfailure,pnull,noshuffles; ifpredictionshold exactly10000 firstwordfixedwithinparagraphshuffles,unknownslotstravel",
+    "seeds": {
+      "H": {
+        "1": 886601,
+        "2": 886602
+      },
+      "F": {
+        "1": 886701,
+        "2": 886702
+      }
+    },
+    "correction": "Holm2 over scribes separatelywithinH/F;inactiveorunsupportedinternalp1,notmeasuredp",
+    "headline": "Same scribe meets predictions and Holm p<.05 inbothH/F"
+  },
+  "budget": {
+    "family_alpha": 0.05,
+    "alpha_V": null,
+    "global_error_control": false,
+    "source": "../../BUDGET.json;existingT3family"
+  },
+  "known_exposure": "Textretrospective;priorsinglewordandexactwordHresultsanddiagnosisalreadyknown;classqualificationandLatinexposed;no class-basedHdiscovery scoredyet",
+  "looks": {
+    "prior_single_word": 1,
+    "prior_exact_word_multiword": 1,
+    "this_class_batch": 1,
+    "total": 3,
+    "original_maximum": 20
+  },
+  "limits": "ExposedLatinpositiveanddefaultnativeG5/G6only;noindependentmanuscript-sizedpositivepowerclaim",
+  "preserve_prior_files": true
+}

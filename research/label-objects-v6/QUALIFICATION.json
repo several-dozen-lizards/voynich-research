@@ -1,0 +1,253 @@
+{
+  "status": "FAIL_T1_FALSE_POSITIVE_CONTROL",
+  "scientific_gate_passed": false,
+  "protocol_sha256": "ab3fb576991dc19add7dfb3010f3a521da15a3eca32b78dc5dde2a496ae0d9b4",
+  "control_plan_sha256": "90ffa16db355ae2ba9c7e3d754bfd3441f07de984a208ced2e5ba508edc0cd5d",
+  "parity": {
+    "status": "PASS",
+    "cases": [
+      {
+        "classes": 2,
+        "reading": "H",
+        "case": 0,
+        "gain_difference": 9.032619430193733e-09,
+        "max_probability_difference": 5.58711904408149e-07,
+        "selected_C_match": true
+      },
+      {
+        "classes": 2,
+        "reading": "H",
+        "case": 1,
+        "gain_difference": 8.713740284882476e-10,
+        "max_probability_difference": 2.2329638793561202e-07,
+        "selected_C_match": true
+      },
+      {
+        "classes": 2,
+        "reading": "F",
+        "case": 0,
+        "gain_difference": 3.468991760513518e-09,
+        "max_probability_difference": 1.0135697200708282e-06,
+        "selected_C_match": true
+      },
+      {
+        "classes": 2,
+        "reading": "F",
+        "case": 1,
+        "gain_difference": 2.542712013164916e-10,
+        "max_probability_difference": 7.928181005034673e-07,
+        "selected_C_match": true
+      },
+      {
+        "classes": 3,
+        "reading": "H",
+        "case": 0,
+        "gain_difference": 3.841184574082668e-06,
+        "max_probability_difference": 3.6588099616707837e-07,
+        "selected_C_match": true
+      },
+      {
+        "classes": 3,
+        "reading": "H",
+        "case": 1,
+        "gain_difference": 1.7294186943628276e-07,
+        "max_probability_difference": 1.2635786439396668e-06,
+        "selected_C_match": true
+      },
+      {
+        "classes": 3,
+        "reading": "F",
+        "case": 0,
+        "gain_difference": 8.758912969364374e-07,
+        "max_probability_difference": 6.332090709548766e-07,
+        "selected_C_match": true
+      },
+      {
+        "classes": 3,
+        "reading": "F",
+        "case": 1,
+        "gain_difference": 7.309037081126846e-08,
+        "max_probability_difference": 1.0091662500655296e-06,
+        "selected_C_match": true
+      }
+    ],
+    "original_engine_sha256": "3cbcf4226a9e668fe550aaf72f2b5366c54a632745021d635f19073c494c52f6",
+    "batch_engine_sha256": "a172598d47804e5fa95e5f6047d1e9b517a68016c99a6b99aed8c231521c4b3c"
+  },
+  "T1": {
+    "status": "FAIL",
+    "results": [
+      {
+        "classes": 2,
+        "regime": "positive",
+        "n": 100,
+        "H_flags": 100,
+        "F_flags": 100,
+        "HF_joint_flags": 100,
+        "HF_joint_rate": 1.0,
+        "HF_joint_wilson95": [
+          0.9630065017930163,
+          1
+        ],
+        "passed": true
+      },
+      {
+        "classes": 2,
+        "regime": "section_only",
+        "n": 100,
+        "H_flags": 6,
+        "F_flags": 7,
+        "HF_joint_flags": 6,
+        "HF_joint_rate": 0.06,
+        "HF_joint_wilson95": [
+          0.02778612396318876,
+          0.1247681544589569
+        ],
+        "passed": false
+      },
+      {
+        "classes": 2,
+        "reading": "H",
+        "regime": "page_only",
+        "n": 1,
+        "flags": 0,
+        "p_exact": 1.0,
+        "singleton_orbit_proved": true,
+        "observed_gain": -0.7466696758550426,
+        "passed": true,
+        "evidence_unit": "One exact singleton-orbit proof; not 100 independent observations"
+      },
+      {
+        "classes": 2,
+        "reading": "F",
+        "regime": "page_only",
+        "n": 1,
+        "flags": 0,
+        "p_exact": 1.0,
+        "singleton_orbit_proved": true,
+        "observed_gain": -0.7466696758550426,
+        "passed": true,
+        "evidence_unit": "One exact singleton-orbit proof; not 100 independent observations"
+      },
+      {
+        "classes": 3,
+        "regime": "positive",
+        "n": 100,
+        "H_flags": 100,
+        "F_flags": 100,
+        "HF_joint_flags": 100,
+        "HF_joint_rate": 1.0,
+        "HF_joint_wilson95": [
+          0.9630065017930163,
+          1
+        ],
+        "passed": true
+      },
+      {
+        "classes": 3,
+        "regime": "section_only",
+        "n": 100,
+        "H_flags": 5,
+        "F_flags": 5,
+        "HF_joint_flags": 5,
+        "HF_joint_rate": 0.05,
+        "HF_joint_wilson95": [
+          0.021543679154368438,
+          0.1117504692319169
+        ],
+        "passed": true
+      },
+      {
+        "classes": 3,
+        "reading": "H",
+        "regime": "page_only",
+        "n": 1,
+        "flags": 0,
+        "p_exact": 1.0,
+        "singleton_orbit_proved": true,
+        "observed_gain": -1.085100578206674,
+        "passed": true,
+        "evidence_unit": "One exact singleton-orbit proof; not 100 independent observations"
+      },
+      {
+        "classes": 3,
+        "reading": "F",
+        "regime": "page_only",
+        "n": 1,
+        "flags": 0,
+        "p_exact": 1.0,
+        "singleton_orbit_proved": true,
+        "observed_gain": -1.085100578206674,
+        "passed": true,
+        "evidence_unit": "One exact singleton-orbit proof; not 100 independent observations"
+      }
+    ],
+    "limits": "Conditional finite-prototype synthetic controls; shared-bank conditional rates, not a survey of historical texts, weak effects or all manuscript confounds."
+  },
+  "permutations_per_bank": 5000,
+  "conditional_banks": 8,
+  "trial_records": 1200,
+  "T2_statistical_calibration": "PASS_STATISTICAL_CALIBRATION_ONLY",
+  "T2_shuffled_match_image_control": "NOT_RUN_NO_ACCEPTED_DRAWING_GEOMETRY_OR_TEXT_MASKS",
+  "registration_pilots": {
+    "original_accepted": 0,
+    "repaired_accepted": 0,
+    "physical_loci_attempted": 12
+  },
+  "rater_interface": {
+    "status": "FAIL_INTERFACE",
+    "results": [
+      {
+        "stimulus": "STAR",
+        "rater": "A",
+        "truth": "STAR",
+        "returned": {
+          "class": "STAR",
+          "recognition": null,
+          "note": "The marked writing 'abcd' is placed beside a large star-shaped drawing in the left image, and the right image shows a smaller star with the same label. The attachment is to the star."
+        },
+        "schema_ok": true,
+        "correct": true
+      },
+      {
+        "stimulus": "STAR",
+        "rater": "B",
+        "truth": "STAR",
+        "returned": {
+          "class": "UNCLEAR",
+          "recognition": "UNCLEAR",
+          "note": "UNCLEAR"
+        },
+        "schema_ok": true,
+        "correct": false
+      },
+      {
+        "stimulus": "VESSEL",
+        "rater": "A",
+        "truth": "VESSEL",
+        "returned": {
+          "class": "VESSEL",
+          "recognition": null,
+          "note": "The marked writing is attached beside a drawn jar-like container."
+        },
+        "schema_ok": true,
+        "correct": true
+      },
+      {
+        "stimulus": "VESSEL",
+        "rater": "B",
+        "truth": "VESSEL",
+        "returned": {
+          "class": "star",
+          "recognition": "star",
+          "note": "star or star-like mark"
+        },
+        "schema_ok": false,
+        "correct": false
+      }
+    ],
+    "real_ratings": 0,
+    "manuscript_reliability_established": false
+  },
+  "important_limit": "Positive power is conditional on strong synthetic finite-prototype signals at realistic counts; not a guarantee for weak or historical-script effects."
+}

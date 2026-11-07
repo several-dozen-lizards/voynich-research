@@ -1,0 +1,57 @@
+{
+  "status": "FROZEN_BEFORE_RANKING",
+  "amendment": "post-failure rank-only v2",
+  "source": "existing v1 decoded lines and original LM, explicitly chosen by human",
+  "rules": {
+    "input": "preserved C16-KH v1 decoded lines and original LM; no key refit or lexicon substitution",
+    "nulls": [
+      "C1",
+      "C9",
+      "C11",
+      "C17"
+    ],
+    "arms": [
+      "tanakh",
+      "medieval"
+    ],
+    "variants": "all24 frozen v1 variants unchanged",
+    "unknown_rule": "omit UNK targets from score, retain original token history; exclude BOS/EOS from known-word mean",
+    "minimum_known_fraction": 0.6,
+    "score": "mean original-LM log probability of known word targets",
+    "empty_known": "ineligible, no numeric score",
+    "selection": "same per-source max over variants, equal-N comparisons and source-stripped shuffled blind export; no padding if insufficient eligible lines",
+    "qualification": "first verify held-out Hebrew and null calibration; preserve failure and do not treat a failed scorer as qualified on ZL",
+    "blind": "same clean Tanakh arm, target100ZL +25each null; independent sealed key, no self-ratings; export only genuinely eligible records",
+    "preservation": "hash v1 before/after; do not read its sealed key or modify concurrent c16-kh-scorer-v2 project"
+  },
+  "code_sha256": "871a3161ce5b805c3052cf183b411bd8656294adaceaf638e19d61dd7794dbf8",
+  "inputs": {
+    "c16-kh\\core.py": "6f45a353e0e651f2c20fdbe9ab20ad0e0d10da242473b8a79c2fef2286273e0f",
+    "c16-kh\\REGISTRATION.json": "03bc47e7ab0e504c19fb9c4256519da15f471e3d4d1ba289f1116c2af95a177d",
+    "c16-kh\\STATUS.json": "e5151d7dee6a1ae492c8198eaa6bd64937528eb381d8cd2a2ccff60b5b944217",
+    "c16-kh\\linewise-max-scores.csv": "bad6f5a4db1bcb5b9a7eca7c5d0d827a6f5f0f015689c78ea777408e3ba5d28c",
+    "c16-kh\\best-variant-scores.csv": "d7234e17f2499a12ce7f3334bf292936267790cb7de514bd49f2dc9b1b9fc47b",
+    "c16-kh\\sealed\\key.zip": "e7cb4f595566163cf66ade851ba4983034c0c0d14399eb16cc0bd61a597584a4",
+    "c16-kh\\prepared\\tanakh.json": "f74ef0aef66610641a8ed763bc09fc0d136e87f58e91795ad4ea9548ae8129ae",
+    "c16-kh\\results\\tanakh\\C1-clean-lines.jsonl.gz": "85258364b3cb7a8263b2207948dbd9639928f924ab9ff1f1878c2e289604f712",
+    "c16-kh\\results\\tanakh\\C1-noise-lines.jsonl.gz": "6664564f63dda9ff4aa05555b69fefc3ab5f7b604a6ccd0315d78d6109fe8f76",
+    "c16-kh\\results\\tanakh\\C11-clean-lines.jsonl.gz": "6c2ef579cdc99af7640bfff8fafd6799747e01ff285a7ac54236d32c366e8544",
+    "c16-kh\\results\\tanakh\\C11-noise-lines.jsonl.gz": "a1f5b347976d6e423529c5251e5c11e83a24ed4e80935e28117cfe94213cf3db",
+    "c16-kh\\results\\tanakh\\C17-clean-lines.jsonl.gz": "2ae1c0507d8fe34866860f7688943613bf8bb2bb2d7592d3dbc83e67433eef4c",
+    "c16-kh\\results\\tanakh\\C17-noise-lines.jsonl.gz": "2d69f6109e5b8aca0975928ce5995af559a9cff5912ca757a336296e6fa54e96",
+    "c16-kh\\results\\tanakh\\C9-clean-lines.jsonl.gz": "60837c7e53356f4469244ccf6fe2c8bf4189873bb7e8ac7f49fc67cc23bc30d9",
+    "c16-kh\\results\\tanakh\\C9-noise-lines.jsonl.gz": "5680368142c587c5e51403d985f3a1d1ca8ca89b7450157a5863df92c184ea9d",
+    "c16-kh\\results\\tanakh\\ZL-clean-lines.jsonl.gz": "37e776f535e8c8a191d75c20c714336baa31133893ecbb9d844c839cab55ceb1",
+    "c16-kh\\prepared\\medieval.json": "766b7933f8f2cb05d20dde1f6d459f56a1d6b3d9e83212287cc917617c55e0b0",
+    "c16-kh\\results\\medieval\\C1-clean-lines.jsonl.gz": "0daafd66dba882e981efbe39d2f8ac6d8676f6320c9faaadad79291ade8627c0",
+    "c16-kh\\results\\medieval\\C1-noise-lines.jsonl.gz": "eb43cd789a16fd203d6ad1a0a8516382254f6579d5b6402127036b5b3c4f666f",
+    "c16-kh\\results\\medieval\\C11-clean-lines.jsonl.gz": "e5fcf0805616b82647a7bc57a32e5a342028bf3b345f3dc1e2bffb6821983e3d",
+    "c16-kh\\results\\medieval\\C11-noise-lines.jsonl.gz": "a51d3965dfcf80b1e4055bec9083def53c2c5e38b6e357cce3393a8dccab3a2c",
+    "c16-kh\\results\\medieval\\C17-clean-lines.jsonl.gz": "882bb8a5a5f75740fb57e06870ec1ff1de172fed6a931d0ec001624f8517bd7e",
+    "c16-kh\\results\\medieval\\C17-noise-lines.jsonl.gz": "40e10b833e8056cfb2de1ce73f1f3ddae82c61125d6b9ea55f49dc0997e37262",
+    "c16-kh\\results\\medieval\\C9-clean-lines.jsonl.gz": "80fe0e0e01f5d6c5d2712ea5fc2d86d8bf1cce815fb7595031393f8a8417ced5",
+    "c16-kh\\results\\medieval\\C9-noise-lines.jsonl.gz": "9aa76f5f34dfe7328f532cbf550e32bbcb97c06379daf39bdf3c2fef0af29f22",
+    "c16-kh\\results\\medieval\\ZL-clean-lines.jsonl.gz": "595e6c60bb9b1d0044d514b798b1f7079f74dde4aba37ce54ec81e10266ddbc4"
+  },
+  "sealed_v1_key_not_opened": true
+}

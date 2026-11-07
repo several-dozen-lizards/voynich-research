@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN BEFORE REPLACEMENT SUPPORT/QUALIFICATION; RETROSPECTIVE",
+  "utc": "2026-10-25T02:38:42.180117+00:00",
+  "authority": "User requested freeze and qualify B-Q2 replacement at real support, score heterogeneity only if qualified, retain inconclusive results",
+  "exposure": "Prior manuscript effects, old control failures and zero-variance cases known. No prospective or independent confirmation claim.",
+  "target": "Same aggregate sh/ch->qok MH risk differences, contexts C1-C5. H/F separate. Heterogeneity only within scribe2 C1-C3 and within scribe3 C4-C5; combine those two dispersion statistics. Same physical folio permutation unit.",
+  "data": "Original masked v3.1 events; no new folios, raw EVT, reserved zodiac, glyph handling, context additions or section pooling. Folios with zero MH assignment-support D are excluded from permutation pool before outcomes because they contribute no MH information. Remaining folios retain all their eligible events. All informative exact folio x ending strata remain unchanged.",
+  "support": "Each context >=2 folios of positive D. Every permuted context thus has positive total D. Record pages, D, concentration and availability by context. Availability-preserving controls must be feasible at frozen target rates .20/.28 or .20/.32; infeasibility blocks qualification without lowering targets.",
+  "method": {
+    "raw_effect": "For each folio x ending stratum: ns,nc,ys,yc, w=ns*nc/(ns+nc); Ng=w*(ys/ns-yc/nc); Dg=w. Raw effects unshrunk. Only discordant strata contribute.",
+    "working_variance": "Jeffreys-smoothed probabilities ps=(ys+.5)/(ns+1), pc=(yc+.5)/(nc+1). Vg=(nc/(ns+nc))^2*ns*ps*(1-ps)+(ns/(ns+nc))^2*nc*pc*(1-pc). Sum Ng,Dg,Vg by folio. Vg>0 whenever ns,nc>0 even all-zero/all-one counts. This is a binomial working variance for studentization, not a posterior confidence interval or measured physiology.",
+    "statistic": "For each reassignment: context RDc=sumNp/sumDp; working sampling variance vc=sumVp/(sumDp)^2; Wc=1/vc. Center each scribe separately at its W-weighted context mean. T=sum over scribes and contexts Wc*(RDc-mu_scribe)^2. No division by empirical between-folio residual variance, epsilon floor, failed-permutation deletion, clipping of observations or outcome edits.",
+    "permutation": "Exactly10000 fresh independent whole-folio reassignments within each scribe per trial and per manuscript reading, with original supported-folio context counts fixed. NumPy Generator.permuted(...,axis=1) independently shuffles each row. Include observed assignment as row0. All folio N,D,V quantities travel together; recompute context working variances and centers every shuffle.",
+    "tail": "p=(1+#Tperm>=Tobs-tol)/(10001). tol=128*float64_eps*max(1,maxT), numerical tie handling only, frozen. No negative-score truncation is needed because T is a sum of weighted squared deviations. All-identical score distributions have computational p1 and degenerate=True; not negative evidence.",
+    "limits": "Studentization does not make weak equal-effect nulls finite-sample permutation-exact when folio distributions differ. Real-support synthetic qualification is necessary and limited to its authored generators; this implementation is not claimed to inherit a theorem automatically."
+  },
+  "controls": {
+    "null_scenarios": [
+      "homogeneous_null",
+      "homogeneous_positive",
+      "scribe_baseline_homogeneous",
+      "section_baseline_homogeneous",
+      "available_homogeneous"
+    ],
+    "null_details": [
+      "homogeneous_null: p=.20, delta0",
+      "homogeneous_positive: p=.20+.08sh in every context",
+      "scribe_baseline_homogeneous: base .12 for scribe2, .40 for scribe3; delta.08 everywhere",
+      "section_baseline_homogeneous: bases C1..C5=.10,.40,.20,.15,.45; delta.08 everywhere, equal effects with different sampling variances",
+      "available_homogeneous: blocked outcomes0; among available followers pch=.20/fch,c and psh=.28/fsh,c. f is the masked MH-weighted available fraction by prefix/context. Analytic context aggregate risk differences exactly.08; may vary within context/folio. Infeasible targets block."
+    ],
+    "positive_scenarios": [
+      "heterogeneous_positive",
+      "available_heterogeneous_positive"
+    ],
+    "positive_details": [
+      "heterogeneous_positive: base.20; +.12 aftersh only C1, zero elsewhere",
+      "available_heterogeneous_positive: blocked0; availablepch=.20/fch,c; availablesh probability [.32,.20,.20,.20,.20]/fsh,c, making aggregate effects+.12 C1/0 elsewhere"
+    ],
+    "N": "Exactly5000 fresh trials per null scenario per supported reading and1000 per positive per reading; if both support54000 total. Every trial gets a fresh independent10000-shuffle bank. No reused banks, sample extension, optional stopping, seed replacement, enlarged effects or retuning.",
+    "seeds": "Outcome coordinate [917260,reading_index(H0,F1),scenario_index0..6,trial,0]; permutation coordinate same but last1. Manuscript bank [917261,reading_index]. Engineering deterministic fixtures and old failed synthetic cases only, no new random qualification coordinates.",
+    "intervals": "14 simultaneous exact two-sided Clopper-Pearson intervals with error.05/14, covering10 null and4 descriptive-power proportions. Keep full denominators, degeneracy and numeric failures. Any numeric undefined blocks the candidate; never discard failed permutations/trials.",
+    "gates": "Each null U<=.05 CERTIFIED BELOW TOLERANCE, L>.05 EVIDENCE ABOVE TOLERANCE, else INCONCLUSIVE. Separately L>.025 is NOMINAL SIZE EXCESS and blocks qualification for any required equal-effect null. Reading qualifies only if every null certified, no nominal alarm, no undefined numeric cases. No detected alarm is not proof of exact nominal calibration.",
+    "power": "Report power and simultaneous intervals descriptively for both+.12 controls, no80% gate, retaining original B-Q2 rule. Report both point-p flags and conservative inner-MC-certified flags. Low power prevents interpreting no detection as absence of heterogeneity."
+  },
+  "qualification_flag": "Point Monte Carlo p<=.025, conservative calibration target for the guarded manuscript rejection rule. Independent of old control series; old and new counts never pooled.",
+  "score_gate": "Attach actual manuscript y only after qualification and audit hashes frozen, and only for each qualified reading. Failed/inconclusive readings: BLOCKED, no new manuscript statistic, REML or p. Prior B-Q2 remains unqualified regardless.",
+  "manuscript_decision": "Conservative Holm2 per reading [newBQ2-R1, inactive historicalBQ1 internal p1], leaving prior B-Q1 tests/statuses untouched. No global research-history correction claimed. For finite-inner-MC uncertainty, exact binomial tail intervals at simultaneous95% across H/F (per-reading error.025), transformed through add-one and factor2. DETECTED only if adjusted pointp<=.05 and interval upper<=.05; NO DETECTION only if interval lower>.05. Otherwise INCONCLUSIVE INNER MONTE CARLO, never extend bank. Degenerate distribution NOT ESTIMABLE. Both readings must DETECT for both-reading headline.",
+  "context_and_tau": "Only for qualified readings, report unchanged raw context MH effects, original descriptive percentile CIs as carry-forward, new working variances, within-scribe REML common tau2 with separate scribe means and Q-profile95 interval(df3), and descriptive I2=max(0,(T-df)/T). Broad tau intervals mean unresolved. No new inferential scribe2-only sensitivities: those lack separate support qualification and remain prior unqualified diagnostics.",
+  "verification": "Exhaustive finite small permutation orbit and rank super-uniformity, vectorized vs independent scalar scoring, all-zero/all-one/binary-perfect fixtures, direct MH effect replay, replay all six prior zero-variance synthetic assignments with finite new scores. Every fresh null false flag and trial0 per scenario: regenerate outcome and bank, verify hashes/counts, scalar-check observed/first32/extreme/near-observed assignments. Verify original prior-file hashes before and after.",
+  "interpretation": "Even qualified inference remains retrospective and affected by selection of C1/C4 for large prior effects. No detection, especially with weak positive-control power or broad tau bounds, does not establish a uniform rule. Detection concerns strength across sections within these scribes, not why, meaning or mechanism.",
+  "preservation": "Write only this new directory. All prior attempts, failures, controls, statuses and unqualified old B-Q2 remain byte-identical except ignored Python caches.",
+  "sources": [
+    "https://statistics.stanford.edu/technical-reports/exact-and-asymptotically-robust-permutation-tests",
+    "https://docs.astropy.org/en/stable/api/astropy.stats.binom_conf_interval.html",
+    "https://numpy.org/doc/2.0/reference/random/generated/numpy.random.Generator.permuted.html",
+    "https://itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbino.htm"
+  ]
+}

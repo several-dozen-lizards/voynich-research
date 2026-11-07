@@ -1,0 +1,63 @@
+{
+  "version": "v7.1-attempt2",
+  "utc": "2026-10-25T17:11:16.173Z",
+  "amendment_sha256": "23b75699b525220d9a855a25ac0057b9f7e56a14d415d28e8498f96e3f4240c8",
+  "attempt1": "preserve original bytes/results; attempt2 uses separate directory",
+  "scores": "E1–E6 and K unchanged; use original raw_scores",
+  "C3": {
+    "keys": 1000,
+    "clean_seed": 714,
+    "corrupt_seed": 715,
+    "trap_seed": 719,
+    "clean_and_corrupt_real_banks": "reuse attempt1 banks unchanged, verify key hashes; compute new control distributions across identical C3 keys"
+  },
+  "matched_controls": {
+    "E1": [
+      "C1-glyph",
+      "C2"
+    ],
+    "E2": [
+      "C1-glyph",
+      "C2"
+    ],
+    "E3": [
+      "C1-word",
+      "C2"
+    ],
+    "E4": [
+      "C1-glyph",
+      "C2"
+    ],
+    "E5": [
+      "within-band"
+    ]
+  },
+  "admission": "E1/E2/E5 unclaimed/zero-support omitted from matched gating; E3 and E4 always required; each estimable applicable evaluation must pass its matched controls; missing required C2/within-band yields NOT_ESTIMABLE admission",
+  "percentiles": "nearest-rank ceil(q*n)-1; real strictly greater than control95; >=99th C3 via plus-one upper-tail<=.01, PARTIAL via<=.002; conservative ties",
+  "negative_proposals": 200,
+  "negative_seed": 1711,
+  "negative_gate": "notPASS>=.99 and one-sided95% exact ClopperPearson upperPASS<=.03; report two-sided97.5% upper sensitivity",
+  "noise": {
+    "source_scope": "all shared H/F P loci accepted by v5 core.load_evt, excluding f67–f73 entirely, equal original word-slot counts and both tokens readable; boundary/unknown cases separately counted",
+    "estimator": "sum per-token Levenshtein character edits / sum max(Hlen,Flen); no zodiac label read; source disagreement not adjudicated truth",
+    "generation": "exact rounded(rate*glyph_slots) disagreements; split disjoint sites between syntheticH andF; uniform other Latin-character value; original allograph altered to unit with different decoded character; fixed word/line layout; retain original two-view masks and caveat that boundary errors are not modelled",
+    "seed": 1712
+  },
+  "trap": {
+    "data": "non-zodiac H/F paragraph rows only; choose first16 physical folios numeric sorted,first8training next8held; first40 lines per reading per partition, retain all tokens and unknown barriers",
+    "key": "train-only longest whole-word inventory with character fallback; explicit section context rules for training dictionary words; assign period Latin lexicon entries nearest length (deterministic tie); training dictionary match objective; no held key fit",
+    "random_seed": 719
+  },
+  "C2": {
+    "initial": "attempt1 shuffled-text surrogate retained explicitly provisional; cannot qualify overall",
+    "final": "G1–G6 via qualified v5 source_contract.produce_from_development, current cut2 Latin corpus, all families retained; fixed params{},seeds1720..1725,geometry first40 known-held lines for G1–G4/G6; G5 native linecount41 excluding seed; boundaries retained; synthetic known key rendered EVA through same fixed transliteration; no generator fitting"
+  },
+  "order": [
+    "true key provisional matched controls",
+    "corrupt key and noisy dual reading",
+    "200 independent random proposals",
+    "actual Voynich flexible-key trap",
+    "qualified v5-entrypoint C2 allfamilies and final qualification"
+  ],
+  "locks": "No PartB/C score, no alpha allocation, no vault; C1 source assembly suspended before actual manuscript qualification reads"
+}

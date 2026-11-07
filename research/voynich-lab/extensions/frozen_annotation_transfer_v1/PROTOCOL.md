@@ -1,0 +1,13 @@
+# Frozen annotation-map transfer check
+
+2026-10-27. Descriptive application only; no fitting, search, ranking, dictionary lookup, language identification or significance test.
+
+Use only the saved Occitan mono and position witnesses in phase9_month_annotations_v1/targets/later_month_annotations_v1/OBSERVED.json. These are candidate-to-annotation maps: INVERT each injective class to read an annotation. Do not complete the alphabet. Emit ? for every unmapped letter. Position is per published whitespace-delimited word, with B precedence for singletons; this is an explicit transfer assumption, not an independently established boundary convention. Preserve source word boundaries. Use the old letters() annotation normalization, never plain() plaintext replacements.
+
+Source selection was made after seeing source readings but BEFORE applying the maps. Admit all explicitly transcribed non-month COL/LET strings in Zandbergen's writing-system overview, including alternatives and isolated letters; include the explicit Latin-letter readings in his f66r discussion. Add only the two short marginal readings in Philip Neal's marginalia page/search extract. Keep competing readings together, not independent trials. Include f99v, which appears later in the overview. No attempt to choose a reading by its output. Incomplete f32r material remains a fragment. Single letters remain single letters; do not concatenate spatially separate marks.
+
+Exclude all twelve used MON loci, modern pencil foliation, numeric/quire marks, ownership inscription, illegible scribbles, unspecified alphabets and f17r with no sufficiently explicit Latin-letter reading in these bounded sources. Exclude ALL native-script characters, even on mixed-script pages. These are unused fit loci, not guaranteed previously unseen sources or statistically independent holdouts. No claim of same hand, date, language or substitution convention as the month annotations. No new facsimile collation.
+
+Before application seal target input, code and copies of the two saved maps with SHA256; retain the registration separately from mutable outputs. Snapshot files in the old month-annotation and Phase 8 runs and verify unchanged after application. Do not write into those runs or import their fitter. Receipt defect and Phase 8 FAIL remain preserved. Native tracks CLOSED.
+
+Report every reading alternative, known/total letters and full/partial/uncovered word status under BOTH maps. Pool no alternatives or repeated tokens into an accuracy statistic. A fully mapped string is merely alphabet coverage. There is no independent plaintext gold here, so translation accuracy and successful semantic transfer are NOT ESTIMABLE. Do not judge outputs by resemblance to plausible words. Stop after this check.

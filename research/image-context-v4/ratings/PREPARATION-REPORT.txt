@@ -1,0 +1,19 @@
+PROSPECTIVE IN IMAGE VARIABLE ONLY — text events exposed (v100/v102).
+Picture-rating preparation only. No manuscript ratings collected; G6/G2 not computed.
+
+A clean single-page route is available through the installed Claude CLI with tools/settings/MCP disabled, no applicable CLAUDE instruction files, random neutral working directories and fresh UUIDs. Rater A is pinned Sonnet4.5; B is pinned Opus4.5. Their shared provider/training remains a limitation on interpreting agreement.
+
+Synthetic control: one black outlined square on a500x500 white image. Expected ink bounding rectangle [0.2,0.2,0.202,0.202].
+claude-probe-events.jsonl: claude-sonnet-4-5-20250929 reported [0.34, 0.2, 0.33, 0.19]; OT; IoU 0.1284
+claude-probe-opus-events.jsonl: claude-opus-4-5-20251101 reported [0.12, 0.13, 0.26, 0.28]; OT; IoU 0.4707
+claude-probe-claude-sonnet-4-5-20250929-events.jsonl: claude-sonnet-4-5-20250929 reported [0.33, 0.21, 0.33, 0.39]; OT; IoU 0.0888
+
+These are observed coordinate failures, retained without repair. They do not estimate manuscript accuracy from a representative sample. A kappa pass would demonstrate agreement, not external validity or accurate geometry.
+
+Frozen plan:336 single-page calls; normalized picture boxes; no rater access to1145 shared line boxes, EVT text/results, other pages or other rater output. Apply category-neutral rectangle-distance rules at2 line heights. G6 uses six categories before OT merge; G2 uses PL/not-PL; both thresholds exact kappa>=0.60, before adjudication. Missing required line-pair ratings cause abstention, not invented NO. Undefined single-class kappa is not a pass.
+
+Engineering tests passed for response schema, native-distance conversion/ties and kappa. They do not qualify model coordinate accuracy.
+
+The user preference question on proceeding despite coordinate failures versus requiring another box-rater route is pending. Collection authorization is not yet released in AUTHORIZATION.json. No scientific data or result has been fabricated.
+
+v4.2 timing exception remains explicit. Geometry unchanged; v103 parked. Support, controls, outcome joins, hypothesis tests and adjudication remain held.

@@ -1,0 +1,9 @@
+# Pre-scoring intake amendments
+
+No manuscript/control key fitting, decoding, ranking or scoring had run when these amendments were made. Synthetic unit tests only had run.
+
+1. First preparation ran while remote downloads were still completing. Preserve its registration as `REGISTRATION-intake-incomplete.json`; retry all 13 network failures and regenerate the final input freeze. No missing works silently disappear. All 123 selected files retrieved after retry; only explicit Public Domain licenses admitted. `unknown` licenses excluded even for otherwise matching Torat Emet editions.
+2. Phase 3 C1 uses U+FFFD as the legitimate injective relabel of native Latin z. Escape that symbol to distinct U+E3FF before processing clean and noise C1; it must not become an unknown Voynich reading. C17 uses the same sorted injective relabeling principle but skips reserved U+FFFD in the shared inventory. This preserves distinctions rather than fitting alphabet size by merger.
+3. Noise versions are sensitivity applications of the frozen clean page/document keys, with no refit. This separates input perturbation from refitting. Apply the same policy to C1/C9/C11/C17. Main requested null comparisons use clean versions; all noise tables are secondary. ZL noise was not requested and is not introduced.
+4. Fitter target-candidate inventory limited to top 24 source ngrams **per n** (72 total), instead of 24 total; preserves all three ngram orders. This is a recorded reimplementation budget deviation. Store completed page checkpoints; interrupted work resumes exactly those keys. Identical canonical inputs may reuse identical keys with a cache receipt.
+5. Phase 4/5 preservation snapshot covers existing lab data/config/src/report bytes, excluding Python cache files. No prior source or analysis is edited. Prepared C17 is saved exclusively under this Phase 6 folder.

@@ -1,0 +1,27 @@
+# C12 partial decomposition: frozen extension
+
+User scope: both sigla-only and deterministic partial subsets, with C5 and full-decomposition endpoints. Original Phase4/5 matrices/reports and every C16-KH run/hold remain unchanged. No new ZL/H/C11 model, decoder or score; use only frozen previously computed ZL/H histograms, entropy and gain references for descriptive comparisons. Files and neural jobs are confined to this extension.
+
+## Encoder and endpoints
+
+Keep exact C1 selection (34,509 words), C5 aggressiveness .65 and old seed1729. Original C12 internally calls C5 with RNG(namespace C12), which differs from standalone C5's RNG(namespace C5). Therefore all paired partial arms share the C12-internal C5 base. Include its zero-decomposition baseline once; retain standalone C5 unchanged as a separate unpaired reference. Do not silently call them identical.
+
+Primary settings: sigla-only; nested deterministic type-subset fractions .25/.50/.75; full1. Each gets L=2/3/4 × rigidity0/.5/1. Add paired fraction0 and standalone C5, for47 nominal settings,94 clean/noise cells. Full endpoints must reproduce all nine old C12 settings exactly in text/geometry/neural preparation; standalone C5 must reproduce SW04. No interpolation, new fractions, post-result subsets or seed search.
+
+Order all source sign types by SHA256(`C12-partial-type-order-1729:<sign>`); subset size=floor(fraction*N), using prefix of this order. The same type order is used for every L/r. Freeze it and all codebooks before metrics. This samples TYPE fractions, not desired occurrence fractions: report actual selected type count and selected atomic-sign occurrence fraction separately. Sigla are exactly the fixed encoder SIGLA set intersected with the observed base inventory. One encoder seed, five neural seeds; do not claim encoder-seed uncertainty was measured.
+
+Avoid mixed-width ambiguity without adding a marker or growing the alphabet: use selected sign identities as the abstract stroke alphabet; retain unselected identities atomically. The two alphabets are disjoint. Selected signs map injectively to L-stroke strings, with at least one distinguishing slot; all expanded codes have the same width L. Thus a stream beginning in the selected alphabet consumes L strokes, otherwise one retained atom. Independently check prefix freedom, decode every clean word back to the common base, and check character accounting base_chars+(L-1)*expanded_occurrences.
+
+Use the corrected old expansive procedure on the SELECTED inventory: after the common C5 RNG draws, shuffle slot positions; floor(r*(L-1)) slots share the first selected stroke; every other slot uses its own permutation of selected signs. At fraction1 this is exactly the old C12 encoder. At fraction0 leave the common base unchanged. For a one-type inventory, nominal variable-slot cardinality1 is correct; no arbitrary failure rule. All actual selected inventories and per-slot cardinalities are reported.
+
+## Noise, neural measurement and comparison
+
+Sorted injective source relabeling and existing fixed symmetric noise rates/injector unchanged. Use old C12 noise namespace for every paired arm, C5 namespace for standalone C5. No source word padding or normalization changes; clean word count34,509, noise may alter boundaries. Report operations/realized sizes and character expansion.
+
+Use the exact old T1 LSTM baseline/position instrument, architecture/config, five seeds1729/1733/1741/1753/1777, page split,96 training steps and validation-only checkpoint choice. Source copies/hashes must match the old instrument freeze. No metadata or future target leakage. Run all cells, not just those close in model-free space. Train/test vocabulary rules unchanged. Report fixed-compute/convergence limitations and literal OOV accounting.
+
+Reuse prior endpoint neural jobs ONLY after source/config/runtime identity and exact prepared vocabulary, tensors, escape arrays and character counts match. Reuse identical prepared inputs across settings with explicit alias receipts; duplicate points are not independent replications. L2 rigidity0/.5 coincide under the integer slot rule. Every nominal version/position/seed job must be TRAINED, REUSED_PRIOR or REUSED_IDENTICAL with source and hash receipts; no silent omission/retry. Validate one prior baseline/position seed pair by exact replay before admitting cached neural jobs.
+
+Compare character h2, word-length distribution W1, and mean baseline-minus-position gain to the SAME old descriptive ZL/LSI-H envelopes. h2 margin=abs(ZL-H), W1 margin=their old W1, gain margin=max(primary gain SD, control gain SD,abs(ZL-H gain)). These are descriptive sensitivity bands, NOT formal equivalence or mechanism identification. Compute W1 from frozen histograms; never reload manuscript text. Report all settings/aliases/versions, full five-seed gains, expansion accounting, clean/noise results, and all-three-within-band counts. Preserve failures and originals. No alpha allocation, semantic or translation claim.
+
+Engineering gate BEFORE metrics/training: all reverse decoding, prefix freedom, variable/shared-slot cardinality, type/occurrence accounting, endpoint text/geometry equality and registered-source identity checks PASS. Freeze code/config/reference/dataset hashes and job plan before scoring. A failed engineering gate stops new jobs; report it. Runtime failures stay visible; resume only unstarted jobs or completed validated checkpoints. No change of grid/model/selector after outcomes.

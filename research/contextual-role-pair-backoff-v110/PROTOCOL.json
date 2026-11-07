@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "question": "Does backing off singleton pair features improve recovery or decision coverage relative to neutral-unknown v109, with scorer/counts fixed?",
+  "scope": "Exposed supervised development comparison on same v107 rows/splits/roles; not fresh confirmation, no Voynich access, no clustering or automatic role count run.",
+  "structural_fact": "v109 already includes four component word-at-position features plus two pair features; unknown pairs are neutral. Literal unseen-pair fallback without duplicating word evidence is mathematically identical to baseline.",
+  "rule": {
+    "rare": "A pair is rare if its pooled binary-role training occurrence count is exactly1. Repeated support begins at2; this is a single preregistered singleton-removal rule, not a tuned threshold grid.",
+    "baseline": "Exactly v109 repaired scorer, fitted counts, vocabulary, denominators, unigrams, priors and abstention tolerance.",
+    "backoff": "Send all four original component features plus only pair features with pooled training count>=2 to the unmodified v109 repaired score function. Singleton pair contributes no extra evidence; its component features remain present exactly once. Unknown pairs are already neutral. Counts/vocabulary/denominators remain baseline-fitted: this is activation-only backoff, not a refit that changes unrelated word scores.",
+    "invariants": "No duplicate component features, broader context, position sharing, new word forms, changed alpha or key fitting. All originally recognized component words stay active. Zero-evidence cases cannot gain support; decision coverage may still change through ties. Pair evidence of either sign may be lost; retain harms.",
+    "training_only": "Pair activation is derived from training counts pooled across roles. Test frequencies and gold labels cannot set thresholds or activation."
+  },
+  "evaluation": {
+    "panels": "All eight prior panels; four prior adequately supported panels form equal-weight primary development summary, others remain descriptive.",
+    "metrics": "Reuse v109 balanced correct-credit (.5 for abstention), strict balanced recall (abstentions misses), coverage, balanced log loss and two-class Brier. Compare on all cases and fixed v109 evidence-bearing subset. Record every gained/lost prediction and abstention.",
+    "uncertainty": "2000 paired whole-test-block bootstrap draws per panel with v109 unchanged bootstrap function; descriptive95% intervals only. No training-fit uncertainty or fresh-data inference.",
+    "controls": "Same199 context-column within-block shuffles and199 training-label within-block shuffles per panel, fitting one shared count model for baseline/backoff in each trial. Record both metrics and paired deltas, recompute training pair frequencies per control. Seeds1101000/1102000 and bootstrap1103000. Retain all3184control trials. Structured nuisance nulls, not automatic method qualification.",
+    "criterion": "Answer by paired recovery/coverage/score changes; no claim from a favorable subset, new threshold or tie policy. Expected-credit gain with worse strict recall/coverage must be explicit. No qualification promotion."
+  },
+  "fixtures": [
+    "Literal unknown-pair fallback is score-identical to baseline.",
+    "Every component feature appears once after backoff.",
+    "Singleton pair is suppressed; repeated pair is retained.",
+    "No recognized unigram is removed.",
+    "Known-only score differences equal exactly the removed singleton terms.",
+    "Pair support comes only from baseline training counts.",
+    "Zero-evidence remains equal-score abstention.",
+    "A genuinely predictive singleton may be harmed; backoff is not assumed beneficial."
+  ],
+  "limits": "Only one fixed activation rule is tested. A negative result does not reject all smoothing or pair interpolation. v107/v109 are exposed development data and no independent-source claim is available."
+}

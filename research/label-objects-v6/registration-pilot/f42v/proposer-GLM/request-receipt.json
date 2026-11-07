@@ -1,0 +1,16 @@
+{
+  "provider": "zai",
+  "model": "glm-4.6v-flashx",
+  "url": "https://api.z.ai/api/paas/v4/chat/completions",
+  "manual": "You are an independent geometry registrar. You receive only the source image and the ordered inscription locators below. You have no transcription bodies, object classes, ratings, features or scientific analyses. Do not transcribe any writing or classify any drawing. Locate only the short inscriptions corresponding to the supplied locators, using native page coordinates, source position and source order. Ignore running paragraph text. Never accept a mapping merely because the counts match. If the exact locus identity or writing extent is uncertain, return bbox:null and explain why. Every rectangle must enclose the FULL writing for that one line. Do not include nearby drawing ink. Preserve multiline physical labels with a shared physical_label_id. Return JSON {\"rows\":[{\"task_id\":\"...\",\"bbox\":[x,y,width,height] or null,\"physical_label_id\":\"...\",\"single_line\":true or false,\"locus_identity_confirmed\":true or false,\"review_note\":\"geometric basis or abstention\"}]}. Coordinates are native pixels, not percentages.\nLOCATORS:\n{\"native_width\": 2882, \"native_height\": 3769, \"ordered_loci\": [{\"task_id\": \"V6-c28793830b33f18f\", \"locus\": \"f42v.T.15\", \"unit\": \"f42v.T\", \"line\": \"15\"}], \"neutral_positions\": {\"f42v.T\": \"title? right-justified, right of [drawing]\"}}",
+  "image_path": "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\image-context-v4\\registration\\registrar-only\\images\\I6a40e73bd565f73b.jpg",
+  "image_sha256": "98c67b238fd7e90f5cda7c8c8cc12dab2e2bf42b83402610e0cb32da9f09fed7",
+  "request_sha256": "8147775de952637e13557c5b91d5a2fd7a3cdb7a85647f36419cf9ec719d2ae2",
+  "message_count": 1,
+  "tools_supplied": false,
+  "agent_harness": false,
+  "stateless": true,
+  "transcription_supplied": false,
+  "max_tokens": 4096,
+  "started_epoch": 1792896003.9020507
+}

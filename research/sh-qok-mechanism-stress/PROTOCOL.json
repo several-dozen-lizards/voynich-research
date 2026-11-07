@@ -1,0 +1,16 @@
+{
+  "scope": "Synthetic mechanism stress test only; no manuscript data read or rescored.",
+  "trials": 100,
+  "permutations": 999,
+  "seeds": "950000 + regime_index*1000 + trial; permutation seed adds 500000",
+  "regimes": [
+    "page_preferences",
+    "interior_position",
+    "junction_spelling",
+    "repeated_phrase"
+  ],
+  "construction": "8 pages x 6 lines x 10 tokens. Page preferences: independent tokens with correlated page sh and qok prevalence. Interior position: sh occupies slot2 and qok slot3, ch slot6 and dar slot7, regardless of word identity; endpoints fixed. Junction spelling: random qok placement, spell preceding chedy as shedy if next is qok. Repeated phrase: insert shedy qokam and chedy dar at randomly chosen nonoverlapping interior slots. No grammar in any generator.",
+  "statistic": "Unchanged v94 ending_family and exact_body, both whole_line and fixed_endpoints nulls. Bonferroni16 retained. Store every trial, including failures.",
+  "criteria": "For each view/null: page_preferences false-flag Wilson95 upper bound <=.10; junction_spelling and repeated_phrase detection Wilson95 lower bound >=.80. Interior_position is an adversarial diagnostic: rejection demonstrates lack of specificity to adjacency beyond interior positional structure; no requirement that it pass. These are finite authored controls, not universal qualification.",
+  "interpretation": "Junction and phrase detections are genuine dependence, not false positives for association. They refute interpreting rejection as uniquely grammar. Interior-position flags show endpoint fixing is insufficient for this positional confound. No fresh manuscript holdout available; do not rescore or choose a revised test here."
+}

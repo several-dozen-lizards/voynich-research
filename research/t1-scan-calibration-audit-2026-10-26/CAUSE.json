@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-26T02:03:04.584Z",
+  "status": "CAUSE_IDENTIFIED_FOR_IID_NULL_EXCESS_WITH_RESIDUAL_POSITION_CONFOUNDING",
+  "mechanism": "Whole-line image-label permutations do not condition on fixed label-specific readable exposures inside CMH folio/wrap strata. The single FG readable slot in f80v/short has a discrete heavy conditional null tail; shuffles typically replace this with much larger FG exposure, producing an inappropriate tail for the actual fixed design.",
+  "exposures": {
+    "H_original_FG_NO": [
+      1,
+      17
+    ],
+    "H_permuted_medians": [
+      15,
+      3
+    ],
+    "F_original_FG_NO": [
+      1,
+      16
+    ],
+    "F_permuted_medians": [
+      14,
+      3
+    ]
+  },
+  "attribution": {
+    "H": {
+      "original_flagged_families": 56,
+      "singleton_matching": 55,
+      "flagged_classes": 62,
+      "singleton_matching_classes": 58
+    },
+    "F": {
+      "original_flagged_families": 60,
+      "singleton_matching": 57,
+      "flagged_classes": 61,
+      "singleton_matching_classes": 58
+    }
+  },
+  "reference_counterexample": {
+    "reading": "H",
+    "trial": 1,
+    "feature": "open:o",
+    "unchanged_statistic": 18.994217386290046,
+    "old_p": 0.00009999000099990002,
+    "fixed_margin_diagnostic_p": 0.0198980101989801,
+    "rank_observed_and_all_old_permutations": 3
+  },
+  "other_findings": [
+    "Original observed CMH iid mean statistics are near rank3; not a general statistic-scale inflation.",
+    "Rank mixture and acceleration do not explain inspected flags.",
+    "Fixed-margin selected position-null examples still flag: within-stratum original-position heterogeneity is outside the conditional exchangeability null.",
+    "Sparse or dominant folio support failures are distinct from false positives and remain failures."
+  ],
+  "evidence_files": {
+    "AUDIT-FREEZE.json": "c12f30aca15edf9c6ef6d510920e07b61ed5228f4573a97bd583fac0cdbbeb0c",
+    "DIAGNOSTICS.json": "1a32f17744209803f58a466d671656bf490852c8012aad7cb6e29a2c8f93db67",
+    "FIXED-DESIGN-DIAGNOSTICS.json": "301d91bbf4e6e98dab367af7c8584e081a37055545a563075573a68725cf7d8d",
+    "EXPOSURE-DIAGNOSTIC.json": "f5c3f1198ae0d6dbe6cd3985d19349bddd36c94b5627003c3dac4b534e9cef79",
+    "SINGLETON-ATTRIBUTION.json": "68e2a912098b70f9c1d1574f172e387c446cb7b03dcb0cb0040e2564eec62531"
+  },
+  "limitations": "Attribution is diagnostic, not a mathematical proof that every flag has one cause; full paired control rerun will test repair calibration and scope.",
+  "real_features": 0,
+  "outcome_join": false,
+  "vault": "CLOSED"
+}

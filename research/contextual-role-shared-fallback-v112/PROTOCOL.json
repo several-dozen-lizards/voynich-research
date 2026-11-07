@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-25",
+  "scope": "One fixed activation-only shared-word fallback on exposed v107 supervised development panels. Compare exact v109 baseline, exact v111 additive sharing, and a local-only normalizer control. No new source/representation tuning/Voynich access or fresh qualification.",
+  "models": "Fit only the unchanged v109 six-event model and unchanged v111 shared ten-event model, using identical original binary-role training rows. Reproduce saved actual scores for both. Fallback/local-only use the exact same ten-event model counts,vocabulary,denominators as additive, not newly fitted selective counts.",
+  "arms": {
+    "baseline": "Exact v109: four positional word features and two same-side context pairs, original six-event fitted model.",
+    "additive": "Exact v111 shared: original six features plus four added identities; real words W:surface and boundary aliases W{i}:marker. Ten-event model.",
+    "fallback": "Use six slots: for each original component i:surface, keep it if present in pooled training vocabulary. ONLY if globally absent and surface is a real word, substitute W:surface when that pooled identity is training-supported. If both absent, keep original unsupported positional feature (neutral). Boundary markers never get shared fallback. Keep the original two pair features, including training singletons. Never activate both local and shared identity for the same context occurrence. Record original offsets and selected source in a slot ledger.",
+    "local_only": "Score the exact original six features under the ten-event shared model. No W events active. Controls changes to smoothing normalizers/model inventory relative to v109; uses same model as fallback/additive."
+  },
+  "scorer": "Unmodified v109 neutral-unknown scorer, equal priors, add-one formula,1e-12 tie tolerance. A positional feature absent in only ONE role is supported and must not trigger fallback; gating never uses test gold or role-specific label preference. Scores/probabilities remain naive-Bayes normalized scores, not certified confidence.",
+  "invariants": [
+    "Same808 heldout binary-role occurrences, labels, source blocks, and original four supported panels.",
+    "Known positional features retain explicit offset. Shared contributions retain offset metadata even though W likelihood pools identity. Original pair-order features retained unchanged.",
+    "No feature reweighting, calibration, threshold sweep, stemming, broader window, embeddings, gold lemma/POS/morphology/dependency features, or v110 singleton suppression.",
+    "Fallback may preserve additive recognized-support coverage structurally, but ties can still affect decision coverage. Count support and decisions separately.",
+    "Shared and local-only branches share exact model parameters; against v109 model normalizers differ and control attribution is required."
+  ],
+  "evaluation": {
+    "primary": "Across original four adequately supported panels, compare equal-panel balanced correct-credit, strict balanced recall, balanced log loss and Brier; pooled coverage separately. All eight panels remain visible, sparse ones descriptive.",
+    "goal": "Report whether fallback retains additive observed decision coverage and recovery gains while log loss/Brier are no worse than baseline. No invented tolerance: report literal differences and fraction of additive recovery gain retained, not an after-result pass threshold. Full recovery retention means recovery>=additive; partial retention explicitly labelled. Improvements are exposed-data findings only.",
+    "comparators": "Fallback-minus-baseline, fallback-minus-additive, fallback-minus-local_only. Original evidence-bearing and original zero-evidence subsets tracked; per-role new decisions and every gain/loss saved.",
+    "uncertainty": "2000 paired whole-test-block bootstrap draws per panel/comparator using unchanged v109 engine;48000paneldraws.95% intervals descriptive, conditional on fixed fits. No qualification promotion.",
+    "controls": "199 within-block independent context-column shuffles and199 within-block training-label shuffles per panel. Two models refitted per trial, all four arms compared on same control data. Pair/fallback support recomputed from control training.3184four-armtrials;seeds1121000/1122000,bootstrap1123000/1124000/1125000. Paired recovery deltas and absolute recovery ranks retained with descriptiveBonferroni8."
+  },
+  "fixtures": [
+    "Global positional support takes precedence even if absent in one class.",
+    "Supported pooled identity fills only an unsupported real word-position slot.",
+    "No active local/shared double-counting within one slot.",
+    "No shared boundary fallback.",
+    "Repeated word occurrences preserve separate slot multiplicity.",
+    "Original pairs retained even if singleton.",
+    "No-evidence remains neutral abstention.",
+    "Fallback and additive have identical recognized-support status; decisions not assumed identical.",
+    "Local-only shares exact ten-event model parameters.",
+    "Both saved baseline and additive actual predictions reproduced."
+  ],
+  "limits": "This tests one activation-only fallback; no claim about all interpolation or confidence calibration. Existing data are exposed. No gain warrants Voynich role scoring or replacing prior failures."
+}

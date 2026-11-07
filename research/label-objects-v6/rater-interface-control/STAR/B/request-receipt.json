@@ -1,0 +1,23 @@
+{
+  "provider": "ollama",
+  "model": "moondream:latest",
+  "url": "http://127.0.0.1:62262/api/chat",
+  "manual": "# Label attachment manual v6\n\nWhat drawn thing is this marked writing attached to or placed beside? Choose one.\n\nThe left image shows native page context with a magenta box around one inscription.\nThe right image is a low-resolution thumbnail of the whole page. Classify the\nattachment of the marked inscription, not the predominant content of the page.\nDo not read, transcribe, translate, or identify the language of the writing.\nDo not infer a class from a familiar manuscript page or remembered transcription.\nIf recognition affects your judgment, disclose it in `recognition`.\n\n| Code | Class |\n|---|---|\n| STAR | star or star-like mark |\n| SUN-MOON | sun, moon, face in a circle |\n| PL-WHOLE | whole plant |\n| PL-ROOT | root or underground part |\n| PL-UPPER | leaf, flower, stem or seed head |\n| VESSEL | jar, container, flask |\n| FIGURE | human figure |\n| WATER | tub, pool, pipe, tube |\n| ROSETTE | rosette, circle, wheel |\n| ANIMAL | animal on a non-zodiac page |\n| OTHER | something else drawn |\n| NONE | nothing nearby |\n| UNCLEAR | can't tell |\n\nUse the drawing and spatial attachment, not a guess about the inscription's\nmeaning. A label between equally plausible objects is UNCLEAR. Choose PL-WHOLE\nonly when the attachment appears to address the whole plant; proximity to a root\nalone is insufficient to force PL-ROOT. Use NONE for absent attachment and\nUNCLEAR for ambiguous attachment. Do not force certainty to avoid abstaining.\n\nReturn exactly one JSON object with keys `class`, `recognition`, `note`.\n`class` must be one of the codes above. Keep `note` to visible spatial evidence.\n\nEach model rating must be a fresh, plain API call containing only this manual\nand one composite stimulus image. No tools, agents, prior messages, transcription,\ncandidate matches, analysis, metadata, or another rater's answer may be supplied.\nHumans receive only this manual and the anonymous stimulus packet. A and B work\nindependently. C is asked only after pre-adjudication agreement has been saved.\n",
+  "image_path": "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\label-objects-v6\\rater-interface-control\\STAR.png",
+  "image_sha256": "a49fe5f1c00bf67c0da35bf14a797a7415717e73eccf225d66b8564b8f54bf72",
+  "request_sha256": "aa4427ae61a377b907aa77d9a24e7b60eb7d4f17c8b951a237f4ee6f370925be",
+  "message_count": 1,
+  "tools_supplied": false,
+  "agent_harness": false,
+  "stateless": true,
+  "transcription_supplied": false,
+  "max_tokens": 256,
+  "runtime_options": {
+    "num_gpu": 0,
+    "num_ctx": 2048,
+    "num_predict": 256,
+    "temperature": 0
+  },
+  "client_sha256": "dee3d0bd1b5f65737631a0d558e97f6d5861f5352682b2cccbfe157fac0bedbc",
+  "started_epoch": 1792896428.328114
+}

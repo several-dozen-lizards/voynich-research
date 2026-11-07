@@ -1,0 +1,20 @@
+import assert from'node:assert/strict';import * as E from'./engine.mjs';
+const checks=[];function test(n,f){f();checks.push(n);}
+const pp=Array.from({length:16},(_,i)=>({folio:'f'+i,tokens:['initial','left',i%2?'va':'vb','right',...Array(30).fill('tail')]}));let d=E.discover(pp),c=d.candidate;
+test('anchored varying slot recovered',()=>{assert.equal(d.status,'CANDIDATE');assert.equal(c.left,'left');assert.equal(c.right,'right');assert.equal(c.gap,1);assert.equal(c.variants.length,2);assert.equal(c.discovery.presence,1);assert(E.measure(pp,c).pass);});
+test('multiword rather than ending family recovered',()=>{let x=pp.map((p,i)=>({...p,tokens:['initial','left',i%2?'va':'vb',i%2?'xa':'xb','right',...Array(30).fill('tail')]}));let r=E.discover(x);assert.equal(r.candidate.left,'left');assert.equal(r.candidate.right,'right');assert.equal(r.candidate.gap,2);});
+test('paragraph-first occurrence excluded',()=>{let x=pp.map(p=>({...p,tokens:p.tokens.slice(1)}));assert.equal(E.discover(x).status,'NO CANDIDATE');});
+test('no initial-word compaction at unknown',()=>{let x=pp.map(p=>({...p,tokens:[null,...p.tokens.slice(1)]}));assert.equal(E.discover(x).candidate.discovery.presence,1);assert.equal(x[0].tokens[0],null);});
+test('unknown internal span blocks occurrence',()=>{let x=pp.map(p=>({...p,tokens:[p.tokens[0],'left',null,'right',...Array(30).fill('tail')]}));assert.equal(E.discover(x).status,'NO CANDIDATE');});
+test('no late phrase promoted to early',()=>{let x=pp.map(p=>({...p,tokens:['initial',...Array(15).fill('tail'),...p.tokens.slice(1,4),...Array(20).fill('tail')]}));assert.equal(E.discover(x).status,'NO CANDIDATE');});
+test('end15 inside end16 outside',()=>{let x=pp.map(p=>({...p,tokens:['initial',...Array(11).fill('tail'),...p.tokens.slice(1,4),...Array(10).fill('tail')]}));assert.equal(E.measure(x,c).early_occurrences,16);let y=x.map(p=>({...p,tokens:[p.tokens[0],'tail',...p.tokens.slice(1)]}));assert.equal(E.measure(y,c).early_occurrences,0);});
+test('constant gap not padded with variants',()=>{let x=pp.map(p=>({...p,tokens:p.tokens.map(w=>w==='va'?'vb':w)}));assert.equal(E.discover(x).status,'NO CANDIDATE');});
+test('repetition within one folio not independent recurrence',()=>{let x=pp.map((p,i)=>({...p,folio:i<8?'one':'two'}));assert.equal(E.discover(x).status,'NOT ESTIMABLE');});
+test('frozen variants reject five new types',()=>{let words=['vc','vd','ve','vf','vg'];let x=pp.map((p,i)=>({...p,tokens:[p.tokens[0],'left',words[i%5],'right',...Array(30).fill('tail')]}));assert.equal(E.measure(x,c).pass,false);});
+test('concentration unavailable without outside opportunity support',()=>{let x=pp.map(p=>({...p,tokens:p.tokens.slice(0,4)}));assert.equal(E.discover(x).status,'NO CANDIDATE');assert.equal(E.measure(x,c).concentration,null);});
+test('encoded/direct masks and recurrence agree',()=>{let r=E.rngFrom(854400);for(let j=0;j<100;j++){let x=E.shuffled(pp.map((p,i)=>({...p,tokens:[...p.tokens.slice(0,5),i%3===0?null:'tail',...p.tokens.slice(6)]})),r);assert.equal(E.encodedPass(E.compile(x,c)),E.measure(x,c).pass);assert.equal(x[0].tokens[0],'initial');}});
+test('lexical ties and repeated runs deterministic',()=>assert.deepEqual(E.discover(pp),E.discover(pp)));
+test('Holm keeps inactive slot',()=>assert.deepEqual(E.holm([.03,null]),[.06,1]));
+test('zero of200 Wilson upper is positive',()=>{let r=E.wilson(0,200);assert(r.upper>.018&&r.upper<.02);assert(Math.abs(r.lower)<1e-15);});
+test('malformed generated words rejected',()=>assert.throws(()=>E.discover(pp.map(p=>({...p,tokens:['initial','bad?',...p.tokens.slice(2)]})))));
+export const result={status:'PASS',tests:checks.length,checks,scope:'authored engineering only; no Latin or mechanism qualification outcomes used'};

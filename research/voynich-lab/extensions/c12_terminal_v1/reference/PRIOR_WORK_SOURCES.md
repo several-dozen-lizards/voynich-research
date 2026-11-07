@@ -1,0 +1,19 @@
+# Phase 6 provenance
+
+All new files and reports are confined to this extension. Existing Latin, Italian, German, ZL/H and C13 inputs retain their provenance in the original lab `SOURCES.md`. `SOURCE_MANIFEST.json` gives exact URLs, byte counts and SHA256 hashes. `SOURCE_AUDIT.json` verifies 483 initial files against pinned Git objects. Later WLC base-text files have per-book hashes in C16 metadata and pinned repository metadata. Failed download attempts are retained.
+
+| Use | Primary source | Pinned commit | Scope and limits |
+|---|---|---|---|
+| Extended natural baseline | [Lindemann & Bowern, Character Entropy in Modern and Historical Texts](https://arxiv.org/abs/2010.14697), [comparison corpora](https://github.com/chirila/Voynich-public) | `decc4caaa6515b86e42a219d1da8d81114736f2e` | 294 Wikipedia language samples and 24 historical transcription views of 18 work families. Keep version families together. Wikipedia is not public domain. Per-source historical metadata retained. |
+| C17 | [Gaskell & Bowern, Gibberish after all?](https://ceur-ws.org/Vol-3313/paper4.pdf), [authors' repository](https://github.com/danielgaskell/voynich) | `d076a7d081f35098fa405928239595afd2e75927` | 38 supplied transcription files, 10,032 normalized words. Source documents remain separate. No filling or repetition to reach ZL size. Modified MIT attribution/citation retained. |
+| C15 | [Greshko, The Naibbe cipher (2025)](https://doi.org/10.1080/01611194.2025.2566408), [author's implementation](https://github.com/greshko/naibbe-cipher) | `719f2f4c4d1eacf95fabf48381cd84fc6cd94279` | Use original `naibbe.py` and published tables, not later `naibbe_v2.py`. 52/78 decks, standard respacing, Latin/Italian separately. Publisher/Zenodo PDF fetch failed with 403; procedure checked against available paper sections and author code. No guessed missing table. Modified MIT/citation terms retained. |
+| Published C8 | [Timm & Schinner implementation](https://github.com/TorstenTimm/SelfCitationTextgenerator) | `a6ede2202dd7ad6285ce2c007bf22c2a0e7709b7` | Published Java executable, original algorithm, seed 1729 and 6,500 lines. Native output retained; matched prefix reflowed for pipeline. Default f103v.P.9 seed is manuscript-derived. MIT license retained. |
+| C18 | [Bowern & Gaskell, Enciphered after all?](https://ceur-ws.org/Vol-3313/paper6.pdf) | Paper Table 1 | Fully specified bigraph2 substitutions and addB manipulation. Other incomplete tables not inferred. Latin source differs from the paper's original setting: extension, not exact numerical replication. |
+| T4 | [Zattera v4j](https://github.com/mzattera/v4j), [slot-grammar paper](https://ceur-ws.org/Vol-3313/paper10.pdf) | `dd061388e2e9e5330abcad84b5755195c05d01d2` | Port of ordered SlotAlphabet conversion/decomposition and right-push rules. GPL-3.0 source/attribution retained. Raw fallback preserves unmatched words. Grammar is Voynich-derived. |
+| C16 Hebrew | [Open Scriptures Hebrew Bible](https://github.com/openscriptures/morphhb) | `3d15126fb1ef74867fc1434be1942e837932691f` | WLC Torah base text only. Public-domain base text; added morphology under separate license is not imported. Cantillation removed, vowel points retained unless variant removes them. |
+
+The initially retrieved `paper5.pdf` concerns a different study and is not evidence for C17. Correct C17 and C18 references are paper4 and paper6. Source archive contents and corpus selection are logged rather than inferred from paper participant counts.
+
+Portable Java comes from the official Eclipse Temurin 8u472b08 release. Its asset SHA256 and URL are in `runtime/JAVA_SOURCE.json`; no system Java install or global configuration change was made.
+
+Alphabet mapping is injective relabeling, not equal alphabet cardinality. Native alphabets have different sizes and structures. C15 preserves native EVA; T4 native and pipeline coverage are both reported. These differences remain material to interpretation.

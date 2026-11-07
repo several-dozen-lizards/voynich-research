@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-25T23:14:27.591Z",
+  "kind": "POST_FREEZE_INTERPRETATION_ONLY; NO SCORER OR PROTOCOL CHANGE",
+  "assumptions": "Distinct intact labels, disjoint band inventories, planted ordering; independent within-band shuffle; all legal per-band rotations and reflections searched.",
+  "derivation": "For a band of n distinct items, 2n of n! orders are dihedrally equivalent when n>=3. With independent bands the favorable fractions multiply. Every such null permutation attains a perfect score, so even the most extreme upper-tail p cannot be smaller than this fraction.",
+  "cells": [
+    {
+      "lengths": [
+        12
+      ],
+      "within_band_permutations": 479001600,
+      "favorable_dihedral_permutations": 24,
+      "ideal_perfect_score_tail_floor": 5.010421677088344e-8
+    },
+    {
+      "lengths": [
+        6,
+        6
+      ],
+      "within_band_permutations": 518400,
+      "favorable_dihedral_permutations": 144,
+      "ideal_perfect_score_tail_floor": 0.0002777777777777778
+    },
+    {
+      "lengths": [
+        4,
+        4,
+        4
+      ],
+      "within_band_permutations": 13824,
+      "favorable_dihedral_permutations": 512,
+      "ideal_perfect_score_tail_floor": 0.037037037037037035
+    }
+  ],
+  "implication": "Three bands of four have ideal null floor 1/27 = .037037, exceeding frozen alpha .01. Failure to detect on that geometry is expected from search equivalence alone, even without noise. This is an identifiability/power limit, not evidence of arithmetic or scorer corruption.",
+  "qualification_effect": "Preserve the originally declared all-cell failure if it occurs; do not delete geometry, relax threshold or reduce searched freedoms."
+}

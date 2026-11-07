@@ -1,0 +1,183 @@
+{
+  "qualification": "PASS",
+  "scope": "Section457 signals under unchanged v85 detection search, not unique rule recovery or historical identification",
+  "regimes": [
+    {
+      "regime": "iid",
+      "n": 100,
+      "flags": 4,
+      "rate": 0.04,
+      "lower_one_sided95": 0.01808240574933985,
+      "upper_one_sided95": 0.08615289737118052,
+      "gate": "upper <=10%",
+      "gate_bound": 0.08615289737118052,
+      "passed": true
+    },
+    {
+      "regime": "ring_rates",
+      "n": 100,
+      "flags": 5,
+      "rate": 0.05,
+      "lower_one_sided95": 0.02454736342580413,
+      "upper_one_sided95": 0.09916108527905276,
+      "gate": "upper <=10%",
+      "gate_bound": 0.09916108527905276,
+      "passed": true
+    },
+    {
+      "regime": "clustered",
+      "n": 100,
+      "flags": 5,
+      "rate": 0.05,
+      "lower_one_sided95": 0.02454736342580413,
+      "upper_one_sided95": 0.09916108527905276,
+      "gate": "upper <=10%",
+      "gate_bound": 0.09916108527905276,
+      "passed": true
+    },
+    {
+      "regime": "common_layout",
+      "n": 100,
+      "flags": 1,
+      "rate": 0.01,
+      "lower_one_sided95": 0.0022340928334547497,
+      "upper_one_sided95": 0.04358177353405609,
+      "gate": "upper <=10%",
+      "gate_bound": 0.04358177353405609,
+      "passed": true
+    },
+    {
+      "regime": "structured_missing",
+      "n": 100,
+      "flags": 3,
+      "rate": 0.03,
+      "lower_one_sided95": 0.012051814249279914,
+      "upper_one_sided95": 0.07271034328690396,
+      "gate": "upper <=10%",
+      "gate_bound": 0.07271034328690396,
+      "passed": true
+    },
+    {
+      "regime": "clean_signal",
+      "n": 200,
+      "flags": 200,
+      "rate": 1.0,
+      "lower_one_sided95": 0.9866528393452243,
+      "upper_one_sided95": 1,
+      "gate": "lower >=90%",
+      "gate_bound": 0.9866528393452243,
+      "passed": true
+    },
+    {
+      "regime": "noisy_masked_signal",
+      "n": 200,
+      "flags": 199,
+      "rate": 0.995,
+      "lower_one_sided95": 0.977902563556298,
+      "upper_one_sided95": 0.9988837473954738,
+      "gate": "lower >=80%",
+      "gate_bound": 0.977902563556298,
+      "passed": true
+    }
+  ],
+  "coverage": [
+    {
+      "regime": "clean_signal",
+      "unique_planted_templates": 185,
+      "phase_counts": {
+        "0": 8,
+        "1": 4,
+        "2": 4,
+        "3": 6,
+        "4": 6,
+        "5": 7,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 6,
+        "10": 6,
+        "11": 2,
+        "12": 5,
+        "13": 7,
+        "14": 4,
+        "15": 5,
+        "16": 8,
+        "17": 4,
+        "18": 5,
+        "19": 10,
+        "20": 4,
+        "21": 10,
+        "22": 14,
+        "23": 15,
+        "24": 7,
+        "25": 9,
+        "26": 10,
+        "27": 5,
+        "28": 6,
+        "29": 5
+      },
+      "observed_slots_range": [
+        120,
+        120
+      ],
+      "winning_table_diagnostic": {
+        "457": 200
+      }
+    },
+    {
+      "regime": "noisy_masked_signal",
+      "unique_planted_templates": 186,
+      "phase_counts": {
+        "0": 7,
+        "1": 9,
+        "2": 6,
+        "3": 9,
+        "4": 8,
+        "5": 9,
+        "6": 5,
+        "7": 7,
+        "8": 10,
+        "9": 10,
+        "10": 3,
+        "11": 1,
+        "12": 7,
+        "13": 3,
+        "14": 8,
+        "15": 8,
+        "16": 7,
+        "17": 5,
+        "18": 7,
+        "19": 3,
+        "20": 5,
+        "21": 13,
+        "22": 4,
+        "23": 1,
+        "24": 9,
+        "25": 9,
+        "26": 9,
+        "27": 5,
+        "28": 7,
+        "29": 6
+      },
+      "observed_slots_range": [
+        92,
+        110
+      ],
+      "winning_table_diagnostic": {
+        "457": 200
+      }
+    }
+  ],
+  "failure_records": 19,
+  "all900_retained": true,
+  "v85_scoring_unchanged": true,
+  "v84_inventory_unchanged": true,
+  "development_manuscript_scored": false,
+  "heldout_signs_scored": false,
+  "heldout": [
+    "Virgo",
+    "Libra",
+    "Scorpio",
+    "Sagittarius"
+  ]
+}

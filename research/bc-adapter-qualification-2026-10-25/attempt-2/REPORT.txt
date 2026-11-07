@@ -1,0 +1,43 @@
+B/C ADAPTER CONTROL QUALIFICATION — 2026-10-25T23:18:48.293Z
+
+RESULT: NOT QUALIFIED ON ALL DECLARED CELLS.
+The useful result is a clear scope boundary: multi-token matching and exact order detection work on the larger synthetic rings, while three short independently aligned bands have an intrinsic power limit. All null-control gates passed. No real B/C or vault admission is granted.
+
+Frozen design and provenance
+Attempt 2 retains the original attempt 1 preflight failure (../FAILURE.json): the vectorized reference callback returned a numpy integer rather than the original adapter's required native Python number. The wrapper return type was normalized and the repaired attempt sealed before any qualification outcomes. No adapter/baseline code, threshold, seed, noise level or cohort was changed after outcomes.
+PLAN.json, PRE-OUTCOME-IMPLEMENTATION.json, CODE-FREEZE.json and run.py are pinned and verify intact. One existing Macer development-only source was used: 46 chapter units, first 23 for training-word pools and last 23 for 1,420 unique nonoverlapping held-source three-word phrases. The known cipher was fixed independently of text. This is a known-text control; it does not establish any historical name-list relation.
+Two declared prefix-free two-letter cipher alphabets and explicit initial identity rules exercise span boundaries and role-structured random-key controls. K = 366.63429801500524 bits for this E2 control key, not a claim of positive full-key coherence. The original harness decoder and original/role-preserving key generators were used read-only.
+H and F are synthetic alternate readings of the same underlying control panels with independent 10% and 20% source-word/label erasure masks. These are assumed stress levels, not measured manuscript disagreement rates; they are dependent alternate readings, not independent replications.
+
+Known-text E2 (200 trials per reading/scenario; 1,000 null draws)
+Positive recovery: H 200/200 (100%); F 196/200 (98%).
+Four separate null families: shuffled partner labels, source-first word shuffles, source-first internal glyph shuffles, and independent same-word-length training-pool fake pairs. All per-cell false-flag gates passed. Worst E2 cell: 1/200 (0.5%), Wilson95 upper 2.78%.
+The true known-text key cleared both 1,000-key banks. Fresh random proposals: original 0/200 detections; role-preserving 0/200. One-sided exact95 upper per bank 1.4867%, satisfying the frozen <=3% gate and >=99% non-detection rule. These are E2 component detections, not full v7 PASS/FAIL verdicts.
+
+Exact-order controls (200 trials per cell; 1,000 within-band null draws)
+Geometry       Raw alignments   Numeral H/F        Known-text order H/F
+[12]           24               100% / 100%        100% / 100%
+[6,6]          288              100% / 99%         100% / 99%
+[4,4,4]        3,072            0% / 0%            0% / 0%
+Every observed panel and every null used the full independent per-band rotation/reflection and band-order search. A factorized exact scorer was checked against the unmodified exhaustive adapter. Unknown label slots stayed in place and in denominators.
+All within-band-shuffle and layout-null false-flag cells passed. Incompatible-cardinality wrong-unit lists were rejected in every trial, rather than truncated or wrapped. Length-matched fake phrase labels also passed their null gates. This fake control is NOT the historical C maximum-complexity fitted-key morphology trap.
+Worst null cell over the declared E2/order families: 3/200 (1.5%), Wilson95 upper 4.32%, below the 5% gate. Rejected wrong-unit cases are separately identified and do not count as scored negatives. No pooled binomial inference across cells or readings is claimed.
+
+Why the small-band positives failed
+For four distinct items, eight of 24 permutations are equivalent under rotation/reflection. Across three independent bands, the ideal perfect-score tail floor is (8/24)^3 = 1/27 = 3.7037%. Thus even a perfect intact sequence cannot clear the frozen 1% threshold. This was independently checked over all 13,824 within-band permutations: 512 attained a perfect aligned score. EXACT-SEARCH-FLOOR.json records the proof.
+This is a search-identifiability/power limit. It does not indicate failed exact arithmetic or a mismatched fast scorer. The four failed positive cells remain in the qualification result; no geometry was removed, threshold relaxed, or search freedom reduced to rescue the attempt.
+
+Verification
+13,200 recorded outer trials/proposals: 2,000 E2 + 10,800 order + 400 fresh wrong-key proposals, plus two 1,000-key banks. Each declared cell contains exactly 200 trials. VERIFICATION.json recomputes decisions and checks p-value resolution, trial completeness, fresh-key separation, freeze hashes, input isolation, and all baseline bytes.
+Reference checks: 22,800 E2 panels; 16,860 full-alignment panels; 43,200 exact numeral label checks. The sole explicit source-data read was the frozen Latin control file. No manuscript labels, ratings joins, reserved geometry/text, real B/C looks or alpha spend occurred.
+All 346 pinned files, including the full v7.2 attempt tree, harness source and original adapter source, remain byte-for-byte unchanged. Vault CLOSED. The old adapter's production release remains closed.
+
+What remains before real B/C scoring
+1. An independently verified geometry-only packet and source/reading maps, with no reserved label text opened. The v84 GEOMETRY.json inspected here is a development plan, not a verified reserved-band inventory.
+2. Frozen B candidate extraction/N1-N4 scoring and C normalized-edit-distance/list/variant/arm/complexity wrappers, with no retrospective choice of traversal freedoms based on these results.
+3. Qualification at the actual geometry and justified noise envelope, including historical morphology-preserving fake-list refits at maximum key complexity, wrong-unit controls beyond cardinality rejection, and every charged list/variant/arm search.
+4. The existing custody, budget and explicit vault-release gates. None was changed by this attempt.
+
+Next effort should follow those dependencies. The small-band result argues for checking identifiability at the real geometry before fitting a candidate, while retaining every geometrically admissible alignment in the null.
+
+Receipts: QUALIFICATION.json; VERIFICATION.json; E2-TRIALS.json; ORDER-TRIALS.json; KEY-BANKS.json; WRONG-KEY-TRIALS.json; EXACT-SEARCH-FLOOR.json; ADMISSION.json.

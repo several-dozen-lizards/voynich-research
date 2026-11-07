@@ -1,0 +1,67 @@
+from common import *
+import shutil,itertools
+def main():
+    assert not (R/'REGISTRATION.json').exists()
+    for sub in ['src','configs']:shutil.copytree(LAB/sub,I/sub,ignore=shutil.ignore_patterns('__pycache__'),dirs_exist_ok=True)
+    (I/'data/raw').mkdir(parents=True,exist_ok=True)
+    for name in ['hildegard_1903_ocr.txt','mattioli_1568_ocr.txt']:shutil.copyfile(LAB/'data/raw'/name,I/'data/raw'/name)
+    old=R.parent/'prior_work_v1';(R/'author').mkdir(exist_ok=True)
+    for a,b in [('raw/greshko/naibbe.py','naibbe.py'),('raw/greshko/references/naibbe_tables.csv','naibbe_tables.csv'),('THIRD_PARTY_NOTICES.md','THIRD_PARTY_NOTICES.md'),('SOURCES.md','PRIOR_SOURCES.md')]:shutil.copyfile(old/a,R/'author'/b)
+    oldfreeze=json.loads((LAB/'runs/phase5-c2f38fa45d6b/FREEZE.json').read_text())
+    for name in ['src/train.py','src/probes.py','src/tokenize.py','src/metrics.py','src/encoders/__init__.py']:
+        assert sha(I/name)==oldfreeze[name.replace('/','\\')],name
+    mod=module();can=[]
+    for deck,weights in [(52,mod.CARD_WEIGHTS[False]),(78,mod.CARD_WEIGHTS[True])]:
+        variants=[('base',weights.copy())]
+        for name in mod.TABLES:
+            for factor,tag in [(.5,'half'),(2,'double')]:
+                w=weights.copy();w[name]=max(1,math.floor(w[name]*factor+.5));variants.append((name+'_'+tag,w))
+        for tag,w in variants:
+            for respacing in [12,17,22]:can.append(dict(id=f'D{deck}_{tag}_R{respacing}',weights=w,deck_total=sum(w.values()),respacing=respacing))
+    assert len(can)==78;dump(R/'CANDIDATES.json',can);dump(R/'C9_CANDIDATES.json',[dict(id=f'G{i:02d}') for i in range(78)])
+    sp=split();layout=[];train=[];pages={};c1={r['line_id']:r for r in read(LAB/'data/controls/C1/clean.csv')}
+    # Held-out target strings are not copied or supplied to fitting. Layout word counts come from the existing C1 layout.
+    with (LAB/'data/voynich/ZL_running.csv').open(encoding='utf-8-sig',newline='') as f:
+        for row in csv.DictReader(f):
+            words=len(c1[row['line_id']]['text_eva'].split());meta={k:v for k,v in row.items() if k not in ['text_raw','text_eva']};meta['word_slots']=words;layout.append(meta)
+            if sp[row['folio']]=='train':train.append(row)
+            if row.get('currier_lang') in ['A','B']:
+                assert row['folio'] not in pages or pages[row['folio']]==row['currier_lang'];pages[row['folio']]=row['currier_lang']
+    assert all(len({x['currier_lang'] for x in layout if x['folio']==page})==1 for page in dict.fromkeys(x['folio'] for x in layout));dump(R/'LAYOUT.json',layout);table(R/'train_target.csv',train)
+    from src.phase3 import load_words
+    cfg=json.loads((I/'configs/phase3.json').read_text());budget=2*sum(r['word_slots'] for r in layout);source=[]
+    for c in ['C1','C2']:
+        words,receipt=load_words(cfg['source_slices'][c],34509);plain=mod.clean_line(' '.join(words));assert len(plain)>=budget;assert set(plain[:budget])<=set(mod.ALPHABET)
+        (R/'plaintext').mkdir(exist_ok=True);(R/'plaintext'/f'{c}.txt').write_text(plain[:budget],encoding='utf8');source.append(dict(family=c,original=receipt,normalized_available_characters=len(plain),allocated_characters=budget,unused_suffix_characters=len(plain)-budget))
+    dump(R/'PLAINTEXT_SOURCES.json',source)
+    original={}
+    for sub in ['src','configs','report']:
+        for p in (LAB/sub).rglob('*'):
+            if p.is_file() and '__pycache__' not in str(p):original[str(p.relative_to(LAB))]=sha(p)
+    for folder in [R.parent/'c12_partial_v1',R.parent/'c12_terminal_v1']:
+        for name in ['REGISTRATION.json','STATUS.json','VERIFICATION.json','FAMILY_TERMINAL.json','ranked_all_cells.csv']:
+            p=folder/name
+            if p.exists():original[str(p.relative_to(LAB))]=sha(p)
+    holds={}
+    for name in ['c16-kh','c16-kh-scorer-v2','c16-kh-scorer-v3']:
+        for p in (LAB.parent/name).glob('*'):
+            if p.is_file() and any(t in p.name.upper() for t in ['STATUS','QUALIFICATION','REGISTRATION']):holds[str(p)]=sha(p)
+    inputs={str(p.relative_to(R)):sha(p) for p in list((I/'src').rglob('*.py'))+list((I/'configs').glob('*.json'))+list((I/'data/raw').glob('*'))+list((R/'author').glob('*'))}
+    inputs[str(Path('..')/'..'/'data/voynich/ZL_running.csv')]=sha(LAB/'data/voynich/ZL_running.csv')
+    for seed in SEEDS:
+        folder=LAB/'runs/phase4-de886963575d'/f'ZL_running-T1-transformer-p0-s{seed}'
+        for name in ['config.json','metrics.json','model.pt']:
+            p=folder/name;assert p.exists();inputs[str(Path('..')/'..'/p.relative_to(LAB))]=sha(p)
+    dump(R/'INPUT_SNAPSHOT.json',dict(original_lab_hashes=original,C16_hold_hashes=holds,reference_hashes=inputs))
+    # Synthetic-only engineering checks precede registration; no target fingerprints or candidate scores.
+    from src.parse_ivtff import edit_distance
+    words=[''.join(t) for n in range(1,5) for t in itertools.product('ab',repeat=n)]
+    assert all(edit1(a,b)==(edit_distance(a,b)==1) for a in words for b in words)
+    for deck in [52,78]:
+        candidate=next(c for c in can if c['id']==f'D{deck}_base_R17');a=module();b=module();a.random=random.Random(1729);b.random=random.Random(1729);b.RESPACING=candidate['respacing'];b.CARD_WEIGHTS[False]=candidate['weights'];text='abcdefgabcdefg'
+        assert a.encrypt_naibbe(text,a.naibbe_tables,a.placeholder_to_glyph,use_78=deck==78)==b.encrypt_naibbe(text,b.naibbe_tables,b.placeholder_to_glyph,use_78=False)
+    dump(R/'ENGINEERING.json',dict(status='PASS',candidate_ids=78,author_base_52_78_endpoint_checks=2,edit1_pairs=len(words)**2,training_target_only=True,plaintext_page_chunks_disjoint=True,budget=budget))
+    frozen={**inputs,**{str(p.relative_to(R)):sha(p) for p in list(R.glob('*.py'))+list(R.glob('*.md'))+list(R.glob('*.json'))+[R/'train_target.csv']+list((R/'plaintext').glob('*'))}}
+    dump(R/'REGISTRATION.json',dict(status='FROZEN_BEFORE_TRAINING_TARGET_METRICS_OR_CANDIDATE_GENERATION',files=frozen,seeds=SEEDS,Naibbe_candidates=78,C9_candidates=78,new_C12_sweeps=0,C16_holds='UNCHANGED',test_previously_seen_in_prior_phases=True))
+    print('REGISTERED:78 Naibbe settings,78 C9 arrangements; no target metrics or candidate generation yet.')
+if __name__=='__main__':main()

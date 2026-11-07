@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\positional-slot-v4\independent_audit.py", line 75, in <module>
+    latin()
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\positional-slot-v4\independent_audit.py", line 34, in latin
+    cell=r['cell'];pp=load('latin/'+cell+'/DISCOVERY.json');fr=load('latin/'+cell+'/CANDIDATE-FREEZE.json');verifycandidate(pp,fr['discovery']);c=r['candidate']
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\positional-slot-v4\independent_audit.py", line 16, in verifycandidate
+    rr=ref.discover(classified(pp));assert rr['screened_slots']==d['screened_slots'] and rr['eligible']==d['eligible_candidates'];c=d['candidate']
+                                                                                         ~~^^^^^^^^^^^^
+KeyError: 'eligible'

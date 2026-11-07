@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-23",
+  "scope": "Exploratory spelling sensitivity, no phonetic/name fitting. Distinguish zodiac figure/star labels from detached astronomical star labels. No cross-reading pooling or significance claims.",
+  "exposure": "Anchor, proposed cores, source corpus and prior raw ranks already seen. Rules frozen before new transformed scores. This is not untouched confirmation.",
+  "views": "EVA characters and longest cth/ckh/cph/cfh/ch/sh groups. Prefix lengths in first_k refer to units of the chosen view, preventing cutting a grouped symbol. Anchor o/a/l are single units in both views.",
+  "transformations": [
+    "raw",
+    "literal_o",
+    "literal_oa",
+    "literal_oal",
+    "first_1",
+    "first_2",
+    "first_3"
+  ],
+  "transformation_meanings": "raw unchanged; literal_o/oa/oal removes exactly that opening only when present; first_1/2/3 removes that many initial units from EVERY token as a broader equal-width sensitivity. Candidate becomes oalcheg/alcheg/lcheg/cheg. These are competing hypotheses, not accepted morphological analyses. Empty residues excluded with counts, unknown barriers never promoted.",
+  "zodiac": "H and V separately. Same raw training/test allocation as v82: six other hand4 sign panels training, four Aries/Taurus panels test. Only S figure/star labels. All target signs excluded from fitting. Target peer vocabulary is distinct transformed types, not duplicated spelling collisions. Save collisions. U/K/C/Q target rows retained as reading alternatives; insufficient coverage for equivalent six-sign models.",
+  "detached_stars": "H/U/V separately. Train f68r1 S, compare with f68r2 S; repeat reverse direction, never select better direction. Only53 physical S loci, sparse page-specific models; these stars are a different label format from zodiac figures. Descriptive context sensitivity, not independent matched replication. f68r3 cluster and connector excluded from this individual-star cohort. F absent from these star-label panels.",
+  "model": "Same add-half within-word bigram surprise as v82, including word boundaries; explicit unseen-unit bucket. Train after identical transformation of all reference words. No body-text training. Save start/interior/end transition contributions and symbol counts, so terminal-g scarcity stays visible.",
+  "rank": "Anchor residual compared with distinct reference/test transformed types of EXACT same unit length and EXACT training transformed-string count. At least5 peers. Strict-less plus half ties; descriptive percentile, not p/confidence. Anchor omitted from peer set if present. Save all low-support/missing ranks without relaxed matching. Compare ranks across transforms as sensitivities, not effect sizes because peer sets change.",
+  "qualification": "Before scoring: fixed v82-style artificial template unusual-over-normal gate, parser grouping check, explicit unseen-symbol detection. Then verify raw zodiac H/V target surprises and percentiles exactly reproduce saved v82 results. Engineering only; not biological/phonetic/statistical validation.",
+  "limits": "Functional prefixes could have varying length or context; neither literal nor equal-width removal exhausts possible mechanisms. All narrow endings/reading ambiguities remain. No best transform chosen from outcomes. No historical names or sounds fitted."
+}

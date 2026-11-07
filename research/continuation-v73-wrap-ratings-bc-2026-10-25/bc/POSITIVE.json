@@ -1,0 +1,497 @@
+{
+  "observed": {
+    "E1": {
+      "kind": "rate",
+      "success": 927,
+      "n": 1200,
+      "value": 0.7725
+    },
+    "E2": {
+      "kind": "rate",
+      "success": 18,
+      "n": 18,
+      "value": 1.0
+    },
+    "E3": {
+      "kind": "bits",
+      "value": 0.03779860726527584,
+      "n": 8199,
+      "real_bpc": 3.124550655880281,
+      "shuffled_bpc": 3.1623492631455568,
+      "reason": null
+    },
+    "E4": {
+      "kind": "bits",
+      "value": -2.9401495058662235,
+      "n": 8199,
+      "loss_bpc": 2.9401495058662235,
+      "reason": null
+    },
+    "E5": {
+      "kind": "rate",
+      "success": 0,
+      "n": 0,
+      "value": null
+    },
+    "E6": {
+      "tokens": 1200,
+      "ambiguous_or_unknown": 0,
+      "ambiguous_rate": 0.0,
+      "types": 790,
+      "consistent_types": 790
+    }
+  },
+  "result": {
+    "original": {
+      "verdict": "PASS",
+      "K_bits": 140.3127518260917,
+      "coherence_bits": 25248.3497884745,
+      "above_99": [
+        "E1",
+        "E4"
+      ],
+      "above_998": [
+        "E1",
+        "E4"
+      ],
+      "metrics": {
+        "E1": {
+          "value": 0.7725,
+          "C3_median": 0.0075,
+          "mc_p": 0.000999000999000999,
+          "gain_bits": 5547.174690316542
+        },
+        "E2": {
+          "value": 1.0,
+          "C3_median": 1.0,
+          "mc_p": 1.0,
+          "gain_bits": 0.6925346606634415
+        },
+        "E3": {
+          "value": 0.03779860726527584,
+          "C3_median": 0.034758625682663524,
+          "mc_p": 0.23076923076923078,
+          "gain_bits": 24.924808995838383
+        },
+        "E4": {
+          "value": -2.9401495058662235,
+          "C3_median": -5.357013819359033,
+          "mc_p": 0.000999000999000999,
+          "gain_bits": 19815.87050632755
+        },
+        "E5": {
+          "status": "NOT_ESTIMABLE"
+        }
+      },
+      "matched_controls": {
+        "E1:C1-glyph": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.025,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G1": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.035,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G2": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.059166666666666666,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G3": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.034166666666666665,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G4": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.019166666666666665,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G5": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.04666666666666667,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G6": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.043333333333333335,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C1-glyph": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.2222222222222222,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G1": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G2": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G3": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G4": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G5": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G6": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C1-word": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": -0.0026593212545820144,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G1": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.0017038620606122379,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G2": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.004301783606796228,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G3": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.01104121796445856,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G4": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.004018218651267169,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G5": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.0025540151305420977,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G6": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.008201129251736106,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C1-glyph": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.290286954954883,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G1": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.135724023266418,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G2": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.145436179295671,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G3": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.1695265619432496,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G4": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.059450212097533,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G5": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.15361340112427,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G6": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.114350296034804,
+          "exceeds": true,
+          "keys": 1000
+        }
+      },
+      "failed_controls": [],
+      "missing_controls": [],
+      "all_required_controls_pass": true,
+      "necessary_coherence_and_rank": true,
+      "applicability": "nonzero supported evaluations; E3/E4 always required",
+      "complete_evaluation": true
+    },
+    "role": {
+      "verdict": "PASS",
+      "K_bits": 140.3127518260917,
+      "coherence_bits": 25229.878082925363,
+      "above_99": [
+        "E1",
+        "E4"
+      ],
+      "above_998": [
+        "E1",
+        "E4"
+      ],
+      "metrics": {
+        "E1": {
+          "value": 0.7725,
+          "C3_median": 0.008333333333333333,
+          "mc_p": 0.000999000999000999,
+          "gain_bits": 5413.6559377039775
+        },
+        "E2": {
+          "value": 1.0,
+          "C3_median": 1.0,
+          "mc_p": 1.0,
+          "gain_bits": 0.6925346606634415
+        },
+        "E3": {
+          "value": 0.03779860726527584,
+          "C3_median": 0.03576683057665253,
+          "mc_p": 0.35864135864135865,
+          "gain_bits": 16.65853707002252
+        },
+        "E4": {
+          "value": -2.9401495058662235,
+          "C3_median": -5.372053863143549,
+          "mc_p": 0.000999000999000999,
+          "gain_bits": 19939.18382531679
+        },
+        "E5": {
+          "status": "NOT_ESTIMABLE"
+        }
+      },
+      "matched_controls": {
+        "E1:C1-glyph": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.025,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G1": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.03666666666666667,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G2": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.06166666666666667,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G3": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.04416666666666667,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G4": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.0225,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G5": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.05,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E1:C2:G6": {
+          "real_value": 0.7725,
+          "control_C3_p95": 0.0475,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C1-glyph": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.2222222222222222,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G1": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G2": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G3": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G4": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G5": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E2:C2:G6": {
+          "real_value": 1.0,
+          "control_C3_p95": 0.0,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C1-word": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": -0.0031173937541097985,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G1": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.0017005888496441912,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G2": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.002325115396162758,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G3": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.007204618960972908,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G4": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.0036990194549275657,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G5": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.0007330195504628989,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E3:C2:G6": {
+          "real_value": 0.03779860726527584,
+          "control_C3_p95": 0.008127974988535236,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C1-glyph": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.307939734294209,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G1": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.150375903719655,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G2": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.163298994047236,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G3": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.181994861696752,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G4": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.075589997203976,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G5": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.138124924327025,
+          "exceeds": true,
+          "keys": 1000
+        },
+        "E4:C2:G6": {
+          "real_value": -2.9401495058662235,
+          "control_C3_p95": -5.095333186270989,
+          "exceeds": true,
+          "keys": 1000
+        }
+      },
+      "failed_controls": [],
+      "missing_controls": [],
+      "all_required_controls_pass": true,
+      "necessary_coherence_and_rank": true,
+      "applicability": "nonzero supported evaluations; E3/E4 always required",
+      "complete_evaluation": true
+    }
+  },
+  "combined": {
+    "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+    "verdict": "PASS",
+    "shared_above99": [
+      "E1",
+      "E4"
+    ],
+    "shared_above998": [
+      "E1",
+      "E4"
+    ],
+    "original_verdict": "PASS",
+    "role_verdict": "PASS",
+    "admission_active": true
+  }
+}

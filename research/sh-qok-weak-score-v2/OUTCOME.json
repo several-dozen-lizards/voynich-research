@@ -1,0 +1,155 @@
+{
+  "status": "CONTROLS_QUALIFIED_MANUSCRIPT_MECHANISM_UNRESOLVED",
+  "qualification": {
+    "status": "PASS_LIMITED",
+    "fresh_datasets": 2700,
+    "qualification_thresholds_unchanged": true,
+    "null_cells_passed": 18,
+    "weak": [
+      94,
+      95,
+      97
+    ],
+    "strong": [
+      95,
+      98,
+      99
+    ],
+    "paired_comparison": {
+      "new_only": 66,
+      "old_only": 1,
+      "p": 4.607859233063394e-19,
+      "required_gate": true,
+      "old_detections": 11
+    },
+    "strong_paired_diagnostic": {
+      "adequate": 91,
+      "flags4": 91,
+      "n": 100
+    },
+    "manuscript_allowed": true
+  },
+  "manuscript_attempted_after_qualification_audit": true,
+  "qualifying_manuscript_panels": 0,
+  "manuscript_diagnostics": [
+    {
+      "panel": "bath-H",
+      "far_word_columns": 18,
+      "vocabulary": {
+        "-4": [
+          "shedy",
+          "qokeedy",
+          "qokedy",
+          "qokaiin"
+        ],
+        "-3": [
+          "shedy",
+          "chedy",
+          "ol",
+          "qokaiin",
+          "qokal",
+          "qokeedy"
+        ],
+        "3": [
+          "shedy",
+          "qokedy",
+          "ol",
+          "qokain",
+          "chedy",
+          "qokaiin"
+        ],
+        "4": [
+          "chedy",
+          "dar"
+        ]
+      },
+      "nonzero_heldout_directions": 535,
+      "direction_sd": 0.020142321493173628,
+      "nuisance_loss_excess_bits": 0.0,
+      "adequate": true,
+      "zero_direction_uninformative": false,
+      "interpretation": "descriptive diagnostic only; no new test, threshold or refitting"
+    },
+    {
+      "panel": "bath-F",
+      "far_word_columns": 17,
+      "vocabulary": {
+        "-4": [
+          "shedy",
+          "qokaiin",
+          "qokeedy",
+          "qokedy",
+          "chedy"
+        ],
+        "-3": [
+          "qokaiin",
+          "shedy",
+          "chedy",
+          "qokal"
+        ],
+        "3": [
+          "shedy",
+          "qokaiin",
+          "qokedy",
+          "daiin",
+          "chedy",
+          "qokal"
+        ],
+        "4": [
+          "chedy",
+          "qokaiin"
+        ]
+      },
+      "nonzero_heldout_directions": 534,
+      "direction_sd": 0.014938627299682527,
+      "nuisance_loss_excess_bits": 0.0,
+      "adequate": true,
+      "zero_direction_uninformative": false,
+      "interpretation": "descriptive diagnostic only; no new test, threshold or refitting"
+    },
+    {
+      "panel": "starred-H",
+      "far_word_columns": 0,
+      "vocabulary": {
+        "-4": [],
+        "-3": [],
+        "3": [],
+        "4": []
+      },
+      "nonzero_heldout_directions": 0,
+      "direction_sd": 0.0,
+      "nuisance_loss_excess_bits": 0.013141906872392473,
+      "adequate": false,
+      "zero_direction_uninformative": true,
+      "interpretation": "descriptive diagnostic only; no new test, threshold or refitting"
+    },
+    {
+      "panel": "starred-F",
+      "far_word_columns": 1,
+      "vocabulary": {
+        "-4": [],
+        "-3": [],
+        "3": [],
+        "4": [
+          "chedy"
+        ]
+      },
+      "nonzero_heldout_directions": 884,
+      "direction_sd": 0.003325294656149183,
+      "nuisance_loss_excess_bits": 0.006225343898210278,
+      "adequate": true,
+      "zero_direction_uninformative": false,
+      "interpretation": "descriptive diagnostic only; no new test, threshold or refitting"
+    }
+  ],
+  "actual_nuisance_failures": [
+    "starred-H"
+  ],
+  "zero_direction_uninformative": [
+    "starred-H"
+  ],
+  "frozen_thresholds_unchanged": true,
+  "old_and_new_failures_preserved": true,
+  "independent_audit": "PASS",
+  "interpretation": "No qualified interaction finding. Starred H is uninformative from inadequate nuisance prediction and zero learned remote features; starred F has only one remote feature. Synthetic power does not cover all empirical sparsity or dependence. No grammar or semantic inference."
+}

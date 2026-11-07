@@ -1,0 +1,232 @@
+Parts A and B are in one spec file. The joint declaration didn't exist yet, so I've written it. You can paste this reply:
+Locations (Reed project docs):
+- v7 Part A (harness) + Part B (zodiac numerals): claude/voynich-spec-v7-reading-harness-2026-10-24.md. Both parts are in that one file, which is why a search for a separate Part B turns up nothing. Local filename: SPEC-v7-reading-harness-and-zodiac-numerals.md (re-attached).
+- Part C: claude/voynich-spec-v7-partC-name-lists-2026-10-25.md
+- Joint B + C vault declaration: claude/voynich-v7-joint-vault-declaration-2026-10-25.md (new, attached). Freeze it before any Part B or Part C sandbox work.
+Note: Part A is a spec only. The harness code hasn't been built yet. Building it, plus its own qualification (A8: a known-cipher positive, random-key negatives, the flexible-key trap), is the first job and has to happen before Part C can score anything.
+What the declaration fixes:
+- B and C share the sealed signs. 
+  - B gets half the vault error budget.
+  - C gets the other half, split across whichever C arms survive the structural pre-test.
+  - A part that finds no candidate gives its share back to the global budget, not to the other part.
+- Everything is set up before anything is scored. Both parts finish their exploration, freeze and qualification steps first. Then one session runs B, then the C arms in order, each scored once, logging each result before the next one runs.
+- Your written OK is required before the vault runs. 🐍💚
+
+# Voynich spec v7: the reading harness, and its first frozen use (zodiac numerals)
+
+**For:** a fresh session, or a loop worker (ORCHESTRATOR spec).
+**Written:** 24 Oct 2026 (Reed, for Re).
+**Tier:** building the harness is **infrastructure**. Each key evaluation is **claim tier**, frozen before the key touches held-out material. Part B's vault run is **claim tier + vault**: it needs Re's written OK.
+
+---
+
+# PART A: the reading harness
+
+## A0. Purpose
+
+**One standard test that any proposed reading must pass.** That covers ours, ChatGPT's and published ones. A reading "adds up" only if a **fixed** key makes **checkable predictions on material it wasn't built from**, does better than **random keys of equal complexity** and better than the **same key on controls**, and earns more than its own complexity costs.
+
+## A1. What a key must supply (`KEY.json`)
+
+- **Units:** the Voynich segmentation it assumes. EVA glyphs, glyph groups, or a stated tokeniser.
+- **Map:** unit → value (a letter, syllable, word, number or symbol), with **context rules** stated as explicit conditions: position class, neighbour, section. No "as needed" rules.
+- **Target:** the language or system, plus the reference resources it should match (lexicons, star-name lists, plant-name lists, numeral system).
+- **`built_on`:** every folio and locus the author used to construct or tune the key. **Everything not listed counts as built-on unless the author's process shows otherwise.** For published keys, take the source's examples as the minimum.
+- **Provenance:** the citation, and the exact source of each mapping.
+
+**A key that can't be written down this way is "NOT TESTABLE: key not fixed".** Record that as the result and stop. It's a legitimate outcome, and a common one.
+
+## A2. Held-out material
+
+Everything not in `built_on`, minus the vault. Vault subsets (v6's 30% label holdout, the sealed zodiac signs) are used **only** in a separately authorised vault run.
+
+## A3. Evaluations (each scored in bits or rates, with an equal-complexity random-key distribution)
+
+| ID | What | Score |
+|---|---|---|
+| **E1 Label reference** | Decode labels that have v6 object classes. Does the decode match a **class-appropriate lexicon** (star names for STAR, plant names for PL-*, vessel and preparation words for VESSEL…)? | Match rate under normalised edit distance ≤ 0.25, vs random keys |
+| **E2 Cross-reference** | v6 T2 matched pharma ↔ herbal pairs: do both members decode to the same or a lexically related name? | Agreement rate vs random keys |
+| **E3 Sequence prediction** | Train a small character LM on the key's decoded **training** pages. Compare per-character loss on decoded held-out pages against loss on decoded **within-line-shuffled** held-out pages. | Bits gained by real order over shuffled order, vs the same gain under random keys |
+| **E4 Target-language fit** | Per-character loss of the decoded held-out text under an LM trained on the **real target language** (period-appropriate corpus) | Bits vs random keys and vs controls |
+| **E5 Numbers** | If the key claims numerals: do decoded numbers satisfy the zodiac 30-per-sign totals, sequential order within rings (up to rotation/reflection), and any recipe arithmetic it claims? | Constraint satisfaction rate vs random keys |
+| **E6 Consistency** | The share of word types decoded identically across all occurrences, and the share of tokens where the context rules leave the decode ambiguous | Reported; ambiguous tokens count as failures in E1–E5 |
+
+## A4. Controls
+
+- **C1:** shuffled Voynich. Words shuffled within line, and separately glyphs shuffled within word with position classes preserved. The key is applied unchanged.
+- **C2:** generator text from the v5 survivors (or all v6 families if v5 hasn't run), mapped to EVA, with the key applied unchanged.
+- **C3: random keys of equal complexity.** At least 1,000 keys with the same number of map entries, the same unit inventory, the same number of context-rule slots and the same target alphabet, with values drawn to match the real key's value-frequency distribution. **This is the main baseline**: it measures how often *any* key that flexible would "add up".
+- **C4:** the key applied to a section it wasn't built on, as a transfer check, reported separately.
+
+## A5. Complexity
+
+- **K bits** = the description length of the key: map entries × log₂(value inventory), plus context rules × (log₂ conditions + log₂ values), plus any per-section overrides.
+- **Report K next to every gain.**
+- **Coherence score:**
+  > Σ over E1–E5 of (held-out gain over the C3 median, in bits), **minus K**.
+
+  Rates convert to bits through their binomial log-likelihood ratio against the C3 median.
+
+## A6. Verdict rule (frozen)
+
+A key **PASSES** only if all of the following hold:
+
+1. The coherence score is > 0;
+2. **at least two** of E1–E5 sit at or above the **99th percentile** of C3, on held-out material;
+3. its E3/E4 gains on real text exceed its gains on C1 and C2;
+4. both readings, H and F, satisfy 1–3.
+
+Otherwise the verdict is **FAIL** (with the scores), **PARTIAL** (some evaluation at or above the 99th percentile, but no pass), or **NOT TESTABLE**. A PARTIAL key's components can be examined in the sandbox and must not be promoted.
+
+## A7. First batch: published keys
+
+For each published proposal whose mappings can be written down:
+
+1. Transcribe the key faithfully from the primary source, citing it mapping by mapping.
+2. Set `built_on` to the author's examples, at minimum.
+3. Run the harness.
+
+Candidates include Bax (2014, partial plant and star-name readings), the 2019 proto-Romance proposal, and other mechanical keys found in a source search. Non-mechanical proposals are recorded as NOT TESTABLE, with a one-line reason. **Report every key, including the failures.** A table of scored published keys is useful to the field in its own right.
+
+## A8. Harness qualification (before any real key)
+
+- **Positive:** encipher a held-out Latin herbal with a known key of realistic complexity, including context rules, and run the true key. It must PASS.
+- **Near-miss:** the same true key with 20% of entries corrupted. Report how far it drops, and whether it falls to PARTIAL.
+- **Negative:** random keys run as if they were proposals must FAIL, at a rate of at least 99%.
+- **Flexible-key trap:** a key fitted to Voynich training pages to maximise dictionary hits, with many context rules. It must FAIL on held-out material. This is the case the harness exists to catch.
+
+---
+
+# PART B: first frozen use (zodiac numeral progression)
+
+## B0. Idea
+
+Each zodiac sign has 30 degree-figures, and the counts already add up (30 per sign; Pisces 29). If label forms encode the **degree number**, some component of the labels should **progress systematically with figure order**, the way numerals do: a units part that cycles, a tens part that changes at fixed steps, or additive pieces. Arithmetic has no slack, so the label forms either progress that way or they don't.
+
+## B1. Custody check (FIRST; Re + machine receipts)
+
+The reserved signs are Virgo (f72v2), Libra (f72v1), Scorpio (f73r) and Sagittarius (f73v).
+
+- **Known exposure risk:**
+  - v81 inventoried label loci "across twelve panels";
+  - v82 compared label unusualness across signs;
+  - v84 registered figure and label locations;
+  - v100/v102 counted f73 strata.
+
+  So reserved label **forms** may already have been viewed, even though no reserved sign was ever **tested for progression or degree structure**.
+- Write `CUSTODY.md`:
+  - the runs that loaded reserved loci, and what each displayed;
+  - Re's answer to "did you or any session look at the reserved signs' label sequences?";
+  - a verdict for each sign: `untested-but-inventoried`, `fresh`, or `exposed-to-progression`.
+- Any sign marked `exposed-to-progression` drops to descriptive only. If all four do, **Part B becomes retrospective** and has to say so. Proceed anyway; don't substitute other material.
+
+## B2. Data
+
+- **Open signs (training):**
+  - Pisces (f70v2);
+  - Aries (f70v1, f71r);
+  - Taurus (f71v, f72r1);
+  - Gemini (f72r2);
+  - Cancer (f72r3);
+  - Leo (f72v3).
+- **For each figure:** its label locus or loci (H and F separately), its band (ring), and its **cyclic position within the band** from v84 registration geometry. Geometry only, never label content.
+- **Ordering ambiguity is part of the model, not a choice:**
+  - the start point and direction within each band are unknown;
+  - the order in which bands are read is unknown.
+  - Every alignment search in B3–B5 searches all rotations × 2 directions × band orders, and **the null searches the same space**.
+
+## B3. Sandbox on open signs only (not frozen; logged)
+
+- Look for any **label component**, defined as a sub-string at a fixed position class (opener, core, ending) or a glyph count (e.g., e-run length, number of i), that varies with figure position as a numeral would. Candidate patterns:
+  - **N1, cyclic units:** a component repeats with period p ∈ {5, 6, 10, 12, 15} along the band;
+  - **N2, step tens:** a component is constant within blocks of 10 (or 5) consecutive figures and changes between blocks;
+  - **N3, monotone count:** a countable feature (e-run length, stroke count, label length) increases or decreases monotonically along the band;
+  - **N4, additive:** label = tens-part + units-part, with each part identifiable across signs.
+- **Sandbox cap:** 20 logged looks (ORCHESTRATOR §9). Each look records its pattern, component, signs and best alignment score against the open-sign search null.
+- **Stop rule:** if no candidate beats its open-sign search null at the 99th percentile on at least 3 of the 8 open sign-pages (H and F both), record `NO CANDIDATE` and **don't** spend the vault. That's a valid result. It means label forms don't encode degree order in any simple numeral way.
+
+## B4. Freeze (if a candidate exists)
+
+Freeze exactly **one** model:
+
+- the component extraction rule;
+- the pattern family and its parameters;
+- the alignment search space;
+- the score;
+- the prediction for **each reserved sign**: which positions share the component, or the predicted sequence up to rotation and reflection.
+
+Hash it. Declare the α spend from the global budget.
+
+## B5. Qualification (synthetic, at the real reserved-sign geometry)
+
+- **Positive:** labels generated with the frozen pattern plus realistic noise (transcription disagreement at the observed H/F rate). Power must be ≥ 0.80.
+- **Null:** label sequences permuted within band (keeping each band's multiset of forms). False alarms must be ≤ 0.05, **with the full rotation/direction/band-order search included**.
+- **Look-alike null:** a period-*p* pattern that comes from the band layout, not the labels. The test must not flag it.
+
+## B6. Vault run (Re's written OK required)
+
+- Score each reserved sign × reading:
+  - the frozen prediction's agreement under the best alignment;
+  - a p-value from the permutation null with the same search.
+- **Primary statistic:** the sum of per-sign standardised scores over the reserved signs whose custody verdict is not `exposed-to-progression`, tested one-sided.
+- **PASS:** p < the declared α in **both** H and F, with the predicted direction in at least 3 of 4 signs.
+- **Report every sign**, including flat ones.
+
+## B7. What Part B can and cannot say
+
+- **PASS:** label forms on the zodiac pages encode figure order numerically, predicted on signs the model never saw. That's the first "adds up" result with zero slack, and a **numeral anchor**: the component's values become known numbers, which then feed E5 for every future key.
+- **NO CANDIDATE / FAIL:** degree labels aren't simple numerals in figure order. They might be names, star designations, or numerals in a layout we haven't modelled. Record it and stop.
+- **It cannot** identify a language, or turn numeral values into sounds.
+
+---
+
+## Deliverables (both parts)
+
+`HARNESS/` (code + qualification report) · `KEYS/<id>/KEY.json` + `SOURCE.md` · `KEY-RESULTS/<id>.json` · `PUBLISHED-KEYS-TABLE.md` · `ZODIAC/CUSTODY.md` · `ZODIAC/SANDBOX-LOG.json` · `ZODIAC/FREEZE.json` (if a candidate exists) · `ZODIAC/QUALIFICATION.json` · `ZODIAC/VAULT-RESULT.json` (if authorised) · `REPORT.md` · `VERIFICATION.json`
+
+# v7 joint vault declaration: Parts B and C on the reserved zodiac signs
+
+**Written:** 25 Oct 2026 (Reed, for Re). **Freeze and hash this before any Part B or Part C sandbox work begins.**
+
+## Reserved material
+
+| Sign | Folio |
+|---|---|
+| Virgo | f72v2 |
+| Libra | f72v1 |
+| Scorpio | f73r |
+| Sagittarius | f73v |
+
+Readings H and F are kept separate. **Custody** is per v7 Part B §B1 (`ZODIAC/CUSTODY.md`) and must be completed first. Any sign graded `exposed-to-progression` (for B) or `exposed-to-sequence-or-alignment` (for C) is descriptive only for that hypothesis.
+
+## Hypotheses declared to use the vault (complete list; nothing else may use it)
+
+| ID | Hypothesis | Spec |
+|---|---|---|
+| **B** | The zodiac label forms encode figure order numerically | v7 Part B §B3–B6 |
+| **C-FULL** | Ordered name list, full names | v7 Part C §C3 |
+| **C-STEM** | Ordered name list, theophoric suffix removed | v7 Part C §C3 |
+| **C-SUF** | Suffix written as Voynich ending S\* | v7 Part C §C3 (runs only if C2 finds S\*) |
+| **C-MRK** | Name-class marker M\* standing in for the theophoric element | v7 Part C §C3 (runs only if C2 finds M\*) |
+
+## Error budget (fixed now)
+
+- The total vault α is drawn from the global online budget (ORCHESTRATOR §4) at the moment this declaration is frozen. Call it **α_V**.
+- **B gets α_V / 2.**
+- **C gets α_V / 2,** split equally across the C arms that are still eligible after C2:
+  - NO MARKER → C-FULL and C-STEM, α_V / 4 each;
+  - one marker found → three arms, α_V / 6 each;
+  - both found → four arms, α_V / 8 each.
+- **If B returns NO CANDIDATE** (B3 stop rule), its half is **not** reassigned. It's returned to the global budget, so nothing gets rescued after the fact.
+- **The same holds for C arms** that fail qualification or are eliminated at C2.
+
+## Order and once-only rule
+
+1. Both B and C finish their sandbox, freeze and qualification steps **before either vault run**.
+2. The vault runs execute **in one session**, in the order **B, then C arms in table order.** Each result is written to the ledger before the next one runs.
+3. Each reserved sign × reading is scored **once per hypothesis.** No re-runs. A crash is resumed from saved checkpoints only, never re-scored.
+4. **Re's written OK in the ledger is required** before step 2.
+
+## What this prevents
+
+Whichever part runs first would otherwise spend the vault, and the second would be testing on exposed material. Declaring both now, with fixed shares, keeps the reserved signs a single, honestly used held-out set.

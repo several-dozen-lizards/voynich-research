@@ -1,0 +1,169 @@
+time=2026-10-24T22:37:23.956-04:00 level=INFO source=routes.go:2451 msg="server config" env="map[CUDA_VISIBLE_DEVICES: GGML_VK_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: LLAMA_ARG_FIT: LLAMA_ARG_FIT_TARGET: NO_PROXY: OLLAMA_CONTEXT_LENGTH:0 OLLAMA_CREATE_REMOTE:false OLLAMA_DEBUG:INFO OLLAMA_DEBUG_LOG_REQUESTS:false OLLAMA_EDITOR: OLLAMA_FLASH_ATTENTION:true OLLAMA_GO_TEMPLATE:true OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:59084 OLLAMA_IGPU_ENABLE: OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE:q8_0 OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:1 OLLAMA_MAX_QUEUE:512 OLLAMA_MAX_TRANSFER_STREAMS:4 OLLAMA_MODELS:C:\\Users\\lewis\\.ollama\\models OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NO_CLOUD:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false OLLAMA_VULKAN:true ROCR_VISIBLE_DEVICES:]"
+time=2026-10-24T22:37:23.961-04:00 level=INFO source=routes.go:2453 msg="Ollama cloud disabled: false"
+time=2026-10-24T22:37:24.096-04:00 level=INFO source=images.go:1007 msg="total blobs: 67"
+time=2026-10-24T22:37:24.144-04:00 level=INFO source=images.go:1016 msg="total unused blobs removed: 0"
+time=2026-10-24T22:37:24.162-04:00 level=INFO source=routes.go:2513 msg="Listening on 127.0.0.1:59084 (version 0.40.10)"
+time=2026-10-24T22:37:24.207-04:00 level=INFO source=runner.go:60 msg="discovering available GPUs..."
+time=2026-10-24T22:37:24.883-04:00 level=INFO source=model_recommendations.go:177 msg="model recommendations cache sleep scheduled" wait=3h33m50.625506044s consecutive_failures=0
+time=2026-10-24T22:37:37.752-04:00 level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=12.0 name=CUDA0 description="NVIDIA GeForce RTX 5060" libdirs=ollama,cuda_v13 driver=13.3 pci_id=0000:01:00.0 type=discrete total="8.0 GiB" available="5.8 GiB"
+time=2026-10-24T22:37:37.752-04:00 level=INFO source=routes.go:2563 msg="vram-based default context" total_vram="8.0 GiB" default_num_ctx=4096
+[GIN] 2026/10/24 - 22:37:38 | 500 | 304.08ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 325.08ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 324.19ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 355.11ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 354.43ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 360.16ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 350.78ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 361.23ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 |    365ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 363.71ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 363.09ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 500 | 368.58ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2026/10/24 - 22:37:38 | 200 | 488.24ms |       127.0.0.1 | GET      "/api/tags"
+time=2026-10-24T22:37:38.296-04:00 level=INFO source=sched.go:1183 msg="disabling mmap for llama-server load by default" model=C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868 reason=cpu
+time=2026-10-24T22:37:38.297-04:00 level=INFO source=server.go:107 msg="using llama-server for model" model=C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868
+time=2026-10-24T22:37:38.325-04:00 level=INFO source=llama_server.go:686 msg="disabling multimodal projector offload" reason=cpu-only model=C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868 projector=C:\Users\lewis\.ollama\models\blobs\sha256-72d6f08a42f656d36b356dbe0920675899a99ce21192fd66266fb7d82ed07539
+time=2026-10-24T22:37:38.325-04:00 level=INFO source=llama_server.go:457 msg="starting llama-server" cmd="C:\\Users\\lewis\\AppData\\Local\\Programs\\Ollama\\lib\\ollama\\llama-server.exe --model C:\\Users\\lewis\\.ollama\\models\\blobs\\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868 --port 56957 --host 127.0.0.1 --no-webui --offline -c 8192 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj C:\\Users\\lewis\\.ollama\\models\\blobs\\sha256-72d6f08a42f656d36b356dbe0920675899a99ce21192fd66266fb7d82ed07539 --no-mmproj-offload --load-mode none --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn on -b 1024 -ub 1024 -ngl 0 --context-shift --keep 4"
+time=2026-10-24T22:37:38.332-04:00 level=INFO source=sched.go:658 msg="system memory" total="15.7 GiB" free="1.6 GiB" free_swap="9.7 GiB"
+time=2026-10-24T22:37:38.332-04:00 level=INFO source=llama_server.go:1088 msg="loading model via llama-server" model=C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868
+time=2026-10-24T22:37:38.332-04:00 level=INFO source=llama_server.go:1341 msg="waiting for llama-server to start responding"
+time=2026-10-24T22:37:38.335-04:00 level=INFO source=llama_server.go:1396 msg="waiting for llama-server to become available" status="llm server error"
+load_backend: loaded CPU backend from C:\Users\lewis\AppData\Local\Programs\Ollama\lib\ollama\ggml-cpu-zen4.dll
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+srv  llama_server: initializing ...
+cmn  common_param: common_params_print_info: build 1 (a37cc4610) with Clang 18.1.8 for Windows AMD64
+cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+cmn  common_param: device_info:
+cmn  common_param:   - CPU     : AMD Ryzen 5 8400F 6-Core Processor              (16042 MiB, 1825 MiB free)
+cmn  common_param: system_info: n_threads = 6 (n_threads_batch = 6) / 12 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+srv  init_listene: The UI is disabled
+srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+srv          init: using 11 threads for HTTP server
+srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+clip_model_loader: model name:   openai/clip-vit-large-patch14-336
+clip_model_loader: description:  image encoder for LLaVA
+clip_model_loader: GGUF version: 3
+clip_model_loader: alignment:    32
+clip_model_loader: n_tensors:    377
+clip_model_loader: n_kv:         19
+
+clip_model_loader: has vision encoder
+srv    load_model: loading model 'C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868'
+srv    load_model: local path 'C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868'
+srv    load_model: [mtmd] estimated worst-case memory usage of mmproj is 617.03 MiB (took 11.81 ms)
+cmn  common_init_: fitting params to device memory ...
+cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+common_params_fit_impl: getting device memory data for initial parameters:
+common_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+common_memory_breakdown_print: |   - Host               |                  981 =   173 +     544 +     264                |
+common_memory_breakdown_print: |   - CPU_REPACK         |                 3744 =  3744 +       0 +       0                |
+common_params_fit_impl: projected to use 981 MiB of host memory vs. 16042 MiB of total host memory
+common_params_fit_impl: will leave 15060 >= 1641 MiB of system memory, no changes needed
+common_fit_params: successfully fit params to free device memory
+common_fit_params: fitting params to free memory took 0.06 seconds
+llama_model_loader: loaded meta data with 24 key-value pairs and 291 tensors from C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = liuhaotian
+llama_model_loader: - kv   2:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   3:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   4:                          llama.block_count u32              = 32
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  11:                          general.file_type u32              = 2
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q4_0:  225 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 3.83 GiB (4.54 BPW) 
+load: 0 unused tokens
+load: printing all EOG tokens:
+load:   - 2 ('</s>')
+load: special tokens cache size = 3
+load: token to piece cache size = 0.1637 MB
+print_info: arch                  = llama
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 32768
+print_info: n_embd_inp            = 4096
+print_info: n_embd                = 4096
+print_info: n_embd_out            = 4096
+print_info: n_layer               = 32
+print_info: n_layer_all           = 32
+print_info: n_head                = 32
+print_info: n_head_kv             = 8
+print_info: n_rot                 = 128
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: non_causal_type       = 0
+print_info: n_embd_head_k         = 128
+print_info: n_embd_head_v         = 128
+print_info: n_gqa                 = 4
+print_info: n_embd_k_gqa          = 1024
+print_info: n_embd_v_gqa          = 1024
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: f_attn_value_scale    = 0.0000
+print_info: n_ff                  = 14336
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 0
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 1000000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 32768
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 7B
+print_info: model params          = 7.24 B
+print_info: general.name          = liuhaotian
+print_info: vocab type            = SPM
+print_info: n_vocab               = 32000
+print_info: n_merges              = 0
+print_info: BOS token             = 1 '<s>'
+print_info: EOS token             = 2 '</s>'
+print_info: UNK token             = 0 '<unk>'
+print_info: PAD token             = 0 '<unk>'
+print_info: LF token              = 13 '<0x0A>'
+print_info: EOG token             = 2 '</s>'
+print_info: max token length      = 48
+load_tensors: loading model tensors, this can take a while... (load_mode = none)
+load_tensors:          CPU model buffer size =   173.87 MiB
+load_tensors:   CPU_REPACK model buffer size =  3744.00 MiB
+time=2026-10-24T22:37:38.862-04:00 level=INFO source=llama_server.go:1396 msg="waiting for llama-server to become available" status="llm server loading model"
+llama_model_load: error loading model: std::bad_alloc
+llama_model_load_from_file_impl: failed to load model
+cmn  common_init_: failed to load model 'C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868'
+srv    load_model: failed to load model, 'C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868'
+srv    operator(): operator(): cleaning up before exit...
+srv  llama_server: exiting due to model loading error
+time=2026-10-24T22:37:54.992-04:00 level=ERROR source=llama_server.go:1063 msg="llama-server terminated" error="exit status 1" exit=1
+time=2026-10-24T22:37:55.017-04:00 level=INFO source=sched.go:686 msg="Load failed" model=C:\Users\lewis\.ollama\models\blobs\sha256-170370233dd5c5415250a2ecd5c71586352850729062ccef1496385647293868 error="llama-server process has terminated: exit status 1: error loading model: std::bad_alloc"
+[GIN] 2026/10/24 - 22:37:55 | 500 |   16.76s |       127.0.0.1 | POST     "/api/chat"

@@ -1,0 +1,20 @@
+Historical comparison design and source audit — 2026-10-23
+
+Status: source selection and prospective design, not a historical result.
+Do not call Voynich prefixes or suffixes a recovered grammar. Compare position-sensitive statistical profiles first; any mapping of grammatical roles must be learned from known texts and validated on another manuscript before application to Voynich.
+
+Primary source lead: Cambridge Curious Cures, https://collectionsresearch.lib.cam.ac.uk/curious-cures
+Project describes digitisation/cataloguing/conservation of over 180 medieval manuscripts containing medical recipes. This is a source pool, not a ready validated line- and hand-annotated dataset.
+Concrete catalogue inspected: https://medieval.lib.cam.ac.uk/catalogue/Trinity/MS-TRINITY-COLLEGE-O-00002-00013
+This is composite. Part 1 includes a text dated 1542 and later annotations; catalogue contains selected incipits/explicits as well as some full short transcriptions. Do not tokenize the catalogue as manuscript prose or treat the entire codex as fifteenth century. A manuscript-unit/date and transcription-coverage audit is required before inclusion.
+Existing Casebooks materials are useful later-period controls, not period-matched confirmation. Existing expanded Latin source texts cannot establish distributions of unexpanded manuscript shorthand.
+
+Prospective rules before scoring any new historical source:
+1. Preserve diplomatic and expanded text separately where supplied, align them; never silently expand shorthand. Retain physical lines, folio, hand, language and genre supplied by source. Missing metadata stays missing.
+2. Separate prose, instructional passages, tabular/field entries and annotations using editor-supplied roles or independently verified labels. The earlier missing-label problem remains unresolved; do not invent independent validation.
+3. Apply the same exhaustive contiguous-feature extraction, folio incidence, concentration and top-five removal checks. Normalize frequency per word; preserve length and alphabet-size sensitivity; compare rank/position distributions, not literal qo/eol spelling across languages.
+4. Compare compositional freedom (distinct flanking contexts and conditional entropy), adjacency of starts/ends with line edges fixed, within-folio repetition, first/interior/last profiles. Keep actual word frequencies and line lengths in null controls. Minimum support and multiplicity rules must be frozen for each declared comparison family before outcome inspection.
+5. Hold out an entire manuscript for transfer, with folio-grouped development splits. Compare instructional/annotation patterns with same-hand ordinary prose when available. Include shuffled role labels, frequency-matched random word sets and layout-only controls. Fit no Voynich-targeted code or vocabulary mapping.
+6. A distribution match is compatibility only. Applying a proposed encoding/grammar transformation requires explicit reversible rules, known-text recovery tests, wrong-rule controls and retained failures. No current result licenses semantic identification.
+
+Unresolved prerequisite: adequate period-matched diplomatic text with reliable hand/line metadata and contextual-role labels. No distributional result is claimed for this source lead.

@@ -1,0 +1,21 @@
+{
+  "scope": "Synthetic qualification only. No Voynich feature values or held-out sign scores.",
+  "source": "Wright 1934 English extract, PDF63-64 / printed62-63, sections457-458; one textual witness, two visual readbacks by same agent.",
+  "transcription": "Consecutive run lengths. Star=F in457; unstarred=M. In458 normalize dark/shadowed glyph to s and luminous to L. Adjacent identical runs preserved; Aries third458 run d8 confirmed enlarged. All24 rows sum30.",
+  "geometry": "Aries/Taurus10+5 per panel; Gemini16+9+5 extra; Cancer12+11+7. Pisces29 and uncertain Leo excluded. Six binary traversal alternatives and common30 phases; no per-sign fitting.",
+  "search": "All1920 traversals/phases x16 templates (457 binary;458 fifteen nontrivial binary partitions up to complement). Absolute within-panel/ring centered correlation. Exact duplicate template rows deduplicated. Search maximum recomputed in every null.",
+  "null": "199 independent within-ring cyclic shifts; rotate missingness with values. Block means and norms recomputed on observed slots. Monte Carlo p=(1+#null>=observed)/200; conservative tie tolerance1e-7. Bonferroni2 reserves garment/enclosure feature family. Pigment unavailable; labels not scored.",
+  "qualification": "40 replicates per regime; each negative <=4/40 flags at adjustedp<=.05; clean >=36/40; noisy10%flip15%missing >=32/40. ALL gates required. Report Wilson intervals; no tuning/retries within v85.",
+  "regimes": [
+    "iid",
+    "ring_rates",
+    "clustered",
+    "common_layout",
+    "structured_missing",
+    "clean_signal",
+    "noisy_masked_signal"
+  ],
+  "seed": "850000+1000*regime_index+replicate; independent permutation seed seed+500000",
+  "confirmation": "Qualification alone does not authorize manuscript scoring. Future development selects one global rule, freezes it, and predicts whole held-out signs without refitting. Current held-out signs untouched. No mapping of table sex to figure sex asserted.",
+  "limitations": "Same-agent source transcription, not independent witness; synthetic sample geometry only, not empirical ambiguity masks. Two features Bonferroni protected. Null assumes within-ring rotational exchangeability; shared layout nuisance explicitly challenges it."
+}

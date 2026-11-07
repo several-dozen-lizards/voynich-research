@@ -1,0 +1,64 @@
+{
+  "corpus": "ZL_running",
+  "tokenization": "T2",
+  "architecture": "transformer",
+  "with_position": true,
+  "seed": 1777,
+  "parameter_count": 3189035,
+  "validation_bpt": 2.290976047515869,
+  "test_bpt": 2.5060248374938965,
+  "test_tokens": 14493,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.2019236501808774,
+  "test_bpc_with_escape": 2.384598382890095,
+  "training_tokens_seen": 189712,
+  "effective_token_epochs": 1.4274793077501882,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 2.600583999999799,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 2.662004052346686,
+      "validation_bpt": 2.537482500076294
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.5965445317232363,
+      "validation_bpt": 2.4063313007354736
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.54595359919748,
+      "validation_bpt": 2.3239240646362305
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.493989557187235,
+      "validation_bpt": 2.290976047515869
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "runs\\phase4-de886963575d\\ZL_running-T2-transformer-p1-s1777",
+  "currier_test": {
+    "A": {
+      "bits": 22085.78525503818,
+      "tokens": 8042,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8791,
+      "bpt": 2.7463050553392416,
+      "bpc_with_escape": 2.512317740306925
+    },
+    "B": {
+      "bits": 13464.355361781083,
+      "tokens": 5889,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6224,
+      "bpt": 2.28635682828682,
+      "bpc_with_escape": 2.1632961699519737
+    }
+  }
+}

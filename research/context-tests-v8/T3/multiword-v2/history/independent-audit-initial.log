@@ -1,0 +1,20 @@
+audited 50
+audited 100
+audited 150
+audited 200
+audited 250
+audited 300
+audited 350
+audited 400
+audited 450
+audited 500
+audited 550
+audited 600
+Traceback (most recent call last):
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\multiword-v2\independent_audit.py", line 106, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\multiword-v2\independent_audit.py", line 97, in main
+    gg=generate('G6',{},row['seed'],line_lengths=[g['length'] for g in geo]);native=load(d+'/NATIVE-MECHANISM.json');assert gg['table']==native['table'] and gg['draws']==native['draws'];words=[''.join(w) for line in gg['lines'] for w in line];g6replayed+=1
+                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

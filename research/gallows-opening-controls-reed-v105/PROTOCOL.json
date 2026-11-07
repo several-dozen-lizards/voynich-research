@@ -1,0 +1,59 @@
+{
+  "question": "Do f and p each share an opening-line preference relative to k/t when the rest of the word is identical?",
+  "status": "Retrospective descriptive matched audit. Reused original v1 whole-numbered-folio train/test split. Neither corpus nor test subset is untouched. No p-values, semantic or confirmatory transfer claims.",
+  "source": "v102 strict P-locus events and structural opening flags; H/F separately. Main >=2 original slots; shared-H/F-structure sensitivity. Unknown slots never promoted.",
+  "unit": "Main: words containing exactly one raw EVA gallows in ktfp and no benched cth/ckh/cph/cfh group; mask that single sign only, preserving every other character and target offset. This is a literal frame, not established morphological or sound equivalence. Excluded multiple/benched gallows retained in audit.",
+  "frozen_comparisons": {
+    "pairings": [
+      [
+        "fp",
+        "kt"
+      ],
+      [
+        "f",
+        "kt"
+      ],
+      [
+        "p",
+        "kt"
+      ],
+      [
+        "f",
+        "k"
+      ],
+      [
+        "f",
+        "t"
+      ],
+      [
+        "p",
+        "k"
+      ],
+      [
+        "p",
+        "t"
+      ],
+      [
+        "p",
+        "f"
+      ]
+    ],
+    "positions": [
+      "first word of paragraph-first line versus first word of continuation line",
+      "non-first word of paragraph-first line versus non-first word of continuation line"
+    ],
+    "main_matching": [
+      "transcription",
+      "exact page",
+      "hand",
+      "Currier",
+      "section",
+      "exact masked word frame",
+      "exact original word index"
+    ],
+    "sensitivity": "Also require exact number of original word slots; separately require H/F paragraph-structure agreement. Do not replace primary with better-looking sensitivity."
+  },
+  "estimation": "Full 2x2 in every cell. Informative requires both positional sides and both glyph classes in cell. Gap is opening plumed/classA rate minus continuation rate; weight each cell by n_open*n_cont/(n_open+n_cont), then equal eligible-page mean. Each original numbered folio belongs wholly to train or test by unchanged v102 allocation. Report eligible pages, signs, zero/unmatched support, and per-page effects. Page weights are descriptive; no independence assumption for p-values.",
+  "transfer_check": "For each fixed panel learn direction from training-page mean; freeze all training directions before evaluating test cells. Test direction agreement is retrospective consistency only, no threshold or success label. No fitting to f57v.",
+  "synthetic_checks": "Known positive, reversed, balanced, single-class unsupported, and cell imbalance examples; frame reconstruction and benched/multiple exclusions. Arithmetic checks only, not statistical qualification."
+}

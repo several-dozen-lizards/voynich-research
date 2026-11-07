@@ -1,0 +1,53 @@
+{
+  "id": "v4.2-C",
+  "status": "FROZEN BEFORE NEW OR COMPUTATIONS AND ENGINEERING QUALIFICATION",
+  "frozen_utc": "2026-10-25T05:27:52.483Z",
+  "authority": "User: Okay, freeze and run the v4.2-C odds-ratio map next. Keep H/F separate, compare available-only effects across contexts, and retain the retrospective status. Leave the autonomous loop inactive.",
+  "tier": "retrospective descriptive only",
+  "exposure": "Earlier outcomes, RD patterns, Currier-A result and motivation known. No prospective confirmation or independent replication.",
+  "source_spec": "Optional retrospective companion in Amendment v4.2; preserve all earlier primaries and B-Q2 unqualified status.",
+  "contexts": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8-4",
+    "C8-5"
+  ],
+  "pooled_reference": "C6+C7 fixed in advance; not independent of C6/C7",
+  "readings": [
+    "H",
+    "F"
+  ],
+  "primary_view": "available only: inherit masked available flag; drop blocked followers before folio x ending strata",
+  "secondary_view": "aggregate companion, separate throughout; no primary selection between views",
+  "data": "Existing frozen masked v3.1 inventory joined one-to-one with saved eligible EVENTS.csv. No raw EVT, images, reserved zodiac or new observations.",
+  "strata": "Inherited folio/panel identifier x ending family; retain all existing eligibility/uncertainty/barrier handling. No new bins, tokenization, harmonization or pooling hands.",
+  "estimand": "MH OR=sum(a*d/n)/sum(b*c/n); a=sh&qok,b=sh&other,c=ch&qok,d=ch&other. Outcome-uninformative strata contribute zero. No continuity correction.",
+  "zero_handling": "Positive/zero -> infinite OR; zero/positive -> zero OR; zero/zero -> NOT ESTIMABLE. Preserve all boundary cases.",
+  "support": "All original support diagnostics retained; C1-C7 estimates are descriptive even below inferential support gate. Original C8 <30 discordant origins rule remains counts-only, per view/reading. Counts-only rows are never dropped.",
+  "bootstrap": {
+    "draws": 4999,
+    "cluster": "Inherited source folio/panel units, with replacement, recomputing MH ratio. Does not certify physical independence of Rosettes panels.",
+    "seed": "4252600 + 1000*reading_index(H0/F1) + 100*view_index(available0/aggregate1) + context_index(C1..C7,C8-4,C8-5,C6+C7)",
+    "interval": "Nearest-rank empirical inverse CDF at .025/.975; preserve 0/infinite OR draws; any undefined 0/0 draw withholds OR CI, never drops draws or replaces seed.",
+    "RD": "Paired same-draw MH risk difference and percentile interval, secondary/descriptive."
+  },
+  "heterogeneity": "Requested descriptive REML log-OR normal working model across exactly C1-C5, separately H/F and available/aggregate. Require all five finite log-ORs and positive folio-cluster delta variances m/(m-1)*sum(Rp/R-Sp/S)^2. No context deletion, smoothing or subset rescue. Otherwise NOT ESTIMABLE. Report tau2, Q-profile interval, descriptive Q/I2; NO inferential p. B-Q2 remains unqualified.",
+  "controls": "Freeze code, then 600 rational-table arithmetic fixtures, arm reversal, 3 cluster derivative checks, 50 expanded-bootstrap checks, 3 equal-variance analytic REML checks and boundary/invalid-draw checks BEFORE manuscript outcome join. Engineering only, not scientific error-rate/power qualification.",
+  "verification": "Independent Fraction-based OR/RD calculation from exported tables; replay existing RD point estimates; source and phase hashes before/after; preserve loop state byte-for-byte.",
+  "claims": "No equivalence margin/test, no common-strength confirmation, no semantics, sound values, decoding or claim promotion; no alpha spend.",
+  "runtime": {
+    "python": "3.10.6",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.7"
+  },
+  "code_hashes": {
+    "map.py": "9aca5985346ca226f6442ff59892d53b842a1cff5004f8fb3b8bcf8b5874d113",
+    "verify.py": "b41a44acf54ec1b4496ab2fefa703d0e332e7c1f25f04a12da2d486c6585e7ee"
+  }
+}

@@ -1,0 +1,246 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32784 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=29644, tid=0x0000000000002d24
+#
+# JRE version: OpenJDK Runtime Environment (8.0_504-b01) (build 1.8.0_504-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.504-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000207f40d6800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=11556, stack(0x0000003d73d00000,0x0000003d73e00000)]
+
+Stack: [0x0000003d73d00000,0x0000003d73e00000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    417  382       4       de.voynich.text.canfollow.CurveLineCanFollow::determineStartTokenType (318 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000207f65cd000 JavaThread "Service Thread" daemon [_thread_blocked, id=12152, stack(0x0000003d74100000,0x0000003d74200000)]
+  0x00000207f40d4000 JavaThread "C1 CompilerThread3" daemon [_thread_in_vm, id=34440, stack(0x0000003d74000000,0x0000003d74100000)]
+  0x00000207f40d3000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=38604, stack(0x0000003d73f00000,0x0000003d74000000)]
+  0x00000207f40d0800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=17304, stack(0x0000003d73e00000,0x0000003d73f00000)]
+=>0x00000207f40d6800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=11556, stack(0x0000003d73d00000,0x0000003d73e00000)]
+  0x00000207f40ca000 JavaThread "Attach Listener" daemon [_thread_blocked, id=1420, stack(0x0000003d73c00000,0x0000003d73d00000)]
+  0x00000207f40c9000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10836, stack(0x0000003d73b00000,0x0000003d73c00000)]
+  0x00000207f4099000 JavaThread "Finalizer" daemon [_thread_blocked, id=48724, stack(0x0000003d73a00000,0x0000003d73b00000)]
+  0x00000207f4092000 JavaThread "Reference Handler" daemon [_thread_blocked, id=2320, stack(0x0000003d73900000,0x0000003d73a00000)]
+  0x00000207f1500800 JavaThread "main" [_thread_in_Java, id=18548, stack(0x0000003d72d00000,0x0000003d72e00000)]
+
+Other Threads:
+  0x00000207f4068800 VMThread [stack: 0x0000003d73800000,0x0000003d73900000] [id=8780]
+  0x00000207f65ce000 WatcherThread [stack: 0x0000003d74200000,0x0000003d74300000] [id=32432]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000fc000000, size: 64 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 18944K, used 5820K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 19% used [0x00000000feb00000,0x00000000fee33310,0x00000000ffb00000)
+  from space 2560K, 99% used [0x00000000ffd80000,0x00000000ffffc020,0x0000000100000000)
+  to   space 2560K, 0% used [0x00000000ffb00000,0x00000000ffb00000,0x00000000ffd80000)
+ ParOldGen       total 44032K, used 1616K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 3% used [0x00000000fc000000,0x00000000fc194000,0x00000000feb00000)
+ Metaspace       used 3704K, capacity 5172K, committed 5376K, reserved 1056768K
+  class space    used 348K, capacity 424K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00000207f3380000,0x00000207f33b0000] byte_map_base: 0x00000207f2ba0000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005387f940
+ Begin Bits: [0x00000207f33d0000, 0x00000207f34d0000)
+ End Bits:   [0x00000207f34d0000, 0x00000207f35d0000)
+
+Polling page: 0x00000207f2f90000
+
+CodeCache: size=245760Kb used=2328Kb max_used=2328Kb free=243431Kb
+ bounds [0x0000020780000000, 0x0000020780270000, 0x000002078f000000]
+ total_blobs=623 nmethods=380 adapters=157
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.394 Thread 0x00000207f40d4000 nmethod 384 0x0000020780229110 code [0x0000020780229280, 0x0000020780229470]
+Event: 0.401 Thread 0x00000207f40d4000  386       3       de.voynich.text.StatisticHelper::chooseTopGroup (83 bytes)
+Event: 0.402 Thread 0x00000207f40d4000 nmethod 386 0x0000020780241390 code [0x0000020780241580, 0x0000020780242040]
+Event: 0.406 Thread 0x00000207f40d4000  387       3       de.voynich.text.Glyph::replaceGallows (51 bytes)
+Event: 0.407 Thread 0x00000207f40d4000 nmethod 387 0x000002078023ffd0 code [0x00000207802401e0, 0x0000020780240cd0]
+Event: 0.407 Thread 0x00000207f40d4000  388       3       java.lang.Long::valueOf (36 bytes)
+Event: 0.408 Thread 0x00000207f40d4000 nmethod 388 0x000002078023f910 code [0x000002078023fa80, 0x000002078023fdf8]
+Event: 0.413 Thread 0x00000207f40d4000  389       3       java.util.HashMap$KeySet::size (8 bytes)
+Event: 0.413 Thread 0x00000207f40d4000 nmethod 389 0x000002078023f5d0 code [0x000002078023f720, 0x000002078023f878]
+Event: 0.414 Thread 0x00000207f40d4000  390       3       de.voynich.text.morph.AbstractBaseGroupMorpher::replaceWithFirstLineGallows (85 bytes)
+
+GC Heap History (4 events):
+Event: 0.346 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 16384K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000feb00000,0x00000000ffb00000,0x00000000ffb00000)
+  from space 2560K, 0% used [0x00000000ffd80000,0x00000000ffd80000,0x0000000100000000)
+  to   space 2560K, 0% used [0x00000000ffb00000,0x00000000ffb00000,0x00000000ffd80000)
+ ParOldGen       total 44032K, used 0K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 0% used [0x00000000fc000000,0x00000000fc000000,0x00000000feb00000)
+ Metaspace       used 3675K, capacity 5172K, committed 5376K, reserved 1056768K
+  class space    used 348K, capacity 424K, committed 512K, reserved 1048576K
+Event: 0.350 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 2544K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ffb00000)
+  from space 2560K, 99% used [0x00000000ffb00000,0x00000000ffd7c020,0x00000000ffd80000)
+  to   space 2560K, 0% used [0x00000000ffd80000,0x00000000ffd80000,0x0000000100000000)
+ ParOldGen       total 44032K, used 1104K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 2% used [0x00000000fc000000,0x00000000fc114000,0x00000000feb00000)
+ Metaspace       used 3675K, capacity 5172K, committed 5376K, reserved 1056768K
+  class space    used 348K, capacity 424K, committed 512K, reserved 1048576K
+}
+Event: 0.403 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 18944K, used 18928K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000feb00000,0x00000000ffb00000,0x00000000ffb00000)
+  from space 2560K, 99% used [0x00000000ffb00000,0x00000000ffd7c020,0x00000000ffd80000)
+  to   space 2560K, 0% used [0x00000000ffd80000,0x00000000ffd80000,0x0000000100000000)
+ ParOldGen       total 44032K, used 1104K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 2% used [0x00000000fc000000,0x00000000fc114000,0x00000000feb00000)
+ Metaspace       used 3699K, capacity 5172K, committed 5376K, reserved 1056768K
+  class space    used 348K, capacity 424K, committed 512K, reserved 1048576K
+Event: 0.406 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 18944K, used 2544K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ffb00000)
+  from space 2560K, 99% used [0x00000000ffd80000,0x00000000ffffc020,0x0000000100000000)
+  to   space 2560K, 0% used [0x00000000ffb00000,0x00000000ffb00000,0x00000000ffd80000)
+ ParOldGen       total 44032K, used 1616K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 3% used [0x00000000fc000000,0x00000000fc194000,0x00000000feb00000)
+ Metaspace       used 3699K, capacity 5172K, committed 5376K, reserved 1056768K
+  class space    used 348K, capacity 424K, committed 512K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 0.271 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020780142a78 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 284
+Event: 0.273 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000002078013a8b4 method=java.lang.String.substring(II)Ljava/lang/String; @ 49
+Event: 0.285 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000002078012eb08 method=java.lang.String.startsWith(Ljava/lang/String;I)Z @ 25
+Event: 0.288 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000207801419dc method=java.util.ArrayList.clear()V @ 17
+Event: 0.298 Thread 0x00000207f1500800 Uncommon trap: reason=loop_limit_check action=maybe_recompile pc=0x0000020780173b00 method=java.lang.String.equals(Ljava/lang/Object;)Z @ 56
+Event: 0.299 Thread 0x00000207f1500800 Uncommon trap: reason=loop_limit_check action=maybe_recompile pc=0x0000020780179ad8 method=java.lang.String.indexOf([CII[CIII)I @ 79
+Event: 0.344 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020780157b30 method=java.util.HashMap$HashIterator.<init>(Ljava/util/HashMap;)V @ 45
+Event: 0.376 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000207801fbbd0 method=de.voynich.text.canfollow.CurveLineCanFollow.determineStartTokenType(Ljava/lang/String;)Lde/voynich/text/canfollow/CurveLineCanFollow$Type; @ 261
+Event: 0.385 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000207801370d4 method=java.lang.String.substring(I)Ljava/lang/String; @ 35
+Event: 0.407 Thread 0x00000207f1500800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020780228fac method=java.lang.Long.valueOf(J)Ljava/lang/Long; @ 13
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (7 events):
+Event: 0.053 Thread 0x00000207f1500800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000feb07cd8) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\p
+Event: 0.053 Thread 0x00000207f1500800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000feb07fc0) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\prims\jni.cpp, line
+Event: 0.190 Thread 0x00000207f1500800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fec00c68) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.190 Thread 0x00000207f1500800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fec00e78) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.192 Thread 0x00000207f1500800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fec05850) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.192 Thread 0x00000207f1500800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fec05a60) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.193 Thread 0x00000207f1500800 Exception <a 'java/io/FileNotFoundException'> (0x00000000fec07b30) thrown at [C:\workspace\openjdk-build\workspace\build\src\hotspot\src\share\vm\prims\jni.cpp, line 712]
+
+Events (10 events):
+Event: 0.376 Thread 0x00000207f1500800 DEOPT PACKING pc=0x00000207801fbbd0 sp=0x0000003d72dff190
+Event: 0.376 Thread 0x00000207f1500800 DEOPT UNPACKING pc=0x0000020780045583 sp=0x0000003d72dff128 mode 2
+Event: 0.384 Thread 0x00000207f1500800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00000207801370d4
+Event: 0.385 Thread 0x00000207f1500800 DEOPT PACKING pc=0x00000207801370d4 sp=0x0000003d72dff350
+Event: 0.385 Thread 0x00000207f1500800 DEOPT UNPACKING pc=0x0000020780045583 sp=0x0000003d72dff320 mode 2
+Event: 0.403 Executing VM operation: ParallelGCFailedAllocation
+Event: 0.406 Executing VM operation: ParallelGCFailedAllocation done
+Event: 0.407 Thread 0x00000207f1500800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x0000020780228fac
+Event: 0.407 Thread 0x00000207f1500800 DEOPT PACKING pc=0x0000020780228fac sp=0x0000003d72dff2e0
+Event: 0.407 Thread 0x00000207f1500800 DEOPT UNPACKING pc=0x0000020780045583 sp=0x0000003d72dff270 mode 2
+
+
+Dynamic libraries:
+0x00007ff60b7c0000 - 0x00007ff60b80d000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\bin\java.exe
+0x00007fff242a0000 - 0x00007fff24508000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff23500000 - 0x00007fff235cb000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fff21490000 - 0x00007fff21891000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fff22ae0000 - 0x00007fff22b9c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007fff22a20000 - 0x00007fff22ac9000 	C:\Windows\System32\msvcrt.dll
+0x00007fff24000000 - 0x00007fff240a8000 	C:\Windows\System32\sechost.dll
+0x00007fff240b0000 - 0x00007fff241c8000 	C:\Windows\System32\RPCRT4.dll
+0x00007fff220c0000 - 0x00007fff22297000 	C:\Windows\System32\USER32.dll
+0x00007fff21c30000 - 0x00007fff21c57000 	C:\Windows\System32\win32u.dll
+0x00007fff225d0000 - 0x00007fff225fb000 	C:\Windows\System32\GDI32.dll
+0x00007fff21c60000 - 0x00007fff21d8a000 	C:\Windows\System32\gdi32full.dll
+0x00007fff21af0000 - 0x00007fff21b93000 	C:\Windows\System32\msvcp_win.dll
+0x00007fff21e50000 - 0x00007fff21f9c000 	C:\Windows\System32\ucrtbase.dll
+0x00007fff04120000 - 0x00007fff043b1000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9711_none_3e07b8b0e334e825\COMCTL32.dll
+0x00007fff23fc0000 - 0x00007fff23ff1000 	C:\Windows\System32\IMM32.DLL
+0x00007ffefda70000 - 0x00007ffefda8e000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\vcruntime140.dll
+0x00007fff1cf10000 - 0x00007fff1cf1c000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\vcruntime140_1.dll
+0x00007ffeb0e40000 - 0x00007ffeb0ecd000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\msvcp140.dll
+0x0000000053060000 - 0x00000000538f9000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\server\jvm.dll
+0x00007fff22cb0000 - 0x00007fff22cb8000 	C:\Windows\System32\PSAPI.DLL
+0x00007fff17f60000 - 0x00007fff17f6b000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fff03110000 - 0x00007fff0311a000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fff0ec30000 - 0x00007fff0ec67000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff22030000 - 0x00007fff220b1000 	C:\Windows\System32\WS2_32.dll
+0x00007fff20100000 - 0x00007fff2011b000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffefda60000 - 0x00007ffefda70000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\verify.dll
+0x00007ffefd970000 - 0x00007ffefd99b000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\java.dll
+0x00007fff203d0000 - 0x00007fff2041a000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffefda40000 - 0x00007ffefda58000 	C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\system-types-v5\RUNTIME\jdk8u504-b01\jre\bin\zip.dll
+0x00007fff22d50000 - 0x00007fff234ec000 	C:\Windows\System32\SHELL32.dll
+0x00007fff1eeb0000 - 0x00007fff1f75e000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007fff235d0000 - 0x00007fff2395b000 	C:\Windows\System32\combase.dll
+0x00007fff22360000 - 0x00007fff22459000 	C:\Windows\System32\SHCORE.dll
+0x00007fff23f50000 - 0x00007fff23fb6000 	C:\Windows\System32\shlwapi.dll
+0x00007fff213a0000 - 0x00007fff213c9000 	C:\Windows\SYSTEM32\profapi.dll
+
+VM Arguments:
+jvm_args: -Xmx64m 
+java_command: de.voynich.text.SelfCitationTextGenerator
+java_class_path (initial): C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\positional-slot-v4\controls\G5-Latin-004;C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\context-tests-v8\T3\g5-compiled
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_TOOL_OPTIONS=-Xmx64m
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 26100 (10.0.26100.9711)
+
+CPU:total 12 (initial active 12) (12 cores per cpu, 1 threads per core) family 25 model 117 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 16427580k(458976k free), swap 66759228k(5148k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.504-b01) for windows-amd64 JRE (1.8.0_504-b01), built on Aug 19 2026 14:58:10 by "ContainerUser" with unknown MS VC++:1937
+
+time: Sun Oct 25 23:34:38 2026
+timezone: Eastern Daylight Time
+elapsed time: 0.420910 seconds (0d 0h 0m 0s)
+

@@ -1,0 +1,50 @@
+from common import *
+import shutil,importlib.util,itertools,ast
+def main():
+    assert not (R/'REGISTRATION.json').exists()
+    for name,src in [('LAYOUT.json',P7/'LAYOUT.json'),('PHYSICAL.json',P7C/'PHYSICAL.json'),('noise_model.json',P7C/'noise_model.json')]:shutil.copyfile(src,R/name)
+    (R/'author').mkdir(exist_ok=True)
+    for name in ['naibbe.py','naibbe_tables.csv','THIRD_PARTY_NOTICES.md']:shutil.copyfile(P7/'author'/name,R/'author'/name)
+    meta=json.loads((R/'LAYOUT.json').read_text());by=defaultdict(set)
+    for r in meta:
+        if r.get('currier_lang') in ['A','B']:by[leaf(r['folio'])].add(r['currier_lang'])
+    assert all(len(v)==1 for v in by.values());labels={l:next(iter(v)) for l,v in by.items()};dump(R/'AB_LEAVES.json',labels)
+    phy=facts();sheets=sorted({phy[str(l)]['sheet'] for l in labels});random.Random(1729).shuffle(sheets);sf={s:i%5 for i,s in enumerate(sheets)};fm={l:sf[phy[str(l)]['sheet']] for l in labels};dump(R/'FOLDS.json',fm)
+    assert all({labels[l] for l in labels if fm[l]==i}=={'A','B'} for i in range(5))
+    glyphs={r['code']:r['glyphs'] for r in read(R/'author/naibbe_tables.csv')};alphabet=sorted(k.rsplit('_',1)[1] for k in glyphs if k.startswith('unigram_alpha_'));codebooks={}
+    for key in ['alpha','beta1']:
+        book={c:glyphs[f'unigram_{key}_{c}'] for c in alphabet}
+        book.update({a+b:glyphs[f'prefix_{key}_{a}']+glyphs[f'suffix_{key}_{b}'] for a,b in itertools.product(alphabet,repeat=2)});codebooks[key]=book
+    hashes={k:hashlib.sha256(json.dumps(v,sort_keys=True).encode()).hexdigest() for k,v in codebooks.items()};assert hashes['alpha']!=hashes['beta1']
+    collisions={k:{'source_units':len(v),'distinct_output_words':len(set(v.values())),'colliding_output_words':sum(n>1 for n in Counter(v.values()).values())} for k,v in codebooks.items()}
+    dump(R/'FIXED_KEYS.json',dict(codebooks=codebooks,hashes=hashes,collisions=collisions,key_names=['alpha','beta1'],fit=False,common_respacing=17,ambiguity_rejection=False,card_randomization=False))
+    spec=importlib.util.spec_from_file_location('pinned_p7_backend',P7/'common.py');backend=importlib.util.module_from_spec(spec);spec.loader.exec_module(backend);m=backend.module()
+    from src.phase3 import load_words
+    cfg=json.loads((P7/'instrument/configs/phase3.json').read_text());budget=2*sum(r['word_slots'] for r in meta);assert budget==69018;source=[]
+    for family in ['C1','C2']:
+        words,receipt=load_words(cfg['source_slices'][family],34509);plain=m.clean_line(' '.join(words));assert len(plain)>=2*budget and set(plain)<=set(alphabet)
+        for stage,start in [('development',0),('qualification',budget)]:
+            p=R/'plaintext'/f'{family}_{stage}.txt';p.parent.mkdir(exist_ok=True);p.write_text(plain[start:start+budget],encoding='utf8');source.append(dict(family=family,stage=stage,start=start,stop=start+budget,sha256=sha(p),source=receipt))
+    dump(R/'PLAINTEXT_SOURCES.json',source)
+    from generate import units
+    toy=m.clean_line('abcdefghiklmnopqrstuvxyz'*3);endpoint=[]
+    for key in ['alpha','beta1']:
+        original=backend.module();original.UNAMBIGUOUS=False;original.CARD_WEIGHTS[False]={k:52 if k==key else 0 for k in original.TABLES};original.random=random.Random(991);encoded=original.encrypt_naibbe(toy,original.naibbe_tables,original.placeholder_to_glyph,use_78=False);direct=[codebooks[key][u] for u in units(toy,random.Random(991))];assert encoded==direct;endpoint.append(dict(key=key,exact=True))
+    # Synthetic graph permutation sanity check only; no research controls/target graphs.
+    from alignment import learn,graph,raw_score
+    rng=random.Random(911);tokens=[rng.choices([f'u{i}' for i in range(8)],weights=range(1,9),k=24) for _ in range(200)];rename={f'u{i}':f'v{(i*3)%8}' for i in range(8)};ra=[dict(folio='f1r',text_eva=' '.join(t)) for t in tokens];rb=[dict(folio='f2r',text_eva=' '.join(rename[w] for w in t)) for t in tokens];mapping=learn(ra+rb,{1:'A',2:'B'},911);sc=raw_score(graph(ra,mapping['va']),graph(rb,mapping['vb']),mapping['permutation']);assert sc['score']>1-1e-10
+    dump(R/'ENGINEERING.json',dict(status='PASS',fixed_keys_distinct=True,author_fixed_deck_endpoints=endpoint,synthetic_graph_permutation_score=sc['score'],key_collisions=collisions,no_target_graphs=True,disjoint_development_qualification_source_spans=True,graph_null_reassigns_partition_not_order=True))
+    original={}
+    for root in [R.parent/'phase7_two_table_v1',R.parent/'phase7_conventions_v1',R.parent/'phase7_calibration_readout_v1',R.parent/'c12_partial_v1',R.parent/'c12_terminal_v1']:
+        for p in root.rglob('*'):
+            if p.is_file():original[str(p.resolve())]=sha(p)
+    for folder in ['c16-kh','c16-kh-scorer-v2','c16-kh-scorer-v3']:
+        for p in (LAB.parent/folder).glob('*'):
+            if p.is_file() and any(s in p.name.upper() for s in ['STATUS','QUALIFICATION','REGISTRATION']):original[str(p.resolve())]=sha(p)
+    refs=[P7/'common.py',P7/'author/naibbe.py',P7/'author/naibbe_tables.csv',P7/'instrument/src/phase3.py',P7/'instrument/data/raw/hildegard_1903_ocr.txt',P7/'instrument/data/raw/mattioli_1568_ocr.txt',LAB/'src/noise.py',LAB/'data/voynich/ZL_running.csv',LAB/'data/voynich/LSI_H_running.csv']
+    dump(R/'PRESERVATION_BEFORE.json',original);dump(R/'SOURCE_INPUTS.json',{str(p.resolve()):sha(p) for p in refs});dump(R/'JOBS.json',plan('development')+plan('qualification'))
+    for p in R.glob('*.py'):ast.parse(p.read_text(encoding='utf8'))
+    local=[p for p in R.rglob('*') if p.is_file() and '__pycache__' not in str(p)];frozen={str(p.relative_to(R)):sha(p) for p in local};frozen.update({str(Path(os.path.relpath(p,R))):sha(p) for p in refs})
+    dump(R/'REGISTRATION.json',dict(status='FROZEN_BEFORE_CONTROL_GENERATION_OR_GRAPH_FITTING',files=frozen,development_datasets=160,qualification_datasets=160,physical_positive_fixtures=40,primary_scores=['Q','D'],physical_test='mapped_graph_similarity_within_quire_only',retired_tests=['quire_coherence','book_wide_conjugacy'],target_open=False))
+    print('REGISTERED Phase8;360 fixed control datasets, two distinct fixed keys, no target graphs. Engineering PASS.')
+if __name__=='__main__':main()

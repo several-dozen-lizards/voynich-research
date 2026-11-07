@@ -1,0 +1,134 @@
+{
+  "archive": "C:\\Users\\lewis\\Downloads\\claude-circles-2026-10-21.zip",
+  "archive_sha256": "7d4b80c3edfa44f6c72c0aedb594fd79a3d18f373167dc8a0ce2bb2b3a4087cd",
+  "member": "claude-circles-2026-10-21/batch3.py",
+  "lines": [
+    {
+      "line": 14,
+      "text": "for ln in open(EVT, encoding='latin-1'):"
+    },
+    {
+      "line": 15,
+      "text": "    m = re.match(r'^<(f\\w+)>\\s+\\{(.*)\\}', ln)"
+    },
+    {
+      "line": 16,
+      "text": "    if m: meta[m.group(1)] = dict(re.findall(r'\\$(\\w)=(\\w+)', m.group(2))); continue"
+    },
+    {
+      "line": 17,
+      "text": "    m = re.match(r'^<(f\\w+)\\.([^;]+);H>\\s+(.*)', ln)"
+    },
+    {
+      "line": 18,
+      "text": "    if m: L.append((m.group(1), m.group(2), toks(m.group(3))))"
+    },
+    {
+      "line": 19,
+      "text": "lo = {(p, l): w for p, l, w in L}"
+    },
+    {
+      "line": 20,
+      "text": "H = C.defaultdict(list)"
+    },
+    {
+      "line": 21,
+      "text": "for p, l, w in L: H[p] += w"
+    },
+    {
+      "line": 22,
+      "text": "cnt = C.Counter(w for ws in H.values() for w in ws)"
+    },
+    {
+      "line": 117,
+      "text": "print(\"=\" * 72, \"\\nE. RING DIRECTION: does each f57v ring read better forwards or backwards?\")"
+    },
+    {
+      "line": 118,
+      "text": "# word-boundary model: P(first glyph of next word | last glyph of this word), from paragraph text"
+    },
+    {
+      "line": 119,
+      "text": "bc = C.Counter(); lc = C.Counter()"
+    },
+    {
+      "line": 120,
+      "text": "for p, l, ws in L:"
+    },
+    {
+      "line": 121,
+      "text": "    if not l.startswith('P') or p == 'f57v': continue"
+    },
+    {
+      "line": 122,
+      "text": "    ws = [w for w in ws if not w.startswith('&') and g(w)]"
+    },
+    {
+      "line": 123,
+      "text": "    for a, b in zip(ws, ws[1:]):"
+    },
+    {
+      "line": 124,
+      "text": "        x, y = g(a)[-1], g(b)[0]; bc[(x, y)] += 1; lc[x] += 1"
+    },
+    {
+      "line": 125,
+      "text": "V = len({y for _, y in bc}) + 1"
+    },
+    {
+      "line": 126,
+      "text": "def lp(ws):"
+    },
+    {
+      "line": 127,
+      "text": "    ws = [w for w in ws if not w.startswith('&') and g(w)]"
+    },
+    {
+      "line": 128,
+      "text": "    return sum(math.log((bc[(g(a)[-1], g(b)[0])] + .5) / (lc[g(a)[-1]] + .5 * V)) for a, b in zip(ws, ws[1:]))"
+    },
+    {
+      "line": 129,
+      "text": "def fwd_adv(ws): return lp(ws) - lp(ws[::-1])"
+    },
+    {
+      "line": 130,
+      "text": "# positive control: ordinary text chunks (outside f57v; not in the model? use cosmo/zodiac text held out)"
+    },
+    {
+      "line": 131,
+      "text": "held = [ws for p, l, ws in L if not l.startswith('P') and len(ws) >= 20 and p != 'f57v']"
+    },
+    {
+      "line": 132,
+      "text": "adv = [fwd_adv(ws) for ws in held]"
+    },
+    {
+      "line": 133,
+      "text": "print(f\"  control: {len(held)} non-paragraph lines/rings of 20+ words elsewhere; forward wins {sum(a > 0 for a in adv)/len(adv):.0%}, mean advantage {st.mean(adv):+.2f} nats\")"
+    },
+    {
+      "line": 134,
+      "text": "chunks = []"
+    },
+    {
+      "line": 135,
+      "text": "for p, l, ws in L:"
+    },
+    {
+      "line": 136,
+      "text": "    if l.startswith('P') and len(ws) >= 8: chunks.append(ws)"
+    },
+    {
+      "line": 137,
+      "text": "pa = [fwd_adv(ws) for ws in random.sample(chunks, 800)]"
+    },
+    {
+      "line": 138,
+      "text": "print(f\"  control (paragraph lines, in-sample): forward wins {sum(a > 0 for a in pa)/len(pa):.0%}, mean {st.mean(pa):+.2f}\")"
+    }
+  ],
+  "reading": "H only in this script; no F result inferred",
+  "hand": "No hand-stratified result reconstructed",
+  "interpretation": "Source describes exploratory prior H boundary-order training on all paragraph lines except f57v and evaluation of sufficiently long non-P lines. This is source-selector evidence, not a rerun or independently verified effect."
+}

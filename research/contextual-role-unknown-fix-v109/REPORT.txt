@@ -1,0 +1,102 @@
+Unknown-feature scorer repair v109 — 25 October 2026
+
+OUTCOME
+The fixed repair improves the original supervised scorer on the exposed development comparisons, while making its unresolved decisions explicit. It does not solve broad contextual-role recovery or qualify a blind role-discovery method. No full supported comparison reaches80% all-case balanced correct-credit.
+
+Across the four prespecified adequately supported panels, equal-panel mean balanced correct-credit rises69.02% ->72.52%, +3.50 percentage points. The descriptive paired whole-block bootstrap95% interval for the mean delta is[+0.80,+6.39] points. This measure assigns0.5 correct-credit to a tie: it is expected correctness under equal random tie-breaking, NOT an actual successful classification of an abstained case.
+
+On the FIXED recognized-evidence subset in each panel, mean balanced recall rises70.67% ->75.92%, and all four panel comparisons improve. This subset is defined solely by the same training vocabulary, not gold accuracy. It shows improvements beyond abstention credit, but is a conditional diagnostic, not replacement of the all-case metric.
+
+Operational tradeoff: counting every abstention as a miss gives equal-panel balanced recall69.02% ->66.34% (delta-2.67points; descriptive95% interval[-5.97,+0.84]). The repaired scorer abstains on71 of648 test instances in the four supported panels, pooled coverage89.04%. Abstentions are missing evidence, not recovered roles. Report this tradeoff with any improvement claim.
+
+WHAT CHANGED
+Only globally unseen-feature handling. The original score sums six terms log((class_count(feature)+1)/(class_total+training_vocabulary_size+1)). The repaired score sums the SAME terms only for features present anywhere in the pooled binary-role training vocabulary. A feature unseen in BOTH roles contributes zero to both scores. A feature absent in only one role remains evidence with unchanged add-one smoothing. The class totals, vocabulary, +1 denominator, counts, equal priors and known-feature weights are unchanged. Score differences within1e-12 are explicit abstentions with0.5/0.5 normalized score probabilities. No-evidence cases have exact0/0 scores.
+
+WHAT STAYED FIXED
+The four surface neighbors, exact positions and two exact pair features; vocabulary learning rule; original whole-block train/test split; same eight panels and role definitions; source labels; example eligibility and all saved baseline predictions. No backoff, wider window, character features, external embedding, lemma, POS, morphology or dependency feature was added. Clustering and automatic role-count selection were not altered or rerun. This repairs a SUPERVISED diagnostic scorer; it does not repair the unsupervised k-means representation by itself. Original v107/v108 code, failures and results remain unchanged.
+
+ACCOUNTING FOR GAINS AND LOSSES
+Across all808 evaluated instances, including unsupported panels:130 formerly wrong decisions become correct;27 formerly correct decisions become wrong. Another126 cases become abstentions:44 were previously correct guesses and82 wrong guesses. Every one of these126 cases has zero recognized features. This matches the prior audit's130 known-margin override cases exactly; the scorer repair is not universally beneficial. All row-level transitions are saved, including losses. Aggregate raw counts are not substitutes for role-balanced or panel-balanced measures.
+
+SCORING QUALITY
+The four-panel mean balanced log-loss delta is-0.06910 nats and mean Brier delta-0.05056 (two-class sum-of-squares convention). Both improve on each supported panel. Normalizing naive-Bayes scores does not certify calibrated probabilities. One unsupported panel, Opus agriculturae cum, worsens slightly in both score measures despite higher all-case tie credit; that failure is retained. Uniform0.5/0.5 reference scores are log loss ln(2)=0.693147 nats and Brier0.5.
+
+CONTROLS AND UNCERTAINTY
+Eight engineering fixtures pass: unequal class sizes cannot create a no-evidence preference; unknown additions cannot change a known-evidence margin; class-specific absence remains evidence; known-only scores match baseline; role renaming and feature order preserve the required behavior.
+
+All3,184 declared control trials completed:199 within-block independent context-column shuffles and199 within-block training-label shuffles per panel, each refitting the same scorer. Test labels never train the repaired model. These controls retain real source/block marginals and may preserve substantial structure, so their means need not equal50%. Both Cicero-letter comparisons beat both shuffled comparisons at descriptive Bonferroni8 p=.04; Caesar cum and De officiis ut fail that adjusted threshold against the training-label shuffles (p=.28/.48). These are descriptive nuisance checks, not a new method qualification. No control was added, removed or rerun to rescue the result.
+
+The2,000 paired whole-test-block bootstrap draws per panel estimate uncertainty conditional on the fixed trained models. They do not include training-sample/model-selection uncertainty, and neither the intervals nor the control ranks turn exposed development material into fresh confirmation. All original test labels were previously inspected during the error audit.
+
+ALL EIGHT COMPARISONS
+Commentarii belli Gallici|cum [FAIL; primary supported]
+  All-case balanced correct-credit: 76.82% -> 77.42%; strict repaired balanced recall 70.30%; coverage 84.62%.
+  Same evidence-bearing subset (n=88): 77.76% -> 81.89%.
+  Delta balanced log loss -0.001493; delta two-class Brier -0.003266 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [-5.52, 6.49] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 62.33%, adjusted descriptive p=0.04; training_label_shuffle mean 69.27%, adjusted descriptive p=0.28.
+  Transitions: {"wrong_to_wrong":13,"correct_to_correct":66,"correct_to_abstain":13,"wrong_to_correct":6,"correct_to_wrong":3,"wrong_to_abstain":3}.
+
+Commentarii belli Gallici|ut [NOT_ESTIMABLE; descriptive unsupported]
+  All-case balanced correct-credit: 51.64% -> 67.67%; strict repaired balanced recall 53.51%; coverage 68.35%.
+  Same evidence-bearing subset (n=54): 52.50% -> 74.29%.
+  Delta balanced log loss -0.470695; delta two-class Brier -0.320863 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [5.35, 25.66] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 52.90%, adjusted descriptive p=0.04; training_label_shuffle mean 59.30%, adjusted descriptive p=0.36.
+  Transitions: {"wrong_to_abstain":21,"wrong_to_correct":26,"wrong_to_wrong":12,"correct_to_abstain":4,"correct_to_correct":13,"correct_to_wrong":3}.
+
+De officiis|cum [NOT_ESTIMABLE; descriptive unsupported]
+  All-case balanced correct-credit: 64.01% -> 70.60%; strict repaired balanced recall 55.77%; coverage 70.37%.
+  Same evidence-bearing subset (n=19): 69.44% -> 79.44%.
+  Delta balanced log loss -0.071690; delta two-class Brier -0.062287 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [-6.88, 18.72] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 48.22%, adjusted descriptive p=0.04; training_label_shuffle mean 60.15%, adjusted descriptive p=0.44.
+  Transitions: {"wrong_to_wrong":4,"correct_to_abstain":4,"correct_to_correct":13,"wrong_to_abstain":4,"wrong_to_correct":2}.
+
+De officiis|ut [FAIL; primary supported]
+  All-case balanced correct-credit: 65.64% -> 69.64%; strict repaired balanced recall 59.89%; coverage 82.14%.
+  Same evidence-bearing subset (n=69): 67.39% -> 75.00%.
+  Delta balanced log loss -0.075715; delta two-class Brier -0.059754 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [-2.81, 11.34] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 54.77%, adjusted descriptive p=0.04; training_label_shuffle mean 59.05%, adjusted descriptive p=0.48.
+  Transitions: {"correct_to_correct":39,"wrong_to_abstain":7,"wrong_to_wrong":17,"wrong_to_correct":11,"correct_to_abstain":8,"correct_to_wrong":2}.
+
+Epistulae ad Atticum|cum [FAIL; primary supported]
+  All-case balanced correct-credit: 70.59% -> 72.85%; strict repaired balanced recall 68.74%; coverage 91.76%.
+  Same evidence-bearing subset (n=167): 72.57% -> 74.90%.
+  Delta balanced log loss -0.004258; delta two-class Brier -0.003713 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [-0.81, 5.52] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 54.00%, adjusted descriptive p=0.04; training_label_shuffle mean 61.99%, adjusted descriptive p=0.04.
+  Transitions: {"wrong_to_correct":4,"correct_to_correct":121,"wrong_to_abstain":8,"wrong_to_wrong":42,"correct_to_abstain":7}.
+
+Epistulae ad Atticum|ut [FAIL; primary supported]
+  All-case balanced correct-credit: 63.02% -> 70.17%; strict repaired balanced recall 66.44%; coverage 91.01%.
+  Same evidence-bearing subset (n=253): 64.94% -> 71.88%.
+  Delta balanced log loss -0.194926; delta two-class Brier -0.135496 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [1.31, 12.75] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 51.01%, adjusted descriptive p=0.04; training_label_shuffle mean 51.95%, adjusted descriptive p=0.04.
+  Transitions: {"wrong_to_abstain":22,"correct_to_correct":118,"wrong_to_correct":66,"wrong_to_wrong":50,"correct_to_abstain":3,"correct_to_wrong":19}.
+
+Opus agriculturae|cum [NOT_ESTIMABLE; descriptive unsupported]
+  All-case balanced correct-credit: 68.06% -> 72.92%; strict repaired balanced recall 56.94%; coverage 66.67%.
+  Same evidence-bearing subset (n=14): 85.71% -> 85.71%.
+  Delta balanced log loss 0.009276; delta two-class Brier 0.001493 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [-4.51, 13.75] percentage points; undefined draws 0/2000.
+  Shuffled controls: context_shuffle mean 59.45%, adjusted descriptive p=0.12; training_label_shuffle mean 71.88%, adjusted descriptive p=1.
+  Transitions: {"correct_to_abstain":2,"correct_to_correct":12,"wrong_to_abstain":5,"wrong_to_wrong":2}.
+
+Opus agriculturae|ut [NOT_ESTIMABLE; descriptive unsupported]
+  All-case balanced correct-credit: 50.00% -> 67.46%; strict repaired balanced recall 38.36%; coverage 54.55%.
+  Same evidence-bearing subset (n=18): 50.00% -> 94.12%.
+  Delta balanced log loss -0.908544; delta two-class Brier -0.452784 (negative is better).
+  Paired block-bootstrap95% interval for all-case credit delta: [6.25, 34.30] percentage points; undefined draws 12/2000.
+  Shuffled controls: context_shuffle mean 58.11%, adjusted descriptive p=0.96; training_label_shuffle mean 61.53%, adjusted descriptive p=1.
+  Transitions: {"wrong_to_wrong":2,"wrong_to_abstain":12,"wrong_to_correct":15,"correct_to_abstain":3,"correct_to_correct":1}.
+
+RECOMMENDATION
+Use the neutral-unknown scorer as the next development baseline, with abstention and support/coverage reporting retained. Its gains are sufficient to justify fixing the biased treatment of no evidence; they do not justify claiming qualified contextual-role recovery. The next representation experiment can address feature sparsity while holding this repaired scorer fixed, comparing backoff/sharing with the unchanged exact-feature baseline. An independent confirmation source must be selected and sealed before selecting a revised representation. No other branch's sealed reserves were accessed.
+
+VERIFICATION AND REPRODUCTION
+An independent JavaScript verifier reproduced all808 baseline decisions and compared every repaired margin to the separately frozen v108 known-feature score decomposition. It verified identical row/label/support identities, all126 neutral zero-evidence cases, all recovery/loss metrics,16,000 panel-bootstrap draws, all3,184 control records and ranks, and unchanged prior delivery hashes. Ten verification groups and all eight fixtures pass. These checks verify computation, not scientific qualification.
+
+Files: PROTOCOL.json and FREEZE.json; run.py; FIXTURES.json; MODELS.json; PREDICTIONS.json; RESULTS.json; BOOTSTRAP-DRAWS.json; CONTROL-TRIALS.jsonl; verify.mjs; VERIFICATION.json. freeze and run were one-time steps guarded against overwriting. verify.mjs checks saved artifacts without fitting new models. All statistical outputs, losses, unsupported cases and logs are retained.

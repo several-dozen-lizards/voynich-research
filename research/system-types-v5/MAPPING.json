@@ -1,0 +1,33 @@
+{
+  "atoms": {
+    "fallback": "one lowercase EVA character",
+    "longest_match": [
+      "cth",
+      "ckh",
+      "cph",
+      "cfh",
+      "ch",
+      "sh"
+    ]
+  },
+  "boundaries": "Mapped source-unit groups retained alongside concatenated EVA; flat strings are not asserted uniquely decodable. Longest-match reparsing may fuse across latent unit boundaries.",
+  "failed_exact_width_cipher": "development-history/group-qualification-1/QUALIFICATION-FAILURES.json",
+  "first_failed_draft": "development-history/sandbox-1/MAPPING-PREFLIGHT.json",
+  "inventories": "EVA-GROUP-INVENTORIES.json",
+  "inventory": "All observed overlapping within-word spans of1..3 atoms, separately per Currier\u00d7scribe\u00d7reading; never cross a word or unknown slot",
+  "inventory_sha256": "9dc0a08489b1be3774cf87c50bcd14eeac4316190aa679392d152df58f1616d7",
+  "overflow": "raise error; never merge units, invent unattested target groups, widen the span, or borrow another class",
+  "position": "whole-word span free; otherwise initial/final/medial by span endpoints; one class per written span when >=95% use, else free",
+  "qualification": {
+    "failed": 0,
+    "passed": 1600,
+    "plan": "QUALIFICATION-PLAN-v3.json",
+    "trials": 1600
+  },
+  "rank": "source unit frequency rank and target group frequency rank within class; tie SHA256(seed:unit)",
+  "seed": 51024,
+  "status": "SANDBOX_QUALIFIED_NOT_CLAIM_FROZEN",
+  "unseen": "raise error; mapping is re-estimated by the same registered procedure for each independent draw",
+  "version": "EVA-group-rank-v1",
+  "widths": "G4 maps each source-letter code unit to1..max_expansion EVA atoms, max_expansion<=3; default3. Exact narrow capacities can abstain."
+}

@@ -1,0 +1,24 @@
+{
+  "tests": 50,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "command": "python system-types-v5/check_source_cut2.py",
+  "process_scoped_java_options": " -Xms8m -Xmx64m -XX:+UseSerialGC -XX:ReservedCodeCacheSize=16m -XX:MaxMetaspaceSize=64m",
+  "initial_attempt": {
+    "tests": 50,
+    "failures": 0,
+    "errors": 1,
+    "reason": "G5 JVM default 4108288KB heap could not allocate128384KB parallel GC bitmap; process did not initialize."
+  },
+  "intermediate_attempt": {
+    "tests": 50,
+    "failures": 0,
+    "errors": 1,
+    "java_options": "-Xmx256m -XX:ParallelGCThreads=2",
+    "reason": "JVM could not reserve enough space for object heap; process did not initialize."
+  },
+  "generator_source_modified": false,
+  "H3": "UNRESOLVED",
+  "held_scoring": false
+}

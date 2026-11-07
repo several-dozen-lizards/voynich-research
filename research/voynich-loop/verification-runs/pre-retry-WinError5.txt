@@ -1,0 +1,55 @@
+test_activate_requires_real_deployment_receipts (test_loop.LedgerTests) ... ok
+test_approval_cannot_authorize_a_changed_request (test_loop.LedgerTests) ... ok
+test_blocked_queue_pauses_not_exhausted (test_loop.LedgerTests) ... ok
+test_changed_frozen_code_blocks (test_loop.LedgerTests) ... ok
+test_changed_protocol_blocks (test_loop.LedgerTests) ... ok
+test_compute_cap_t5 (test_loop.LedgerTests) ... ok
+test_empty_queue_exhaustion (test_loop.LedgerTests) ... ok
+test_exposed_reserve_cannot_pass_replication (test_loop.LedgerTests) ... ok
+test_five_freeze_cap_rolling_window (test_loop.LedgerTests) ... ok
+test_human_gate_and_exact_request_binding (test_loop.LedgerTests) ... ok
+test_journal_tamper_detected (test_loop.LedgerTests) ... ok
+test_lock_blocks_second_keeper (test_loop.LedgerTests) ... ok
+test_lord_reference_values_and_reward (test_loop.LedgerTests) ... ok
+test_nan_and_out_of_range_p_rejected (test_loop.LedgerTests) ... ok
+test_no_pass_does_not_earn (test_loop.LedgerTests) ... ok
+test_no_refund_for_qualification_failure (test_loop.LedgerTests) ... ok
+test_only_one_pending_claim (test_loop.LedgerTests) ... ok
+test_over_fifty_requires_replication (test_loop.LedgerTests) ... ok
+test_projection_tamper_detected_and_recoverable (test_loop.LedgerTests) ... ok
+test_replication_then_promotion_and_t2 (test_loop.LedgerTests) ... ok
+test_same_family_skeptic_blocked (test_loop.LedgerTests) ... ok
+test_score_requires_qualification_and_is_one_shot (test_loop.LedgerTests) ... ok
+test_skeptic_objection_blocks_promotion (test_loop.LedgerTests) ... ok
+test_skeptic_packet_has_no_look_history (test_loop.LedgerTests) ... ERROR
+test_staged_no_research_or_false_exhaustion (test_loop.LedgerTests) ... ok
+test_synthetic_corpus_partition_excludes_all_readings_and_formats (test_loop.LedgerTests) ... ok
+test_t2_requires_held_up_replication (test_loop.LedgerTests) ... ok
+test_thirty_no_claim_cycles_stop (test_loop.LedgerTests) ... ok
+test_twenty_look_cap (test_loop.LedgerTests) ... ok
+test_vault_subset_once_per_hypothesis (test_loop.LedgerTests) ... ok
+
+======================================================================
+ERROR: test_skeptic_packet_has_no_look_history (test_loop.LedgerTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\test_loop.py", line 206, in test_skeptic_packet_has_no_look_history
+    self.ready_claim()
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\test_loop.py", line 73, in ready_claim
+    self.score()
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\test_loop.py", line 62, in score
+    return self.store.apply("score", self.request(id, result="SCORED", model_family="family-A", p_value=p, evidence=self.ev))
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\loop.py", line 240, in apply
+    self.commit(s, action, previous, seq)
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\loop.py", line 163, in commit
+    self.render(s)
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\loop.py", line 153, in render
+    writejson(self.root / name, obj)
+  File "C:\Users\lewis\OneDrive\Documents\ChatGPT\Voynich\voynich-loop\loop.py", line 63, in writejson
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\voynich-loop\\.test-runs\\tmpvbvrsur3\\CONTROL.json.tmp' -> 'C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\voynich-loop\\.test-runs\\tmpvbvrsur3\\CONTROL.json'
+
+----------------------------------------------------------------------
+Ran 30 tests in 21.486s
+
+FAILED (errors=1)

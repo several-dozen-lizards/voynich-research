@@ -1,0 +1,785 @@
+<!doctype html><meta charset="utf-8"><title>Template-breaker v65</title><style>body{font:17px system-ui;max-width:1100px;margin:40px auto;background:#f5f2e9;color:#193c39}pre{white-space:pre-wrap}</style><h1>Frozen template-breaker test — v65</h1><pre>{
+  &quot;eligible_models&quot;: 8,
+  &quot;scored_types&quot;: 8435,
+  &quot;scored_tokens&quot;: 21894,
+  &quot;rankable_types&quot;: 7444,
+  &quot;position_tests&quot;: 6,
+  &quot;positive_passes&quot;: 2,
+  &quot;limits&quot;: &quot;Character bigrams only, one retrospective split, sparse other formats, no phonetic or name interpretation. H/F alternate readings, not independent replication.&quot;
+}</pre><p>Surprise is mean negative log probability under a training-only EVA-character bigram model. Matched ranks use exact word length and exact training frequency. A high score means atypical for this model, not phonetic.</p><h2>Held-out first/interior comparisons</h2><pre>{
+  &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+  &quot;matched_folios&quot;: 21,
+  &quot;status&quot;: &quot;estimated&quot;,
+  &quot;effect&quot;: 0.03259690181873463,
+  &quot;p&quot;: 0.059,
+  &quot;p_adjusted&quot;: 0.354,
+  &quot;passes&quot;: false
+}</pre><pre>{
+  &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+  &quot;matched_folios&quot;: 7,
+  &quot;status&quot;: &quot;estimated&quot;,
+  &quot;effect&quot;: 0.0899760043292225,
+  &quot;p&quot;: 0.006,
+  &quot;p_adjusted&quot;: 0.036000000000000004,
+  &quot;passes&quot;: true
+}</pre><pre>{
+  &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+  &quot;matched_folios&quot;: 6,
+  &quot;status&quot;: &quot;estimated&quot;,
+  &quot;effect&quot;: 0.08949226257845479,
+  &quot;p&quot;: 0.037,
+  &quot;p_adjusted&quot;: 0.22199999999999998,
+  &quot;passes&quot;: false
+}</pre><pre>{
+  &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+  &quot;matched_folios&quot;: 21,
+  &quot;status&quot;: &quot;estimated&quot;,
+  &quot;effect&quot;: 0.030392574892015533,
+  &quot;p&quot;: 0.066,
+  &quot;p_adjusted&quot;: 0.396,
+  &quot;passes&quot;: false
+}</pre><pre>{
+  &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+  &quot;matched_folios&quot;: 7,
+  &quot;status&quot;: &quot;estimated&quot;,
+  &quot;effect&quot;: 0.07555731168423872,
+  &quot;p&quot;: 0.007,
+  &quot;p_adjusted&quot;: 0.042,
+  &quot;passes&quot;: true
+}</pre><pre>{
+  &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+  &quot;matched_folios&quot;: 6,
+  &quot;status&quot;: &quot;estimated&quot;,
+  &quot;effect&quot;: 0.10409950510620765,
+  &quot;p&quot;: 0.016,
+  &quot;p_adjusted&quot;: 0.096,
+  &quot;passes&quot;: false
+}</pre><h2>Exploratory matched-score examples</h2><details><summary>H|1|A|Botanical|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;rn&quot;,
+    &quot;length&quot;: 2,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 4.154266150821386,
+    &quot;matched_peers&quot;: 8,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;are&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 4.136422493846207,
+    &quot;matched_peers&quot;: 25,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;kchrrr&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.886288411143314,
+    &quot;matched_peers&quot;: 171,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;etyd&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.6634509259475094,
+    &quot;matched_peers&quot;: 64,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;cfarasr&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.529166639774303,
+    &quot;matched_peers&quot;: 167,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;pdrairdy&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.5007469533929023,
+    &quot;matched_peers&quot;: 98,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;olaen&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.4584778613873888,
+    &quot;matched_peers&quot;: 136,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;oesearees&quot;,
+    &quot;length&quot;: 9,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.156303565723676,
+    &quot;matched_peers&quot;: 51,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;ety&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 3.012456066388855,
+    &quot;matched_peers&quot;: 13,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;foar&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.862375608698436,
+    &quot;matched_peers&quot;: 35,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>F|1|A|Botanical|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;fyays&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 4.424536687294371,
+    &quot;matched_peers&quot;: 137,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;kchrrr&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.8896972146582938,
+    &quot;matched_peers&quot;: 180,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;yrch&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.8381625032375597,
+    &quot;matched_peers&quot;: 68,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;osearies&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.73330171754785,
+    &quot;matched_peers&quot;: 87,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;ded&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.589650995418091,
+    &quot;matched_peers&quot;: 25,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;ls&quot;,
+    &quot;length&quot;: 2,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.3865723310417333,
+    &quot;matched_peers&quot;: 7,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;chdlety&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.058211010556284,
+    &quot;matched_peers&quot;: 175,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;ety&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 2,
+    &quot;surprise&quot;: 3.006806871198539,
+    &quot;matched_peers&quot;: 9,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;foar&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.9523606765929915,
+    &quot;matched_peers&quot;: 30,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Botanical|P&quot;,
+    &quot;word&quot;: &quot;osh&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.744205352813533,
+    &quot;matched_peers&quot;: 14,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>H|2|B|Botanical|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;dld&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.394085008013092,
+    &quot;matched_peers&quot;: 40,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;yl&quot;,
+    &quot;length&quot;: 2,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.297419001273162,
+    &quot;matched_peers&quot;: 13,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;faimy&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.2252272119581584,
+    &quot;matched_peers&quot;: 118,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;cphhofy&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.188383080606881,
+    &quot;matched_peers&quot;: 98,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;fsey&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.0973617454281923,
+    &quot;matched_peers&quot;: 96,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;xaloeees&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.931882515671915,
+    &quot;matched_peers&quot;: 56,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;tochsy&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.9025099479819327,
+    &quot;matched_peers&quot;: 134,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;chocpheod&quot;,
+    &quot;length&quot;: 9,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.5419182247870262,
+    &quot;matched_peers&quot;: 27,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;cthhy&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.3157955709911224,
+    &quot;matched_peers&quot;: 27,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;ykam&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.265421010137047,
+    &quot;matched_peers&quot;: 17,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>F|2|B|Botanical|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;rom&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 4.285168672162382,
+    &quot;matched_peers&quot;: 39,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;cphiofy&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.5825645168241342,
+    &quot;matched_peers&quot;: 107,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;yk&quot;,
+    &quot;length&quot;: 2,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.379289283610147,
+    &quot;matched_peers&quot;: 11,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;otyom&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.2336294499904406,
+    &quot;matched_peers&quot;: 127,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;arod&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.07943031682665,
+    &quot;matched_peers&quot;: 95,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;tochsy&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.9358388191186635,
+    &quot;matched_peers&quot;: 141,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;far&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.3877165820594834,
+    &quot;matched_peers&quot;: 12,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;sheksheet&quot;,
+    &quot;length&quot;: 9,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.256395086008555,
+    &quot;matched_peers&quot;: 23,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;ykam&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.2258683586707164,
+    &quot;matched_peers&quot;: 23,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|2|B|Botanical|P&quot;,
+    &quot;word&quot;: &quot;shocphey&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.172350640469349,
+    &quot;matched_peers&quot;: 48,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>H|1|A|Recipes|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;skekyd&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.4285900252932433,
+    &quot;matched_peers&quot;: 71,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;amg&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.1416434184429938,
+    &quot;matched_peers&quot;: 6,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;lsais&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.063604798942039,
+    &quot;matched_peers&quot;: 51,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;kockhas&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.0315610943213156,
+    &quot;matched_peers&quot;: 55,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;koaiphhy&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.97520966425834,
+    &quot;matched_peers&quot;: 19,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;lkeo&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.69358819668452,
+    &quot;matched_peers&quot;: 26,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;loiiin&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.134254576045708,
+    &quot;matched_peers&quot;: 15,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;oteos&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.0564992754664733,
+    &quot;matched_peers&quot;: 14,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;doiir&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 2,
+    &quot;surprise&quot;: 2.015937820424603,
+    &quot;matched_peers&quot;: 13,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;sholfchor&quot;,
+    &quot;length&quot;: 9,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 1.7557239634065294,
+    &quot;matched_peers&quot;: 7,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>F|1|A|Recipes|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;roinr&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.270430833024454,
+    &quot;matched_peers&quot;: 56,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;qyoeey&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.975929071180027,
+    &quot;matched_peers&quot;: 62,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;amm&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.830054500218364,
+    &quot;matched_peers&quot;: 7,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;ddor&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.8065473100660268,
+    &quot;matched_peers&quot;: 23,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;tos&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.7782295338042444,
+    &quot;matched_peers&quot;: 5,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;koacphy&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.716049294315557,
+    &quot;matched_peers&quot;: 50,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;podeecho&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.686415368099913,
+    &quot;matched_peers&quot;: 16,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;loiin&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.487291971534164,
+    &quot;matched_peers&quot;: 18,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;ydar&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.0884243768208752,
+    &quot;matched_peers&quot;: 6,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|1|A|Recipes|P&quot;,
+    &quot;word&quot;: &quot;ycheo&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 2,
+    &quot;surprise&quot;: 1.9894591402685122,
+    &quot;matched_peers&quot;: 11,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>H|3|B|Starred paragraphs|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;le&quot;,
+    &quot;length&quot;: 2,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 4.514266340201604,
+    &quot;matched_peers&quot;: 9,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;ihar&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 4.191700085271643,
+    &quot;matched_peers&quot;: 93,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;qepoepy&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.79030591455511,
+    &quot;matched_peers&quot;: 247,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;yom&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.746147026019594,
+    &quot;matched_peers&quot;: 33,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;cseam&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.7343853373369353,
+    &quot;matched_peers&quot;: 196,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;csedly&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.486411932228347,
+    &quot;matched_peers&quot;: 267,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;aty&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 3.066720614269727,
+    &quot;matched_peers&quot;: 13,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;cphoithy&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.0319507686752996,
+    &quot;matched_peers&quot;: 185,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;eees&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.8346429121025785,
+    &quot;matched_peers&quot;: 26,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;H|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;folorarom&quot;,
+    &quot;length&quot;: 9,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.6446297001209946,
+    &quot;matched_peers&quot;: 98,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><details><summary>F|3|B|Starred paragraphs|P</summary><pre>[
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;ek&quot;,
+    &quot;length&quot;: 2,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 5.482066300445048,
+    &quot;matched_peers&quot;: 10,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;qepoepy&quot;,
+    &quot;length&quot;: 7,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.948111642394688,
+    &quot;matched_peers&quot;: 242,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;tois&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.849629990907188,
+    &quot;matched_peers&quot;: 104,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;ety&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.5776217579060443,
+    &quot;matched_peers&quot;: 35,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;shekt&quot;,
+    &quot;length&quot;: 5,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.5380449516409045,
+    &quot;matched_peers&quot;: 194,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;actharlo&quot;,
+    &quot;length&quot;: 8,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 3.4456495829160194,
+    &quot;matched_peers&quot;: 164,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;daryom&quot;,
+    &quot;length&quot;: 6,
+    &quot;training_count&quot;: 0,
+    &quot;surprise&quot;: 2.989038225788337,
+    &quot;matched_peers&quot;: 265,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;eees&quot;,
+    &quot;length&quot;: 4,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.847528118654513,
+    &quot;matched_peers&quot;: 29,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;aty&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 1,
+    &quot;surprise&quot;: 2.8164745853906914,
+    &quot;matched_peers&quot;: 11,
+    &quot;percentile&quot;: 1.0
+  },
+  {
+    &quot;stratum&quot;: &quot;F|3|B|Starred paragraphs|P&quot;,
+    &quot;word&quot;: &quot;aky&quot;,
+    &quot;length&quot;: 3,
+    &quot;training_count&quot;: 2,
+    &quot;surprise&quot;: 2.7570691336847033,
+    &quot;matched_peers&quot;: 10,
+    &quot;percentile&quot;: 1.0
+  }
+]</pre></details><p><a href="PROTOCOL.json">PROTOCOL.json</a></p><p><a href="METHOD-FREEZE.json">METHOD-FREEZE.json</a></p><p><a href="TRAINING-FREEZE.json">TRAINING-FREEZE.json</a></p><p><a href="ALLOCATION.json">ALLOCATION.json</a></p><p><a href="QUALIFICATION.json">QUALIFICATION.json</a></p><p><a href="MODELS.json">MODELS.json</a></p><p><a href="ALL-TYPES.json">ALL-TYPES.json</a></p><p><a href="ALL-TOKENS.json">ALL-TOKENS.json</a></p><p><a href="POSITION-TESTS.json">POSITION-TESTS.json</a></p><h2>Interpretation and coverage</h2><p>Hand-2 botanical paragraph line starts have higher template surprise than matched interior words in both readings: H +0.0756 and F +0.0900 nats per transition. All seven test folios point in this direction. Frozen Monte Carlo adjusted p values are .042 H / .036 F. A post-result exact sign-flip calculation gives .046875 after the same six-test correction in each reading. This verifies the numerical threshold, not the exchangeability assumption.</p><p>The hand-2 models trained on only three folios (522 H / 513 F tokens). This is a local line-position association under a simple character-bigram template, not a new language, phonetic mode, or identified names. Decoration, spelling conventions, transcription choices and paragraph-opening concentration remain alternatives. First word of a source line is not necessarily first word of a paragraph.</p><p>Hand-1 botanical adjusted p=.396 H/.354 F; starred paragraphs .096 H/.222 F: neither passes. Recipe models were trained, but their held-out matched-folio support was insufficient. Bath training support failed the frozen minimum. Labels, rings and other raw formats remain unsupported, not negative. No adaptive split was tried.</p><p>Ranks compare exact EVA length and exact training frequency, including unseen words as count zero. They do not control held-out word frequency, which was not used for selection. The model treats EVA characters individually; multi-character glyph conventions may produce apparent unusualness. Top lists are display selections, not significance claims. This test preserves H/F independently; a score agreement is transcription robustness, not independent evidence.</p><h2>Paired candidate lines and exceptions</h2><details><summary>F|1|A|Botanical|P f1r.P1.1 fyays</summary><p>fyays · ykal · ar · ytaiin · shol · shory · [?] · ykor · sholdy</p><p>H: fachys · ykal · ar · ataiin · shol · shory · cthres · y · kor · sholdy</p></details><details><summary>F|1|A|Botanical|P f10r.P.1 yrch</summary><p>pchocthy · shor · octhody · chorchy · pchodolchopchal · yrch · kom</p><p>H: pchocthy · shor · octhody · chorchy · pchodol · chopchal · ypch · kom</p></details><details><summary>F|1|A|Botanical|P f11r.P.3 ded</summary><p>qoty · chol · cthy · dor · ykychy · choty · dain · chaiin · daiin · ded</p><p>H: qoty · chol · cthy · dor · ykychy · choty · dain · chaiin · daiin · ded</p></details><details><summary>F|1|A|Botanical|P f20v.P.10 ety</summary><p>shokaiin · chocthy · chol · daiin · chy · chor · ety</p><p>H: shokaiin · chocthy · chol · daiin · chy · chor · ety</p></details><details><summary>F|1|A|Botanical|P f24v.P.3 osearies</summary><p>octhol · odchees · osearies · okam · chcth</p><p>H: octhol · odchees · oesearees · okam · chcth</p></details><details><summary>F|1|A|Botanical|P f24v.P.12 foar</summary><p>ksho · foar · ctho · sho · qokch · okokchal</p><p>H: ksho · foar · cto · sho · qokch · okokchal</p></details><details><summary>F|1|A|Botanical|P f25v.P.7 osh</summary><p>osh · chkey · dainol · daiin · shckhy · [?]</p><p>H: [?] · chkey · daiiol · daiin · shckhy · [?]</p></details><details><summary>F|1|A|Botanical|P f27v.P.6 kchrrr</summary><p>dsho · kchrrr · okeedy · [?] · [?]</p><p>H: dsho · kchrrr · okeedy · [?] · [?]</p></details><details><summary>F|1|A|Botanical|P f47v.P.13 chdlety</summary><p>dshy · daiin · chdlety · chaiin · [?] · otald</p><p>H: dshy · daiin · chdlcty · chaiin · [?] · otald</p></details><details><summary>F|1|A|Botanical|P f49r.P.21 ety</summary><p>odchy · chor · ety · shol</p><p>H: odchy · chor · ety · shol</p></details><details><summary>F|1|A|Botanical|P f52v.P.3 ls</summary><p>oorchor · chochar · ls · chteeor · ytol · sheol · otam</p><p>H: oor · chor · chochar · ls · chteeor · ytol · sheol · otam</p></details><details><summary>F|1|A|Recipes|P f88r.P2.6 koacphy</summary><p>koacphy · cphol · orchor · pcheoly · otchol · oldy · salsaly</p><p>H: koaiphhy · cphol · orchor · pcheoly · otchol · oldy · sal · saly</p></details><details><summary>F|1|A|Recipes|P f88v.P2.16 tos</summary><p>ykeey · sheor · tos · checkhy · daiin · cheos · cheockhy · saldy</p><p>H: ykeey · sheor · tos · checkhy · dain · cheos · cheockhy · raldy</p></details><details><summary>F|1|A|Recipes|P f102r1.P.1 loiin</summary><p>polaiin · shocthy · qoteol · loiin · oteeor · cpheodar · shol · daiin</p><p>H: polaiin · shocthy · qoteol · loiiin · oteeor · cpheodar · sholdaiin</p></details><details><summary>F|1|A|Recipes|P f102r1.P.11 ddor</summary><p>ddor · chordam · [?] · ykchy · dy · okeol · doeoear · [?] · dor</p><p>H: ddor · chordom · [?] · ykeey · dy · okeol · doeoeas · [?] · dor</p></details><details><summary>F|1|A|Recipes|P f102r1.P.12 ydar</summary><p>ydar · arody · [?] · sody · chockhy · oly</p><p>H: ydar · arody · [?] · sody · chockhy · oly</p></details><details><summary>F|1|A|Recipes|P f102r2.P.1 amm</summary><p>lsais · amm · cheey · cfhey · por · aiin · chefoly</p><p>H: lsais · amg · cheey · cfhey · por · aiin · chefoly</p></details><details><summary>F|1|A|Recipes|P f102r2.P.12 qyoeey</summary><p>ykeockhey · okey · qokeeo · ckhey · qokey · desey · qyoeey · dol · chkey · [?]</p><p>H: ykeockhey · okey · qokeeo · ckhey · qokey · desey · qyoeey · dol · chkey · cheky</p></details><details><summary>F|1|A|Recipes|P f102r2.P.14 ycheo</summary><p>qokeod · okeal · okeol · ycheo · ckhey · qkeody · qokey · ody · keeedy · chody</p><p>H: qokeod · okeol · okeol · ycheo · ckhey · qkeody · qokey · ody · keeody · chody</p></details><details><summary>F|1|A|Recipes|P f102v2.P1.1 podeecho</summary><p>podeecho · keeos · sheor · qokeeo · chckhy · shkeey · chekeod</p><p>H: podeesho · oteeos · sheos · qokeeo · chckhhy · shkeey · chekeod</p></details><details><summary>F|1|A|Recipes|P f102v2.P1.7 roinr</summary><p>doiin · or · aiin · cheol · roinr · chol · sheey · qockhy · ol · keol · okeody · okeor · [?]</p><p>H: doin · or · oiin · cheol · soiir · chol · sheey · qockhy · ol · keor · okeody · okeor · chos</p></details><details><summary>F|2|B|Botanical|P f39r.P.1 cphiofy</summary><p>tedo · chshd · cphiofy · chdain · shey · fshy · dy · orain · cheepaiin · ofy · shey · kaly · dy</p><p>H: tedo · chshd · cphhofy · chdain · shey · fsey · dy · orain · cheepaiin · ofy · shey · koly · dy</p></details><details><summary>F|2|B|Botanical|P f39r.P.15 far</summary><p>qolkain · olcheol · daiin · dar · ol · dld · iir · ador · aiin · ofchee · far</p><p>H: qolkain · olcheol · daiin · dar · ol · dld · iir · ador · aiin · ofcheefar</p></details><details><summary>F|2|B|Botanical|P f43r.P.3 ykam</summary><p>yty · yty · oty · she · ody · shy · olor · ytchdy · kaiin · chky · qotydy · dar · aiin · ykam</p><p>H: yty · yty · oty · she · ody · shy · olor · [?] · kaiin · chky · qotydy · dar · aiin · ykam</p></details><details><summary>F|2|B|Botanical|P f43r.P.7 shocphey</summary><p>pshesy · otey · kshdy · opchdy · kedar · okedy · chdy · shocphey · dytydy · pchdy · kedy · dam</p><p>H: pshesy · otey · kshdy · opchdy · kedar · okedy · chdy · shocphhy · dytydy · pchdy · kedy · dam</p></details><details><summary>F|2|B|Botanical|P f43v.P.14 rom</summary><p>dykeedain · chedy · okeedy · chedal · olkey · cheky · choyl · chedy · oteo · rom</p><p>H: dykeedain · chedy · okeedy · chedal · olkey · cheky · choal · chedy · oteorom</p></details><details><summary>F|2|B|Botanical|P f46r.P.2 sheksheet</summary><p>rodaiin · sheeoly · qoor · sheo · teoly · chckhy · daiin · sheksheet · shedy · xoraiin · sheckhy</p><p>H: rodaiin · sheeoly · qoor · sheoteoly · chckhy · daiin · sheksheet · shedy · xor · aiin · sheckhy</p></details><details><summary>F|2|B|Botanical|P f46v.P.1 tochsy</summary><p>pody · lshed · ypdy · shedy · opchedy · ytedy · opchol · yfchey · tochsy · okas · ykchdy · daiin</p><p>H: pody · lshed · ypdy · shedy · opchedy · ytedy · oepchol · yfchey · tochsy · okas · ykchdy · daiin</p></details><details><summary>F|2|B|Botanical|P f46v.P.9 otyom</summary><p>sheol · or · chey · okaiin · daim · otyom</p><p>H: sheol · or · chey · okaiin · daim · oty · om</p></details><details><summary>F|2|B|Botanical|P f55r.P.1 yk</summary><p>podaiin · shekchy · qofair · okar · yk · chepaiin · qokchdy · or · arod</p><p>H: podaiin · shekchy · qofair · okar · yk · chcpaiin · qokchdy · or · arod</p></details><details><summary>F|2|B|Botanical|P f55r.P.1 arod</summary><p>podaiin · shekchy · qofair · okar · yk · chepaiin · qokchdy · or · arod</p><p>H: podaiin · shekchy · qofair · okar · yk · chcpaiin · qokchdy · or · arod</p></details><details><summary>F|3|B|Starred paragraphs|P f108v.P.8 aty</summary><p>ysheedy · okeedy · oteedy · qokeedy · okeedy · okeedy · chedal · okair · qoteed · ar · aty</p><p>H: ysheedy · okeedy · oteedy · qokeedy · okeedy · okeedy · chedal · okair · qoteedar · aty</p></details><details><summary>F|3|B|Starred paragraphs|P f111r.P.16 shekt</summary><p>dched · shey · qokeedy · okeodaiin · shekt · [?] · oteal · tey · lkeey · sheedy · shtar · keedy</p><p>H: dched · shey · qokeedy · okeodain · shet · sheotam · oteal · tey · lkeey · sheedy · shtar · keedy</p></details><details><summary>F|3|B|Starred paragraphs|P f111v.P.18 tois</summary><p>tois · shedy · qoeidaiin · ykaiin · shey · kaiin · shey · otaiin · al · kaiin · ol · rol · daiin</p><p>H: tair · shedy · qochdaiin · okain · sheey · kaiin · shey · otain · alkain · o · l · r · ol · dain</p></details><details><summary>F|3|B|Starred paragraphs|P f113r.P.9 aky</summary><p>dchos · aiin · oteey · qokaiin · cho · okaiin · cheo · daiin · aky · lechody · chotaiin</p><p>H: dchos · aiin · oteey · qokaiin · cho · okaiin · cheo · daiin · chky · le · chody · chotaiin</p></details><details><summary>F|3|B|Starred paragraphs|P f113r.P.10 ety</summary><p>pcheody · qokeody · cheoar · chy · kcheeor · ety · sheody · sheodaiin · qoteoar · otam · otchedy · qoty</p><p>H: pcheody · qokeody · cheoar · chy · kcheeor · ety · sheody · sheodaiin · qoteoor · otom · otchedy · qoty</p></details><details><summary>F|3|B|Starred paragraphs|P f113v.P.21 actharlo</summary><p>polaiin · otar · qotaiin · chtol · tarol · cheol · kaiin · chp · kcheos · okar · actharlo</p><p>H: polaiin · otar · qotain · chtol · tarol · cheol · kaiin · chpkcheos · okar · aithchr · lo</p></details><details><summary>F|3|B|Starred paragraphs|P f113v.P.31 ek</summary><p>daiin · cheol · teeoar · ek · lchedy · okaiin · chckhaiin · otaiin · otaiin · araral</p><p>H: daiiin · cheol · teeoar · shek · lchedy · okaiin · chckhaiin · otaiin · otaiin · araral</p></details><details><summary>F|3|B|Starred paragraphs|P f114v.P.6 qepoepy</summary><p>tedcheo · cheo · cthedy · qotchedy · qotaiin · cphchedy · shedy · qepoepy · chedar · dairy</p><p>H: tedcheo · cheo · cthedy · qotchedy · qotaiin · opchedy · shedy · qepoepy · chedar · dairy</p></details><details><summary>F|3|B|Starred paragraphs|P f114v.P.12 daryom</summary><p>ochedy · choaiin · chcthy · chedal · daiin · ytar · otchedy · qotaiin · daiin · daryom</p><p>H: ochedy · choaiin · [?] · chedal · daiin · ytar · otchedy · qotaiin · dain · dar · yom</p></details><details><summary>F|3|B|Starred paragraphs|P f115v.P.21 eees</summary><p>tshedy · sheol · keedy · lkeeshdy · cheeo · lor · eees · aiin · okchedy · qopcheddy · lky</p><p>H: tshedy · sheolkeedy · lkeeshdy · cheeo · lor · eees · aiin · okchedy · qopcheddy · lky</p></details><details><summary>F|3|B|Starred paragraphs|P f115v.P.43 aky</summary><p>ysheo · kaiin · qotchdal · lkchdy · lkshedy · qokar · cheos · qokaiin · aky</p><p>H: ysheo · kaiin · qotchdal · lkchdy · lkshedy · qokar · cheos · qokaiin · oky</p></details><details><summary>H|1|A|Botanical|P f1r.P1.2 are</summary><p>sory · ckhar · or · y · kair · chtaiin · shar · are · cthar · cthar · dan</p><p>F: sory · ckhar · ory · kair · chtaiin · shor · ar · cthar · cthar · dana</p></details><details><summary>H|1|A|Botanical|P f4v.P.8 olaen</summary><p>olaen · chor · cthol · sho · otor · cthory</p><p>F: olen · chor · cthol · sho · otor · cthory</p></details><details><summary>H|1|A|Botanical|P f10r.P.2 etyd</summary><p>dchey · cthoor · char · chty · os · chair · otytchol · oky · daiin · etyd</p><p>F: dchey · cthoor · char · chty · os · chair · oty · tchol · oky · daiin · etyd</p></details><details><summary>H|1|A|Botanical|P f18r.P.1 pdrairdy</summary><p>pdrairdy · darodsf · yoar · ykchol · dar · o · m · chckhy · [?] · dal</p><p>F: pdrairdy · darode · fyoar · ykchol · daram · chckhy · [?] · dal</p></details><details><summary>H|1|A|Botanical|P f20v.P.10 ety</summary><p>shokaiin · chocthy · chol · daiin · chy · chor · ety</p><p>F: shokaiin · chocthy · chol · daiin · chy · chor · ety</p></details><details><summary>H|1|A|Botanical|P f24v.P.3 oesearees</summary><p>octhol · odchees · oesearees · okam · chcth</p><p>F: octhol · odchees · osearies · okam · chcth</p></details><details><summary>H|1|A|Botanical|P f24v.P.6 cfarasr</summary><p>tochol · chor · cfarasr</p><p>F: tochol · chor · cfharar</p></details><details><summary>H|1|A|Botanical|P f24v.P.12 foar</summary><p>ksho · foar · cto · sho · qokch · okokchal</p><p>F: ksho · foar · ctho · sho · qokch · okokchal</p></details><details><summary>H|1|A|Botanical|P f27v.P.6 kchrrr</summary><p>dsho · kchrrr · okeedy · [?] · [?]</p><p>F: dsho · kchrrr · okeedy · [?] · [?]</p></details><details><summary>H|1|A|Botanical|P f35r.P.9 rn</summary><p>paiin · chear · aiin · chear · shor · chaiin · rn</p><p>F: paiin · chear · aiin · chear · shor · chaiin</p></details><details><summary>H|1|A|Botanical|P f49r.P.21 ety</summary><p>odchy · chor · ety · shol</p><p>F: odchy · chor · ety · shol</p></details><details><summary>H|1|A|Recipes|P f88r.P1.1 sholfchor</summary><p>dorsheoy · ctheol · qockhey · dory · sheor · sholfchor · dal · chckhod</p><p>F: darsheoy · ctheol · qockhey · dary · sheor · sholfchor · dal · chcthol</p></details><details><summary>H|1|A|Recipes|P f88r.P2.6 koaiphhy</summary><p>koaiphhy · cphol · orchor · pcheoly · otchol · oldy · sal · saly</p><p>F: koacphy · cphol · orchor · pcheoly · otchol · oldy · salsaly</p></details><details><summary>H|1|A|Recipes|P f88v.P1.1 lkeo</summary><p>teodal · lkeo · cheor · soshckhy · sorshy · [?] · cheokal · saldaiin</p><p>F: teodal · lkeo · cheor · soshckhy · sor · shy · [?] · cheokal · sal · daiin</p></details><details><summary>H|1|A|Recipes|P f102r1.P.1 loiiin</summary><p>polaiin · shocthy · qoteol · loiiin · oteeor · cpheodar · sholdaiin</p><p>F: polaiin · shocthy · qoteol · loiin · oteeor · cpheodar · shol · daiin</p></details><details><summary>H|1|A|Recipes|P f102r2.P.1 lsais</summary><p>lsais · amg · cheey · cfhey · por · aiin · chefoly</p><p>F: lsais · amm · cheey · cfhey · por · aiin · chefoly</p></details><details><summary>H|1|A|Recipes|P f102r2.P.1 amg</summary><p>lsais · amg · cheey · cfhey · por · aiin · chefoly</p><p>F: lsais · amm · cheey · cfhey · por · aiin · chefoly</p></details><details><summary>H|1|A|Recipes|P f102r2.P.7 skekyd</summary><p>dor · oiin · okeody · qokeol · sheoy · qoochey · ckheol · seeey · skekyd</p><p>F: [?] · okeody · qokeol · sheoy · qoochey · [?]</p></details><details><summary>H|1|A|Recipes|P f102r2.P.9 kockhas</summary><p>kockhas · okor · ykeey · okeey · qokeey · dol · ol · sheody · okey · dol · cthchy</p><p>F: kockhor · okor · ykeey · oteey · qokeey · dol · ol · sheody · okey · dal · ctheey</p></details><details><summary>H|1|A|Recipes|P f102v2.P1.6 oteos</summary><p>ycheey · s · odeeeey · okeeor · cheol · or · oiin · oeees · okear · chey · keey · saiin · oteos</p><p>F: ycheey · r · odeey · okeeor · cheol · oraiin · oeees · okear · chey · keey · saiin · otee</p></details><details><summary>H|1|A|Recipes|P f102v1.P1.6 doiir</summary><p>ycheol · cheol · doiir · shekcheor · sar · cheor · ckhey · pchodaiin</p><p>F: ycheol · cheol · daiir · shekcheor · sar · cheor · ckhey · pchodaiin</p></details><details><summary>H|2|B|Botanical|P f34r.P.1 yl</summary><p>pcheoepchy · olar · yl · [?] · okedody · shod · ololdy · dar · ytey</p><p>F: pcheoepchy · olaryl · [?] · okedody · shod · ololdy · dar · ytey</p></details><details><summary>H|2|B|Botanical|P f39r.P.1 cphhofy</summary><p>tedo · chshd · cphhofy · chdain · shey · fsey · dy · orain · cheepaiin · ofy · shey · koly · dy</p><p>F: tedo · chshd · cphiofy · chdain · shey · fshy · dy · orain · cheepaiin · ofy · shey · kaly · dy</p></details><details><summary>H|2|B|Botanical|P f39r.P.1 fsey</summary><p>tedo · chshd · cphhofy · chdain · shey · fsey · dy · orain · cheepaiin · ofy · shey · koly · dy</p><p>F: tedo · chshd · cphiofy · chdain · shey · fshy · dy · orain · cheepaiin · ofy · shey · kaly · dy</p></details><details><summary>H|2|B|Botanical|P f39r.P.15 dld</summary><p>qolkain · olcheol · daiin · dar · ol · dld · iir · ador · aiin · ofcheefar</p><p>F: qolkain · olcheol · daiin · dar · ol · dld · iir · ador · aiin · ofchee · far</p></details><details><summary>H|2|B|Botanical|P f40v.P.15 faimy</summary><p>qokchey · qody · or · aiiin · okaiin · o · ckhy · [?] · faimy</p><p>F: qokchey · qody · or · aiiin · okaiin · ockhy · [?] · faiily</p></details><details><summary>H|2|B|Botanical|P f43r.P.3 ykam</summary><p>yty · yty · oty · she · ody · shy · olor · [?] · kaiin · chky · qotydy · dar · aiin · ykam</p><p>F: yty · yty · oty · she · ody · shy · olor · ytchdy · kaiin · chky · qotydy · dar · aiin · ykam</p></details><details><summary>H|2|B|Botanical|P f46v.P.1 tochsy</summary><p>pody · lshed · ypdy · shedy · opchedy · ytedy · oepchol · yfchey · tochsy · okas · ykchdy · daiin</p><p>F: pody · lshed · ypdy · shedy · opchedy · ytedy · opchol · yfchey · tochsy · okas · ykchdy · daiin</p></details><details><summary>H|2|B|Botanical|P f46v.P.6 cthhy</summary><p>tos · aiirchar · chedy · olaiin · qotedy · sheedy · [?] · qokedy · dair · chody · cthhy · m</p><p>F: tosaiirchar · chedy · olaiin · qotedy · sheedy · [?] · qokedy · dair · eeody · ctheym</p></details><details><summary>H|2|B|Botanical|P f46v.P.10 chocpheod</summary><p>tolshey · otedy · chocpheod · oty · dam</p><p>F: tolchey · otedy · choctheod · oty · dam</p></details><details><summary>H|2|B|Botanical|P f55r.P.8 xaloeees</summary><p>dchykey · char · chek · xar · odar · xaloeees · cpheody · qokeeo · dy</p><p>F: dchykey · char · chek · [?] · odar · [?] · cpheody · qokeeody</p></details><details><summary>H|3|B|Starred paragraphs|P f108r.P.18 csedly</summary><p>okeedy · lkal · daiin · ykchedy · qokol · chedy · qokedy · lkedy · okalol · csedly</p><p>F: okeedy · lkal · daiin · ykchedy · qokal · chedy · qokedy · lkedy · okal · ol · chedly</p></details><details><summary>H|3|B|Starred paragraphs|P f108r.P.43 cseam</summary><p>olkeoy · okey · lokeey · qokedy · olkechy · ched · ar · olal · oedy · qckhy · cseam</p><p>F: olkeoy · okey · lokeey · qokedy · olkechy · chem · ar · olal · oedy · qckhy · cheam</p></details><details><summary>H|3|B|Starred paragraphs|P f108v.P.8 aty</summary><p>ysheedy · okeedy · oteedy · qokeedy · okeedy · okeedy · chedal · okair · qoteedar · aty</p><p>F: ysheedy · okeedy · oteedy · qokeedy · okeedy · okeedy · chedal · okair · qoteed · ar · aty</p></details><details><summary>H|3|B|Starred paragraphs|P f108v.P.27 eees</summary><p>pororaiin · shedy · qokey · qol · eees · aiin · lal · lkeeedy · otain · sheey · chol · kan · al</p><p>F: paroraiin · shedy · qokey · qol · ees · aiin · lal · lkeeedy · otaiin · sheey · chol · tan · al</p></details><details><summary>H|3|B|Starred paragraphs|P f111r.P.33 eees</summary><p>qoeeeo · s · oin · ar · olkeey · lkair · cheda · chkal · keeodal · eees · chody · qokeedy · dl</p><p>F: qoeeo · saiin · ar · olkeey · lkair · cheda · chkal · keeo · dal · ees · chody · qokeedy · dl</p></details><details><summary>H|3|B|Starred paragraphs|P f111r.P.51 ihar</summary><p>polkeeo · shey · cheokeain · chl · kar · r · aiin · ihar · [?] · al · lkeedy · qokal · okchy</p><p>F: pal · keeo · shey · cheo · kaiin · chl · kar · raiin · char · aaiin · al · lkeedy · qokal · okchy</p></details><details><summary>H|3|B|Starred paragraphs|P f113r.P.9 le</summary><p>dchos · aiin · oteey · qokaiin · cho · okaiin · cheo · daiin · chky · le · chody · chotaiin</p><p>F: dchos · aiin · oteey · qokaiin · cho · okaiin · cheo · daiin · aky · lechody · chotaiin</p></details><details><summary>H|3|B|Starred paragraphs|P f113r.P.20 cphoithy</summary><p>kshoraiin · qokeeo · ar · shoteol · lklcheol · qokar · chdain · cphoithy · chor · aiin · ckhydy</p><p>F: ksho · raiin · qokeeo · ar · shoteol · lklcheol · qokar · chdaiin · cphocthy · chor · aiin · ckhydy</p></details><details><summary>H|3|B|Starred paragraphs|P f113v.P.1 folorarom</summary><p>folorarom · otchey · qotar · air · otair · opchedy · qokeedody · cheykeeoy · rol · lkar · chsamoky</p><p>F: folor · aram · otchey · qotar · air · otair · opchedy · qokeedody · chey · keeoy · rol · lkar · chsam · oky</p></details><details><summary>H|3|B|Starred paragraphs|P f114v.P.6 qepoepy</summary><p>tedcheo · cheo · cthedy · qotchedy · qotaiin · opchedy · shedy · qepoepy · chedar · dairy</p><p>F: tedcheo · cheo · cthedy · qotchedy · qotaiin · cphchedy · shedy · qepoepy · chedar · dairy</p></details><details><summary>H|3|B|Starred paragraphs|P f114v.P.12 yom</summary><p>ochedy · choaiin · [?] · chedal · daiin · ytar · otchedy · qotaiin · dain · dar · yom</p><p>F: ochedy · choaiin · chcthy · chedal · daiin · ytar · otchedy · qotaiin · daiin · daryom</p></details><details><summary>H|3|B|Starred paragraphs|P f115v.P.21 eees</summary><p>tshedy · sheolkeedy · lkeeshdy · cheeo · lor · eees · aiin · okchedy · qopcheddy · lky</p><p>F: tshedy · sheol · keedy · lkeeshdy · cheeo · lor · eees · aiin · okchedy · qopcheddy · lky</p></details><p><a href="PAIRED-EXCEPTIONS.json">All paired candidate lines</a> · <a href="EXACT-AUDIT.json">Exact numerical audit</a></p>

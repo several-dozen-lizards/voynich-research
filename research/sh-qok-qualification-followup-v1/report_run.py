@@ -1,0 +1,47 @@
+import os
+os.environ['OPENBLAS_NUM_THREADS']='1'
+os.environ['OMP_NUM_THREADS']='1'
+import json,hashlib,sys
+from pathlib import Path
+from scipy.stats import beta
+R=Path(__file__).resolve().parent;RUN=R/'run-2026-10-24';OLD=R.parent/'sh-qok-context-map-v3'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def pct(x):return f'{100*x:.3f}%'
+def main():
+ preserved=json.loads((R/'PRESERVED-ATTEMPT.json').read_text());assert all(sha(OLD/n)==h for n,h in preserved['hashes'].items())
+ original_freeze=json.loads((R/'FREEZE.json').read_text());assert all(sha(Path(p))==h for p,h in original_freeze['hashes'].items())
+ ex=json.loads((RUN/'EXECUTION-FREEZE.json').read_text());assert all(sha(Path(p))==h for p,h in ex['hashes'].items())
+ primary=json.loads((RUN/'PRIMARY-SUMMARY.json').read_text());bq=json.loads((RUN/'BQ2-SUMMARY.json').read_text());audit=json.loads((RUN/'POSTRUN-AUDIT.json').read_text());assert primary['total_trials']==396000 and bq['outer_trials']==800
+ oldq=json.loads((OLD/'QUALIFICATION-A-Q1.json').read_text());oldmap={(k,c['scenario']):c for k,v in oldq.items() for c in v['controls']}
+ lines=['RETROSPECTIVE QUALIFICATION FOLLOW-UP — v3.1 preserved unchanged; no manuscript re-scoring.','',f"Completed the frozen 396,000 fresh A/Q1 control trials and separate diagnostic of all 800 existing homogeneous B-Q2 trials. Each B-Q2 trial used the original bank and two fresh banks of 10,000 shuffles (16 million fresh shuffles total). H/F remain separate. No trial-count extension, retuning, smoothing, new manuscript scoring or automatic v3.1 promotion occurred.",'','| Cell | Follow-up qualification | v3.1 status retained |','|---|---|---|']
+ for k,v in primary['cells'].items():lines.append(f"| {k} | {v['status']} | {oldq[k]['status']} |")
+ lines+=['','The follow-up uses 46 simultaneous exact two-sided Clopper–Pearson intervals with Bonferroni error .05/46. These intervals apply to simulation rejection/power proportions, not to manuscript effects. Per-trial testing thresholds remain .05/3 for A and .025 for B-Q1. A null upper bound ≤5% certifies practical tolerance; a lower bound >5% establishes a practical calibration problem; otherwise the result is inconclusive. A lower bound above the per-trial nominal level is separately recorded. Absence of a nominal alarm is not proof of equality to the nominal level. Positive lower bound ≥80% is required.','','| Cell | Scenario | Fresh flags/N | Fresh rate | Simultaneous exact interval | Decision | Nominal excess | Old flags/200 |','|---|---|---|---|---|---|---|']
+ for r in primary['results']:
+  lo,hi=r['simultaneous_exact_CI95'];o=oldmap[r['cell'],r['scenario']];lines.append(f"| {r['cell']} | {r['scenario']} | {r['flags']}/{r['n']} | {pct(r['rate'])} | [{pct(lo)}, {pct(hi)}] | {r['decision']} | {'YES' if r['nominal_size_excess'] else 'No detected excess' if r['scenario']!='positive' else '—'} | {o['flags']}/200 |")
+ lines+=['','P1-F and bath near misses, without pooling the old and fresh trials:']
+ for k in ['A-P1-F','A-bath-H','A-bath-F']:
+  rr=[r for r in primary['results'] if r['cell']==k and r['scenario']!='positive'];worst=max(rr,key=lambda r:r['simultaneous_exact_CI95'][1]);lo,hi=worst['simultaneous_exact_CI95'];lines.append(f"- {k}: {primary['cells'][k]['status']}; largest required-null upper bound {pct(hi)} ({worst['scenario']}); exchangeable nominal alarm: {primary['cells'][k]['nominal_alarm']}.")
+ if all(primary['cells'][k]['status']=='QUALIFIED' for k in ['A-P1-F','A-bath-H','A-bath-F']):lines+=['','The fixed fresh series supports insufficient precision of the old 200-trial certification as the explanation for these particular near misses under the frozen generators. It does not erase the old failures or establish calibration for untested models.']
+ else:lines+=['','The fresh results above retain every failure and inconclusive cell. The old near misses cannot all be attributed to insufficient precision on the basis of this run.']
+ lines+=['','B-Q2 remains diagnostic only. Bank 0 is the original 10,000-shuffle bank; banks 1 and 2 are the two frozen fresh banks per trial. The table reports all 200 trials in each cell and defined-only rates separately; undefined trials are not silently dropped.','','| Reading | Scenario | Bank | Flags/all 200 | Defined | Undefined | Flag rate, defined only | Undefined shuffles |','|---|---|---|---|---|---|---|---|']
+ for r in bq['results']:
+  for bank in r['banks']:lines.append(f"| {r['reading']} | {r['scenario']} | {bank['bank_index']} | {bank['flags']}/200 | {bank['defined']} | {bank['undefined']} | {pct(bank['flag_rate_defined_only']) if bank['flag_rate_defined_only'] is not None else 'NA'} | {bank['undefined_shuffle_total']} |")
+ lines+=['','| Reading | Scenario | Bank pair | Flag changes on all 200 | Flag changes among both defined | Both defined |','|---|---|---|---|---|---|']
+ for r in bq['results']:
+  for pp in r['pairwise']:lines.append(f"| {r['reading']} | {r['scenario']} | {pp['banks'][0]}–{pp['banks'][1]} | {pp['flag_disagreements']} | {pp['flag_disagreements_both_defined']} | {pp['both_defined']} |")
+ undefined=[]
+ for p in sorted((RUN/'bq2').glob('*.json')):
+  r=json.loads(p.read_text())
+  for bank in r['banks']:
+   for d in bank['undefined_contexts']:undefined.append(dict(reading=r['reading'],scenario=r['scenario'],trial=r['trial'],bank=bank['bank_index'],**d))
+ (RUN/'BQ2-UNDEFINED-CONTEXTS.json').write_text(json.dumps(undefined,indent=2),encoding='utf-8')
+ from collections import Counter
+ classifications=Counter(d['classification'] for d in undefined);contexts=Counter(d['context'] for d in undefined);lines+=['','Undefined context receipts: '+json.dumps(dict(classifications))+'; contexts '+json.dumps(dict(contexts))+'. All direct centered-residual and 80-digit Decimal calculations, page terms and folio lists are retained in BQ2-UNDEFINED-CONTEXTS.json.']
+ if classifications.get('GENUINE_ZERO_STORED_TERMS',0):lines+=['','At least some undefined assignments have exactly zero variance even under direct centered-residual and high-precision arithmetic on the stored page terms. That is a structural limitation of the frozen statistic on those assignments, rather than just Monte Carlo imprecision or a subtraction-cancellation artifact. The diagnostic does not repair or qualify the method.']
+ if classifications.get('NUMERICAL_CANCELLATION',0):lines+=['','Numerical cancellation cases were also found and retained. No arithmetic method was swapped into production to rescue their banks.']
+ lines+=['','Changes across defined banks measure sensitivity to finite inner permutation sampling on the same outer outcomes. Stable flags across banks do not create additional independent outer trials: the outer sample remains 200 per cell. These diagnostic banks therefore cannot settle the outer rejection rate or section dependence. Any heterogeneity repair or new qualification needs a separately frozen design.','','The B-Q1 follow-up retains the original abstract generators, including possible qok outcomes on structurally blocked followers. Its qualification is limited to that model. Part A availability-only remains an independently seeded duplicate marginal law of the low-null after filtering; it is not a new availability mechanism. These limitations were frozen and remain unchanged.','',f"Independent post-run audit: {audit['audited_trials']} false-flag/trial-0 checks, maximum absolute p-value difference {audit['max_error']:.3g}; all outcome hashes and decisions matched. Exact rational checks were reserved for any numerically near-threshold comparisons. Original support, 80 old-seed generator replays, 516 small combinatorial fixtures, protocol hashes and all {len(preserved['hashes'])} preserved v3.1 file hashes verified.",'','An execution receipt-merging correction was isolated in execute_bq2.py and hashed before that diagnostic resumed. It fixes duplicate dictionary keys for undefined-result receipts; no statistic, threshold, seed or abstention changed. Interrupted worker sessions resumed missing fixed-coordinate checkpoints only. The original execution harness and receipt remain preserved.','','A successful synthetic qualification here is a separate retrospective follow-up result. It does not rewrite v3.1 or score/promote its blocked manuscript cells. The original data are exposed; no prospective or semantic claim is made.','','Artifacts: PRIMARY-SUMMARY.json, BQ2-SUMMARY.json, BQ2-UNDEFINED-CONTEXTS.json, POSTRUN-AUDIT.json, per-trial primary/ chunks and bq2/ records, execution freeze, original protocol freeze, and FINAL-VERIFICATION.json.']
+ (RUN/'REPORT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+ paths=[p for p in RUN.rglob('*') if p.is_file() and p.name!='FINAL-VERIFICATION.json' and p.suffix not in ['.tmp','.log']]
+ final=dict(status='COMPLETE_FIXED_RUN_VERIFIED',primary_trials=396000,primary_job_cells=46,bq2_outer_trials=800,bq2_banks=2400,fresh_bq2_shuffles=16000000,original_v31_files_unchanged=len(preserved['hashes']),frozen_protocol_unchanged=True,no_trial_extension_or_retuning=True,new_manuscript_scores=0,postrun_audit=audit['status'],artifact_hashes={str(p.relative_to(RUN)):sha(p) for p in paths},report_path=str(RUN/'REPORT.md'))
+ (RUN/'FINAL-VERIFICATION.json').write_text(json.dumps(final,indent=2),encoding='utf-8');print(json.dumps(dict(report=final['report_path'],cells=primary['cells'],undefined=classifications),indent=2))
+if __name__=='__main__':main()

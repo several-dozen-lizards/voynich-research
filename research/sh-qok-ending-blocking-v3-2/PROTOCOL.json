@@ -1,0 +1,48 @@
+{
+  "classification": "RETROSPECTIVE DESCRIPTIVE; exploratory origin; no p-values",
+  "original_amendment_sha256": "dfe7b50b88b89c8fe1384b1ffb9a466f61d151f3f18ed9d3075e19a12bf139a7",
+  "contexts": {
+    "C1": "hand2 bath",
+    "C2": "hand2 botanical",
+    "C3": "hand2 Rosettes",
+    "C4": "hand3 starred",
+    "C5": "hand3 botanical",
+    "C6": "hand1 botanical",
+    "C7": "hand1 recipes"
+  },
+  "readings": [
+    "H",
+    "F"
+  ],
+  "families": [
+    "eey",
+    "edy",
+    "ey",
+    "y",
+    "other"
+  ],
+  "source": "Existing v3/v3.1 EVENTS.csv; original event population and availability flags preserved. No primary engine or result altered.",
+  "groups": {
+    "blocking": [
+      "eey",
+      "ey"
+    ],
+    "comparison": [
+      "edy",
+      "y",
+      "other"
+    ]
+  },
+  "views": [
+    "all",
+    "available"
+  ],
+  "family_rows": "Each family: raw next-qok event counts/rates separately after sh/ch; MH effect weighted over folio x family strata; V and share of total context V; supported zero-qok strata (both prefixes present), plus all zero-qok strata count. All rows retained even below20 events; label descriptive support explicitly.",
+  "estimability": "Literal strict20-event rule: each original family eey,edy,ey,y,other must have >=20 eligible events within context x reading x view before context can enter either prediction denominator. No pooling of sparse individual families to rescue eligibility. Prediction(a) further requires nonzero pooled group denominators; prediction(b) also requires positive MH weight in both grouped sets. Arm rates absent => unavailable, not0.",
+  "prediction_a": "Raw qok rate after pooled sh/ch eey+ey strictly lower than pooled sh/ch edy+y+other; these are event-weighted rates, not MH effects.",
+  "prediction_b": "abs(MH gap_eey+ey) < 0.5 * MH gap_edy+y+other, in percentage points, strictly. Right-hand comparison uses the signed positive-direction effect as written; a nonpositive comparison effect cannot satisfy the inequality. MH grouping remains folio x originalfamily, never merges endings before stratification.",
+  "headline": "For each reading and each view, count whether(a)/(b) holds among separately estimable contexts, excluding prior outside-Rosettes family breakdowns C1/C4. C3 remains known-origin and identified; additionally report counts excluding C3. No independence/confirmation interpretation.",
+  "sensitivity": "For every context x reading x view, recompute MH after dropping whole folio x family strata with zero qok outcomes in both arms. Keep all events of surviving strata, both arms. Record both supported and unsupported zero strata, removed V, event counts, baseline and exact agreement with v3 estimates. This is outcome-selected denominator removal, not an adjusted primary estimate.",
+  "inference": "No p-values, Holm, intervals, pass/fail, qualification or model fits. Small support and prior selection remain visible. No meanings, grammar/junction or categorical blocking claims.",
+  "progression": "Any broad pattern is at most motivation for a future independently frozen hypothesis; failures outside Rosettes must remain. No future-round protocol is silently frozen by this descriptive calculation."
+}

@@ -1,0 +1,64 @@
+{
+  "corpus": "ZL_running",
+  "tokenization": "T4",
+  "architecture": "transformer",
+  "with_position": true,
+  "seed": 1733,
+  "parameter_count": 3194175,
+  "validation_bpt": 2.0743918418884277,
+  "test_bpt": 2.2888667583465576,
+  "test_tokens": 15898,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.1901790050166596,
+  "test_bpc_with_escape": 2.3891014197487737,
+  "training_tokens_seen": 190514,
+  "effective_token_epochs": 1.3104733866197087,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 2.718344499997329,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 2.5205068741931678,
+      "validation_bpt": 2.2722315788269043
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.2546048416594813,
+      "validation_bpt": 2.1377170085906982
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.2934710289453166,
+      "validation_bpt": 2.098881959915161
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.2724107214512603,
+      "validation_bpt": 2.0743918418884277
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "extensions\\prior_work_v1\\runs\\models\\ZL_running-T4-transformer-p1-s1733",
+  "currier_test": {
+    "A": {
+      "bits": 22146.476820909418,
+      "tokens": 8893,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8791,
+      "bpt": 2.490326866176703,
+      "bpc_with_escape": 2.5192215698907314
+    },
+    "B": {
+      "bits": 13494.725582573563,
+      "tokens": 6426,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6224,
+      "bpt": 2.1000195428841524,
+      "bpc_with_escape": 2.168175704140997
+    }
+  }
+}

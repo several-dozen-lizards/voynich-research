@@ -1,0 +1,13 @@
+{
+ "date":"2026-10-23",
+ "candidate_source":"Review Voynich fold-out clues, user message turn 01a164d5-990c-7093-8e6f-d848e72371f6. Reported families, not validated equivalences.",
+ "candidate_families":[["am","aiin","ar","al","ain"],["y","edy","eey","eedy"]],
+ "manuscript_application":"CLOSED pending qualification. No candidate suffix removed in this cut. Potential longest-match conflicts and minimum-core requirements must be frozen before any later application.",
+ "qualification_sources":"Secretum Secretorum plain Latin; historical Forman and Napier diplomatic preambles from v46 RECORDS.json, hand/volume separate. Known text with planted modifications, not historically verified redundant endings.",
+ "split":"Latin contiguous 50-word blocks, first60% blocks train and remaining40% test. Casebooks existing whole-folio split; no across-line transitions. This is qualification on controlled modifications, not fresh corpus discovery.",
+ "arms":"Append binary endings to current-word predictor only. Redundant: uniform independent a/b; informative: stable SHA256(next original word) parity; layout: end-of-line indicator (last eligible predecessor before final word). Keep original next-word outcome fixed. Seeds4801-4805. Untouched current-word model retained as oracle reference.",
+ "predictor":"Conditional next-word counts with Dirichlet backoff weight10 to training unigram prior, add-one prior. Training target forms with count<3 mapped UNK. Compare literal appended predictor, true collapse to base, and 19 arbitrary pair merges among observed surface types in frequency-sorted blocks of40. Mapping learned on training only; missing forms retain literal identity. Equal pair cardinality but not exact count/core matching, explicit limitation.",
+ "measures":"Mean heldout log2 predictive gain of collapse over literal; gain of arbitrary merges; require positive gain and >95th percentile arbitrary merge gains for redundant positives. Informative controls must not be accepted by that same rule. Layout controls descriptive. Retain all seeds, not best run.",
+ "qualification_gate":"Every source: >=4/5 redundant positives accepted, 0/5 informative false acceptances. Any failure blocks manuscript collapse. This small suite is an initial gate only; passage semantics and true morphological deletion need independent qualification.",
+ "atlas":"Separately authorized descriptive frequencies only. No inferred syllable/morpheme/semantic role; H/F separate, hand/section/format and line position filters. Does not reopen failed role classifier."
+}

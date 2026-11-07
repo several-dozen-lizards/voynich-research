@@ -1,0 +1,52 @@
+{
+  "status": "PRE-RATING; NO SCIENTIFIC RESULT",
+  "issues": [
+    {
+      "id": "manual_return_sentence",
+      "status": "RESOLVED_BY_USER",
+      "detail": "Manual final sentence now requests picture-element rows only; corrected and hashed before packet creation."
+    },
+    {
+      "id": "line_registration",
+      "status": "PENDING",
+      "detail": "Independent outcome-blind registrar must supply line AND block boxes, exact EVT crosswalk, H/F count discrepancies and dropped blocks. Existing tool accepts annotations but does not produce an automatic crosswalk."
+    },
+    {
+      "id": "Q_definition",
+      "status": "NOT_IMPLEMENTED",
+      "detail": "Specify exact between-label weights, cluster variance, covariance handling, undefined-permutation policy and seeds before scoring. v3 uses inverse folio-cluster variance; v4 does not explicitly select that formula."
+    },
+    {
+      "id": "adjudication_geometry",
+      "status": "NOT_IMPLEMENTED",
+      "detail": "Third rater returns picture boxes on whole disagreement pages; retain third-rater labels for disputed lines only. Separate final six-way and binary-majority labels are required."
+    },
+    {
+      "id": "position_claim",
+      "status": "QUALIFICATION_REQUIRED",
+      "detail": "Strata include length bin but not position. Within-folio label permutations do not preserve label-position association. The wrap/position null must qualify this; a pass cannot by itself establish adjustment for every position variable."
+    },
+    {
+      "id": "support_scope",
+      "status": "NOT_IMPLEMENTED",
+      "detail": "Specify label-support and multi-label-folio selection order, total-V denominator, and whether qualifying support is recomputed under each shuffle before scoring. Support uses prefix counts, not qok outcomes."
+    },
+    {
+      "id": "synthetic_generators",
+      "status": "NOT_IMPLEMENTED",
+      "detail": "Freeze baselines, position functions, folio effects, dependence assumptions, rejection alpha and seeds for all six scenarios. 200 trials are binding; do not tune after seeing failures."
+    },
+    {
+      "id": "rater_isolation",
+      "status": "SUBAGENT_ROUTE_FAILED_ELIGIBILITY",
+      "detail": "Agent reported automatically injected project memory and stopped before reading either permitted file. No picture raters were dispatched. See BLINDNESS-AUDIT.json."
+    }
+  ],
+  "cohort_folios": 188,
+  "physical_source_loci": 3756,
+  "exact_single_folio_images": 161,
+  "withheld_panels": 27,
+  "cohort_rule": "All scribe1/2/3 H/F P-unit locus headers, reserved folios excluded; not selected using old event presence or outcomes.",
+  "legacy_packet": "Incompatible categories; not reused. Legacy receipts had 0 ready images.",
+  "network_probe": "Sandbox DNS failed; escalated public Yale image request succeeded: HTTP 200 image/jpeg."
+}

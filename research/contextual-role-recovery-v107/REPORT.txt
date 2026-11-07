@@ -1,0 +1,39 @@
+Contextual role recovery continuation v107 — 25 October 2026
+
+RESULT
+Automatic role-number selection FAILED its predeclared synthetic qualification. The independently declared fixed-two-role transfer also did not qualify: 0 PASS, 4 FAIL, 4 NOT ESTIMABLE across eight historical panels. No Voynich roles or meanings were fitted, selected or scored. The prior v47 Casebooks success remains preserved, with no replication claim from this continuation.
+
+AUTOMATIC SELECTOR
+A project-specific categorical-reference gap-statistic variant compared k=1..5 using 19 within-block independently permuted context-column reference banks; it chose the smallest k=1..4 satisfying the one-standard-error rule, otherwise abstained. Six original opaque surface-context features, training vocabulary and normalization, three fixed k-means starts, 60 iterations, no supplied gold role count. Method reference: https://doi.org/10.1111/1467-9868.00293 . This categorical reference is our adaptation and requires its own controls; not a claim that the published gap statistic generally fails.
+
+All 240 declared trials completed. Exact k recovery: unstructured 39/40 and page nuisance 40/40 (each required38); clean2 27/40, clean3 23/40, clean4 20/40, noisy2 30/40 (each required32). Wilson intervals, every selected count, heldout ARI and gap curve are saved. No thresholds, seeds, trial counts or features were retuned. Automatic historical application was blocked by this failure. These controls are strong toy roles, not a realistic corpus model.
+
+INDEPENDENT ANNOTATION TRANSFER
+Externally annotated UD Latin-PROIEL at pinned commit ae7c7c5bd92e2ab9d2c58cf8184dd72028ca54eb. All exact surface cum/ut occurrences in four predeclared works; 2,254 total occurrences from 6,830 unique sentences after removing75 exact full-sentence duplicates. The old grammar project had scored Mark/Luke/Romans; those works were excluded from this continuation. The archived source is not certified historically unseen. This is an independent annotation project relative to Casebooks, not a new blinded annotation exercise.
+
+Gold distinctions were declared before target extraction: cum ADP versus SCONJ; ut ADV versus SCONJ. Other categories remained in blind clustering and are counted in the full gold tables, not rewritten into the binary task. Whole source/book/chapter or letter units were assigned to train/test by fixed hash; no block crosses the split. The original UD partitions were recombined for this declared block split. Near-duplicate or parallel-content removal was not performed.
+
+The primary uses the exact v47 fixed2 implementation and ten starts. Assignments and hashes were saved before the scoring stage opened the answer key. Every context-null arm was refitted after within-block independent context-column shuffles. Model inputs contain surface neighbors only; no target UPOS, lemma, morphology, dependency or expansion enters features. An engineering review replaced an annotation-based punctuation predicate with a surface-only predicate before fitting; all2,254 resulting contexts and all gold bytes were identical. The original generated inputs, code and freeze remain preserved with the amendment and comparison receipt.
+
+Support required at least20 train and20 test examples of EACH predeclared role and five test blocks. Recovery required >=80% balanced recall, ARI>=.50, adjusted p<=.05, and >=10 points over the context-null recall. Eight-panel Bonferroni was applied to199 label permutations. Permutations are occurrence-level and do not independently validate dependence at chapter level; no panel passed the recovery gates in any event.
+
+ALL HISTORICAL RESULTS
+Commentarii belli Gallici|cum: FAIL; test roles {"ADP":60,"SCONJ":44}; 55 blocks; balanced recall 68.56%; ARI 0.1848; adjusted label-permutation p 0.04; shuffled-context recall 50.00%; supervised diagnostic 76.82%.
+Commentarii belli Gallici|ut: NOT_ESTIMABLE; test roles {"SCONJ":61,"ADV":18}; 44 blocks; balanced recall 48.36%; ARI -0.0331; adjusted label-permutation p 1; shuffled-context recall 50.00%; supervised diagnostic 51.64%.
+De officiis|cum: NOT_ESTIMABLE; test roles {"SCONJ":14,"ADP":13}; 16 blocks; balanced recall 50.00%; ARI 0.0186; adjusted label-permutation p 1; shuffled-context recall 50.00%; supervised diagnostic 64.01%.
+De officiis|ut: FAIL; test roles {"SCONJ":53,"ADV":31}; 41 blocks; balanced recall 60.07%; ARI 0.1072; adjusted label-permutation p 0.12; shuffled-context recall 49.85%; supervised diagnostic 65.64%.
+Epistulae ad Atticum|cum: FAIL; test roles {"SCONJ":94,"ADP":88}; 44 blocks; balanced recall 53.45%; ARI 0.0080; adjusted label-permutation p 0.32; shuffled-context recall 52.79%; supervised diagnostic 70.59%.
+Epistulae ad Atticum|ut: FAIL; test roles {"SCONJ":196,"ADV":82}; 54 blocks; balanced recall 50.00%; ARI 0.0092; adjusted label-permutation p 1; shuffled-context recall 50.00%; supervised diagnostic 63.02%.
+Opus agriculturae|cum: NOT_ESTIMABLE; test roles {"ADP":9,"SCONJ":12}; 14 blocks; balanced recall 61.11%; ARI -0.0216; adjusted label-permutation p 1; shuffled-context recall 41.67%; supervised diagnostic 68.06%.
+Opus agriculturae|ut: NOT_ESTIMABLE; test roles {"SCONJ":29,"ADV":4}; 19 blocks; balanced recall 50.00%; ARI -0.0934; adjusted label-permutation p 1; shuffled-context recall 50.00%; supervised diagnostic 50.00%.
+
+DIAGNOSIS AND LIMITS
+Caesar cum is the strongest supported clustering result: 68.56% balanced recall versus50% null, ARI .1848. Its adjusted label-permutation p=.04 does not override its failed recovery/ARI gates. The predeclared supervised diagnostic reaches76.82% there and70.59% for Cicero letters cum. Those are label-trained diagnostic results, not blind role discovery or a new qualification. None reaches80%; this simple four-neighbor surface representation plus these algorithms has not demonstrated robust broad transfer. Low performance can reflect representation, annotation categories, lexical sparsity and clustering assumptions; it does not show that contextual distinctions are absent.
+
+The contextual role idea remains open, but this continuation gives a concrete negative result for the attempted selector and fails to extend the narrow Casebooks result. A future method revision must be a separate prospective experiment, preserving these failures; it should not be justified by selecting a favorable panel here. No manuscript scoring automatically follows.
+
+VERIFICATION AND FILES
+PROTOCOL.json and FREEZE.json; synthetic-trials.jsonl and QUALIFICATION.json; BLIND-INPUT.json and separate ANSWER-KEY.json; INPUT-FREEZE.json; ASSIGNMENTS.json and pre-key ASSIGNMENT-FREEZE.json; RESULTS.json; supervised diagnostic protocol, freeze and outputs. JavaScript independently reconstructed all2,254 contexts and metadata and verified block separation, sentence exclusions and corpus membership. SOURCE-PROVENANCE.json points to the original public annotation source. Original v47 and v36 files were read only.
+
+REPRODUCTION
+run.py freeze, qualify, prepare and historical were one-time stages; the first prepare outputs are archived. The admitted inputs were generated by prepare_surface_only.py under SURFACE-PARSER-FREEZE.json. Do not overwrite freezes or failed trials. audit_inputs.mjs reconstructs admitted inputs; verify_results.py checks saved results without fitting new models.

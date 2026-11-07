@@ -1,0 +1,64 @@
+{
+  "corpus": "ZL_running",
+  "tokenization": "T2",
+  "architecture": "transformer",
+  "with_position": false,
+  "seed": 1801,
+  "parameter_count": 3189035,
+  "validation_bpt": 2.3034820556640625,
+  "test_bpt": 2.509774684906006,
+  "test_tokens": 14493,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.2139435380102244,
+  "test_bpc_with_escape": 2.3881665359032724,
+  "training_tokens_seen": 189265,
+  "effective_token_epochs": 1.4241158765989466,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 2.954345899997861,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 2.778821720101391,
+      "validation_bpt": 2.579941987991333
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.529125268793205,
+      "validation_bpt": 2.4185259342193604
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.5097538309306215,
+      "validation_bpt": 2.359159231185913
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.4152223630053227,
+      "validation_bpt": 2.3034820556640625
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "runs\\phase5-c2f38fa45d6b\\confirmation\\confirm-ZL_running-T2-transformer-p0-s1801",
+  "currier_test": {
+    "A": {
+      "bits": 22001.52871560026,
+      "tokens": 8042,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 8791,
+      "bpt": 2.7358279924894626,
+      "bpc_with_escape": 2.5027333313161484
+    },
+    "B": {
+      "bits": 13620.802505199797,
+      "tokens": 5889,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 6224,
+      "bpt": 2.3129228230938694,
+      "bpc_with_escape": 2.188432279113078
+    }
+  }
+}

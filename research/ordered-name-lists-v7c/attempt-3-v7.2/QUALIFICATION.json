@@ -1,0 +1,2224 @@
+{
+  "version": "v7.2",
+  "status": "QUALIFIED_V7.2_ON_DECLARED_SCOPE",
+  "gates": {
+    "true_key": true,
+    "noisy_H": true,
+    "noisy_F": true,
+    "negative_original": true,
+    "negative_role": true,
+    "trap_H_literalFAIL": true,
+    "trap_H_complete_controls": true,
+    "trap_H_finite_E3E4": true,
+    "trap_F_literalFAIL": true,
+    "trap_F_complete_controls": true,
+    "trap_F_finite_E3E4": true
+  },
+  "cases": {
+    "CLEAN": {
+      "combined": {
+        "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+        "verdict": "PASS",
+        "shared_above99": [
+          "E1",
+          "E4"
+        ],
+        "shared_above998": [
+          "E1",
+          "E4"
+        ],
+        "original_verdict": "PASS",
+        "role_verdict": "PASS",
+        "admission_active": true
+      },
+      "original": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 25247.65725381384,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.7725,
+            "C3_median": 0.0075,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5547.174690316542
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.03779860726527584,
+            "C3_median": 0.034758625682663524,
+            "mc_p": 0.23076923076923078,
+            "gain_bits": 24.924808995838383
+          },
+          "E4": {
+            "value": -2.9401495058662235,
+            "C3_median": -5.357013819359033,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 19815.87050632755
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.025,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.05625,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.01875,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.04716981132075472,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.04375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": -0.0026593212545820144,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.0019149155480810975,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.006186299876610235,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.011622901007216413,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.004571070825892143,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.008729248618299046,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.00586320403366436,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.290286954954883,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.133482922356442,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.147023389869135,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.169528418815826,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.059974172710376,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.149526745200244,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.108286006012856,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      },
+      "role": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 25229.1855482647,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.7725,
+            "C3_median": 0.008333333333333333,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5413.6559377039775
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.03779860726527584,
+            "C3_median": 0.03576683057665253,
+            "mc_p": 0.35864135864135865,
+            "gain_bits": 16.65853707002252
+          },
+          "E4": {
+            "value": -2.9401495058662235,
+            "C3_median": -5.372053863143549,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 19939.18382531679
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.025,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.0375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.06041666666666667,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.041666666666666664,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.022916666666666665,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.04716981132075472,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.7725,
+            "control_C3_p95": 0.04583333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": -0.0031173937541097985,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.0006333148702726277,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.004198839904596241,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.008555488588709359,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.004515209342320858,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.0024219227014423694,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.03779860726527584,
+            "control_C3_p95": 0.004988607546475343,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.307939734294209,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.149693177405461,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.1666439747823265,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.181728616302712,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.07607696371702,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.135926372917402,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -2.9401495058662235,
+            "control_C3_p95": -5.092988949039922,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      }
+    },
+    "CORRUPT": {
+      "combined": {
+        "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+        "verdict": "PASS",
+        "shared_above99": [
+          "E1",
+          "E4"
+        ],
+        "shared_above998": [
+          "E1",
+          "E4"
+        ],
+        "original_verdict": "PASS",
+        "role_verdict": "PASS",
+        "admission_active": true
+      },
+      "original": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 7807.635153715466,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.3641666666666667,
+            "C3_median": 0.004166666666666667,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 2265.494829988741
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.03336507859593629,
+            "C3_median": 0.029758401375268084,
+            "mc_p": 0.2787212787212787,
+            "gain_bits": 29.57114653225864
+          },
+          "E4": {
+            "value": -4.639652791692206,
+            "C3_median": -5.32911271717343,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5652.881929020558
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.014166666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.029166666666666667,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.03333333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.020833333333333332,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.01875,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.02830188679245283,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.025,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.00047208316878322165,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.005422635974590584,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.008573277537333723,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.013807118203811086,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.005698641383347969,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.014976328907656544,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.008549856756159713,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.239600193260849,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.089254089470942,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.106486652108529,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.114412815457775,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.00533843496928,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.172455142131903,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.131026071451049,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      },
+      "role": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 7903.708405730813,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.3641666666666667,
+            "C3_median": 0.004166666666666667,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 2265.494829988741
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.03336507859593629,
+            "C3_median": 0.030644719250499053,
+            "mc_p": 0.3246753246753247,
+            "gain_bits": 22.30422627323993
+          },
+          "E4": {
+            "value": -4.639652791692206,
+            "C3_median": -5.341716714279707,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5756.222101294924
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.015833333333333335,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.025,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.020833333333333332,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.01875,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.03459119496855346,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.3641666666666667,
+            "control_C3_p95": 0.027083333333333334,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": -4.877694258631493e-05,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.0046233450162684875,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.00857661097070217,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.013028481972873429,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.005423047376495127,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.013781464978263713,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.03336507859593629,
+            "control_C3_p95": 0.009029550928403296,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.260880604206455,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.104024260237599,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.11599094510461,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.138087057155705,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.0178878821902115,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.156359859338372,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -4.639652791692206,
+            "control_C3_p95": -5.132384971627507,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      }
+    },
+    "NOISY-H": {
+      "combined": {
+        "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+        "verdict": "PASS",
+        "shared_above99": [
+          "E1",
+          "E4"
+        ],
+        "shared_above998": [
+          "E1",
+          "E4"
+        ],
+        "original_verdict": "PASS",
+        "role_verdict": "PASS",
+        "admission_active": true
+      },
+      "original": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 23983.775031283043,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.7491666666666666,
+            "C3_median": 0.0075,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5305.234645934808
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.033347943056328155,
+            "C3_median": 0.030772297078174082,
+            "mc_p": 0.24175824175824176,
+            "gain_bits": 21.117721374885246
+          },
+          "E4": {
+            "value": -3.063602118575516,
+            "C3_median": -5.356288472496658,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 18797.73541579944
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.024166666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.05625,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.01875,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.04716981132075472,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.04375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": -0.006721565553177822,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.0019149155480810975,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.006186299876610235,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.011622901007216413,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.004571070825892143,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.008729248618299046,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.00586320403366436,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.292832784512261,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.133482922356442,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.147023389869135,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.169528418815826,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.059974172710376,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.149526745200244,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.108286006012856,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      },
+      "role": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 23972.80427726101,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.7491666666666666,
+            "C3_median": 0.008333333333333333,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5175.792728049386
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.033347943056328155,
+            "C3_median": 0.03132213767884906,
+            "mc_p": 0.3046953046953047,
+            "gain_bits": 16.609578289951102
+          },
+          "E4": {
+            "value": -3.063602118575516,
+            "C3_median": -5.371287778137385,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 18920.714722747765
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.024166666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.0375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.06041666666666667,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.041666666666666664,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.022916666666666665,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.04716981132075472,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.7491666666666666,
+            "control_C3_p95": 0.04583333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": -0.007749863728894635,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.0006333148702726277,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.004198839904596241,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.008555488588709359,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.004515209342320858,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.0024219227014423694,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.033347943056328155,
+            "control_C3_p95": 0.004988607546475343,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.308129131734707,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.149693177405461,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.1666439747823265,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.181728616302712,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.07607696371702,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.135926372917402,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -3.063602118575516,
+            "control_C3_p95": -5.092988949039922,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      }
+    },
+    "NOISY-F": {
+      "combined": {
+        "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+        "verdict": "PASS",
+        "shared_above99": [
+          "E1",
+          "E4"
+        ],
+        "shared_above998": [
+          "E1",
+          "E4"
+        ],
+        "original_verdict": "PASS",
+        "role_verdict": "PASS",
+        "admission_active": true
+      },
+      "original": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 24095.216200138875,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.7575,
+            "C3_median": 0.0075,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5391.048871718869
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.03548259728154868,
+            "C3_median": 0.03287895654765749,
+            "mc_p": 0.1928071928071928,
+            "gain_bits": 21.347250377173854
+          },
+          "E4": {
+            "value": -3.0616194484293553,
+            "C3_median": -5.357403425727675,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 18823.132829868922
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.024166666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.05625,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.035416666666666666,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.01875,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.04716981132075472,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.04375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": -0.0014537315581324428,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.0019149155480810975,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.006186299876610235,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.011622901007216413,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.004571070825892143,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.008729248618299046,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.00586320403366436,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.29073349063359,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.133482922356442,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.147023389869135,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.169528418815826,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.059974172710376,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.149526745200244,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.108286006012856,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      },
+      "role": {
+        "verdict": "PASS",
+        "K_bits": 140.31275182609167,
+        "coherence_bits": 24071.313662767603,
+        "above_99": [
+          "E1",
+          "E4"
+        ],
+        "above_998": [
+          "E1",
+          "E4"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.7575,
+            "C3_median": 0.008333333333333333,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 5260.150941430897
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": 0.03548259728154868,
+            "C3_median": 0.03401362860780788,
+            "mc_p": 0.2217782217782218,
+            "gain_bits": 12.044074156000821
+          },
+          "E4": {
+            "value": -3.0616194484293553,
+            "C3_median": -5.371587907876458,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 18939.431399006797
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.023333333333333334,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.0375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.06041666666666667,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.041666666666666664,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.022916666666666665,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.04716981132075472,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.7575,
+            "control_C3_p95": 0.04583333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": -0.0020524021401504555,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.0006333148702726277,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.004198839904596241,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.008555488588709359,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.004515209342320858,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.0024219227014423694,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": 0.03548259728154868,
+            "control_C3_p95": 0.004988607546475343,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.309117818744657,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.149693177405461,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.1666439747823265,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.181728616302712,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.07607696371702,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.135926372917402,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -3.0616194484293553,
+            "control_C3_p95": -5.092988949039922,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [],
+        "missing_controls": [],
+        "all_required_controls_pass": true,
+        "necessary_coherence_and_rank": true,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      }
+    },
+    "TRAP-H": {
+      "combined": {
+        "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+        "verdict": "FAIL",
+        "shared_above99": [],
+        "shared_above998": [],
+        "original_verdict": "PARTIAL",
+        "role_verdict": "FAIL",
+        "admission_active": true
+      },
+      "original": {
+        "verdict": "PARTIAL",
+        "K_bits": 2340.232906975156,
+        "coherence_bits": -2549.9272911098574,
+        "above_99": [
+          "E1"
+        ],
+        "above_998": [
+          "E1"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.49236641221374045,
+            "C3_median": 0.4732824427480916,
+            "mc_p": 0.001998001998001998,
+            "gain_bits": 0.2728713417047386
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": -0.02772582841826088,
+            "C3_median": -0.046444886943648234,
+            "mc_p": 0.030969030969030968,
+            "gain_bits": 27.123915803286277
+          },
+          "E4": {
+            "value": -4.49828220387993,
+            "C3_median": -4.3346582071375614,
+            "mc_p": 0.99000999000999,
+            "gain_bits": -237.0911712796926
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.2748091603053435,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.0020833333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.004166666666666667,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.025,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.0,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.2389937106918239,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.10208333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.03944948115880109,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.00039173226594790833,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.0006787773103340555,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.001758292036515563,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.0005365992532153641,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": -0.017090457993532482,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.0006740018495321465,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.617101935374681,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.930152699845656,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.945503435647884,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.913998955951072,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.870501867558269,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.661755361946659,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.84111242609157,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [
+          "E3:C1-word",
+          "E3:C2:G1",
+          "E3:C2:G2",
+          "E3:C2:G3",
+          "E3:C2:G4",
+          "E3:C2:G5",
+          "E3:C2:G6"
+        ],
+        "missing_controls": [],
+        "all_required_controls_pass": false,
+        "necessary_coherence_and_rank": false,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      },
+      "role": {
+        "verdict": "FAIL",
+        "K_bits": 2340.232906975156,
+        "coherence_bits": -2417.0157140472684,
+        "above_99": [],
+        "above_998": [],
+        "metrics": {
+          "E1": {
+            "value": 0.49236641221374045,
+            "C3_median": 0.4770992366412214,
+            "mc_p": 0.05194805194805195,
+            "gain_bits": 0.1744316845807532
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": -0.02772582841826088,
+            "C3_median": -0.04054929798134155,
+            "mc_p": 0.25374625374625376,
+            "gain_bits": 18.58120739690389
+          },
+          "E4": {
+            "value": -4.49828220387993,
+            "C3_median": -4.432348148563438,
+            "mc_p": 0.8011988011988012,
+            "gain_bits": -95.53844615359722
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.3015267175572519,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.03333333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.04583333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.0625,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.0125,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.2610062893081761,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.49236641221374045,
+            "control_C3_p95": 0.1375,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.05750848773635431,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.007433807095075906,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.005149620294658597,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.0064685091255549665,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.002455611123627577,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": -0.005813895110820866,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": -0.02772582841826088,
+            "control_C3_p95": 0.004894342840731092,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.736434175058589,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -5.174988526394995,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -5.188960640209751,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -5.165080327513795,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -5.075282568011664,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.739951114496574,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -4.49828220387993,
+            "control_C3_p95": -4.925317627721625,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [
+          "E3:C1-word",
+          "E3:C2:G1",
+          "E3:C2:G2",
+          "E3:C2:G3",
+          "E3:C2:G4",
+          "E3:C2:G5",
+          "E3:C2:G6"
+        ],
+        "missing_controls": [],
+        "all_required_controls_pass": false,
+        "necessary_coherence_and_rank": false,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      }
+    },
+    "TRAP-F": {
+      "combined": {
+        "status": "V7.2_APPROVED_NEW_ATTEMPT_ONLY",
+        "verdict": "FAIL",
+        "shared_above99": [],
+        "shared_above998": [],
+        "original_verdict": "PARTIAL",
+        "role_verdict": "FAIL",
+        "admission_active": true
+      },
+      "original": {
+        "verdict": "PARTIAL",
+        "K_bits": 2319.8830556101548,
+        "coherence_bits": -2507.292496951066,
+        "above_99": [
+          "E1"
+        ],
+        "above_998": [
+          "E1"
+        ],
+        "metrics": {
+          "E1": {
+            "value": 0.4671814671814672,
+            "C3_median": 0.44787644787644787,
+            "mc_p": 0.000999000999000999,
+            "gain_bits": 0.2750644247527019
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": -0.00585506054056717,
+            "C3_median": -0.02157553821500313,
+            "mc_p": 0.023976023976023976,
+            "gain_bits": 22.731810717234403
+          },
+          "E4": {
+            "value": -4.514881497199107,
+            "C3_median": -4.369365372383824,
+            "mc_p": 0.994005994005994,
+            "gain_bits": -210.41631648289822
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.23166023166023167,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.0020833333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.004166666666666667,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.008333333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.0,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.2641509433962264,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.12708333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.0008772637757381574,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.0004519500188200354,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.0006346732955844203,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.0018435301449386543,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.0005290082258841977,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": -0.023094916459831083,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": -0.006001674335177398,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.682044429168839,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.931184111358411,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.943096515183977,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.931415022064011,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.874843976883643,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.620358005338287,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.802476901832444,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [
+          "E3:C1-word",
+          "E3:C2:G1",
+          "E3:C2:G2",
+          "E3:C2:G3",
+          "E3:C2:G4"
+        ],
+        "missing_controls": [],
+        "all_required_controls_pass": false,
+        "necessary_coherence_and_rank": false,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      },
+      "role": {
+        "verdict": "FAIL",
+        "K_bits": 2319.8830556101548,
+        "coherence_bits": -2373.00731471383,
+        "above_99": [],
+        "above_998": [],
+        "metrics": {
+          "E1": {
+            "value": 0.4671814671814672,
+            "C3_median": 0.4517374517374517,
+            "mc_p": 0.04895104895104895,
+            "gain_bits": 0.17529422561019725
+          },
+          "E2": {
+            "status": "NOT_ESTIMABLE"
+          },
+          "E3": {
+            "value": -0.00585506054056717,
+            "C3_median": -0.01904494160105319,
+            "mc_p": 0.16983016983016982,
+            "gain_bits": 19.072568013462785
+          },
+          "E4": {
+            "value": -4.514881497199107,
+            "C3_median": -4.4648316207518395,
+            "mc_p": 0.7572427572427572,
+            "gain_bits": -72.3721213427484
+          },
+          "E5": {
+            "status": "NOT_ESTIMABLE"
+          }
+        },
+        "matched_controls": {
+          "E1:C1-glyph": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.2625482625482625,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G1": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.03333333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G2": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.04583333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G3": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.04583333333333333,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G4": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.0125,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G5": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.2861635220125786,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E1:C2:G6": {
+            "real_value": 0.4671814671814672,
+            "control_C3_p95": 0.1625,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C1-word": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.022663871994809792,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G1": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.00865851351459579,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G2": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.005837285372747303,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G3": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.007874340885575926,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G4": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.002804624187277227,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E3:C2:G5": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": -0.012349537226468144,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E3:C2:G6": {
+            "real_value": -0.00585506054056717,
+            "control_C3_p95": 0.0010927470139350248,
+            "exceeds": false,
+            "keys": 1000
+          },
+          "E4:C1-glyph": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.809493161804336,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G1": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -5.183904230829321,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G2": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -5.179088558413699,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G3": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -5.178426122452896,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G4": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -5.075831439901087,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G5": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.692991783601111,
+            "exceeds": true,
+            "keys": 1000
+          },
+          "E4:C2:G6": {
+            "real_value": -4.514881497199107,
+            "control_C3_p95": -4.86764459909315,
+            "exceeds": true,
+            "keys": 1000
+          }
+        },
+        "failed_controls": [
+          "E3:C1-word",
+          "E3:C2:G1",
+          "E3:C2:G2",
+          "E3:C2:G3",
+          "E3:C2:G4",
+          "E3:C2:G6"
+        ],
+        "missing_controls": [],
+        "all_required_controls_pass": false,
+        "necessary_coherence_and_rank": false,
+        "applicability": "nonzero supported evaluations; E3/E4 always required",
+        "complete_evaluation": true
+      }
+    }
+  },
+  "negative": {
+    "original": {
+      "n": 200,
+      "tally": {
+        "FAIL": 200
+      },
+      "PASS_rate": 0.0,
+      "notPASS_rate": 1.0,
+      "CP95_upper": 0.014867039231272056,
+      "gate": true
+    },
+    "role": {
+      "n": 200,
+      "tally": {
+        "FAIL": 200
+      },
+      "PASS_rate": 0.0,
+      "notPASS_rate": 1.0,
+      "CP95_upper": 0.014867039231272056,
+      "gate": true
+    }
+  },
+  "scope": "fixed known Latin/context key; native-readable actual H/F overfittrap;6v5mechanism outputs; no claim of semantic reading or qualification of every source/tokenizer",
+  "old_attempts_unchanged": true,
+  "no_vault_execution": true,
+  "seconds": 1098.1411180496216
+}

@@ -1,0 +1,274 @@
+{
+  "arm": "tanakh",
+  "scorer_gates": {
+    "MATH": true,
+    "CORRUPTION": true,
+    "ORDER": false,
+    "NULL": false
+  },
+  "SCORER": "FAIL",
+  "DECODER": "FAIL",
+  "OBJECTIVE": "PASS",
+  "SEARCH": "FAIL",
+  "FRESH_C17": "UNAVAILABLE",
+  "full_qualification": false,
+  "ZL": "CLOSED",
+  "actual_C11": "CLOSED",
+  "math": {
+    "models": [
+      {
+        "model": "word",
+        "contexts": 100,
+        "ctx_exactly_outgoing": true,
+        "v2_nonterminal_counter_identity": true,
+        "observed_events_checked": 215528,
+        "max_v2_nonterminal_log_delta": 0.0,
+        "max_normalization_error": 1.1102230246251565e-16,
+        "min_probability": 1.983057032391138e-06,
+        "max_probability": 0.5118328333933059,
+        "passed": true
+      },
+      {
+        "model": "alphagram",
+        "contexts": 100,
+        "ctx_exactly_outgoing": true,
+        "v2_nonterminal_counter_identity": true,
+        "observed_events_checked": 213876,
+        "max_v2_nonterminal_log_delta": 0.0,
+        "max_normalization_error": 1.1102230246251565e-16,
+        "min_probability": 1.927531720887997e-06,
+        "max_probability": 0.5255014438007225,
+        "passed": true
+      }
+    ],
+    "exhaustive_Viterbi": true,
+    "traversal_conservation": true,
+    "passed": true
+  },
+  "corruption": {
+    "n": 320,
+    "original_beats_quarter": 318,
+    "original_beats_all": 320,
+    "UNKNOWN_top3": 0,
+    "UNKNOWN_docwins": 0,
+    "prefixes": {
+      "1_n": 320,
+      "1_beats_UNKNOWN": 252,
+      "2_n": 320,
+      "2_beats_UNKNOWN": 301,
+      "3_n": 320,
+      "3_beats_UNKNOWN": 314
+    }
+  },
+  "ordering": {
+    "wins": 26,
+    "losses": 13,
+    "ties": 1,
+    "half_tie_wins": 26.5,
+    "n": 40,
+    "exact_sign_tail": 0.026625957048963755,
+    "interval": [
+      0.5075689968810977,
+      0.7889539827297842
+    ],
+    "within_word_equal": true
+  },
+  "null_operating_point": [
+    {
+      "family": "word_shuffle",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 2,
+      "n": 40,
+      "false_positive_interval": [
+        0.013820667386148344,
+        0.16503877369140962
+      ],
+      "AUC": 0.6015625,
+      "passed": false
+    },
+    {
+      "family": "wrong_key",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 1.0,
+      "passed": false
+    },
+    {
+      "family": "quarter_UNKNOWN",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 2,
+      "n": 40,
+      "false_positive_interval": [
+        0.013820667386148344,
+        0.16503877369140962
+      ],
+      "AUC": 0.666875,
+      "passed": false
+    },
+    {
+      "family": "all_UNKNOWN",
+      "threshold": -4.267699477771402,
+      "positive_exceed": 2,
+      "positive_n": 40,
+      "false_positive": 0,
+      "n": 40,
+      "false_positive_interval": [
+        0.0,
+        0.08762160119728664
+      ],
+      "AUC": 1.0,
+      "passed": false
+    }
+  ],
+  "decoder": {
+    "IV_accuracy": 0.8561314791403287,
+    "all_token_accuracy": 0.7750057221332113,
+    "IV_tokens": 3955,
+    "all_tokens": 4369,
+    "within_word_equal": true,
+    "passed": false
+  },
+  "cipher_cases": [
+    {
+      "case": 0,
+      "document": "V3-tanakh-040",
+      "alphagram_recovery": 0.4496124031007752,
+      "character_recovery": 0.7928436911487758,
+      "tokens": 129,
+      "true_key_objective": -4.231005783688202,
+      "fitted_key_objective": -5.382916613226417,
+      "true_minus_fit": 1.151910829538215,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.275448765184466,
+        "objective": -5.382916613226417,
+        "rounds": 6,
+        "evaluations": 2220,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 195
+      }
+    },
+    {
+      "case": 1,
+      "document": "V3-tanakh-041",
+      "alphagram_recovery": 0.44166666666666665,
+      "character_recovery": 0.7820224719101123,
+      "tokens": 120,
+      "true_key_objective": -4.349320128599565,
+      "fitted_key_objective": -5.304279995782685,
+      "true_minus_fit": 0.9549598671831196,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.27615046899401,
+        "objective": -5.304279995782685,
+        "rounds": 5,
+        "evaluations": 1560,
+        "alphabet": 21,
+        "dummy_targets": 0,
+        "constraints": 198
+      }
+    },
+    {
+      "case": 2,
+      "document": "V3-tanakh-042",
+      "alphagram_recovery": 0.45263157894736844,
+      "character_recovery": 0.779891304347826,
+      "tokens": 95,
+      "true_key_objective": -4.89105191140622,
+      "fitted_key_objective": -5.444864644166151,
+      "true_minus_fit": 0.5538127327599307,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.376365497083778,
+        "objective": -5.444864644166151,
+        "rounds": 6,
+        "evaluations": 2286,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 200
+      }
+    },
+    {
+      "case": 3,
+      "document": "V3-tanakh-043",
+      "alphagram_recovery": 0.6831683168316832,
+      "character_recovery": 0.8958837772397095,
+      "tokens": 101,
+      "true_key_objective": -4.418441221145716,
+      "fitted_key_objective": -4.970884274905598,
+      "true_minus_fit": 0.5524430537598821,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -5.86348380070285,
+        "objective": -4.970884274905598,
+        "rounds": 4,
+        "evaluations": 939,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 191
+      }
+    },
+    {
+      "case": 4,
+      "document": "V3-tanakh-044",
+      "alphagram_recovery": 0.9758064516129032,
+      "character_recovery": 0.9935064935064936,
+      "tokens": 124,
+      "true_key_objective": -3.721397860037077,
+      "fitted_key_objective": -3.8236550267241816,
+      "true_minus_fit": 0.10225716668710438,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.256583605998001,
+        "objective": -3.8236550267241816,
+        "rounds": 3,
+        "evaluations": 1082,
+        "alphabet": 21,
+        "dummy_targets": 0,
+        "constraints": 205
+      }
+    },
+    {
+      "case": 5,
+      "document": "V3-tanakh-045",
+      "alphagram_recovery": 0.23529411764705882,
+      "character_recovery": 0.6723716381418093,
+      "tokens": 102,
+      "true_key_objective": -4.593790172758149,
+      "fitted_key_objective": -5.733413305314947,
+      "true_minus_fit": 1.1396231325567978,
+      "wrong_keys_lower": 100,
+      "wrong_keys": 100,
+      "fit": {
+        "initial_objective": -6.300073867761825,
+        "objective": -5.733413305314947,
+        "rounds": 6,
+        "evaluations": 2030,
+        "alphabet": 22,
+        "dummy_targets": 0,
+        "constraints": 202
+      }
+    }
+  ],
+  "search_median": 0.4511219910240718,
+  "search_minimum": 0.23529411764705882,
+  "external_diagnostic_documents": 80,
+  "registration_sha256": "e0a2f90a35c4b57381fd1ef6ce7987adc79b294c9a7ec58bb0d91fd27e1f1db6"
+}

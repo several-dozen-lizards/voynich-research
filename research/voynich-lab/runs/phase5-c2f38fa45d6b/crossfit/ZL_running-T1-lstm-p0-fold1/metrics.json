@@ -1,0 +1,64 @@
+{
+  "corpus": "ZL_running",
+  "tokenization": "T1",
+  "architecture": "lstm",
+  "with_position": false,
+  "seed": 1729,
+  "parameter_count": 3819294,
+  "validation_bpt": 2.027829647064209,
+  "test_bpt": 2.0311033725738525,
+  "test_tokens": 42751,
+  "test_unknown_rate": 0.0,
+  "validation_bpc_with_escape": 2.432181208961612,
+  "test_bpc_with_escape": 2.4394353218402802,
+  "training_tokens_seen": 190304,
+  "effective_token_epochs": 1.2770966291531611,
+  "selected_step": 96,
+  "still_improving_at_budget": true,
+  "seconds": 2.2116135000032955,
+  "curve": [
+    {
+      "step": 24,
+      "train_batch_bpt": 3.864308795148301,
+      "validation_bpt": 3.8350889682769775
+    },
+    {
+      "step": 48,
+      "train_batch_bpt": 2.555144008094287,
+      "validation_bpt": 2.545722246170044
+    },
+    {
+      "step": 72,
+      "train_batch_bpt": 2.170525447357719,
+      "validation_bpt": 2.1445910930633545
+    },
+    {
+      "step": 96,
+      "train_batch_bpt": 2.079188901137498,
+      "validation_bpt": 2.027829647064209
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.9.1+cu128",
+  "run_dir": "runs\\phase5-c2f38fa45d6b\\crossfit\\ZL_running-T1-lstm-p0-fold1",
+  "currier_test": {
+    "A": {
+      "bits": 28429.75351955369,
+      "tokens": 12753,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 10781,
+      "bpt": 2.229260057990566,
+      "bpc_with_escape": 2.6370237936697607
+    },
+    "B": {
+      "bits": 56778.40589164663,
+      "tokens": 28680,
+      "unknown": 0,
+      "escape_bits": 0.0,
+      "characters": 24379,
+      "bpt": 1.9797212653991154,
+      "bpc_with_escape": 2.3289883051661935
+    }
+  }
+}

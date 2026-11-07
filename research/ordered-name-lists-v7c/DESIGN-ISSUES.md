@@ -1,0 +1,15 @@
+# Decisions required before real scoring
+
+The Part A implementation is an infrastructure prototype. No real key is admitted until all A8 qualification gates pass.
+
+- Joint declaration text is sealed, but alpha_V has not been authorized numerically. The forwarded0.05 proposal is recorded as a recommendation, not a human authorization. No global budget exists locally in this branch.
+- Historical source collection preceded the declaration; no Voynich transcription or sequence was opened. Preserve this timing exception.
+- C1's complete-variants requirement is not met: Pingree's apparatus was issued separately on microfiches. Three edited lists are draft material, not an admissible claim universe. Other candidate traditions remain individually pending.
+- List units must agree with physical registration. A7-,12-,28-,36- or72-item list cannot be stretched onto a30-degree ring by rotation alone. Define any cycle, subset, cross-sign index, omitted position or repeated name rule before fitting, and charge each alternative in every null. Do not treat mere count compatibility as an identification.
+- Picatrix IV.9 position22 is blank in both mansion and spirit sequences. Keep its slot. The spirit at position7 has invocation Siely and declarative Selehe; both are retained. No later list supplies a convenient repair.
+- Theophoric morphology needs source-level adjudication. String-final el/iel is a candidate substring, not proof of a theophoric suffix. Arabic article-like prefixes and assimilations must not become angelic morphemes by assumption.
+- C2 glyph segmentation, ending-family membership, pooling/weighting and tie rules require a frozen plan. The prepared runner uses upstream registered glyph-unit arrays, ordered pairs and ratios undefined when the baseline is zero. Its authored engineering tests are not manuscript looks. Other is a residual opener class and cannot be stripped as a literal marker.
+- F coverage may be absent for zodiac label loci according to the project routing notes. Check a coverage manifest without substituting U/V for F. Missing F makes the both-reading gate NOT ESTIMABLE, not a fail or a replicated result.
+- Full null search must refit the allowed key and rerun all list/variant/arm/rotation/direction/band-order searches where the observed search does. Fake-list generation must be frozen after real morphology is assembled. Nulls are not yet implemented or run.
+- The harness currently uses a fixed order2 add-half character LM; E1 is token-class lexicon matching, E2 explicitly supplied token relations, E5 supplied sequence/sum checks. Real v6 multi-token label spans and object/pair admission need an adapter and dedicated qualification. E3/E4 return NOT ESTIMABLE if any token is undecodable; unknowns cannot improve the score by deletion.
+- Positive C2 generator controls in the first engineering qualification are explicitly a shuffled-text surrogate, not v5/v6 generator qualification. Actual manuscript flexible-key optimization has not run. No real-key result may be promoted from these fixtures.

@@ -1,0 +1,330 @@
+{
+  "arm": "medieval",
+  "gates": {
+    "G1": false,
+    "G2": true,
+    "G3": false,
+    "G4": false,
+    "G5": false
+  },
+  "details": {
+    "mechanics": {
+      "contexts": 100,
+      "max_normalization_error": 0.2003679166055694,
+      "min_probability": 7.686542816783347e-07,
+      "max_probability": 0.5476738581321587,
+      "UNKNOWN_count": 1,
+      "OOV_canonical_equal": true,
+      "one_word_rank_excludes_EOS": true,
+      "exhaustive_Viterbi": true,
+      "slot_conservation": true,
+      "passed": false
+    },
+    "G2": {
+      "confirmation_lines": 320,
+      "original_beats_quarter": 319,
+      "original_beats_all": 320,
+      "IV_accuracy": 0.9117688712646934,
+      "all_token_accuracy": 0.8627713749664969,
+      "IV_tokens": 7061,
+      "all_tokens": 7462,
+      "all_UNKNOWN_envelope_selected": 0,
+      "all_UNKNOWN_document_wins": 0,
+      "prefix_audit": {
+        "1_n": 320,
+        "1_positive_beats_UNKNOWN": 257,
+        "2_n": 320,
+        "2_positive_beats_UNKNOWN": 307,
+        "3_n": 320,
+        "3_positive_beats_UNKNOWN": 318
+      }
+    },
+    "G3": {
+      "paired_document_wins": 31.0,
+      "n": 40,
+      "within_word_invariance": true,
+      "sign_tail": 0.00033977412749663927,
+      "win_interval": [
+        0.6249690325768998,
+        0.8768390867645927
+      ]
+    },
+    "G4": [
+      {
+        "version": "clean",
+        "family": "C1",
+        "size_mismatch": false,
+        "threshold": -4.944767996563615,
+        "calibration_thresholds": {
+          "C1": -7.246652097199312,
+          "C9": -7.7671658163106185,
+          "C17": -4.944767996563615
+        },
+        "positive_exceed": 1,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 1.0,
+        "passed": false
+      },
+      {
+        "version": "clean",
+        "family": "C9",
+        "size_mismatch": false,
+        "threshold": -4.944767996563615,
+        "calibration_thresholds": {
+          "C1": -7.246652097199312,
+          "C9": -7.7671658163106185,
+          "C17": -4.944767996563615
+        },
+        "positive_exceed": 1,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 1.0,
+        "passed": false
+      },
+      {
+        "version": "clean",
+        "family": "C17",
+        "size_mismatch": true,
+        "threshold": -4.944767996563615,
+        "calibration_thresholds": {
+          "C1": -7.246652097199312,
+          "C9": -7.7671658163106185,
+          "C17": -4.944767996563615
+        },
+        "positive_exceed": 1,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ],
+        "false_positive": 0,
+        "null_n": 19,
+        "false_positive_interval": [
+          0.0,
+          0.16817922405261626
+        ],
+        "AUC": 0.9631578947368421,
+        "passed": false
+      },
+      {
+        "version": "noise",
+        "family": "C1",
+        "size_mismatch": false,
+        "threshold": -4.944767996563615,
+        "calibration_thresholds": {
+          "C1": -7.579865873066204,
+          "C9": -7.753063308461599,
+          "C17": -4.944767996563615
+        },
+        "positive_exceed": 1,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 1.0,
+        "passed": false
+      },
+      {
+        "version": "noise",
+        "family": "C9",
+        "size_mismatch": false,
+        "threshold": -4.944767996563615,
+        "calibration_thresholds": {
+          "C1": -7.579865873066204,
+          "C9": -7.753063308461599,
+          "C17": -4.944767996563615
+        },
+        "positive_exceed": 1,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ],
+        "false_positive": 0,
+        "null_n": 20,
+        "false_positive_interval": [
+          0.0,
+          0.16112515805281938
+        ],
+        "AUC": 1.0,
+        "passed": false
+      },
+      {
+        "version": "noise",
+        "family": "C17",
+        "size_mismatch": true,
+        "threshold": -4.944767996563615,
+        "calibration_thresholds": {
+          "C1": -7.579865873066204,
+          "C9": -7.753063308461599,
+          "C17": -4.944767996563615
+        },
+        "positive_exceed": 1,
+        "positive_n": 40,
+        "positive_interval": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ],
+        "false_positive": 0,
+        "null_n": 19,
+        "false_positive_interval": [
+          0.0,
+          0.16817922405261626
+        ],
+        "AUC": 0.968421052631579,
+        "passed": false
+      }
+    ],
+    "G5": [
+      {
+        "arm": "medieval",
+        "case": 0,
+        "document": "HEB-040",
+        "tokens": 186,
+        "alphagram_recovery": 0.478494623655914,
+        "character_recovery": 0.7943548387096774,
+        "true_key_objective": -4.333227684517598,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -7.067483494474973,
+          "objective": -5.793219719394017,
+          "rounds": 5,
+          "evaluations": 1400,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 204
+        }
+      },
+      {
+        "arm": "medieval",
+        "case": 1,
+        "document": "HEB-041",
+        "tokens": 171,
+        "alphagram_recovery": 0.8713450292397661,
+        "character_recovery": 0.9664634146341463,
+        "true_key_objective": -4.256592059305627,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.644086479686148,
+          "objective": -4.621216869581115,
+          "rounds": 4,
+          "evaluations": 1531,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 213
+        }
+      },
+      {
+        "arm": "medieval",
+        "case": 2,
+        "document": "HEB-042",
+        "tokens": 155,
+        "alphagram_recovery": 0.6645161290322581,
+        "character_recovery": 0.8685897435897436,
+        "true_key_objective": -4.39752551852023,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.668543150605661,
+          "objective": -5.189082980370709,
+          "rounds": 3,
+          "evaluations": 897,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 197
+        }
+      },
+      {
+        "arm": "medieval",
+        "case": 3,
+        "document": "HEB-043",
+        "tokens": 184,
+        "alphagram_recovery": 0.6467391304347826,
+        "character_recovery": 0.8849797023004059,
+        "true_key_objective": -4.325241751162732,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.6832122984190825,
+          "objective": -5.240797327450803,
+          "rounds": 6,
+          "evaluations": 1707,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 209
+        }
+      },
+      {
+        "arm": "medieval",
+        "case": 4,
+        "document": "HEB-044",
+        "tokens": 216,
+        "alphagram_recovery": 0.5185185185185185,
+        "character_recovery": 0.8441860465116279,
+        "true_key_objective": -4.6310371515647475,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.983597093208879,
+          "objective": -5.61103450287561,
+          "rounds": 5,
+          "evaluations": 1713,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 203
+        }
+      },
+      {
+        "arm": "medieval",
+        "case": 5,
+        "document": "HEB-045",
+        "tokens": 204,
+        "alphagram_recovery": 0.6225490196078431,
+        "character_recovery": 0.8788968824940048,
+        "true_key_objective": -4.659969566238578,
+        "wrong_keys_lower": 100,
+        "wrong_keys": 100,
+        "fit": {
+          "initial_objective": -6.729975856480651,
+          "objective": -5.619263453048676,
+          "rounds": 4,
+          "evaluations": 1309,
+          "alphabet": 22,
+          "dummy_targets": 0,
+          "constraints": 198
+        }
+      }
+    ]
+  },
+  "passed": false,
+  "ZL": "CLOSED",
+  "registration_sha256": "addb03bd64fc563c11fd24277e607c5f04b6cf3f9c61044a3363feb5061434e5"
+}

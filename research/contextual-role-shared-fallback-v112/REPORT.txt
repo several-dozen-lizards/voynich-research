@@ -1,0 +1,103 @@
+Positional-first shared-word fallback v112 — 25 October 2026
+
+ANSWER
+The fixed fallback preserves additive sharing's decision coverage, but not most of its recovery gain, and it does not demonstrate the requested no-worse confidence quality relative to the repaired baseline. It is a partial tradeoff, not a full solution. No threshold, mixture, calibration or feature rule was changed after viewing these outcomes.
+
+PRIMARY RESULTS (FOUR PREDECLARED ADEQUATELY SUPPORTED PANELS)
+Equal-panel mean balanced correct-credit (unresolved ties receive0.5):
+- Repaired v109 baseline72.52%.
+- Additive v111 sharing76.34%.
+- Positional-first fallback73.49%.
+Fallback gains0.96percentage points over baseline and retains25.25% of additive sharing's3.82-point gain. It loses2.86points versus additive. The descriptive paired-block95% interval is[-1.58,+3.65]points versus baseline and[-5.14,-0.76]points versus additive. Full additive recovery retention fails the literal prespecified comparison. These intervals are conditional, exposed-data diagnostics, not independent confirmation.
+
+Strict balanced recall, with abstentions counted as misses: baseline66.34%, additive73.74%, fallback70.89%. Fallback gains4.54points over baseline (descriptive95%[+1.44,+7.71]) but loses2.86points versus additive.
+
+Pooled decision coverage stays at additive's616/648=95.06%, compared with baseline577/648=89.04%. Equal-panel mean coverage is94.59% for additive/fallback versus87.38% baseline. Every case has the same recognized-support status under additive and fallback, and in this run every decision/abstention coverage status also matches. Coverage equality was checked, not assumed from support alone.
+
+CONFIDENCE QUALITY
+Supported-panel mean balanced log loss (nats, lower is better): baseline.512097, additive.584608, fallback.526528. Fallback improves by.058080 versus additive (descriptive95%[-.096156,-.022122]) but remains.014430 worse than baseline (95%[-.007405,+.037883]).
+Two-class Brier: baseline.340379, additive.352914, fallback.347113. Fallback improves by.005801 versus additive but remains.006734 worse than baseline; both associated intervals include zero. These are proper-score outcomes, not a formal calibration test or proof of statistical worsening. They do not establish noninferiority to baseline.
+
+The literal observed goals were: recovery gain over baseline TRUE; all additive recovery retained FALSE; all additive decision coverage retained TRUE; log loss no worse than baseline FALSE; Brier no worse than baseline FALSE. No tolerance or alternative success criterion was selected to rescue the result.
+
+WHAT WAS TESTED
+For each original context-word position, use i:surface when that feature is present in the pooled TRAINING vocabulary. If absent globally and the surface is a real word with supported W:surface identity, replace that slot's feature with W:surface. Otherwise leave its unsupported positional feature neutral. A feature missing in only one role is still globally supported and cannot trigger fallback. Test gold labels never determine which identity is activated.
+Each occurrence uses four component slots plus the original two pair features. A component occurrence never contributes BOTH its positional and pooled identity. Repeated words in different slots remain distinct occurrences. Boundary markers never receive shared fallback. Original pair-order features, including singletons, remain unchanged. The slot ledger preserves original offsets and the choice of evidence source. For a missing positional feature, the shared contribution pools its identity; its original offset remains metadata, not invented positional training evidence.
+
+FIXED MODELS AND ATTRIBUTION CONTROL
+The exact v109 neutral-unknown score function, priors, smoothing formula and1e-12 abstention tolerance are imported unchanged. Actual baseline scores reproduce v109, additive scores reproduce v111. Fallback and local-only controls use the exact same ten-event shared-model counts, vocabulary and denominators as additive; no selective model refit was performed. Baseline uses the original six-event parameterization.
+The local-only control activates only the original six features under that ten-event shared model. Its primary-panel recovery and decisions match baseline; mean log loss is.512491, very close to baseline.512097. Fallback is.014036 worse in log loss than this local-only control. Thus changing the shared-model normalizers alone does not account for the result; the fallback contributions themselves materially change outcomes. Both comparator and primary-score differences are retained.
+
+GAIN AND HARM ACCOUNTING
+Across the four supported panels, fallback uses shared evidence in261 cases /324 component-slot events.39 originally no-evidence cases receive new support and decisions:29correct,10wrong, exactly the same labels as additive sharing. These raw counts remain role-imbalanced in some panels and are not a substitute for balanced recovery.32 original abstentions remain.
+On the cases already decided by baseline,15 wrong decisions become correct while20 correct ones become wrong. Against additive,14 wrong decisions become correct but31 correct ones become wrong. The loss of recovery therefore occurs among previously supported cases, rather than through losing the newly available coverage. Availability of a positional feature is not evidence that its local estimate is always sufficient; this test used availability only and did not fit a reliability threshold.
+All eight panels retain their original support status. Caesar-cum and Cicero-cum improve expected recovery versus baseline; De-officiis-ut and Cicero-ut do not. The under-supported panels remain descriptive and include both gains and failures. No favorable work or role was selected as a replacement primary result.
+
+CONTROLS AND SCOPE
+All3,184 predeclared four-arm control trials completed:199 within-block context-column shuffles and199 within-block training-label shuffles per panel. Each trial refits the two original model forms on identical control training rows and compares all four scoring arms on identical test rows. All paired deltas and failures are retained. No primary panel's recovery gain over baseline clears the corrected descriptive shuffled-delta comparisons. The selected control seeds and trial counts were not changed.
+All48,000 declared paired whole-test-block bootstrap draws across three comparators are retained. Training-sample uncertainty and representation-selection uncertainty are not included. Existing v107 panels have been inspected across the preceding development experiments; this is not untouched evaluation. No independent-source transfer, automatic role discovery, semantic identification or Voynich scoring is claimed.
+
+ALL EIGHT COMPARISONS
+Commentarii belli Gallici|cum [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/local-only: 77.42 / 82.95 / 81.52 / 77.42%.
+  Strict balanced recall baseline/additive/fallback: 70.30 / 80.45 / 79.02%; coverage 84.62 / 94.23 / 94.23%.
+  Log loss baseline/additive/fallback: 0.395985 / 0.411253 / 0.378137. Brier 0.262572 / 0.245877 / 0.247968.
+  Fallback used in 40 cases / 50 slots. Transitions versus baseline {"wrong_to_wrong":12,"correct_to_correct":72,"abstain_to_wrong":5,"abstain_to_correct":5,"abstain_to_abstain":6,"wrong_to_correct":4}; versus additive {"wrong_to_wrong":14,"correct_to_correct":79,"abstain_to_abstain":6,"wrong_to_correct":2,"correct_to_wrong":3}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":0.92,"additive":1,"local_only":0.8}; training_label_shuffle {"baseline":0.72,"additive":1,"local_only":0.56}.
+
+Commentarii belli Gallici|ut [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/local-only: 67.67 / 64.07 / 64.89 / 66.85%.
+  Strict balanced recall baseline/additive/fallback: 53.51 / 62.02 / 62.84%; coverage 68.35 / 93.67 / 93.67%.
+  Log loss baseline/additive/fallback: 0.530427 / 0.577730 / 0.535629. Brier 0.368474 / 0.415565 / 0.376012.
+  Fallback used in 39 cases / 44 slots. Transitions versus baseline {"abstain_to_correct":11,"abstain_to_abstain":5,"correct_to_correct":36,"wrong_to_wrong":14,"abstain_to_wrong":9,"correct_to_wrong":3,"wrong_to_correct":1}; versus additive {"correct_to_correct":47,"abstain_to_abstain":5,"wrong_to_wrong":26,"wrong_to_correct":1}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":1,"additive":1,"local_only":1}; training_label_shuffle {"baseline":1,"additive":1,"local_only":1}.
+
+De officiis|cum [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/local-only: 70.60 / 63.19 / 63.19 / 70.60%.
+  Strict balanced recall baseline/additive/fallback: 55.77 / 55.77 / 55.77%; coverage 70.37 / 85.19 / 85.19%.
+  Log loss baseline/additive/fallback: 0.565355 / 0.623911 / 0.570801. Brier 0.385247 / 0.421537 / 0.399668.
+  Fallback used in 13 cases / 15 slots. Transitions versus baseline {"wrong_to_wrong":4,"abstain_to_wrong":4,"correct_to_correct":15,"abstain_to_abstain":4}; versus additive {"wrong_to_wrong":8,"correct_to_correct":15,"abstain_to_abstain":4}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":1,"additive":1,"local_only":1}; training_label_shuffle {"baseline":1,"additive":1,"local_only":1}.
+
+De officiis|ut [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/local-only: 69.64 / 76.51 / 69.51 / 69.64%.
+  Strict balanced recall baseline/additive/fallback: 59.89 / 72.67 / 65.67%; coverage 82.14 / 92.86 / 92.86%.
+  Log loss baseline/additive/fallback: 0.556129 / 0.585115 / 0.575458. Brier 0.368813 / 0.350091 / 0.383825.
+  Fallback used in 24 cases / 28 slots. Transitions versus baseline {"correct_to_correct":46,"abstain_to_wrong":2,"wrong_to_wrong":18,"correct_to_wrong":4,"abstain_to_correct":7,"abstain_to_abstain":6,"wrong_to_correct":1}; versus additive {"correct_to_correct":54,"wrong_to_wrong":18,"correct_to_wrong":6,"abstain_to_abstain":6}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":1,"additive":1,"local_only":1}; training_label_shuffle {"baseline":1,"additive":1,"local_only":1}.
+
+Epistulae ad Atticum|cum [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/local-only: 72.85 / 74.72 / 75.25 / 72.85%.
+  Strict balanced recall baseline/additive/fallback: 68.74 / 72.53 / 73.07%; coverage 91.76 / 95.60 / 95.60%.
+  Log loss baseline/additive/fallback: 0.562460 / 0.666765 / 0.563678. Brier 0.369131 / 0.385794 / 0.357433.
+  Fallback used in 77 cases / 97 slots. Transitions versus baseline {"correct_to_correct":122,"abstain_to_wrong":1,"wrong_to_wrong":37,"abstain_to_abstain":8,"abstain_to_correct":6,"wrong_to_correct":5,"correct_to_wrong":3}; versus additive {"correct_to_correct":127,"wrong_to_wrong":36,"abstain_to_abstain":8,"wrong_to_correct":6,"correct_to_wrong":5}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":0.52,"additive":1,"local_only":0.64}; training_label_shuffle {"baseline":0.44,"additive":1,"local_only":0.44}.
+
+Epistulae ad Atticum|ut [adequately supported primary panel]
+  Balanced correct-credit baseline/additive/fallback/local-only: 70.17 / 71.19 / 67.68 / 70.17%.
+  Strict balanced recall baseline/additive/fallback: 66.44 / 69.31 / 65.79%; coverage 91.01 / 95.68 / 95.68%.
+  Log loss baseline/additive/fallback: 0.533815 / 0.675297 / 0.588838. Brier 0.361001 / 0.429893 / 0.399225.
+  Fallback used in 120 cases / 149 slots. Transitions versus baseline {"abstain_to_abstain":12,"correct_to_correct":171,"wrong_to_wrong":64,"abstain_to_wrong":2,"abstain_to_correct":11,"correct_to_wrong":13,"wrong_to_correct":5}; versus additive {"abstain_to_abstain":12,"correct_to_correct":181,"wrong_to_wrong":62,"wrong_to_correct":6,"correct_to_wrong":17}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":1,"additive":1,"local_only":1}; training_label_shuffle {"baseline":1,"additive":1,"local_only":1}.
+
+Opus agriculturae|cum [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/local-only: 72.92 / 72.22 / 68.06 / 72.92%.
+  Strict balanced recall baseline/additive/fallback: 56.94 / 65.28 / 61.11%; coverage 66.67 / 85.71 / 85.71%.
+  Log loss baseline/additive/fallback: 0.580888 / 0.572360 / 0.529256. Brier 0.402368 / 0.389319 / 0.365154.
+  Fallback used in 8 cases / 8 slots. Transitions versus baseline {"abstain_to_wrong":2,"correct_to_wrong":1,"correct_to_correct":11,"abstain_to_abstain":3,"wrong_to_wrong":2,"abstain_to_correct":2}; versus additive {"wrong_to_wrong":4,"correct_to_wrong":1,"correct_to_correct":13,"abstain_to_abstain":3}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":1,"additive":1,"local_only":1}; training_label_shuffle {"baseline":1,"additive":1,"local_only":1}.
+
+Opus agriculturae|ut [under-supported; descriptive]
+  Balanced correct-credit baseline/additive/fallback/local-only: 67.46 / 79.96 / 81.68 / 67.46%.
+  Strict balanced recall baseline/additive/fallback: 38.36 / 65.09 / 66.81%; coverage 54.55 / 66.67 / 66.67%.
+  Log loss baseline/additive/fallback: 0.583048 / 0.464639 / 0.508157. Brier 0.397796 / 0.304842 / 0.329910.
+  Fallback used in 5 cases / 5 slots. Transitions versus baseline {"wrong_to_wrong":2,"abstain_to_correct":4,"correct_to_correct":16,"abstain_to_abstain":11}; versus additive {"wrong_to_wrong":2,"correct_to_correct":19,"abstain_to_abstain":11,"wrong_to_correct":1}.
+  Corrected descriptive shuffled delta p: context_shuffle {"baseline":0.04,"additive":1,"local_only":0.04}; training_label_shuffle {"baseline":0.48,"additive":1,"local_only":0.48}.
+
+DECISION
+Retain v109 as the reference baseline. Preserve v111 as the observed higher-recovery/higher-coverage candidate with worse probability scores, and v112 as a lower-confidence-cost tradeoff that fails to retain most of v111's recovery gain. Do not adopt v112 as a full resolution of the objective. No fitting or threshold search was continued after this result.
+The question left open is how to combine local and shared evidence according to reliability without double-counting or relying solely on global presence. That needs a separately defined development design and an independently selected, sealed confirmation source before selecting another representation. These results do not qualify a general interpolation or calibration scheme. Other branches' sealed reserves remain untouched.
+
+VERIFICATION AND ARTIFACTS
+Eight pre-score engineering fixtures passed. An independent JavaScript verifier checked prior hashes; all16 model parameter sets against v111;3,232 four-arm score records; exact v109/v111 reference predictions; every fallback gate and slot ledger; absence of within-slot double-counting; original pair retention; support/abstention consistency; confidence metrics;3,184 control banks/ranks;48,000 bootstrap draws and intervals; and the25.25% gain-retention calculation.12verification groups passed. Scientific failures are not overridden by those engineering checks.
+PROTOCOL.json and run.py were frozen before scoring. RESULTS.json, PREDICTIONS.json, MODELS.json, BOOTSTRAP-DRAWS.json, CONTROL-TRIALS.jsonl, FIXTURES.json and VERIFICATION.json preserve every outcome. verify.mjs checks saved artifacts without fitting new models. Earlier code, source, freezes, reports and scores remain unchanged.

@@ -1,0 +1,18 @@
+from pathlib import Path
+import json,html
+R=Path(__file__).resolve().parent;s=json.loads((R/'SUMMARY.json').read_text());sh=json.loads((R/'SHAPLEY.json').read_text())
+rows=''.join('<tr>'+''.join('<td>'+html.escape(str(v))+'</td>' for v in [r['label'],round(r['meanW'],2),round(r['medianW'],2),r['admitted'],round(r['mean_eligible'],1)])+'</tr>' for r in s)
+doc='''<!doctype html><meta charset="utf-8"><title>Sparse pipeline support diagnosis</title><style>body{font:17px/1.55 system-ui;max-width:1100px;margin:40px auto;padding:20px;background:#f8faf7;color:#173c30}td,th{padding:8px;border-bottom:1px solid #c5d4c9;text-align:left}table{border-collapse:collapse}</style><h1>Which perturbations remove support?</h1>
+<p>Frozen paired support-only diagnostic:100fresh synthetic layouts,16factorial variants plus2physical-deletion sensitivities each. All1,800records retained. No qok outcomes generated or scored, no manuscript read, no H/F pooling.</p>
+<p>L varies total length by appending tokens without moving origins. S shifts origins while preserving total length. M replaces20%of target words with ordinary dar, preserving coordinates. U marks5%of token identities unknown without dropping slots. Masks and random choices are shared across variants. M reproduces the earlier eligible-word loss; it is not physical deletion. Actual deletions are shown separately because they also change length and positions.</p>
+<table><tr><th>Factors</th><th>Mean W</th><th>Median W</th><th>Admitted/100</th><th>Mean eligible origins</th></tr>'''+rows+'''</table>
+<p>The baseline has W≈166.286, so even a small support loss can cross the unchanged160gate. Admission counts alone cannot rank causes; compare W losses and retained eligible origins. Full distributions are in SUMMARY.json.</p>
+<h2>Interaction-aware allocation</h2><p>Average each factor's support loss across all24possible introduction orders (Shapley allocation). This partitions the combined loss exactly, without counting overlapping losses twice:</p><pre>'''+html.escape(json.dumps(sh['mean'],indent=2))+'''</pre>
+<p>This is a descriptive allocation for the chosen synthetic perturbation strengths, not a causal percentage for Voynich. Isolated losses need not sum to the combined loss. Restoring a factor in a heavily damaged background can produce less gain than removing it from a clean baseline costs.</p>
+<h2>Handling checks and limits</h2><p>Every raw synthetic line round-trips through the frozen atlas cleaning policy. Independent eligibility agrees, baseline support is checked, shift-only lengths stay fixed, and unknown token identities retain slots. Different boundary histories remain literal. L/S use controlled padding rather than the previous mixed front/back-padding recipe so their effects can be separated.</p>
+<p>Underlying layouts have four repeatedly occurring target bodies and designed availability patterns. Perturbations are authored stress scenarios, not calibrated historical distributions. No association test or power result follows from support loss alone. Real H/F alignment and manuscript scoring remain untouched.</p>
+<p><a href="PROTOCOL.json">Frozen design</a> · <a href="FREEZE.json">Hashes</a> · <a href="SUMMARY.json">All cell summaries</a> · <a href="TRIALS.json">Every paired variant</a> · <a href="SHAPLEY.json">Interaction allocation</a> · <a href="VERIFICATION.json">Verification</a></p>'''
+(R/'report.html').write_text(doc,encoding='utf-8')
+assert all((R/f).exists() for f in ['PROTOCOL.json','FREEZE.json','SUMMARY.json','TRIALS.json','SHAPLEY.json','VERIFICATION.json'])
+for r in s:print(r['label'],round(r['meanW'],3),r['admitted'])
+print(sh['mean'])

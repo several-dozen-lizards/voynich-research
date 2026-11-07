@@ -1,0 +1,80 @@
+{
+  "utc": "2026-10-26T03:24:12.604Z",
+  "version": "T3-positional-slot-v4-attempt1",
+  "status": "FROZEN BEFORE ANY POSITIONAL SOURCE OR FRESH MECHANISM SCORES",
+  "authority": "User requested positional-slot qualification withoutfixedanchorpairs,preservebothnegatives,H/Fcloseduntilqualificationpasses",
+  "known_exposure": [
+    "Exact-wordandclass-basedHnegativesandfullcriteriondiagnosesknown",
+    "OneLatin36-entryAblock,17/19split,incipits/gold/prioranchoredslotsknown",
+    "Earliermechanismbanksandfailuresknown;notfreshqualificationdata"
+  ],
+  "representation": {
+    "word_classes": "Unchanged52jointv8openercategory/endingfamilyclasses;CLASS-CODEBOOK.json",
+    "slots": "Eachfixedstart2..15,width1..3,entirespanend<=15:39candidates;noanchorsandnopositionoptimizationoutside39",
+    "candidate": "Exactstart,width,orderedtuplesofclassesasvariants",
+    "slot_opportunities": "Onefocalspanperparagraphiffullypresent/readable;allparagraphsremaininpresencedenominator;unknownsbarriers;firstwordexcluded;originalpositionsretained",
+    "outside_opportunities": "Allfullyreadablesame-widthspanstartsafterparagraphfirstEXCEPTtheexactfocalstart;overlapallowed;includesotherpositions2–15andlatertext",
+    "presence": "Paragraphfractionwhoseexactfocalslottupleisin frozenvariantset",
+    "coverage": "FractionofALLreadablefocalslottuplesinfrozenvariantset,notfractionofmatches",
+    "concentration": "(frozen-variantmatchesatfocal/readablefocalopportunities)/(frozen-variantmatchesatotherstarts/readableotheropportunities);infinityonlyifpositivefocalmatches,positiveoutsideopportunitiesandzerooutsidematches;nooutsideopportunities=notestimable"
+  },
+  "discovery": {
+    "minimum_folios": 8,
+    "variants": "Allobservedreadablefocalslotclasstuplesif<=16,elsetop16bycountdesc/JSONtuplelexasc;minimum2types;coverage>=.8",
+    "presence": 0.5,
+    "concentration": 2,
+    "recurrence": "Atleast2frozenvariants eachon>=2distinctfolios",
+    "selection": "highestpresence,highestconcentration,smallerwidth,earlierstart,lexvarianttuplelist;onebatch,noretuning",
+    "no_candidate": "Terminal;do not process confirmation for that panel"
+  },
+  "confirmation": {
+    "minimum_folios": 8,
+    "presence": 0.5,
+    "concentration": 1.5,
+    "frozen_coverage": 0.7,
+    "maximum_new_readable_focal_types": 4,
+    "recurrence": "Atleast2frozenvariants eachon>=2distinctfolios",
+    "transfer": "Exactstart,widthandclasstuplevariantsunchanged;norefit",
+    "stage": "Selectedcandidatewithfailedpredictionsisfullfailurewithpnull/noshuffles;structuralpassreceivesexactly10000shuffles",
+    "null": "Shuffleallnoninitialoriginalword/unknownslotswithinparagraph,firstwordfixed;recomputefocalslot,masks,outsideopportunities,typesandrecurrence",
+    "p": "literaljoint-passfraction;addonesensitivity;requireobservedpredictionsandp<.05",
+    "correction": "LatinHolm2acrossscribeswithinG2andG3;rawmechanismcellpluspairedscribeHolm2;inactiveinternalp1notmeasuredp"
+  },
+  "positive": {
+    "source": "Sameexposed36Circa1582Aentries;17/19hashsplit;fourunchangedG2/G3-EVAtransforms/maps",
+    "freeze": "Allfourpositionalcandidateshashedbeforeanypositionalconfirmationprocessing",
+    "gold": "CorrectedoldGOLD-AUDIT;>=80%ofmatchedfocalslotspanscontainquality/degree-valuegoldpositionANYWHEREINSIDEthespan,botharms;excludegradu/gra/principio/medio;goldnotusedselection",
+    "gate": "All4supportedstructural/permutation/goldpasses",
+    "permutation_seeds": "896600+family(G2:0/G3:100)+scribe1or2",
+    "source_independent": false,
+    "power_estimate": false
+  },
+  "controls": {
+    "families": [
+      "G5",
+      "G6"
+    ],
+    "geometries": "CopiedunchangedLatin17/19,s1H-discovery-derived54/43,s2H-discovery-derived12/8;noactualconfirmationtext/layout",
+    "trials_per_family_geometry": 200,
+    "total": 1200,
+    "execution": "OneisolatedPythonworkerpertrialserially;nativeG5Java-Xmx64m;no retriesorreplacementseeds",
+    "source": "PinnednativepublishedG5curveline,seedlineexcluded,fixedceil(originalslots/4)+2lines,unusedtailretained;nativesourceG6defaultstable/grille;shortagefail,nopadding/wrap",
+    "seeds": "892600000+family(G5:0/G6:1000000)+geometry(Latin:0/scribe1:10000/scribe2:20000)+trial0..199",
+    "pseudo_folio_prefix": "PS4:",
+    "permutation_seed": "generationseed+3000000",
+    "gate": "All6cellsvalid200trials,Wilson2sided95%upperfull-passproportion<=.05;bothpaired-either-scribeHolm2familiesalsoupper<=.05;anyinvalidblocks;intervalsnot simultaneous",
+    "complete_even_if_Latin_fails": true,
+    "scope": "Onlydefaults/fixedgeometries;nofrequency-matching/parametergrid"
+  },
+  "release": {
+    "all4Latin": true,
+    "all6mechanismgates": true,
+    "bothpairedgates": true,
+    "source_implementation_preservation_verification": true,
+    "manuscript": "NoH/Fdiscoveryorconfirmationscoreinqualification-onlyrun;confirmationCLOSEDthroughout",
+    "prior_results": "Bothnegatives,theirnullfreezes,allfailedbanks/checksunchanged",
+    "alpha_V": null,
+    "family_alpha": 0.05
+  },
+  "interpretation": "Exposure-informedrevision;focalvariantlearningcaninflateinsamplecoverage/rarity,soheldouttransfer,goldandfreshmechanismsareessential.Apassisfinitecontrolqualificationnotsemanticsorindependentpower."
+}

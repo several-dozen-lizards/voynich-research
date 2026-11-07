@@ -1,0 +1,35 @@
+{
+  "findings": [
+    {
+      "arm": "tanakh",
+      "legacy_hapax_mass": 0.07015794225531416,
+      "legacy_unigram_weight": 0.5249492854633439,
+      "legacy_unknown_word_probability": 0.0368293616565057,
+      "legacy_unseen_context_finite_event_mass": 0.524949285463344,
+      "legacy_mass_after_100_distinct_unseen_strings": 4.207885451113914,
+      "training_examples": 100,
+      "all_UNKNOWN_beats_training_example": 1,
+      "not_heldout_qualification": true
+    },
+    {
+      "arm": "medieval",
+      "legacy_hapax_mass": 0.03371413717603069,
+      "legacy_unigram_weight": 0.46129531071394053,
+      "legacy_unknown_word_probability": 0.015552173384069492,
+      "legacy_unseen_context_finite_event_mass": 0.46129531071394053,
+      "legacy_mass_after_100_distinct_unseen_strings": 2.0165126491208896,
+      "training_examples": 100,
+      "all_UNKNOWN_beats_training_example": 0,
+      "not_heldout_qualification": true
+    }
+  ],
+  "causes": [
+    "Hapax probability substituted for the published one-sentence UNKNOWN treatment.",
+    "Every unseen surface string gets full aggregate OOV mass rather than one canonical event.",
+    "Unseen histories are not canonicalized, and missing higher-order contexts lose conditional probability mass.",
+    "EOS is included as an extra denominator slot, subsidizing short unknown lines.",
+    "The same defective word score participates in key fitting, so re-ranking old decoded text alone is insufficient."
+  ],
+  "published_source": "https://aclanthology.org/C14-1218/ section 3",
+  "ZL_scored": false
+}

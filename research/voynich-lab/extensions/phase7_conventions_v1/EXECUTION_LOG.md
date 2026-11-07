@@ -1,0 +1,8 @@
+# Execution receipt
+
+1. User clarified order-agnostic primary physical tests; original-order assumptions were removed before registration. Explained the invariance of within-quire label shuffling for quire coherence; registered fixed-size quire-slot leaf and intact-bifolio block nulls instead.
+2. Retrieved published physical-collation sources through the web tool. Publisher bot challenge/ambiguous proposed orders were recorded, not bypassed or guessed. No email request was sent. CLI source fetch DNS failure did not alter inputs.
+3. Froze all code, full feature families, transforms, k1..12 likelihood selector, seed/fold map, physical map, control schedules/profiles/noise, gate criteria and secondary source registry before control generation/fitting. Inspected target identifiers/layout/metadata only; no target text features.
+4. Synthetic feature/orthonormal-PCA and constant-null fixtures passed. Generated/froze all140 controls/truth packages before model fitting. Ran all8,400 CV fits and140 selected full fits. All converged. No candidate, feature, threshold, model or gate changes followed outcomes.
+5. Qualification failed0/28 cells; known counts recovered0/140. Structural positive signals recovered80/80 with oracle and inferred labels. All saved likelihood selections independently verified. Guarded target runner rejects before target access. No manuscript k, stability, association, nesting or sequence result generated.
+6. Prior Phase7/C12 and C16 hold hashes unchanged. Report presentation/diagnostic annotations use saved results only. No method rescue, new sweep, translation claim or scheduled follow-up. Stop.

@@ -1,0 +1,40 @@
+{
+  "version": "T1-scan-audit-1",
+  "utc": "2026-10-26T01:56:02.029Z",
+  "authority": "Human requests freeze, causal audit, then smallest demonstrated repair and same-control rerun",
+  "prior_results_exposed": true,
+  "inputs": {
+    "t1-label-support-controls-2026-10-25/controls-v2.py": "c94d18e818ac4509812ac7c38659f9a49dc01c085a184f38c831c6b383c9e50f",
+    "t1-label-support-controls-2026-10-25/CONTROL-FREEZE.json": "0efbbea29843242568c84d44d2a86f00aa855c139f61270c52efa1f41b512d10",
+    "t1-label-support-controls-2026-10-25/CONTROL-TRIALS.json": "8de3084b96b00856f147fb3baca819f7454f1ddb288a890212104838ec63fc6a",
+    "t1-label-support-controls-2026-10-25/QUALIFICATION.json": "cbe6c1349a528db9bb63cbd01f53266e332907965d93bf317b844c12b6f3f75c",
+    "t1-label-support-controls-2026-10-25/SUPPORT-ROWS.json": "d6c50235cee0903e148a67d58079d24309131b30c3496d002447ad4f96d9a307",
+    "t1-label-support-controls-2026-10-25/LABEL-RESOLUTION-FREEZE.json": "47911a096cb9cbfb8e7c2f68f0547edf0606c844b085e4fbb6d23dd3bf5ade9b",
+    "t1-label-support-controls-2026-10-25/VERIFICATION.json": "6b7cdfa612749fd64b328c8cd9649866f10adf6901a323a67da9a6d98dda29fa",
+    "t1-label-support-controls-2026-10-25/DELIVERY-HASHES.json": "a9f5b2c4a63cdd934ddbdbfb2cae8f620dbc8b360f907a6837468770ba3d79d1",
+    "priority-continuation-2026-10-25/T1-freeze/methods.py": "b0e1bde4a66a6aea7261d7f3d2f25fbc3ff467b70bba1ae1a9722dbb5ed9a5f2"
+  },
+  "hypotheses": [
+    "A: acceleration, seed order, or multiplicity implementation error",
+    "B: covariance/rank/support changes under unrestricted line-label permutation create a mismatched reference distribution at this fixed design",
+    "C: wrap or original-position heterogeneity breaks exchangeability even if an iid null calibrates",
+    "D: sparse exposure creates estimation failures distinct from false flags"
+  ],
+  "diagnostics": [
+    "Use all existing 2000 synthetic result records for selection and aggregation; regenerate synthetic data with unchanged seeds only.",
+    "For each reading choose first complete flagged and first complete unflagged independent-null family, plus first complete flagged position-null family. Examine every class using all 10000 stored permutations: observed/permuted CMH ranks, residuals, support, stratum participation and p-values. Deterministic selection, no outcome-selected method tuning.",
+    "Compare analytic fixed-design iid mean/covariance (conditioning on actual exposures and fixed labels) with CMH covariance; quantify false signals in covariance-nullspace if any.",
+    "Compare ranks/information and synthetic p-value diagnostics across fixed labels versus permutation distribution; use exact reference engine checks.",
+    "Only after audit receipt freezes cause evidence, define minimal repair with explicit null/estimand and unchanged thresholds, labels, masks, original support gates and scenarios. Do not silently redefine nulls.",
+    "Repair rerun must use same 5 scenarios, 200 replicates each, H/F, original data seeds and at least10000 null draws; retain original results and paired summaries. New calibration requires same full-estimability, Wilson upper<=.05 and positive>=.80. No post-result further repair in this attempt."
+  ],
+  "non_goals": [
+    "No actual manuscript feature counts or prevalences",
+    "No scientific negative result from failed/undefined controls",
+    "No outcome join or vault access",
+    "No label/rater choices, support relaxation, bootstrap rescue or alpha_V spending"
+  ],
+  "decision": "Diagnostic only. A new method cannot release outcomes automatically.",
+  "outcome_join": false,
+  "vault": "CLOSED"
+}

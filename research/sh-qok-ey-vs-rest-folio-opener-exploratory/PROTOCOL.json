@@ -1,0 +1,37 @@
+{
+  "classification": "EXPLORATORY (E), retrospective posthoc matching refinement after raw ending-group contrasts were seen",
+  "utc": "2026-10-25T01:53:40.115855+00:00",
+  "context_map": {
+    "C1": "hand2 bath",
+    "C2": "hand2 botanical",
+    "C3": "hand2 Rosettes",
+    "C4": "hand3 starred",
+    "C5": "hand3 botanical",
+    "C6": "hand1 botanical",
+    "C7": "hand1 recipes"
+  },
+  "groups": {
+    "exposure": [
+      "ey"
+    ],
+    "reference": [
+      "edy",
+      "y",
+      "other"
+    ],
+    "excluded": [
+      "eey"
+    ]
+  },
+  "strata": "Within each context x reading x view: exact physical Folio identifier x literal opener sh/ch. Both ending groups must be present in that stratum; zero-overlap strata are retained with weight0. This matching is distinct from earlier sh/ch comparisons stratified by ending family.",
+  "estimand": "MH-style weighted next-qok rate difference ey minus pooled edy/y/other, percentage points. In stratum s, w=ne*nr/(ne+nr); sum[w*(a/ne-b/nr)]/sum(w). Same weights compute both matched rates. No matching on original reference-ending family, since ending group is the exposure. No exact-position or line matching.",
+  "supplementary": "Same ratio separately by opener (then strata are folios), complete per-folio/opener counts and rates; compare raw pooled context contrasts to previous saved values. Report retained/unmatched counts and coverage for each side. No support or power thresholds applied.",
+  "follower_views": "All eligible events, and available-only with followers starting sh/ch/cth/ckh/cph/cfh excluded under unchanged v3.1 rule. Eey remains excluded from both ending groups, using original longest-first labels.",
+  "limits": "All outcomes exposed; C1/C4 discovery, C3 known origin. H/F separate alternate readings. No p-values, confidence intervals, pass/fail, eligibility gates, qualification, fitting or causal/mechanistic claim. Matching controls recorded folio and opener composition only; sparse overlap and other confounding remain.",
+  "hashes": {
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-folio-opener-exploratory\\compare_matched.py": "d25a29371caccbff893902f849731eda784837cf20fabb4c3a91298cbeea3fe5",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-context-map-v3\\EVENTS.csv": "bde53db9b17b36f11f986628fadae6ed597c517af60e4d9057b9419bd511c85b",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-exploratory\\COMPARISONS.json": "be7dbc7942d9010f224e05254fbfb43e74ef4a95b51dde194a4a8f747a8379d5",
+    "C:\\Users\\lewis\\OneDrive\\Documents\\ChatGPT\\Voynich\\sh-qok-ey-vs-rest-exploratory\\PROTOCOL.json": "e82f13a88f338f43f93aaea8c3d9f0b21a4221a742fc04d074d6e10f22405379"
+  }
+}

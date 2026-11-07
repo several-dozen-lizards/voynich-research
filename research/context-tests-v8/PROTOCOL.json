@@ -1,0 +1,63 @@
+{
+  "version": "v8-source-freeze-1",
+  "utc": "2026-10-25T21:10:25.512Z",
+  "status": "SOURCE DESIGN FROZEN; IMPLEMENTATION DEFINITIONS REQUIRE PRE-OUTCOME RESOLUTION",
+  "source_sha256": "61d0faa598ca7837c0dea09537763554f52b301118ae1d00ca0306281836a756",
+  "tier": "RETROSPECTIVE IN TEXT; T1/T2 PROSPECTIVE IN IMAGE VARIABLE ONLY; T3 INTERNAL SPLIT.",
+  "phase_order": [
+    "freeze",
+    "outcome-blind support",
+    "controls at real support",
+    "outcomes"
+  ],
+  "readings": [
+    "H",
+    "F"
+  ],
+  "pooling": false,
+  "reserved_folios": [
+    "f72v1",
+    "f72v2",
+    "f73r",
+    "f73v"
+  ],
+  "T1": {
+    "join": "CLOSED",
+    "gate_multiclass": "v4.1 G6 full registered population",
+    "gate_PL": "v4.1 G2 full registered population",
+    "primary_permutations": 10000,
+    "scan_classes": 17,
+    "bootstrap_equivalence_log_margin": 0.25,
+    "minimum_folios": 8,
+    "minimum_slots_per_side": 30,
+    "maximum_folio_weight": 0.25
+  },
+  "T2": {
+    "join": "CLOSED",
+    "parts": [
+      "ROOT",
+      "STEM-LEAF",
+      "FLOWER",
+      "SEED-FRUIT"
+    ],
+    "ratings": "two different model families or a human; image and manual only; plain no-tools",
+    "minimum_quadratic_weighted_kappa": 0.6,
+    "permutations": 5000,
+    "nested_pipeline_required": true
+  },
+  "T3": {
+    "confirmation": "CLOSED",
+    "split": "SHA256(\"v8-T3:\" + folio) interpreted as a big-endian hexadecimal integer mod 2; 0 DISCOVERY, 1 CONFIRMATION",
+    "maximum_discovery_looks": 20,
+    "confirmation_shuffles": 10000,
+    "positive_control": "real Latin prose herbal, v5 G2/G3 plus EVA mapping; must recover complexion formula",
+    "generator_controls": [
+      "v5 G5",
+      "v5 G6"
+    ]
+  },
+  "control_trials_minimum": 200,
+  "null_gate": "upper Wilson 95 <= .05",
+  "positive_gate": "power >= .80",
+  "no_meanings_sounds_or_plant_ids": true
+}
