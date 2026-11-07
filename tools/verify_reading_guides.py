@@ -20,7 +20,7 @@ if len({r['study'] for r in registry['guides']})!=len(registry['guides']): error
 for level,expected in [('study',registry['top_level_guides']),('nested-study',registry['nested_guides'])]:
     if sum(r['level']==level for r in registry['guides'])!=expected: errors.append('coverage mismatch: '+level)
 for r in registry['guides']:
-    for field in ['tested','found','unresolved','evidence']:
+    for field in ['tested','found','unresolved','next_step','evidence']:
         if not r.get(field): errors.append(r['study']+': missing '+field)
     if not set(r['evidence'])<=original: errors.append(r['study']+': evidence outside archived artifact list')
     for field in ['guide','folder_guide']:
